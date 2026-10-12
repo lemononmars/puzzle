@@ -209,8 +209,8 @@
 <div
 	class={`flex flex-nowrap items-center justify-center select-none ${
 		showBorder
-			? `gap-1 sm:gap-3 md:gap-5 py-3 px-2 sm:py-6 sm:px-6 bg-slate-950 border rounded-2xl sm:rounded-3xl transition-all duration-500 w-full overflow-x-auto ${
-					isSolved ? 'border-emerald-500 shadow-[0_0_35px_rgba(34,197,94,0.4)]' : 'border-slate-800 shadow-2xl'
+			? `gap-1 sm:gap-3 md:gap-5 py-3 px-2 sm:py-6 sm:px-6 bg-base-100 text-base-content border rounded-2xl sm:rounded-3xl transition-all duration-500 w-full overflow-x-auto ${
+					isSolved ? 'border-primary/30 shadow-[0_0_35px_rgba(34,197,94,0.4)]' : 'border-base-300 shadow-2xl'
 			  }`
 			: 'gap-1 bg-transparent p-0 border-none shadow-none overflow-hidden'
 	}`}
@@ -422,7 +422,7 @@
 				</div>
 			{:else}
 				<!-- Fixed Symbol (*, /) -->
-				<div class="text-2xl sm:text-4xl font-extrabold text-slate-400 px-1 sm:px-2 h-[60px] sm:h-28 flex items-center">
+				<div class="text-2xl sm:text-4xl font-extrabold text-base-content/70 px-1 sm:px-2 h-[60px] sm:h-28 flex items-center">
 					{token}
 				</div>
 			{/if}
@@ -430,7 +430,7 @@
 			{#if showParsedLabels}
 				<!-- Parsed Text Symbol Label under each matchstick group -->
 				<span class={`text-xs sm:text-base font-extrabold font-mono px-2 py-0.5 rounded transition-all ${
-					token === '?' ? 'text-red-400 bg-red-950/80 border border-red-500/60 shadow-md shadow-red-900/40 animate-pulse font-black px-2.5' : 'text-amber-400 bg-slate-900/80 border border-slate-800'
+					token === '?' ? 'text-error-content bg-error border border-red-500/60 shadow-md shadow-red-900/40 animate-pulse font-black px-2.5' : 'text-warning-content bg-warning border border-base-300'
 				}`}>
 					{token}
 				</span>

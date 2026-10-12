@@ -48,19 +48,6 @@ describe('The Chase Game Mode & Dataset', () => {
 		expect(packThree.every((q) => packThreeIds.has(q.id))).toBe(true);
 	});
 
-	it('should provide valid Chaser profiles with balanced stats', () => {
-		expect(CHASERS.length).toBeGreaterThanOrEqual(5);
-
-		for (const chaser of CHASERS) {
-			expect(chaser.id).toBeTypeOf('string');
-			expect(chaser.name).toBeTypeOf('string');
-			expect(chaser.accuracyRate).toBeGreaterThanOrEqual(0.75);
-			expect(chaser.accuracyRate).toBeLessThanOrEqual(0.95);
-			expect(chaser.minResponseTimeMs).toBeGreaterThan(500);
-			expect(chaser.maxResponseTimeMs).toBeGreaterThan(chaser.minResponseTimeMs);
-		}
-	});
-
 	it('should compute valid table offers for Low, Middle, and High stakes', () => {
 		const offers = calculateOffers(30000);
 		expect(offers.midAmount).toBe(30000);

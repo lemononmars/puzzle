@@ -1,14 +1,16 @@
 import { defineConfig } from 'vitest/config';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import path from 'path';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-    plugins: [svelte({ hot: !process.env.VITEST })],
+    plugins: [tailwindcss(), svelte({ configFile: false, compilerOptions: { compatibility: { componentApi: 4 } } })],
     resolve: {
         alias: {
-            $lib: path.resolve(__dirname, './src/lib')
+            '#lib': path.resolve(import.meta.dirname, './src/lib')
         }
     },
+    environments: { client: { resolve: { conditions: ['browser'] } } },
     test: {
         include: ['src/**/*.{test,spec}.{js,ts}'],
         setupFiles: ['./vitest.setup.ts']

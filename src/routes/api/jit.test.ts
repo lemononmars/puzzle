@@ -1,8 +1,19 @@
-import { describe, it, expect } from 'vitest';
-import { createQuizSession, getStrippedQuestion, verifySessionAnswer } from '$lib/server/quizSessionStore';
-import { signPayload, verifySignedPayload } from '$lib/server/puzzleToken';
+import { beforeAll, describe, it, expect } from 'vitest';
+import {
+	createQuizSession,
+	getStrippedQuestion,
+	verifySessionAnswer
+} from '#lib/server/quizSessionStore.js';
+import { signPayload, verifySignedPayload } from '#lib/server/puzzleToken.js';
 
 describe('Universal JIT Delivery & Anti-Scraping Architecture', () => {
+	// Transform the large question banks before starting the individual assertion timers.
+	beforeAll(async () => {
+		await Promise.all([
+			import('#lib/data/puzzles/thaiquiz/engine.js'),
+			import('#lib/data/puzzles/thechase/questions.js')
+		]);
+	}, 30000);
 	describe('Quiz JIT Delivery (Thai Quiz & The Chase)', () => {
 		it('should create a quiz session and strictly redact answers in delivered questions', async () => {
 			const session = await createQuizSession({
@@ -55,7 +66,13 @@ describe('Universal JIT Delivery & Anti-Scraping Architecture', () => {
 			const wrongIdx = (correctIdx + 1) % firstQ.choices.length;
 
 			// Submit wrong answer
-			const wrongResult = await verifySessionAnswer(session.id, firstQ.id, wrongIdx, undefined, false);
+			const wrongResult = await verifySessionAnswer(
+				session.id,
+				firstQ.id,
+				wrongIdx,
+				undefined,
+				false
+			);
 			expect(wrongResult.isCorrect).toBe(false);
 			expect(wrongResult.correctIndex).toBe(correctIdx);
 			expect(wrongResult.explanation).toBe(firstQ.explanation);
@@ -64,7 +81,15 @@ describe('Universal JIT Delivery & Anti-Scraping Architecture', () => {
 
 			// Next question: submit correct answer
 			const secondQ = session.questions[1];
-			const correctResult = await verifySessionAnswer(session.id, secondQ.id, secondQ.correctIndex, undefined, false, undefined, 1.0);
+			const correctResult = await verifySessionAnswer(
+				session.id,
+				secondQ.id,
+				secondQ.correctIndex,
+				undefined,
+				false,
+				undefined,
+				1.0
+			);
 			expect(correctResult.isCorrect).toBe(true);
 			expect(correctResult.points).toBeGreaterThanOrEqual(100);
 			expect(correctResult.streak).toBe(1);
@@ -76,16 +101,34 @@ describe('Universal JIT Delivery & Anti-Scraping Architecture', () => {
 			const first = session.questions[0];
 			const second = session.questions[1];
 
-			const outOfOrder = await verifySessionAnswer(session.id, second.id, second.correctIndex, undefined, false);
+			const outOfOrder = await verifySessionAnswer(
+				session.id,
+				second.id,
+				second.correctIndex,
+				undefined,
+				false
+			);
 			expect(outOfOrder.error).toBe('Question is not current');
 			expect(session.currentIndex).toBe(0);
 			expect(session.score).toBe(0);
 
-			const accepted = await verifySessionAnswer(session.id, first.id, first.correctIndex, undefined, false);
+			const accepted = await verifySessionAnswer(
+				session.id,
+				first.id,
+				first.correctIndex,
+				undefined,
+				false
+			);
 			expect(accepted.isCorrect).toBe(true);
 			const scoreAfterFirst = session.score;
 
-			const replayed = await verifySessionAnswer(session.id, first.id, first.correctIndex, undefined, false);
+			const replayed = await verifySessionAnswer(
+				session.id,
+				first.id,
+				first.correctIndex,
+				undefined,
+				false
+			);
 			expect(replayed.error).toBe('Question is not current');
 			expect(session.currentIndex).toBe(1);
 			expect(session.score).toBe(scoreAfterFirst);
@@ -96,21 +139,37 @@ describe('Universal JIT Delivery & Anti-Scraping Architecture', () => {
 			expect(session.questions.length).toBeLessThanOrEqual(50);
 
 			const first = session.questions[0];
-			const invalid = await verifySessionAnswer(session.id, first.id, 99, undefined, false, undefined, 100);
+			const invalid = await verifySessionAnswer(
+				session.id,
+				first.id,
+				99,
+				undefined,
+				false,
+				undefined,
+				100
+			);
 			expect(invalid.error).toBe('Invalid choice index');
 			expect(session.currentIndex).toBe(0);
 		});
 
 		it('should reject unsupported session types and Chase packs at runtime', async () => {
-			await expect(createQuizSession({ type: 'unsupported' } as any)).rejects.toThrow('Invalid quiz session type');
-			await expect(createQuizSession({ type: 'thechase', pack: 99 })).rejects.toThrow('Invalid Chase pack');
+			await expect(createQuizSession({ type: 'unsupported' } as any)).rejects.toThrow(
+				'Invalid quiz session type'
+			);
+			await expect(createQuizSession({ type: 'thechase', pack: 99 })).rejects.toThrow(
+				'Invalid Chase pack'
+			);
 		});
 
 		it('keeps quiz-show questions private and current after a wrong free-text attempt', async () => {
 			const session = await createQuizSession({ type: 'quizshow', count: 2 });
 			const question = session.questions[0];
 			const wrong = await verifySessionAnswer(
-				session.id, question.id, undefined, '__definitely_wrong__', false
+				session.id,
+				question.id,
+				undefined,
+				'__definitely_wrong__',
+				false
 			);
 
 			expect(wrong.isCorrect).toBe(false);
@@ -119,7 +178,11 @@ describe('Universal JIT Delivery & Anti-Scraping Architecture', () => {
 			expect(session.currentIndex).toBe(0);
 
 			const correct = await verifySessionAnswer(
-				session.id, question.id, undefined, question.choices[question.correctIndex], false
+				session.id,
+				question.id,
+				undefined,
+				question.choices[question.correctIndex],
+				false
 			);
 			expect(correct.isCorrect).toBe(true);
 			expect(correct.correctIndex).toBe(question.correctIndex);
@@ -130,7 +193,12 @@ describe('Universal JIT Delivery & Anti-Scraping Architecture', () => {
 			const session = await createQuizSession({ type: 'thechase', count: 2 });
 			const question = session.questions[0];
 			const result = await verifySessionAnswer(
-				session.id, question.id, undefined, undefined, false, 1
+				session.id,
+				question.id,
+				undefined,
+				undefined,
+				false,
+				1
 			);
 			expect(result.isCorrect).toBe(true);
 			expect(result.chosenIndex).toBe(question.correctIndex);

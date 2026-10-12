@@ -17,7 +17,7 @@
 	}
 </script>
 
-<div class="relative w-full h-full bg-slate-950 flex items-center justify-center select-none overflow-hidden">
+<div class="relative w-full h-full bg-base-100 text-base-content flex items-center justify-center select-none overflow-hidden">
 	{#if thumbnail}
 		<img
 			src={thumbnail}
@@ -33,7 +33,7 @@
 		/>
 	{:else if cleanGenre === 'slither'}
 		<!-- Slitherlink Centered SVG Thumbnail -->
-		<svg class="w-28 h-28 mx-auto text-emerald-400 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none">
+		<svg class="w-28 h-28 mx-auto text-primary group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none">
 			<!-- Background Grid -->
 			<rect x="10" y="10" width="80" height="80" fill="#090d16" rx="6" />
 			<!-- Grid dots (5x5 grid intersections) -->

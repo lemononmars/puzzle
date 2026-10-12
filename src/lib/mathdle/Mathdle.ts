@@ -32,7 +32,9 @@ export function validateEquation(word: string, solution: string, difficulty: num
 		.map((c) => parseInt(c) - 1);
 	const solutionSplitted: Array<string | null> = solution.split('');
 
-	const output: Array<{ correct: CharState; char: string }> = word.split('').map((char) => ({ correct: CharState.Wrong, char }));
+	const output: Array<{ correct: CharState; char: string }> = word
+		.split('')
+		.map((char) => ({ correct: CharState.Wrong, char }));
 	if (difficulty === DIFFICULTY_HARD)
 		output.forEach(
 			(op, idx) =>

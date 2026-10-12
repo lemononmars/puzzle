@@ -1,8 +1,8 @@
 // @vitest-environment jsdom
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { tick } from 'svelte';
-import AdminLayout from '../routes/admin/__layout.svelte';
-import { post } from '../routes/api/admin/session';
+import AdminLayout from '../routes/admin/+layout.svelte';
+import { POST } from '../routes/api/admin/session/+server';
 
 let component: AdminLayout | undefined;
 const originalFetch = globalThis.fetch;
@@ -47,7 +47,7 @@ describe('shared admin login', () => {
 		await login('custom-admin');
 		expect(document.querySelector('form')).toBeNull();
 		expect(document.querySelector('a[href="/admin"]')).toBeNull();
-		for (const page of ['questions', 'weekly', 'logic'])
+		for (const page of ['questions', 'logic'])
 			expect(document.querySelector(`a[href="/admin/${page}"]`)).not.toBeNull();
 		component!.$destroy();
 		document.body.innerHTML = '';
@@ -76,7 +76,7 @@ describe('shared admin login', () => {
 				['wrong', 401],
 				['', 401]
 			]) {
-				const result = await post({
+				const result = await POST({
 					request: { headers: new Map([['x-admin-password', password]]) }
 				} as any);
 				expect(result.status).toBe(status);

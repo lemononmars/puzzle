@@ -1,5 +1,5 @@
-import { recordDiagnostic } from '$lib/diagnostics';
-import { supabaseClient } from '$lib/supabase';
+import { recordDiagnostic } from '#lib/diagnostics.js';
+import { supabaseClient } from '#lib/supabase.js';
 import type { SupabaseRoomRow } from './types';
 
 export function subscribeToLobbyRealtime(onRoomsChange: () => void) {
@@ -28,7 +28,11 @@ export function subscribeToRoomRealtime(roomId: string, onUpdate: (room: Supabas
 		)
 		.subscribe((status) => {
 			if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT') {
-				recordDiagnostic('battle.realtime_connection_failed', { scope: 'room', roomId, status }, 'warn');
+				recordDiagnostic(
+					'battle.realtime_connection_failed',
+					{ scope: 'room', roomId, status },
+					'warn'
+				);
 			}
 		});
 	return () => void supabaseClient.removeChannel(channel);

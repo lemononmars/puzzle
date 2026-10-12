@@ -13,10 +13,10 @@
 		ActivityIcon,
 		ArrowRightIcon
 	} from 'svelte-feather-icons';
-	import type { TheChaseQuestion, ChaserProfile, TableOffers, ChaseGamePhase } from '$lib/data/puzzles/thechase/types';
-	import { CHASERS, getRandomChaser, calculateOffers, resolveBoardStepState } from '$lib/data/puzzles/thechase/engine';
-	import { answerQuizQuestion, startQuizSession, type DeliveredQuizQuestion } from '$lib/quiz/client';
-	import { speakThai, stopSpeech, playQuizShowSound } from '$lib/utils/tts';
+	import type { TheChaseQuestion, ChaserProfile, TableOffers, ChaseGamePhase } from '#lib/data/puzzles/thechase/types.js';
+	import { CHASERS, getRandomChaser, calculateOffers, resolveBoardStepState } from '#lib/data/puzzles/thechase/engine.js';
+	import { answerQuizQuestion, startQuizSession, type DeliveredQuizQuestion } from '#lib/quiz/client.js';
+	import { speakThai, stopSpeech, playQuizShowSound } from '#lib/utils/tts.js';
 
 	type ClientChaseQuestion = Omit<TheChaseQuestion, 'choices' | 'correctIndex' | 'difficulty'> & {
 		choices: string[];
@@ -562,12 +562,12 @@
 <div class="flex flex-col gap-4 max-w-4xl mx-auto w-full select-none" in:fade={{ duration: 200 }}>
 
 	<!-- Top Audio Control Bar -->
-	<div class="flex items-center justify-between px-3 py-1.5 rounded-xl bg-slate-900/60 border border-slate-800 text-xs">
+	<div class="flex items-center justify-between px-3 py-1.5 rounded-xl bg-base-100 text-base-content border border-base-300 text-xs">
 		<div class="flex items-center gap-2">
-			<span class="text-amber-400 font-bold">⚡ The Chase Game</span>
+			<span class="text-warning-content font-bold">⚡ The Chase Game</span>
 		</div>
 		<button
-			class="btn btn-xs {isSpeechMuted ? 'btn-ghost text-slate-500' : 'btn-ghost text-amber-400'} gap-1 px-2"
+			class="btn btn-xs {isSpeechMuted ? 'btn-ghost text-base-content/70' : 'btn-ghost text-warning-content'} gap-1 px-2"
 			on:click={toggleAudioMute}
 			title={isSpeechMuted ? 'เปิดเสียงอ่าน TTS' : 'ปิดเสียงอ่าน TTS'}
 		>
@@ -585,26 +585,26 @@
 	<!-- 1. INTRO / WELCOME SCREEN                                                 -->
 	<!-- ========================================================================= -->
 	{#if phase === 'intro'}
-		<div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900/95 to-amber-950/60 border border-amber-500/40 p-6 sm:p-8 shadow-2xl flex flex-col gap-5">
+		<div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-base-200 via-base-200 to-amber-950/60 border border-amber-500/40 p-6 sm:p-8 shadow-2xl flex flex-col gap-5">
 			<div class="absolute -right-16 -top-16 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-			<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+			<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-base-300 pb-4">
 				<div class="flex items-center gap-3">
 					<span class="text-4xl sm:text-5xl">{chaser.avatarEmoji}</span>
 					<div>
-						<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-300 text-[11px] font-black">
+						<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/30 text-warning-content text-[11px] font-black">
 							<ZapIcon size="11" class="animate-pulse" />
 							<span>The Chase UK Quiz Show</span>
 						</div>
-						<h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mt-1">
+						<h2 class="text-2xl sm:text-3xl font-black text-base-content tracking-tight mt-1">
 							{chaser.title}
 						</h2>
-						<p class="text-xs text-amber-400 font-medium">{chaser.thaiTitle} • แม่นยำ {Math.round(chaser.accuracyRate * 100)}%</p>
+						<p class="text-xs text-warning-content font-medium">{chaser.thaiTitle} • แม่นยำ {Math.round(chaser.accuracyRate * 100)}%</p>
 					</div>
 				</div>
 
 				<button
-					class="btn btn-sm btn-ghost border border-slate-800 text-slate-400 hover:text-white rounded-xl text-xs gap-1.5"
+					class="btn btn-sm btn-ghost border border-base-300 text-base-content/70 hover:text-base-content rounded-xl text-xs gap-1.5"
 					on:click={() => (chaser = getRandomChaser())}
 					title="สุ่ม Chaser ท่านอื่น"
 				>
@@ -615,29 +615,29 @@
 
 			<!-- Rules of The Chase -->
 			<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-				<div class="p-3.5 rounded-2xl bg-slate-950/60 border border-slate-800 flex flex-col gap-1.5">
-					<div class="flex items-center gap-2 text-amber-400 font-bold text-xs">
+				<div class="p-3.5 rounded-2xl bg-base-100 text-base-content border border-base-300 flex flex-col gap-1.5">
+					<div class="flex items-center gap-2 text-warning-content font-bold text-xs">
 						<span>1. Cash Builder</span>
 					</div>
-					<p class="text-[11px] text-slate-400 leading-relaxed">
+					<p class="text-[11px] text-base-content/70 leading-relaxed">
 						60 วินาทีตอบคำถาม 3 ตัวเลือกแบบสปีดควิซ สะสมข้อละ ฿10,000
 					</p>
 				</div>
 
-				<div class="p-3.5 rounded-2xl bg-slate-950/60 border border-slate-800 flex flex-col gap-1.5">
-					<div class="flex items-center gap-2 text-amber-400 font-bold text-xs">
+				<div class="p-3.5 rounded-2xl bg-base-100 text-base-content border border-base-300 flex flex-col gap-1.5">
+					<div class="flex items-center gap-2 text-warning-content font-bold text-xs">
 						<span>2. The Board Chase</span>
 					</div>
-					<p class="text-[11px] text-slate-400 leading-relaxed">
+					<p class="text-[11px] text-base-content/70 leading-relaxed">
 						ประลอง 3 ตัวเลือกบนบอร์ด 7 ขั้น หนี Chaser เข้าบ้านให้ทันก่อนโดนจับ
 					</p>
 				</div>
 
-				<div class="p-3.5 rounded-2xl bg-slate-950/60 border border-slate-800 flex flex-col gap-1.5">
-					<div class="flex items-center gap-2 text-amber-400 font-bold text-xs">
+				<div class="p-3.5 rounded-2xl bg-base-100 text-base-content border border-base-300 flex flex-col gap-1.5">
+					<div class="flex items-center gap-2 text-warning-content font-bold text-xs">
 						<span>3. The Final Chase</span>
 					</div>
-					<p class="text-[11px] text-slate-400 leading-relaxed">
+					<p class="text-[11px] text-base-content/70 leading-relaxed">
 						สร้างแต้มต่อแล้วป้องกันเงินรางวัลจาก Chaser พร้อมโอกาส Pushback ดันผู้ล่ากลับ!
 					</p>
 				</div>
@@ -660,35 +660,35 @@
 	{:else if phase === 'cash_builder_playing' || phase === 'cash_builder_countdown'}
 		<div class="flex flex-col gap-4">
 			<!-- HUD -->
-			<div class="flex items-center justify-between bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 shadow-lg">
+			<div class="flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 py-3 shadow-lg">
 				<div class="flex items-center gap-3">
-					<div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-black text-amber-400 text-lg">
+					<div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-black text-warning-content text-lg">
 						{cashBuilderTime}s
 					</div>
 					<div>
-						<div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Cash Builder Round</div>
-						<div class="text-base font-black text-white">ข้อที่ {cashBuilderIdx + 1}</div>
+						<div class="text-[10px] text-base-content/70 uppercase font-bold tracking-wider">Cash Builder Round</div>
+						<div class="text-base font-black text-base-content">ข้อที่ {cashBuilderIdx + 1}</div>
 					</div>
 				</div>
 
 				<div class="text-right">
-					<div class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">เงินรางวัลสะสม</div>
-					<div class="text-lg sm:text-xl font-black text-amber-400 font-mono">฿{(cashBuilderCorrect * 10000).toLocaleString()}</div>
+					<div class="text-[10px] text-base-content/70 uppercase font-bold tracking-wider">เงินรางวัลสะสม</div>
+					<div class="text-lg sm:text-xl font-black text-warning-content font-mono">฿{(cashBuilderCorrect * 10000).toLocaleString()}</div>
 				</div>
 			</div>
 
 			<!-- Question Card -->
 			{#if cashBuilderQuestions[cashBuilderIdx]}
 				{@const q = cashBuilderQuestions[cashBuilderIdx]}
-				<div class="flex flex-col gap-4 bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-7 shadow-2xl" in:fly={{ y: 10, duration: 150 }}>
-					<h3 class="text-lg sm:text-2xl font-black text-white leading-snug min-h-[4rem] flex items-center">
+				<div class="flex flex-col gap-4 bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-7 shadow-2xl" in:fly={{ y: 10, duration: 150 }}>
+					<h3 class="text-lg sm:text-2xl font-black text-base-content leading-snug min-h-[4rem] flex items-center">
 						{q.question}
 					</h3>
 
 					<!-- Anti-spam & Choices Container -->
 					<div class="grid grid-cols-1 gap-2.5 pt-1">
 						{#if !cashBuilderChoicesRevealed}
-							<div class="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-slate-950/60 border border-amber-500/30 text-amber-400 text-xs font-mono animate-pulse">
+							<div class="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-base-100 text-base-content border border-amber-500/30 text-warning-content text-xs font-mono animate-pulse">
 								<span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
 								<span>กำลังอ่านคำถาม... ตัวเลือกจะเปิดใน 2 วินาที</span>
 							</div>
@@ -700,16 +700,16 @@
 							{@const showFeedback = cashBuilderAnswerFeedback !== null}
 							<button
 								class="btn btn-lg justify-start h-auto py-3.5 px-5 rounded-2xl font-bold text-sm sm:text-base border transition-all text-left flex items-center justify-between
-								{!cashBuilderChoicesRevealed ? 'opacity-40 pointer-events-none bg-slate-950/40 border-slate-800 text-slate-500' : ''}
-								{showFeedback && isSelected && isCorrectChoice ? 'bg-emerald-600 border-emerald-400 text-white shadow-lg shadow-emerald-500/30' : ''}
-								{showFeedback && isSelected && !isCorrectChoice ? 'bg-rose-600 border-rose-400 text-white shadow-lg shadow-rose-500/30 animate-shake' : ''}
-								{showFeedback && !isSelected && isCorrectChoice ? 'border-emerald-500/60 bg-emerald-950/40 text-emerald-300' : ''}
-								{!showFeedback && cashBuilderChoicesRevealed ? 'border-slate-700 bg-slate-950/70 text-slate-100 hover:bg-amber-500 hover:text-slate-950 hover:border-amber-400' : ''}"
+								{!cashBuilderChoicesRevealed ? 'opacity-40 pointer-events-none bg-base-100 text-base-content border-base-300 text-base-content/70' : ''}
+								{showFeedback && isSelected && isCorrectChoice ? 'bg-emerald-600 border-primary/30 text-base-content shadow-lg shadow-emerald-500/30' : ''}
+								{showFeedback && isSelected && !isCorrectChoice ? 'bg-rose-600 border-rose-400 text-base-content shadow-lg shadow-rose-500/30 animate-shake' : ''}
+								{showFeedback && !isSelected && isCorrectChoice ? 'border-primary/30 bg-base-300 text-base-content text-primary' : ''}
+								{!showFeedback && cashBuilderChoicesRevealed ? 'border-base-300 bg-base-100 text-base-content text-base-content/70 hover:bg-amber-500 hover:text-base-content/70 hover:border-amber-400' : ''}"
 								disabled={cashBuilderAnswering || !cashBuilderChoicesRevealed}
 								on:click={() => handleCashBuilderChoice(idx)}
 							>
 								<div class="flex items-center gap-3">
-									<span class="w-7 h-7 rounded-lg bg-slate-800 font-mono text-xs flex items-center justify-center font-black text-amber-400 shrink-0">
+									<span class="w-7 h-7 rounded-lg bg-base-100 text-base-content font-mono text-xs flex items-center justify-center font-black text-warning-content shrink-0">
 										{['A', 'B', 'C'][idx]}
 									</span>
 									<span class="grow">{choice}</span>
@@ -730,20 +730,20 @@
 	<!-- 3. CASH BUILDER SUMMARY                                                   -->
 	<!-- ========================================================================= -->
 	{:else if phase === 'cash_builder_summary'}
-		<div class="rounded-3xl bg-slate-900 border border-slate-800 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:scale={{ duration: 200 }}>
+		<div class="rounded-3xl bg-base-100 text-base-content border border-base-300 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:scale={{ duration: 200 }}>
 			<div class="w-16 h-16 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-3xl">
 				💰
 			</div>
 			<div>
-				<h3 class="text-xl sm:text-2xl font-black text-white">หมดเวลา Cash Builder!</h3>
-				<p class="text-xs text-slate-400 mt-1">คุณตอบถูกทั้งหมด {cashBuilderCorrect} ข้อ</p>
+				<h3 class="text-xl sm:text-2xl font-black text-base-content">หมดเวลา Cash Builder!</h3>
+				<p class="text-xs text-base-content/70 mt-1">คุณตอบถูกทั้งหมด {cashBuilderCorrect} ข้อ</p>
 			</div>
 
-			<div class="text-3xl sm:text-5xl font-black text-amber-400 font-mono py-2">
+			<div class="text-3xl sm:text-5xl font-black text-warning-content font-mono py-2">
 				฿{bankedAmount.toLocaleString()}
 			</div>
 
-			<p class="text-xs text-slate-300 max-w-md">
+			<p class="text-xs text-base-content/70 max-w-md">
 				ถึงเวลาเผชิญหน้ากับ <strong>{chaser.name}</strong> บนโต๊ะเจรจาข้อเสนอ!
 			</p>
 
@@ -761,19 +761,19 @@
 	<!-- ========================================================================= -->
 	{:else if phase === 'offer_selection' && offers}
 		<div class="flex flex-col gap-4" in:fade={{ duration: 200 }}>
-			<div class="flex items-center gap-3 bg-slate-900 border border-slate-800 rounded-2xl p-4">
+			<div class="flex items-center gap-3 bg-base-100 text-base-content border border-base-300 rounded-2xl p-4">
 				<span class="text-3xl">{chaser.avatarEmoji}</span>
 				<div>
-					<h3 class="font-black text-white text-base">{chaser.name} ยื่นข้อเสนอบนกระดาน</h3>
-					<p class="text-xs text-slate-400">ดูตำแหน่งเริ่มต้นบนกระดานด้านล่าง แล้วเลือกข้อเสนอที่ต้องการ</p>
+					<h3 class="font-black text-base-content text-base">{chaser.name} ยื่นข้อเสนอบนกระดาน</h3>
+					<p class="text-xs text-base-content/70">ดูตำแหน่งเริ่มต้นบนกระดานด้านล่าง แล้วเลือกข้อเสนอที่ต้องการ</p>
 				</div>
 			</div>
 
 			<!-- Visual Chase Board Showing Offer Positions -->
-			<div class="bg-slate-900 border border-slate-800 rounded-2xl p-3 flex flex-col gap-2 shadow-lg">
-				<div class="flex items-center justify-between text-xs font-bold text-slate-400 border-b border-slate-800 pb-1.5">
-					<span class="text-amber-400">⚡ ตำแหน่งข้อเสนอบนกระดาน 7 ขั้น</span>
-					<span class="text-[11px] text-slate-500">Chaser เริ่มที่ขั้น 0 • Home ที่ขั้น 7</span>
+			<div class="bg-base-100 text-base-content border border-base-300 rounded-2xl p-3 flex flex-col gap-2 shadow-lg">
+				<div class="flex items-center justify-between text-xs font-bold text-base-content/70 border-b border-base-300 pb-1.5">
+					<span class="text-warning-content">⚡ ตำแหน่งข้อเสนอบนกระดาน 7 ขั้น</span>
+					<span class="text-[11px] text-base-content/70">Chaser เริ่มที่ขั้น 0 • Home ที่ขั้น 7</span>
 				</div>
 
 				<!-- Horizontal Board Representation -->
@@ -786,22 +786,22 @@
 						{@const isChaser = stepIdx === 0}
 						<div
 							class="flex-1 min-w-[38px] h-12 rounded-xl border flex flex-col items-center justify-center text-center p-0.5 relative transition-all
-							{isChaser ? 'bg-red-950/40 border-red-500/50 text-red-400' : ''}
-							{isHigh ? 'bg-red-500/20 border-red-500 text-red-300 ring-1 ring-red-400' : ''}
-							{isMid ? 'bg-amber-500/20 border-amber-500 text-amber-300 ring-1 ring-amber-400' : ''}
-							{isLow ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300 ring-1 ring-emerald-400' : ''}
-							{isHome ? 'bg-emerald-950/60 border-emerald-400 text-emerald-300' : ''}
-							{!isChaser && !isHigh && !isMid && !isLow && !isHome ? 'bg-slate-950/60 border-slate-800 text-slate-500' : ''}"
+							{isChaser ? 'bg-error border-red-500/50 text-error-content' : ''}
+							{isHigh ? 'bg-red-500/20 border-red-500 text-error-content ring-1 ring-red-400' : ''}
+							{isMid ? 'bg-amber-500/20 border-amber-500 text-warning-content ring-1 ring-amber-400' : ''}
+							{isLow ? 'bg-emerald-500/20 border-primary/30 text-primary ring-1 ring-emerald-400' : ''}
+							{isHome ? 'bg-base-300 text-base-content border-primary/30 text-primary' : ''}
+							{!isChaser && !isHigh && !isMid && !isLow && !isHome ? 'bg-base-100 text-base-content border-base-300 text-base-content/70' : ''}"
 						>
 							<span class="text-[9px] font-mono font-bold leading-none">
 								{isChaser ? '👹' : isHome ? '🏆' : stepIdx}
 							</span>
 							{#if isHigh}
-								<span class="text-[8px] font-black text-red-400 mt-0.5 leading-none">HIGH</span>
+								<span class="text-[8px] font-black text-error-content mt-0.5 leading-none">HIGH</span>
 							{:else if isMid}
-								<span class="text-[8px] font-black text-amber-400 mt-0.5 leading-none">MID</span>
+								<span class="text-[8px] font-black text-warning-content mt-0.5 leading-none">MID</span>
 							{:else if isLow}
-								<span class="text-[8px] font-black text-emerald-400 mt-0.5 leading-none">LOW</span>
+								<span class="text-[8px] font-black text-primary mt-0.5 leading-none">LOW</span>
 							{/if}
 						</div>
 					{/each}
@@ -812,17 +812,17 @@
 			<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
 				<!-- High Offer -->
 				<button
-					class="flex flex-col items-center justify-between p-4 sm:p-5 rounded-3xl bg-slate-900/90 border border-red-500/40 hover:border-red-400 hover:bg-slate-900 hover:scale-[1.02] transition-all text-center gap-2.5 shadow-xl group"
+					class="flex flex-col items-center justify-between p-4 sm:p-5 rounded-3xl bg-base-100 text-base-content border border-red-500/40 hover:border-red-400 hover:bg-base-100 text-base-content hover:scale-[1.02] transition-all text-center gap-2.5 shadow-xl group"
 					on:click={() => selectOffer('high')}
 				>
-					<div class="inline-flex items-center gap-1 text-[10px] font-black text-red-400 bg-red-500/10 px-2.5 py-0.5 rounded-full border border-red-500/20">
+					<div class="inline-flex items-center gap-1 text-[10px] font-black text-error-content bg-red-500/10 px-2.5 py-0.5 rounded-full border border-red-500/20">
 						<TrendingUpIcon size="11" />
 						<span>ข้อเสนอสูง (เริ่มขั้น 2)</span>
 					</div>
-					<div class="text-2xl sm:text-3xl font-black text-red-400 font-mono group-hover:scale-105 transition-transform">
+					<div class="text-2xl sm:text-3xl font-black text-error-content font-mono group-hover:scale-105 transition-transform">
 						฿{offers.highAmount.toLocaleString()}
 					</div>
-					<div class="text-[11px] text-slate-400 leading-snug">
+					<div class="text-[11px] text-base-content/70 leading-snug">
 						ห่างจาก Chaser <strong>2 ขั้น</strong><br>(4 ก้าวถึงบ้าน)
 					</div>
 					<div class="btn btn-xs btn-error text-error-content font-bold w-full rounded-xl mt-1">เลือกข้อเสนอสูง</div>
@@ -830,17 +830,17 @@
 
 				<!-- Mid Offer -->
 				<button
-					class="flex flex-col items-center justify-between p-4 sm:p-5 rounded-3xl bg-slate-900/90 border-2 border-amber-500 hover:border-amber-400 hover:bg-slate-900 hover:scale-[1.02] transition-all text-center gap-2.5 shadow-xl shadow-amber-500/10 group"
+					class="flex flex-col items-center justify-between p-4 sm:p-5 rounded-3xl bg-base-100 text-base-content border-2 border-amber-500 hover:border-amber-400 hover:bg-base-100 text-base-content hover:scale-[1.02] transition-all text-center gap-2.5 shadow-xl shadow-amber-500/10 group"
 					on:click={() => selectOffer('mid')}
 				>
-					<div class="inline-flex items-center gap-1 text-[10px] font-black text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
+					<div class="inline-flex items-center gap-1 text-[10px] font-black text-warning-content bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
 						<ShieldIcon size="11" />
 						<span>ข้อเสนอปกติ (เริ่มขั้น 3)</span>
 					</div>
-					<div class="text-2xl sm:text-3xl font-black text-amber-400 font-mono group-hover:scale-105 transition-transform">
+					<div class="text-2xl sm:text-3xl font-black text-warning-content font-mono group-hover:scale-105 transition-transform">
 						฿{offers.midAmount.toLocaleString()}
 					</div>
-					<div class="text-[11px] text-slate-400 leading-snug">
+					<div class="text-[11px] text-base-content/70 leading-snug">
 						ห่างจาก Chaser <strong>3 ขั้น</strong><br>(3 ก้าวถึงบ้าน)
 					</div>
 					<div class="btn btn-xs btn-warning text-warning-content font-bold w-full rounded-xl mt-1">เลือกข้อเสนอนี้</div>
@@ -848,17 +848,17 @@
 
 				<!-- Low Offer -->
 				<button
-					class="flex flex-col items-center justify-between p-4 sm:p-5 rounded-3xl bg-slate-900/90 border border-emerald-500/40 hover:border-emerald-400 hover:bg-slate-900 hover:scale-[1.02] transition-all text-center gap-2.5 shadow-xl group"
+					class="flex flex-col items-center justify-between p-4 sm:p-5 rounded-3xl bg-base-100 text-base-content border border-primary/30 hover:border-primary/30 hover:bg-base-100 text-base-content hover:scale-[1.02] transition-all text-center gap-2.5 shadow-xl group"
 					on:click={() => selectOffer('low')}
 				>
-					<div class="inline-flex items-center gap-1 text-[10px] font-black text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+					<div class="inline-flex items-center gap-1 text-[10px] font-black text-primary bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-primary/30">
 						<TrendingDownIcon size="11" />
 						<span>ข้อเสนอต่ำ (เริ่มขั้น 5)</span>
 					</div>
-					<div class="text-2xl sm:text-3xl font-black text-emerald-400 font-mono group-hover:scale-105 transition-transform">
+					<div class="text-2xl sm:text-3xl font-black text-primary font-mono group-hover:scale-105 transition-transform">
 						฿{offers.lowAmount.toLocaleString()}
 					</div>
-					<div class="text-[11px] text-slate-400 leading-snug">
+					<div class="text-[11px] text-base-content/70 leading-snug">
 						ห่างจาก Chaser <strong>5 ขั้น</strong><br>(2 ก้าวถึงบ้าน)
 					</div>
 					<div class="btn btn-xs btn-success text-success-content font-bold w-full rounded-xl mt-1">เลือกข้อเสนอต่ำ</div>
@@ -873,12 +873,12 @@
 		<div class="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4">
 
 			<!-- CHASE BOARD: Horizontal on Mobile with minimal height, Vertical on Desktop -->
-			<div class="md:col-span-4 bg-slate-900 border border-slate-800 rounded-2xl p-2.5 sm:p-4 flex flex-col gap-1.5 sm:gap-2 shadow-2xl">
-				<div class="flex items-center justify-between border-b border-slate-800 pb-1.5 px-0.5">
-					<div class="text-[11px] sm:text-xs font-black text-white flex items-center gap-1.5">
+			<div class="md:col-span-4 bg-base-100 text-base-content border border-base-300 rounded-2xl p-2.5 sm:p-4 flex flex-col gap-1.5 sm:gap-2 shadow-2xl">
+				<div class="flex items-center justify-between border-b border-base-300 pb-1.5 px-0.5">
+					<div class="text-[11px] sm:text-xs font-black text-base-content flex items-center gap-1.5">
 						<span>⚡ CHASE BOARD</span>
 					</div>
-					<span class="font-mono text-xs font-bold text-amber-400">฿{bankedAmount.toLocaleString()}</span>
+					<span class="font-mono text-xs font-bold text-warning-content">฿{bankedAmount.toLocaleString()}</span>
 				</div>
 
 				<!-- Responsive Board: flex-row on mobile (h-8), flex-col on desktop -->
@@ -890,13 +890,13 @@
 
 						<div
 							class="flex-1 md:flex-initial min-w-[36px] h-8 sm:h-9 rounded-xl border transition-all flex items-center justify-center md:justify-between px-1 md:px-3 relative overflow-hidden
-							{isHome ? 'bg-gradient-to-r from-emerald-950/80 to-slate-900 border-emerald-500/60' : 'bg-slate-950/80 border-slate-800'}
+							{isHome ? 'bg-gradient-to-r from-base-200 to-base-200 border-primary/30' : 'bg-base-100 text-base-content border-base-300'}
 							{isPlayerHere ? 'ring-2 ring-blue-400 shadow-lg shadow-blue-500/30' : ''}
 							{isChaserHere ? 'ring-2 ring-red-500 shadow-lg shadow-red-500/30' : ''}"
 						>
 							<!-- Step label -->
 							<div class="flex items-center gap-1 z-10">
-								<span class="font-mono text-[9px] sm:text-[10px] text-slate-500 font-bold">
+								<span class="font-mono text-[9px] sm:text-[10px] text-base-content/70 font-bold">
 									{stepIdx === 0 ? 'START' : isHome ? 'HOME' : `${stepIdx}`}
 								</span>
 							</div>
@@ -904,12 +904,12 @@
 							<!-- Occupant Markers -->
 							<div class="flex items-center gap-1 z-10 ml-1 md:ml-0">
 								{#if isChaserHere}
-									<span class="inline-flex items-center gap-0.5 px-1 py-0.5 rounded bg-red-500/20 border border-red-500/50 text-red-400 text-[9px] sm:text-[10px] font-black animate-pulse">
+									<span class="inline-flex items-center gap-0.5 px-1 py-0.5 rounded bg-red-500/20 border border-red-500/50 text-error-content text-[9px] sm:text-[10px] font-black animate-pulse">
 										{chaser.avatarEmoji} <span class="hidden md:inline">CHASER</span>
 									</span>
 								{/if}
 								{#if isPlayerHere}
-									<span class="inline-flex items-center gap-0.5 px-1 py-0.5 rounded bg-blue-500/20 border border-blue-500/50 text-blue-300 text-[9px] sm:text-[10px] font-black animate-bounce">
+									<span class="inline-flex items-center gap-0.5 px-1 py-0.5 rounded bg-blue-500/20 border border-blue-500/50 text-primary text-[9px] sm:text-[10px] font-black animate-bounce">
 										🔵 <span class="hidden md:inline">YOU</span>
 									</span>
 								{/if}
@@ -923,21 +923,21 @@
 			<div class="md:col-span-8 flex flex-col gap-3">
 				{#if boardQuestions[currentBoardQIdx]}
 					{@const q = boardQuestions[currentBoardQIdx]}
-					<div class="bg-slate-900 border border-slate-800 rounded-3xl p-4 sm:p-7 shadow-2xl flex flex-col gap-3.5 sm:gap-4">
+					<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-4 sm:p-7 shadow-2xl flex flex-col gap-3.5 sm:gap-4">
 
 						<!-- Question status banner -->
-						<div class="flex items-center justify-between border-b border-slate-800 pb-2">
-							<span class="text-xs text-slate-400 font-bold">ข้อที่ {currentBoardQIdx + 1}</span>
+						<div class="flex items-center justify-between border-b border-base-300 pb-2">
+							<span class="text-xs text-base-content/70 font-bold">ข้อที่ {currentBoardQIdx + 1}</span>
 							<div class="flex items-center gap-2">
 								{#if boardState === 'player_locked'}
-									<span class="text-xs text-blue-400 font-bold animate-pulse">🔒 คุณเลือกแล้ว (รอ Chaser)...</span>
+									<span class="text-xs text-primary font-bold animate-pulse">🔒 คุณเลือกแล้ว (รอ Chaser)...</span>
 								{:else if boardState === 'revealing_player' || boardState === 'revealing_chaser'}
-									<span class="text-xs text-amber-400 font-bold">⚡ กำลังเฉลยคำตอบ...</span>
+									<span class="text-xs text-warning-content font-bold">⚡ กำลังเฉลยคำตอบ...</span>
 								{/if}
 							</div>
 						</div>
 
-						<h3 class="text-base sm:text-xl font-black text-white leading-snug min-h-[3rem] sm:min-h-[3.5rem] flex items-center">
+						<h3 class="text-base sm:text-xl font-black text-base-content leading-snug min-h-[3rem] sm:min-h-[3.5rem] flex items-center">
 							{q.question}
 						</h3>
 
@@ -952,17 +952,17 @@
 
 								<button
 									class="btn btn-lg justify-start h-auto py-3 px-4 rounded-2xl font-bold text-sm sm:text-base transition-all text-left flex items-center justify-between border
-									{isPlayerSelected && !showPlayerReveal ? 'bg-blue-600 border-blue-400 text-white' : ''}
-									{showPlayerReveal && isPlayerSelected && isCorrectChoice ? 'bg-emerald-600 border-emerald-400 text-white shadow-lg shadow-emerald-500/20' : ''}
-									{showPlayerReveal && isPlayerSelected && !isCorrectChoice ? 'bg-rose-600 border-rose-400 text-white shadow-lg shadow-rose-500/20' : ''}
-									{!isPlayerSelected && !showPlayerReveal ? 'bg-slate-950/70 border-slate-800 text-slate-200 hover:border-amber-400 hover:bg-slate-950' : ''}
-									{showPlayerReveal && !isPlayerSelected && isCorrectChoice ? 'border-emerald-500/50 bg-emerald-950/30 text-emerald-300' : ''}
-									{showPlayerReveal && !isPlayerSelected && !isCorrectChoice ? 'bg-slate-950/40 border-slate-800 text-slate-500' : ''}"
+									{isPlayerSelected && !showPlayerReveal ? 'bg-blue-600 border-blue-400 text-base-content' : ''}
+									{showPlayerReveal && isPlayerSelected && isCorrectChoice ? 'bg-emerald-600 border-primary/30 text-base-content shadow-lg shadow-emerald-500/20' : ''}
+									{showPlayerReveal && isPlayerSelected && !isCorrectChoice ? 'bg-rose-600 border-rose-400 text-base-content shadow-lg shadow-rose-500/20' : ''}
+									{!isPlayerSelected && !showPlayerReveal ? 'bg-base-100 text-base-content border-base-300 text-base-content/70 hover:border-amber-400 hover:bg-base-100 text-base-content' : ''}
+									{showPlayerReveal && !isPlayerSelected && isCorrectChoice ? 'border-primary/30 bg-base-300 text-base-content text-primary' : ''}
+									{showPlayerReveal && !isPlayerSelected && !isCorrectChoice ? 'bg-base-100 text-base-content border-base-300 text-base-content/70' : ''}"
 									disabled={boardState !== 'reading'}
 									on:click={() => handleBoardPlayerChoice(idx)}
 								>
 									<div class="flex items-center gap-3">
-										<span class="w-6 h-6 rounded-md bg-slate-800/80 font-mono text-xs flex items-center justify-center font-black">
+										<span class="w-6 h-6 rounded-md bg-base-100 text-base-content font-mono text-xs flex items-center justify-center font-black">
 											{['A', 'B', 'C'][idx]}
 										</span>
 										<span>{choice}</span>
@@ -973,7 +973,7 @@
 											<span class="badge badge-xs {isCorrectChoice ? 'badge-success text-success-content' : 'badge-error text-error-content'} font-bold">YOU</span>
 										{/if}
 										{#if showChaserReveal && isChaserSelected}
-											<span class="badge badge-xs badge-neutral border-red-500 text-red-400 font-bold">{chaser.avatarEmoji}</span>
+											<span class="badge badge-xs badge-neutral border-red-500 text-error-content font-bold">{chaser.avatarEmoji}</span>
 										{/if}
 									</div>
 								</button>
@@ -982,7 +982,7 @@
 
 						<!-- Trivia Explanation after reveal -->
 						{#if boardState === 'moving' || boardState === 'revealing_chaser'}
-							<div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 leading-relaxed" in:slide={{ duration: 150 }}>
+							<div class="p-3 rounded-xl bg-base-100 text-base-content border border-base-300 text-xs text-base-content/70 leading-relaxed" in:slide={{ duration: 150 }}>
 								💡 <strong>คำอธิบาย:</strong> {q.explanation}
 							</div>
 						{/if}
@@ -995,13 +995,13 @@
 	<!-- 6. BOARD RESULT (SAFE TO FINAL CHASE)                                     -->
 	<!-- ========================================================================= -->
 	{:else if phase === 'board_result'}
-		<div class="rounded-3xl bg-slate-900 border border-emerald-500/40 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:scale={{ duration: 200 }}>
-			<div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-3xl">
+		<div class="rounded-3xl bg-base-100 text-base-content border border-primary/30 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:scale={{ duration: 200 }}>
+			<div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-primary/30 flex items-center justify-center text-3xl">
 				🏆
 			</div>
 			<div>
-				<h3 class="text-2xl sm:text-3xl font-black text-white">คุณรอดกลับบ้านสำเร็จ!</h3>
-				<p class="text-xs text-slate-300 mt-1">เงินรางวัล <strong>฿{bankedAmount.toLocaleString()}</strong> เข้าสู่รอบ Final Chase!</p>
+				<h3 class="text-2xl sm:text-3xl font-black text-base-content">คุณรอดกลับบ้านสำเร็จ!</h3>
+				<p class="text-xs text-base-content/70 mt-1">เงินรางวัล <strong>฿{bankedAmount.toLocaleString()}</strong> เข้าสู่รอบ Final Chase!</p>
 			</div>
 
 			<button
@@ -1017,10 +1017,10 @@
 	<!-- 7. FINAL CHASE PREP & PLAYER ROUND                                        -->
 	<!-- ========================================================================= -->
 	{:else if phase === 'final_chase_player_prep'}
-		<div class="rounded-3xl bg-slate-900 border border-slate-800 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:fade={{ duration: 200 }}>
+		<div class="rounded-3xl bg-base-100 text-base-content border border-base-300 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:fade={{ duration: 200 }}>
 			<span class="text-5xl">⚡</span>
-			<h3 class="text-2xl sm:text-3xl font-black text-white">THE FINAL CHASE</h3>
-			<p class="text-xs sm:text-sm text-slate-300 max-w-md leading-relaxed">
+			<h3 class="text-2xl sm:text-3xl font-black text-base-content">THE FINAL CHASE</h3>
+			<p class="text-xs sm:text-sm text-base-content/70 max-w-md leading-relaxed">
 				คุณมีเวลา <strong>60 วินาที</strong> ในการตอบคำถามให้ได้มากที่สุด ทุก 1 ข้อที่ถูกต้องจะเพิ่ม <strong>Target Step (ก้าวหนี)</strong> ให้กับคุณ!
 			</p>
 			<button class="btn btn-warning btn-md font-black text-warning-content px-8 rounded-2xl mt-2" on:click={startFinalPlayerRound}>
@@ -1031,33 +1031,33 @@
 
 	{:else if phase === 'final_chase_player_playing'}
 		<div class="flex flex-col gap-4">
-			<div class="flex items-center justify-between bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 shadow-lg">
+			<div class="flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 py-3 shadow-lg">
 				<div class="flex items-center gap-3">
-					<div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-black text-amber-400 text-lg">
+					<div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-black text-warning-content text-lg">
 						{finalPlayerTime}s
 					</div>
 					<div>
-						<div class="text-[10px] text-slate-400 font-bold uppercase">Final Chase: Set The Target</div>
-						<div class="text-base font-black text-white">ข้อที่ {finalQIdx + 1}</div>
+						<div class="text-[10px] text-base-content/70 font-bold uppercase">Final Chase: Set The Target</div>
+						<div class="text-base font-black text-base-content">ข้อที่ {finalQIdx + 1}</div>
 					</div>
 				</div>
 
 				<div class="text-right">
-					<div class="text-[10px] text-slate-400 font-bold uppercase">Target Steps</div>
-					<div class="text-xl font-black text-amber-400 font-mono">{finalTargetSteps} ก้าว</div>
+					<div class="text-[10px] text-base-content/70 font-bold uppercase">Target Steps</div>
+					<div class="text-xl font-black text-warning-content font-mono">{finalTargetSteps} ก้าว</div>
 				</div>
 			</div>
 
 			{#if finalQuestions[finalQIdx]}
 				{@const q = finalQuestions[finalQIdx]}
-				<div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-7 shadow-2xl flex flex-col gap-4">
-					<h3 class="text-lg sm:text-xl font-black text-white min-h-[3.5rem] flex items-center">
+				<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-7 shadow-2xl flex flex-col gap-4">
+					<h3 class="text-lg sm:text-xl font-black text-base-content min-h-[3.5rem] flex items-center">
 						{q.question}
 					</h3>
 
 					<div class="grid grid-cols-1 gap-2.5">
 						{#if !finalChoicesRevealed}
-							<div class="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-slate-950/60 border border-amber-500/30 text-amber-400 text-xs font-mono animate-pulse">
+							<div class="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-base-100 text-base-content border border-amber-500/30 text-warning-content text-xs font-mono animate-pulse">
 								<span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
 								<span>กำลังอ่านคำถาม... ตัวเลือกจะเปิดใน 2 วินาที</span>
 							</div>
@@ -1069,16 +1069,16 @@
 							{@const showFeedback = finalPlayerFeedback !== null}
 							<button
 								class="btn btn-lg justify-start h-auto py-3.5 px-4 rounded-2xl font-bold text-sm sm:text-base border transition-all text-left flex items-center justify-between
-								{!finalChoicesRevealed ? 'opacity-40 pointer-events-none bg-slate-950/40 border-slate-800 text-slate-500' : ''}
-								{showFeedback && isSelected && isCorrectChoice ? 'bg-emerald-600 border-emerald-400 text-white shadow-lg shadow-emerald-500/30' : ''}
-								{showFeedback && isSelected && !isCorrectChoice ? 'bg-rose-600 border-rose-400 text-white shadow-lg shadow-rose-500/30 animate-shake' : ''}
-								{showFeedback && !isSelected && isCorrectChoice ? 'border-emerald-500/60 bg-emerald-950/40 text-emerald-300' : ''}
-								{!showFeedback && finalChoicesRevealed ? 'border-slate-700 bg-slate-950/70 text-slate-100 hover:bg-amber-500 hover:text-slate-950 hover:border-amber-400' : ''}"
+								{!finalChoicesRevealed ? 'opacity-40 pointer-events-none bg-base-100 text-base-content border-base-300 text-base-content/70' : ''}
+								{showFeedback && isSelected && isCorrectChoice ? 'bg-emerald-600 border-primary/30 text-base-content shadow-lg shadow-emerald-500/30' : ''}
+								{showFeedback && isSelected && !isCorrectChoice ? 'bg-rose-600 border-rose-400 text-base-content shadow-lg shadow-rose-500/30 animate-shake' : ''}
+								{showFeedback && !isSelected && isCorrectChoice ? 'border-primary/30 bg-base-300 text-base-content text-primary' : ''}
+								{!showFeedback && finalChoicesRevealed ? 'border-base-300 bg-base-100 text-base-content text-base-content/70 hover:bg-amber-500 hover:text-base-content/70 hover:border-amber-400' : ''}"
 								disabled={!finalChoicesRevealed || showFeedback}
 								on:click={() => handleFinalPlayerChoice(idx)}
 							>
 								<div class="flex items-center gap-3">
-									<span class="w-6 h-6 rounded-md bg-slate-800 font-mono text-xs flex items-center justify-center font-black text-amber-400">
+									<span class="w-6 h-6 rounded-md bg-base-100 text-base-content font-mono text-xs flex items-center justify-center font-black text-warning-content">
 										{['A', 'B', 'C'][idx]}
 									</span>
 									<span>{choice}</span>
@@ -1101,44 +1101,44 @@
 	{:else if phase === 'final_chase_chaser_playing'}
 		<div class="flex flex-col gap-4">
 			<!-- Chaser Status HUD -->
-			<div class="flex items-center justify-between bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 shadow-lg">
+			<div class="flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 py-3 shadow-lg">
 				<div class="flex items-center gap-3">
-					<div class="w-10 h-10 rounded-xl bg-red-500/20 border border-red-500/40 flex items-center justify-center font-black text-red-400 text-lg">
+					<div class="w-10 h-10 rounded-xl bg-red-500/20 border border-red-500/40 flex items-center justify-center font-black text-error-content text-lg">
 						{finalChaserTime}s
 					</div>
 					<div>
-						<div class="text-[10px] text-slate-400 font-bold uppercase">{chaser.name} กำลังไล่ล่า!</div>
-						<div class="text-sm font-black text-white">Chaser: {finalChaserSteps} / {finalTargetSteps} ก้าว</div>
+						<div class="text-[10px] text-base-content/70 font-bold uppercase">{chaser.name} กำลังไล่ล่า!</div>
+						<div class="text-sm font-black text-base-content">Chaser: {finalChaserSteps} / {finalTargetSteps} ก้าว</div>
 					</div>
 				</div>
 
 				<div class="text-right">
-					<div class="text-[10px] text-slate-400 font-bold uppercase">เงินเดิมพัน</div>
-					<div class="text-base font-black text-amber-400 font-mono">฿{bankedAmount.toLocaleString()}</div>
+					<div class="text-[10px] text-base-content/70 font-bold uppercase">เงินเดิมพัน</div>
+					<div class="text-base font-black text-warning-content font-mono">฿{bankedAmount.toLocaleString()}</div>
 				</div>
 			</div>
 
 			<!-- Pushback Modal or Active Question -->
 			{#if pushbackPending}
 				{@const q = finalQuestions[finalQIdx]}
-				<div class="bg-gradient-to-br from-amber-950/80 to-slate-900 border-2 border-amber-500 rounded-3xl p-5 sm:p-7 shadow-2xl flex flex-col gap-4 animate-pulse">
-					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-black w-fit">
+				<div class="bg-gradient-to-br from-amber-950/80 to-base-200 border-2 border-amber-500 rounded-3xl p-5 sm:p-7 shadow-2xl flex flex-col gap-4 animate-pulse">
+					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-warning-content text-xs font-black w-fit">
 						<ActivityIcon size="14" />
 						<span>PUSHBACK OPPORTUNITY! (ผู้ล่าตอบผิด!)</span>
 					</div>
 
-					<h3 class="text-lg sm:text-xl font-black text-white">{q.question}</h3>
+					<h3 class="text-lg sm:text-xl font-black text-base-content">{q.question}</h3>
 
-					<p class="text-xs text-amber-300">ตอบถูกเพื่อดัน Chaser ถอยหลัง 1 ก้าว!</p>
+					<p class="text-xs text-warning-content">ตอบถูกเพื่อดัน Chaser ถอยหลัง 1 ก้าว!</p>
 
 					<div class="grid grid-cols-1 gap-2.5">
 						{#each q.choices as choice, idx}
 							<button
-								class="btn btn-lg justify-start h-auto py-3.5 px-4 rounded-2xl font-bold text-sm sm:text-base border-amber-500/40 bg-slate-950 text-slate-100 hover:bg-amber-500 hover:text-slate-950 transition-all text-left flex items-center gap-3"
+								class="btn btn-lg justify-start h-auto py-3.5 px-4 rounded-2xl font-bold text-sm sm:text-base border-amber-500/40 bg-base-100 text-base-content text-base-content/70 hover:bg-amber-500 hover:text-base-content/70 transition-all text-left flex items-center gap-3"
 								disabled={pushbackAnswerChoice !== null}
 								on:click={() => handlePushbackChoice(idx)}
 							>
-								<span class="w-6 h-6 rounded-md bg-slate-800 font-mono text-xs flex items-center justify-center font-black text-amber-400">
+								<span class="w-6 h-6 rounded-md bg-base-100 text-base-content font-mono text-xs flex items-center justify-center font-black text-warning-content">
 									{['A', 'B', 'C'][idx]}
 								</span>
 								<span>{choice}</span>
@@ -1147,10 +1147,10 @@
 					</div>
 				</div>
 			{:else}
-				<div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 text-center flex flex-col items-center gap-3 shadow-2xl">
+				<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-8 text-center flex flex-col items-center gap-3 shadow-2xl">
 					<span class="text-5xl animate-bounce">{chaser.avatarEmoji}</span>
-					<h3 class="text-xl font-black text-white">{chaser.title} กำลังประมวลผลคำถาม...</h3>
-					<p class="text-xs text-slate-400">หาก Chaser ตอบผิด เวลาจะหยุดและคุณจะมีโอกาส Pushback ทันที!</p>
+					<h3 class="text-xl font-black text-base-content">{chaser.title} กำลังประมวลผลคำถาม...</h3>
+					<p class="text-xs text-base-content/70">หาก Chaser ตอบผิด เวลาจะหยุดและคุณจะมีโอกาส Pushback ทันที!</p>
 				</div>
 			{/if}
 		</div>
@@ -1159,16 +1159,16 @@
 	<!-- 9. VICTORY / GAME OVER                                                    -->
 	<!-- ========================================================================= -->
 	{:else if phase === 'victory'}
-		<div class="rounded-3xl bg-slate-900 border border-emerald-500 p-7 sm:p-10 flex flex-col items-center text-center gap-5 shadow-2xl shadow-emerald-500/10" in:scale={{ duration: 250 }}>
-			<div class="w-20 h-20 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-4xl">
+		<div class="rounded-3xl bg-base-100 text-base-content border border-primary/30 p-7 sm:p-10 flex flex-col items-center text-center gap-5 shadow-2xl shadow-emerald-500/10" in:scale={{ duration: 250 }}>
+			<div class="w-20 h-20 rounded-full bg-emerald-500/20 border border-primary/30 flex items-center justify-center text-4xl">
 				👑
 			</div>
 			<div>
-				<h2 class="text-2xl sm:text-4xl font-black text-emerald-400">YOU BEAT THE CHASER!</h2>
-				<p class="text-sm text-slate-300 mt-1">คุณสามารถเอาชนะ {chaser.name} และคว้ารางวัลกลับบ้านสำเร็จ!</p>
+				<h2 class="text-2xl sm:text-4xl font-black text-primary">YOU BEAT THE CHASER!</h2>
+				<p class="text-sm text-base-content/70 mt-1">คุณสามารถเอาชนะ {chaser.name} และคว้ารางวัลกลับบ้านสำเร็จ!</p>
 			</div>
 
-			<div class="text-3xl sm:text-5xl font-black text-amber-400 font-mono py-2">
+			<div class="text-3xl sm:text-5xl font-black text-warning-content font-mono py-2">
 				฿{bankedAmount.toLocaleString()}
 			</div>
 
@@ -1181,13 +1181,13 @@
 		</div>
 
 	{:else if phase === 'game_over'}
-		<div class="rounded-3xl bg-slate-900 border border-red-500/50 p-7 sm:p-10 flex flex-col items-center text-center gap-5 shadow-2xl shadow-red-500/10" in:scale={{ duration: 250 }}>
+		<div class="rounded-3xl bg-base-100 text-base-content border border-red-500/50 p-7 sm:p-10 flex flex-col items-center text-center gap-5 shadow-2xl shadow-red-500/10" in:scale={{ duration: 250 }}>
 			<div class="w-20 h-20 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-4xl">
 				💀
 			</div>
 			<div>
 				<h2 class="text-2xl sm:text-4xl font-black text-red-500">CAUGHT BY THE CHASER!</h2>
-				<p class="text-sm text-slate-300 mt-1">{chaser.title} ไล่ตามทันและจับคุณได้สำเร็จ!</p>
+				<p class="text-sm text-base-content/70 mt-1">{chaser.title} ไล่ตามทันและจับคุณได้สำเร็จ!</p>
 			</div>
 
 			<div class="flex items-center justify-center gap-3 mt-2">

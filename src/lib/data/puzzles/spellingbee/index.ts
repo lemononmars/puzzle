@@ -1,5 +1,5 @@
-import daily from '$lib/data/puzzles/spellingbee/daily.json';
-import spellingBeeWords from '$lib/data/puzzles/spellingbee/7letters.json';
+import daily from '#lib/data/puzzles/spellingbee/daily.json';
+import spellingBeeWords from '#lib/data/puzzles/spellingbee/7letters.json';
 
 export const numPuzzles = spellingBeeWords.length;
 

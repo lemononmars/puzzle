@@ -117,13 +117,15 @@ export async function publishToFacebook(
 		if (options.scheduledPublishTime < minAllowed) {
 			return {
 				success: false,
-				error: 'เวลาที่ตั้งเผยแพร่ต้องอยู่ล่วงหน้าอย่างน้อย 10 นาที (Scheduled time must be at least 10 minutes in the future)'
+				error:
+					'เวลาที่ตั้งเผยแพร่ต้องอยู่ล่วงหน้าอย่างน้อย 10 นาที (Scheduled time must be at least 10 minutes in the future)'
 			};
 		}
 		if (options.scheduledPublishTime > maxAllowed) {
 			return {
 				success: false,
-				error: 'เวลาที่ตั้งเผยแพร่ต้องไม่เกิน 75 วันล่วงหน้า (Scheduled time cannot exceed 75 days in the future)'
+				error:
+					'เวลาที่ตั้งเผยแพร่ต้องไม่เกิน 75 วันล่วงหน้า (Scheduled time cannot exceed 75 days in the future)'
 			};
 		}
 	}
@@ -165,7 +167,12 @@ export async function publishToFacebook(
 				success: true,
 				id: data.id,
 				post_id: data.post_id || data.id,
-				status: options.published === false ? (options.scheduledPublishTime ? 'scheduled' : 'draft') : 'published',
+				status:
+					options.published === false
+						? options.scheduledPublishTime
+							? 'scheduled'
+							: 'draft'
+						: 'published',
 				details: data
 			};
 		} else {
@@ -205,7 +212,12 @@ export async function publishToFacebook(
 				success: true,
 				id: data.id,
 				post_id: data.id,
-				status: options.published === false ? (options.scheduledPublishTime ? 'scheduled' : 'draft') : 'published',
+				status:
+					options.published === false
+						? options.scheduledPublishTime
+							? 'scheduled'
+							: 'draft'
+						: 'published',
 				details: data
 			};
 		}

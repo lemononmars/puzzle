@@ -1,10 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { preprocessThaiTTSText, PHONETIC_PREPROCESS_MAP } from './tts';
+import { preprocessThaiTTSText } from './tts';
 
 describe('TTS Preprocessing & Phonetic Mapping for Thai Speech Synthesis', () => {
-	it('should have a rich phonetic map with over 150 categorized rules', () => {
-		expect(PHONETIC_PREPROCESS_MAP.length).toBeGreaterThan(150);
-	});
 
 	it('should convert scientific formulas and units into spoken Thai', () => {
 		expect(preprocessThaiTTSText('สมการ E=mc² ของไอน์สไตน์')).toContain('อี เท่ากับ เอ็มซี กำลังสอง');

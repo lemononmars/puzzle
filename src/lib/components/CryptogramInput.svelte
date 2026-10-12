@@ -1,5 +1,5 @@
 <script lang=ts>
-   import {splitWord, isUpper, isLower, isTall, isMiddle} from '$lib/utils/thaiwords'
+   import {splitWord, isUpper, isLower, isTall, isMiddle} from '#lib/utils/thaiwords.js'
    import { createEventDispatcher, onMount } from 'svelte';
 
 	const dispatch = createEventDispatcher();
@@ -57,7 +57,7 @@
    // keeping track of which letter is selected
    let activeCryptogramIndex: number = 0
    let activeWordIndex: number = 0
-   
+
    function setActiveLetters(widx: number) {
       activeWordIndex = widx
       activeCryptogramIndex = cryptogramIndices[widx]
@@ -82,15 +82,15 @@
 
       // letters can't be used more than once
       if(l !== '') {
-         if(usedPoolLetters[poolString.indexOf(l)]) 
+         if(usedPoolLetters[poolString.indexOf(l)])
             return
-         else 
+         else
             usedPoolLetters[poolString.indexOf(l)] = true
       }
 
       for(let i = 0; i < numBlocks; i ++) {
          if(cryptogramIndices[i] == activeCryptogramIndex)
-            inputLetters[splittedIndex[i]] = l 
+            inputLetters[splittedIndex[i]] = l
       }
 
       if(l === '') return
@@ -99,7 +99,7 @@
          dispatchSolved()
 
       let found = false
-      let startingIndex = activeWordIndex 
+      let startingIndex = activeWordIndex
       do {
          activeWordIndex = (activeWordIndex + 1) % splittedWord.length
          if(inputLetters[splittedIndex[activeWordIndex]] === '') {
@@ -123,7 +123,7 @@
       }
    }
 
-   
+
    function handleKeyPress(event: KeyboardEvent) {
       if(event.key === "ArrowLeft") {
          activeWordIndex = (activeWordIndex + splittedWord.length - 1) % splittedWord.length
@@ -137,7 +137,7 @@
       }
 
       if(event.key !== 'Backspace' && event.key !== ' ' && !isMiddle(event.key)) return
-      
+
       const input = event.key === 'Backspace' || event.key === ' '? '' : event.key
       if(showUsedLetters && input !== '' && !poolString.includes(event.key)) return // prevent users from inputing weird letter
       inputLetter(input)
@@ -152,7 +152,7 @@
          <div class="w-8 lg:w-10 h-20 lg:h-28 relative">
             {#each word as l, idx}
                {@const letterIndex = splittedIndex[widx] + idx}
-               <div 
+               <div
                   class="absolute {isLower(l) ? 'top-8 lg:top-12': isUpper(l) ? (idx > 0 && isUpper(word[idx-1]) ? '-top-8' : '-top-4') : 'top-0'} left-0 w-full {isLower(l) || isUpper(l) ? 'h-4' :'h-8 lg:h-12'} border-2"
                   class:bg-success={!inputLetters[letterIndex]}
                   bind:this={letterElement[letterIndex]}
@@ -172,7 +172,7 @@
                   {/if}
                </div>
             {/each}
-            <div 
+            <div
                class="absolute top-12 lg:top-16 h-4 translate-x-3"
                on:keypress={()=>{}}
             >
@@ -187,8 +187,8 @@
    <div class="divider mt-64 lg:mt-32"></div>
 
    <div class="flex flex-row flex-wrap justify-center gap-2 mx-auto">
-   {#each poolArray as p, index} 
-         <div 
+   {#each poolArray as p, index}
+         <div
             class="w-10 lg:w-12 h-8 lg:h-12 border-2 bg-none"
             class:w-8={!showUsedLetters}
             class:bg-error={usedPoolLetters[index]}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isLower, isUpper } from '$lib/utils/thaiwords';
+	import { isLower, isUpper } from '#lib/utils/thaiwords.js';
 	import { createEventDispatcher } from 'svelte';
 	import { ArrowUpIcon } from 'svelte-feather-icons';
 

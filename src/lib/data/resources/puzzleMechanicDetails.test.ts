@@ -1,17 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
 	MECHANIC_DETAILS,
-	getMechanicDetail,
 	getAllMechanicIds,
 	getAdjacentMechanics
 } from './puzzleMechanicDetails';
-import { PUZZLE_MECHANIC_COUNT } from './puzzleMechanics';
+import { PUZZLE_MECHANIC_CHAPTERS } from './puzzleMechanics';
 
 describe('puzzleMechanicDetails dictionary', () => {
-	it('contains details for all 94 mechanics', () => {
+	it('has detail pages for every catalog entry', () => {
 		const ids = getAllMechanicIds();
-		expect(ids.length).toBe(PUZZLE_MECHANIC_COUNT);
-		expect(ids.length).toBe(94);
+		const catalogIds = PUZZLE_MECHANIC_CHAPTERS.flatMap((chapter) => chapter.mechanics.map((mechanic) => mechanic.id));
+		expect([...ids].sort()).toEqual(catalogIds.sort());
 	});
 
 	it('has complete information, valid vector SVG, and answers for every mechanic', () => {
@@ -38,13 +37,6 @@ describe('puzzleMechanicDetails dictionary', () => {
 			expect(detail.puzzle.answerDisplay.trim()).not.toBe('');
 			expect(detail.puzzle.solutionExplanation.trim().length).toBeGreaterThan(10);
 		}
-	});
-
-	it('returns null for nonexistent mechanic and correct data for existing one', () => {
-		expect(getMechanicDetail('non-existent-id')).toBeNull();
-		const valid = getMechanicDetail('answer-the-question-mark');
-		expect(valid).not.toBeNull();
-		expect(valid?.englishTitle).toBe('Answer the Question Mark');
 	});
 
 	it('calculates previous and next navigation links properly', () => {

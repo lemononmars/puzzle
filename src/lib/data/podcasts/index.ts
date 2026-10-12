@@ -1,4 +1,4 @@
-import type { PodcastEpisodeData } from '$lib/types/podcast';
+import type { PodcastEpisodeData } from '#lib/types/podcast.js';
 import { ep1 } from './ep1';
 import { ep2 } from './ep2';
 import { ep3 } from './ep3';
@@ -13,21 +13,23 @@ import { ep11 } from './ep11';
 import { ep12 } from './ep12';
 
 export const podcasts: PodcastEpisodeData[] = [
-  ep1,
-  ep2,
-  ep3,
-  ep4,
-  ep5,
-  ep6,
-  ep7,
-  ep8,
-  ep9,
-  ep10,
-  ep11,
-  ep12
+	ep1,
+	ep2,
+	ep3,
+	ep4,
+	ep5,
+	ep6,
+	ep7,
+	ep8,
+	ep9,
+	ep10,
+	ep11,
+	ep12
 ];
 
 export function getPodcastById(id: string): PodcastEpisodeData | undefined {
-  const normalized = id.toLowerCase().trim();
-  return podcasts.find((p) => p.id.toLowerCase() === normalized || `ep${p.epNumber}` === normalized);
+	const normalized = id.toLowerCase().trim();
+	return podcasts.find(
+		(p) => p.id.toLowerCase() === normalized || `ep${p.epNumber}` === normalized
+	);
 }

@@ -8,7 +8,7 @@
  * Uses splitWord from thaiwords.ts for slot segmentation.
  */
 
-import { splitWord } from '$lib/utils/thaiwords';
+import { splitWord } from '#lib/utils/thaiwords.js';
 
 /** Alias for consistency with the rest of this module. */
 export const splitSlots = splitWord;
@@ -110,7 +110,7 @@ export function generatePuzzle(
 	const allSplits = wordList.map((w) => splitSlots(w));
 
 	// Seeded random (LCG) — use Math.imul for exact 32-bit hardware integer multiplication
-	let seed = ((rngSeed ?? Math.floor(Math.random() * 2_000_000_000)) >>> 0);
+	let seed = (rngSeed ?? Math.floor(Math.random() * 2_000_000_000)) >>> 0;
 	function rnd(max: number) {
 		seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
 		return max > 0 ? seed % max : 0;
@@ -177,7 +177,10 @@ export function generatePuzzle(
 }
 
 /** Check if a chain of words is valid (each step differs by exactly 1 slot). */
-export function validateChain(chain: string[], wordSet: Set<string>): { valid: boolean; errorIdx: number } {
+export function validateChain(
+	chain: string[],
+	wordSet: Set<string>
+): { valid: boolean; errorIdx: number } {
 	for (let i = 0; i < chain.length; i++) {
 		if (!wordSet.has(chain[i])) return { valid: false, errorIdx: i };
 		if (i > 0) {

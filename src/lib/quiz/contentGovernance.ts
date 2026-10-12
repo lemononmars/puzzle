@@ -3,7 +3,7 @@ import type {
 	QuestionProvenance,
 	QuestionQualityMetadata,
 	ThaiQuizItem
-} from '$lib/data/puzzles/thaiquiz/types';
+} from '#lib/data/puzzles/thaiquiz/types.js';
 
 export type ReviewFindingCode =
 	| 'missing_source'
@@ -75,15 +75,22 @@ export function calibrateDifficulty(
 	return 'normal';
 }
 
-export function auditQuestion(question: ThaiQuizItem, review?: QuestionReviewRecord): QuestionAudit {
+export function auditQuestion(
+	question: ThaiQuizItem,
+	review?: QuestionReviewRecord
+): QuestionAudit {
 	const findings: QuestionAudit['findings'] = [];
 	const provenance = review?.provenance || question.provenance;
 	const blueprint = review?.blueprint || question.blueprint || inferQuestionBlueprint(question);
 	if (!provenance?.sourceUrl || !provenance.sourceTitle) findings.push(finding('missing_source'));
-	if (provenance?.reviewAfter && Date.parse(provenance.reviewAfter) < Date.now()) findings.push(finding('stale_fact_check'));
+	if (provenance?.reviewAfter && Date.parse(provenance.reviewAfter) < Date.now())
+		findings.push(finding('stale_fact_check'));
 	if (!review?.blueprint && !question.blueprint) findings.push(finding('missing_blueprint'));
 	if (question.explanation.trim().length < 24) findings.push(finding('short_explanation'));
-	if (new Set(question.choices.map((choice) => choice.trim().toLocaleLowerCase('th-TH'))).size !== question.choices.length) {
+	if (
+		new Set(question.choices.map((choice) => choice.trim().toLocaleLowerCase('th-TH'))).size !==
+		question.choices.length
+	) {
 		findings.push(finding('duplicate_choices'));
 	}
 	if (question.question.trim().length < 18) findings.push(finding('weak_stem'));
@@ -92,7 +99,10 @@ export function auditQuestion(question: ThaiQuizItem, review?: QuestionReviewRec
 		score: Math.max(0, 100 - findings.length * 16),
 		findings,
 		reviewStatus: review?.quality?.reviewStatus || question.quality?.reviewStatus || 'needs_review',
-		calibratedDifficulty: calibrateDifficulty(review?.difficulty || question.difficulty, review?.empiricalCorrectRate),
+		calibratedDifficulty: calibrateDifficulty(
+			review?.difficulty || question.difficulty,
+			review?.empiricalCorrectRate
+		),
 		blueprint,
 		provenance
 	};

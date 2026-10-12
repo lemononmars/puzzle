@@ -1,4 +1,4 @@
-import type { ThaiQuizCategory } from '$lib/data/puzzles/thaiquiz/types';
+import type { ThaiQuizCategory } from '#lib/data/puzzles/thaiquiz/types.js';
 
 export interface CategoryMastery {
 	attempts: number;
@@ -26,7 +26,8 @@ export function recordMastery(category: ThaiQuizCategory, isCorrect: boolean): M
 		correct: current.correct + (isCorrect ? 1 : 0),
 		updatedAt: Date.now()
 	};
-	if (typeof localStorage !== 'undefined') localStorage.setItem(STORAGE_KEY, JSON.stringify(mastery));
+	if (typeof localStorage !== 'undefined')
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(mastery));
 	return mastery;
 }
 

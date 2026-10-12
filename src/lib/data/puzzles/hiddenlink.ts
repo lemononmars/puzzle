@@ -18,7 +18,14 @@ export const staticHiddenLinkPuzzles: IHiddenLink[] = [
 		title: 'Hidden Link 1',
 		words: ['โดนัท', 'เรขา', 'มีนาคม', 'ลางาน'],
 		answer: 'พยางค์แรกเป็นโน้ตดนตรี',
-		acceptableAnswers: ['พยางค์แรกเป็นโน้ตดนตรี', 'คำแรกเป็นโน้ตดนตรี', 'โน้ตดนตรี', 'ตัวโน้ต', 'โน้ต', 'โด เร มี ลา'],
+		acceptableAnswers: [
+			'พยางค์แรกเป็นโน้ตดนตรี',
+			'คำแรกเป็นโน้ตดนตรี',
+			'โน้ตดนตรี',
+			'ตัวโน้ต',
+			'โน้ต',
+			'โด เร มี ลา'
+		],
 		author: 'Code Breaker',
 		date: '2026-07-31',
 		image: '/puzzles/hiddenlink/link01.jpg',
@@ -84,7 +91,12 @@ export const staticHiddenLinkPuzzles: IHiddenLink[] = [
 		title: 'Hidden Link 6',
 		words: ['จุดบอด', 'ดอกจิก', 'กบฏ', 'ปฏิบัติ'],
 		answer: 'พยัญชนะต้นเป็นอักษรกลาง',
-		acceptableAnswers: ['พยัญชนะต้นเป็นอักษรกลาง', 'อักษรกลาง', 'พยัญชนะอักษรกลาง', 'อักษรกลางทั้งหมด'],
+		acceptableAnswers: [
+			'พยัญชนะต้นเป็นอักษรกลาง',
+			'อักษรกลาง',
+			'พยัญชนะอักษรกลาง',
+			'อักษรกลางทั้งหมด'
+		],
 		author: 'Code Breaker',
 		date: '2026-07-31',
 		image: '/puzzles/hiddenlink/link06.jpg',
@@ -96,7 +108,13 @@ export const staticHiddenLinkPuzzles: IHiddenLink[] = [
 		title: 'Hidden Link 7',
 		words: ['จรรโลง', 'พุทรา', 'สุขภาพ', 'เสาวรส'],
 		answer: 'พยางค์แรกสัมผัสเสียงวันในสัปดาห์',
-		acceptableAnswers: ['พยางค์แรกสัมผัสเสียงวันในสัปดาห์', 'วันในสัปดาห์', 'พยางค์แรกคล้องจองกับวัน', 'สัมผัสเสียงวันในสัปดาห์', 'ชื่อวันในสัปดาห์'],
+		acceptableAnswers: [
+			'พยางค์แรกสัมผัสเสียงวันในสัปดาห์',
+			'วันในสัปดาห์',
+			'พยางค์แรกคล้องจองกับวัน',
+			'สัมผัสเสียงวันในสัปดาห์',
+			'ชื่อวันในสัปดาห์'
+		],
 		author: 'Code Breaker',
 		date: '2026-07-31',
 		image: '/puzzles/hiddenlink/link07.jpg',
@@ -120,7 +138,12 @@ export const staticHiddenLinkPuzzles: IHiddenLink[] = [
 		title: 'Hidden Link 9',
 		words: ['วุ่นวาย', 'ส้มโอ', 'เส้นเอ็น', 'ขจี'],
 		answer: 'พยางค์หลังออกเสียงเป็นอักษรภาษาอังกฤษ',
-		acceptableAnswers: ['พยางค์หลังออกเสียงเป็นอักษรภาษาอังกฤษ', 'อักษรภาษาอังกฤษ', 'ตัวอักษรภาษาอังกฤษ', 'พยางค์หลังเป็นตัวอักษรภาษาอังกฤษ'],
+		acceptableAnswers: [
+			'พยางค์หลังออกเสียงเป็นอักษรภาษาอังกฤษ',
+			'อักษรภาษาอังกฤษ',
+			'ตัวอักษรภาษาอังกฤษ',
+			'พยางค์หลังเป็นตัวอักษรภาษาอังกฤษ'
+		],
 		author: 'Code Breaker',
 		date: '2026-07-31',
 		image: '/puzzles/hiddenlink/link09.jpg',
@@ -132,7 +155,12 @@ export const staticHiddenLinkPuzzles: IHiddenLink[] = [
 		title: 'Hidden Link 10',
 		words: ['คูปอง', 'บุฟเฟต์', 'ยางมะตอย', 'ซังเต'],
 		answer: 'คำยืมภาษาฝรั่งเศส',
-		acceptableAnswers: ['คำยืมภาษาฝรั่งเศส', 'ภาษาฝรั่งเศส', 'คำมาจากภาษาฝรั่งเศส', 'คำยืมภาษาต่างประเทศ'],
+		acceptableAnswers: [
+			'คำยืมภาษาฝรั่งเศส',
+			'ภาษาฝรั่งเศส',
+			'คำมาจากภาษาฝรั่งเศส',
+			'คำยืมภาษาต่างประเทศ'
+		],
 		author: 'Code Breaker',
 		date: '2026-07-31',
 		image: '/puzzles/hiddenlink/link10.jpg',
@@ -180,7 +208,12 @@ export const staticHiddenLinkPuzzles: IHiddenLink[] = [
 		title: 'Hidden Link 14',
 		words: ['บุตร', 'สามารถ', 'ชาติ', 'อาถรรพณ์'],
 		answer: 'มีรูปสระหรือพยัญชนะท้ายไม่ออกเสียง',
-		acceptableAnswers: ['มีรูปสระหรือพยัญชนะท้ายไม่ออกเสียง', 'ตัวสะกดไม่ออกเสียง', 'สระหรือพยัญชนะไม่ออกเสียง', 'ไม่ออกเสียงพยัญชนะท้าย'],
+		acceptableAnswers: [
+			'มีรูปสระหรือพยัญชนะท้ายไม่ออกเสียง',
+			'ตัวสะกดไม่ออกเสียง',
+			'สระหรือพยัญชนะไม่ออกเสียง',
+			'ไม่ออกเสียงพยัญชนะท้าย'
+		],
 		author: 'Code Breaker',
 		date: '2026-07-31',
 		image: '/puzzles/hiddenlink/link14.jpg',

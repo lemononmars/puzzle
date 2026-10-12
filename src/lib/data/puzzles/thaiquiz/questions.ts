@@ -34,9 +34,7 @@ const BASE_THAI_QUIZ_DATABASE = RAW_THAI_QUIZ_DATABASE.filter((question) => {
 	return true;
 });
 
-export const THAI_QUIZ_DATABASE: ThaiQuizItem[] = [
-	...BASE_THAI_QUIZ_DATABASE
-];
+export const THAI_QUIZ_DATABASE: ThaiQuizItem[] = [...BASE_THAI_QUIZ_DATABASE];
 
 export {
 	GEOGRAPHY_QUESTIONS,

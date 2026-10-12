@@ -146,11 +146,7 @@ export function generateFullSolution(size: BoardSize): { letter: number; color: 
 	return board;
 }
 
-export function countSolutions(
-	grid: EulerCell[][],
-	size: BoardSize,
-	maxSolutions = 2
-): number {
+export function countSolutions(grid: EulerCell[][], size: BoardSize, maxSolutions = 2): number {
 	const rowLetterMask = new Uint8Array(size);
 	const colLetterMask = new Uint8Array(size);
 	const rowColorMask = new Uint8Array(size);
@@ -162,13 +158,13 @@ export function countSolutions(
 			const cell = grid[r][c];
 			if (cell.letter !== null) {
 				const bit = 1 << cell.letter;
-				if ((rowLetterMask[r] & bit) || (colLetterMask[c] & bit)) return 0;
+				if (rowLetterMask[r] & bit || colLetterMask[c] & bit) return 0;
 				rowLetterMask[r] |= bit;
 				colLetterMask[c] |= bit;
 			}
 			if (cell.color !== null) {
 				const bit = 1 << cell.color;
-				if ((rowColorMask[r] & bit) || (colColorMask[c] & bit)) return 0;
+				if (rowColorMask[r] & bit || colColorMask[c] & bit) return 0;
 				rowColorMask[r] |= bit;
 				colColorMask[c] |= bit;
 			}
@@ -219,11 +215,12 @@ export function countSolutions(
 
 				for (let l = 0; l < size; l++) {
 					if (lVal !== -1 && lVal !== l) continue;
-					if (lVal === -1 && ((rowLetterMask[r] & (1 << l)) || (colLetterMask[c] & (1 << l)))) continue;
+					if (lVal === -1 && (rowLetterMask[r] & (1 << l) || colLetterMask[c] & (1 << l))) continue;
 
 					for (let col = 0; col < size; col++) {
 						if (colVal !== -1 && colVal !== col) continue;
-						if (colVal === -1 && ((rowColorMask[r] & (1 << col)) || (colColorMask[c] & (1 << col)))) continue;
+						if (colVal === -1 && (rowColorMask[r] & (1 << col) || colColorMask[c] & (1 << col)))
+							continue;
 						if (pairMask[l] & (1 << col)) continue;
 
 						candCount++;
@@ -254,16 +251,16 @@ export function countSolutions(
 
 		for (const [l, col] of bestCandidates) {
 			if (prevL === -1) {
-				rowLetterMask[bestR] |= (1 << l);
-				colLetterMask[bestC] |= (1 << l);
+				rowLetterMask[bestR] |= 1 << l;
+				colLetterMask[bestC] |= 1 << l;
 				letters[bestR][bestC] = l;
 			}
 			if (prevCol === -1) {
-				rowColorMask[bestR] |= (1 << col);
-				colColorMask[bestC] |= (1 << col);
+				rowColorMask[bestR] |= 1 << col;
+				colColorMask[bestC] |= 1 << col;
 				colors[bestR][bestC] = col;
 			}
-			pairMask[l] |= (1 << col);
+			pairMask[l] |= 1 << col;
 
 			solve();
 
@@ -541,7 +538,13 @@ export function isBoardSolved(grid: EulerCell[][], size: BoardSize): boolean {
 			const cell = grid[r][c];
 			if (cell.letter === null || cell.color === null) return false;
 			const conf = conflicts[`${r},${c}`];
-			if (conf.rowLetter || conf.colLetter || conf.rowColor || conf.colColor || conf.duplicatePair) {
+			if (
+				conf.rowLetter ||
+				conf.colLetter ||
+				conf.rowColor ||
+				conf.colColor ||
+				conf.duplicatePair
+			) {
 				return false;
 			}
 		}
@@ -603,7 +606,7 @@ export function getHint(
 			const letterCandidates = size - new Set([...rowLetters, ...colLetters]).size;
 			const colorCandidates = size - new Set([...rowColors, ...colColors]).size;
 
-			const score = (10 - letterCandidates) + (10 - colorCandidates);
+			const score = 10 - letterCandidates + (10 - colorCandidates);
 			if (score > bestScore) {
 				bestScore = score;
 				bestR = r;

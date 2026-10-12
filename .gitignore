@@ -10,3 +10,4 @@ coverage/
 .npm-cache/
 .pkg-extract-*/
 .vercel_build_output
+.vercel/

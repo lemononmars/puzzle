@@ -18,9 +18,9 @@ export const DIGIT_MASKS: SegmentMap = {
 
 // Operator bitmask definitions
 export const OPERATOR_MASKS: SegmentMap = {
-	'-': (1 << 0), // 1 stick (mid-h)
+	'-': 1 << 0, // 1 stick (mid-h)
 	'+': (1 << 0) | (1 << 1), // 2 sticks (mid-h + mid-v)
-	'=': (1 << 2) | (1 << 3)  // 2 sticks (top-eq + bot-eq)
+	'=': (1 << 2) | (1 << 3) // 2 sticks (top-eq + bot-eq)
 };
 
 export function getMaskForToken(token: string): number {
@@ -47,7 +47,10 @@ export function getTotalEquationSticks(equation: string): number {
 	return equation.split('').reduce((sum, char) => sum + getSymbolStickCount(char), 0);
 }
 
-export function getSymbolTransition(fromChar: string, toChar: string): { removed: number; added: number } {
+export function getSymbolTransition(
+	fromChar: string,
+	toChar: string
+): { removed: number; added: number } {
 	const maskA = getMaskForToken(fromChar);
 	const maskB = getMaskForToken(toChar);
 	return {

@@ -1,17 +1,43 @@
 import type { BattlePuzzleType, BattleRoundData, ThaiLetterBlock } from './types';
-import crossroadData from '$lib/utils/crossroad_word.json';
-import spellingBeeWords from '$lib/data/puzzles/spellingbee/7letters.json';
-import { wordDatabase } from '$lib/data/puzzles/spelling/words';
-import { buildWordList, generatePuzzle } from '$lib/wordladder/wordladder';
-import dict from '$lib/dict.json';
-import dictPythaiRaw from '$lib/utils/dict_pythainlp.json?raw';
-import { getSubWords } from '$lib/utils/thaiwords';
+import crossroadData from '#lib/utils/crossroad_word.json';
+import spellingBeeWords from '#lib/data/puzzles/spellingbee/7letters.json';
+import { wordDatabase } from '#lib/data/puzzles/spelling/words.js';
+import { buildWordList, generatePuzzle } from '#lib/wordladder/wordladder.js';
+import dict from '#lib/dict.json';
+import dictPythaiRaw from '#lib/utils/dict_pythainlp.json?raw';
+import { getSubWords } from '#lib/utils/thaiwords.js';
 
 const pythaiMap: Record<string, number> = JSON.parse(dictPythaiRaw);
 
 const allThaiConsonants = [
-	'ก', 'ข', 'ค', 'ง', 'จ', 'ฉ', 'ช', 'ซ', 'ญ', 'ด', 'ต', 'ถ', 'ท', 'น',
-	'บ', 'ป', 'ผ', 'ฝ', 'พ', 'ฟ', 'ม', 'ย', 'ร', 'ล', 'ว', 'ส', 'ห', 'อ'
+	'ก',
+	'ข',
+	'ค',
+	'ง',
+	'จ',
+	'ฉ',
+	'ช',
+	'ซ',
+	'ญ',
+	'ด',
+	'ต',
+	'ถ',
+	'ท',
+	'น',
+	'บ',
+	'ป',
+	'ผ',
+	'ฝ',
+	'พ',
+	'ฟ',
+	'ม',
+	'ย',
+	'ร',
+	'ล',
+	'ว',
+	'ส',
+	'ห',
+	'อ'
 ];
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -70,8 +96,12 @@ export function splitThaiCells(word: string): string[] {
 
 // 1. Crossroad Generator (with full clue lists for rerolling)
 export function generateCrossroadRound(roundIndex: number): BattleRoundData {
-	const entries = Object.entries(crossroadData as Record<string, { pre: string[]; post: string[] }>);
-	const validEntries = entries.filter(([_, v]) => (v.pre?.length || 0) >= 2 && (v.post?.length || 0) >= 2);
+	const entries = Object.entries(
+		crossroadData as Record<string, { pre: string[]; post: string[] }>
+	);
+	const validEntries = entries.filter(
+		([_, v]) => (v.pre?.length || 0) >= 2 && (v.post?.length || 0) >= 2
+	);
 
 	const randomIdx = Math.floor(Math.random() * validEntries.length);
 	const [targetWord, clues] = validEntries[randomIdx] || entries[0];
@@ -98,7 +128,10 @@ export function generateCrossroadRound(roundIndex: number): BattleRoundData {
 
 // 2. Spelling Bee Generator (Uses official project dataset $lib/data/puzzles/spellingbee/7letters.json)
 export function generateSpellingBeeRound(roundIndex: number): BattleRoundData {
-	const puzzle = spellingBeeWords[Math.floor(Math.random() * spellingBeeWords.length)] || { id: 0, word: 'กงเกวียน' };
+	const puzzle = spellingBeeWords[Math.floor(Math.random() * spellingBeeWords.length)] || {
+		id: 0,
+		word: 'กงเกวียน'
+	};
 	const word = puzzle.word;
 	const solutions = getSubWords(word, false).filter((s) => s.length >= 3);
 	const letters = shuffleArray(word.split(''));
@@ -166,7 +199,9 @@ export function generateBlanksRound(roundIndex: number): BattleRoundData {
 
 // 4. Spelling Quiz Generator (Uses official spelling dictionary wordDatabase from $lib/data/puzzles/spelling/words)
 export function generateSpellingQuizRound(roundIndex: number): BattleRoundData {
-	const shuffledDB = shuffleArray(wordDatabase.filter((w) => w.incorrect && w.incorrect.length > 0)).slice(0, 10);
+	const shuffledDB = shuffleArray(
+		wordDatabase.filter((w) => w.incorrect && w.incorrect.length > 0)
+	).slice(0, 10);
 
 	const questions: Array<{
 		correct: string;
@@ -238,9 +273,7 @@ export function generateBoggleRound(roundIndex: number): BattleRoundData {
 			const neighbours = shuffleArray(
 				positions.filter(
 					(pos) =>
-						Math.abs(pos.r - r) <= 1 &&
-						Math.abs(pos.c - c) <= 1 &&
-						(pos.r !== r || pos.c !== c)
+						Math.abs(pos.r - r) <= 1 && Math.abs(pos.c - c) <= 1 && (pos.r !== r || pos.c !== c)
 				)
 			);
 			for (const neighbour of neighbours) {
@@ -316,7 +349,7 @@ export function generateWordLadderRound(roundIndex: number): BattleRoundData {
 	};
 }
 
-import { getQuizQuestions } from '$lib/data/puzzles/thaiquiz/engine';
+import { getQuizQuestions } from '#lib/data/puzzles/thaiquiz/engine.js';
 
 // 7. Thai Common Knowledge Quiz Generator
 export function generateThaiQuizRound(roundIndex: number): BattleRoundData {

@@ -81,7 +81,12 @@ describe('battle input rules', () => {
 		expect(isValidBogglePath(grid, legalPath)).toBe(true);
 		expect(getBogglePathWord(grid, legalPath)).toBe('กาง');
 		expect(isValidBogglePath(grid, [...legalPath, { r: 0, c: 0 }])).toBe(false);
-		expect(isValidBogglePath(grid, [{ r: 0, c: 0 }, { r: 0, c: 2 }])).toBe(false);
+		expect(
+			isValidBogglePath(grid, [
+				{ r: 0, c: 0 },
+				{ r: 0, c: 2 }
+			])
+		).toBe(false);
 	});
 
 	it('only accepts answers inside the authoritative round window', () => {
@@ -95,8 +100,15 @@ describe('battle input rules', () => {
 
 describe('battle mutation safety', () => {
 	const config = {
-		puzzleType: 'thaiquiz', mode: 'quiz', theme: 'general', difficulty: 'normal',
-		rounds: 3, timePerRound: 60, maxPlayers: 4, roomName: ' Test room ', isPublic: true
+		puzzleType: 'thaiquiz',
+		mode: 'quiz',
+		theme: 'general',
+		difficulty: 'normal',
+		rounds: 3,
+		timePerRound: 60,
+		maxPlayers: 4,
+		roomName: ' Test room ',
+		isPublic: true
 	} as const;
 
 	it('validates and normalizes room configuration at the boundary', () => {
@@ -108,16 +120,27 @@ describe('battle mutation safety', () => {
 
 	it('claims a client action once and rejects a replay', () => {
 		const meta = {
-			config, rounds: [], currentRound: 0, roundStartTime: null, roundEndTime: null
+			config,
+			rounds: [],
+			currentRound: 0,
+			roundStartTime: null,
+			roundEndTime: null
 		} as unknown as BattleRoomMeta;
 		expect(claimBattleAction(meta, 'round-1:answer-2', 'player-a', 10)).toBe(true);
 		expect(claimBattleAction(meta, 'round-1:answer-2', 'player-a', 11)).toBe(false);
-		expect(meta.actionReceipts?.['round-1:answer-2']).toEqual({ playerId: 'player-a', timestamp: 10 });
+		expect(meta.actionReceipts?.['round-1:answer-2']).toEqual({
+			playerId: 'player-a',
+			timestamp: 10
+		});
 	});
 
 	it('bounds receipt growth while retaining the newest actions', () => {
 		const meta = {
-			config, rounds: [], currentRound: 0, roundStartTime: null, roundEndTime: null
+			config,
+			rounds: [],
+			currentRound: 0,
+			roundStartTime: null,
+			roundEndTime: null
 		} as unknown as BattleRoomMeta;
 		for (let index = 0; index < 510; index++) {
 			claimBattleAction(meta, `action-${index}`, 'player-a', index);

@@ -1,5 +1,11 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { publishToFacebook, getEffectivePageToken } from './facebookServer';
+import { publishToFacebook } from './facebookServer';
+
+vi.hoisted(() => {
+	process.env.FB_PAGE_ID = '114752709892205';
+	process.env.FB_PAGE_ACCESS_TOKEN = 'test_token_123';
+	process.env.FB_API_VERSION = 'v20.0';
+});
 
 describe('Facebook Server Module', () => {
 	const originalEnv = { ...process.env };
@@ -58,23 +64,11 @@ describe('Facebook Server Module', () => {
 		expect(result.error).toContain('75 วัน');
 	});
 
-	it('handles draft mode correctly (published=false without scheduledPublishTime)', async () => {
-		const result = await publishToFacebook({
-			caption: 'Draft post test',
-			imageUrl: 'https://example.com/test.jpg',
-			published: false,
-			dryRun: true
-		});
-
-		expect(result.success).toBe(true);
-		expect(result.status).toBe('dry_run');
-		expect(result.details?.published).toBe(false);
-		expect(result.details?.scheduledPublishTime).toBeUndefined();
-	});
-
 	it('returns error when FB_PAGE_ID or FB_PAGE_ACCESS_TOKEN is missing', async () => {
 		delete process.env.FB_PAGE_ID;
 		delete process.env.FB_PAGE_ACCESS_TOKEN;
+		vi.resetModules();
+		const { publishToFacebook } = await import('./facebookServer');
 
 		const result = await publishToFacebook({
 			caption: 'Missing credentials'

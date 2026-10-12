@@ -1,4 +1,4 @@
-import type { ThaiQuizCategory } from '$lib/data/puzzles/thaiquiz/types';
+import type { ThaiQuizCategory } from '#lib/data/puzzles/thaiquiz/types.js';
 import type { QuizSessionRepository } from './quizSessionRepository';
 import { createQuizSessionRepository } from './quizSessionRepository';
 import { questionGovernanceRepository } from './questionGovernanceRepository';
@@ -31,7 +31,9 @@ export interface QuizSession {
 const SESSION_TTL_MS = 2 * 60 * 60 * 1000;
 
 let repository: QuizSessionRepository = createQuizSessionRepository();
-export function setQuizSessionRepository(next: QuizSessionRepository): void { repository = next; }
+export function setQuizSessionRepository(next: QuizSessionRepository): void {
+	repository = next;
+}
 
 export async function createQuizSession(options: {
 	type: 'thechase' | 'thaiquiz' | 'quizshow';
@@ -42,21 +44,26 @@ export async function createQuizSession(options: {
 	excludeIds?: number[];
 }): Promise<QuizSession> {
 	if (!SESSION_TYPES.has(options.type)) throw new Error('Invalid quiz session type');
-	if (options.pack !== undefined && (!Number.isInteger(options.pack) || !CHASE_PACKS.has(options.pack))) {
+	if (
+		options.pack !== undefined &&
+		(!Number.isInteger(options.pack) || !CHASE_PACKS.has(options.pack))
+	) {
 		throw new Error('Invalid Chase pack');
 	}
 
-	const sessionId = 'qs_' + Math.random().toString(36).substring(2, 11) + '_' + Date.now().toString(36);
+	const sessionId =
+		'qs_' + Math.random().toString(36).substring(2, 11) + '_' + Date.now().toString(36);
 	const defaultCount = options.type === 'thechase' ? 25 : 10;
-	const requestedCount = typeof options.count === 'number' && Number.isFinite(options.count)
-		? Math.trunc(options.count)
-		: defaultCount;
+	const requestedCount =
+		typeof options.count === 'number' && Number.isFinite(options.count)
+			? Math.trunc(options.count)
+			: defaultCount;
 	const count = Math.min(50, Math.max(1, requestedCount));
 
 	let rawQuestions: any[] = [];
 
 	if (options.type === 'thechase') {
-		const { getChaseQuestions } = await import('$lib/data/puzzles/thechase/questions');
+		const { getChaseQuestions } = await import('#lib/data/puzzles/thechase/questions.js');
 		rawQuestions = getChaseQuestions({
 			count,
 			category: options.category && options.category !== 'all' ? options.category : undefined,
@@ -64,14 +71,21 @@ export async function createQuizSession(options: {
 			excludeIds: options.excludeIds
 		});
 	} else {
-		const { getQuizQuestions } = await import('$lib/data/puzzles/thaiquiz/engine');
+		const { getQuizQuestions } = await import('#lib/data/puzzles/thaiquiz/engine.js');
 		const reviewRecords = await questionGovernanceRepository.listReviews().catch(() => []);
 		const reviews = new Map(reviewRecords.map((review) => [review.questionKey, review]));
 		rawQuestions = getQuizQuestions({
 			count: Math.min(50, count + 10),
-			category: options.category && options.category !== 'all' ? (options.category as ThaiQuizCategory) : 'all'
+			category:
+				options.category && options.category !== 'all'
+					? (options.category as ThaiQuizCategory)
+					: 'all'
 		})
-			.filter((question) => reviews.get(`thaiquiz:${question.category}:${question.id}`)?.quality?.reviewStatus !== 'retired')
+			.filter(
+				(question) =>
+					reviews.get(`thaiquiz:${question.category}:${question.id}`)?.quality?.reviewStatus !==
+					'retired'
+			)
 			.map((question) => {
 				const review = reviews.get(`thaiquiz:${question.category}:${question.id}`);
 				return review?.difficulty ? { ...question, difficulty: review.difficulty } : question;
@@ -156,20 +170,26 @@ export async function verifySessionAnswer(
 		const incorrect = currentQ.choices
 			.map((_choice, index) => index)
 			.filter((index) => index !== currentQ.correctIndex);
-		resolvedChoiceIndex = Math.random() < accuracy
-			? currentQ.correctIndex
-			: incorrect[Math.floor(Math.random() * incorrect.length)];
+		resolvedChoiceIndex =
+			Math.random() < accuracy
+				? currentQ.correctIndex
+				: incorrect[Math.floor(Math.random() * incorrect.length)];
 		isCorrect = resolvedChoiceIndex === currentQ.correctIndex;
 	} else if (session.type === 'quizshow') {
-		if (typeof textAnswer !== 'string' || !textAnswer.trim()) return { error: 'Invalid text answer' };
-		const { validateQuizShowAnswer } = await import('$lib/data/puzzles/thaiquiz/engine');
+		if (typeof textAnswer !== 'string' || !textAnswer.trim())
+			return { error: 'Invalid text answer' };
+		const { validateQuizShowAnswer } = await import('#lib/data/puzzles/thaiquiz/engine.js');
 		isCorrect = validateQuizShowAnswer(
 			textAnswer,
 			currentQ.choices[currentQ.correctIndex],
 			currentQ.acceptableAnswers
 		);
 	} else {
-		if (!Number.isInteger(chosenIndex) || chosenIndex! < 0 || chosenIndex! >= currentQ.choices.length) {
+		if (
+			!Number.isInteger(chosenIndex) ||
+			chosenIndex! < 0 ||
+			chosenIndex! >= currentQ.choices.length
+		) {
 			return { error: 'Invalid choice index' };
 		}
 		isCorrect = resolvedChoiceIndex === currentQ.correctIndex;
@@ -194,11 +214,13 @@ export async function verifySessionAnswer(
 	if (finalized) session.currentIndex++;
 	await repository.put(session);
 	if (finalized && session.type !== 'thechase') {
-		void questionGovernanceRepository.recordOutcome({
-			questionKey: `thaiquiz:${currentQ.category}:${currentQ.id}`,
-			category: currentQ.category,
-			isCorrect
-		}).catch(() => undefined);
+		void questionGovernanceRepository
+			.recordOutcome({
+				questionKey: `thaiquiz:${currentQ.category}:${currentQ.id}`,
+				category: currentQ.category,
+				isCorrect
+			})
+			.catch(() => undefined);
 	}
 
 	return {

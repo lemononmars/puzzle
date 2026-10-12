@@ -40,14 +40,16 @@ export const adventureLevels = [
             <h1 class="text-4xl mb-4">Level 4</h1>
             <p>Check the console for errors... or passwords.</p>
         `,
-      answer: 'debug',
-      hint: 'open console (F12 -> Console)',
-      get script() { return `console.log("Password: ${this.answer}")`; }
-   },
-   {
-      level: 5,
-      code: 'debug',
-      question: `
+		answer: 'debug',
+		hint: 'open console (F12 -> Console)',
+		get script() {
+			return `console.log("Password: ${this.answer}")`;
+		}
+	},
+	{
+		level: 5,
+		code: 'debug',
+		question: `
             <h1 class="text-4xl mb-4">Level 5</h1>
             <p>Can you decode this secret message?</p>
             <p class="font-mono text-xl mt-4">U2VjcmV0</p>
@@ -62,39 +64,46 @@ export const adventureLevels = [
             <h1 class="text-4xl mb-4">Level 6</h1>
             <p>I've hidden the password in the metadata.</p>
         `,
-      answer: 'meta',
-      hint: 'check the <meta> tags in the head',
-      get script() { return `const meta = document.createElement("meta"); meta.name = "password"; meta.content = "${this.answer}"; document.head.appendChild(meta);`; },
-      cleanup: 'const meta = document.querySelector("meta[name=\\"password\\"]"); if(meta) meta.remove();'
-   },
-   {
-      level: 7,
-      code: 'meta',
-      question: `
+		answer: 'meta',
+		hint: 'check the <meta> tags in the head',
+		get script() {
+			return `const meta = document.createElement("meta"); meta.name = "password"; meta.content = "${this.answer}"; document.head.appendChild(meta);`;
+		},
+		cleanup:
+			'const meta = document.querySelector("meta[name=\\"password\\"]"); if(meta) meta.remove();'
+	},
+	{
+		level: 7,
+		code: 'meta',
+		question: `
             <h1 class="text-4xl mb-4">Level 7</h1>
             <p>Everyone loves cookies.</p>
         `,
-      answer: 'biscuit',
-      hint: 'check the document cookies',
-      get script() { return `document.cookie = "password=${this.answer}; path=/";`; },
-      cleanup: 'document.cookie = "password=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;"'
-   },
-   {
-      level: 8,
-      code: 'biscuit',
-      question: `
+		answer: 'biscuit',
+		hint: 'check the document cookies',
+		get script() {
+			return `document.cookie = "password=${this.answer}; path=/";`;
+		},
+		cleanup: 'document.cookie = "password=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;"'
+	},
+	{
+		level: 8,
+		code: 'biscuit',
+		question: `
             <h1 class="text-4xl mb-4">Level 8</h1>
             <p>Look at the tab up there.</p>
         `,
-      answer: 'title',
-      hint: 'check the browser tab title',
-      get script() { return `document.title = "Password: ${this.answer}";`; },
-      cleanup: 'document.title = "Code Breaker | Adventure";'
-   },
-   {
-      level: 9,
-      code: 'title',
-      question: `
+		answer: 'title',
+		hint: 'check the browser tab title',
+		get script() {
+			return `document.title = "Password: ${this.answer}";`;
+		},
+		cleanup: 'document.title = "Code Breaker | Adventure";'
+	},
+	{
+		level: 9,
+		code: 'title',
+		question: `
             <h1 class="text-4xl mb-4">Level 9</h1>
             <p class="text-xl">.elcitra na ton si sihT</p>
         `,

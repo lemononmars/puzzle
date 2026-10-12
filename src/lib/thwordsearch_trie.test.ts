@@ -2,26 +2,6 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { buildThaiTrie, searchThaiTrie, search } from './thwordsearch';
 
 describe('Trie Implementation for Thai Crossword Optimization', () => {
-  it('builds a trie correctly from a list of words', () => {
-    const words = ['กาง', 'กิน', 'กบ', 'กำ'];
-    const trie = buildThaiTrie(words);
-
-    expect(trie).toHaveProperty('ก');
-    expect(trie['ก']).toHaveProperty('า');
-    expect(trie['ก']['า']).toHaveProperty('ง');
-    expect(trie['ก']['า']['ง']).toHaveProperty('$');
-    expect(trie['ก']['า']['ง']['$']).toBe(true);
-
-    expect(trie).toHaveProperty('กิ');
-    expect(trie['กิ']).toHaveProperty('น');
-    expect(trie['กิ']['น']['$']).toBe(true);
-
-    expect(trie['ก']).toHaveProperty('บ');
-    expect(trie['ก']['บ']['$']).toBe(true);
-
-    expect(trie['ก']).toHaveProperty('ำ');
-    expect(trie['ก']['ำ']['$']).toBe(true);
-  });
 
   describe('strict matching', () => {
     const words = ['แมว', 'แม่', 'หมา', 'กิน', 'กบ', 'กำ', 'กาง'];

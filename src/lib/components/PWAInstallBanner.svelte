@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { DownloadIcon, XIcon, CheckCircleIcon } from 'svelte-feather-icons';
-	import logo from '$lib/images/logo.png';
+	import logo from '#lib/images/logo.png';
 
 	let deferredPrompt: any = null;
 	let showBanner = false;
@@ -72,18 +72,18 @@
 		class="fixed bottom-16 lg:bottom-6 right-4 left-4 sm:left-auto sm:right-6 sm:w-96 z-50 animate-bounce-in"
 	>
 		<div
-			class="bg-slate-900/95 backdrop-blur-md border border-emerald-500/40 rounded-2xl p-4 shadow-2xl shadow-emerald-950/50 flex flex-col gap-3 text-slate-100"
+			class="bg-base-100 text-base-content backdrop-blur-md border border-primary/30 rounded-2xl p-4 shadow-2xl shadow-emerald-950/50 flex flex-col gap-3 text-base-content/70"
 		>
 			<div class="flex items-start justify-between gap-3">
 				<div class="flex items-center gap-3">
-					<img src={logo} alt="Code Breaker" class="w-11 h-11 rounded-xl shadow-md border border-slate-700 shrink-0" />
+					<img src={logo} alt="Code Breaker" class="w-11 h-11 rounded-xl shadow-md border border-base-300 shrink-0" />
 					<div class="flex flex-col">
-						<h4 class="font-extrabold text-sm text-white">ติดตั้งแอป Code Breaker</h4>
-						<p class="text-xs text-slate-400">เข้าถึงได้ทันทีจากหน้าจอหลัก พร้อมเล่นออฟไลน์</p>
+						<h4 class="font-extrabold text-sm text-base-content">ติดตั้งแอป Code Breaker</h4>
+						<p class="text-xs text-base-content/70">เข้าถึงได้ทันทีจากหน้าจอหลัก พร้อมเล่นออฟไลน์</p>
 					</div>
 				</div>
 				<button
-					class="btn btn-ghost btn-xs btn-circle text-slate-400 hover:text-white"
+					class="btn btn-ghost btn-xs btn-circle text-base-content/70 hover:text-base-content"
 					on:click={handleDismiss}
 					title="ปิด"
 				>
@@ -91,8 +91,8 @@
 				</button>
 			</div>
 
-			<div class="flex items-center justify-end gap-2 pt-1 border-t border-slate-800">
-				<button class="btn btn-ghost btn-xs text-slate-400 hover:text-white" on:click={handleDismiss}>
+			<div class="flex items-center justify-end gap-2 pt-1 border-t border-base-300">
+				<button class="btn btn-ghost btn-xs text-base-content/70 hover:text-base-content" on:click={handleDismiss}>
 					ไว้คราวหลัง
 				</button>
 				<button

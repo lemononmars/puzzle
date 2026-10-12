@@ -1,49 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Thai&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* purge start ignore */
-@layer base {
-	html {
-		@apply scroll-pt-20;
-	}
-
-	body {
-		@apply leading-normal tracking-normal text-base font-normal break-words ;
-		@apply font-thai text-base lg:text-xl;
-	}
-
-	main {
-		@apply pt-0 lg:pt-20 pb-20 lg:pb-0 max-w-4xl mx-auto;
-		@apply text-center;
-	}
-
-	a {
-		@apply link link-primary;
-		@apply no-underline hover:no-underline focus:outline-none focus:underline;
-	}
-
-	h1 {
-		@apply text-3xl text-primary my-4;
-	}
-
-	h2 {
-		@apply text-2xl font-semibold text-secondary my-2;
-	}
-
-	h3 {
-		@apply text-base font-semibold text-accent my-2;
-	}
-
-	ul {
-		@apply list-disc list-inside my-4
-	}
-
-	ol {
-		@apply list-decimal list-inside my-4
-	}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@400;600&display=swap');
+@import 'tailwindcss';
+@plugin "daisyui" { themes: false; }
+@plugin "daisyui/theme" {
+ name: "botanical"; default: true; prefersdark: false; color-scheme: light;
+ --color-base-100: #f9faf4; --color-base-200: #eef1e9; --color-base-300: #dce5d5; --color-base-content: #364b3e;
+ --color-primary: #526b4b; --color-primary-content: #fffdf4;
+ --color-secondary: #78543f; --color-secondary-content: #fffaf5;
+ --color-accent: #e4c1a8; --color-accent-content: #634c3d;
+ --color-neutral: #364b3e; --color-neutral-content: #f9faf4;
+ --color-info: #d8e8ed; --color-info-content: #294e5c;
+ --color-success: #d5e8cf; --color-success-content: #31552d;
+ --color-warning: #f4e4b7; --color-warning-content: #66501d;
+ --color-error: #f3d4cb; --color-error-content: #843e32;
+ --radius-selector: 1rem; --radius-field: 1.5rem; --radius-box: 1.5rem;
+ --size-selector: .25rem; --size-field: .25rem; --border: 1px; --depth: 0; --noise: 0;
 }
-
-/* purge end ignore */
+@theme { --font-thai: 'DM Sans', 'Noto Sans Thai', sans-serif; }
+@layer base {
+ html { scroll-padding-top: 100px; background: var(--color-base-200); }
+ body { background: var(--color-base-200); font-family: var(--font-thai); color: var(--color-base-content); line-height: 1.7; overflow-wrap: break-word; }
+ a { color: inherit; text-decoration: none; }
+ a:focus-visible, button:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 4px; }
+ h1, h2 { font-family: 'Noto Serif Thai', serif; color: var(--color-base-content); }
+ h1 { font-size: clamp(2rem,4vw,3.5rem); line-height: 1.4; margin: 1rem 0; }
+ h2 { font-size: 1.6rem; font-weight: 600; margin: .5rem 0; }
+ h3 { font-size: 1.1rem; font-weight: 600; margin: .5rem 0; }
+ ul { list-style: disc inside; margin: 1rem 0; } ol { list-style: decimal inside; margin: 1rem 0; }
+}
+@layer components {
+ .site-main { max-width: 1180px; margin: auto; padding: 110px 24px 40px; text-align: center; }
+ .botanical-surface { background: var(--color-base-100); color: var(--color-base-content); border: 1px solid var(--color-base-300); border-radius: var(--radius-box); padding: clamp(20px,3vw,36px); }
+ .botanical-link-card { display: block; height: 100%; background: var(--color-base-100); color: var(--color-base-content); border: 1px solid var(--color-base-300); border-radius: var(--radius-box); padding: 26px; text-align: left; transition: transform .2s, border-color .2s; }
+ .botanical-link-card:hover { transform: translateY(-3px); border-color: var(--color-primary); }
+ .botanical-eyebrow { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--color-primary); }
+ .botanical-muted { opacity: .7; }
+ .card { border-radius: var(--radius-box); } .btn { font-weight: 500; text-transform: none; }
+}
+@media(max-width:1023px) { .site-main { padding: 28px 16px 110px; } }
+@media(prefers-reduced-motion:reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }

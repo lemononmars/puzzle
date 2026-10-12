@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import dict from '$lib/dict.json';
+	import dict from '#lib/dict.json';
 	import { CheckCircleIcon } from 'svelte-feather-icons';
 
 	interface ThaiBlock {
@@ -52,7 +52,7 @@
 		return result;
 	}
 
-	import dictPythaiRaw from '$lib/utils/dict_pythainlp.json?raw';
+	import dictPythaiRaw from '#lib/utils/dict_pythainlp.json?raw';
 	const pythaiMap: Record<string, number> = JSON.parse(dictPythaiRaw);
 
 	function loadNewQuestion() {
@@ -124,14 +124,14 @@
 
 <div class="flex flex-col justify-between gap-3 sm:gap-4 w-full">
 	<!-- Compact Subheader -->
-	<div class="flex items-center justify-between border-b border-slate-800/70 pb-2.5">
+	<div class="flex items-center justify-between border-b border-base-300 pb-2.5">
 		<div class="flex items-center gap-2">
 			<span class="h-2 w-2 rounded-full bg-sky-400"></span>
-			<span class="text-xs uppercase tracking-wider text-sky-400 font-bold">Daily Blanks</span>
+			<span class="text-xs uppercase tracking-wider text-primary font-bold">Daily Blanks</span>
 		</div>
 		<a
 			href="/puzzles/blanks"
-			class="inline-flex items-center text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-sky-500/20 text-sky-300 border border-sky-500/40 hover:bg-sky-500/30 transition-all shadow-sm"
+			class="inline-flex items-center text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-sky-500/20 text-primary border border-sky-500/40 hover:bg-sky-500/30 transition-all shadow-sm"
 		>
 			Full Mode →
 		</a>
@@ -139,17 +139,17 @@
 
 	<!-- Content Box -->
 	<div class="flex flex-col items-center space-y-3 sm:space-y-4 w-full">
-		<p class="text-[11px] sm:text-xs text-slate-400 font-medium text-center">
+		<p class="text-[11px] sm:text-xs text-base-content/70 font-medium text-center">
 			เลือกพยัญชนะตัวเดียวกันเติมลงในช่องว่างเพื่อให้เป็นคำที่ถูกต้อง
 		</p>
 
 		<!-- Word Display with Blanks -->
-		<div class="flex items-center justify-center gap-1 sm:gap-2 py-2.5 px-2 bg-slate-950/80 border border-slate-800 rounded-xl w-full max-w-md shadow-inner overflow-x-auto">
+		<div class="flex items-center justify-center gap-1 sm:gap-2 py-2.5 px-2 bg-base-100 text-base-content border border-base-300 rounded-xl w-full max-w-md shadow-inner overflow-x-auto">
 			{#each blocks as b}
 				{@const isBlank = b.base === targetChar}
 				<div class="flex flex-col items-center justify-center select-none min-w-[24px] max-w-[38px] sm:max-w-[44px] flex-1">
 					<!-- Upper mark -->
-					<div class="h-4 sm:h-6 font-black text-base sm:text-2xl text-sky-400 flex items-center justify-center leading-none">
+					<div class="h-4 sm:h-6 font-black text-base sm:text-2xl text-primary flex items-center justify-center leading-none">
 						{b.upper || ''}
 					</div>
 					<!-- Base box -->
@@ -157,14 +157,14 @@
 						class="w-full aspect-square max-h-9 sm:max-h-12 rounded-lg sm:rounded-xl border-2 flex items-center justify-center font-black text-sm sm:text-xl transition-all
 						{isBlank
 							? isSolved
-								? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/50'
-								: 'bg-sky-500/10 text-sky-300 border-sky-500/40 shadow-sm'
-							: 'border-slate-800/80 bg-slate-900/60 text-white'}"
+								? 'bg-emerald-500/20 text-primary border-primary/30'
+								: 'bg-sky-500/10 text-primary border-sky-500/40 shadow-sm'
+							: 'border-base-300 bg-base-100 text-base-content text-base-content'}"
 					>
 						{isBlank ? (isSolved ? targetChar : '_') : b.base}
 					</div>
 					<!-- Lower mark -->
-					<div class="h-4 sm:h-6 font-black text-base sm:text-2xl text-sky-400 flex items-center justify-center leading-none">
+					<div class="h-4 sm:h-6 font-black text-base sm:text-2xl text-primary flex items-center justify-center leading-none">
 						{b.lower || ''}
 					</div>
 				</div>
@@ -180,8 +180,8 @@
 							on:click={() => handleChoiceClick(choice)}
 							class="w-full h-full rounded-xl font-black text-lg sm:text-2xl border-2 transition-all transform active:scale-95 shadow-sm flex items-center justify-center
 							{wrongChoice === choice
-								? 'bg-rose-500/20 text-rose-300 border-rose-500/50 animate-shake'
-								: 'bg-slate-950 text-slate-100 border-slate-800 hover:border-sky-400 hover:text-sky-300'}"
+								? 'bg-rose-500/20 text-error-content border-rose-500/50 animate-shake'
+								: 'bg-base-100 text-base-content text-base-content/70 border-base-300 hover:border-sky-400 hover:text-primary'}"
 						>
 							{choice}
 						</button>
@@ -190,13 +190,13 @@
 			{:else}
 				<!-- Solved Row: Correct Badge + Next Question Button -->
 				<div class="flex flex-row items-center justify-center gap-2 w-full h-full">
-					<div class="flex-1 h-full px-3 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center justify-center gap-1.5 truncate">
+					<div class="flex-1 h-full px-3 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500/20 text-primary border border-primary/30 flex items-center justify-center gap-1.5 truncate">
 						<CheckCircleIcon size="15" /> Correct! "{word}"
 					</div>
 					<button
 						on:click={loadNewQuestion}
-						class="px-4 h-full rounded-xl font-black bg-sky-500 hover:bg-sky-400 text-slate-950 transition-all shadow-md shadow-sky-500/20 text-xs sm:text-sm whitespace-nowrap flex items-center justify-center"
-						style="color: #0f172a;"
+						class="px-4 h-full rounded-xl font-black bg-sky-500 hover:bg-sky-400 text-base-content/70 transition-all shadow-md shadow-sky-500/20 text-xs sm:text-sm whitespace-nowrap flex items-center justify-center"
+
 					>
 						Next 🎲 →
 					</button>

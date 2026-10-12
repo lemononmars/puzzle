@@ -1,0 +1,406 @@
+{
+  "source": "https://docs.google.com/spreadsheets/d/1AtlRUY82vZMHqow1Sz6Zb1ZCn7OOkqUuLUAU1aVAvZw/edit?gid=329195996#gid=329195996",
+  "rooms": [
+    {
+      "id": "room-1",
+      "title": "Insane Professor Hunt",
+      "venue": "Brainstorm Escape",
+      "city": "Champaign, IL",
+      "date": "2016-02-06",
+      "note": ""
+    },
+    {
+      "id": "room-2",
+      "title": "Office Hour",
+      "venue": "CU Adventure",
+      "city": "Urbana, IL",
+      "date": "2016-02-13",
+      "note": ""
+    },
+    {
+      "id": "room-3",
+      "title": "The Cabin",
+      "venue": "CU Adventure",
+      "city": "Urbana, IL",
+      "date": "2016-02-20",
+      "note": ""
+    },
+    {
+      "id": "room-4",
+      "title": "Big House Break Out",
+      "venue": "Brainstorm Escape",
+      "city": "Champaign, IL",
+      "date": "2016-02-28",
+      "note": ""
+    },
+    {
+      "id": "room-5",
+      "title": "Defusing The Oval Office",
+      "venue": "Brainstorm Escape",
+      "city": "Champaign, IL",
+      "date": "2016-03-13",
+      "note": ""
+    },
+    {
+      "id": "room-6",
+      "title": "The Mob",
+      "venue": "PANIQ Room",
+      "city": "Chicago, IL",
+      "date": "2016-03-23",
+      "note": ""
+    },
+    {
+      "id": "room-7",
+      "title": "Prison",
+      "venue": "PANIQ Room",
+      "city": "Chicago, IL",
+      "date": "2016-03-23",
+      "note": ""
+    },
+    {
+      "id": "room-8",
+      "title": "Infection",
+      "venue": "PANIQ Room",
+      "city": "Chicago, IL",
+      "date": "2016-03-23",
+      "note": ""
+    },
+    {
+      "id": "room-9",
+      "title": "Tomb Explorer",
+      "venue": "Mystery Room",
+      "city": "Totonro, CA",
+      "date": "2016-05-30",
+      "note": ""
+    },
+    {
+      "id": "room-10",
+      "title": "Assassin's Code",
+      "venue": "Mystery Room",
+      "city": "Totonro, CA",
+      "date": "2016-05-30",
+      "note": "ROOM WITH STORY? WUT?"
+    },
+    {
+      "id": "room-11",
+      "title": "The Da Vinci Code",
+      "venue": "The Great Escape Canada",
+      "city": "Totonro, CA",
+      "date": "2016-05-31",
+      "note": "WORST ROOM"
+    },
+    {
+      "id": "room-12",
+      "title": "The Timekeeper's Trap",
+      "venue": "Escape Factor",
+      "city": "Chicago, IL",
+      "date": "2016-06-01",
+      "note": "Solo ! 30 min over..."
+    },
+    {
+      "id": "room-13",
+      "title": "The Railcar",
+      "venue": "Escape Artistry",
+      "city": "Chicago, IL",
+      "date": "2016-06-02",
+      "note": ""
+    },
+    {
+      "id": "room-14",
+      "title": "The Curse Of Jackling Manor",
+      "venue": "Escape Bloomington",
+      "city": "Bloomington, IL",
+      "date": "2016-06-10",
+      "note": "2nd WORST"
+    },
+    {
+      "id": "room-15",
+      "title": "Space",
+      "venue": "Escape Bloomington",
+      "city": "Bloomington, IL",
+      "date": "2016-06-10",
+      "note": ""
+    },
+    {
+      "id": "room-16",
+      "title": "THE OFFICE",
+      "venue": "Escape Bloomington",
+      "city": "Bloomington, IL",
+      "date": "2016-06-10",
+      "note": ""
+    },
+    {
+      "id": "room-17",
+      "title": "Chemistry",
+      "venue": "Escape Bloomington",
+      "city": "Bloomington, IL",
+      "date": "2016-06-10",
+      "note": ""
+    },
+    {
+      "id": "room-18",
+      "title": "The Lost Temple",
+      "venue": "CU Adventure",
+      "city": "Urbana, IL",
+      "date": "2016-09-04",
+      "note": "Failed challenge mode. Too many red herrings!!!!"
+    },
+    {
+      "id": "room-19",
+      "title": "Artificial Intelligence",
+      "venue": "CU Adventure",
+      "city": "Urbana, IL",
+      "date": "2016-11-23",
+      "note": ""
+    },
+    {
+      "id": "room-20",
+      "title": "Rise of The Zombie Pets",
+      "venue": "Brainstorm Escape",
+      "city": "Champaign, IL",
+      "date": "2017-03-04",
+      "note": ""
+    },
+    {
+      "id": "room-21",
+      "title": "Calling All Heroes",
+      "venue": "CU Adventure",
+      "city": "Urbana, IL",
+      "date": "2017-09-28",
+      "note": "Duo !"
+    },
+    {
+      "id": "room-22",
+      "title": "Sword of the Dragon",
+      "venue": "CU Adventure",
+      "city": "Urbana, IL",
+      "date": "2017-12-29",
+      "note": ""
+    },
+    {
+      "id": "room-23",
+      "title": "The President's Bunker",
+      "venue": "The Great Escape Room Chicago",
+      "city": "Chicago, IL",
+      "date": "2018-01-07",
+      "note": ""
+    },
+    {
+      "id": "room-24",
+      "title": "The Bunker",
+      "venue": "Fox in a Box",
+      "city": "Chicago, IL",
+      "date": "2018-01-07",
+      "note": ""
+    },
+    {
+      "id": "room-25",
+      "title": "The Lab",
+      "venue": "Fox in a Box",
+      "city": "Chicago, IL",
+      "date": "2018-01-07",
+      "note": ""
+    },
+    {
+      "id": "room-26",
+      "title": "The Bank",
+      "venue": "Fox in a Box",
+      "city": "Chicago, IL",
+      "date": "2018-01-08",
+      "note": ""
+    },
+    {
+      "id": "room-27",
+      "title": "The Prison",
+      "venue": "Fox in a Box",
+      "city": "Chicago, IL",
+      "date": "2018-01-08",
+      "note": ""
+    },
+    {
+      "id": "room-28",
+      "title": "Lizzie Borden Took an Axe",
+      "venue": "Brainstorm Escape",
+      "city": "Champaign, IL",
+      "date": "2018-03-23",
+      "note": "third worst? only 1.5 puzzles. borrrrring."
+    },
+    {
+      "id": "room-29",
+      "title": "The Crypt",
+      "venue": "CU Adventure",
+      "city": "Urbana, IL",
+      "date": "2018-05-13",
+      "note": "Great as always!"
+    },
+    {
+      "id": "room-30",
+      "title": "Prof. S is Missing",
+      "venue": "Lab Escape",
+      "city": "Urbana, IL",
+      "date": "2018-05-14",
+      "note": "beta tested. Hi-tech!"
+    },
+    {
+      "id": "room-31",
+      "title": "Prison Break",
+      "venue": "Escape Room Bangkok",
+      "city": "Bangkok",
+      "date": null,
+      "note": ":( (summer, 2017)"
+    },
+    {
+      "id": "room-32",
+      "title": "End of the Line",
+      "venue": "Project Panic",
+      "city": "Austin, TX",
+      "date": "2018-06-27",
+      "note": "Subway theme. Cool tech !"
+    },
+    {
+      "id": "room-33",
+      "title": "The Gallery",
+      "venue": "Project Panic",
+      "city": "Austin, TX",
+      "date": "2018-06-27",
+      "note": "Awesome theme! Fun puzzles!"
+    },
+    {
+      "id": "room-34",
+      "title": "Spy Safe House",
+      "venue": "Maze Rooms",
+      "city": "Austin, TX",
+      "date": "2018-06-28",
+      "note": "Interesting props, but boring puzzles"
+    },
+    {
+      "id": "room-35",
+      "title": "Pharaoh's Tomb",
+      "venue": "Maze Rooms",
+      "city": "Austin, TX",
+      "date": "2018-06-28",
+      "note": "One of the best!"
+    },
+    {
+      "id": "room-36",
+      "title": "Cottage Chaos",
+      "venue": "11th Hour Escape",
+      "city": "Austin, TX",
+      "date": "2018-07-01",
+      "note": "Difficult (clueless) puzzles. Interesting theme & adjustable difficulty"
+    },
+    {
+      "id": "room-37",
+      "title": "Spellbound Supper",
+      "venue": "Tokyo Mystery Circus",
+      "city": "Tokyo, Japan",
+      "date": "2018-08-01",
+      "note": "Just in time. Great experience"
+    },
+    {
+      "id": "room-38",
+      "title": "The Secret Agent",
+      "venue": "Tokyo Mystery Circus",
+      "city": "Tokyo, Japan",
+      "date": "2018-08-02",
+      "note": "Action game + puzzle = FUN"
+    },
+    {
+      "id": "room-39",
+      "title": "Escape from the RED ROOM",
+      "venue": "Real Escape Room Asakusa",
+      "city": "Tokyo, Japan",
+      "date": "2018-08-03",
+      "note": "AWESOME"
+    },
+    {
+      "id": "room-40",
+      "title": "Escape from Hunter X",
+      "venue": "Real Escape Room Asakusa",
+      "city": "Tokyo, Japan",
+      "date": "2018-08-04",
+      "note": "Innovative! I played a Japanese version!"
+    },
+    {
+      "id": "room-41",
+      "title": "กระสือ",
+      "venue": "Kid Mai Death Awareness Cafe",
+      "city": "Bangkok",
+      "date": "2020-12-01",
+      "note": "Enjoyable puzzles"
+    },
+    {
+      "id": "room-42",
+      "title": "ผีจีน",
+      "venue": "Kid Mai Death Awareness Cafe",
+      "city": "Bangkok",
+      "date": "2021-12-01",
+      "note": "(online version) so many logic leap"
+    },
+    {
+      "id": "room-43",
+      "title": "Egypt",
+      "venue": "Kid Mai Death Awareness Cafe",
+      "city": "Bangkok",
+      "date": "2022-06-01",
+      "note": "Ughh, math, symbols reading left to right, ending"
+    },
+    {
+      "id": "room-44",
+      "title": "Lost Symbol",
+      "venue": "Puzzle Room Bangkok",
+      "city": "Bangkok",
+      "date": "2022-04-01",
+      "note": "Good props, above average puzzles, loose theme"
+    },
+    {
+      "id": "room-45",
+      "title": "Metro",
+      "venue": "ARoom",
+      "city": "Budapest",
+      "date": "2025-09-26",
+      "note": "Real train???"
+    },
+    {
+      "id": "room-46",
+      "title": "Bunker",
+      "venue": "ARoom",
+      "city": "Budapest",
+      "date": "2025-09-27",
+      "note": "nice science theme, random calculus, fun ending"
+    },
+    {
+      "id": "room-47",
+      "title": "Uncharted Expedition",
+      "venue": "ARoom",
+      "city": "Budapest",
+      "date": "2025-09-28",
+      "note": "fun overall, but had two bad puzzles :(, fun ending"
+    },
+    {
+      "id": "room-48",
+      "title": "Secret Subway",
+      "venue": "E-Exit",
+      "city": "Budapest",
+      "date": "2025-09-29",
+      "note": "mind-blowing! minimal text, mostly instructionless, moving car! lift!"
+    },
+    {
+      "id": "room-49",
+      "title": "Shadow Zen",
+      "venue": "Escape Portal",
+      "city": "Bangkok",
+      "date": "2025-10-22",
+      "note": "Awesome atmosphere, clean puzzles, nice manual systems"
+    }
+  ],
+  "miniGames": [
+    "Puzzle Bang 2016",
+    "Puzzle Bang 2017",
+    "Puzzle Bang 2017+",
+    "Anime North",
+    "Apartment on Green",
+    "Escape from Prison (Tokyo)",
+    "『摩訶不思議な部屋からの脱出』"
+  ]
+}

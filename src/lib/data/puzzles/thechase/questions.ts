@@ -26,9 +26,8 @@ export function getChaseQuestions(options?: {
 		4: PACK4_QUESTIONS,
 		5: PACK5_QUESTIONS
 	};
-	let pool = typeof options?.pack === 'number'
-		? [...(packs[options.pack] || [])]
-		: [...THE_CHASE_DATABASE];
+	let pool =
+		typeof options?.pack === 'number' ? [...(packs[options.pack] || [])] : [...THE_CHASE_DATABASE];
 
 	if (options?.category && options.category !== 'all') {
 		pool = pool.filter((q) => q.category === options.category);

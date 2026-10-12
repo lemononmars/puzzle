@@ -1,22 +1,19 @@
 import { describe, it, expect } from 'vitest';
-import {
-	THAI_QUIZ_DATABASE,
-	THAI_QUIZ_CATEGORIES
-} from './questions';
+import { THAI_QUIZ_DATABASE, THAI_QUIZ_CATEGORIES } from './questions';
 import {
 	getQuizQuestions,
 	calculateQuestionScore,
 	calculateQuizShowScore,
 	validateQuizShowAnswer
 } from './engine';
-import { preprocessThaiTTSText } from '../../../utils/tts';
 
 describe('Thai Quiz Dataset & Engine', () => {
 	it('should have 100% genuine questions with 4 choices, rich funnel clues, and acceptableAnswers', () => {
 		expect(THAI_QUIZ_DATABASE.length).toBeGreaterThanOrEqual(800);
 
 		// Synthetic dummy filler pattern detector
-		const syntheticFillerRegex = /ลำดับที่\s*\d+|แห่งที่\s*\d+|รายการที่\s*\d+|พื้นที่อนุรักษ์ธรรมชาติ\s*\d+|องค์ความรู้วิทยาศาสตร์|ป๊อปคัลเจอร์ญี่ปุ่นลำดับที่|ประเพณีและวัฒนธรรมลำดับที่|อาหารและวัฒนธรรมการกินลำดับที่|ประวัติศาสตร์และมรดกไทยลำดับที่/;
+		const syntheticFillerRegex =
+			/ลำดับที่\s*\d+|แห่งที่\s*\d+|รายการที่\s*\d+|พื้นที่อนุรักษ์ธรรมชาติ\s*\d+|องค์ความรู้วิทยาศาสตร์|ป๊อปคัลเจอร์ญี่ปุ่นลำดับที่|ประเพณีและวัฒนธรรมลำดับที่|อาหารและวัฒนธรรมการกินลำดับที่|ประวัติศาสตร์และมรดกไทยลำดับที่/;
 
 		for (const q of THAI_QUIZ_DATABASE) {
 			expect(q.id).toBeTypeOf('number');
@@ -66,7 +63,10 @@ describe('Thai Quiz Dataset & Engine', () => {
 		const ids = new Set<number>();
 		const questions = new Set<string>();
 		for (const item of THAI_QUIZ_DATABASE) {
-			const normalizedQuestion = item.question.trim().toLocaleLowerCase('th-TH').replace(/\s+/g, ' ');
+			const normalizedQuestion = item.question
+				.trim()
+				.toLocaleLowerCase('th-TH')
+				.replace(/\s+/g, ' ');
 			expect(ids.has(item.id), `duplicate id ${item.id}`).toBe(false);
 			expect(questions.has(normalizedQuestion), `duplicate question ${item.question}`).toBe(false);
 			ids.add(item.id);
@@ -144,20 +144,25 @@ describe('Thai Quiz Dataset & Engine', () => {
 		expect(validateQuizShowAnswer('โคราช', 'นครราชสีมา', ['นครราชสีมา', 'โคราช'])).toBe(true);
 		expect(validateQuizShowAnswer('นครราชสีมา', 'นครราชสีมา', ['นครราชสีมา', 'โคราช'])).toBe(true);
 		expect(validateQuizShowAnswer('พระนเรศวร', 'สมเด็จพระนเรศวรมหาราช', ['พระนเรศวร'])).toBe(true);
-		expect(validateQuizShowAnswer('มารีกีมาร์', 'ท้าวทองกีบม้า (มารี กีมาร์)', ['ท้าวทองกีบม้า', 'มารีกีมาร์'])).toBe(true);
+		expect(
+			validateQuizShowAnswer('มารีกีมาร์', 'ท้าวทองกีบม้า (มารี กีมาร์)', [
+				'ท้าวทองกีบม้า',
+				'มารีกีมาร์'
+			])
+		).toBe(true);
 
 		// Typo tolerance (1-2 letters off)
-		expect(validateQuizShowAnswer('โดราเอมอล', 'โดราเอมอน (Doraemon)', ['โดราเอมอน', 'Doraemon'])).toBe(true);
-		expect(validateQuizShowAnswer('โกโจ ซาโตรู', 'โกโจ ซาโตรุ (Gojo Satoru)', ['โกโจ ซาโตรุ', 'Gojo'])).toBe(true);
+		expect(
+			validateQuizShowAnswer('โดราเอมอล', 'โดราเอมอน (Doraemon)', ['โดราเอมอน', 'Doraemon'])
+		).toBe(true);
+		expect(
+			validateQuizShowAnswer('โกโจ ซาโตรู', 'โกโจ ซาโตรุ (Gojo Satoru)', ['โกโจ ซาโตรุ', 'Gojo'])
+		).toBe(true);
 		expect(validateQuizShowAnswer('พระนเรสวน', 'สมเด็จพระนเรศวรมหาราช', ['พระนเรศวร'])).toBe(true);
 		expect(validateQuizShowAnswer('สุราษธานี', 'สุราษฎร์ธานี', ['สุราษฎร์ธานี'])).toBe(true);
-		expect(validateQuizShowAnswer('pikachuu', 'พิคาชู (Pikachu)', ['พิคาชู', 'Pikachu'])).toBe(true);
+		expect(validateQuizShowAnswer('pikachuu', 'พิคาชู (Pikachu)', ['พิคาชู', 'Pikachu'])).toBe(
+			true
+		);
 	});
 
-	it('should accurately preprocess English words and acronyms for Thai TTS reading', () => {
-		expect(preprocessThaiTTSText('สารพันธุกรรม DNA และ RNA')).toBe('สารพันธุกรรม ดีเอ็นเอ และ อาร์เอ็นเอ');
-		expect(preprocessThaiTTSText('มังงะ One Piece และ Doraemon')).toBe('มังงะ วันพีซ และ โดราเอมอน');
-		expect(preprocessThaiTTSText('สมการ E = mc²')).toBe('สมการ อี เท่ากับ เอ็มซี กำลังสอง');
-		expect(preprocessThaiTTSText('สถานีอวกาศ ISS')).toBe('สถานีอวกาศ ไอเอสเอส');
-	});
 });

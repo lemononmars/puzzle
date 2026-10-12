@@ -1,5 +1,5 @@
 <script lang=ts>
-   import {splitWord, isUpper, isLower, isTall} from '$lib/utils/thaiwords'
+   import {splitWord, isUpper, isLower, isTall} from '#lib/utils/thaiwords.js'
    import {fade} from 'svelte/transition'
 
    import { createEventDispatcher } from 'svelte';
@@ -22,7 +22,7 @@
    let letterElement = Array(word.length).fill(null)
 
    let solved: boolean = false
-   // splitted by unit 
+   // splitted by unit
 
    let currentLength = 0
    for(let i = 0; i < numBlocks; i ++) {
@@ -41,7 +41,7 @@
          setActiveLetter(Math.floor(Math.random()*numLetters))
          reveal(nextHiddenLetter())
       }
-      
+
       time -= interval
       if(time <= 0)
          clearInterval(timer)
@@ -66,15 +66,15 @@
 
       if(offset == numLetters)
          solved = true
-      
+
       return activeLetterIndex
    }
 
    // function handleKeyPress(event: KeyboardEvent) {
-	// 	if (event.code === "Tab" || event.code === 'Space' || event.code === 'ArrowRight') 
+	// 	if (event.code === "Tab" || event.code === 'Space' || event.code === 'ArrowRight')
    //       nextHiddenLetter()
    //    else if (event.code === 'Enter') {
-   //       reveal(activeLetterIndex) 
+   //       reveal(activeLetterIndex)
    //       nextHiddenLetter()
    //    }
    //    else if (event.code === 'ArrowLeft')
@@ -84,7 +84,7 @@
    function reveal(index: number){
       revealedLetters[index] = true
    }
-   
+
    function clickReveal(index: number) {
       revealedLetters[index] = true
       time -= revealInterval
@@ -107,7 +107,7 @@
 
 <!-- <svelte:window on:keydown={handleKeyPress}/> -->
 <div class="flex flex-col gap-4">
-<div class="radial-progress mx-auto" style="--value:{time*100/maxTime};" class:text-warning={isPaused}>
+<div class="radial-progress mx-auto" style="--value:{time*100/maxTime};" class:text-warning-content={isPaused}>
    <div class="countdown">
       <p style="--value:{Math.floor(time/1000)};"></p>
    </div>
@@ -118,7 +118,7 @@
       <div class="w-12 relative">
          {#each word as l, idx}
             {@const letterIndex = splittedIndex[widx] + idx}
-            <div 
+            <div
                class="absolute {isLower(l) ? 'top-12': isUpper(l) ? (idx > 0 && isUpper(word[idx-1]) ? '-top-8' : '-top-4') : isTall(l) ? '-top-4' : 'top-0'} left-0 w-full {isLower(l) || isUpper(l) ? 'h-4' : isTall(l) ? 'h-16' :'h-12'} border-2"
                class:bg-success={!revealedLetters[letterIndex]}
                bind:this={letterElement[letterIndex]}

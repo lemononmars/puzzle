@@ -1,4 +1,4 @@
-import type { ILogicPuzzle } from '$lib/interfaces';
+import type { ILogicPuzzle } from '#lib/interfaces/index.js';
 
 export const staticLogicPuzzles: ILogicPuzzle[] = [
 	// Contest II Puzzles

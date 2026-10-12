@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { wordDatabase, type WordItem } from '$lib/data/puzzles/spelling/words';
+	import { wordDatabase, type WordItem } from '#lib/data/puzzles/spelling/words.js';
 	import { CheckCircleIcon, XCircleIcon } from 'svelte-feather-icons';
 
 	let currentItem: WordItem | null = null;
@@ -39,14 +39,14 @@
 
 <div class="flex flex-col justify-between gap-3 sm:gap-4 w-full">
 	<!-- Compact Subheader -->
-	<div class="flex items-center justify-between border-b border-slate-800/70 pb-2.5">
+	<div class="flex items-center justify-between border-b border-base-300 pb-2.5">
 		<div class="flex items-center gap-2">
 			<span class="h-2 w-2 rounded-full bg-teal-400"></span>
-			<span class="text-xs uppercase tracking-wider text-teal-400 font-bold">Daily Spelling Quiz</span>
+			<span class="text-xs uppercase tracking-wider text-primary font-bold">Daily Spelling Quiz</span>
 		</div>
 		<a
 			href="/puzzles/spellingquiz"
-			class="inline-flex items-center text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-teal-500/20 text-teal-300 border border-teal-500/40 hover:bg-teal-500/30 transition-all shadow-sm"
+			class="inline-flex items-center text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-teal-500/20 text-primary border border-primary/30 hover:bg-teal-500/30 transition-all shadow-sm"
 		>
 			Full Mode →
 		</a>
@@ -63,11 +63,11 @@
 						disabled={isAnswered}
 						class="py-2.5 sm:py-3.5 px-3 sm:px-5 rounded-xl font-black text-sm sm:text-xl border-2 transition-all transform active:scale-95 shadow-sm text-center truncate
 						{isAnswered && c.isCorrect
-							? 'bg-emerald-500 text-slate-950 border-emerald-300 shadow-emerald-500/30'
+							? 'bg-emerald-500 text-base-content/70 border-primary/30 shadow-emerald-500/30'
 							: isAnswered && !c.isCorrect && selectedText === c.text
-							? 'bg-rose-500/20 text-rose-300 border-rose-500/50'
-							: 'bg-slate-950 text-slate-100 border-slate-800 hover:border-teal-400 hover:text-teal-300'}"
-						style={isAnswered && c.isCorrect ? 'color: #0f172a;' : ''}
+							? 'bg-rose-500/20 text-error-content border-rose-500/50'
+							: 'bg-base-100 text-base-content text-base-content/70 border-base-300 hover:border-primary/30 hover:text-primary'}"
+						style={isAnswered && c.isCorrect ? 'color: var(--color-base-content);' : ''}
 					>
 						{c.text}
 					</button>
@@ -77,7 +77,7 @@
 			<!-- Fixed Height Container for Helper Text / Answer Response -->
 			<div class="w-full max-w-md h-10 flex items-center justify-center">
 				{#if !isAnswered}
-					<p class="text-[11px] sm:text-xs text-slate-400 font-semibold tracking-wide text-center">
+					<p class="text-[11px] sm:text-xs text-base-content/70 font-semibold tracking-wide text-center">
 						เลือกคำที่เขียนสะกดถูกต้องตามพจนานุกรม
 					</p>
 				{:else}
@@ -85,8 +85,8 @@
 						<div
 							class="flex-1 h-full px-3 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 truncate
 							{isCorrectChoice
-								? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
-								: 'bg-rose-500/20 text-rose-300 border border-rose-500/30'}"
+								? 'bg-emerald-500/20 text-primary border border-primary/30'
+								: 'bg-rose-500/20 text-error-content border border-rose-500/30'}"
 						>
 							{#if isCorrectChoice}
 								<CheckCircleIcon size="15" />
@@ -99,8 +99,8 @@
 
 						<button
 							on:click={loadNewQuestion}
-							class="px-4 h-full rounded-xl font-black bg-teal-500 hover:bg-teal-400 text-slate-950 transition-all shadow-md shadow-teal-500/20 text-xs sm:text-sm whitespace-nowrap flex items-center justify-center"
-							style="color: #0f172a;"
+							class="px-4 h-full rounded-xl font-black bg-teal-500 hover:bg-teal-400 text-base-content/70 transition-all shadow-md shadow-teal-500/20 text-xs sm:text-sm whitespace-nowrap flex items-center justify-center"
+
 						>
 							Next 🎲 →
 						</button>

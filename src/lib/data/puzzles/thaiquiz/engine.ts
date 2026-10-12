@@ -138,7 +138,10 @@ function cleanThaiText(text: string): string {
 }
 
 // Extract acceptable answer variations from choice text (e.g. "ดอกราชพฤกษ์ (คูน)" -> ["ดอกราชพฤกษ์", "ราชพฤกษ์", "คูน", "ดอกคูน"])
-export function extractAcceptableAliases(choiceText: string, customAcceptable: string[] = []): string[] {
+export function extractAcceptableAliases(
+	choiceText: string,
+	customAcceptable: string[] = []
+): string[] {
 	const aliases = new Set<string>();
 
 	for (const a of customAcceptable) {
@@ -149,7 +152,10 @@ export function extractAcceptableAliases(choiceText: string, customAcceptable: s
 	aliases.add(raw);
 
 	// 1. Split on slash, dash, hyphen, or comma
-	const parts = raw.split(/[\/\-\–\,]/).map((p) => p.trim()).filter(Boolean);
+	const parts = raw
+		.split(/[\/\-\–\,]/)
+		.map((p) => p.trim())
+		.filter(Boolean);
 	for (const p of parts) {
 		aliases.add(p);
 	}
@@ -202,8 +208,8 @@ export function levenshteinDistance(a: string, b: string): number {
 			} else {
 				matrix[i][j] = Math.min(
 					matrix[i - 1][j - 1] + 1, // substitution
-					matrix[i][j - 1] + 1,     // insertion
-					matrix[i - 1][j] + 1      // deletion
+					matrix[i][j - 1] + 1, // insertion
+					matrix[i - 1][j] + 1 // deletion
 				);
 			}
 		}
@@ -248,10 +254,16 @@ export function validateQuizShowAnswer(
 
 		// 3. Substring core-word containment
 		if (aliasClean.length >= 3 && userClean.length >= 3) {
-			if (aliasClean.includes(userClean) && userClean.length >= Math.floor(aliasClean.length * 0.6)) {
+			if (
+				aliasClean.includes(userClean) &&
+				userClean.length >= Math.floor(aliasClean.length * 0.6)
+			) {
 				return true;
 			}
-			if (userClean.includes(aliasClean) && aliasClean.length >= Math.floor(userClean.length * 0.6)) {
+			if (
+				userClean.includes(aliasClean) &&
+				aliasClean.length >= Math.floor(userClean.length * 0.6)
+			) {
 				return true;
 			}
 		}

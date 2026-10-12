@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { auditQuestion, calibrateDifficulty, inferQuestionBlueprint, REVIEW_LANGUAGE_TH } from './contentGovernance';
-import type { ThaiQuizItem } from '$lib/data/puzzles/thaiquiz/types';
+import {
+	auditQuestion,
+	calibrateDifficulty,
+	inferQuestionBlueprint,
+	REVIEW_LANGUAGE_TH
+} from './contentGovernance';
+import type { ThaiQuizItem } from '#lib/data/puzzles/thaiquiz/types.js';
 import { masteryLabel, masteryPercent } from './mastery';
 
 const question: ThaiQuizItem = {
@@ -25,7 +30,9 @@ describe('quiz content governance', () => {
 
 	it('infers a reusable blueprint from the stem and tags', () => {
 		expect(inferQuestionBlueprint(question)).toEqual({
-			skill: 'recall', knowledgePoint: 'นักวิทยาศาสตร์', answerForm: 'person'
+			skill: 'recall',
+			knowledgePoint: 'นักวิทยาศาสตร์',
+			answerForm: 'person'
 		});
 	});
 
@@ -39,7 +46,9 @@ describe('quiz content governance', () => {
 		const audit = auditQuestion(question, {
 			questionKey: 'thaiquiz:science:1',
 			provenance: {
-				sourceUrl: 'https://example.com/reference', sourceTitle: 'Reference', factCheckedAt: '2026-08-30'
+				sourceUrl: 'https://example.com/reference',
+				sourceTitle: 'Reference',
+				factCheckedAt: '2026-08-30'
 			},
 			blueprint: { skill: 'recall', knowledgePoint: 'นักวิทยาศาสตร์', answerForm: 'person' },
 			quality: { reviewStatus: 'approved' }

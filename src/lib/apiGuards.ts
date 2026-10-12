@@ -6,7 +6,6 @@ export const PUZZLE_TABLES = new Set([
 	'puzzlehunt',
 	'rebus',
 	'spellingbee',
-	'weekly',
 	'wordsearch'
 ]);
 
@@ -24,9 +23,5 @@ export function isAllowedTable(table: string, allowed: Set<string>) {
 }
 
 export function publicError(status = 500, message = 'Internal server error') {
-	return {
-		status,
-		headers: { 'Content-Type': 'application/json' },
-		body: { error: message }
-	};
+	return Response.json({ error: message }, { status });
 }

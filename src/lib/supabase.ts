@@ -1,8 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-type SupaStorageBucket = 'puzzles' | 'events' | 'assets' | 'hiddenlink';
+type SupaStorageBucket = 'puzzles' | 'assets' | 'hiddenlink';
 const DIR_IMAGE = 'https://ojjggolcfmjnovmipaav.supabase.in/storage/v1/object/';
-export const DEFAULT_WEEKLY_IMAGE_URL = DIR_IMAGE + 'weekly/placeholder.png';
 
 const rawUrl = import.meta.env.VITE_SUPABASE_URL;
 const rawKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -17,13 +16,14 @@ const supabaseKey =
 		? rawKey
 		: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.placeholder';
 
-export const supabaseClient = createClient(supabaseUrl, supabaseKey);
+export const supabaseClient = createClient(supabaseUrl, supabaseKey, {
+	auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
+});
 
 /**
  * Convenience re-exports for typed selections
  *
  */
-export const auth = supabaseClient.auth;
 export const storage = supabaseClient.storage;
 
 /**
@@ -53,43 +53,4 @@ export function getPuzzleImageURL(type: string, filename: string) {
 
 export function getHiddenLinkImageURL(filename: string) {
 	return `/puzzles/hiddenlink/${filename}`;
-}
-
-export async function uploadProfilePicture(userId: string, file: File): Promise<string | null> {
-	try {
-		// Sanitize userId to prevent path traversal
-		const sanitizedUserId = userId.replace(/[^a-zA-Z0-9-]/g, '');
-		if (!sanitizedUserId) {
-			throw new Error('Invalid user ID');
-		}
-
-		// Validate mime type
-		const allowedTypes = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif']);
-		if (!allowedTypes.has(file.type)) {
-			throw new Error('Unsupported image type');
-		}
-
-		// Validate and sanitize file extension
-		const fileExt = file.name.split('.').pop()?.toLowerCase();
-		const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
-		if (!fileExt || !allowedExtensions.includes(fileExt)) {
-			throw new Error('Invalid file extension');
-		}
-
-		const fileName = `${sanitizedUserId}-${Date.now()}.${fileExt}`;
-		const filePath = `${sanitizedUserId}/${fileName}`;
-
-		const { error: uploadError } = await supabaseClient.storage
-			.from('profile-pictures')
-			.upload(filePath, file, { upsert: true });
-
-		if (uploadError) throw uploadError;
-
-		const { data } = supabaseClient.storage.from('profile-pictures').getPublicUrl(filePath);
-
-		return data.publicUrl;
-	} catch (error) {
-		console.error('Error uploading profile picture:', error);
-		return null;
-	}
 }

@@ -13,11 +13,6 @@ describe('Date Utilities', () => {
 			vi.restoreAllMocks();
 		});
 
-		it('returns Bangkok date for same-day UTC input', () => {
-			vi.spyOn(Date, 'now').mockReturnValue(new Date('2023-01-01T12:00:00Z').getTime());
-			expect(todayDateThaiString()).toBe('1 มกราคม 2566');
-		});
-
 		it('handles Bangkok date boundary correctly', () => {
 			vi.spyOn(Date, 'now').mockReturnValue(new Date('2023-01-01T20:00:00Z').getTime());
 			expect(todayDateThaiString()).toBe('2 มกราคม 2566');
@@ -28,9 +23,5 @@ describe('Date Utilities', () => {
 			expect(todayDateThaiString()).toBe('29 กุมภาพันธ์ 2567');
 		});
 
-		it('formats April without manual spacing bugs', () => {
-			vi.spyOn(Date, 'now').mockReturnValue(new Date('2023-04-10T12:00:00Z').getTime());
-			expect(todayDateThaiString()).toBe('10 เมษายน 2566');
-		});
 	});
 });

@@ -1,87 +1,87 @@
 {
-	"name": "Code Breaker",
-	"short_name": "Code Breaker",
-	"description": "ศูนย์รวมปริศนา ถอดรหัส และพัซเซิลตรรกะภาษาไทย",
-	"start_url": "/",
-	"scope": "/",
-	"display": "standalone",
-	"orientation": "portrait-primary",
-	"background_color": "#171212",
-	"theme_color": "#10b981",
-	"lang": "th",
-	"categories": [
-		"games",
-		"puzzle",
-		"education"
-	],
-	"icons": [
-		{
-			"src": "/icons/icon-192x192.png",
-			"sizes": "192x192",
-			"type": "image/png",
-			"purpose": "any"
-		},
-		{
-			"src": "/icons/icon-512x512.png",
-			"sizes": "512x512",
-			"type": "image/png",
-			"purpose": "any"
-		},
-		{
-			"src": "/icons/icon-512x512-maskable.png",
-			"sizes": "512x512",
-			"type": "image/png",
-			"purpose": "maskable"
-		}
-	],
-	"shortcuts": [
-		{
-			"name": "Weekly Puzzle",
-			"short_name": "Weekly",
-			"description": "ปริศนาประจำสัปดาห์",
-			"url": "/puzzles/weekly",
-			"icons": [
-				{
-					"src": "/icons/icon-192x192.png",
-					"sizes": "192x192"
-				}
-			]
-		},
-		{
-			"name": "Puzzle Battle",
-			"short_name": "Battle",
-			"description": "ประลองปริศนาสดแบบเรียลไทม์",
-			"url": "/puzzles/battle",
-			"icons": [
-				{
-					"src": "/icons/icon-192x192.png",
-					"sizes": "192x192"
-				}
-			]
-		},
-		{
-			"name": "Logic Puzzles",
-			"short_name": "Logic",
-			"description": "พัซเซิลตรรกะ",
-			"url": "/puzzles/logicpuzzle",
-			"icons": [
-				{
-					"src": "/icons/icon-192x192.png",
-					"sizes": "192x192"
-				}
-			]
-		},
-		{
-			"name": "Tools",
-			"short_name": "เครื่องมือ",
-			"description": "เครื่องมือช่วยสร้างและไขปริศนา",
-			"url": "/tools",
-			"icons": [
-				{
-					"src": "/icons/icon-192x192.png",
-					"sizes": "192x192"
-				}
-			]
-		}
-	]
+  "name": "Puzzle",
+  "short_name": "Puzzle",
+  "description": "ศูนย์รวมปริศนา ถอดรหัส และพัซเซิลตรรกะภาษาไทย",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eef1e9",
+  "theme_color": "#eef1e9",
+  "lang": "th",
+  "categories": [
+    "games",
+    "puzzle",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Weekly Puzzle",
+      "short_name": "Weekly",
+      "description": "ปริศนาประจำสัปดาห์",
+      "url": "/puzzles/weekly",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Puzzle Battle",
+      "short_name": "Battle",
+      "description": "ประลองปริศนาสดแบบเรียลไทม์",
+      "url": "/puzzles/battle",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Logic Puzzles",
+      "short_name": "Logic",
+      "description": "พัซเซิลตรรกะ",
+      "url": "/puzzles/logicpuzzle",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "short_name": "เครื่องมือ",
+      "description": "เครื่องมือช่วยสร้างและไขปริศนา",
+      "url": "/tools",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
 }
