@@ -51,14 +51,17 @@
 			<label class="block text-sm">City<select class="select w-full mt-2" bind:value={city}><option value="all">All cities</option>{#each cities as place}<option value={place}>{place}</option>{/each}</select></label>
 			<label class="block text-sm">Year<select class="select w-full mt-2" bind:value={year}><option value="all">All years</option>{#each years as visitYear}<option value={visitYear}>{visitYear}</option>{/each}</select></label>
 		</div>
-		<div class="grid md:grid-cols-2 gap-4">
-			{#each filtered as room (room.id)}
-				<article class="botanical-surface visit-card">
-					<div class="flex flex-wrap justify-between gap-2 text-xs mb-3"><span class="text-secondary font-semibold">{room.city}</span>{#if room.date}<time datetime={room.date} class="botanical-muted">{dateLabel(room.date)}</time>{:else}<span class="botanical-muted">Date not recorded</span>{/if}</div>
-					<h3 class="text-lg font-bold">{room.title}</h3><p class="botanical-muted text-sm mt-1">{room.venue}</p>
-					{#if room.note}<details class="mt-4 text-sm"><summary class="cursor-pointer text-primary">My visit note</summary><p class="mt-3 leading-relaxed">{room.note}</p></details>{/if}
-				</article>
-			{:else}<p class="botanical-muted py-8">No visits match these filters.</p>{/each}
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex (Keyboard users need focus to scroll the wide passport table.) -->
+<div class="overflow-x-auto rounded-2xl border border-base-300 bg-base-100 text-base-content" tabindex="0" role="region" aria-label="Escape room visits table">
+			<table class="table table-zebra passport-table">
+				<caption class="sr-only">Escape room visits, dates, venues, cities, and personal notes</caption>
+				<thead><tr><th scope="col">Date</th><th scope="col">Room</th><th scope="col">Venue</th><th scope="col">City</th><th scope="col">Field note</th></tr></thead>
+				<tbody>{#each filtered as room (room.id)}<tr>
+					<td>{#if room.date}<time datetime={room.date}>{dateLabel(room.date)}</time>{:else}Not recorded{/if}</td>
+					<th scope="row">{room.title}</th><td>{room.venue}</td><td>{room.city === 'Totonro, CA' ? 'Toronto, CA' : room.city}</td>
+					<td>{#if room.note}<details><summary class="cursor-pointer text-primary">Read note</summary><p class="mt-2 leading-relaxed">{room.note}</p></details>{:else}<span class="botanical-muted">—</span>{/if}</td>
+				</tr>{:else}<tr><td colspan="5" class="py-8 text-center">No visits match these filters.</td></tr>{/each}</tbody>
+			</table>
 		</div>
 	</section>
 
@@ -69,6 +72,9 @@
 <style>
 	.passport-intro { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px; }
 	.passport-stamp { width: 210px; height: 210px; border-radius: 50%; border: 2px dashed currentColor; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; transform: rotate(5deg); }
-	.visit-card { padding: 24px; }
+	.passport-table { min-width:760px; }
+	.passport-table td { vertical-align:top; }
+	.passport-table td:first-child { white-space:nowrap; }
+	.passport-table td:last-child { min-width:180px; max-width:300px; }
 	@media (max-width: 640px) { .passport-intro { grid-template-columns: 1fr; } .passport-stamp { width: 170px; height: 170px; margin: 0 auto; } }
 </style>

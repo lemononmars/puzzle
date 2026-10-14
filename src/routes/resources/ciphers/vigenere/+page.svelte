@@ -104,7 +104,7 @@
 	</header>
 
 	<!-- Converter Tool -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
 		<div class="flex items-center justify-between flex-wrap gap-2">
 			<h2 class="text-xl font-extrabold text-amber-400 flex items-center gap-2">
 				<span>🔑</span> เครื่องมือแปลงรหัส (Converter)
@@ -131,7 +131,7 @@
 				/>
 			</div>
 
-			<div class="space-y-2 bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 flex flex-col justify-between">
+			<div class="botanical-card space-y-2 bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 flex flex-col justify-between">
 				<div>
 					<span class="text-xs font-bold text-base-content/70">ผลลัพธ์ (Output Text):</span>
 					<div class="text-xl font-mono font-bold text-amber-400 break-all mt-1">
@@ -155,7 +155,7 @@
 	</section>
 
 	<!-- Interactive Tabula Recta Grid Explanation -->
-	<section class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-5">
+	<section class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-5">
 		<div class="flex items-center justify-between flex-wrap gap-3 border-b border-base-300 pb-3">
 			<div>
 				<h2 class="text-lg font-bold text-base-content flex items-center gap-2">
@@ -251,13 +251,13 @@
 	</section>
 
 	<!-- Practice Exercises -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
 		<h2 class="text-lg font-bold text-base-content border-b border-base-300 pb-2">
 			📝 แบบฝึกหัดถอดรหัส Vigenère
 		</h2>
 		<div class="space-y-3">
 			{#each exercises as ex, idx}
-				<div class="bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 space-y-2">
+				<div class="botanical-card bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 space-y-2">
 					<div class="flex items-center justify-between">
 						<span class="text-xs font-bold text-amber-400">ข้อที่ {ex.id}: {ex.cipherText}</span>
 						{#if feedback[idx] === 'correct'}
@@ -273,7 +273,7 @@
 						bind:value={answers[idx]}
 						placeholder="พิมพ์คำตอบ..."
 						buttonText="ตรวจ"
-						btnClass="bg-amber-500 hover:bg-amber-400 text-base-content/70"
+						btnClass="btn-primary text-primary-content"
 						size="sm"
 						on:submit={() => checkAnswer(idx)}
 					/>

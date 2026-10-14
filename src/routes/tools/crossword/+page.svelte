@@ -840,7 +840,7 @@
 		let currY = gridStartY;
 
 		// Pre-calculate height based on actual line wrapping
-		ctx.font = 'bold 18px sans-serif';
+		ctx.font = 'bold 18px DM Sans, Noto Serif Thai';
 		const sectionTitleHeight = 25;
 		const clueLineHeight = 20;
 		const clueSpacing = 5;
@@ -855,7 +855,7 @@
 				const words = text.split(' ');
 				let line = '';
 				let lineCount = 1;
-				ctx.font = '14px sans-serif';
+				ctx.font = '14px DM Sans, Noto Serif Thai';
 				for (let i = 0; i < words.length; i++) {
 					const testLine = line + words[i] + ' ';
 					if (ctx.measureText(testLine).width > cluePanelWidth && i > 0) {
@@ -883,9 +883,9 @@
 
 		// Header
 		ctx.fillStyle = '#000000';
-		ctx.font = 'bold 32px sans-serif';
+		ctx.font = 'bold 32px DM Sans, Noto Serif Thai';
 		ctx.fillText(title || 'อักษรไขว้', padding, padding);
-		ctx.font = '16px sans-serif';
+		ctx.font = '16px DM Sans, Noto Serif Thai';
 		ctx.fillStyle = '#666666';
 		ctx.fillText(`By ${author || 'นิรนาม'}`, padding, padding + 30);
 
@@ -907,14 +907,14 @@
 					const posKey = `${r},${c}`;
 					if (cellNumbers.has(posKey)) {
 						ctx.fillStyle = '#000000';
-						ctx.font = '10px sans-serif';
+						ctx.font = '10px DM Sans, Noto Serif Thai';
 						ctx.fillText((cellNumbers.get(posKey)!).toString(), x + 4, y + 12);
 					}
 
 					// Letter (Answer)
 					if (showAnswers && cell.letter) {
 						ctx.fillStyle = '#000000';
-						ctx.font = 'bold 24px sans-serif';
+						ctx.font = 'bold 24px DM Sans, Noto Serif Thai';
 						ctx.textAlign = 'center';
 						ctx.textBaseline = 'middle';
 						ctx.fillText(cell.letter, x + drawCellSize / 2, y + drawCellSize / 2 + 5);
@@ -931,10 +931,10 @@
 
 		const drawClueSection = (label: string, dir: string) => {
 			ctx.fillStyle = '#000000';
-			ctx.font = 'bold 18px sans-serif';
+			ctx.font = 'bold 18px DM Sans, Noto Serif Thai';
 			ctx.fillText(label, clueX, currY);
 			currY += 25;
-			ctx.font = '14px sans-serif';
+			ctx.font = '14px DM Sans, Noto Serif Thai';
 
 			detectedClues
 				.filter((c) => c.direction === dir)
@@ -1216,7 +1216,7 @@
 								</div>
 								<div
 									tabindex="0"
-									class="dropdown-content p-3 shadow-xl bg-base-200 border border-base-300 rounded-xl w-48 mt-0 pt-2 z-[9999]"
+									class="botanical-card dropdown-content p-3 shadow-xl bg-base-200 border border-base-300 rounded-xl w-48 mt-0 pt-2 z-[9999]"
 								>
 									<span class="text-sm font-bold opacity-50 uppercase mb-1 block">ขนาดช่อง</span>
 									<input
@@ -1238,7 +1238,7 @@
 								</div>
 								<div
 									tabindex="0"
-									class="dropdown-content p-3 shadow-xl bg-base-200 border border-base-300 rounded-xl w-48 mt-0 pt-2 z-[9999]"
+									class="botanical-card dropdown-content p-3 shadow-xl bg-base-200 border border-base-300 rounded-xl w-48 mt-0 pt-2 z-[9999]"
 								>
 									<span class="text-sm font-bold opacity-50 uppercase mb-1 block">ขนาดตัวเลข</span>
 									<input
@@ -1558,7 +1558,7 @@
 			<!-- Step 2: Clues Section -->
 			{#if currentStep === 2}
 				<div
-					class="bg-base-200 rounded-3xl border border-base-300 shadow-xl overflow-hidden flex flex-col max-h-[80vh] animate-fade-in"
+					class="botanical-card bg-base-200 rounded-3xl border border-base-300 shadow-xl overflow-hidden flex flex-col max-h-[80vh] animate-fade-in"
 				>
 					<div
 						class="p-4 bg-base-300/50 border-b border-base-300 flex items-center justify-between"
@@ -1633,7 +1633,7 @@
 			<!-- Step 3: Share Card -->
 			{#if currentStep === 3}
 				<div
-					class="bg-base-200 p-6 rounded-3xl border border-primary/20 shadow-xl w-full animate-fade-in flex flex-col gap-6"
+					class="botanical-card bg-base-200 p-6 rounded-3xl border border-primary/20 shadow-xl w-full animate-fade-in flex flex-col gap-6"
 				>
 					<div class="flex items-center gap-3">
 						<div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -1752,7 +1752,7 @@
 				>
 					{#if showResizeControls}
 						<div
-							class="bg-base-200 p-4 rounded-3xl border-2 border-primary shadow-xl animate-bounce-subtle"
+							class="botanical-card bg-base-200 p-4 rounded-3xl border-2 border-primary shadow-xl animate-bounce-subtle"
 						>
 							<h3 class="font-bold text-sm mb-1">โหมดปรับขนาดตาราง</h3>
 							<p class="text-[10px] opacity-60 mb-4">กดปุ่มรอบตารางเพื่อเพิ่มหรือลดแถว/คอลัมน์</p>

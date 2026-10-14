@@ -14,7 +14,7 @@
 		<div class="inline-flex items-center justify-center p-4 bg-amber-500/10 text-warning-content rounded-full mb-4">
 			<AwardIcon size="44" />
 		</div>
-		<h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 text-primary bg-gradient-to-r from-amber-400 via-orange-500 to-red-500">
+		<h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 text-primary">
 			Jeopardy Quiz
 		</h1>
 		<p class="text-base-content/70 text-lg">

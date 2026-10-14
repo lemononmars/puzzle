@@ -105,7 +105,7 @@
 	</div>
 
 	<!-- Main Game Card -->
-	<section class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-xl">
+	<section class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-xl">
 		<!-- Header Info -->
 		<div class="space-y-3 text-center">
 			<div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-primary flex items-center justify-center border border-primary/30 mx-auto shadow-md">
@@ -155,7 +155,7 @@
 					type="text"
 					bind:value={inputWord}
 					placeholder="พิมพ์ชื่อสถานที่ที่จะไป..."
-					style="background-color: #020617 !important; color: #f8fafc !important;"
+					class:botanical-answer-input={true}
 					class="input  border border-base-300 focus:border-primary/30 rounded-xl flex-1 text-sm font-bold py-3"
 					required
 				/>

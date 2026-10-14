@@ -353,7 +353,7 @@
 
 			<!-- Name Input before revealing solution -->
 			{#if showNameInput}
-				<div class="w-full max-w-md bg-base-100 text-base-content border border-primary/30 rounded-xl p-3 flex flex-col items-center space-y-2 shadow-xl">
+				<div class="botanical-card w-full max-w-md bg-base-100 text-base-content border border-primary/30 rounded-xl p-3 flex flex-col items-center space-y-2 shadow-xl">
 					<span class="text-xs font-bold text-primary">Enter your name to save score:</span>
 					<div class="flex w-full gap-1.5">
 						<input

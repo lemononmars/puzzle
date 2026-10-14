@@ -168,7 +168,7 @@
 <div class="container mx-auto px-4 py-8 max-w-3xl flex flex-col items-center gap-6 min-h-[85vh]">
 	<!-- Header -->
 	<div class="text-center flex flex-col items-center gap-2">
-		<h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-400">
+		<h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary">
 			Mathdle
 		</h1>
 		<p class="text-base-content/70 text-sm font-medium">Day #{dateIndex + 1} • ปริศนาสมการคณิตศาสตร์ประจำวัน</p>
@@ -292,7 +292,7 @@
 		on:click={() => (modal = false)}
 	>
 		<div
-			class="bg-base-100 text-base-content border border-base-300 rounded-xl p-6 max-w-md w-full text-base-content/70 flex flex-col gap-4 shadow-2xl"
+			class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-xl p-6 max-w-md w-full text-base-content/70 flex flex-col gap-4 shadow-2xl"
 			on:click|stopPropagation
 		>
 			<h2 class="text-2xl font-bold text-warning-content border-b border-base-300 pb-2">กติกาการเล่น Mathdle</h2>

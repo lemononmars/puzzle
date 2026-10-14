@@ -59,7 +59,7 @@
 	<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 		<!-- Left: Image Gallery & Highlights (7 cols) -->
 		<div class="lg:col-span-7 space-y-6">
-			<div class="relative overflow-hidden rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-2xl p-2 sm:p-4">
+			<div class="botanical-card relative overflow-hidden rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-2xl p-2 sm:p-4">
 				<img
 					src={product.imgUrl}
 					alt={product.title}
@@ -79,7 +79,7 @@
 			</div>
 
 			<!-- Product Details & Description -->
-			<div class="p-6 rounded-2xl bg-base-100 text-base-content border border-base-300 text-left space-y-4">
+			<div class="botanical-card p-6 rounded-2xl bg-base-100 text-base-content border border-base-300 text-left space-y-4">
 				<h2 class="text-lg font-bold text-base-content flex items-center gap-2">
 					<BookOpenIcon size="18" class="text-primary" />
 					<span>รายละเอียดสินค้า</span>
@@ -113,7 +113,7 @@
 		<!-- Right: Pricing, CTA & Order Guide (5 cols) -->
 		<div class="lg:col-span-5 space-y-6">
 			<!-- Purchase Panel Card -->
-			<div class="p-6 sm:p-7 rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-2xl text-left space-y-5">
+			<div class="botanical-card p-6 sm:p-7 rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-2xl text-left space-y-5">
 				<div>
 					<div class="flex items-center gap-2 mb-2">
 						<span class="badge badge-accent text-accent-content font-bold text-xs">In Stock</span>

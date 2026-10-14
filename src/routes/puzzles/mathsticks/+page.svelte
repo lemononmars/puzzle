@@ -107,7 +107,7 @@
 			ℹ️ กติกา
 		</button>
 
-		<h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-primary bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 !my-0">
+		<h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-primary !my-0">
 			Mathsticks 🔥
 		</h1>
 		<p class="text-base-content/70 text-xs sm:text-sm font-medium">ย้ายไม้ขีดไฟเพื่อให้ได้สมการคณิตศาสตร์ที่ถูกต้อง</p>
@@ -205,7 +205,7 @@
 
 	<!-- Solutions Panel when "เปิดเฉลย" is active -->
 	{#if revealed}
-		<div in:fade class="w-full max-w-4xl bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 flex flex-col gap-4 shadow-2xl">
+		<div in:fade class="botanical-card w-full max-w-4xl bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 flex flex-col gap-4 shadow-2xl">
 			<div class="flex justify-between items-center border-b border-base-300 pb-3">
 				<h3 class="text-lg font-bold text-secondary">💡 เฉลยคำตอบ (ย้าย {activeCategory.moves} ก้าน)</h3>
 				<span class="text-xs text-base-content/70 font-mono">{categoryFilteredSolutions.length} วิธี</span>
@@ -213,7 +213,7 @@
 
 			<div class="flex flex-col gap-4">
 				{#each categoryFilteredSolutions as solEq, idx}
-					<div class="bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 flex flex-col gap-2">
+					<div class="botanical-card bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 flex flex-col gap-2">
 						<span class="text-xs text-base-content/70 font-medium">คำตอบที่ {idx + 1}:</span>
 						<MathstickBoard
 							equationTokens={solEq.split('')}
@@ -242,7 +242,7 @@
 		on:click={() => (showInfoModal = false)}
 	>
 		<div
-			class="bg-base-100 text-base-content border border-base-300 rounded-2xl p-4 sm:p-6 max-w-xl w-full text-base-content/70 flex flex-col gap-4 shadow-2xl my-auto"
+			class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-2xl p-4 sm:p-6 max-w-xl w-full text-base-content/70 flex flex-col gap-4 shadow-2xl my-auto"
 			on:click|stopPropagation
 		>
 			<div class="flex justify-between items-center border-b border-base-300 pb-3">

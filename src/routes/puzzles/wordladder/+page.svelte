@@ -244,7 +244,7 @@
 </svelte:head>
 
 <div id="wordladder-game-container" class="max-w-4xl mx-auto px-2 sm:px-4 py-2 sm:py-4 flex flex-col gap-3 select-none">
-	<div class="bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 relative overflow-hidden">
+	<div class="botanical-card bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 relative overflow-hidden">
 		<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
 
 		<!-- ── Header row ─────────────────────────────────────────────────── -->
@@ -490,7 +490,7 @@
 		on:click={() => (showRules = false)}
 	>
 		<div
-			class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 max-w-sm w-full text-base-content/70 flex flex-col gap-4 shadow-2xl"
+			class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 max-w-sm w-full text-base-content/70 flex flex-col gap-4 shadow-2xl"
 			on:click|stopPropagation
 		>
 			<h2 class="text-xl font-bold text-primary border-b border-base-300 pb-2">กติกา Word Ladder</h2>

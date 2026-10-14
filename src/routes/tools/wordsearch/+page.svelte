@@ -280,7 +280,7 @@
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-8">
-	<div class="bg-base-200 rounded-3xl p-8 shadow-xl border border-base-300">
+	<div class="botanical-card bg-base-200 rounded-3xl p-8 shadow-xl border border-base-300">
 		<h1 class="text-4xl font-black mb-6 text-center text-primary">Word Search Builder</h1>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">

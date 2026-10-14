@@ -72,7 +72,7 @@ $: ({ puzzleHunts } = data);
 <div class="container mx-auto px-4 py-6 flex flex-col gap-8 max-w-5xl">
 	<!-- Centered Header -->
 	<div class="text-center mb-2">
-		<h1 class="text-3xl lg:text-5xl font-extrabold tracking-tight text-primary bg-gradient-to-r from-base-200 to-base-200">
+		<h1 class="text-3xl lg:text-5xl font-extrabold tracking-tight text-primary">
 			Puzzle Hunts
 		</h1>
 		<p class="text-base-content/70 text-sm sm:text-base mt-2">ชุดปริศนาต่อเนื่องที่รวมมิติมินิเกมและปริศนาหลายด่าน</p>
@@ -83,7 +83,7 @@ $: ({ puzzleHunts } = data);
 		{#each puzzleHunts || [] as ph (ph.id)}
 			<a
 				href="/puzzles/puzzlehunt/{ph.id}"
-				class="card bg-base-100 text-base-content hover:bg-base-100 text-base-content border border-base-300 hover:border-primary/30 shadow-xl transition-all duration-300 hover:-translate-y-1 block h-full group rounded-2xl overflow-hidden"
+				class="botanical-card card bg-base-100 text-base-content hover:bg-base-100 text-base-content border border-base-300 hover:border-primary/30 shadow-xl transition-all duration-300 hover:-translate-y-1 block h-full group rounded-2xl overflow-hidden"
 			>
 				<div class="card-body flex flex-col items-center text-center gap-4 p-6">
 					<div class="w-20 h-20 rounded-2xl bg-base-100 text-base-content text-primary flex items-center justify-center p-3 shadow-inner border border-base-300 group-hover:scale-110 transition-all duration-300">

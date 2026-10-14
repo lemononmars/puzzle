@@ -94,7 +94,7 @@
 	</header>
 
 	<!-- Interactive Converter Section -->
-	<section class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-6">
+	<section class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-6">
 		<div class="space-y-2">
 			<label for="semaphore-input-text" class="text-sm font-bold text-base-content/70">ใส่ข้อความภาษาอังกฤษ (A-Z):</label>
 			<input
@@ -109,7 +109,7 @@
 		<!-- Rendered Flags Display -->
 		<div class="space-y-3">
 			<h3 class="text-sm font-bold text-amber-400">ผลลัพธ์แสดงรูปธงสัญญาณ:</h3>
-			<div class="flex flex-wrap gap-3 bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 min-h-[120px] items-center">
+			<div class="botanical-card flex flex-wrap gap-3 bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 min-h-[120px] items-center">
 				{#each inputText.toUpperCase().replace(/[^A-Z]/g, '').split('') as char}
 					{@const data = semaphoreData[char]}
 					{#if data}
@@ -135,14 +135,14 @@
 	</section>
 
 	<!-- Practice Exercises -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
 		<h2 class="text-xl font-extrabold text-amber-400 flex items-center gap-2 border-b border-base-300 pb-3">
 			<span>✏️</span> แบบฝึกหัดทดลองถอดรหัส Semaphore (Practice Exercises)
 		</h2>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 			{#each exercises as ex, idx}
-				<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-4 flex flex-col justify-between">
+				<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-4 flex flex-col justify-between">
 					<div class="space-y-3">
 						<span class="font-bold text-xs text-base-content/70">ข้อที่ {ex.id}</span>
 						<div class="bg-base-100 text-base-content p-3 rounded-xl border border-base-300 flex flex-wrap items-center justify-center gap-2 min-h-[60px]">
@@ -169,7 +169,7 @@
 							bind:value={answers[idx]}
 							placeholder="พิมพ์คำตอบภาษาอังกฤษ..."
 							buttonText="ตรวจ"
-							btnClass="bg-amber-500 hover:bg-amber-400 text-base-content/70"
+							btnClass="btn-primary text-primary-content"
 							size="sm"
 							on:submit={() => checkAnswer(idx)}
 						/>
@@ -191,7 +191,7 @@
 	</section>
 
 	<!-- Full Semaphore Reference Chart -->
-	<section class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-4">
 		<h2 class="text-lg font-bold text-base-content border-b border-base-300 pb-2">
 			📋 ตารางอ้างอิงตำแหน่งธงสัญญาณ A - Z
 		</h2>

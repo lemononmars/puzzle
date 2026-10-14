@@ -152,7 +152,7 @@ $: ({ mechanic, prev, next } = data);
 	</header>
 
 	<!-- Section 1: Detailed Concept (Formatted with CSS styling) -->
-	<div class="p-6 sm:p-8 rounded-3xl border border-base-300 bg-base-100 text-base-content shadow-sm space-y-4">
+	<div class="botanical-card p-6 sm:p-8 rounded-3xl border border-base-300 bg-base-100 text-base-content shadow-sm space-y-4">
 		<h2 class="text-xl font-black flex items-center gap-2 text-base-content border-b border-base-300/80 pb-3">
 			<BookOpenIcon size="20" class="text-primary" />
 			<span>คำอธิบายกลไก (Mechanic Concept)</span>
@@ -164,7 +164,7 @@ $: ({ mechanic, prev, next } = data);
 
 	<!-- Section 2: Interactive Puzzle Section (Conditional on hasExercise) -->
 	{#if mechanic.hasExercise}
-	<section class="rounded-3xl border border-base-300 bg-base-200 text-base-content p-6 sm:p-8 shadow-xl space-y-6">
+	<section class="botanical-card rounded-3xl border border-base-300 bg-base-200 text-base-content p-6 sm:p-8 shadow-xl space-y-6">
 		<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-base-300 pb-4">
 			<div>
 				<div class="flex items-center gap-2 mb-1">
@@ -208,7 +208,7 @@ $: ({ mechanic, prev, next } = data);
 		{/if}
 
 		<!-- Non-raster Vector SVG Puzzle Canvas -->
-		<div class="relative overflow-hidden rounded-2xl bg-base-100 text-base-content border border-base-300 p-3 sm:p-6 shadow-inner">
+		<div class="botanical-card relative overflow-hidden rounded-2xl bg-base-100 text-base-content border border-base-300 p-3 sm:p-6 shadow-inner">
 			{#if showSolution && mechanic.puzzle.solutionSvg}
 				<div class="transition-all duration-300">
 					{@html mechanic.puzzle.solutionSvg}
@@ -273,7 +273,7 @@ $: ({ mechanic, prev, next } = data);
 			</div>
 
 			{#if showSolution}
-				<div class="mt-4 p-5 rounded-2xl bg-base-100 border border-primary/30 text-sm leading-relaxed space-y-3">
+				<div class="botanical-card mt-4 p-5 rounded-2xl bg-base-100 border border-primary/30 text-sm leading-relaxed space-y-3">
 					<div class="flex items-center gap-2 text-primary font-bold">
 						<AwardIcon size="18" />
 						<span>เฉลยและขั้นตอนการคิด (Step-by-Step Breakdown)</span>
@@ -292,7 +292,7 @@ $: ({ mechanic, prev, next } = data);
 		{#if prev}
 			<a
 				href="/resources/mechanics/{prev.id}"
-				class="group flex flex-col p-4 rounded-2xl border border-base-300 bg-base-200/60 hover:bg-base-200 transition-colors text-left"
+				class="botanical-card group flex flex-col p-4 rounded-2xl border border-base-300 bg-base-200/60 hover:bg-base-200 transition-colors text-left"
 			>
 				<span class="text-[11px] uppercase tracking-wider opacity-60 flex items-center gap-1">
 					<ChevronLeftIcon size="12" />
@@ -310,7 +310,7 @@ $: ({ mechanic, prev, next } = data);
 		{#if next}
 			<a
 				href="/resources/mechanics/{next.id}"
-				class="group flex flex-col p-4 rounded-2xl border border-base-300 bg-base-200/60 hover:bg-base-200 transition-colors text-right"
+				class="botanical-card group flex flex-col p-4 rounded-2xl border border-base-300 bg-base-200/60 hover:bg-base-200 transition-colors text-right"
 			>
 				<span class="text-[11px] uppercase tracking-wider opacity-60 flex items-center justify-end gap-1">
 					<span>กลไกถัดไป</span>

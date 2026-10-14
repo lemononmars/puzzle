@@ -147,7 +147,7 @@
 
 			<!-- Feedback Card (compact) -->
 			{#if isAnswered}
-				<div class="bg-base-100 text-base-content border {isCorrect ? 'border-primary/30' : 'border-rose-500/40'} rounded-xl p-2 sm:p-2.5 flex items-center justify-between gap-2 shadow-lg max-w-xl mx-auto w-full" in:scale>
+				<div class="botanical-card bg-base-100 text-base-content border {isCorrect ? 'border-primary/30' : 'border-rose-500/40'} rounded-xl p-2 sm:p-2.5 flex items-center justify-between gap-2 shadow-lg max-w-xl mx-auto w-full" in:scale>
 					<div class="flex flex-col gap-0.5 text-[11px] sm:text-xs text-base-content/70 min-w-0">
 						<span class="font-bold {isCorrect ? 'text-primary' : 'text-error-content'} flex items-center gap-1">
 							{isCorrect ? '🎉 Correct!' : '❌ Incorrect!'}

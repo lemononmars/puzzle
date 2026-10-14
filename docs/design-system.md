@@ -11,3 +11,13 @@ Draw puzzle ink with `currentColor`, `bg-base-content`, or `var(--color-base-con
 The site shell owns the navigation, content width, and footer. Pages should not add another global footer or fixed navigation. All new public pages should work at mobile widths and support keyboard focus and reduced motion.
 
 Mobile navigation has five destinations: Home, Play, Create, Learn, and More. Keep secondary pages as separate routes in More, grouped by purpose. Portfolio, contact, and shop activate More. Use the reusable `BottomSheet` component for grouped mobile actions; its native dialog provides focus containment, Escape dismissal, and focus restoration.
+
+Card shells use the shared botanical-card class (or DaisyUI card / Surface / LinkCard): cream background, sage border, theme radius and soft shadow. Preserve compact game cells and semantic state colors. Answer fields use botanical-answer-input with base background and readable base text. Use filled badge-error text-error-content for incorrect spellings; outlined error badges inherit the pale surface color and are unsuitable here.
+
+Use compact page introductions and the compact-headers repository skill. Desktop and mobile share Home / Play / Create / Learn / More; grouped options use BottomSheet, shown beneath the desktop bar and above the mobile bar.
+
+Font roles: DM Sans for English, Noto Sans Thai for the interface and headers, Noto Serif Thai for Thai puzzle tiles/boxes (puzzle-tiles and font-serif). font-mono maps to the puzzle stack; SVG/canvas exports use the same named fonts. Page h1 headings use the global compact size cap. Desktop submenus use compact page-specific symbols.
+
+## Motion reference
+
+Use [Takayu Studio Motion Reference](https://motion-reference.takayustudio.jp/) as the reference when creating or revising animations and interactive motion for this project. Consult relevant examples for timing, easing, transitions, and interaction behavior, then adapt them to the Botanical Playroom components and visual style. Keep controls responsive and honor `prefers-reduced-motion` with a static or reduced-motion alternative.

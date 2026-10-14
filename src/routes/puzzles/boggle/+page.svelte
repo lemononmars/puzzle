@@ -526,7 +526,7 @@
 <svelte:window on:mouseup={handleGlobalMouseUp} on:touchend={handleGlobalMouseUp} />
 
 <div id="boggle-game-container" class="max-w-4xl mx-auto px-2 sm:px-4 py-2 sm:py-4 flex flex-col gap-3 select-none">
-	<div class="bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 relative overflow-hidden">
+	<div class="botanical-card bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 relative overflow-hidden">
 		<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
 
 		<!-- Compact Header -->
@@ -568,7 +568,7 @@
 		<div class="lg:col-span-7 flex flex-col gap-4 items-center w-full">
 			<!-- Current Word Drag preview bar -->
 			<div
-				class="w-full h-14 bg-base-100 text-base-content border border-base-300 rounded-2xl flex items-center justify-between px-6 shadow-xl relative overflow-hidden"
+				class="botanical-card w-full h-14 bg-base-100 text-base-content border border-base-300 rounded-2xl flex items-center justify-between px-6 shadow-xl relative overflow-hidden"
 			>
 				{#if feedbackMessage}
 					<div
@@ -626,7 +626,7 @@
 
 			<!-- Boggle Grid wrapper -->
 			<div
-				class="relative w-full max-w-[400px] aspect-square bg-base-100 text-base-content border border-white/5 rounded-3xl p-3 shadow-2xl overflow-hidden select-none"
+				class="botanical-card relative w-full max-w-[400px] aspect-square bg-base-100 text-base-content border border-white/5 rounded-3xl p-3 shadow-2xl overflow-hidden select-none"
 			>
 				<!-- SVG Connection line overlay -->
 				<svg
@@ -757,7 +757,7 @@
 		<div class="lg:col-span-5 flex flex-col gap-4">
 			<!-- Score & Timer Card -->
 			<div
-				class="w-full h-14 bg-base-100 text-base-content border border-base-300 rounded-2xl flex items-center justify-between px-6 shadow-xl relative overflow-hidden"
+				class="botanical-card w-full h-14 bg-base-100 text-base-content border border-base-300 rounded-2xl flex items-center justify-between px-6 shadow-xl relative overflow-hidden"
 			>
 				<div class="flex items-center gap-3">
 					<AwardIcon size="18" class="text-warning-content" />
@@ -796,7 +796,7 @@
 
 			<!-- Found Words Board -->
 			<div
-				class="bg-base-100 text-base-content border border-base-300 p-4 md:p-5 rounded-2xl shadow-xl flex-1 flex flex-col min-h-[180px] md:min-h-[300px] max-h-[280px] md:max-h-[480px]"
+				class="botanical-card bg-base-100 text-base-content border border-base-300 p-4 md:p-5 rounded-2xl shadow-xl flex-1 flex flex-col min-h-[180px] md:min-h-[300px] max-h-[280px] md:max-h-[480px]"
 			>
 				{#if gameEnded}
 					{@const pct =
@@ -973,7 +973,7 @@
 			class="fixed inset-0 z-50 flex items-center justify-center bg-base-100 text-base-content backdrop-blur-md p-4 transition-all duration-300"
 		>
 			<div
-				class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 max-w-md w-full shadow-2xl flex flex-col gap-6 relative animate-in fade-in zoom-in-95 duration-200 text-base-content"
+				class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 max-w-md w-full shadow-2xl flex flex-col gap-6 relative animate-in fade-in zoom-in-95 duration-200 text-base-content"
 			>
 				<button
 					on:click={() => (showRulesModal = false)}

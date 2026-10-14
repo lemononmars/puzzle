@@ -131,7 +131,7 @@
 	</div>
 
 	<!-- Main Game Card -->
-	<section class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-xl">
+	<section class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-xl">
 		<!-- Header Info -->
 		<div class="space-y-2 text-center">
 			<h1 class="text-2xl sm:text-4xl font-black text-base-content">Petals Around the Rose</h1>
@@ -153,10 +153,10 @@
 		</div>
 
 		<!-- Dice Display with Animated Pips -->
-		<div class="bg-base-100 text-base-content p-6 sm:p-8 rounded-2xl border border-base-300 flex items-center justify-center gap-3 sm:gap-4 flex-wrap shadow-inner min-h-[120px]">
+		<div class="botanical-card bg-base-100 text-base-content p-6 sm:p-8 rounded-2xl border border-base-300 flex items-center justify-center gap-3 sm:gap-4 flex-wrap shadow-inner min-h-[120px]">
 			{#each dice as d}
 				<div
-					class="w-13 h-13 sm:w-16 sm:h-16 bg-base-100 text-base-content rounded-2xl p-2.5 sm:p-3 shadow-xl border-2 border-base-300 select-none grid grid-cols-3 grid-rows-3 gap-0.5 sm:gap-1 transition-all duration-300
+					class="botanical-card w-13 h-13 sm:w-16 sm:h-16 bg-base-100 text-base-content rounded-2xl p-2.5 sm:p-3 shadow-xl border-2 border-base-300 select-none grid grid-cols-3 grid-rows-3 gap-0.5 sm:gap-1 transition-all duration-300
 					{isRolling ? 'animate-bounce scale-105 rotate-12' : ''}"
 				>
 					{#each getDiePips(d) as hasPip}
@@ -201,7 +201,7 @@
 						type="number"
 						bind:value={petalsGuess}
 						placeholder="กรอกคำตอบ..."
-						style="background-color: #020617 !important; color: #f8fafc !important;"
+						class:botanical-answer-input={true}
 						class="join-item input  border border-base-300 focus:border-rose-400 flex-1 text-sm font-bold"
 						min="0"
 						max="20"

@@ -435,7 +435,7 @@ $: ({ content } = data);
 
 			<!-- Active Clue Banner -->
 			<div
-				class="w-full mt-6 bg-base-200 rounded-2xl p-4 flex items-center justify-between shadow-lg border border-white/5"
+				class="botanical-card w-full mt-6 bg-base-200 rounded-2xl p-4 flex items-center justify-between shadow-lg border border-white/5"
 			>
 				<button class="btn btn-circle btn-ghost" on:click={prevClue}>
 					<ChevronLeftIcon />
@@ -463,7 +463,7 @@ $: ({ content } = data);
 		<!-- Right: Clue List Area -->
 		<div class="lg:col-span-5 hidden lg:flex flex-col gap-6 max-h-[70vh]">
 			<div
-				class="bg-base-200 rounded-3xl p-6 flex flex-col overflow-hidden border border-white/5 shadow-xl"
+				class="botanical-card bg-base-200 rounded-3xl p-6 flex flex-col overflow-hidden border border-white/5 shadow-xl"
 			>
 				<div class="flex items-center justify-between mb-4 bg-base-300/50 p-3 rounded-2xl border border-white/5 shadow-inner">
 					<div class="flex items-center gap-2">

@@ -114,7 +114,7 @@ $: ({ id } = data);
 <div class="container mx-auto px-4 py-8 max-w-5xl flex flex-col items-center gap-8">
 	<!-- Title Header -->
 	<div class="text-center">
-		<h1 class="text-3xl sm:text-5xl font-black tracking-tight text-primary bg-gradient-to-r from-amber-400 to-red-500">
+		<h1 class="text-3xl sm:text-5xl font-black tracking-tight text-primary">
 			Jeopardy Scoreboard
 		</h1>
 		<p class="text-sm text-base-content/60 mt-1">Live Room ID: <span class="font-mono font-bold text-warning-content">{id}</span></p>

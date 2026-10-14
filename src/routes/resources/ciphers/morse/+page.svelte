@@ -122,7 +122,7 @@
 	</header>
 
 	<!-- Converter Tool -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
 		<div class="flex items-center justify-between flex-wrap gap-2 border-b border-base-300 pb-3">
 			<div class="flex items-center gap-2">
 				<span class="text-xs font-bold text-base-content/70 flex items-center gap-1">
@@ -162,7 +162,7 @@
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-			<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3">
+			<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3">
 				<div>
 					<label class="block text-xs font-semibold text-base-content/70 mb-2 font-bold" for="morse-input">
 						{isSwapped ? 'Morse Code (Input):' : `ข้อความ ${langMode === 'EN' ? 'ภาษาอังกฤษ' : 'ภาษาไทย'} (Input):`}
@@ -177,7 +177,7 @@
 				</div>
 			</div>
 
-			<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3">
+			<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3">
 				<div>
 					<div class="flex items-center justify-between mb-2">
 						<label class="block text-xs font-semibold text-base-content/70 font-bold" for="morse-output">
@@ -203,7 +203,7 @@
 	</section>
 
 	<!-- Recovered Reference Tables Section -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
 		<h2 class="text-xl font-extrabold text-amber-400 flex items-center gap-2 border-b border-base-300 pb-3">
 			<span>📜</span> ตารางอ้างอิงรหัสมอร์ส (Morse Code Reference Tables)
 		</h2>
@@ -255,14 +255,14 @@
 	</section>
 
 	<!-- Practice Exercises -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
 		<h2 class="text-xl font-extrabold text-amber-400 flex items-center gap-2 border-b border-base-300 pb-3">
 			<span>✏️</span> แบบฝึกหัดทดลองถอดรหัส (Practice Exercises)
 		</h2>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 			{#each exercises as ex, idx}
-				<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-4 flex flex-col justify-between">
+				<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-4 flex flex-col justify-between">
 					<div class="space-y-3">
 						<span class="font-bold text-xs text-base-content/70">ข้อที่ {ex.id}</span>
 
@@ -276,7 +276,7 @@
 							bind:value={answers[idx]}
 							placeholder="พิมพ์คำตอบ..."
 							buttonText="ตรวจ"
-							btnClass="bg-amber-500 hover:bg-amber-400 text-base-content/70"
+							btnClass="btn-primary text-primary-content"
 							size="sm"
 							on:submit={() => checkAnswer(idx)}
 						/>

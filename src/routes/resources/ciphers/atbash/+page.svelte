@@ -75,7 +75,7 @@
 	</header>
 
 	<!-- Mirror Table -->
-	<section class="bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
 		<h2 class="text-xl font-extrabold text-primary flex items-center gap-2">
 			<span>🪞</span> ตารางสลับตัวอักษรแบบกระจก (Atbash Mirror Grid)
 		</h2>
@@ -97,7 +97,7 @@
 	</section>
 
 	<!-- Converter Tool -->
-	<section class="bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
 		<div class="flex items-center justify-between flex-wrap gap-2">
 			<h2 class="text-xl font-extrabold text-accent-content flex items-center gap-2">
 				<span>⚡</span> เครื่องมือแปลงรหัส (Converter)
@@ -113,7 +113,7 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
 			<!-- Input Column -->
-			<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3 {isSwapped ? 'order-2' : 'order-1'}">
+			<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3 {isSwapped ? 'order-2' : 'order-1'}">
 				<div>
 					<label for="atbash-input-text" class="block text-xs font-semibold text-base-content/70 mb-2">ข้อความ (Input):</label>
 					<textarea
@@ -128,7 +128,7 @@
 			</div>
 
 			<!-- Output Column -->
-			<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3 {isSwapped ? 'order-1' : 'order-2'}">
+			<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3 {isSwapped ? 'order-1' : 'order-2'}">
 				<div>
 					<div class="flex items-center justify-between mb-2">
 						<span class="block text-xs font-semibold text-base-content/70">ผลลัพธ์ (Output):</span>
@@ -154,14 +154,14 @@
 	</section>
 
 	<!-- Practice Exercises -->
-	<section class="bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-6">
+	<section class="botanical-card bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-6">
 		<h2 class="text-xl font-extrabold text-warning-content flex items-center gap-2">
 			<span>✏️</span> แบบฝึกหัดทดลองถอดรหัส (Practice Exercises)
 		</h2>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 			{#each exercises as ex, idx}
-				<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-3 flex flex-col justify-between">
+				<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-3 flex flex-col justify-between">
 					<div class="space-y-3">
 						<span class="font-bold text-xs text-base-content/70">ข้อที่ {ex.id}</span>
 
@@ -175,7 +175,7 @@
 							bind:value={answers[idx]}
 							placeholder="พิมพ์คำตอบ..."
 							buttonText="ตรวจ"
-							btnClass="bg-purple-500 hover:bg-purple-400 text-base-content/70"
+							btnClass="btn-primary text-primary-content"
 							size="sm"
 							on:submit={() => checkAnswer(idx)}
 						/>

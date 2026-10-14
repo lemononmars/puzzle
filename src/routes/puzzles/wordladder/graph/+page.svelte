@@ -93,7 +93,7 @@
 	<!-- Header -->
 	<div class="flex items-center justify-between">
 		<div class="flex flex-col gap-1">
-			<h1 class="text-3xl font-extrabold tracking-tight text-primary bg-gradient-to-r from-base-200 to-base-200">
+			<h1 class="text-3xl font-extrabold tracking-tight text-primary">
 				Word Graph
 			</h1>
 			<p class="text-base-content/70 text-sm">กลุ่มคำที่เชื่อมกันได้โดยเปลี่ยนทีละหนึ่งช่อง (connected components)</p>

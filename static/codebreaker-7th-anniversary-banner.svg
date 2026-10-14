@@ -2,10 +2,10 @@
   <defs>
     <!-- Fonts -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700;800;900&amp;family=Outfit:wght@400;500;700;800;900&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@400;600&display=swap');
       
-      .font-brand { font-family: 'Outfit', 'Kanit', sans-serif; }
-      .font-thai { font-family: 'Kanit', sans-serif; }
+      .font-brand { font-family:'DM Sans','Noto Sans Thai',sans-serif; }
+      .font-thai { font-family:'DM Sans','Noto Sans Thai',sans-serif; }
       
       .icon-shadow {
         filter: drop-shadow(0 12px 24px rgba(0,0,0,0.4));
@@ -122,12 +122,12 @@
       <!-- Back Bubble (Upper Left with 'A') -->
       <path d="M-42 -64 H10 C22 -64 30 -56 30 -44 V-10 C30 2 22 10 10 10 H-16 L-34 26 V10 H-42 C-54 10 -62 2 -62 -10 V-44 C-62 -56 -54 -64 -42 -64 Z" 
             fill="#EA580C" stroke="#FFFFFF" stroke-width="6"/>
-      <text x="-16" y="-18" font-family="'Outfit', sans-serif" font-weight="400" font-size="36" fill="#FFFFFF" text-anchor="middle">A</text>
+      <text x="-16" y="-18" font-family="DM Sans, Noto Serif Thai" font-weight="400" font-size="36" fill="#FFFFFF" text-anchor="middle">A</text>
       
       <!-- Front Bubble (Lower Right with 'ก') -->
       <path d="M2 -14 H54 C66 -14 74 -6 74 6 V40 C74 52 66 60 54 60 H46 L32 74 V60 H2 C-10 60 -18 52 -18 40 V6 C-18 -6 -10 -14 2 -14 Z" 
             fill="#D94E07" stroke="#FFFFFF" stroke-width="6"/>
-      <text x="28" y="32" font-family="'Kanit', sans-serif" font-weight="400" font-size="36" fill="#FFFFFF" text-anchor="middle">ก</text>
+      <text x="28" y="32" font-family="DM Sans, Noto Serif Thai" font-weight="400" font-size="36" fill="#FFFFFF" text-anchor="middle">ก</text>
     </g>
 
     <!-- Typography -->

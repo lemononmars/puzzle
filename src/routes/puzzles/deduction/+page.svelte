@@ -37,7 +37,7 @@
 		<!-- Petals Around the Rose -->
 		<a
 			href="/puzzles/deduction/petalsaroundtherose"
-			class="bg-base-100 text-base-content border border-base-300 hover:border-rose-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
+			class="botanical-card bg-base-100 text-base-content border border-base-300 hover:border-rose-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
 		>
 			<div class="space-y-4">
 				<div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-error-content flex items-center justify-center border border-rose-500/20 shadow-md">
@@ -63,7 +63,7 @@
 		<!-- หมู ไก่ ปลา กุ้ง -->
 		<a
 			href="/puzzles/deduction/moogaiplakung"
-			class="bg-base-100 text-base-content border border-base-300 hover:border-indigo-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
+			class="botanical-card bg-base-100 text-base-content border border-base-300 hover:border-indigo-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
 		>
 			<div class="space-y-4">
 				<div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-primary flex items-center justify-center border border-indigo-500/20 shadow-md">
@@ -89,7 +89,7 @@
 		<!-- Around the World -->
 		<a
 			href="/puzzles/deduction/aroundtheworld"
-			class="bg-base-100 text-base-content border border-base-300 hover:border-primary/30 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
+			class="botanical-card bg-base-100 text-base-content border border-base-300 hover:border-primary/30 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
 		>
 			<div class="space-y-4">
 				<div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-primary flex items-center justify-center border border-primary/30 shadow-md">
@@ -115,7 +115,7 @@
 		<!-- Back to the Future -->
 		<a
 			href="/puzzles/deduction/backtothefuture"
-			class="bg-base-100 text-base-content border border-base-300 hover:border-amber-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
+			class="botanical-card bg-base-100 text-base-content border border-base-300 hover:border-amber-500/50 rounded-3xl p-6 shadow-xl flex flex-col justify-between space-y-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
 		>
 			<div class="space-y-4">
 				<div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-warning-content flex items-center justify-center border border-amber-500/20 shadow-md">

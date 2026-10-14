@@ -86,7 +86,7 @@
 	</header>
 
 	<!-- Visual Sharp / X Grid Helper Diagrams -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
 		<h2 class="text-xl font-extrabold text-primary flex items-center gap-2">
 			<span>📐</span> ผังโครงสร้าง Pigpen Grids (Sharp # & X Shapes)
 		</h2>
@@ -94,7 +94,7 @@
 	</section>
 
 	<!-- Converter Tool (Single Full-Width Layout, No Left-Right Split) -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
 		<div class="flex items-center justify-between flex-wrap gap-2 border-b border-base-300 pb-3">
 			<h2 class="text-xl font-extrabold text-amber-400 flex items-center gap-2">
 				<span>⚡</span> เครื่องมือแปลงรหัส Pigpen
@@ -127,11 +127,11 @@
 				<span class="block text-xs font-semibold text-base-content/70">
 					ผลลัพธ์สัญลักษณ์ Pigpen:
 				</span>
-				<div class="pigpen-output-container bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 min-h-[120px] flex flex-wrap items-center gap-2 font-mono text-lg text-primary">
+				<div class="botanical-card pigpen-output-container bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 min-h-[120px] flex flex-wrap items-center gap-2 font-mono text-lg text-primary">
 					{#if charArray.length > 0}
 						{#each charArray as ch}
 							{#if /[A-Z]/.test(ch)}
-								<div class="p-2.5 bg-base-100 text-base-content rounded-xl border border-base-300 text-amber-400 flex items-center justify-center shadow-md" title={ch}>
+								<div class="botanical-card p-2.5 bg-base-100 text-base-content rounded-xl border border-base-300 text-amber-400 flex items-center justify-center shadow-md" title={ch}>
 									<PigpenSVG char={ch} size={32} />
 								</div>
 							{:else if ch === ' '}
@@ -149,14 +149,14 @@
 	</section>
 
 	<!-- Practice Exercises (Standardized Single Button Group Layout) -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
 		<h2 class="text-xl font-extrabold text-amber-400 flex items-center gap-2 border-b border-base-300 pb-3">
 			<span>✏️</span> แบบฝึกหัดทดลองถอดรหัส (Practice Exercises)
 		</h2>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 			{#each exercises as ex, idx}
-				<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-4 flex flex-col justify-between">
+				<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-4 flex flex-col justify-between">
 					<div class="space-y-3">
 						<span class="font-bold text-xs text-base-content/70">ข้อที่ {ex.id}</span>
 
@@ -174,7 +174,7 @@
 							bind:value={answers[idx]}
 							placeholder="พิมพ์คำตอบ..."
 							buttonText="ตรวจ"
-							btnClass="bg-pink-500 hover:bg-pink-400 text-base-content/70"
+							btnClass="btn-primary text-primary-content"
 							size="sm"
 							on:submit={() => checkAnswer(idx)}
 						/>

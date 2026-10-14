@@ -688,7 +688,7 @@
 				<div class="flex items-center gap-1.5 min-w-0">
 					<span class="text-base sm:text-xl shrink-0">🇹🇭</span>
 					<div class="flex items-baseline gap-1.5 min-w-0">
-						<h1 class="text-xs sm:text-base font-black tracking-tight bg-gradient-to-r from-amber-400 to-orange-400 text-primary truncate">
+						<h1 class="text-xs sm:text-base font-black tracking-tight text-primary truncate">
 							Quiz
 						</h1>
 						<span class="text-[10px] text-base-content/70 font-medium hidden md:inline shrink-0">• Japanese Quiz Show & 4 Choices</span>
@@ -736,7 +736,7 @@
 			<div class="flex flex-col gap-5" in:fade={{ duration: 200 }}>
 
 				<!-- Style Mode Tabs (2 Iconic Formats) -->
-				<div class="grid grid-cols-2 gap-1.5 p-1.5 rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-xl">
+				<div class="botanical-card grid grid-cols-2 gap-1.5 p-1.5 rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-xl">
 					<button
 						class="py-2.5 px-3 rounded-xl font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all {activeStyleTab === 'quizshow' ? 'bg-gradient-to-r from-amber-500 to-yellow-500 text-base-content/70 shadow-lg shadow-amber-500/20' : 'text-base-content/70 hover:text-base-content'}"
 						on:click={() => (activeStyleTab = 'quizshow')}
@@ -923,7 +923,7 @@
 		{:else if currentView === 'playing_quizshow' && currentQuestion}
 			<div class="flex flex-col gap-4" in:fade={{ duration: 200 }}>
 				<!-- Top Status Bar -->
-				<div class="flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 sm:p-4 shadow-xl">
+				<div class="botanical-card flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 sm:p-4 shadow-xl">
 					<div class="flex items-center gap-2.5">
 						<span class="badge badge-warning text-warning-content font-mono text-xs font-black py-2">
 							ข้อที่ {currentQIdx + 1}/{sessionTotal}
@@ -950,7 +950,7 @@
 				</div>
 
 				<!-- Main Quiz Show Stage -->
-				<div class="bg-base-100 text-base-content backdrop-blur-xl border border-amber-500/30 rounded-3xl p-5 sm:p-8 shadow-2xl flex flex-col justify-between gap-6 min-h-[420px] relative overflow-hidden">
+				<div class="botanical-card bg-base-100 text-base-content backdrop-blur-xl border border-amber-500/30 rounded-3xl p-5 sm:p-8 shadow-2xl flex flex-col justify-between gap-6 min-h-[420px] relative overflow-hidden">
 
 					<!-- Question Reveal Box (Gradual Typewriter Display) -->
 					<div class="flex flex-col gap-4 text-center my-auto">
@@ -968,7 +968,7 @@
 						</div>
 
 						<!-- Text Box -->
-						<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-inner min-h-[140px] flex items-center justify-center">
+						<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-inner min-h-[140px] flex items-center justify-center">
 							<h2 class="text-xl sm:text-3xl font-black text-base-content leading-relaxed tracking-tight max-w-2xl mx-auto">
 								{revealedQuestionText}
 								{#if isTextRevealing}
@@ -1011,7 +1011,7 @@
 										bind:this={buzzInputElement}
 										placeholder="พิมพ์หรือพูดคำตอบ..."
 										class="input input-md sm:input-lg  flex-1 min-w-0 bg-base-100 text-base-content text-base-content font-black border-2 border-amber-400 text-base sm:text-xl text-center focus:outline-none shadow-xl shadow-amber-500/20"
-										style="color: #ffffff !important; background-color: #020617 !important;"
+										class:botanical-answer-input={true}
 										on:keydown={(e) => {
 											if (e.key === 'Enter') handleBuzzAnswerSubmit();
 										}}
@@ -1070,7 +1070,7 @@
 
 						<!-- STATE 4: SOLVED → REVEAL EXPLANATION & NEXT QUESTION BUTTON -->
 						{:else if quizShowState === 'solved'}
-							<div class="flex flex-col items-center gap-3 w-full bg-base-100 text-base-content border border-primary/30 rounded-2xl p-4 shadow-xl" in:scale>
+							<div class="botanical-card flex flex-col items-center gap-3 w-full bg-base-100 text-base-content border border-primary/30 rounded-2xl p-4 shadow-xl" in:scale>
 								<div class="flex items-center justify-between w-full border-b border-base-300 pb-2">
 									<span class="font-bold text-xs text-primary flex items-center gap-1">
 										<CheckCircleIcon size="14" />
@@ -1105,7 +1105,7 @@
 		{:else if currentView === 'playing_normal' && currentQuestion}
 			<div class="flex flex-col gap-4" in:fade={{ duration: 200 }}>
 				<!-- Status Bar (Score, Streak, Timer/Lives) -->
-				<div class="flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 sm:p-4 shadow-xl">
+				<div class="botanical-card flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 sm:p-4 shadow-xl">
 					<div class="flex items-center gap-2.5">
 						<span class="badge badge-neutral font-mono text-xs font-bold py-2">
 							ข้อ {currentQIdx + 1}{selectedNormalMode === 'endless' ? ' (โหมดต่อเนื่อง)' : `/${sessionTotal}`}
@@ -1143,7 +1143,7 @@
 				</div>
 
 				<!-- Question Card -->
-				<div class="bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-3xl p-5 sm:p-8 shadow-2xl flex flex-col gap-6 text-center relative overflow-hidden min-h-[360px] justify-between">
+				<div class="botanical-card bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-3xl p-5 sm:p-8 shadow-2xl flex flex-col gap-6 text-center relative overflow-hidden min-h-[360px] justify-between">
 					<div class="flex flex-col gap-3">
 						<div class="flex items-center justify-center gap-2">
 							{#if streak > 1}
@@ -1204,7 +1204,7 @@
 				<div class="bg-gradient-to-br from-base-200 via-base-200 to-amber-950/40 border border-amber-500/30 rounded-3xl p-6 sm:p-8 text-center flex flex-col items-center gap-4 shadow-2xl">
 					<span class="text-5xl animate-bounce">🏆</span>
 					<div>
-						<h2 class="text-3xl sm:text-5xl font-black bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-500 text-primary">
+						<h2 class="text-3xl sm:text-5xl font-black text-primary">
 							{score} คะแนน
 						</h2>
 						<p class="text-xs sm:text-sm text-base-content/70 mt-1">
@@ -1270,7 +1270,7 @@
 						{#each userAnswers as ans, idx}
 							{@const q = ans.question}
 							{@const cat = THAI_QUIZ_CATEGORIES.find((c) => c.id === q.category)}
-							<div class="bg-base-100 text-base-content border {ans.isCorrect ? 'border-primary/30' : 'border-rose-500/30'} rounded-2xl p-4 sm:p-5 flex flex-col gap-2.5 shadow-lg">
+							<div class="botanical-card bg-base-100 text-base-content border {ans.isCorrect ? 'border-primary/30' : 'border-rose-500/30'} rounded-2xl p-4 sm:p-5 flex flex-col gap-2.5 shadow-lg">
 								<div class="flex items-start justify-between gap-2">
 									<div class="flex items-center gap-2">
 										<span class="badge {ans.isCorrect ? 'badge-success text-success-content' : 'badge-error text-error-content'} badge-sm font-bold font-mono">
@@ -1318,7 +1318,7 @@
 <!-- TTS SPEED SETTINGS MODAL -->
 {#if showVoiceModal}
 	<div class="modal modal-open bg-base-100 text-base-content backdrop-blur-md z-50">
-		<div class="modal-box bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-6 max-w-sm text-base-content shadow-2xl flex flex-col gap-4">
+		<div class="botanical-card modal-box bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-6 max-w-sm text-base-content shadow-2xl flex flex-col gap-4">
 			<div class="flex items-center justify-between border-b border-base-300 pb-2.5">
 				<h3 class="text-base sm:text-lg font-black text-base-content flex items-center gap-2">
 					<ZapIcon size="18" class="text-warning-content" />

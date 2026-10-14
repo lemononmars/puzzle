@@ -222,14 +222,14 @@
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Crossroad 🔀</title>
+	<title>Puzzle | Crossroad 🔀</title>
 	<meta name="description" content="เติมคำเพื่อสร้างคำทั้งสี่ทิศทาง" />
 </svelte:head>
 
 <svelte:body on:keypress={handleKeyPress}/>
 
 <div id="crossroad-game-container" class="max-w-4xl mx-auto px-2 sm:px-4 py-2 sm:py-4 flex flex-col gap-3 select-none">
-	<div class="bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 relative overflow-hidden">
+	<div class="botanical-card bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 relative overflow-hidden">
 		<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
 
 		<!-- Compact Header -->
@@ -267,13 +267,13 @@
 
 		<div class="flex flex-col z-10 py-2">
 			{#if isPlaying}
-				<div class="relative t-0 w-80 h-80 lg:w-96 lg:h-96 mx-auto">
+				<div class="crossroad-board puzzle-tiles relative t-0 w-80 h-80 lg:w-96 lg:h-96 mx-auto">
 					{#if isTimed}
-						<div class="radial-progress absolute top-0 left-0 w-20 m-4 text-sm text-primary font-bold border border-primary/20 rounded-full"
+						<div class="board-cell cell-time radial-progress absolute top-0 left-0 w-20 m-4 text-sm text-primary font-bold border border-primary/20 rounded-full"
 							style="--value:{100*time/maxTime};"
 						>{timeString}</div>
 					{:else}
-						<button class="btn btn-outline btn-error text-error-content flex flex-col absolute top-0 left-0 w-20 h-20 m-4 text-sm gap-1"
+						<button class="board-cell cell-time btn btn-outline btn-error text-error-content flex flex-col absolute top-0 left-0 w-20 h-20 m-4 text-sm gap-1"
 							on:click={()=>{isFinished = true; isPlaying = false}}
 						>
 							<div>{timeString}</div>
@@ -283,25 +283,25 @@
 
 					<!-- top clue -->
 					{#key currentAnswer}
-						<div class="btn btn-xl absolute top-0 inset-x-0 m-auto w-20 h-20 lg:w-24 lg:h-24 text-xl lg:text-3xl bg-base-200 border-base-300 text-primary font-black shadow-lg"
+						<div class="board-cell cell-north btn btn-xl absolute top-0 inset-x-0 m-auto w-20 h-20 lg:w-24 lg:h-24 text-xl lg:text-3xl bg-base-200 border-base-300 text-primary font-black shadow-lg"
 							in:fly={{y:10, delay:100}}
 						>{currentPostClues[0]}</div>
 					{/key}
 
 					<!-- top right score -->
-					<div class="btn btn-xl btn-outline btn-primary text-primary-content absolute top-0 right-0 m-4 w-20 h-20 text-3xl font-black"
+					<div class="board-cell cell-score flex items-center justify-center bg-base-100 text-primary border border-primary rounded-2xl absolute top-0 right-0 m-4 w-20 h-20 text-3xl font-black"
 					>{score}</div>
 
 					<!-- center left clue -->
 					{#key currentAnswer}
-					<div class="btn btn-xl absolute left-0 inset-y-0 m-auto w-20 h-20 lg:w-24 lg:h-24 text-xl lg:text-3xl bg-base-200 border-base-300 text-primary font-black shadow-lg"
+					<div class="board-cell cell-west btn btn-xl absolute left-0 inset-y-0 m-auto w-20 h-20 lg:w-24 lg:h-24 text-xl lg:text-3xl bg-base-200 border-base-300 text-primary font-black shadow-lg"
 						in:fly={{x:10, delay:200}}
 					>{currentPostClues[1]}</div>
 					{/key}
 
 					<!-- center middle input -->
 					<input
-						class="input  absolute border-2 border-base-300 bg-base-300 text-base-content font-black text-center text-xl lg:text-3xl w-24 h-24 lg:w-32 lg:h-32 transition-colors inset-x-0 inset-y-0 m-auto rounded-2xl focus:border-primary focus:outline-none"
+						class="board-cell cell-answer input absolute border-2 border-base-300 bg-base-300 text-base-content font-black text-center text-xl lg:text-3xl w-24 h-24 lg:w-32 lg:h-32 transition-colors inset-x-0 inset-y-0 m-auto rounded-2xl focus:border-primary focus:outline-none"
 						class:input-success={answer === currentAnswer}
 						class:text-success-content={answer === currentAnswer}
 						class:wiggle={isWiggle}
@@ -312,35 +312,35 @@
 
 					<!-- center right clue -->
 					{#key currentAnswer}
-						<div class="btn btn-xl absolute text-xl lg:text-3xl right-0 inset-y-0 m-auto w-20 h-20 lg:w-24 lg:h-24 bg-base-200 border-base-300 text-primary font-black shadow-lg"
+						<div class="board-cell cell-east btn btn-xl absolute text-xl lg:text-3xl right-0 inset-y-0 m-auto w-20 h-20 lg:w-24 lg:h-24 bg-base-200 border-base-300 text-primary font-black shadow-lg"
 							in:fly={{x:-10, delay:300}}
 						>{currentPreClues[0]}</div>
 					{/key}
 
 					<!-- bottom left change clue -->
-					<button class="btn btn-secondary text-secondary-content absolute bottom-0 right-0 w-20 h-20 m-4 flex flex-col justify-center items-center text-xs gap-1" on:click={getHints}>
+					<button class="board-cell cell-hint btn btn-secondary text-secondary-content absolute bottom-0 right-0 w-20 h-20 m-4 flex flex-col justify-center items-center text-xs gap-1" on:click={getHints}>
 						<span class="text-[10px] text-secondary-content">เปลี่ยนคำใบ้</span>
 					</button>
 
 					<!-- bottom middle clue -->
 					{#key currentAnswer}
-						<div class="btn btn-xl absolute text-xl lg:text-3xl bottom-0 inset-x-0 m-auto w-20 h-20 lg:w-24 lg:h-24 bg-base-200 border-base-300 text-primary font-black shadow-lg"
+						<div class="board-cell cell-south btn btn-xl absolute text-xl lg:text-3xl bottom-0 inset-x-0 m-auto w-20 h-20 lg:w-24 lg:h-24 bg-base-200 border-base-300 text-primary font-black shadow-lg"
 							in:fly={{y:-10, delay:400}}
 						>{currentPreClues[1]}</div>
 					{/key}
 
 					<!-- bottom right skip -->
-					<button class="btn btn-warning text-warning-content absolute bottom-0 left-0 w-20 h-20 m-4 flex flex-col justify-center items-center text-xs font-bold" on:click={giveUp}>
+					<button class="board-cell cell-skip btn btn-warning text-warning-content absolute bottom-0 left-0 w-20 h-20 m-4 flex flex-col justify-center items-center text-xs font-bold" on:click={giveUp}>
 						<span>ข้าม</span>
 					</button>
 
-					<ArrowDownIcon class="absolute top-1/4 m-auto inset-x-0 translate-y-1 text-primary/60" size=20/>
-					<ArrowDownIcon class="absolute bottom-1/4 m-auto inset-x-0 -translate-y-1 text-primary/60" size=20/>
-					<ArrowRightIcon class="absolute m-auto inset-y-0 left-1/4 translate-x-1 text-primary/60" size=20/>
-					<ArrowRightIcon class="absolute m-auto inset-y-0 right-1/4 -translate-x-1 text-primary/60" size=20/>
+					<ArrowDownIcon class="board-arrow arrow-north text-primary/60" size=20/>
+					<ArrowDownIcon class="board-arrow arrow-south text-primary/60" size=20/>
+					<ArrowRightIcon class="board-arrow arrow-west text-primary/60" size=20/>
+					<ArrowRightIcon class="board-arrow arrow-east text-primary/60" size=20/>
 				</div>
 			{:else if isFinished}
-				<div class="stats stats-vertical lg:stats-horizontal shadow-xl bg-base-200 border border-base-300 rounded-2xl p-2 overflow-clip mx-2">
+				<div class="botanical-card stats stats-vertical lg:stats-horizontal shadow-xl bg-base-200 border border-base-300 rounded-2xl p-2 overflow-clip mx-2">
 					<div class="stat" in:fly={{y:10, delay:1000}}>
 						<div class="stat-figure text-primary">
 							<PlusCircleIcon size=20/>
@@ -394,7 +394,7 @@
 					<span>เล่นอีกครั้ง</span> <RefreshCcwIcon size=24/>
 				</button>
 
-				<div class="grid grid-cols-6 w-full lg:w-1/2 h-32 mx-auto overflow-y-auto justify-center bg-base-100 text-base-content p-4 rounded-2xl border border-base-300"
+				<div class="botanical-card grid grid-cols-6 w-full lg:w-1/2 h-32 mx-auto overflow-y-auto justify-center bg-base-100 text-base-content p-4 rounded-2xl border border-base-300"
 				in:fade={{delay:7000, duration:1000}}>
 					{#each answerHistory as h, index}
 						<div>{correctHistory[index]? '✅':'❌'}</div>
@@ -415,7 +415,7 @@
 					<span>เริ่มเล่น</span> <PlayCircleIcon size=32/>
 				</button>
 
-				<div class="mx-auto flex flex-col sm:flex-row justify-center items-center gap-6 my-4 p-6 bg-base-200 text-base-content rounded-2xl border border-base-300">
+				<div class="botanical-card mx-auto flex flex-col sm:flex-row justify-center items-center gap-6 my-4 p-6 bg-base-200 text-base-content rounded-2xl border border-base-300">
 					<div class="font-bold text-base-content">ตั้งค่าเกม:</div>
 					<div class="flex flex-col justify-center">
 						<h3 class="text-xs font-bold text-primary mb-2">ความยาวคำตอบ</h3>
@@ -483,6 +483,20 @@
 </label>
 
 <style>
+ #crossroad-game-container:fullscreen { max-width:none; width:100vw; height:100dvh; margin:0; padding:12px; background:var(--color-base-200); color:var(--color-base-content); overflow:auto; }
+ #crossroad-game-container:fullscreen > div { flex:1; min-height:0; padding:12px; }
+ .crossroad-board { --board-gap:24px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-rows:repeat(3,minmax(0,1fr)); gap:var(--board-gap); width:min(100%,420px); height:auto; aspect-ratio:1; }
+ .crossroad-board .board-cell { position:relative; inset:auto; width:100%; height:100%; margin:0; min-height:0; min-width:0; }
+ .crossroad-board .cell-score { background:var(--color-base-100); color:var(--color-primary); }
+ .cell-time { grid-area:1 / 1; } .cell-north { grid-area:1 / 2; } .cell-score { grid-area:1 / 3; } .cell-west { grid-area:2 / 1; } .cell-answer { grid-area:2 / 2; } .cell-east { grid-area:2 / 3; } .cell-skip { grid-area:3 / 1; } .cell-south { grid-area:3 / 2; } .cell-hint { grid-area:3 / 3; }
+ .crossroad-board :global(.board-arrow) { position:absolute; width:18px; height:18px; margin:0; transform:translate(-50%,-50%); pointer-events:none; }
+ .crossroad-board :global(.arrow-north) { left:50%; top:calc(33.333333% - var(--board-gap) / 6); }
+ .crossroad-board :global(.arrow-south) { left:50%; top:calc(66.666667% + var(--board-gap) / 6); }
+ .crossroad-board :global(.arrow-west) { top:50%; left:calc(33.333333% - var(--board-gap) / 6); }
+ .crossroad-board :global(.arrow-east) { top:50%; left:calc(66.666667% + var(--board-gap) / 6); }
+ #crossroad-game-container:fullscreen .crossroad-board { --board-gap:clamp(24px,4vmin,40px); width:min(calc(100vw - 48px),calc(100dvh - 150px)); height:auto; }
+ #crossroad-game-container:fullscreen .board-cell { font-size:clamp(18px,4vmin,44px); }
+
 	@keyframes pos-x-wiggle {
 		0% {
 			transform: rotate(0);

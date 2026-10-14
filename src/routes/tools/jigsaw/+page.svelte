@@ -270,7 +270,7 @@
 <div class="min-h-screen bg-base-200 p-4 lg:p-8">
 	<div class="max-w-5xl mx-auto space-y-8">
 		<header class="text-center space-y-2">
-			<h1 class="text-3xl font-black tracking-tight bg-gradient-to-r from-primary to-secondary text-primary uppercase italic">
+			<h1 class="text-3xl font-black tracking-tight text-primary uppercase italic">
 				Jigsaw Quiz
 			</h1>
 		</header>
@@ -280,7 +280,7 @@
 				<div class="card-body items-center text-center space-y-8 p-12">
 					<header>
 						<span class="text-sm font-black uppercase tracking-[0.3em] opacity-40">Session Complete</span>
-						<h2 class="text-6xl font-black bg-gradient-to-r from-primary to-secondary text-primary uppercase italic">Final Results</h2>
+						<h2 class="text-6xl font-black text-primary uppercase italic">Final Results</h2>
 					</header>
 
 					<!-- Winner Announcement -->
@@ -303,7 +303,7 @@
 					</div>
 
 					<!-- Leaderboard -->
-					<div class="w-full max-w-2xl bg-base-100/50 rounded-3xl p-6 border border-base-300">
+					<div class="botanical-card w-full max-w-2xl bg-base-100/50 rounded-3xl p-6 border border-base-300">
 						<h4 class="text-xs font-black uppercase opacity-40 mb-4 tracking-widest">Final Standings</h4>
 						<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 							{#each players.slice().sort((a,b) => b.score - a.score) as player, i}
@@ -322,7 +322,7 @@
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 						{#each sessionStats as stat, i}
 							<div
-								class="flex items-center justify-between p-4 bg-base-100 rounded-2xl border border-base-300 shadow-sm hover:border-primary/30 transition-all group/stat animate-in slide-in-from-bottom duration-500"
+								class="botanical-card flex items-center justify-between p-4 bg-base-100 rounded-2xl border border-base-300 shadow-sm hover:border-primary/30 transition-all group/stat animate-in slide-in-from-bottom duration-500"
 								style="animation-delay: {400 + (i * 100)}ms"
 							>
 								<div class="text-left">
@@ -636,7 +636,7 @@
 						</div>
 					{/if}
 
-					<div class="flex justify-between items-center bg-base-100 p-4 rounded-xl shadow-lg border border-base-300">
+					<div class="botanical-card flex justify-between items-center bg-base-100 p-4 rounded-xl shadow-lg border border-base-300">
 						<div class="flex gap-2">
 							<button class="btn btn-outline btn-sm gap-2" on:click={startSetup}>
 								<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" /></svg>

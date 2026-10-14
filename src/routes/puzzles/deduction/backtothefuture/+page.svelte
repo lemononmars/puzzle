@@ -156,7 +156,7 @@
 	</div>
 
 	<!-- Main Game Canvas Card -->
-	<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden">
+	<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden">
 		<!-- Background Glow -->
 		<div class="absolute -top-24 -left-24 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 		<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -405,7 +405,7 @@
 						<div class="grid grid-cols-5 gap-2">
 							{#each [1, 2, 3, 4, 5] as num}
 								<div
-									class="h-14 rounded-2xl flex items-center justify-center font-black text-lg border transition-all duration-200 {num ===
+									class="botanical-card h-14 rounded-2xl flex items-center justify-center font-black text-lg border transition-all duration-200 {num ===
 									prevFinger
 										? 'bg-emerald-500/20 border-primary/30 text-primary ring-2 ring-emerald-500/50 shadow-lg shadow-emerald-500/20'
 										: num === lastGuess
@@ -418,7 +418,7 @@
 						</div>
 
 						<!-- Solution Reveal Banner -->
-						<div class="p-4 rounded-2xl bg-base-100 text-base-content border border-base-300 flex items-center justify-between shadow-inner">
+						<div class="botanical-card p-4 rounded-2xl bg-base-100 text-base-content border border-base-300 flex items-center justify-between shadow-inner">
 							<div class="flex items-center gap-3">
 								<div
 									class="w-10 h-10 rounded-xl flex items-center justify-center font-black {status ===

@@ -124,7 +124,7 @@
 	</header>
 
 	<!-- Interactive Visual Zigzag Grid Diagram -->
-	<section class="bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
 		<div class="flex items-center justify-between flex-wrap gap-2">
 			<h2 class="text-xl font-extrabold text-primary flex items-center gap-2">
 				<span>📐</span> ผังจำลองรางซิกแซก (Visual Rail Fence Diagram)
@@ -155,7 +155,7 @@
 	</section>
 
 	<!-- Converter Tool -->
-	<section class="bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
 		<div class="flex items-center justify-between flex-wrap gap-2">
 			<h2 class="text-xl font-extrabold text-accent-content flex items-center gap-2">
 				<span>⚡</span> เครื่องมือแปลงรหัส (Converter)
@@ -170,7 +170,7 @@
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-			<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-4 {isSwapped ? 'order-2' : 'order-1'}">
+			<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-4 {isSwapped ? 'order-2' : 'order-1'}">
 				<div class="space-y-3">
 					<label for="railfence-input-text" class="block text-xs font-semibold text-base-content/70">
 						{isSwapped ? 'ข้อความ Ciphertext (Input):' : 'ข้อความ Plaintext (Input):'}
@@ -194,7 +194,7 @@
 				<span class="text-[11px] text-base-content/70">ปรับจำนวนรางซิกแซก (2-5) แบบเรียลไทม์</span>
 			</div>
 
-			<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3 {isSwapped ? 'order-1' : 'order-2'}">
+			<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col justify-between space-y-3 {isSwapped ? 'order-1' : 'order-2'}">
 				<div>
 					<div class="flex items-center justify-between mb-2">
 						<span class="block text-xs font-semibold text-base-content/70">ผลลัพธ์ (Output):</span>
@@ -220,14 +220,14 @@
 	</section>
 
 	<!-- Exercises -->
-	<section class="bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-6">
+	<section class="botanical-card bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-6">
 		<h2 class="text-xl font-extrabold text-warning-content flex items-center gap-2">
 			<span>✏️</span> แบบฝึกหัด (Exercises)
 		</h2>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 			{#each exercises as ex, idx}
-				<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-3 flex flex-col justify-between">
+				<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-3 flex flex-col justify-between">
 					<div class="space-y-3">
 						<span class="font-bold text-xs text-base-content/70">ข้อที่ {ex.id}</span>
 
@@ -241,7 +241,7 @@
 							bind:value={answers[idx]}
 							placeholder="พิมพ์คำตอบ..."
 							buttonText="ตรวจ"
-							btnClass="bg-amber-500 hover:bg-amber-400 text-base-content/70"
+							btnClass="btn-primary text-primary-content"
 							size="sm"
 							on:submit={() => checkAnswer(idx)}
 						/>

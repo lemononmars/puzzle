@@ -347,7 +347,7 @@
 		transition:fly={{ y: -20, duration: 200 }}
 	>
 		<div
-			class="px-4 py-2.5 rounded-2xl shadow-2xl backdrop-blur-md flex items-center gap-2.5 border text-sm font-semibold pointer-events-auto
+			class="botanical-card px-4 py-2.5 rounded-2xl shadow-2xl backdrop-blur-md flex items-center gap-2.5 border text-sm font-semibold pointer-events-auto
 				{toastType === 'warning'
 					? 'bg-error border-red-500/80 text-error-content'
 					: toastType === 'success'
@@ -381,7 +381,7 @@
 			>
 				<ArrowLeftIcon size="20" />
 			</a>
-			<h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-primary bg-gradient-to-r from-base-200 via-base-200 to-blue-500">
+			<h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-primary">
 				Euler Square
 			</h1>
 		</div>
@@ -401,7 +401,7 @@
 		<div class="flex flex-col items-center w-full lg:w-auto">
 			<!-- MOBILE INPUTS: Directly above the board on mobile mode (lg:hidden) -->
 			<div
-				class="block lg:hidden w-full p-3.5 mb-3 rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-xl backdrop-blur-md space-y-2.5"
+				class="botanical-card block lg:hidden w-full p-3.5 mb-3 rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-xl backdrop-blur-md space-y-2.5"
 				style="max-width: min(92vw, {currentSize === 3 ? '420px' : currentSize === 4 ? '480px' : '540px'});"
 			>
 				<!-- Selected Cell Header & Clear -->
@@ -489,7 +489,7 @@
 
 			<!-- Grid Board -->
 			<div
-				class="relative p-3 sm:p-5 rounded-3xl bg-base-100 text-base-content border border-base-300 shadow-2xl backdrop-blur-md shrink-0 w-full"
+				class="botanical-card relative p-3 sm:p-5 rounded-3xl bg-base-100 text-base-content border border-base-300 shadow-2xl backdrop-blur-md shrink-0 w-full"
 				style="max-width: min(92vw, {currentSize === 3 ? '420px' : currentSize === 4 ? '480px' : '540px'});"
 			>
 				{#if isGenerating}
@@ -567,7 +567,7 @@
 		</div>
 
 		<!-- Right: Single Combined Controls Panel (with separators) -->
-		<div class="w-full max-w-md bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 shadow-xl backdrop-blur-md flex flex-col gap-3.5">
+		<div class="botanical-card w-full max-w-md bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 shadow-xl backdrop-blur-md flex flex-col gap-3.5">
 			<!-- DESKTOP INPUTS: Displayed on lg and above (hidden on mobile since it is above board) -->
 			<div class="hidden lg:flex flex-col gap-2.5">
 				<!-- Selected Cell Header -->
@@ -754,7 +754,7 @@
 		transition:fade={{ duration: 150 }}
 	>
 		<div
-			class="bg-base-100 text-base-content border border-base-300 rounded-3xl max-w-lg w-full p-6 shadow-2xl flex flex-col gap-4 text-left"
+			class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl max-w-lg w-full p-6 shadow-2xl flex flex-col gap-4 text-left"
 			transition:scale={{ duration: 200, start: 0.95 }}
 		>
 			<div class="flex items-center justify-between border-b border-base-300 pb-3">
@@ -801,7 +801,7 @@
 		transition:fade={{ duration: 150 }}
 	>
 		<div
-			class="bg-base-100 text-base-content border border-primary/30 rounded-3xl max-w-md w-full p-6 shadow-2xl flex flex-col items-center text-center gap-4"
+			class="botanical-card bg-base-100 text-base-content border border-primary/30 rounded-3xl max-w-md w-full p-6 shadow-2xl flex flex-col items-center text-center gap-4"
 			transition:scale={{ duration: 250, start: 0.9 }}
 		>
 			<div class="w-20 h-20 rounded-full bg-emerald-500/20 border-2 border-primary/30 flex items-center justify-center text-primary shadow-lg shadow-emerald-500/30 animate-bounce">
@@ -815,7 +815,7 @@
 				</p>
 			</div>
 
-			<div class="bg-base-100 text-base-content border border-base-300 rounded-2xl p-4 w-full flex justify-around">
+			<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-2xl p-4 w-full flex justify-around">
 				<div class="flex flex-col">
 					<span class="text-xs text-base-content/70 uppercase">Time</span>
 					<span class="text-xl font-bold font-mono text-primary">{formatTime(timerSeconds)}</span>
@@ -860,7 +860,7 @@
 		transition:fade={{ duration: 150 }}
 	>
 		<div
-			class="bg-base-100 text-base-content border border-base-300 rounded-3xl max-w-md w-full p-6 shadow-2xl flex flex-col gap-5 text-left"
+			class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl max-w-md w-full p-6 shadow-2xl flex flex-col gap-5 text-left"
 			transition:scale={{ duration: 200, start: 0.95 }}
 		>
 			<div class="flex items-center justify-between border-b border-base-300 pb-3">

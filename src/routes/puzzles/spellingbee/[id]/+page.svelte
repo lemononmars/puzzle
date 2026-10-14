@@ -160,7 +160,7 @@ $: ({ content } = data);
 <svelte:body on:keydown={handleKeyPress} />
 
 <div id="spellingbee-game-container" class="max-w-4xl mx-auto px-2 sm:px-4 py-2 sm:py-4 flex flex-col gap-3 select-none">
-   <div class="bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 items-center relative overflow-hidden">
+   <div class="botanical-card bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 items-center relative overflow-hidden">
       <div class="absolute -top-20 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <!-- Header controls -->
@@ -259,7 +259,7 @@ $: ({ content } = data);
 
    <!-- Submissions & Answers grid -->
    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div class="bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-5 h-64 flex flex-col shadow-xl">
+      <div class="botanical-card bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-5 h-64 flex flex-col shadow-xl">
          <h2 class="font-bold text-base-content mb-3 text-center border-b border-base-300 pb-2 text-sm tracking-wide">คำตอบก่อนหน้านี้</h2>
          <div class="flex flex-col gap-2 overflow-y-auto pr-1 flex-1 text-sm">
             {#each logs as l}
@@ -278,7 +278,7 @@ $: ({ content } = data);
          </div>
       </div>
 
-      <div class="bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-5 h-64 flex flex-col shadow-xl">
+      <div class="botanical-card bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-5 h-64 flex flex-col shadow-xl">
          <h3 class="font-bold text-base-content mb-3 text-center border-b border-base-300 pb-2 text-sm tracking-wide">คำที่หาเจอแล้ว ({solved.filter(Boolean).length}/{solutions.length})</h3>
          <div class="grid grid-cols-3 sm:grid-cols-4 gap-2 p-1 overflow-y-auto flex-1">
             {#each solutions as s, idx}
@@ -302,7 +302,7 @@ $: ({ content } = data);
 <!-- Success Modal -->
 <input type="checkbox" id="submit-modal" class="modal-toggle" />
 <div class="modal cursor-pointer w-screen" class:modal-open={openModal} on:click={() => (openModal = false)}>
-   <div class="modal-box relative bg-base-100 text-base-content border border-base-300 text-base-content rounded-3xl p-6 shadow-2xl">
+   <div class="botanical-card modal-box relative bg-base-100 text-base-content border border-base-300 text-base-content rounded-3xl p-6 shadow-2xl">
       <h3 class="text-2xl font-black mb-2 text-primary flex items-center gap-2">
          <CheckCircleIcon size="24" /> หาคำศัพท์ครบแล้ว! 🎉
       </h3>

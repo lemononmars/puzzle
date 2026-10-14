@@ -113,7 +113,7 @@
    </div>
 </div>
 
-<div class="h-20 w-full flex flex-row gap-1 justify-center">
+<div class="puzzle-tiles h-20 w-full flex flex-row gap-1 justify-center">
    {#each splittedWord as word, widx}
       <div class="w-12 relative">
          {#each word as l, idx}

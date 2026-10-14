@@ -127,7 +127,7 @@
 	</header>
 
 	<!-- Language Toggle & Animated Shift Table -->
-	<section class="bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-4">
 		<div class="flex items-center justify-between flex-wrap gap-3">
 			<h2 class="text-xl font-extrabold text-primary flex items-center gap-2">
 				<span>🔄</span> ตารางการจับคู่ตัวอักษร Caesar Shift
@@ -173,7 +173,7 @@
 	</section>
 
 	<!-- Interactive Converter -->
-	<section class="bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-6">
+	<section class="botanical-card bg-base-200 p-6 rounded-3xl border border-base-300 shadow-xl space-y-6">
 		<div class="flex items-center justify-between flex-wrap gap-4 border-b border-base-300 pb-4">
 			<div class="space-y-1">
 				<h2 class="text-xl font-bold text-base-content">เครื่องมือแปลงรหัส Caesar Cipher</h2>
@@ -188,7 +188,7 @@
 		</div>
 
 		<!-- Shift Slider Controller -->
-		<div class="space-y-2 bg-base-100 text-base-content p-4 rounded-2xl border border-base-300">
+		<div class="botanical-card space-y-2 bg-base-100 text-base-content p-4 rounded-2xl border border-base-300">
 			<div class="flex justify-between items-center text-xs font-bold text-base-content/70">
 				<span>ค่า Shift Offset:</span>
 				<span class="text-primary text-sm font-mono font-black">+{shift} ช่อง ({langMode})</span>
@@ -250,7 +250,7 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 			{#each exercises as ex, idx}
-				<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-3 flex flex-col justify-between">
+				<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-3 flex flex-col justify-between">
 					<div class="space-y-3">
 						<span class="font-bold text-xs text-base-content/70">ข้อที่ {ex.id}</span>
 
@@ -265,7 +265,7 @@
 							bind:value={answers[idx]}
 							placeholder="พิมพ์คำตอบ..."
 							buttonText="ตรวจ"
-							btnClass="bg-primary hover:bg-primary/80 text-base-content/70"
+							btnClass="btn-primary text-primary-content"
 							size="sm"
 							on:submit={() => checkAnswer(idx)}
 						/>

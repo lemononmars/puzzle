@@ -72,11 +72,11 @@ export let data: any;
 		ctx.fillRect(0, 0, width, height);
 
 		ctx.fillStyle = '#000000';
-		ctx.font = 'bold 32px sans-serif';
+		ctx.font = 'bold 32px DM Sans, Noto Serif Thai';
 		ctx.textAlign = 'left';
 		ctx.fillText(content?.title || 'Word Search', padding, padding);
 
-		ctx.font = 'bold 20px sans-serif';
+		ctx.font = 'bold 20px DM Sans, Noto Serif Thai';
 		ctx.textAlign = 'center';
 		ctx.textBaseline = 'middle';
 
@@ -93,12 +93,12 @@ export let data: any;
 		}
 
 		ctx.textAlign = 'left';
-		ctx.font = 'bold 24px sans-serif';
+		ctx.font = 'bold 24px DM Sans, Noto Serif Thai';
 		const listX = gridX + boardSize + padding;
 		ctx.fillStyle = '#000000';
 		ctx.fillText('คำศัพท์ที่ต้องหา', listX, gridY + 20);
 
-		ctx.font = '20px sans-serif';
+		ctx.font = '20px DM Sans, Noto Serif Thai';
 		let currY = gridY + 60;
 		wordsData.forEach(w => {
 			ctx.fillStyle = '#000000';
@@ -253,7 +253,7 @@ $: ({ content } = data);
 	<!-- MAIN COLUMN: GRID BOARD -->
 	<div class="flex-1 flex flex-col items-center justify-center min-w-0 w-full">
 		<div
-			class="bg-base-200 p-2 sm:p-4 rounded-3xl shadow-xl inline-block select-none touch-none border border-base-300 relative"
+			class="botanical-card bg-base-200 p-2 sm:p-4 rounded-3xl shadow-xl inline-block select-none touch-none border border-base-300 relative"
 			on:touchmove={handleTouchMove}
 		>
 			{#if isPaused}
@@ -320,7 +320,7 @@ $: ({ content } = data);
 	<!-- SIDE PANEL (DESKTOP) / BOTTOM PANEL (MOBILE): WORD LIST & CONTROLS -->
 	<div class="w-full max-w-xl lg:max-w-xs shrink-0 flex flex-col gap-4">
 		<!-- Header, Title, Timer & Controls -->
-		<div class="w-full bg-base-100 text-base-content border border-base-300 rounded-2xl p-4 shadow-lg flex flex-col gap-3 text-center sm:text-left">
+		<div class="botanical-card w-full bg-base-100 text-base-content border border-base-300 rounded-2xl p-4 shadow-lg flex flex-col gap-3 text-center sm:text-left">
 			<div class="flex flex-col sm:flex-row lg:flex-col justify-between items-center lg:items-start gap-3">
 				<div>
 					<TitleTab {content} />
@@ -364,7 +364,7 @@ $: ({ content } = data);
 		</div>
 
 		<!-- Word List Box -->
-		<div class="w-full bg-base-200/90 border border-base-300 rounded-2xl p-3 sm:p-4 shadow-md flex flex-col gap-2">
+		<div class="botanical-card w-full bg-base-200/90 border border-base-300 rounded-2xl p-3 sm:p-4 shadow-md flex flex-col gap-2">
 			<div class="text-xs font-bold text-base-content/70 flex justify-between items-center">
 				<span>คำที่ต้องหา:</span>
 				<span class="text-[10px] opacity-70">สำเร็จ {wordsData.filter(w => w.found).length}/{wordsData.length}</span>
@@ -386,7 +386,7 @@ $: ({ content } = data);
 
 {#if showModal}
 	<div class="modal modal-open bg-black/60 backdrop-blur-md z-50" transition:fade>
-		<div class="modal-box bg-base-100 text-base-content border border-base-300 text-base-content text-center p-8 rounded-3xl" transition:scale>
+		<div class="botanical-card modal-box bg-base-100 text-base-content border border-base-300 text-base-content text-center p-8 rounded-3xl" transition:scale>
 			<div class="text-6xl mb-4 animate-bounce">🏆</div>
 			<h3 class="text-3xl font-black mb-2 text-primary">เก่งมาก!</h3>
 			<p class="text-lg text-base-content/70 mb-6 font-medium">คุณหาคำศัพท์ครบทุกคำแล้ว<br/>ใช้เวลาไป <span class="font-bold text-warning-content">{formatTime(seconds)}</span></p>

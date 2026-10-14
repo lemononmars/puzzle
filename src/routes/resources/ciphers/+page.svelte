@@ -142,7 +142,7 @@
 		{#each ciphersList as item}
 			<a
 				href={item.path}
-				class="card bg-base-100 text-base-content hover:bg-base-100 text-base-content transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group border border-base-300 shadow-md block rounded-2xl overflow-hidden p-5"
+				class="botanical-card card bg-base-100 text-base-content hover:bg-base-100 text-base-content transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group border border-base-300 shadow-md block rounded-2xl overflow-hidden p-5"
 			>
 				<div class="flex items-center justify-between mb-3">
 					<div

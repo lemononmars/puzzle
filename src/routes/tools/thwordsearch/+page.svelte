@@ -374,7 +374,7 @@
 	</div>
 	{#if revealHistory}
 		<div
-			class="bg-base-200/40 backdrop-blur-md border border-base-300 rounded-2xl my-3 p-4 shadow-lg w-full max-w-4xl mx-auto"
+			class="botanical-card bg-base-200/40 backdrop-blur-md border border-base-300 rounded-2xl my-3 p-4 shadow-lg w-full max-w-4xl mx-auto"
 			in:slide={{ duration: 250 }}
 			out:slide={{ duration: 200 }}
 		>
@@ -566,7 +566,7 @@
 				<span>ลองใหม่นะ</span>
 			{/if}
 		{:else}
-			<div class="bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-2xl overflow-hidden hidden lg:block shadow-xl">
+			<div class="botanical-card bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-2xl overflow-hidden hidden lg:block shadow-xl">
 				<table
 					class="table w-full text-base-content/70 [&_th]:border [&_td]:border [&_th]:border-base-300 [&_td]:border-base-300"
 				>
@@ -596,7 +596,7 @@
 				</table>
 			</div>
 			<div
-				class="bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-2xl overflow-hidden lg:hidden shadow-xl mx-auto w-full max-w-sm"
+				class="botanical-card bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-2xl overflow-hidden lg:hidden shadow-xl mx-auto w-full max-w-sm"
 			>
 				<table
 					class="table w-full text-base-content/70 [&_th]:border [&_td]:border [&_th]:border-base-300 [&_td]:border-base-300"

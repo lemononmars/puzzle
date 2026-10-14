@@ -27,7 +27,7 @@ $: ({ puzzles } = data);
 		</a>
 	</div>
 
-	<div class="bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-2xl overflow-hidden shadow-xl">
+	<div class="botanical-card bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-2xl overflow-hidden shadow-xl">
 		<div class="overflow-x-auto">
 			<table class="table w-full text-base-content/70">
 				<thead class="bg-base-100 text-base-content text-base-content/70 border-b border-base-300 text-xs font-bold uppercase">

@@ -71,7 +71,7 @@
 	{#if data.stale}<p role="status" class="alert alert-warning text-warning-content">กำลังแสดงรายการที่บันทึกไว้ เพราะเชื่อมต่อข้อมูลล่าสุดไม่ได้ กรุณายืนยันราคาและสถานะผ่านแชต</p>{/if}
 	<div class="sale-layout">
 		<section aria-label="รายการเกม">
-			<div class="filters bg-base-100 text-base-content border border-base-300 rounded-2xl p-4 grid sm:grid-cols-2 gap-3 mb-5">
+			<div class="botanical-card filters bg-base-100 text-base-content border border-base-300 rounded-2xl p-4 grid sm:grid-cols-2 gap-3 mb-5">
 				<label class="sm:col-span-2 text-sm">ค้นหาเกม<input type="search" class="input mt-2 w-full" bind:value={search} placeholder="ชื่อเกม หรือ Expansion…" /></label>
 				<label class="text-sm">สถานะ<select class="select mt-2 w-full" bind:value={availability}><option value="inquire">รายการที่สอบถามได้</option><option value="available">พร้อมขาย</option><option value="check">สอบถามสถานะ</option><option value="reserved">ติดจอง</option><option value="sold">ขายแล้ว</option><option value="all">ทุกสถานะ</option></select></label>
 				<label class="text-sm">ราคา<select class="select mt-2 w-full" bind:value={priceFilter}><option value="all">ทุกช่วงราคา</option><option value="priced">มีราคาแล้ว</option><option value="ask">สอบถามราคา</option></select></label>

@@ -529,7 +529,7 @@
 </svelte:head>
 
 <div id="spellingquiz-game-container" class="max-w-4xl mx-auto px-2 sm:px-4 py-2 sm:py-4 flex flex-col gap-3 select-none">
-	<div class="bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 relative overflow-hidden text-center">
+	<div class="botanical-card bg-base-100 text-base-content text-base-content border border-base-300 rounded-3xl p-3 sm:p-6 shadow-2xl flex flex-col gap-3 relative overflow-hidden text-center">
 		<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
 
 		<!-- 1. SELECT GAME MODE SCREEN -->
@@ -661,7 +661,7 @@
 
 			<!-- Dictionary Button -->
 			<a
-				href="/tools/spellingdictionary"
+				href="/resources/spellingdictionary"
 				class="card bg-base-100 text-base-content text-base-content shadow-md hover:shadow-xl hover:border-primary border border-transparent transition-all duration-300 hover:-translate-y-0.5 block w-full"
 			>
 				<div class="card-body p-4 flex flex-row items-center gap-4 justify-center">
@@ -745,7 +745,7 @@
 					</div>
 				{:else}
 					<div
-						class="flex items-center justify-between bg-base-100 text-base-content text-base-content rounded-2xl border border-base-300 transition-all duration-300 {isFullscreen ? 'p-2 px-4 text-xs sm:text-sm' : 'p-4 px-6 text-sm sm:text-lg font-bold shadow-lg'}"
+						class="botanical-card flex items-center justify-between bg-base-100 text-base-content text-base-content rounded-2xl border border-base-300 transition-all duration-300 {isFullscreen ? 'p-2 px-4 text-xs sm:text-sm' : 'p-4 px-6 text-sm sm:text-lg font-bold shadow-lg'}"
 					>
 						<div class="flex items-center gap-6">
 							<span
@@ -989,7 +989,7 @@
 
 				<!-- Word explanation in play zone -->
 				{#if (endlessState === 'revealed' || answerStatus !== 'idle') && currentQuestion && currentQuestion.explanation}
-					<div class="mt-2 p-4 bg-base-100 text-base-content border border-base-300 rounded-2xl text-left max-w-lg mx-auto animate-in fade-in slide-in-from-bottom-2 duration-200">
+					<div class="botanical-card mt-2 p-4 bg-base-100 text-base-content border border-base-300 rounded-2xl text-left max-w-lg mx-auto animate-in fade-in slide-in-from-bottom-2 duration-200">
 						<p class="text-sm text-primary font-black mb-1">💡 คำอธิบาย:</p>
 						<p class="text-xs sm:text-sm text-base-content leading-relaxed">
 							{currentQuestion.explanation}
@@ -1031,7 +1031,7 @@
 				</div>
 
 				<!-- Stats card (Single Line) -->
-				<div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 bg-base-100 text-base-content text-base-content rounded-xl p-3 px-4 border border-base-300 w-full text-xs sm:text-sm font-extrabold shadow-md">
+				<div class="botanical-card flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 bg-base-100 text-base-content text-base-content rounded-xl p-3 px-4 border border-base-300 w-full text-xs sm:text-sm font-extrabold shadow-md">
 					<span>คะแนน: <span class="text-primary font-black font-mono text-base">{score}</span></span>
 					<span class="opacity-30">|</span>
 					<span>ความแม่นยำ: <span class="text-success-content font-black font-mono text-base">{totalAnswered > 0 ? Math.round((correctCount / totalAnswered) * 100) : 0}%</span></span>

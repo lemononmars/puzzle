@@ -110,7 +110,7 @@
 	</div>
 
 	<!-- Main Game Card -->
-	<section class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-xl">
+	<section class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-xl">
 		<!-- Header Info -->
 		<div class="space-y-2 text-center">
 			<h1 class="text-2xl sm:text-4xl font-black text-base-content">หมู ไก่ ปลา กุ้ง</h1>
@@ -132,7 +132,7 @@
 		</div>
 
 		<!-- Target Word Display -->
-		<div class="bg-base-100 text-base-content p-8 rounded-2xl border border-base-300 flex flex-col items-center justify-center shadow-inner space-y-1">
+		<div class="botanical-card bg-base-100 text-base-content p-8 rounded-2xl border border-base-300 flex flex-col items-center justify-center shadow-inner space-y-1">
 			<span class="text-xs font-bold text-base-content/70 uppercase tracking-widest">คำปริศนา</span>
 			<div class="text-5xl sm:text-6xl font-black text-primary tracking-wide py-2">
 				{currentWord}

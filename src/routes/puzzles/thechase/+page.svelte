@@ -26,7 +26,7 @@
 				<div class="flex items-center gap-1.5 sm:gap-2">
 					<span class="text-lg sm:text-xl">⚡</span>
 					<div class="flex items-baseline gap-2">
-						<h1 class="text-sm sm:text-base font-black tracking-tight bg-gradient-to-r from-amber-400 to-yellow-400 text-primary">
+						<h1 class="text-sm sm:text-base font-black tracking-tight text-primary">
 							The Chase (ผู้ล่าท้าดวล)
 						</h1>
 						<span class="text-[10px] text-base-content/70 font-medium hidden md:inline">• UK Quiz Show 500 ข้อ</span>

@@ -145,9 +145,9 @@
 </script>
 
 <svelte:window on:keydown={handleKeyPress}/>
-<div class="flex flex-col gap-x-4 mx-2">
+<div class="puzzle-tiles flex flex-col gap-x-4 mx-2 pt-10">
 
-   <div class="h-20 w-full flex flex-row flex-wrap gap-1 justify-center">
+   <div class="min-h-28 w-full flex flex-row flex-wrap gap-x-1 gap-y-10 justify-center pb-8">
       {#each splittedWord as word, widx}
          <div class="w-8 lg:w-10 h-20 lg:h-28 relative">
             {#each word as l, idx}

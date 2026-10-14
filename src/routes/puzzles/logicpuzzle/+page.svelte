@@ -160,7 +160,7 @@ $: ({ initialPuzzles } = data);
 	</header>
 
 	<!-- Filters & Search Controls (puzsq style) -->
-	<section class="bg-base-100 text-base-content p-5 rounded-3xl border border-base-300 shadow-xl space-y-5">
+	<section class="botanical-card bg-base-100 text-base-content p-5 rounded-3xl border border-base-300 shadow-xl space-y-5">
 		<!-- Search & Sort Bar -->
 		<div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
 			<!-- Search Input -->
@@ -284,7 +284,7 @@ $: ({ initialPuzzles } = data);
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 				{#each paginatedPuzzles as puzzle (puzzle.id)}
 					<div
-						class="bg-base-100 text-base-content border border-base-300 hover:border-purple-500/50 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
+						class="botanical-card bg-base-100 text-base-content border border-base-300 hover:border-purple-500/50 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
 					>
 						<!-- Card Top: Extracted Live Preview from Link -->
 						<div class="relative w-full h-48 bg-base-100 text-base-content flex items-center justify-center overflow-hidden border-b border-base-300">
@@ -374,7 +374,7 @@ $: ({ initialPuzzles } = data);
 <!-- Interactive Puzzle Player Modal -->
 {#if activePuzzleModal}
 	<div class="fixed inset-0 z-[9999] pt-16 lg:pt-20 flex items-center justify-center p-2 sm:p-4 bg-base-100 text-base-content backdrop-blur-md animate-fade-in select-none">
-		<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl shadow-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden">
+		<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl shadow-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden">
 			<!-- Modal Header -->
 			<div class="flex items-center justify-between p-3.5 px-6 border-b border-base-300 bg-base-100 text-base-content shrink-0">
 				<div class="flex items-center gap-3">

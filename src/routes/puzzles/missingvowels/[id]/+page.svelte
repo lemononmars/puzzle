@@ -117,7 +117,7 @@ $: ({ content } = data);
 
 <div class="max-w-3xl mx-auto px-4 flex flex-col gap-4 pb-12">
    {#if isPlaying}
-      <div class="flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-5 py-3 text-warning-content font-mono font-bold shadow-md">
+      <div class="botanical-card flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-5 py-3 text-warning-content font-mono font-bold shadow-md">
          <span>เวลา: {timeString}</span>
          <span class="text-xs text-base-content/70 font-sans">ข้อที่ {currentRound + 1} / {numRounds}</span>
       </div>
@@ -125,7 +125,7 @@ $: ({ content } = data);
       <div class="flex flex-col gap-4">
          {#each sortedRounds as { a, originalIdx } (originalIdx)}
             {@const isCurrent = currentRound === originalIdx && !isFinished}
-            <div transition:fly={{ y: 20, duration: 300 }} class="flex flex-col gap-2 p-4 rounded-2xl border transition-all {isCurrent ? 'bg-base-100 text-base-content border-amber-500/50 shadow-xl' : 'bg-base-100 text-base-content border-base-300 opacity-80'}">
+            <div transition:fly={{ y: 20, duration: 300 }} class="botanical-card flex flex-col gap-2 p-4 rounded-2xl border transition-all {isCurrent ? 'bg-base-100 text-base-content border-amber-500/50 shadow-xl' : 'bg-base-100 text-base-content border-base-300 opacity-80'}">
                <div class="flex justify-between items-center text-xs font-bold text-base-content/70">
                   <span>ข้อที่ {originalIdx + 1}</span>
                   {#if !isCurrent}

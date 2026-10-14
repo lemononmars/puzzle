@@ -92,7 +92,7 @@
 		</a>
 	</div>
 
-	<div class="bg-base-200/50 backdrop-blur-lg border border-base-300 rounded-3xl p-6 lg:p-10 shadow-2xl mb-8">
+	<div class="botanical-card bg-base-200/50 backdrop-blur-lg border border-base-300 rounded-3xl p-6 lg:p-10 shadow-2xl mb-8">
 		<div class="flex items-center gap-3 text-primary mb-3">
 			<BookOpenIcon size="32" />
 			<h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight">คู่มือการใช้งาน Thai Word Search</h1>
@@ -104,7 +104,7 @@
 
 	<!-- Section 1: Core Architecture -->
 	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-		<div class="bg-base-100 border border-base-300 rounded-2xl p-6 shadow-md flex flex-col">
+		<div class="botanical-card bg-base-100 border border-base-300 rounded-2xl p-6 shadow-md flex flex-col">
 			<div class="flex items-center gap-3 text-secondary mb-3">
 				<ZapIcon size="24" />
 				<h3 class="font-bold text-xl">Trie Engine</h3>
@@ -114,7 +114,7 @@
 			</p>
 		</div>
 
-		<div class="bg-base-100 border border-base-300 rounded-2xl p-6 shadow-md flex flex-col">
+		<div class="botanical-card bg-base-100 border border-base-300 rounded-2xl p-6 shadow-md flex flex-col">
 			<div class="flex items-center gap-3 text-accent-content mb-3">
 				<LayersIcon size="24" />
 				<h3 class="font-bold text-xl">Thai Grapheme Split</h3>
@@ -124,7 +124,7 @@
 			</p>
 		</div>
 
-		<div class="bg-base-100 border border-base-300 rounded-2xl p-6 shadow-md flex flex-col">
+		<div class="botanical-card bg-base-100 border border-base-300 rounded-2xl p-6 shadow-md flex flex-col">
 			<div class="flex items-center gap-3 text-info-content mb-3">
 				<DatabaseIcon size="24" />
 				<h3 class="font-bold text-xl">Popularity Index</h3>
@@ -136,7 +136,7 @@
 	</div>
 
 	<!-- Section 2: Syntax Guide -->
-	<div class="bg-base-100 border border-base-300 rounded-3xl p-6 lg:p-8 shadow-lg mb-10">
+	<div class="botanical-card bg-base-100 border border-base-300 rounded-3xl p-6 lg:p-8 shadow-lg mb-10">
 		<h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
 			<SearchIcon size="24" class="text-primary" />
 			<span>ไวยากรณ์การค้นหา (Search Syntax Reference)</span>
@@ -172,24 +172,24 @@
 	</div>
 
 	<!-- Section 3: Special Options -->
-	<div class="bg-base-100 border border-base-300 rounded-3xl p-6 lg:p-8 shadow-lg mb-10">
+	<div class="botanical-card bg-base-100 border border-base-300 rounded-3xl p-6 lg:p-8 shadow-lg mb-10">
 		<h2 class="text-2xl font-bold mb-4">ตัวเลือกเสริม (Search Options)</h2>
 		<div class="space-y-4">
-			<div class="p-4 border border-base-200 rounded-2xl bg-base-200/30">
+			<div class="botanical-card p-4 border border-base-200 rounded-2xl bg-base-200/30">
 				<h4 class="font-bold text-lg text-primary mb-1">1. นับอักษรบนล่าง (Strict Vowel & Tone Matching)</h4>
 				<p class="text-sm text-base-content/70">
 					เมื่อเปิดใช้งาน สระและวรรณยุกต์จะถือเป็นตัวอักษรแยกต่างหากตรงตามตำแหน่ง แต่หากปิดใช้งาน ระบบจะผ่อนปรนให้ค้นหาคำที่พยัญชนะตรงกันโดยไม่สนสระบนล่างในบางสัญลักษณ์
 				</p>
 			</div>
 
-			<div class="p-4 border border-base-200 rounded-2xl bg-base-200/30">
+			<div class="botanical-card p-4 border border-base-200 rounded-2xl bg-base-200/30">
 				<h4 class="font-bold text-lg text-secondary mb-1">2. รวมหัวข้อใน Wikipedia (Wikipedia Dictionary)</h4>
 				<p class="text-sm text-base-content/70">
 					ขยายฐานข้อมูลจากพจนานุกรมหลัก ให้ครอบคลุมชื่อเฉพาะ คำทับศัพท์ ชื่อสถานที่ และบุคคลสำคัญ โดยใช้อ้างอิงดรรชนีหัวข้อบทความจากคลังข้อมูล <strong>Thai Wikipedia (Wikipedia Database Dump ภาษาไทย)</strong>
 				</p>
 			</div>
 
-			<div class="p-4 border border-base-200 rounded-2xl bg-base-200/30">
+			<div class="botanical-card p-4 border border-base-200 rounded-2xl bg-base-200/30">
 				<h4 class="font-bold text-lg text-accent-content mb-1">3. เรียงตามความนิยม (Popularity Sorting & PyThaiNLP)</h4>
 				<p class="text-sm text-base-content/70">
 					เรียงลำดับคำตามความถี่การใช้งานจริงในภาษาไทย (อ้างอิงจากคลังข้อมูลความถี่คำ PyThaiNLP TNC Corpus) โดยแบ่งช่วงคำนวณด้วยค่าสถิติควอร์ไทล์ (Quartiles: Q1, Q2, Q3) ดังนี้:

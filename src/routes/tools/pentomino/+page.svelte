@@ -280,7 +280,7 @@
 		<!-- Controls & Palette -->
 		<div class="w-full md:w-72 flex flex-col gap-2">
 			<!-- Action Buttons (Row on mobile, Stack on desktop) -->
-			<div class="grid grid-cols-3 sm:flex sm:flex-col gap-1.5 bg-base-100 text-base-content border border-base-300 p-2 sm:p-3 rounded-xl backdrop-blur-sm shadow-md">
+			<div class="botanical-card grid grid-cols-3 sm:flex sm:flex-col gap-1.5 bg-base-100 text-base-content border border-base-300 p-2 sm:p-3 rounded-xl backdrop-blur-sm shadow-md">
 				<button
 					on:click={handleSolve}
 					disabled={blockedCells.length !== 4 || solving || counting}
@@ -367,7 +367,7 @@
 			<div
 				class="absolute -inset-1 bg-primary rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"
 			/>
-			<div class="relative bg-base-100 text-base-content p-2 sm:p-3 rounded-2xl border border-base-300 shadow-2xl">
+			<div class="botanical-card relative bg-base-100 text-base-content p-2 sm:p-3 rounded-2xl border border-base-300 shadow-2xl">
 				<div class="grid grid-cols-8 gap-1 sm:gap-1.5">
 					{#each grid as row, r}
 						{#each row as cell, c}
@@ -421,7 +421,7 @@
 		class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
 		transition:fade={{ duration: 150 }}
 	>
-		<div class="bg-base-100 text-base-content border border-base-300 rounded-2xl p-5 max-w-md w-full shadow-2xl relative space-y-4 text-base-content text-left">
+		<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-2xl p-5 max-w-md w-full shadow-2xl relative space-y-4 text-base-content text-left">
 			<button
 				on:click={() => (showHelpModal = false)}
 				class="absolute top-4 right-4 text-base-content/70 hover:text-base-content btn btn-ghost btn-xs btn-circle"

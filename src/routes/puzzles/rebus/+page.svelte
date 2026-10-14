@@ -28,7 +28,7 @@ $: ({ puzzles } = data);
 			{@const imgFilename = 'rebus' + ('0' + p.id).slice(-2) + '.png'}
 			<a
 				href="/puzzles/rebus/{p.id}"
-				class="bg-base-100 text-base-content border border-base-300 hover:border-primary/30 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
+				class="botanical-card bg-base-100 text-base-content border border-base-300 hover:border-primary/30 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
 			>
 				<!-- Card Top: Rebus Image Thumbnail Preview -->
 				<div class="relative w-full h-44 bg-base-100 text-base-content flex items-center justify-center p-3 overflow-hidden border-b border-base-300">

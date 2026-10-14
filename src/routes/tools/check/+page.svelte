@@ -93,7 +93,7 @@
 			{/if}
 
 			{#if submitted}
-				<div class="mt-6 p-6 bg-base-200 rounded-2xl border border-base-300">
+				<div class="botanical-card mt-6 p-6 bg-base-200 rounded-2xl border border-base-300">
 					<div class="flex items-center justify-between mb-4">
 						<span class="text-sm font-bold uppercase tracking-widest opacity-50"
 							>ลิงก์ของคุณสำเร็จแล้ว:</span

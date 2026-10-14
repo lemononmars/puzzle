@@ -18,3 +18,5 @@
 	</div>
 	<form method="dialog" class="modal-backdrop"><button aria-label="ปิดเมนู">ปิด</button></form>
 </dialog>
+
+<style> @media(min-width:1024px) { dialog.modal { align-items:flex-start; padding-top:82px; } dialog.modal > .modal-box { border-radius:24px; max-width:560px; } } </style>

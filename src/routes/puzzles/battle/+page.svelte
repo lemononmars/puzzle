@@ -1045,6 +1045,7 @@
 <svelte:window on:keydown={handleGlobalKeyDown} />
 
 <svelte:head>
+ <meta name="robots" content="noindex, nofollow" />
 	<title>Code Breaker | Puzzle Battle Arena</title>
 	<meta
 		name="description"
@@ -1071,7 +1072,7 @@
 					<div class="flex items-center gap-2">
 						<span class="text-2xl animate-pulse">⚔️</span>
 						<div>
-							<h1 class="text-base sm:text-lg font-black tracking-tight bg-gradient-to-r from-base-200 via-base-200 to-base-200 text-primary">
+							<h1 class="text-base sm:text-lg font-black tracking-tight text-primary">
 								Puzzle Battle Arena
 							</h1>
 							<p class="text-[11px] text-base-content/70 font-medium">สังเวียนประลองปริศนาสด Realtime Multiplayer</p>
@@ -1086,7 +1087,7 @@
 							<button tabindex="0" class="btn btn-xs btn-ghost text-xl px-1 hover:bg-base-100 text-base-content" title="เปลี่ยน Avatar">
 								{localPlayer.avatar}
 							</button>
-							<div tabindex="0" class="dropdown-content menu p-2 shadow-2xl bg-base-100 text-base-content border border-base-300 rounded-2xl w-48 z-[999] absolute right-0 top-full mt-2 grid grid-cols-4 gap-1">
+							<div tabindex="0" class="botanical-card dropdown-content menu p-2 shadow-2xl bg-base-100 text-base-content border border-base-300 rounded-2xl w-48 z-[999] absolute right-0 top-full mt-2 grid grid-cols-4 gap-1">
 								{#each AVATARS as av}
 									<button
 										class="btn btn-ghost text-xl p-1 hover:bg-emerald-500/20 rounded-xl transition-all"
@@ -1123,7 +1124,7 @@
 		{#if currentView === 'lobby'}
 			<div class="flex flex-col gap-4" in:fade={{ duration: 200 }}>
 				<!-- Compact Room Action Bar -->
-				<div class="bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 sm:p-4 shadow-xl flex flex-col md:flex-row justify-between items-stretch md:items-center gap-3">
+				<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 sm:p-4 shadow-xl flex flex-col md:flex-row justify-between items-stretch md:items-center gap-3">
 					<div class="flex items-center gap-2.5">
 						<div class="h-8 w-8 rounded-xl bg-emerald-500/20 text-primary flex items-center justify-center font-bold">
 							<ZapIcon size="16" />
@@ -1207,7 +1208,7 @@
 								{/each}
 							</div>
 						{:else if rooms.length === 0}
-							<div class="flex flex-col items-center justify-center p-8 bg-base-100 text-base-content border border-dashed border-base-300 rounded-2xl text-center gap-2">
+							<div class="botanical-card flex flex-col items-center justify-center p-8 bg-base-100 text-base-content border border-dashed border-base-300 rounded-2xl text-center gap-2">
 								<span class="text-3xl">🏜️</span>
 								<p class="text-sm font-bold text-base-content/70">ยังไม่มีห้องแข่งขันในขณะนี้</p>
 								<p class="text-xs text-base-content/70 max-w-xs">เป็นคนแรกที่สร้างห้องประลอง แล้วชวนเพื่อนๆ เข้ามาร่วมแข่งได้เลย!</p>
@@ -1227,7 +1228,7 @@
 									{@const playerCount = (r.players || []).length}
 									{@const maxPlayers = meta?.config?.maxPlayers || 4}
 									<div
-										class="bg-base-100 text-base-content hover:bg-base-100 text-base-content border border-base-300 hover:border-primary/30 rounded-2xl p-4 shadow-xl transition-all flex flex-col justify-between gap-3 group relative overflow-hidden"
+										class="botanical-card bg-base-100 text-base-content hover:bg-base-100 text-base-content border border-base-300 hover:border-primary/30 rounded-2xl p-4 shadow-xl transition-all flex flex-col justify-between gap-3 group relative overflow-hidden"
 									>
 										<div class="flex flex-col gap-2">
 											<div class="flex items-center justify-between">
@@ -1308,7 +1309,7 @@
 					</div>
 
 					<!-- Online Players Sidebar (1 col) -->
-					<div class="bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 shadow-xl flex flex-col gap-3 h-fit">
+					<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 shadow-xl flex flex-col gap-3 h-fit">
 						<div class="flex items-center justify-between border-b border-base-300 pb-2">
 							<div class="flex items-center gap-2">
 								<RadioIcon size="15" class="text-primary animate-pulse" />
@@ -1344,7 +1345,7 @@
 			{@const puzzleInfo = meta?.config ? PUZZLE_TYPES.find((p) => p.id === meta.config.puzzleType) : null}
 			<div class="flex flex-col gap-4" in:fade={{ duration: 200 }}>
 				<!-- Room Header Bar -->
-				<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-3xl p-5 shadow-2xl">
+				<div class="botanical-card flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-3xl p-5 shadow-2xl">
 					<div class="flex flex-col gap-1">
 						<div class="flex items-center gap-2.5">
 							<span class="px-2.5 py-0.5 rounded-xl bg-emerald-500/20 text-primary border border-primary/30 font-mono text-sm font-black tracking-widest">
@@ -1406,7 +1407,7 @@
 				<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
 					{#each (currentRoom.players || []) as player (player.id)}
 						<div
-							class="bg-base-100 text-base-content border {player.isReady ? 'border-primary/30 bg-base-300 text-base-content' : 'border-base-300'} rounded-2xl p-4 flex flex-col items-center text-center gap-2.5 relative overflow-hidden transition-all"
+							class="botanical-card bg-base-100 text-base-content border {player.isReady ? 'border-primary/30 bg-base-300 text-base-content' : 'border-base-300'} rounded-2xl p-4 flex flex-col items-center text-center gap-2.5 relative overflow-hidden transition-all"
 						>
 							{#if player.isHost}
 								<div class="absolute top-2.5 left-2.5 badge badge-warning badge-xs text-warning-content font-bold gap-1">
@@ -1415,7 +1416,7 @@
 							{/if}
 
 							<div class="relative mt-1">
-								<div class="w-16 h-16 rounded-2xl bg-base-100 text-base-content border-2 {player.isReady ? 'border-primary/30 shadow-lg shadow-emerald-500/20' : 'border-base-300'} flex items-center justify-center text-3xl">
+								<div class="botanical-card w-16 h-16 rounded-2xl bg-base-100 text-base-content border-2 {player.isReady ? 'border-primary/30 shadow-lg shadow-emerald-500/20' : 'border-base-300'} flex items-center justify-center text-3xl">
 									{player.avatar}
 								</div>
 								{#if player.isReady}
@@ -1474,7 +1475,7 @@
 
 			<div class="flex flex-col gap-3 h-full" in:fade={{ duration: 200 }}>
 				<!-- Arena Header & Live Timer -->
-				<div class="flex flex-row justify-between items-center gap-2 bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-2xl p-3 sm:p-4 shadow-xl">
+				<div class="botanical-card flex flex-row justify-between items-center gap-2 bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-2xl p-3 sm:p-4 shadow-xl">
 					<div class="flex items-center gap-2 sm:gap-3">
 						<div class="badge badge-primary badge-md sm:badge-lg font-bold text-primary-content whitespace-nowrap">
 							รอบ {currentRoundIndex + 1}/{meta?.rounds.length || 1}
@@ -1524,7 +1525,7 @@
 				<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 flex-1">
 					<!-- Main Gameplay Stage (3 cols) -->
 					<div class="lg:col-span-3 flex flex-col gap-4">
-						<div class="bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-3xl p-4 sm:p-6 shadow-2xl min-h-[460px] flex flex-col justify-between relative overflow-hidden">
+						<div class="botanical-card bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-3xl p-4 sm:p-6 shadow-2xl min-h-[460px] flex flex-col justify-between relative overflow-hidden">
 
 							<!-- Floating Score Feed Toasts -->
 							<div class="absolute top-4 right-4 flex flex-col gap-2 pointer-events-none z-20">
@@ -1574,7 +1575,7 @@
 													disabled={myPlayer?.isSpectator}
 													placeholder={myPlayer?.isSpectator ? 'โหมดผู้เข้าชม (Spectating)...' : 'พิมพ์หรือคลิกตัวอักษร...'}
 													class="input  w-full px-4 py-3 rounded-2xl bg-base-100 text-base-content text-base-content text-xl font-black focus:outline-none focus:border-amber-400 transition-colors shadow-inner"
-													style="color: #ffffff !important; background-color: #020617 !important;"
+													class:botanical-answer-input={true}
 												/>
 												{#if playerInput}
 													<button
@@ -1597,7 +1598,7 @@
 									</div>
 
 									<!-- Bottom: Revealed Solutions Grid -->
-									<div class="bg-base-100 text-base-content border border-base-300 rounded-2xl p-3 sm:p-4 flex flex-col gap-2">
+									<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-2xl p-3 sm:p-4 flex flex-col gap-2">
 										<div class="flex items-center justify-between border-b border-base-300 pb-2">
 											<h4 class="font-bold text-xs sm:text-sm text-base-content">
 												รายการคำศัพท์ทั้งหมด ({countFoundWords(solutions, isQuizMode, sharedWordsMap, spellingBeeFound)}/{solutions.length})
@@ -1684,12 +1685,12 @@
 							{:else if activeRoundData.puzzleType === 'crossroad'}
 								<div class="flex flex-col items-center justify-center gap-3 my-auto w-full py-2">
 									<div class="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center select-none">
-										<div class="absolute top-0 inset-x-0 mx-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
+										<div class="botanical-card absolute top-0 inset-x-0 mx-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
 											{currentTopClue || 'ต้น'}
 										</div>
 										<ArrowDownIcon class="absolute top-16 inset-x-0 mx-auto text-primary animate-bounce" size="20" />
 
-										<div class="absolute left-0 inset-y-0 my-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
+										<div class="botanical-card absolute left-0 inset-y-0 my-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
 											{currentLeftClue || 'ใบ'}
 										</div>
 										<ArrowRightIcon class="absolute left-24 inset-y-0 my-auto text-primary animate-pulse" size="20" />
@@ -1705,16 +1706,16 @@
 												: crossroadWiggle
 													? 'border-rose-500 text-error-content animate-shake'
 													: 'border-base-300 focus:border-primary/30'}"
-											style="color: #ffffff !important; background-color: #020617 !important;"
+											class:botanical-answer-input={true}
 										/>
 
 										<ArrowRightIcon class="absolute right-24 inset-y-0 my-auto text-primary -scale-x-100 animate-pulse" size="20" />
-										<div class="absolute right-0 inset-y-0 my-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
+										<div class="botanical-card absolute right-0 inset-y-0 my-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
 											{currentRightClue || 'ดวง'}
 										</div>
 
 										<ArrowDownIcon class="absolute bottom-16 inset-x-0 mx-auto text-primary -scale-y-100 animate-bounce" size="20" />
-										<div class="absolute bottom-0 inset-x-0 mx-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
+										<div class="botanical-card absolute bottom-0 inset-x-0 mx-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
 											{currentBottomClue || 'ไม้'}
 										</div>
 									</div>
@@ -1804,7 +1805,7 @@
 									</div>
 
 									{#if payload?.grid}
-										<div class="relative w-full max-w-[340px] sm:max-w-[380px] aspect-square bg-base-100 text-base-content p-3 rounded-3xl border border-base-300 select-none shadow-2xl overflow-hidden">
+										<div class="botanical-card relative w-full max-w-[340px] sm:max-w-[380px] aspect-square bg-base-100 text-base-content p-3 rounded-3xl border border-base-300 select-none shadow-2xl overflow-hidden">
 											<svg class="absolute inset-0 w-full h-full pointer-events-none z-10 p-3 text-secondary opacity-70" viewBox="0 0 100 100">
 												{#if bogglePathSVGData}
 													<path
@@ -1922,7 +1923,7 @@
 												disabled={myPlayer?.isSpectator}
 												placeholder={myPlayer?.isSpectator ? 'โหมดผู้เข้าชม' : 'พิมพ์คำถัดไป (เปลี่ยน 1 อักษร)...'}
 												class="input input-md  flex-1 bg-base-100 text-base-content text-base-content font-bold border-base-300 focus:border-primary/30 text-center text-lg"
-												style="color: #ffffff !important; background-color: #020617 !important;"
+												class:botanical-answer-input={true}
 											/>
 											<button disabled={myPlayer?.isSpectator} class="btn btn-md btn-success text-success-content font-bold shadow-lg" on:click={handleLadderSubmit}>
 												ก้าวต่อ (Enter)
@@ -1980,7 +1981,7 @@
 					</div>
 
 					<!-- Live Scoreboard & Opponent Progress (1 col) -->
-					<div class="bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-3xl p-4 sm:p-5 shadow-2xl flex flex-col gap-4">
+					<div class="botanical-card bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-3xl p-4 sm:p-5 shadow-2xl flex flex-col gap-4">
 						<div class="flex items-center gap-2 border-b border-base-300 pb-3">
 							<AwardIcon size="18" class="text-warning-content" />
 							<h4 class="font-extrabold text-base-content text-base">คะแนนสด (Live Match)</h4>
@@ -2020,7 +2021,7 @@
 			<div class="flex flex-col items-center justify-center gap-8 py-8" in:scale={{ duration: 300 }}>
 				<div class="text-center flex flex-col items-center gap-2">
 					<span class="text-5xl animate-bounce">🏆</span>
-					<h2 class="text-3xl sm:text-5xl font-black bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-500 text-primary">
+					<h2 class="text-3xl sm:text-5xl font-black text-primary">
 						การประลองเสร็จสิ้น!
 					</h2>
 					<p class="text-sm text-base-content/70">ตารางคะแนนรวมและผู้ชนะประจำแมตช์</p>
@@ -2084,7 +2085,7 @@
 <!-- CREATE ROOM MODAL -->
 {#if showCreateModal}
 	<div class="modal modal-open bg-base-100 text-base-content backdrop-blur-md z-50">
-		<div class="modal-box bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-6 max-w-lg text-base-content shadow-2xl flex flex-col gap-4">
+		<div class="botanical-card modal-box bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-6 max-w-lg text-base-content shadow-2xl flex flex-col gap-4">
 			<div class="flex items-center justify-between border-b border-base-300 pb-2.5">
 				<h3 class="text-lg font-black text-base-content flex items-center gap-2">
 					<PlusCircleIcon size="18" class="text-primary" />

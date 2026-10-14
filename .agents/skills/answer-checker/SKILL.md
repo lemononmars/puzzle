@@ -25,12 +25,12 @@ Use the `AnswerChecker` component (`src/lib/components/AnswerChecker.svelte`) wh
   bind:value={userAnswer}
   placeholder="พิมพ์คำตอบที่นี่..."
   buttonText="ตรวจคำตอบ"
-  btnClass="bg-amber-500 hover:bg-amber-400 text-slate-950"
+  btnClass="btn-primary text-primary-content"
   on:submit={handleCheck}
 />
 ```
 
 ## Key Rules
 1. **Input Group Wrapper**: Always wrap `<input>` and `<button>` inside a DaisyUI `<div class="input-group">` container inside `<form class="form-control">`.
-2. **Dark Background Guarantee**: Inputs must enforce `style="background-color: #020617 !important; color: #f8fafc !important;"` to prevent DaisyUI theme overrides.
+2. **Theme Contrast**: Use `bg-base-100 text-base-content` for inputs and `btn-primary text-primary-content` for submit buttons. Never hard-code dark backgrounds or white text; follow the active theme.
 3. **Responsive Sizing**: Support `size="sm"`, `size="md"`, or `size="lg"`.

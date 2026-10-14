@@ -51,7 +51,7 @@ $: ({ content, id } = data);
 <div class="flex flex-col gap-4 pb-10 max-w-4xl mx-auto px-4 select-none">
 	{#if content}
 		<!-- Header with Left / Right Navigation Buttons -->
-		<div class="w-full flex items-center justify-between gap-3 py-2 bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 shadow-lg">
+		<div class="botanical-card w-full flex items-center justify-between gap-3 py-2 bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 shadow-lg">
 			<a
 				href="/puzzles/hiddenlink"
 				class="p-2 rounded-xl bg-base-100 text-base-content border border-base-300 text-base-content/70 hover:text-base-content hover:border-primary/30 transition-all shrink-0 flex items-center justify-center"

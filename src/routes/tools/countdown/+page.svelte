@@ -611,7 +611,7 @@
 			</div>
 
 			<!-- Setup Settings Card -->
-			<div class="w-full bg-base-100 text-base-content border border-blue-500/30 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl flex flex-col gap-6">
+			<div class="botanical-card w-full bg-base-100 text-base-content border border-blue-500/30 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl flex flex-col gap-6">
 
 				<!-- Options: Duration (30s vs 60s) & Tile Limit Mode (9 vs Unlimited) -->
 				<div class="flex flex-col gap-4 border-b border-base-300 pb-4">
@@ -713,7 +713,7 @@
 				<!-- Top Controls Bar -->
 				<div class="flex items-center justify-between gap-4">
 					<!-- Flow Steps -->
-					<div class="flex items-center gap-1 sm:gap-2 text-xs font-bold py-2 px-3 sm:px-4 rounded-2xl bg-base-100 text-base-content border border-blue-500/30 shadow-xl overflow-x-auto">
+					<div class="botanical-card flex items-center gap-1 sm:gap-2 text-xs font-bold py-2 px-3 sm:px-4 rounded-2xl bg-base-100 text-base-content border border-blue-500/30 shadow-xl overflow-x-auto">
 						<div class="px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 whitespace-nowrap {phase === 'pool' ? 'bg-blue-500 text-base-content font-black shadow-lg shadow-blue-500/30' : 'text-base-content/70'}">
 							1. สุ่มตัวอักษร ({pool.length}/{maxPoolSize === 99 ? '∞' : maxPoolSize})
 						</div>
@@ -769,7 +769,7 @@
 				</div>
 
 				<!-- Main Stage Blue Theme Card -->
-				<div class="bg-base-100 text-base-content backdrop-blur-2xl border border-blue-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl flex flex-col gap-8 relative overflow-hidden flex-1 justify-center">
+				<div class="botanical-card bg-base-100 text-base-content backdrop-blur-2xl border border-blue-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl flex flex-col gap-8 relative overflow-hidden flex-1 justify-center">
 					<div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
 					<!-- FIXED POSITION TILE POOL (Kept at top of card across all steps, except Podium) -->
@@ -1022,7 +1022,7 @@
 						<div class="flex flex-col items-center gap-6 py-2 border-t border-base-300">
 							{#if currentTeamIndex < randomizedTeams.length}
 								{@const activeTeam = randomizedTeams[currentTeamIndex]}
-								<div class="w-full max-w-xl bg-base-100 text-base-content border border-blue-500/40 rounded-3xl p-6 sm:p-8 flex flex-col gap-5 text-center shadow-2xl relative">
+								<div class="botanical-card w-full max-w-xl bg-base-100 text-base-content border border-blue-500/40 rounded-3xl p-6 sm:p-8 flex flex-col gap-5 text-center shadow-2xl relative">
 									<h3 class="text-3xl font-black text-base-content">{activeTeam.name}</h3>
 
 									<div class="flex flex-col gap-2">
@@ -1049,7 +1049,7 @@
 										<div
 											in:scale={{ duration: 300 }}
 											out:fade={{ duration: 200 }}
-											class="absolute inset-0 bg-base-100 text-base-content backdrop-blur-md rounded-3xl z-30 flex flex-col items-center justify-center p-6 gap-3 border-2
+											class="botanical-card absolute inset-0 bg-base-100 text-base-content backdrop-blur-md rounded-3xl z-30 flex flex-col items-center justify-center p-6 gap-3 border-2
 											{currentSubmissionResult.isCorrect ? 'border-primary/30 text-primary' : 'border-rose-500 text-error-content'}"
 										>
 											{#if currentSubmissionResult.isCorrect}
@@ -1070,7 +1070,7 @@
 							<!-- SUBMITTED TEAMS LOG -->
 							<div class="w-full flex flex-row flex-wrap justify-center items-center gap-3 pt-2">
 								{#each randomizedTeams as t}
-									<div class="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-base-100 text-base-content border border-base-300 text-sm font-bold shadow-md">
+									<div class="botanical-card flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-base-100 text-base-content border border-base-300 text-sm font-bold shadow-md">
 										<span class="text-base-content">{t.name}:</span>
 										{#if t.submittedWord !== undefined}
 											<span class="text-primary font-mono">"{t.submittedWord || 'ไม่ได้ตอบ'}"</span>
@@ -1111,7 +1111,7 @@
 								</button>
 							</div>
 
-							<div class="w-full max-w-4xl bg-base-100 text-base-content border border-blue-500/30 rounded-3xl p-6 flex flex-col gap-4 shadow-xl">
+							<div class="botanical-card w-full max-w-4xl bg-base-100 text-base-content border border-blue-500/30 rounded-3xl p-6 flex flex-col gap-4 shadow-xl">
 								<div class="flex items-center justify-between border-b border-base-300 pb-2">
 									<h4 class="font-bold text-base-content text-base">
 										เฉลยคำศัพท์ทั้งหมดที่สะกดได้ แยกตามคะแนน

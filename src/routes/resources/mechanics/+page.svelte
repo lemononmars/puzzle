@@ -99,7 +99,7 @@
 	</header>
 
 	<div
-		class="sticky top-2 z-20 mt-6 rounded-2xl border border-base-300 bg-base-100 text-base-content shadow-lg p-3 sm:p-4"
+		class="botanical-card sticky top-2 z-20 mt-6 rounded-2xl border border-base-300 bg-base-100 text-base-content shadow-lg p-3 sm:p-4"
 	>
 		<label class="relative block">
 			<SearchIcon size="18" class="absolute left-4 top-1/2 -translate-y-1/2 opacity-50" />
@@ -169,7 +169,7 @@
 							{#each chapter.mechanics as mechanic}
 								<article
 									id={mechanic.id}
-									class="scroll-mt-28 rounded-2xl border border-base-300 bg-base-100 text-base-content p-5 shadow-sm hover:shadow-lg transition-shadow flex flex-col gap-4"
+									class="botanical-card scroll-mt-28 rounded-2xl border border-base-300 bg-base-100 text-base-content p-5 shadow-sm hover:shadow-lg transition-shadow flex flex-col gap-4"
 								>
 									<div class="flex items-start gap-3.5">
 										<div

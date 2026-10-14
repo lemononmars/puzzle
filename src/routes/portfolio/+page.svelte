@@ -1,7 +1,8 @@
 <script lang="ts">
+	import PageHeading from '#lib/components/ui/PageHeading.svelte';
 	import ActionLink from '#lib/components/ui/ActionLink.svelte';
-	import LinkCard from '#lib/components/ui/LinkCard.svelte';
 	import { portfolio } from '#lib/data/portfolio.js';
+	import { portfolioSections } from '#lib/data/portfolioSections.js';
 </script>
 
 <svelte:head>
@@ -9,72 +10,41 @@
 	<meta name="description" content={portfolio.bio} />
 </svelte:head>
 
-<div class="portfolio bg-base-100 text-base-content">
-	<section class="intro" aria-labelledby="portfolio-title">
-		<p class="eyebrow text-primary">PERSONAL PORTFOLIO / SELECTED WORK</p>
-		<h1 id="portfolio-title" class="text-base-content">{portfolio.name}<span class="text-primary">.</span></h1>
-		<p class="role">{portfolio.role}</p>
-		<p class="bio">{portfolio.bio}</p>
-		<ActionLink href="#work">Explore my work ↘</ActionLink>
-		{#if portfolio.name === 'Your name'}
-			<p class="draft">Draft portfolio — personal details coming soon.</p>
-		{/if}
-	</section>
-	<section id="work" aria-labelledby="work-title">
-		<div class="section-heading"><h2 id="work-title" class="text-base-content">Selected work</h2></div>
-		<div class="projects">
-			{#each portfolio.projects as project, i}
-				<a href={project.href} class="project bg-base-200 text-base-content">
-					<div class="art text-primary" aria-hidden="true">{project.mark}</div>
-					<div class="project-info"><p class="eyebrow">0{i + 1} / {project.category}</p><h3 class="text-base-content">{project.title} ↗</h3><p>{project.description}</p></div>
-				</a>
-			{/each}
-		</div>
-	</section>
-	<section class="background" aria-labelledby="escape-passport-title">
-		<h2 id="escape-passport-title" class="text-base-content mb-5">Playing & exploring</h2>
-		<LinkCard href="/portfolio/escape-rooms" title="Escape Room Passport" description="Room visits, cities, and personal field notes from exploring escape games." eyebrow="BEYOND THE PAGE" mark="↗" />
-	</section>
-	<section class="background" aria-labelledby="background-title">
-		<h2 id="background-title" class="text-base-content">Puzzle community</h2>
-		{#each portfolio.facts as fact}
-			<article><h3 class="text-base-content">{fact.title}</h3><p>{fact.description}</p><a href={fact.href} class="link link-primary">{fact.source} ↗</a></article>
+<div class="text-left">
+	<PageHeading title={portfolio.name} eyebrow="HELLO, I’M LEMONONMARS" description={portfolio.bio} />
+	<p class="botanical-muted mb-6 text-sm">Four ways I follow my curiosity. Pick a door and take a look.</p>
+	<div class="portfolio-doors grid md:grid-cols-2 gap-5">
+		{#each portfolioSections as section, i}
+			<a href={'/portfolio/' + section.id} class="botanical-link-card portfolio-door">
+				<div class="door-art bg-base-200 text-base-content" aria-hidden="true">
+					<svg viewBox="0 0 200 120" class="text-primary" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+						{#if i === 0}
+							<rect x="31" y="20" width="65" height="78" rx="9" transform="rotate(-9 63 59)" fill="var(--color-base-100)"/><path d="M48 38H72M48 51H78"/><rect x="109" y="36" width="59" height="59" rx="12" transform="rotate(12 139 65)" fill="var(--color-accent)"/><circle cx="126" cy="52" r="3"/><circle cx="140" cy="66" r="3"/><circle cx="154" cy="80" r="3"/>
+						{:else if i === 1}
+							<rect x="42" y="16" width="88" height="88" rx="8" fill="var(--color-base-100)"/><path d="M64 16V104M86 16V104M108 16V104M42 38H130M42 60H130M42 82H130"/><path d="M66 40H84V58H66ZM88 62H106V80H88Z" fill="var(--color-accent)" stroke="none"/><path d="M139 28L157 46L138 65M157 46H173"/>
+						{:else if i === 2}
+							<path d="M52 106V17H137V106" fill="var(--color-base-100)"/><path d="M64 106V28H125V106Z" fill="var(--color-accent)"/><circle cx="113" cy="66" r="3"/><circle cx="154" cy="40" r="14" fill="var(--color-base-100)"/><path d="M154 54V85H172V78M164 85V78M41 106H145"/>
+						{:else}
+							<rect x="31" y="20" width="138" height="80" rx="10" fill="var(--color-base-100)"/><path d="M31 39H169M73 55L58 69L73 83M127 55L142 69L127 83M108 52L92 87"/><circle cx="45" cy="30" r="2" fill="currentColor"/><circle cx="55" cy="30" r="2" fill="currentColor"/><path d="M73 109H127"/>
+						{/if}
+					</svg>
+					<span class="door-sticker bg-accent text-accent-content">{['roll an idea', 'aha!', 'one more room', 'hello, world'][i]}</span>
+				</div>
+				<p class="botanical-eyebrow mt-5">{section.eyebrow}</p>
+				<h2 class="text-xl font-bold my-3 flex justify-between gap-3">{section.title}<span aria-hidden="true">↗</span></h2>
+				<p class="botanical-muted text-sm leading-relaxed">{section.description}</p>
+			</a>
 		{/each}
-	</section>
-	<section class="contact bg-base-200 text-base-content" aria-labelledby="contact-title">
-		<h2 id="contact-title" class="text-base-content">Have an interesting idea?</h2>
+	</div>
+	<section class="botanical-surface mt-8 flex flex-wrap items-center justify-between gap-4">
+		<div><h2 class="text-xl font-bold">Let’s make something curious.</h2><p class="botanical-muted text-sm mt-2">Puzzles, games, or a website with a playful idea.</p></div>
 		<ActionLink href="/contact">Contact for work ↗</ActionLink>
-		{#if portfolio.email}
-			<a href="mailto:{portfolio.email}" class="link link-primary">{portfolio.email} ↗</a>
-		{:else}
-			<p>Contact details coming soon.</p>
-		{/if}
 	</section>
 </div>
 
 <style>
-	.portfolio { padding: 48px 28px; text-align: left; font-family: 'Noto Sans Thai', system-ui, sans-serif; border-radius: 16px; }
-	.intro { padding: 24px 0 64px; }
-	.eyebrow { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
-	h1 { font-size: clamp(32px, 6vw, 62px); line-height: 1.15; margin: 24px 0; font-weight: 600; letter-spacing: -1px; overflow-wrap: anywhere; }
-	.role { font-size: 20px; margin: 0 0 16px; }
-	.bio { max-width: 520px; opacity: .7; line-height: 1.8; font-size: 16px; margin-bottom: 26px; }
-	.draft { opacity: .5; font-size: 12px; margin-top: 18px; }
-	.section-heading { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 28px 0; }
-	.section-heading h2 { margin: 0; font-size: 24px; }
-	.projects { display: grid; gap: 18px; }
-	.project { display: grid; grid-template-columns: 140px 1fr; border-radius: 12px; overflow: hidden; transition: transform .2s; }
-	.project:hover { transform: translateY(-3px); }
-	.art { display: grid; place-items: center; font-size: 48px; border-right: 1px solid color-mix(in srgb, currentColor 15%, transparent); }
-	.project-info { padding: 26px; }
-	h3 { font-size: 21px; margin: 12px 0; }
-	.project-info > p:last-child, .contact p { font-size: 14px; opacity: .7; line-height: 1.8; }
-	.contact { padding: 30px; margin-top: 48px; border-radius: 12px; }
-	.contact h2 { font-size: 24px; }
-	.background { margin-top: 48px; }
-	.background article { border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent); padding: 20px 0; }
-	.background p { font-size: 14px; line-height: 1.8; opacity: .7; }
-	.background a { font-size: 12px; }
-	@media(max-width: 550px) { .portfolio { padding: 24px 18px; } .project { grid-template-columns: 80px 1fr; } .art { font-size: 32px; } .project-info { padding: 18px; } }
-	@media(prefers-reduced-motion: reduce) { .project { transition: none; } }
+	.door-art { position:relative; display:grid; place-items:center; border-radius:22px; min-height:155px; }
+	.door-art svg { width:200px; max-width:80%; height:120px; }
+	.door-sticker { position:absolute; bottom:12px; right:12px; padding:7px 12px; border-radius:14px; font-size:11px; transform:rotate(-6deg); }
+	.portfolio-door:nth-child(even) .door-sticker { transform:rotate(6deg); }
 </style>

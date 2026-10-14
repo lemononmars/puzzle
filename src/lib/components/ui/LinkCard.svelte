@@ -1,8 +1,8 @@
 <script lang="ts">
- let { href, title, description, eyebrow = '', mark = '↗' }: { href: string; title: string; description: string; eyebrow?: string; mark?: string } = $props();
+ let { href, title, description, eyebrow = '', mark = '↗', icon = '' }: { href: string; title: string; description: string; eyebrow?: string; mark?: string; icon?: string } = $props();
 </script>
 <a {href} class="botanical-link-card">
- <div class="mark text-primary" aria-hidden="true">{mark}</div>
+ <div class="mark text-primary" aria-hidden="true">{#if icon}{@html icon}{:else}{mark}{/if}</div>
  {#if eyebrow}<p class="botanical-eyebrow">{eyebrow}</p>{/if}
  <h3>{title} <span aria-hidden="true">↗</span></h3>
  <p class="botanical-muted description">{description}</p>

@@ -3,7 +3,7 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 select-none font-mono">
 	<!-- Grid 1: # (A - I) -->
-	<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col items-center gap-3">
+	<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col items-center gap-3">
 		<h4 class="text-xs font-bold text-warning-content">1. ตาราง # (A - I)</h4>
 		<svg width="180" height="180" viewBox="0 0 180 180" class="text-primary">
 			<!-- # Grid lines -->
@@ -28,7 +28,7 @@
 	</div>
 
 	<!-- Grid 2: # with Dot (J - R) -->
-	<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col items-center gap-3">
+	<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col items-center gap-3">
 		<h4 class="text-xs font-bold text-primary">2. ตาราง # มีจุด (J - R)</h4>
 		<svg width="180" height="180" viewBox="0 0 180 180" class="text-accent-content">
 			<!-- # Grid lines -->
@@ -55,7 +55,7 @@
 	</div>
 
 	<!-- Grid 3: X (S - V) -->
-	<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col items-center gap-3">
+	<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col items-center gap-3">
 		<h4 class="text-xs font-bold text-primary">3. ตาราง X (S - V)</h4>
 		<svg width="180" height="180" viewBox="0 0 180 180" class="text-success-content">
 			<!-- X Grid lines -->
@@ -71,7 +71,7 @@
 	</div>
 
 	<!-- Grid 4: X with Dot (W - Z) -->
-	<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col items-center gap-3">
+	<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 flex flex-col items-center gap-3">
 		<h4 class="text-xs font-bold text-secondary">4. ตาราง X มีจุด (W - Z)</h4>
 		<svg width="180" height="180" viewBox="0 0 180 180" class="text-secondary">
 			<!-- X Grid lines -->

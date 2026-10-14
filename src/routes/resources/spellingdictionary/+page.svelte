@@ -8,8 +8,7 @@
 		ChevronLeftIcon,
 		ChevronRightIcon,
 		GridIcon,
-		ListIcon,
-		ArrowLeftIcon
+		ListIcon
 	} from 'svelte-feather-icons';
 
 	let searchQuery = '';
@@ -69,44 +68,42 @@
 </script>
 
 <svelte:head>
-	<title>พจนานุกรมคำสะกด | Codebreaker Resources 📚</title>
-	<meta name="description" content="รวมคำที่มักสะกดผิดบ่อยในภาษาไทย พร้อมระบบค้นหาและตัวกรอง โดย Codebreaker Thailand" />
+	<title>Puzzle | พจนานุกรมคำสะกด 📚</title>
+	<meta name="description" content="รวมคำที่มักสะกดผิดบ่อยในภาษาไทย พร้อมระบบค้นหาและตัวกรอง" />
 </svelte:head>
 
-<div class="flex flex-col gap-0 w-full max-w-5xl mx-auto px-4 py-8 select-none">
-	<!-- Subpage Header Navigation Bar -->
-	<div class="flex items-center justify-between gap-4 mb-6">
-		<a
-			href="/resources"
-			class="btn btn-ghost btn-sm gap-2 text-base-content/80 hover:text-base-content"
-		>
-			<ArrowLeftIcon size="16" />
-			<span>ย้อนกลับไปแหล่งทรัพยากร</span>
-		</a>
-		<a
-			href="/puzzles/spellingquiz"
-			class="btn btn-primary text-primary-content btn-sm gap-2 font-bold shadow-md"
-		>
-			<span>ทดสอบการสะกดคำ ✍️</span>
-		</a>
-	</div>
+<div class="flex flex-col gap-0 w-full max-w-5xl mx-auto px-4 pb-12 select-none">
+	<!-- Navigation Bar -->
+	<nav class="w-full border-b border-base-300 mb-6 pt-2">
+		<div class="flex items-center justify-between py-2 flex-wrap gap-2">
+			<a href="/resources" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/80 hover:text-base-content">
+				← กลับไปหน้าข้อมูล
+			</a>
+			<a
+				href="/puzzles/spellingquiz"
+				class="btn btn-outline btn-xs gap-1.5 font-bold flex-shrink-0"
+			>
+				ทดสอบการสะกดคำ
+			</a>
+		</div>
+	</nav>
 
-	<!-- Page Title -->
-	<div class="flex flex-col items-center text-center gap-3 mb-8">
+	<!-- Page Header -->
+	<div class="flex flex-col items-center text-center gap-3 mb-6">
 		<div
-			class="w-16 h-16 rounded-2xl bg-base-100 text-base-content text-primary flex items-center justify-center shadow-xl border border-base-300"
+			class="botanical-card w-16 h-16 rounded-2xl bg-base-100 text-base-content text-primary flex items-center justify-center shadow-xl border border-base-300"
 		>
 			<BookOpenIcon size="28" />
 		</div>
-		<h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">พจนานุกรมคำสะกดภาษาไทย</h1>
+		<h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">พจนานุกรมคำสะกด</h1>
 		<p class="text-sm opacity-80 max-w-2xl leading-relaxed mx-auto">
-			รวบรวม <span class="font-black text-primary">{wordDatabase.length}</span> คำในภาษาไทยที่มักสะกดผิดบ่อย
-			พร้อมคำอธิบายและตัวกรองตามพยัญชนะ
+			รวบรวม <span class="font-black text-primary">{wordDatabase.length}</span> คำในภาษาไทยที่มักสะกดผิด
+			พร้อมระบบค้นหาและตัวกรอง
 		</p>
 	</div>
 
 	<!-- Search & Filters -->
-	<div class="bg-base-200 text-base-content p-4 md:p-6 rounded-2xl border border-base-300 shadow-xl mb-6 flex flex-col gap-4">
+	<div class="botanical-card bg-base-200 text-base-content p-4 md:p-6 rounded-2xl border border-base-300 shadow-xl mb-6 flex flex-col gap-4">
 		<div class="flex flex-col md:flex-row gap-3">
 			<div class="relative flex-1">
 				<SearchIcon size="18" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-base-content/50" />
@@ -191,7 +188,7 @@
 		</div>
 	</div>
 
-	<!-- Words Grid Display -->
+	<!-- Words Display -->
 	{#if paginatedWords.length === 0}
 		<div class="bg-base-200 p-12 rounded-2xl border border-base-300 text-center my-6">
 			<XCircleIcon size="48" class="mx-auto text-error-content/60 mb-3" />
@@ -202,10 +199,10 @@
 	{:else if viewMode === 'card'}
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 			{#each paginatedWords as item}
-				<div class="card bg-base-200 text-base-content border border-base-300 hover:border-primary/40 transition shadow-lg p-5 rounded-2xl flex flex-col justify-between">
+				<div class="botanical-card card bg-base-200 text-base-content border border-base-300 hover:border-primary/40 transition shadow-lg p-5 rounded-2xl flex flex-col justify-between">
 					<div>
 						<div class="flex items-center justify-between gap-2 mb-3">
-							<span class="badge badge-success text-success-content gap-1.5 text-base font-bold py-3 px-3.5">
+							<span class="badge badge-success text-success-content gap-1.5 font-bold text-base py-3 px-3.5">
 								<CheckCircleIcon size="16" />
 								{item.correct}
 							</span>
@@ -219,7 +216,7 @@
 							<XCircleIcon size="18" class="text-error-content flex-shrink-0 mt-1" />
 							<div class="flex flex-wrap gap-1.5">
 								{#each item.incorrect as wrong}
-									<span class="badge badge-error badge-outline gap-1 text-base font-mono font-medium py-2.5 px-3">
+									<span class="badge badge-error text-error-content gap-1 text-base font-mono font-medium py-2.5 px-3">
 										{wrong}
 									</span>
 								{/each}
@@ -236,7 +233,7 @@
 			{/each}
 		</div>
 	{:else}
-		<div class="overflow-x-auto bg-base-200 text-base-content rounded-2xl border border-base-300 shadow-xl">
+		<div class="botanical-card overflow-x-auto bg-base-200 text-base-content rounded-2xl border border-base-300 shadow-xl">
 			<table class="table w-full text-base">
 				<thead>
 					<tr class="bg-base-300/50 text-base-content font-bold text-base">
@@ -256,7 +253,7 @@
 							<td>
 								<div class="flex flex-wrap gap-1.5">
 									{#each item.incorrect as wrong}
-										<span class="badge badge-error badge-outline gap-1 text-base font-mono">
+										<span class="badge badge-error text-error-content gap-1 text-base font-mono">
 											{wrong}
 										</span>
 									{/each}

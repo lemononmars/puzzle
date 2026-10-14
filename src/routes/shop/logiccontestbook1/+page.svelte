@@ -189,7 +189,7 @@
 		<!-- Left: Image & Quick Details (7 cols) -->
 		<div class="lg:col-span-7 min-w-0 space-y-6">
 			<div
-				class="relative overflow-hidden rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-2xl p-2 sm:p-4"
+				class="botanical-card relative overflow-hidden rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-2xl p-2 sm:p-4"
 			>
 				<BookPreviewGallery
 					bookTitle={product.title}
@@ -246,7 +246,7 @@
 		<!-- Right: Pricing, CTA & Order Guide (5 cols) -->
 		<div class="lg:col-span-5 space-y-6">
 			<div
-				class="p-6 sm:p-7 rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-2xl text-left space-y-5"
+				class="botanical-card p-6 sm:p-7 rounded-2xl bg-base-100 text-base-content border border-base-300 shadow-2xl text-left space-y-5"
 			>
 				<div>
 					<div class="flex flex-wrap items-center gap-2 mb-2">
@@ -281,7 +281,7 @@
 
 	<!-- Content Details: Puzzle Genres & Variety Breakdown -->
 
-	<div class="p-6 sm:p-8 rounded-2xl bg-base-100 text-base-content border border-base-300 text-left space-y-6">
+	<div class="botanical-card p-6 sm:p-8 rounded-2xl bg-base-100 text-base-content border border-base-300 text-left space-y-6">
 		<div>
 			<h2 class="text-lg sm:text-xl font-bold text-base-content flex items-center gap-2 mb-2">
 				<BookOpenIcon size="20" class="text-primary" />

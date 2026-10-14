@@ -478,7 +478,7 @@
 <div id="game-container" class="w-full h-auto md:h-[calc(100vh-140px)] min-h-[600px] max-h-[820px] text-base-content font-sans flex flex-col bg-[#0b0f19] p-2 md:p-4 rounded-3xl relative overflow-hidden border border-base-300 difficulty-{difficulty} select-none">
 
 	<!-- Floating Overlay: Target Province & Difficulty Selector (Top-Left) -->
-	<div class="relative md:absolute md:left-6 md:top-6 z-10 w-full md:w-60 bg-base-100 text-base-content backdrop-blur-md border border-base-300 p-4 md:p-5 rounded-2xl shadow-2xl flex flex-col gap-4 pointer-events-auto mb-4 md:mb-0">
+	<div class="botanical-card relative md:absolute md:left-6 md:top-6 z-10 w-full md:w-60 bg-base-100 text-base-content backdrop-blur-md border border-base-300 p-4 md:p-5 rounded-2xl shadow-2xl flex flex-col gap-4 pointer-events-auto mb-4 md:mb-0">
 		<!-- Target Question Header -->
 		<div class="relative overflow-hidden group">
 			<div class="absolute -right-4 -bottom-4 opacity-5 text-primary group-hover:scale-110 transition-transform duration-500">
@@ -592,7 +592,7 @@
 	{/if}
 
 	<!-- Floating Overlay: Stats & Reset Button (Bottom-Right, inside the Gulf/empty sea space) -->
-	<div class="relative md:absolute md:right-6 md:bottom-6 z-10 w-full md:w-60 bg-base-100 text-base-content backdrop-blur-md border border-base-300 p-4 md:p-5 rounded-2xl shadow-2xl flex flex-col gap-4 pointer-events-auto mb-4 md:mb-0">
+	<div class="botanical-card relative md:absolute md:right-6 md:bottom-6 z-10 w-full md:w-60 bg-base-100 text-base-content backdrop-blur-md border border-base-300 p-4 md:p-5 rounded-2xl shadow-2xl flex flex-col gap-4 pointer-events-auto mb-4 md:mb-0">
 		<h2 class="text-xs font-bold text-base-content/70 uppercase tracking-widest flex items-center gap-1.5">
 			<AwardIcon class="text-amber-400" size="16" />
 			สถิติและคะแนนสะสม
@@ -651,7 +651,7 @@
 	<div class="flex-1 h-full w-full relative z-0 flex items-center justify-center bg-base-100 text-base-content rounded-2xl overflow-hidden">
 
 		<!-- Zoom and Pan Controls Overlaid on Map (Floating bottom-left to avoid overlaps) -->
-		<div class="absolute left-4 bottom-4 z-20 flex flex-col gap-2 bg-base-100 text-base-content p-2 rounded-2xl border border-base-300 backdrop-blur-md shadow-2xl pointer-events-auto">
+		<div class="botanical-card absolute left-4 bottom-4 z-20 flex flex-col gap-2 bg-base-100 text-base-content p-2 rounded-2xl border border-base-300 backdrop-blur-md shadow-2xl pointer-events-auto">
 			<button on:click={zoomIn} class="p-2.5 rounded-xl hover:bg-base-100 text-base-content text-base-content/70 hover:text-base-content transition-all" title="Zoom In">
 				<PlusIcon size="16" />
 			</button>
@@ -699,7 +699,7 @@
 								y={pc.y + 1}
 								fill="#000000"
 								font-size="6.5px"
-								font-family="sans-serif"
+								font-family="DM Sans, Noto Serif Thai"
 								font-weight="bold"
 								text-anchor="middle"
 								opacity="0.8"
@@ -711,7 +711,7 @@
 								y={pc.y}
 								fill="#38BDF8"
 								font-size="6.5px"
-								font-family="sans-serif"
+								font-family="DM Sans, Noto Serif Thai"
 								font-weight="bold"
 								text-anchor="middle"
 							>
@@ -1121,7 +1121,7 @@
 	<!-- Game Start Overlay -->
 	{#if !gameStarted}
 		<div class="absolute inset-0 bg-base-100 text-base-content backdrop-blur-[2px] z-30 flex flex-col items-center justify-center p-6 text-center select-none pointer-events-auto">
-			<div class="bg-base-100 text-base-content border border-base-300 p-8 rounded-3xl max-w-sm w-full shadow-2xl flex flex-col gap-6 items-center">
+			<div class="botanical-card bg-base-100 text-base-content border border-base-300 p-8 rounded-3xl max-w-sm w-full shadow-2xl flex flex-col gap-6 items-center">
 				<div class="w-16 h-16 bg-teal-500/10 border border-primary/30 rounded-2xl flex items-center justify-center text-primary">
 					<CompassIcon size="32" />
 				</div>
@@ -1144,7 +1144,7 @@
 	<!-- Session Results Overlay -->
 	{#if sessionEnded}
 		<div class="absolute inset-0 bg-base-100 text-base-content backdrop-blur-md z-40 flex flex-col items-center justify-center p-6 text-center select-none pointer-events-auto">
-			<div class="bg-base-100 text-base-content border border-base-300 p-6 rounded-3xl max-w-lg w-full shadow-2xl flex flex-col gap-5 max-h-[90%] overflow-hidden">
+			<div class="botanical-card bg-base-100 text-base-content border border-base-300 p-6 rounded-3xl max-w-lg w-full shadow-2xl flex flex-col gap-5 max-h-[90%] overflow-hidden">
 				<div class="flex items-center justify-center gap-2">
 					<AwardIcon class="text-amber-400 animate-bounce" size="28" />
 					<h3 class="text-xl font-bold text-base-content">สรุปผลการทดสอบ</h3>
@@ -1267,7 +1267,7 @@
 	<!-- Difficulty Rules Modal -->
 	{#if showDifficultyModal}
 		<div class="fixed inset-0 z-50 flex items-center justify-center bg-base-100 text-base-content backdrop-blur-md p-4 transition-all duration-300">
-			<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 max-w-md w-full shadow-2xl flex flex-col gap-6 relative animate-in fade-in zoom-in-95 duration-200">
+			<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 max-w-md w-full shadow-2xl flex flex-col gap-6 relative animate-in fade-in zoom-in-95 duration-200">
 				<!-- Close button -->
 				<button on:click={() => showDifficultyModal = false} class="absolute top-4 right-4 p-1.5 rounded-xl hover:bg-base-100 text-base-content text-base-content/70 hover:text-base-content transition-all">
 					<XIcon size="18" />

@@ -280,7 +280,7 @@
 	{/if}
 
 	<!-- Existing Puzzles Table -->
-	<section class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-4">
 		<div class="flex items-center justify-between border-b border-base-300 pb-3 flex-wrap gap-2">
 			<h2 class="text-xl font-bold text-base-content">
 				รายการ Logic Puzzles ในระบบ ({puzzles.length})
@@ -381,7 +381,7 @@
 <!-- Add / Edit Modal Overlay (Image / Live Preview on Left, Form on Right) -->
 {#if isModalOpen}
 	<div class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-base-100 text-base-content backdrop-blur-md animate-fade-in select-none">
-		<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl shadow-2xl w-full max-w-5xl h-[85vh] lg:h-[80vh] flex flex-col lg:flex-row overflow-hidden relative">
+		<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl shadow-2xl w-full max-w-5xl h-[85vh] lg:h-[80vh] flex flex-col lg:flex-row overflow-hidden relative">
 			<!-- Close Button (Mobile & Desktop) -->
 			<button
 				on:click={closeModal}

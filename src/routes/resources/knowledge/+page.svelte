@@ -198,7 +198,7 @@
 	</header>
 
 	<!-- Quick Navigation Category Badges Bar at Page Top -->
-	<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-4 sm:p-5 shadow-xl space-y-3">
+	<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-4 sm:p-5 shadow-xl space-y-3">
 		<div class="flex items-center gap-2 text-xs font-bold text-base-content/70 uppercase tracking-wider">
 			<HashIcon size="14" class="text-primary" />
 			<span>หมวดหมู่ข้อมูล (Quick Jump):</span>
@@ -218,7 +218,7 @@
 	<!-- Compact Badge Grid per Category -->
 	<div class="space-y-6">
 		{#each categories as cat (cat.id)}
-			<section id={cat.id} class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 shadow-xl space-y-3 scroll-mt-24">
+			<section id={cat.id} class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 shadow-xl space-y-3 scroll-mt-24">
 				<h2 class="text-base font-bold text-primary border-b border-base-300 pb-2 flex items-center gap-2">
 					<span>{cat.title}</span>
 				</h2>

@@ -13,7 +13,7 @@
 
 {#if isComingSoon}
 	<div
-		class="group flex flex-col justify-between bg-base-100 text-base-content border border-dashed border-base-300 hover:border-base-300 rounded-2xl p-5 sm:p-6 shadow-md transition-all duration-300 h-full"
+		class="botanical-card group flex flex-col justify-between bg-base-100 text-base-content border border-dashed border-base-300 hover:border-base-300 rounded-2xl p-5 sm:p-6 shadow-md transition-all duration-300 h-full"
 	>
 		<div class="space-y-3">
 			<div class="flex items-center justify-between gap-2">
@@ -47,7 +47,7 @@
 {:else}
 	<a
 		href="/shop/{url}"
-		class="group flex flex-col bg-base-100 text-base-content hover:bg-base-100 text-base-content border border-base-300 hover:border-primary/30 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-full"
+		class="botanical-card group flex flex-col bg-base-100 text-base-content hover:bg-base-100 text-base-content border border-base-300 hover:border-primary/30 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-full"
 	>
 		<div class="relative w-full h-48 sm:h-56 shrink-0 overflow-hidden bg-base-100 text-base-content border-b border-base-300">
 			<img

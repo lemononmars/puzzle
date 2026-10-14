@@ -660,7 +660,7 @@
 	{:else if phase === 'cash_builder_playing' || phase === 'cash_builder_countdown'}
 		<div class="flex flex-col gap-4">
 			<!-- HUD -->
-			<div class="flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 py-3 shadow-lg">
+			<div class="botanical-card flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 py-3 shadow-lg">
 				<div class="flex items-center gap-3">
 					<div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-black text-warning-content text-lg">
 						{cashBuilderTime}s
@@ -680,7 +680,7 @@
 			<!-- Question Card -->
 			{#if cashBuilderQuestions[cashBuilderIdx]}
 				{@const q = cashBuilderQuestions[cashBuilderIdx]}
-				<div class="flex flex-col gap-4 bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-7 shadow-2xl" in:fly={{ y: 10, duration: 150 }}>
+				<div class="botanical-card flex flex-col gap-4 bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-7 shadow-2xl" in:fly={{ y: 10, duration: 150 }}>
 					<h3 class="text-lg sm:text-2xl font-black text-base-content leading-snug min-h-[4rem] flex items-center">
 						{q.question}
 					</h3>
@@ -730,7 +730,7 @@
 	<!-- 3. CASH BUILDER SUMMARY                                                   -->
 	<!-- ========================================================================= -->
 	{:else if phase === 'cash_builder_summary'}
-		<div class="rounded-3xl bg-base-100 text-base-content border border-base-300 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:scale={{ duration: 200 }}>
+		<div class="botanical-card rounded-3xl bg-base-100 text-base-content border border-base-300 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:scale={{ duration: 200 }}>
 			<div class="w-16 h-16 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-3xl">
 				💰
 			</div>
@@ -761,7 +761,7 @@
 	<!-- ========================================================================= -->
 	{:else if phase === 'offer_selection' && offers}
 		<div class="flex flex-col gap-4" in:fade={{ duration: 200 }}>
-			<div class="flex items-center gap-3 bg-base-100 text-base-content border border-base-300 rounded-2xl p-4">
+			<div class="botanical-card flex items-center gap-3 bg-base-100 text-base-content border border-base-300 rounded-2xl p-4">
 				<span class="text-3xl">{chaser.avatarEmoji}</span>
 				<div>
 					<h3 class="font-black text-base-content text-base">{chaser.name} ยื่นข้อเสนอบนกระดาน</h3>
@@ -770,7 +770,7 @@
 			</div>
 
 			<!-- Visual Chase Board Showing Offer Positions -->
-			<div class="bg-base-100 text-base-content border border-base-300 rounded-2xl p-3 flex flex-col gap-2 shadow-lg">
+			<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-2xl p-3 flex flex-col gap-2 shadow-lg">
 				<div class="flex items-center justify-between text-xs font-bold text-base-content/70 border-b border-base-300 pb-1.5">
 					<span class="text-warning-content">⚡ ตำแหน่งข้อเสนอบนกระดาน 7 ขั้น</span>
 					<span class="text-[11px] text-base-content/70">Chaser เริ่มที่ขั้น 0 • Home ที่ขั้น 7</span>
@@ -873,7 +873,7 @@
 		<div class="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4">
 
 			<!-- CHASE BOARD: Horizontal on Mobile with minimal height, Vertical on Desktop -->
-			<div class="md:col-span-4 bg-base-100 text-base-content border border-base-300 rounded-2xl p-2.5 sm:p-4 flex flex-col gap-1.5 sm:gap-2 shadow-2xl">
+			<div class="botanical-card md:col-span-4 bg-base-100 text-base-content border border-base-300 rounded-2xl p-2.5 sm:p-4 flex flex-col gap-1.5 sm:gap-2 shadow-2xl">
 				<div class="flex items-center justify-between border-b border-base-300 pb-1.5 px-0.5">
 					<div class="text-[11px] sm:text-xs font-black text-base-content flex items-center gap-1.5">
 						<span>⚡ CHASE BOARD</span>
@@ -889,7 +889,7 @@
 						{@const isHome = stepIdx === 7}
 
 						<div
-							class="flex-1 md:flex-initial min-w-[36px] h-8 sm:h-9 rounded-xl border transition-all flex items-center justify-center md:justify-between px-1 md:px-3 relative overflow-hidden
+							class="botanical-card flex-1 md:flex-initial min-w-[36px] h-8 sm:h-9 rounded-xl border transition-all flex items-center justify-center md:justify-between px-1 md:px-3 relative overflow-hidden
 							{isHome ? 'bg-gradient-to-r from-base-200 to-base-200 border-primary/30' : 'bg-base-100 text-base-content border-base-300'}
 							{isPlayerHere ? 'ring-2 ring-blue-400 shadow-lg shadow-blue-500/30' : ''}
 							{isChaserHere ? 'ring-2 ring-red-500 shadow-lg shadow-red-500/30' : ''}"
@@ -923,7 +923,7 @@
 			<div class="md:col-span-8 flex flex-col gap-3">
 				{#if boardQuestions[currentBoardQIdx]}
 					{@const q = boardQuestions[currentBoardQIdx]}
-					<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-4 sm:p-7 shadow-2xl flex flex-col gap-3.5 sm:gap-4">
+					<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-4 sm:p-7 shadow-2xl flex flex-col gap-3.5 sm:gap-4">
 
 						<!-- Question status banner -->
 						<div class="flex items-center justify-between border-b border-base-300 pb-2">
@@ -995,7 +995,7 @@
 	<!-- 6. BOARD RESULT (SAFE TO FINAL CHASE)                                     -->
 	<!-- ========================================================================= -->
 	{:else if phase === 'board_result'}
-		<div class="rounded-3xl bg-base-100 text-base-content border border-primary/30 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:scale={{ duration: 200 }}>
+		<div class="botanical-card rounded-3xl bg-base-100 text-base-content border border-primary/30 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:scale={{ duration: 200 }}>
 			<div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-primary/30 flex items-center justify-center text-3xl">
 				🏆
 			</div>
@@ -1017,7 +1017,7 @@
 	<!-- 7. FINAL CHASE PREP & PLAYER ROUND                                        -->
 	<!-- ========================================================================= -->
 	{:else if phase === 'final_chase_player_prep'}
-		<div class="rounded-3xl bg-base-100 text-base-content border border-base-300 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:fade={{ duration: 200 }}>
+		<div class="botanical-card rounded-3xl bg-base-100 text-base-content border border-base-300 p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-2xl" in:fade={{ duration: 200 }}>
 			<span class="text-5xl">⚡</span>
 			<h3 class="text-2xl sm:text-3xl font-black text-base-content">THE FINAL CHASE</h3>
 			<p class="text-xs sm:text-sm text-base-content/70 max-w-md leading-relaxed">
@@ -1031,7 +1031,7 @@
 
 	{:else if phase === 'final_chase_player_playing'}
 		<div class="flex flex-col gap-4">
-			<div class="flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 py-3 shadow-lg">
+			<div class="botanical-card flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 py-3 shadow-lg">
 				<div class="flex items-center gap-3">
 					<div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center font-black text-warning-content text-lg">
 						{finalPlayerTime}s
@@ -1050,7 +1050,7 @@
 
 			{#if finalQuestions[finalQIdx]}
 				{@const q = finalQuestions[finalQIdx]}
-				<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-7 shadow-2xl flex flex-col gap-4">
+				<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-7 shadow-2xl flex flex-col gap-4">
 					<h3 class="text-lg sm:text-xl font-black text-base-content min-h-[3.5rem] flex items-center">
 						{q.question}
 					</h3>
@@ -1101,7 +1101,7 @@
 	{:else if phase === 'final_chase_chaser_playing'}
 		<div class="flex flex-col gap-4">
 			<!-- Chaser Status HUD -->
-			<div class="flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 py-3 shadow-lg">
+			<div class="botanical-card flex items-center justify-between bg-base-100 text-base-content border border-base-300 rounded-2xl px-4 py-3 shadow-lg">
 				<div class="flex items-center gap-3">
 					<div class="w-10 h-10 rounded-xl bg-red-500/20 border border-red-500/40 flex items-center justify-center font-black text-error-content text-lg">
 						{finalChaserTime}s
@@ -1147,7 +1147,7 @@
 					</div>
 				</div>
 			{:else}
-				<div class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-8 text-center flex flex-col items-center gap-3 shadow-2xl">
+				<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-8 text-center flex flex-col items-center gap-3 shadow-2xl">
 					<span class="text-5xl animate-bounce">{chaser.avatarEmoji}</span>
 					<h3 class="text-xl font-black text-base-content">{chaser.title} กำลังประมวลผลคำถาม...</h3>
 					<p class="text-xs text-base-content/70">หาก Chaser ตอบผิด เวลาจะหยุดและคุณจะมีโอกาส Pushback ทันที!</p>
@@ -1159,7 +1159,7 @@
 	<!-- 9. VICTORY / GAME OVER                                                    -->
 	<!-- ========================================================================= -->
 	{:else if phase === 'victory'}
-		<div class="rounded-3xl bg-base-100 text-base-content border border-primary/30 p-7 sm:p-10 flex flex-col items-center text-center gap-5 shadow-2xl shadow-emerald-500/10" in:scale={{ duration: 250 }}>
+		<div class="botanical-card rounded-3xl bg-base-100 text-base-content border border-primary/30 p-7 sm:p-10 flex flex-col items-center text-center gap-5 shadow-2xl shadow-emerald-500/10" in:scale={{ duration: 250 }}>
 			<div class="w-20 h-20 rounded-full bg-emerald-500/20 border border-primary/30 flex items-center justify-center text-4xl">
 				👑
 			</div>
@@ -1181,7 +1181,7 @@
 		</div>
 
 	{:else if phase === 'game_over'}
-		<div class="rounded-3xl bg-base-100 text-base-content border border-red-500/50 p-7 sm:p-10 flex flex-col items-center text-center gap-5 shadow-2xl shadow-red-500/10" in:scale={{ duration: 250 }}>
+		<div class="botanical-card rounded-3xl bg-base-100 text-base-content border border-red-500/50 p-7 sm:p-10 flex flex-col items-center text-center gap-5 shadow-2xl shadow-red-500/10" in:scale={{ duration: 250 }}>
 			<div class="w-20 h-20 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-4xl">
 				💀
 			</div>

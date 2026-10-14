@@ -1,7 +1,7 @@
 // Public biographical facts link to their original institutional or publisher sources.
 export const portfolio = {
 	name: 'Sakulbuth Ekvittayaniphon',
-	role: 'Puzzle author · Board game enthusiast · Web creator',
+	role: 'Board game designer · Puzzle crafter · Escape room enthusiast · Web developer',
 	bio: 'I make puzzles and websites, and explore games as lemononmars. My work includes the Thai Board Game Database, collaborative logic puzzles, and a Songkran-themed round of the WPF Puzzle Grand Prix.',
 	email: 'sakulbuth@gmail.com',
 	facts: [

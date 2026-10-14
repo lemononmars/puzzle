@@ -122,7 +122,7 @@
 	</header>
 
 	<!-- Left-Right Side-by-Side Converter Section -->
-	<section class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-5">
+	<section class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-5">
 		<div class="flex items-center justify-between flex-wrap gap-3 border-b border-base-300 pb-3">
 			<h2 class="text-xl font-extrabold text-primary flex items-center gap-2">
 				<span>⚡</span> เครื่องมือแปลงรหัส NATO
@@ -143,7 +143,7 @@
 				></textarea>
 			</div>
 
-			<div class="space-y-2 bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 flex flex-col justify-between">
+			<div class="botanical-card space-y-2 bg-base-100 text-base-content p-4 rounded-2xl border border-base-300 flex flex-col justify-between">
 				<div>
 					<span class="text-xs font-bold text-base-content/70">
 						{isSwapped ? 'ผลลัพธ์ข้อความ (Decoded Text):' : 'ผลลัพธ์คำรหัส NATO (Encoded NATO Words):'}
@@ -171,14 +171,14 @@
 	</section>
 
 	<!-- Practice Exercises -->
-	<section class="bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
+	<section class="botanical-card bg-base-100 text-base-content p-6 rounded-3xl border border-base-300 shadow-xl space-y-5">
 		<h2 class="text-xl font-extrabold text-primary flex items-center gap-2 border-b border-base-300 pb-3">
 			<span>✏️</span> แบบฝึกหัดทดลองถอดรหัส NATO (Practice Exercises)
 		</h2>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 			{#each exercises as ex, idx}
-				<div class="bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-4 flex flex-col justify-between">
+				<div class="botanical-card bg-base-100 text-base-content p-5 rounded-2xl border border-base-300 space-y-4 flex flex-col justify-between">
 					<div class="space-y-3">
 						<span class="font-bold text-xs text-base-content/70">ข้อที่ {ex.id}</span>
 						<div class="bg-base-100 text-base-content p-3 rounded-xl border border-base-300 text-sm font-mono text-primary font-bold tracking-wide text-center min-h-[60px] flex items-center justify-center">
@@ -191,7 +191,7 @@
 							bind:value={answers[idx]}
 							placeholder="พิมพ์คำตอบ..."
 							buttonText="ตรวจ"
-							btnClass="bg-emerald-500 hover:bg-emerald-400 text-base-content/70"
+							btnClass="btn-primary text-primary-content"
 							size="sm"
 							on:submit={() => checkAnswer(idx)}
 						/>
@@ -213,7 +213,7 @@
 	</section>
 
 	<!-- NATO Alphabet Reference Chart Grid (Without Pronunciation) -->
-	<section class="bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-4">
+	<section class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 shadow-xl space-y-4">
 		<h2 class="text-lg font-bold text-base-content border-b border-base-300 pb-2">
 			📻 ตารางคำรหัสมาตรฐาน NATO (A - Z)
 		</h2>
