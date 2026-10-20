@@ -1,11 +1,13 @@
 <script lang="ts">
+ import {saveGame,loadGame,fingerprint} from "#lib/progress/local.js";
+ let progressReady=false;
 export let data: any;
 
 
 	import { onMount } from 'svelte';
 	import { fade, scale } from 'svelte/transition';
 	import TitleTab from '#lib/components/TitleTab.svelte';
-	import { RepeatIcon } from 'svelte-feather-icons';
+	import RepeatIcon from '@lucide/svelte/icons/repeat';
 
 	let content: any = data.content;
 
@@ -115,8 +117,12 @@ export let data: any;
 	function initGame() {
 		if (content.clues) {
 			grid = content.clues.grid || [];
-			wordsData = content.clues.wordsData || [];
+			wordsData = (content.clues.wordsData || []).map((item:any)=>({...item,chars:[...(item.chars??[])]}));
 			gridSize = grid.length || 10;
+ const saved=loadGame<any>('/puzzles/wordsearch/'+content.uid);
+ if(saved?.fingerprint===fingerprint(content.clues)&&Array.isArray(saved.found)&&saved.found.length===wordsData.length&&saved.found.every((value:any)=>typeof value==='boolean')&&Array.isArray(saved.lines)&&saved.lines.length<=wordsData.length&&saved.lines.every((line:any)=>line&&['startR','startC','endR','endC'].every(key=>Number.isInteger(line[key])&&line[key]>=0&&line[key]<gridSize))){
+ wordsData=wordsData.map((word,index)=>({...word,found:saved.found[index]}));foundWordsLines=saved.lines;seconds=Number.isFinite(saved.seconds)?Math.max(0,saved.seconds):0;solved=wordsData.length>0&&wordsData.every(word=>word.found);
+ }else {foundWordsLines=[];seconds=0;solved=false;}
 		}
 	}
 
@@ -128,6 +134,7 @@ export let data: any;
 	}
 
 	onMount(() => {
+ initGame();progressReady=true;
 		const handleMouseUp = () => endDrag();
 		window.addEventListener('mouseup', handleMouseUp);
 		window.addEventListener('touchend', handleMouseUp);
@@ -247,6 +254,7 @@ export let data: any;
 	}
 
 $: ({ content } = data);
+$: if(progressReady&&wordsData.length)saveGame('/puzzles/wordsearch/'+content.uid,content.title||'Word Search',{fingerprint:fingerprint(content.clues),found:wordsData.map(word=>word.found),lines:foundWordsLines,seconds},solved);
 </script>
 
 <div class="max-w-6xl mx-auto px-2 sm:px-4 py-4 flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 select-none overflow-x-hidden {isFlipped ? 'lg:flex-row-reverse' : ''}">
@@ -352,7 +360,7 @@ $: ({ content } = data);
 						on:click={() => (isFlipped = !isFlipped)}
 						title="สลับตำแหน่ง ซ้าย-ขวา"
 					>
-						<RepeatIcon size="18" />
+						<RepeatIcon size={18} />
 					</button>
 				</div>
 			</div>

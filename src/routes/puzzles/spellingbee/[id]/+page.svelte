@@ -6,7 +6,11 @@ export let data: any;
    import type { ISpellingBee } from '#lib/interfaces/index.js';
    import { numPuzzles } from '#lib/data/puzzles/spellingbee/index.js';
    import { search, isUpper, isLower, getSubWords } from '#lib/utils/thaiwords.js';
-   import { XCircleIcon, RefreshCwIcon, CheckCircleIcon, Maximize2Icon, Minimize2Icon } from 'svelte-feather-icons';
+   import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import Maximize2Icon from '@lucide/svelte/icons/maximize-2';
+import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
    import { flip } from 'svelte/animate';
    import { onMount } from 'svelte';
 
@@ -179,10 +183,10 @@ $: ({ content } = data);
                title={isFullscreen ? 'ออกจากเต็มจอ' : 'เต็มจอ'}
             >
                {#if isFullscreen}
-                  <Minimize2Icon size="16" />
+                  <Minimize2Icon size={16} />
                   <span class="hidden sm:inline">ออกจากเต็มจอ</span>
                {:else}
-                  <Maximize2Icon size="16" />
+                  <Maximize2Icon size={16} />
                   <span class="hidden sm:inline">เต็มจอ</span>
                {/if}
             </button>
@@ -219,7 +223,7 @@ $: ({ content } = data);
             class="btn btn-square btn-outline btn-primary p-3.5 rounded-2xl transition-colors shadow-inner"
             title="สลับอักษร"
          >
-            <RefreshCwIcon size="20" />
+            <RefreshCwIcon size={20} />
          </button>
 
          <div class="relative flex-1 w-full" class:wiggle={isWiggle}>
@@ -234,7 +238,7 @@ $: ({ content } = data);
                   on:click={() => (answer = '')}
                   class="absolute right-3 top-1/2 -translate-y-1/2 text-base-content/60 hover:text-base-content"
                >
-                  <XCircleIcon size="18" />
+                  <XCircleIcon size={18} />
                </button>
             {/if}
          </div>
@@ -304,7 +308,7 @@ $: ({ content } = data);
 <div class="modal cursor-pointer w-screen" class:modal-open={openModal} on:click={() => (openModal = false)}>
    <div class="botanical-card modal-box relative bg-base-100 text-base-content border border-base-300 text-base-content rounded-3xl p-6 shadow-2xl">
       <h3 class="text-2xl font-black mb-2 text-primary flex items-center gap-2">
-         <CheckCircleIcon size="24" /> หาคำศัพท์ครบแล้ว! 🎉
+         <CheckCircleIcon size={24} /> หาคำศัพท์ครบแล้ว! 🎉
       </h3>
       <p class="text-base-content/70 text-sm mb-6">คุณเฉลยคำศัพท์ครบทุกคำในปริศนานี้สำเร็จแล้ว</p>
       <div class="flex gap-3">

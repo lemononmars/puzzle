@@ -1,9 +1,12 @@
+<script>
+import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
+</script>
 <svelte:head>
 	<title>Logic Puzzle Contest 2 Book — Errata | Code Breaker</title>
 </svelte:head>
 
 <main class="max-w-3xl mx-auto p-6 pb-24 space-y-4">
-	<a class="link" href="/shop/logiccontestbook2">← Logic Puzzle Contest 2 Book</a>
+	<a class="link" href="/shop/logiccontestbook2"><UiArrowLeft size={16} class="inline-block align-middle" aria-hidden="true" /> Logic Puzzle Contest 2 Book</a>
 	<h1 class="text-3xl font-bold">Book Errata</h1>
 	<p class="rounded-lg bg-base-200 text-base-content border-l-4 border-primary p-4 font-semibold">
 		No errata have been reported for Logic Puzzle Contest 2 Book so far.

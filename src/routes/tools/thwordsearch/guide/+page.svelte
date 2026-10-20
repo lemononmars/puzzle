@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { ArrowLeftIcon, BookOpenIcon, SearchIcon, ZapIcon, DatabaseIcon, LayersIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import SearchIcon from '@lucide/svelte/icons/search';
+import ZapIcon from '@lucide/svelte/icons/zap';
+import DatabaseIcon from '@lucide/svelte/icons/database';
+import LayersIcon from '@lucide/svelte/icons/layers';
 	import { Q1, Q2, Q3 } from '#lib/utils/dict_pythainlp.js';
 
 	const title = 'คู่มือการใช้งาน Thai Word Search';
@@ -87,14 +92,14 @@
 <div class="max-w-4xl mx-auto px-4 py-8 text-base-content">
 	<div class="mb-6 flex items-center justify-between">
 		<a href="/tools/thwordsearch" class="btn btn-outline btn-sm gap-2">
-			<ArrowLeftIcon size="18" />
+			<ArrowLeftIcon size={18} />
 			<span>กลับหน้า Thai Word Search</span>
 		</a>
 	</div>
 
 	<div class="botanical-card bg-base-200/50 backdrop-blur-lg border border-base-300 rounded-3xl p-6 lg:p-10 shadow-2xl mb-8">
 		<div class="flex items-center gap-3 text-primary mb-3">
-			<BookOpenIcon size="32" />
+			<BookOpenIcon size={32} />
 			<h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight">คู่มือการใช้งาน Thai Word Search</h1>
 		</div>
 		<p class="text-base-content/80 text-lg leading-relaxed">
@@ -106,7 +111,7 @@
 	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
 		<div class="botanical-card bg-base-100 border border-base-300 rounded-2xl p-6 shadow-md flex flex-col">
 			<div class="flex items-center gap-3 text-secondary mb-3">
-				<ZapIcon size="24" />
+				<ZapIcon size={24} />
 				<h3 class="font-bold text-xl">Trie Engine</h3>
 			</div>
 			<p class="text-sm text-base-content/70 leading-relaxed flex-grow">
@@ -116,7 +121,7 @@
 
 		<div class="botanical-card bg-base-100 border border-base-300 rounded-2xl p-6 shadow-md flex flex-col">
 			<div class="flex items-center gap-3 text-accent-content mb-3">
-				<LayersIcon size="24" />
+				<LayersIcon size={24} />
 				<h3 class="font-bold text-xl">Thai Grapheme Split</h3>
 			</div>
 			<p class="text-sm text-base-content/70 leading-relaxed flex-grow">
@@ -126,7 +131,7 @@
 
 		<div class="botanical-card bg-base-100 border border-base-300 rounded-2xl p-6 shadow-md flex flex-col">
 			<div class="flex items-center gap-3 text-info-content mb-3">
-				<DatabaseIcon size="24" />
+				<DatabaseIcon size={24} />
 				<h3 class="font-bold text-xl">Popularity Index</h3>
 			</div>
 			<p class="text-sm text-base-content/70 leading-relaxed flex-grow">
@@ -138,7 +143,7 @@
 	<!-- Section 2: Syntax Guide -->
 	<div class="botanical-card bg-base-100 border border-base-300 rounded-3xl p-6 lg:p-8 shadow-lg mb-10">
 		<h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-			<SearchIcon size="24" class="text-primary" />
+			<SearchIcon size={24} class="text-primary" />
 			<span>ไวยากรณ์การค้นหา (Search Syntax Reference)</span>
 		</h2>
 

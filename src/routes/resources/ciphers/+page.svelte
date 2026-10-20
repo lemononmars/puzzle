@@ -1,17 +1,16 @@
 <script lang="ts">
-	import {
-		KeyIcon,
-		RadioIcon,
-		GridIcon,
-		SlidersIcon,
-		RefreshCwIcon,
-		HashIcon,
-		CpuIcon,
-		ColumnsIcon,
-		FlagIcon,
-		EyeIcon,
-		MicIcon
-	} from 'svelte-feather-icons';
+import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
+	import KeyIcon from '@lucide/svelte/icons/key';
+import RadioIcon from '@lucide/svelte/icons/radio';
+import GridIcon from '@lucide/svelte/icons/grid-2x2';
+import SlidersIcon from '@lucide/svelte/icons/sliders-horizontal';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import HashIcon from '@lucide/svelte/icons/hash';
+import CpuIcon from '@lucide/svelte/icons/cpu';
+import ColumnsIcon from '@lucide/svelte/icons/columns';
+import FlagIcon from '@lucide/svelte/icons/flag';
+import EyeIcon from '@lucide/svelte/icons/eye';
+import MicIcon from '@lucide/svelte/icons/mic';
 
 	const ciphersList = [
 		{
@@ -125,7 +124,7 @@
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/resources" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			← กลับไปหน้าแหล่งทรัพยากร
+			<UiArrowLeft size={16} class="inline-block align-middle" aria-hidden="true" /> กลับไปหน้าแหล่งทรัพยากร
 		</a>
 	</div>
 
@@ -148,7 +147,7 @@
 					<div
 						class="w-12 h-12 rounded-2xl bg-base-100 text-base-content shadow-inner flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-base-300"
 					>
-						<svelte:component this={item.icon} size="24" class={item.badgeColor} />
+						<svelte:component this={item.icon} size={24} class={item.badgeColor} />
 					</div>
 					<span class="badge badge-sm badge-outline border-base-300 text-base-content/70 font-bold">
 						{item.difficulty}

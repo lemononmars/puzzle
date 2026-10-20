@@ -1,22 +1,21 @@
 <script lang="ts">
+import UiArrowRight from '@lucide/svelte/icons/arrow-right';
 	import { onDestroy, onMount } from 'svelte';
 	import dict from '#lib/utils/dict.js';
-	import {
-		ClockIcon,
-		PlayIcon,
-		PauseIcon,
-		RotateCcwIcon,
-		CheckCircleIcon,
-		XCircleIcon,
-		Trash2Icon,
-		AwardIcon,
-		ChevronRightIcon,
-		EyeOffIcon,
-		LogOutIcon,
-		Maximize2Icon,
-		Minimize2Icon,
-		LayersIcon
-	} from 'svelte-feather-icons';
+	import ClockIcon from '@lucide/svelte/icons/clock';
+import PlayIcon from '@lucide/svelte/icons/play';
+import PauseIcon from '@lucide/svelte/icons/pause';
+import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import Trash2Icon from '@lucide/svelte/icons/trash-2';
+import AwardIcon from '@lucide/svelte/icons/award';
+import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+import EyeOffIcon from '@lucide/svelte/icons/eye-off';
+import LogOutIcon from '@lucide/svelte/icons/log-out';
+import Maximize2Icon from '@lucide/svelte/icons/maximize-2';
+import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
+import LayersIcon from '@lucide/svelte/icons/layers';
 	import { scale, fade } from 'svelte/transition';
 
 	// Full Thai Tone marks (่ ้ ๊ ๋ ็ ํ ๎) and Garun (์) regex - Unicode U+0E47 to U+0E4E
@@ -618,7 +617,7 @@
 					<!-- Duration Selector -->
 					<div class="flex items-center justify-between">
 						<span class="text-sm font-bold text-base-content flex items-center gap-2">
-							<ClockIcon size="18" class="text-primary" /> เวลาต่อรอบ:
+							<ClockIcon size={18} class="text-primary" /> เวลาต่อรอบ:
 						</span>
 						<div class="flex rounded-2xl bg-base-100 text-base-content p-1 border border-base-300">
 							<button
@@ -639,7 +638,7 @@
 					<!-- Number of Tiles Option (9 vs Unlimited) -->
 					<div class="flex items-center justify-between">
 						<span class="text-sm font-bold text-base-content flex items-center gap-2">
-							<LayersIcon size="18" class="text-primary" /> จำนวนช่องตัวอักษร:
+							<LayersIcon size={18} class="text-primary" /> จำนวนช่องตัวอักษร:
 						</span>
 						<div class="flex rounded-2xl bg-base-100 text-base-content p-1 border border-base-300">
 							<button
@@ -688,7 +687,7 @@
 								{t.name}
 							</span>
 							<button on:click={() => removeSetupTeam(t.id)} class="text-base-content/70 hover:text-error-content transition-colors p-1">
-								<Trash2Icon size="16" />
+								<Trash2Icon size={16} />
 							</button>
 						</div>
 					{/each}
@@ -718,19 +717,19 @@
 							1. สุ่มตัวอักษร ({pool.length}/{maxPoolSize === 99 ? '∞' : maxPoolSize})
 						</div>
 
-						<ChevronRightIcon size="16" class="text-blue-500/50 shrink-0" />
+						<ChevronRightIcon size={16} class="text-blue-500/50 shrink-0" />
 
 						<div class="px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 whitespace-nowrap {phase === 'timer' ? 'bg-blue-500 text-base-content font-black shadow-lg shadow-blue-500/30' : 'text-base-content/70'}">
 							2. จับเวลา ({gameDuration}s)
 						</div>
 
-						<ChevronRightIcon size="16" class="text-blue-500/50 shrink-0" />
+						<ChevronRightIcon size={16} class="text-blue-500/50 shrink-0" />
 
 						<div class="px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 whitespace-nowrap {phase === 'validation' ? 'bg-blue-500 text-base-content font-black shadow-lg shadow-blue-500/30' : 'text-base-content/70'}">
 							3. ตรวจคำตอบ
 						</div>
 
-						<ChevronRightIcon size="16" class="text-blue-500/50 shrink-0" />
+						<ChevronRightIcon size={16} class="text-blue-500/50 shrink-0" />
 
 						<div class="px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 whitespace-nowrap {phase === 'results' || phase === 'podium' ? 'bg-blue-500 text-base-content font-black shadow-lg shadow-blue-500/30' : 'text-base-content/70'}">
 							4. เฉลย & สรุป
@@ -760,9 +759,9 @@
 							title="Toggle Native Fullscreen"
 						>
 							{#if isFullscreen}
-								<Minimize2Icon size="18" />
+								<Minimize2Icon size={18} />
 							{:else}
-								<Maximize2Icon size="18" />
+								<Maximize2Icon size={18} />
 							{/if}
 						</button>
 					</div>
@@ -781,7 +780,7 @@
 										in:fade={{ duration: 200 }}
 										class="absolute inset-0 bg-base-100 text-base-content backdrop-blur-md rounded-3xl z-20 flex flex-col items-center justify-center gap-2 border border-blue-500/40 text-primary"
 									>
-										<EyeOffIcon size="36" />
+										<EyeOffIcon size={36} />
 										<span class="text-base font-black uppercase tracking-widest">ซ่อนกระดาน (PAUSED)</span>
 									</div>
 								{/if}
@@ -913,7 +912,7 @@
 										class="px-8 py-3.5 rounded-2xl font-black bg-emerald-400 hover:bg-emerald-300 text-base-content/70 transition-all shadow-xl shadow-emerald-400/30 text-base disabled:opacity-40 disabled:cursor-not-allowed"
 										style="color: var(--color-base-content);"
 									>
-										เริ่มเกม ({gameDuration}s) →
+										เริ่มเกม ({gameDuration}s) <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 									</button>
 								</div>
 							{/if}
@@ -989,14 +988,14 @@
 										on:click={pauseTimer}
 										class="px-6 py-3 rounded-2xl font-bold bg-amber-500/20 text-warning-content border border-amber-500/40 hover:bg-amber-500/30 text-base flex items-center gap-2"
 									>
-										<PauseIcon size="18" /> หยุดชั่วคราว
+										<PauseIcon size={18} /> หยุดชั่วคราว
 									</button>
 								{:else}
 									<button
 										on:click={startTimer}
 										class="px-6 py-3 rounded-2xl font-bold bg-emerald-500/20 text-primary border border-primary/30 hover:bg-emerald-500/30 text-base flex items-center gap-2"
 									>
-										<PlayIcon size="18" /> เล่นต่อ
+										<PlayIcon size={18} /> เล่นต่อ
 									</button>
 								{/if}
 
@@ -1004,14 +1003,14 @@
 									on:click={resetTimer}
 									class="px-5 py-3 rounded-2xl font-bold bg-base-100 text-base-content border border-base-300 text-base-content/70 hover:text-base-content text-base flex items-center gap-2"
 								>
-									<RotateCcwIcon size="18" /> ตั้งใหม่
+									<RotateCcwIcon size={18} /> ตั้งใหม่
 								</button>
 
 								<button
 									on:click={finishTimerPhase}
 									class="px-6 py-3 rounded-2xl font-black bg-blue-500 hover:bg-blue-400 text-base-content text-base shadow-lg shadow-blue-500/20"
 								>
-									ข้ามไปตรวจคำตอบ →
+									ข้ามไปตรวจคำตอบ <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 								</button>
 							</div>
 						</div>
@@ -1053,11 +1052,11 @@
 											{currentSubmissionResult.isCorrect ? 'border-primary/30 text-primary' : 'border-rose-500 text-error-content'}"
 										>
 											{#if currentSubmissionResult.isCorrect}
-												<CheckCircleIcon size="48" class="text-primary" />
+												<CheckCircleIcon size={48} class="text-primary" />
 												<span class="text-3xl font-black text-base-content">ถูกต้อง!</span>
 												<span class="text-2xl font-black text-primary font-mono">+{currentSubmissionResult.score} คะแนน</span>
 											{:else}
-												<XCircleIcon size="48" class="text-error-content" />
+												<XCircleIcon size={48} class="text-error-content" />
 												<span class="text-3xl font-black text-base-content">ไม่ถูกต้อง</span>
 												<span class="text-sm font-semibold text-error-content">({currentSubmissionResult.reason})</span>
 												<span class="text-xl font-black text-rose-500 font-mono">0 คะแนน</span>
@@ -1107,7 +1106,7 @@
 									on:click={triggerGameEndPodium}
 									class="px-8 py-3.5 rounded-2xl font-black bg-base-100 text-base-content border border-rose-500/40 text-error-content hover:bg-rose-500/20 transition-all text-lg flex items-center gap-2"
 								>
-									<LogOutIcon size="20" /> จบเกม 🏁
+									<LogOutIcon size={20} /> จบเกม 🏁
 								</button>
 							</div>
 
@@ -1221,7 +1220,7 @@
 									on:click={exitGameShow}
 									class="px-8 py-3.5 rounded-2xl font-black bg-base-100 text-base-content border border-rose-500/40 text-error-content hover:bg-rose-500/20 transition-all text-lg flex items-center gap-2"
 								>
-									<LogOutIcon size="20" /> ออกจากเกม 🚪
+									<LogOutIcon size={20} /> ออกจากเกม 🚪
 								</button>
 							</div>
 						</div>

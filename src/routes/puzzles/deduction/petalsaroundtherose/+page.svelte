@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { ArrowLeftIcon, ChevronDownIcon, ChevronUpIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 
 	let dice: number[] = [1, 3, 5, 2, 4];
 	let petalsGuess = '';
@@ -125,7 +127,7 @@
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/puzzles/deduction" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปหน้า Deduction Games</span>
 		</a>
 	</div>
@@ -223,9 +225,9 @@
 				>
 					<span>ประวัติการตอบ ({history.length} รายการ)</span>
 					{#if showHistory}
-						<ChevronUpIcon size="14" />
+						<ChevronUpIcon size={14} />
 					{:else}
-						<ChevronDownIcon size="14" />
+						<ChevronDownIcon size={14} />
 					{/if}
 				</button>
 

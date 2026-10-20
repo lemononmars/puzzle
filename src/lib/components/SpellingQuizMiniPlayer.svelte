@@ -1,7 +1,9 @@
 <script lang="ts">
+import UiArrowRight from '@lucide/svelte/icons/arrow-right';
 	import { onMount } from 'svelte';
 	import { wordDatabase, type WordItem } from '#lib/data/puzzles/spelling/words.js';
-	import { CheckCircleIcon, XCircleIcon } from 'svelte-feather-icons';
+	import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
 
 	let currentItem: WordItem | null = null;
 	let choices: { text: string; isCorrect: boolean }[] = [];
@@ -48,7 +50,7 @@
 			href="/puzzles/spellingquiz"
 			class="inline-flex items-center text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-teal-500/20 text-primary border border-primary/30 hover:bg-teal-500/30 transition-all shadow-sm"
 		>
-			Full Mode →
+			Full Mode <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 		</a>
 	</div>
 
@@ -89,10 +91,10 @@
 								: 'bg-rose-500/20 text-error-content border border-rose-500/30'}"
 						>
 							{#if isCorrectChoice}
-								<CheckCircleIcon size="15" />
+								<CheckCircleIcon size={15} />
 								<span>Correct! "{currentItem.correct}"</span>
 							{:else}
-								<XCircleIcon size="15" />
+								<XCircleIcon size={15} />
 								<span>Answer: "{currentItem.correct}"</span>
 							{/if}
 						</div>
@@ -102,7 +104,7 @@
 							class="px-4 h-full rounded-xl font-black bg-teal-500 hover:bg-teal-400 text-base-content/70 transition-all shadow-md shadow-teal-500/20 text-xs sm:text-sm whitespace-nowrap flex items-center justify-center"
 
 						>
-							Next 🎲 →
+							Next 🎲 <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 						</button>
 					</div>
 				{/if}

@@ -1,18 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import dict from '#lib/utils/dict.js';
-	import { isUpper, isLower } from '#lib/utils/thaiwords.js';
-	import {
-		CompassIcon,
-		AwardIcon,
-		CheckCircleIcon,
-		XCircleIcon,
-		PlayCircleIcon,
-		InfoIcon,
-		XIcon,
-		Maximize2Icon,
-		Minimize2Icon
-	} from 'svelte-feather-icons';
+	import { isUpper, isLower } from '#lib/utils/thai-text.js';
+	import CompassIcon from '@lucide/svelte/icons/compass';
+import AwardIcon from '@lucide/svelte/icons/award';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import PlayCircleIcon from '@lucide/svelte/icons/circle-play';
+import InfoIcon from '@lucide/svelte/icons/info';
+import XIcon from '@lucide/svelte/icons/x';
+import Maximize2Icon from '@lucide/svelte/icons/maximize-2';
+import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
 	import { fly } from 'svelte/transition';
 
 	let isFullscreen = false;
@@ -545,10 +543,10 @@
 					title={isFullscreen ? 'ออกจากเต็มจอ' : 'เต็มจอ'}
 				>
 					{#if isFullscreen}
-						<Minimize2Icon size="16" />
+						<Minimize2Icon size={16} />
 						<span class="hidden sm:inline">ออกจากเต็มจอ</span>
 					{:else}
-						<Maximize2Icon size="16" />
+						<Maximize2Icon size={16} />
 						<span class="hidden sm:inline">เต็มจอ</span>
 					{/if}
 				</button>
@@ -556,7 +554,7 @@
 					on:click={() => (showRulesModal = true)}
 					class="btn btn-ghost btn-xs sm:btn-sm gap-1 text-base-content hover:bg-base-200"
 				>
-					<InfoIcon size="16" />
+					<InfoIcon size={16} />
 					<span class="hidden sm:inline">วิธีเล่น</span>
 				</button>
 			</div>
@@ -580,11 +578,11 @@
 					>
 						<span class="text-sm font-black flex items-center gap-1.5">
 							{#if feedbackType === 'success'}
-								<CheckCircleIcon size="16" class="text-success-content" />
+								<CheckCircleIcon size={16} class="text-success-content" />
 							{:else if feedbackType === 'error'}
-								<XCircleIcon size="16" class="text-error-content" />
+								<XCircleIcon size={16} class="text-error-content" />
 							{:else}
-								<InfoIcon size="16" class="text-info-content" />
+								<InfoIcon size={16} class="text-info-content" />
 							{/if}
 							{feedbackMessage}
 						</span>
@@ -592,7 +590,7 @@
 							on:click={() => (feedbackMessage = '')}
 							class="text-base-content/70 hover:text-base-content p-1"
 						>
-							<XIcon size="14" />
+							<XIcon size={14} />
 						</button>
 					</div>
 				{/if}
@@ -732,7 +730,7 @@
 							<div
 								class="w-14 h-14 bg-primary/10 border border-primary/30 rounded-2xl flex items-center justify-center text-primary shadow-inner animate-pulse"
 							>
-								<CompassIcon size="28" />
+								<CompassIcon size={28} />
 							</div>
 							<div class="flex flex-col gap-1.5">
 								<h3 class="text-lg font-extrabold text-base-content">พร้อมเล่นไหม? ⏱️</h3>
@@ -744,7 +742,7 @@
 								on:click={startNewGame}
 								class="btn btn-primary w-full gap-2 font-bold rounded-xl shadow-lg hover:shadow-primary/20 active:scale-[0.98] transition-all text-sm py-3.5 h-auto"
 							>
-								<PlayCircleIcon size="16" />
+								<PlayCircleIcon size={16} />
 								เริ่มเล่นเกม
 							</button>
 						</div>
@@ -760,7 +758,7 @@
 				class="botanical-card w-full h-14 bg-base-100 text-base-content border border-base-300 rounded-2xl flex items-center justify-between px-6 shadow-xl relative overflow-hidden"
 			>
 				<div class="flex items-center gap-3">
-					<AwardIcon size="18" class="text-warning-content" />
+					<AwardIcon size={18} class="text-warning-content" />
 					<div class="flex items-center gap-1.5">
 						<span class="text-xs font-bold opacity-60 uppercase tracking-wider">คะแนน:</span>
 						<span class="text-xl font-black text-primary font-mono">{score}</span>
@@ -806,7 +804,7 @@
 					<h3
 						class="text-sm font-bold text-base-content uppercase tracking-widest flex items-center gap-1.5 border-b border-base-300/60 pb-3 mb-3"
 					>
-						<AwardIcon size="16" class="text-warning-content animate-bounce" />
+						<AwardIcon size={16} class="text-warning-content animate-bounce" />
 						สรุปผลการเล่น 🎉
 					</h3>
 
@@ -829,7 +827,7 @@
 						<!-- List of words player found -->
 						<div class="flex flex-col gap-1">
 							<span class="text-xs font-bold text-success-content flex items-center gap-1">
-								<CheckCircleIcon size="11" />
+								<CheckCircleIcon size={11} />
 								คำที่คุณพบ ({foundWords.size})
 							</span>
 							{#if foundWords.size === 0}
@@ -852,7 +850,7 @@
 						<!-- All missed words list -->
 						<div class="flex flex-col gap-1">
 							<span class="text-xs font-bold text-error-content flex items-center gap-1">
-								<XCircleIcon size="11" />
+								<XCircleIcon size={11} />
 								คำศัพท์ที่คุณพลาดไป ({missedWords.length})
 							</span>
 							{#if missedWords.length === 0}
@@ -883,7 +881,7 @@
 						class="text-xs sm:text-sm font-bold text-base-content/70 uppercase tracking-widest flex items-center justify-between border-b border-base-300/60 pb-3 mb-3"
 					>
 						<span class="flex items-center gap-1.5 text-base-content">
-							<CheckCircleIcon size="15" class="text-success-content" />
+							<CheckCircleIcon size={15} class="text-success-content" />
 							คำศัพท์ที่พบ ({foundWords.size} คำ)
 						</span>
 						<button
@@ -957,7 +955,7 @@
 							on:click={endGame}
 							class="btn btn-outline btn-error w-full mt-4 gap-1.5 rounded-xl text-xs font-bold"
 						>
-							<XCircleIcon size="14" />
+							<XCircleIcon size={14} />
 							เปิดเฉลย
 						</button>
 					{/if}
@@ -979,11 +977,11 @@
 					on:click={() => (showRulesModal = false)}
 					class="absolute top-4 right-4 p-1.5 rounded-xl hover:bg-base-100 text-base-content/70 hover:text-base-content transition-all"
 				>
-					<XIcon size="18" />
+					<XIcon size={18} />
 				</button>
 
 				<div class="flex items-center gap-3">
-					<CompassIcon class="text-primary" size="24" />
+					<CompassIcon class="text-primary" size={24} />
 					<h3 class="text-xl font-black text-base-content">วิธีการเล่น</h3>
 				</div>
 

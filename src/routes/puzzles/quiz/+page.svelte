@@ -1,24 +1,22 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { fade, fly, scale } from 'svelte/transition';
-	import {
-		AwardIcon,
-		ClockIcon,
-		ArrowLeftIcon,
-		PlayIcon,
-		RefreshCwIcon,
-		CheckCircleIcon,
-		XCircleIcon,
-		BookOpenIcon,
-		ZapIcon,
-		SendIcon,
-		ChevronRightIcon,
-		Volume2Icon,
-		VolumeXIcon,
-		RadioIcon,
-		SettingsIcon,
-		MicIcon
-	} from 'svelte-feather-icons';
+	import AwardIcon from '@lucide/svelte/icons/award';
+import ClockIcon from '@lucide/svelte/icons/clock';
+import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import PlayIcon from '@lucide/svelte/icons/play';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import ZapIcon from '@lucide/svelte/icons/zap';
+import SendIcon from '@lucide/svelte/icons/send';
+import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+import Volume2Icon from '@lucide/svelte/icons/volume-2';
+import VolumeXIcon from '@lucide/svelte/icons/volume-x';
+import RadioIcon from '@lucide/svelte/icons/radio';
+import SettingsIcon from '@lucide/svelte/icons/settings';
+import MicIcon from '@lucide/svelte/icons/mic';
 
 	import { THAI_QUIZ_CATEGORIES } from '#lib/data/puzzles/thaiquiz/catalog.js';
 	import type { ThaiQuizCategory } from '#lib/data/puzzles/thaiquiz/types.js';
@@ -681,7 +679,7 @@
 					class="btn btn-xs sm:btn-sm btn-ghost gap-1 text-base-content/70 hover:text-base-content px-1 sm:px-1.5 shrink-0"
 					title="กลับหน้า Puzzles"
 				>
-					<ArrowLeftIcon size="14" />
+					<ArrowLeftIcon size={14} />
 					<span class="hidden sm:inline text-xs">Puzzles</span>
 				</a>
 				<div class="h-4 w-px bg-base-100 text-base-content shrink-0"></div>
@@ -706,10 +704,10 @@
 					title={isTTSMuted ? 'เปิดเสียงอ่าน TTS' : 'ปิดเสียงอ่าน TTS'}
 				>
 					{#if isTTSMuted}
-						<VolumeXIcon size="13" />
+						<VolumeXIcon size={13} />
 						<span class="text-[11px] hidden sm:inline">Muted</span>
 					{:else}
-						<Volume2Icon size="13" />
+						<Volume2Icon size={13} />
 						<span class="text-[11px] hidden sm:inline">TTS On</span>
 					{/if}
 				</button>
@@ -719,7 +717,7 @@
 					on:click={() => (showVoiceModal = true)}
 					title="ตั้งค่าความเร็วและเสียงอ่าน TTS"
 				>
-					<SettingsIcon size="13" />
+					<SettingsIcon size={13} />
 					<span class="text-[11px] hidden sm:inline">{speechRate}x</span>
 				</button>
 
@@ -761,7 +759,7 @@
 							<div class="absolute -right-10 -top-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 							<div class="relative z-10 flex flex-col gap-3 max-w-xl text-center sm:text-left items-center sm:items-start">
 								<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-warning-content text-xs font-black w-fit">
-									<RadioIcon size="12" class="animate-pulse" />
+									<RadioIcon size={12} class="animate-pulse" />
 									<span>Japanese Quiz Show • 早押しクイズ</span>
 								</div>
 								<h2 class="text-2xl sm:text-4xl font-black text-base-content tracking-tight">
@@ -775,7 +773,7 @@
 										on:click={() => startCountdown('quizshow', 'timeattack')}
 										class="btn btn-warning btn-md text-warning-content font-black gap-2 shadow-lg shadow-amber-500/30 rounded-2xl w-full sm:w-auto"
 									>
-										<PlayIcon size="18" />
+										<PlayIcon size={18} />
 										เริ่มเล่นควิซโชว์ทันที (10 ข้อ)
 									</button>
 								</div>
@@ -785,7 +783,7 @@
 						<!-- Category Selection for Quizshow -->
 						<div class="flex flex-col gap-3 mt-1">
 							<div class="flex items-center gap-2 border-b border-base-300 pb-2">
-								<BookOpenIcon size="16" class="text-warning-content" />
+								<BookOpenIcon size={16} class="text-warning-content" />
 								<h3 class="text-sm font-bold text-base-content">หรือเลือกเล่นควิซโชว์เฉพาะหมวดหมู่</h3>
 							</div>
 
@@ -827,7 +825,7 @@
 								</div>
 								<div class="flex items-center justify-between text-xs font-bold text-warning-content pt-2 border-t border-base-300">
 									<span>เริ่มเล่น 60s</span>
-									<ChevronRightIcon size="14" />
+									<ChevronRightIcon size={14} />
 								</div>
 							</button>
 
@@ -847,7 +845,7 @@
 								</div>
 								<div class="flex items-center justify-between text-xs font-bold text-error-content pt-2 border-t border-base-300">
 									<span>เริ่มเล่นทันที</span>
-									<ChevronRightIcon size="14" />
+									<ChevronRightIcon size={14} />
 								</div>
 							</button>
 
@@ -867,7 +865,7 @@
 								</div>
 								<div class="flex items-center justify-between text-xs font-bold text-primary pt-2 border-t border-base-300">
 									<span>เริ่มเล่นต่อเนื่อง</span>
-									<ChevronRightIcon size="14" />
+									<ChevronRightIcon size={14} />
 								</div>
 							</button>
 						</div>
@@ -875,7 +873,7 @@
 						<!-- Category Focus Section -->
 						<div class="flex flex-col gap-3 mt-1">
 							<div class="flex items-center gap-2 border-b border-base-300 pb-2">
-								<BookOpenIcon size="16" class="text-warning-content" />
+								<BookOpenIcon size={16} class="text-warning-content" />
 								<h3 class="text-sm font-bold text-base-content">เลือกเล่นเจาะลึกเฉพาะหมวดหมู่ (10 ข้อ)</h3>
 							</div>
 
@@ -943,7 +941,7 @@
 						{/if}
 
 						<div class="flex items-center gap-1 bg-base-100 text-base-content border border-base-300 rounded-xl px-3 py-1">
-							<AwardIcon size="14" class="text-warning-content" />
+							<AwardIcon size={14} class="text-warning-content" />
 							<span class="font-mono font-black text-warning-content text-sm">{score} pt</span>
 						</div>
 					</div>
@@ -1024,7 +1022,7 @@
 											on:click={toggleSpeechRecognition}
 											title={isListening ? 'กำลังฟังเสียง... (คลิกเพื่อหยุด)' : 'พูดคำตอบด้วยไมโครโฟน'}
 										>
-											<MicIcon size="18" />
+											<MicIcon size={18} />
 										</button>
 									{/if}
 
@@ -1057,7 +1055,7 @@
 									on:click={handleContinueReading}
 									class="btn btn-md btn-warning text-warning-content font-black px-6 rounded-2xl shadow-lg gap-2"
 								>
-									<PlayIcon size="16" />
+									<PlayIcon size={16} />
 									อ่านคำถามต่อ (Continue / Spacebar)
 								</button>
 								<button
@@ -1073,7 +1071,7 @@
 							<div class="botanical-card flex flex-col items-center gap-3 w-full bg-base-100 text-base-content border border-primary/30 rounded-2xl p-4 shadow-xl" in:scale>
 								<div class="flex items-center justify-between w-full border-b border-base-300 pb-2">
 									<span class="font-bold text-xs text-primary flex items-center gap-1">
-										<CheckCircleIcon size="14" />
+										<CheckCircleIcon size={14} />
 										เฉลย: {currentQuestion.choices[currentQuestion.correctIndex]}
 									</span>
 									<span class="badge badge-success badge-sm font-black font-mono">
@@ -1090,7 +1088,7 @@
 									class="btn btn-md btn-success text-success-content font-black px-8 rounded-2xl shadow-lg gap-2 mt-1"
 								>
 									<span>ข้อถัดไป (Next / Enter)</span>
-									<ChevronRightIcon size="16" />
+									<ChevronRightIcon size={16} />
 								</button>
 							</div>
 						{/if}
@@ -1120,7 +1118,7 @@
 					<div class="flex items-center gap-4">
 						{#if selectedNormalMode === 'timeattack'}
 							<div class="flex items-center gap-1.5 font-mono text-sm sm:text-base font-black {timeLeft <= 10 ? 'text-error-content animate-pulse' : 'text-warning-content'}">
-								<ClockIcon size="16" />
+								<ClockIcon size={16} />
 								<span>{timeLeft}s</span>
 							</div>
 						{:else if selectedNormalMode === 'survival'}
@@ -1136,7 +1134,7 @@
 						{/if}
 
 						<div class="flex items-center gap-1 bg-base-100 text-base-content border border-base-300 rounded-xl px-3 py-1">
-							<AwardIcon size="14" class="text-warning-content" />
+							<AwardIcon size={14} class="text-warning-content" />
 							<span class="font-mono font-black text-warning-content text-sm">{score}</span>
 						</div>
 					</div>
@@ -1181,9 +1179,9 @@
 								</div>
 
 								{#if isAnswering && isCorrectChoice}
-									<CheckCircleIcon size="18" class="text-primary shrink-0" />
+									<CheckCircleIcon size={18} class="text-primary shrink-0" />
 								{:else if isAnswering && isSelected && !isCorrectChoice}
-									<XCircleIcon size="18" class="text-error-content shrink-0" />
+									<XCircleIcon size={18} class="text-error-content shrink-0" />
 								{/if}
 							</button>
 						{/each}
@@ -1230,9 +1228,9 @@
 							{#if submitStatus === 'loading'}
 								<span class="loading loading-spinner loading-xs"></span>
 							{:else if submitStatus === 'success'}
-								<CheckCircleIcon size="16" /> บันทึกแล้ว!
+								<CheckCircleIcon size={16} /> บันทึกแล้ว!
 							{:else}
-								<SendIcon size="16" /> บันทึกคะแนน
+								<SendIcon size={16} /> บันทึกคะแนน
 							{/if}
 						</button>
 					</div>
@@ -1247,7 +1245,7 @@
 							class="btn btn-sm btn-primary font-bold text-primary-content gap-1.5 shadow-lg"
 							on:click={() => startCountdown(activeStyleTab, selectedNormalMode, selectedCategory)}
 						>
-							<RefreshCwIcon size="14" />
+							<RefreshCwIcon size={14} />
 							เล่นใหม่อีกครั้ง
 						</button>
 						<button
@@ -1262,7 +1260,7 @@
 				<!-- Detailed Explanations Cards -->
 				<div class="flex flex-col gap-3">
 					<h3 class="text-base font-bold text-base-content flex items-center gap-2 border-b border-base-300 pb-2">
-						<BookOpenIcon size="18" class="text-warning-content" />
+						<BookOpenIcon size={18} class="text-warning-content" />
 						<span>เฉลยละเอียดและเกร็ดความรู้ ({userAnswers.length} ข้อ)</span>
 					</h3>
 
@@ -1321,7 +1319,7 @@
 		<div class="botanical-card modal-box bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-6 max-w-sm text-base-content shadow-2xl flex flex-col gap-4">
 			<div class="flex items-center justify-between border-b border-base-300 pb-2.5">
 				<h3 class="text-base sm:text-lg font-black text-base-content flex items-center gap-2">
-					<ZapIcon size="18" class="text-warning-content" />
+					<ZapIcon size={18} class="text-warning-content" />
 					ความเร็วเสียงอ่าน (TTS Speed)
 				</h3>
 				<button class="btn btn-xs btn-circle btn-ghost" on:click={() => (showVoiceModal = false)}>✕</button>
@@ -1393,7 +1391,7 @@
 						disabled={isTestingVoice}
 						on:click={testVoiceSample}
 					>
-						<Volume2Icon size="14" />
+						<Volume2Icon size={14} />
 						{#if isTestingVoice}
 							<span>กำลังอ่าน ({speechRate}x)...</span>
 						{:else}

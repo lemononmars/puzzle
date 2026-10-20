@@ -1,0 +1,49 @@
+{
+  "id": "tanuki-removal",
+  "hasExercise": false,
+  "englishTitle": "Tanuki Removal",
+  "thaiTitle": "ตัดตัวอักษรตามคำใบ้",
+  "japaneseTitle": "たぬき問題",
+  "description": "ใช้ภาพหรือคำว่า たぬき เป็นนัยว่า “เอา た ออก” หรือประยุกต์ให้ลบตัวอักษรที่ระบุออกจากข้อความ",
+  "chapter": {
+    "id": "wordplay",
+    "hasExercise": false,
+    "englishTitle": "Wordplay",
+    "thaiTitle": "การเล่นคำ",
+    "japaneseTitle": "言葉遊び",
+    "accent": "badge-secondary"
+  },
+  "detailedDescription": "กลไก **Tanuki Removal** (ญี่ปุ่น: *たぬき問題*) มาจากการเล่นคำของญี่ปุ่น คำว่า *Tanuki (たぬき)* พ้องเสียงกับวลีว่า *Ta-nuki (「た」を抜く)* ซึ่งแปลว่า **\"เอาตัว た ออก\"** ในการไขปริศนาสากล กลไกนี้หมายถึงการได้รับข้อความที่มีตัวอักษรส่วนเกินปะปนอยู่ พร้อมคำใบ้หรือภาพสัญลักษณ์ที่เป็นตัวแทนของการ \"คัดตัวอักษรนั้นทิ้ง\"",
+  "solvingTechnique": "1. สังเกตว่ามีภาพหรือเบาะแสที่บ่งบอกตัวอักษรที่ต้องตัดทิ้ง (เช่น รูป Tanuki หรือคำใบ้ TA)\n2. กวาดสายตามองข้อความแล้วตัดตัวอักษรเป้าหมายออกทั้งหมด\n3. อ่านตัวอักษรที่เหลือติดต่อกันเป็นคำตอบ",
+  "technicalTerms": [
+    {
+      "en": "Tanuki Removal",
+      "ja": "たぬき問題 / 「た」抜き",
+      "th": "การตัดอักษรตามคำสั่งพ้องเสียง"
+    },
+    {
+      "en": "Wordplay",
+      "ja": "言葉遊び",
+      "th": "การเล่นคำ"
+    },
+    {
+      "en": "Letter Elimination",
+      "ja": "文字削除",
+      "th": "การคัดตัวอักษรที่ไม่ต้องการออก"
+    }
+  ],
+  "puzzle": {
+    "title": "โจทย์ทดลอง: กฎของทานุกิ (Tanuki Rule)",
+    "prompt": "ใช้กฎ Tanuki Removal โดยตัดตัวอักษร \"T\" และ \"A\" ออกจากข้อความ แล้วอ่านคำตอบที่เหลือ",
+    "hint": "ข้อความคือ T - K - A - E - T - Y - A ให้ลบ T และ A ออกทั้งหมด",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-base-300)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"38\" fill=\"var(--color-base-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Eliminate \"TA\" from the message</text>\n\n  <rect x=\"180\" y=\"55\" width=\"160\" height=\"30\" rx=\"15\" fill=\"var(--color-accent)\" stroke=\"var(--color-accent-content)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"75\" fill=\"var(--color-accent-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Rule: - ( T + A )</text>\n\n  <g transform=\"translate(60, 110)\">\n    <rect x=\"0\" y=\"0\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#7f1d1d\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n    <text x=\"22\" y=\"38\" fill=\"#fca5a5\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">T</text>\n\n    <rect x=\"60\" y=\"0\" width=\"45\" height=\"55\" rx=\"8\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"2\"/>\n    <text x=\"82\" y=\"38\" fill=\"var(--color-primary)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">K</text>\n\n    <rect x=\"120\" y=\"0\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#7f1d1d\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n    <text x=\"142\" y=\"38\" fill=\"#fca5a5\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">A</text>\n\n    <rect x=\"180\" y=\"0\" width=\"45\" height=\"55\" rx=\"8\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"2\"/>\n    <text x=\"202\" y=\"38\" fill=\"var(--color-primary)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">E</text>\n\n    <rect x=\"240\" y=\"0\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#7f1d1d\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n    <text x=\"262\" y=\"38\" fill=\"#fca5a5\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">T</text>\n\n    <rect x=\"300\" y=\"0\" width=\"45\" height=\"55\" rx=\"8\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"2\"/>\n    <text x=\"322\" y=\"38\" fill=\"var(--color-primary)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Y</text>\n\n    <rect x=\"360\" y=\"0\" width=\"45\" height=\"55\" rx=\"8\" fill=\"#7f1d1d\" stroke=\"#ef4444\" stroke-width=\"2\"/>\n    <text x=\"382\" y=\"38\" fill=\"#fca5a5\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">A</text>\n  </g>\n</svg>",
+    "solutionSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"38\" fill=\"var(--color-success-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Remaining Letters Spell the Answer</text>\n\n  <g transform=\"translate(130, 90)\">\n    <rect x=\"0\" y=\"0\" width=\"70\" height=\"70\" rx=\"12\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"3\"/>\n    <text x=\"35\" y=\"48\" fill=\"var(--color-success-content)\" font-size=\"34\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">K</text>\n\n    <rect x=\"95\" y=\"0\" width=\"70\" height=\"70\" rx=\"12\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"3\"/>\n    <text x=\"130\" y=\"48\" fill=\"var(--color-success-content)\" font-size=\"34\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">E</text>\n\n    <rect x=\"190\" y=\"0\" width=\"70\" height=\"70\" rx=\"12\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"3\"/>\n    <text x=\"225\" y=\"48\" fill=\"var(--color-success-content)\" font-size=\"34\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Y</text>\n  </g>\n</svg>",
+    "acceptedAnswers": [
+      "KEY",
+      "key",
+      "กุญแจ"
+    ],
+    "answerDisplay": "KEY",
+    "solutionExplanation": "จากข้อความเดิม: [T] - **K** - [A] - **E** - [T] - **Y** - [A]\nเมื่อตัดตัว **T** และ **A** ทั้งหมดออกตามกฎ Tanuki Removal จะเหลือตัวอักษร:\n**K** - **E** - **Y** รวมเป็นคำว่า **KEY** (กุญแจ)"
+  }
+}

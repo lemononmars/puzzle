@@ -1,15 +1,13 @@
 <script lang="ts">
 	import Head from '#lib/components/Head.svelte';
 	import BookPreviewGallery from '#lib/components/BookPreviewGallery.svelte';
-	import {
-		MessageSquareIcon,
-		MailIcon,
-		ExternalLinkIcon,
-		ChevronLeftIcon,
-		PackageIcon,
-		BookOpenIcon,
-		AlertCircleIcon
-	} from 'svelte-feather-icons';
+	import MessageSquareIcon from '@lucide/svelte/icons/message-square';
+import MailIcon from '@lucide/svelte/icons/mail';
+import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
+import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+import PackageIcon from '@lucide/svelte/icons/package';
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import AlertCircleIcon from '@lucide/svelte/icons/circle-alert';
 
 	type Language = 'th' | 'en';
 	let currentLang: Language = 'en';
@@ -211,7 +209,7 @@
 		<!-- Breadcrumbs -->
 		<nav class="flex items-center gap-2 text-xs sm:text-sm text-base-content/70">
 			<a href="/shop" class="flex items-center gap-1 hover:text-primary transition-colors">
-				<ChevronLeftIcon size="14" />
+				<ChevronLeftIcon size={14} />
 				<span>{t[currentLang].backToShop}</span>
 			</a>
 			<span>/</span>
@@ -286,7 +284,7 @@
 			>
 				<div class="flex items-center gap-3">
 					<div class="p-2 rounded-lg bg-teal-500/10 text-primary shrink-0">
-						<AlertCircleIcon size="20" />
+						<AlertCircleIcon size={20} />
 					</div>
 					<div>
 						<div class="text-xs font-bold text-base-content">{t[currentLang].errataQuestion}</div>
@@ -298,7 +296,7 @@
 					class="btn btn-xs btn-outline btn-accent text-accent-content shrink-0"
 				>
 					<span>{t[currentLang].errataBtn}</span>
-					<ExternalLinkIcon size="12" class="ml-1" />
+					<ExternalLinkIcon size={12} class="ml-1" />
 				</a>
 			</div>
 		</div>
@@ -331,7 +329,7 @@
 						)}`}
 						class="btn btn-outline btn-block gap-2 text-sm"
 					>
-						<MailIcon size="17" />
+						<MailIcon size={17} />
 						{currentLang === 'en' ? 'Contact by Email' : 'ติดต่อทางอีเมล'}
 					</a>
 				</div>
@@ -344,7 +342,7 @@
 	<div class="botanical-card p-6 sm:p-8 rounded-2xl bg-base-100 text-base-content border border-base-300 text-left space-y-6">
 		<div>
 			<h2 class="text-lg sm:text-xl font-bold text-base-content flex items-center gap-2 mb-2">
-				<BookOpenIcon size="20" class="text-primary" />
+				<BookOpenIcon size={20} class="text-primary" />
 				<span>{t[currentLang].contentTitle}</span>
 			</h2>
 			<p class="text-xs sm:text-sm text-base-content/70 leading-relaxed">

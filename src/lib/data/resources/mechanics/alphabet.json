@@ -1,0 +1,44 @@
+{
+  "id": "alphabet",
+  "hasExercise": false,
+  "englishTitle": "The Alphabet",
+  "thaiTitle": "ตัวอักษรภาษาอังกฤษ",
+  "japaneseTitle": "アルファベット",
+  "description": "ใช้ลำดับ A–Z รูปร่างตัวอักษร หรือค่าตัวเลขประจำตำแหน่งเป็นข้อมูลแก้ปริศนา",
+  "chapter": {
+    "id": "themes",
+    "hasExercise": false,
+    "englishTitle": "Reference Themes",
+    "thaiTitle": "ชุดความรู้และหัวข้ออ้างอิง",
+    "japaneseTitle": "題材系",
+    "accent": "badge-accent"
+  },
+  "detailedDescription": "กลไก **Alphabet** (ญี่ปุ่น: *アルファベット*) เป็นหนึ่งในแม่แบบที่พบบ่อยที่สุดในวงการ *Puzzle* โดยนำระบบอักษรละติน 26 ตัวมาแปลงเป็นตัวเลข A=1, B=2, ... Z=26 หรือใช้ตำแหน่งของตัวอักษรเป็นพิกัดในการถอดรหัสคำตอบ",
+  "solvingTechnique": "1. ตรวจสอบว่าตัวเลขอยู่ในช่วง 1 ถึง 26 หรือไม่\n2. เทียบค่า: 1=A, 2=B, 3=C, ... 16=P, 15=O, 16=P\n3. ประกอบอักษรที่ได้เพื่ออ่านเป็นคำตอบ",
+  "technicalTerms": [
+    {
+      "en": "A1Z26 Cipher",
+      "ja": "アルファベット暗号",
+      "th": "รหัสแทนตัวอักษรด้วยเลขลำดับ 1-26"
+    },
+    {
+      "en": "Index Number",
+      "ja": "インデックス番号",
+      "th": "ตัวเลขอ้างอิงลำดับ"
+    }
+  ],
+  "puzzle": {
+    "title": "โจทย์ทดลอง: รหัสตัวเลขอักษร A1Z26",
+    "prompt": "ถอดรหัสตัวเลข [ 16 - 15 - 16 ] ตามลำดับตัวอักษรภาษาอังกฤษ A=1 ถึง Z=26",
+    "hint": "P คือตัวอักษรที่ 16 และ O คือตัวอักษรที่ 15",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-base-300)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"40\" fill=\"var(--color-base-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">A=1, B=2, C=3 ... Z=26</text>\n\n  <g transform=\"translate(100, 75)\">\n    <rect x=\"0\" y=\"0\" width=\"90\" height=\"85\" rx=\"14\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"2.5\"/>\n    <text x=\"45\" y=\"55\" fill=\"var(--color-primary)\" font-size=\"36\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">16</text>\n    <text x=\"45\" y=\"112\" fill=\"var(--color-base-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">( ? )</text>\n\n    <rect x=\"115\" y=\"0\" width=\"90\" height=\"85\" rx=\"14\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"2.5\"/>\n    <text x=\"160\" y=\"55\" fill=\"var(--color-primary)\" font-size=\"36\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">15</text>\n    <text x=\"160\" y=\"112\" fill=\"var(--color-base-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">( ? )</text>\n\n    <rect x=\"230\" y=\"0\" width=\"90\" height=\"85\" rx=\"14\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"2.5\"/>\n    <text x=\"275\" y=\"55\" fill=\"var(--color-primary)\" font-size=\"36\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">16</text>\n    <text x=\"275\" y=\"112\" fill=\"var(--color-base-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">( ? )</text>\n  </g>\n</svg>",
+    "solutionSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"40\" fill=\"var(--color-success-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">16=P, 15=O, 16=P</text>\n\n  <g transform=\"translate(100, 75)\">\n    <rect x=\"0\" y=\"0\" width=\"90\" height=\"85\" rx=\"14\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"3\"/>\n    <text x=\"45\" y=\"55\" fill=\"var(--color-success-content)\" font-size=\"36\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">P</text>\n    <text x=\"45\" y=\"112\" fill=\"var(--color-success-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">(16)</text>\n\n    <rect x=\"115\" y=\"0\" width=\"90\" height=\"85\" rx=\"14\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"3\"/>\n    <text x=\"160\" y=\"55\" fill=\"var(--color-success-content)\" font-size=\"36\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">O</text>\n    <text x=\"160\" y=\"112\" fill=\"var(--color-success-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">(15)</text>\n\n    <rect x=\"230\" y=\"0\" width=\"90\" height=\"85\" rx=\"14\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"3\"/>\n    <text x=\"275\" y=\"55\" fill=\"var(--color-success-content)\" font-size=\"36\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">P</text>\n    <text x=\"275\" y=\"112\" fill=\"var(--color-success-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">(16)</text>\n  </g>\n</svg>",
+    "acceptedAnswers": [
+      "POP",
+      "pop",
+      "ป๊อป"
+    ],
+    "answerDisplay": "POP",
+    "solutionExplanation": "แปลงตัวเลขตามลำดับ Alphabet (A=1 ถึง Z=26):\n- 16 ตรงกับตัวอักษร **P**\n- 15 ตรงกับตัวอักษร **O**\n- 16 ตรงกับตัวอักษร **P**\nคำตอบที่ได้คือ **POP**"
+  }
+}

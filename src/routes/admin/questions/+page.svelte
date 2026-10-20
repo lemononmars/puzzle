@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { getContext, onMount } from 'svelte';
 	import { THAI_QUIZ_CATEGORIES } from '#lib/data/puzzles/thaiquiz/catalog.js';
-	import { CheckCircleIcon, Edit3Icon, RefreshCwIcon, SearchIcon } from 'svelte-feather-icons';
+	import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import Edit3Icon from '@lucide/svelte/icons/pencil-line';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import SearchIcon from '@lucide/svelte/icons/search';
 
 	type ReviewStatus = 'draft' | 'needs_review' | 'approved' | 'retired';
 	interface ReviewQuestion {
@@ -148,7 +151,7 @@
 			<nav class="flex gap-2">
 				<a href="/admin/logic" class="btn btn-xs btn-ghost">Logic</a>
 				<button class="btn btn-xs btn-ghost" on:click={loadQuestions}
-					><RefreshCwIcon size="13" /> โหลดใหม่</button
+					><RefreshCwIcon size={13} /> โหลดใหม่</button
 				>
 			</nav>
 		</header>
@@ -158,7 +161,7 @@
 				<div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
 					<label
 						class="input input-sm  bg-base-200 text-base-content flex items-center gap-2"
-						><SearchIcon size="14" /><input
+						><SearchIcon size={14} /><input
 							class="grow"
 							bind:value={search}
 							placeholder="ค้นหาคำถาม"
@@ -215,7 +218,7 @@
 			{#if selected}
 				<section class="card bg-base-200 text-base-content shadow-xl h-fit lg:sticky lg:top-4">
 					<div class="card-body p-5 gap-4">
-						<h2 class="card-title text-base"><Edit3Icon size="17" /> แก้ไข Metadata</h2>
+						<h2 class="card-title text-base"><Edit3Icon size={17} /> แก้ไข Metadata</h2>
 						<div class="rounded-xl bg-base-300 text-base-content p-3 text-sm">
 							<strong>{selected.question}</strong>
 							<p class="mt-2 text-success-content">คำตอบ: {selected.choices[selected.correctIndex]}</p>
@@ -291,7 +294,7 @@
 							class="btn btn-primary text-primary-content"
 							disabled={saving}
 							on:click={saveReview}
-							>{#if saved}<CheckCircleIcon size="16" /> บันทึกแล้ว{:else}{saving
+							>{#if saved}<CheckCircleIcon size={16} /> บันทึกแล้ว{:else}{saving
 									? 'กำลังบันทึก…'
 									: 'บันทึกการทบทวน'}{/if}</button
 						>

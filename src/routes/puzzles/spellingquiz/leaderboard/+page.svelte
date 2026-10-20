@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { ArrowLeftIcon, AwardIcon, GlobeIcon, UserIcon, RefreshCwIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import AwardIcon from '@lucide/svelte/icons/award';
+import GlobeIcon from '@lucide/svelte/icons/globe';
+import UserIcon from '@lucide/svelte/icons/user';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 
 	interface ScoreEntry {
 		type: string;
@@ -130,14 +134,14 @@
 			href="/puzzles/spellingquiz"
 			class="inline-flex items-center gap-2 text-sm font-bold opacity-60 hover:opacity-100 transition-opacity w-fit"
 		>
-			<ArrowLeftIcon size="16" />
+			<ArrowLeftIcon size={16} />
 			กลับไปเล่น
 		</a>
 
 		<div class="flex flex-col gap-1">
 			<div class="flex items-center gap-3">
 				<div class="w-12 h-12 rounded-2xl bg-warning/15 border border-warning/30 flex items-center justify-center text-warning-content shadow-inner">
-					<AwardIcon size="24" />
+					<AwardIcon size={24} />
 				</div>
 				<div>
 					<h1 class="text-2xl sm:text-3xl font-black tracking-tight text-base-content">ตารางคะแนน</h1>
@@ -154,7 +158,7 @@
 			class="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl font-black text-sm transition-all duration-200
 				{activeTab === 'personal' ? 'bg-base-100 text-base-content text-base-content shadow-md border border-base-300' : 'opacity-50 hover:opacity-80'}"
 		>
-			<UserIcon size="14" />
+			<UserIcon size={14} />
 			ส่วนตัว
 		</button>
 		<button
@@ -162,7 +166,7 @@
 			class="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl font-black text-sm transition-all duration-200
 				{activeTab === 'global' ? 'bg-base-100 text-base-content text-base-content shadow-md border border-base-300' : 'opacity-50 hover:opacity-80'}"
 		>
-			<GlobeIcon size="14" />
+			<GlobeIcon size={14} />
 			ทั่วโลก
 		</button>
 	</div>
@@ -290,7 +294,7 @@
 		<section class="flex flex-col gap-4">
 			<div class="flex items-center justify-between">
 				<h2 class="text-lg sm:text-xl font-black text-base-content flex items-center gap-2">
-					<GlobeIcon size="20" class="text-primary" />
+					<GlobeIcon size={20} class="text-primary" />
 					อันดับโลก
 				</h2>
 				<button
@@ -298,7 +302,7 @@
 					class="btn btn-ghost btn-xs gap-1 opacity-60 hover:opacity-100"
 					title="รีโหลดข้อมูล"
 				>
-					<RefreshCwIcon size="12" />
+					<RefreshCwIcon size={12} />
 					รีเฟรช
 				</button>
 			</div>
@@ -312,7 +316,7 @@
 					<span class="text-4xl">⚠️</span>
 					<p class="font-bold text-center">ไม่สามารถโหลดข้อมูลได้<br/>ลองรีเฟรชอีกครั้ง</p>
 					<button on:click={fetchGlobal} class="btn btn-outline btn-sm gap-2">
-						<RefreshCwIcon size="14" /> ลองอีกครั้ง
+						<RefreshCwIcon size={14} /> ลองอีกครั้ง
 					</button>
 				</div>
 			{:else if globalEntries.length === 0}
@@ -341,7 +345,7 @@
 									<td class="py-4 px-4">
 										<div class="flex items-center gap-2">
 											<div class="w-7 h-7 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center">
-												<UserIcon size="12" class="text-primary" />
+												<UserIcon size={12} class="text-primary" />
 											</div>
 											<span class="font-extrabold text-sm sm:text-base text-base-content truncate max-w-[140px]">
 												{entry.name}

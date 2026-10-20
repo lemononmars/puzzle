@@ -1,18 +1,18 @@
 <script lang="ts">
+ import {saveGame,loadGame} from "#lib/progress/local.js";
+ let progressReady=false;
 	import { onMount } from 'svelte';
 	import { fade, scale, fly } from 'svelte/transition';
-	import {
-		ArrowLeftIcon,
-		HelpCircleIcon,
-		RefreshCwIcon,
-		RotateCcwIcon,
-		AwardIcon,
-		AlertTriangleIcon,
-		EyeIcon,
-		ZapIcon,
-		XIcon,
-		SettingsIcon
-	} from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import HelpCircleIcon from '@lucide/svelte/icons/circle-help';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
+import AwardIcon from '@lucide/svelte/icons/award';
+import AlertTriangleIcon from '@lucide/svelte/icons/triangle-alert';
+import EyeIcon from '@lucide/svelte/icons/eye';
+import ZapIcon from '@lucide/svelte/icons/zap';
+import XIcon from '@lucide/svelte/icons/x';
+import SettingsIcon from '@lucide/svelte/icons/settings';
 	import {
 		type BoardSize,
 		type ClueMode,
@@ -323,13 +323,22 @@
 	$: isCellGiven = !!(activeCell?.isGivenLetter && activeCell?.isGivenColor);
 
 	onMount(() => {
-		newGame(4, 'separate', 'normal');
+        const saved=loadGame<any>('/puzzles/eulersquare');
+ const size=saved?.currentSize;
+ const validCell=(cell:any)=>cell && [cell.letter,cell.color].every(value=>value===null||(Number.isInteger(value)&&value>=0&&value<size));
+ const validGrid=(grid:any)=>Array.isArray(grid)&&grid.length===size&&grid.every(row=>Array.isArray(row)&&row.length===size&&row.every(validCell));
+ if([3,4,5].includes(size)&&['separate','cell'].includes(saved.clueMode)&&['normal','hard'].includes(saved.difficulty)&&validGrid(saved.playerGrid)&&validGrid(saved.puzzle?.initialGrid)&&validGrid(saved.puzzle?.solution)){
+ currentSize=size;clueMode=saved.clueMode;difficulty=saved.difficulty;puzzle=saved.puzzle;playerGrid=saved.playerGrid;selectedCell=null;
+ startTimer();timerSeconds=Number.isFinite(saved.timerSeconds)?Math.max(0,saved.timerSeconds):0;if(isBoardSolved(playerGrid,currentSize))stopTimer();
+ }else newGame(4,'separate','normal');
+ progressReady=true;
 		window.addEventListener('keydown', handleKeydown);
 		return () => {
 			stopTimer();
 			window.removeEventListener('keydown', handleKeydown);
 		};
 	});
+$: if(progressReady&&puzzle&&playerGrid.length) saveGame('/puzzles/eulersquare','Euler Square',{currentSize,clueMode,difficulty,puzzle,playerGrid,timerSeconds},isBoardSolved(playerGrid,currentSize));
 </script>
 
 <svelte:head>
@@ -355,16 +364,16 @@
 					: 'bg-base-100 text-base-content border-primary/30 text-primary'}"
 		>
 			{#if toastType === 'warning'}
-				<AlertTriangleIcon size="17" class="text-error-content shrink-0 animate-bounce" />
+				<AlertTriangleIcon size={17} class="text-error-content shrink-0 animate-bounce" />
 			{:else}
-				<ZapIcon size="17" class="text-primary shrink-0" />
+				<ZapIcon size={17} class="text-primary shrink-0" />
 			{/if}
 			<span>{toastMessage}</span>
 			<button
 				class="ml-1 opacity-70 hover:opacity-100 transition-opacity"
 				on:click={() => (toastMessage = '')}
 			>
-				<XIcon size="14" />
+				<XIcon size={14} />
 			</button>
 		</div>
 	</div>
@@ -379,7 +388,7 @@
 				class="btn btn-sm btn-ghost btn-circle text-base-content/70 hover:text-base-content"
 				title="All Puzzles"
 			>
-				<ArrowLeftIcon size="20" />
+				<ArrowLeftIcon size={20} />
 			</a>
 			<h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-primary">
 				Euler Square
@@ -389,7 +398,7 @@
 			class="btn btn-sm btn-outline border-base-300 text-base-content/70 hover:bg-base-100 text-base-content gap-1.5"
 			on:click={() => (showRules = true)}
 		>
-			<HelpCircleIcon size="16" />
+			<HelpCircleIcon size={16} />
 			<span>Rules</span>
 		</button>
 	</div>
@@ -528,7 +537,8 @@
 										: 'bg-base-100 text-base-content border-base-300 hover:border-base-300 hover:bg-base-100 text-base-content'}
 									{hasConflict ? 'border-red-500 ring-2 ring-red-500/70 animate-pulse' : ''}
 									{colorInfo ? `${colorInfo.bgClass} ${colorInfo.borderClass}` : ''}"
-								on:click={() => selectCell(rIndex, cIndex)}
+								aria-label={`Row ${rIndex+1}, column ${cIndex+1}`}
+ on:click={() => selectCell(rIndex, cIndex)}
 							>
 								<!-- Highlight matching letter or color -->
 								{#if (isSameLetter || isSameColor) && !isSelected}
@@ -696,7 +706,7 @@
 					on:click={restartCurrent}
 					title="Reset to initial puzzle clues"
 				>
-					<RotateCcwIcon size="12" />
+					<RotateCcwIcon size={12} />
 					<span>Reset</span>
 				</button>
 
@@ -705,7 +715,7 @@
 					on:click={toggleSolution}
 					title="Toggle solution peek"
 				>
-					<EyeIcon size="12" />
+					<EyeIcon size={12} />
 					<span>{showSolution ? 'Hide Sol' : 'Solution'}</span>
 				</button>
 			</div>
@@ -721,7 +731,7 @@
 					on:click={openSettings}
 					title="Configure custom settings"
 				>
-					<SettingsIcon size="12" />
+					<SettingsIcon size={12} />
 					<span>Custom</span>
 				</button>
 
@@ -731,7 +741,7 @@
 					on:click={() => newGame(currentSize, clueMode, difficulty)}
 					title="Generate new puzzle with same settings"
 				>
-					<RefreshCwIcon size="12" class={isGenerating ? 'animate-spin' : ''} />
+					<RefreshCwIcon size={12} class={isGenerating ? 'animate-spin' : ''} />
 					<span>New</span>
 				</button>
 			</div>
@@ -759,7 +769,7 @@
 		>
 			<div class="flex items-center justify-between border-b border-base-300 pb-3">
 				<h3 class="text-xl font-bold text-base-content flex items-center gap-2">
-					<HelpCircleIcon class="text-primary" size="22" />
+					<HelpCircleIcon class="text-primary" size={22} />
 					<span>Euler Square (Graeco-Latin Square) Rules</span>
 				</h3>
 				<button class="btn btn-sm btn-circle btn-ghost text-base-content/70" on:click={() => (showRules = false)}>✕</button>
@@ -805,7 +815,7 @@
 			transition:scale={{ duration: 250, start: 0.9 }}
 		>
 			<div class="w-20 h-20 rounded-full bg-emerald-500/20 border-2 border-primary/30 flex items-center justify-center text-primary shadow-lg shadow-emerald-500/30 animate-bounce">
-				<AwardIcon size="44" />
+				<AwardIcon size={44} />
 			</div>
 
 			<div class="flex flex-col gap-1">
@@ -865,7 +875,7 @@
 		>
 			<div class="flex items-center justify-between border-b border-base-300 pb-3">
 				<h3 class="text-lg font-bold text-base-content flex items-center gap-2">
-					<SettingsIcon class="text-primary" size="20" />
+					<SettingsIcon class="text-primary" size={20} />
 					<span>Game Settings</span>
 				</h3>
 				<button type="button" class="btn btn-sm btn-circle btn-ghost text-base-content/70" on:click={() => (showSettings = false)}>✕</button>
@@ -947,7 +957,7 @@
 
 			<div class="flex justify-end pt-2 border-t border-base-300">
 				<button type="button" class="btn btn-sm btn-primary text-primary-content gap-1.5 shadow" on:click={applySettingsAndGenerate}>
-					<RefreshCwIcon size="13" />
+					<RefreshCwIcon size={13} />
 					<span>Generate</span>
 				</button>
 			</div>

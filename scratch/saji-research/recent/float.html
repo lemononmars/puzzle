@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f5ee">
+  <meta name="description" content="画面の中から、同じ数字をそろえて浮いた文字を消そう。">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Float</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="sheet" aria-label="Float">
+    <header class="top"><button id="restart" class="text-button">最初から</button><button id="settings" class="text-button">設定</button></header>
+    <h1 class="wordmark" aria-label="Float"><span class="ink-letter">F</span><span class="ink-letter">l</span><span class="piece title-zero" data-slot="s18" role="button" tabindex="0">o</span><span class="ink-letter">a</span><span class="ink-letter">t</span></h1>
+    <p class="instruction">画面<span class="inline-piece" data-slot="s15" role="button" tabindex="0">の</span>中から、同じ数字を<br class="mobile-break">そ<span class="inline-piece" data-slot="s13" role="button" tabindex="0">ろ</span>え<span class="inline-piece" data-slot="s12" role="button" tabindex="0">て</span>浮いた文字を消そう</p>
+    <p class="remaining"><span class="remaining-label"><span class="marked-kana"><span class="inline-piece" data-slot="s16" role="button" tabindex="0">へ</span><span class="kana-mark">゜</span></span>ア数</span> <span id="counter" class="piece counter" data-slot="s19" role="button" tabindex="0" aria-label="ペア数 9">9</span></p>
+    <section id="field" class="field" aria-label="数字の盤面"></section>
+    <footer class="bottom"><button id="finish" class="outline">確定</button></footer>
+  </main>
+  <dialog id="settings-dialog" aria-labelledby="settings-title">
+    <div class="dialog-head"><h2 id="settings-title">設定</h2><button class="close text-button" data-close="settings-dialog" aria-label="設定を閉じる">×</button></div>
+    <div class="setting-row"><span>効果音</span><div class="sound-control"><span id="sound-status">無音</span><button id="sound" class="sound-switch" role="switch" aria-checked="false" aria-label="効果音を切り替える"></button></div></div>
+    <div class="setting-row"><span>音量</span><input id="volume" type="range" min="0" max="100" value="35" aria-label="音量"></div>
+    <div class="setting-row"><span>背景<span class="inline-piece" data-slot="s14" role="button" tabindex="0">カ</span>ラー</span><div class="themes"><button id="theme-white" class="small-outline" aria-pressed="true">白</button><button id="theme-black" class="small-outline" aria-pressed="false">黒</button></div></div>
+    <nav class="setting-links"><a href="https://sajiqook.jp/game/" target="_blank" rel="noopener noreferrer">他ゲーム</a><a href="https://note.com/saji_q/n/ndf67bfc443b6" target="_blank" rel="noopener noreferrer">ヒント・解説</a></nav>
+  </dialog>
+  <dialog id="result-dialog" aria-labelledby="result-title">
+    <div class="dialog-head"><h2 id="result-title">結果</h2><button class="close text-button" data-close="result-dialog" aria-label="結果を閉じる">×</button></div>
+    <p id="result-score" class="result-score"></p>
+    <p id="result-caption" class="result-caption" hidden>全ての数字を見つけ出すことができた！</p>
+    <div class="result-actions"><button id="continue" class="outline">まだ続ける</button><a id="share" class="outline share" href="https://x.com/intent/tweet" target="_blank" rel="noopener noreferrer">Xでシェア</a></div>
+  </dialog>
+  <dialog id="restart-dialog" aria-labelledby="restart-title"><h2 id="restart-title">最初から始めますか？</h2><div class="result-actions"><button id="restart-confirm" class="outline">最初から</button><button class="text-button" data-close="restart-dialog">とじる</button></div></dialog>
+  <div id="announcer" class="sr-only" aria-live="polite"></div>
+  <p id="network-error" role="status" hidden></p>
+  <dialog id="records-dialog" aria-labelledby="records-title"><div class="dialog-head"><h2 id="records-title">記録</h2><button class="close text-button" data-close="records-dialog" aria-label="記録を閉じる">×</button></div><p id="records-content" aria-live="polite"></p><p class="record-notice">記録表示はゲーム対象外です。</p></dialog>
+  <dialog id="source-dialog"><div class="dialog-head"><h2>ソース表示</h2><button class="close text-button" data-close="source-dialog" aria-label="閉じる">×</button></div><p>謎解きは画面上でお楽しみください。</p></dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+

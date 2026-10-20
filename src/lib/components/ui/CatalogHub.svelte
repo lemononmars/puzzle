@@ -1,4 +1,5 @@
 <script lang="ts">
+ import ArrowUpRight from "@lucide/svelte/icons/arrow-up-right";
  import PageHeading from './PageHeading.svelte';
  import CatalogArtwork from './CatalogArtwork.svelte';
  type Group = { id:string; title:string; description:string; mark:string; entries:{ title:string; description?:string; href:string; mark:string }[] };
@@ -9,7 +10,7 @@
 <div class="category-grid">
  {#each groups as group, i}
   <a href={`/${area}/${group.id}`} class={`catalog-poster poster-${i}`}>
-   <div class="poster-top"><span class="botanical-eyebrow">0{i + 1} / {area === 'resources' ? 'REFERENCE' : group.entries.length + (area === 'puzzles' ? ' games' : ' tools')}</span><span class="enter" aria-hidden="true">↗</span></div>
+   <div class="poster-top"><span class="botanical-eyebrow">0{i + 1} / {area === 'resources' ? 'REFERENCE' : group.entries.length + (area === 'puzzles' ? ' games' : ' tools')}</span><span class="enter" aria-hidden="true"><ArrowUpRight size={18} /></span></div>
    <div class="poster-art" aria-hidden="true"><CatalogArtwork category={group.id} /><span class="seal">{area === 'puzzles' ? 'PLAY' : area === 'tools' ? 'MAKE' : 'INFO'}</span></div>
    <h2>{group.title}</h2><p>{group.description}</p><div class="previews">{#each group.entries.slice(0,3) as entry}<span>{entry.title}</span>{/each}{#if group.entries.length > 3}<span>+{group.entries.length - 3}</span>{/if}</div>
   </a>

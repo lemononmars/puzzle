@@ -1,15 +1,21 @@
 
 
 <script lang="ts">
+ import {saveGame,loadGame,fingerprint} from "#lib/progress/local.js";
+ let progressReady=false;
 export let data: any;
 
 
 	import type { IPuzzleCrossword, CrosswordClue } from '#lib/interfaces/index.js';
-	import { splitWord, isLegal, appendable, isMiddle } from '#lib/utils/thaiwords.js';
+	import { splitWord, isLegal, appendable, isMiddle } from '#lib/utils/thai-text.js';
 	import KeyboardLayout from '#lib/components/KeyboardLayout.svelte';
 	import TitleTab from '#lib/components/TitleTab.svelte';
 	import { onMount } from 'svelte';
-	import { ChevronLeftIcon, ChevronRightIcon, EyeIcon, EyeOffIcon, CheckCircleIcon } from 'svelte-feather-icons';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+import EyeIcon from '@lucide/svelte/icons/eye';
+import EyeOffIcon from '@lucide/svelte/icons/eye-off';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 	import { fade, scale } from 'svelte/transition';
 
 	interface ExtendedClue extends CrosswordClue {
@@ -144,11 +150,13 @@ export let data: any;
 			solved = false;
 			openModal = false;
 			paused = false;
+ if(progressReady)restoreProgress();
 		}
 	}
 
-	onMount(() => {
-		startTimer();
+ onMount(() => {
+        restoreProgress();progressReady=true;
+        startTimer();
 		return () => clearInterval(timerInterval);
 	});
 
@@ -354,6 +362,16 @@ export let data: any;
 	}
 
 $: ({ content } = data);
+
+ function restoreProgress(){
+ const saved=loadGame<any>('/puzzles/crossword/'+content.uid);
+ if(saved?.fingerprint!==fingerprint(content.clues)||!Array.isArray(saved.inputs)||saved.inputs.length!==grid.length||!saved.inputs.every((row:any,index:number)=>Array.isArray(row)&&row.length===grid[index].length&&row.every((value:any)=>typeof value==='string'&&value.length<=6)))return;
+ grid=grid.map((row,r)=>row.map((cell,c)=>({...cell,input:saved.inputs[r][c]})));
+ for(const clue of clues)checkClue(clue.id);
+ solved=clues.every(clue=>clue.solved);seconds=Number.isFinite(saved.seconds)?Math.max(0,saved.seconds):0;
+ }
+ $: if(progressReady&&grid.length)saveGame('/puzzles/crossword/'+content.uid,content.title||'Crossword',{fingerprint:fingerprint(content.clues),inputs:grid.map(row=>row.map(cell=>cell.input)),seconds},solved);
+
 </script>
 
 <svelte:window on:keydown={handleKeyPress} />
@@ -480,14 +498,14 @@ $: ({ content } = data);
 								on:click={() => showTimer = !showTimer}
 								title={showTimer ? "ซ่อนเวลา" : "แสดงเวลา"}
 							>
-								{#if showTimer}<EyeIcon size="12" />{:else}<EyeOffIcon size="12" />{/if}
+								{#if showTimer}<EyeIcon size={12} />{:else}<EyeOffIcon size={12} />{/if}
 							</button>
 							<button
 								class="btn btn-xs btn-circle btn-ghost {autoCheck ? 'text-success-content' : 'opacity-30'}"
 								on:click={() => autoCheck = !autoCheck}
 								title={autoCheck ? "ตรวจสอบอัตโนมัติ: เปิด" : "ตรวจสอบอัตโนมัติ: ปิด"}
 							>
-								<CheckCircleIcon size="12" />
+								<CheckCircleIcon size={12} />
 							</button>
 							<div class="w-px h-3 bg-base-content/10 mx-0.5" />
 							<button class="btn btn-xs btn-circle btn-ghost hover:bg-primary/20 transition-colors" on:click={togglePause}>

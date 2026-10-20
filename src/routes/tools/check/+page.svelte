@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { encode } from './helper';
-	import { LinkIcon, CheckCircleIcon } from 'svelte-feather-icons';
+	import LinkIcon from '@lucide/svelte/icons/link';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 
 	let title: string = '';
 	let answer: string = '';
@@ -41,12 +42,12 @@
 <svelte:head>
 	<title>Answer Checker | Code Breaker</title>
 	<meta name="description" content="สร้างหน้าเว็บสำหรับให้ผู้เล่นมาตรวจคำตอบของโจทย์คุณ" />
-	<meta property="og:title" content="สร้างลิงก์ตรวจคำตอบ" />
-	<meta property="og:description" content="สร้างหน้าเว็บสำหรับให้ผู้เล่นมาตรวจคำตอบของโจทย์คุณ" />
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="/og-main.png" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="/og-main.png" />
+
+
+
+
+
+
 </svelte:head>
 
 <div class="container mx-auto px-4 py-12 max-w-2xl min-h-screen">
@@ -84,7 +85,7 @@
             />			</div>
 
 			<button class="btn btn-primary btn-lg mt-4 gap-2" on:click={create}>
-				<CheckCircleIcon size="20" />
+				<CheckCircleIcon size={20} />
 				สร้างลิงก์
 			</button>
 
@@ -105,7 +106,7 @@
 					<div
 						class="flex items-center gap-3 bg-base-100 p-4 rounded-xl border border-base-300 break-all overflow-hidden"
 					>
-						<LinkIcon size="18" class="text-primary flex-shrink-0" />
+						<LinkIcon size={18} class="text-primary flex-shrink-0" />
 						<a
 							href={link}
 							target="_blank"

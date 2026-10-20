@@ -1,7 +1,8 @@
 <script lang="ts">
+import UiArrowRight from '@lucide/svelte/icons/arrow-right';
 	import { onMount } from 'svelte';
 	import dict from '#lib/dict.json';
-	import { CheckCircleIcon } from 'svelte-feather-icons';
+	import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 
 	interface ThaiBlock {
 		base: string;
@@ -133,7 +134,7 @@
 			href="/puzzles/blanks"
 			class="inline-flex items-center text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-sky-500/20 text-primary border border-sky-500/40 hover:bg-sky-500/30 transition-all shadow-sm"
 		>
-			Full Mode →
+			Full Mode <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 		</a>
 	</div>
 
@@ -191,14 +192,14 @@
 				<!-- Solved Row: Correct Badge + Next Question Button -->
 				<div class="flex flex-row items-center justify-center gap-2 w-full h-full">
 					<div class="flex-1 h-full px-3 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500/20 text-primary border border-primary/30 flex items-center justify-center gap-1.5 truncate">
-						<CheckCircleIcon size="15" /> Correct! "{word}"
+						<CheckCircleIcon size={15} /> Correct! "{word}"
 					</div>
 					<button
 						on:click={loadNewQuestion}
 						class="px-4 h-full rounded-xl font-black bg-sky-500 hover:bg-sky-400 text-base-content/70 transition-all shadow-md shadow-sky-500/20 text-xs sm:text-sm whitespace-nowrap flex items-center justify-center"
 
 					>
-						Next 🎲 →
+						Next 🎲 <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 					</button>
 				</div>
 			{/if}

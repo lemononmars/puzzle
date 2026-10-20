@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Serif+Thai:wght@400;600&display=swap');
-@import 'tailwindcss';
+@import 'tailwindcss' source('./');
 @plugin "daisyui" { themes: false; }
 @plugin "daisyui/theme" {
  name: "botanical"; default: true; prefersdark: false; color-scheme: light;
@@ -33,7 +33,7 @@
  .botanical-link-card { display: block; height: 100%; background: var(--color-base-100); color: var(--color-base-content); border: 1px solid var(--color-base-300); border-radius: var(--radius-box); padding: 26px; text-align: left; transition: transform .2s, border-color .2s; }
  .botanical-link-card:hover { transform: translateY(-3px); border-color: var(--color-primary); }
  .botanical-eyebrow { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--color-primary); }
- .botanical-muted { opacity: .7; }
+ .botanical-muted { opacity: .8; }
  .card { border-radius: var(--radius-box); } .btn { font-weight: 500; text-transform: none; }
 }
 @media(max-width:1023px) { .site-main { padding: 28px 16px 110px; } }

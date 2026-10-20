@@ -1,4 +1,5 @@
 <script lang="ts">
+import UiArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 	import { invalidateAll } from '$app/navigation';
 	import PageHeading from '#lib/components/ui/PageHeading.svelte';
 	import Surface from '#lib/components/ui/Surface.svelte';
@@ -92,16 +93,16 @@
 					<p class="botanical-muted text-xs mt-2 mb-5">ยังไม่รวมค่าจัดส่ง · การเลือกรายการยังไม่เป็นการจอง</p>
 					<label class="block text-sm font-semibold">ข้อความพร้อมส่ง<textarea class="textarea w-full mt-2 h-48 text-sm font-normal" readonly value={inquiry}></textarea></label>
 					<button type="button" class="btn btn-primary text-primary-content w-full mt-3" onclick={() => copy(inquiry, 'คัดลอกรายการแล้ว เปิดแชตแล้ววางข้อความได้เลย')}>คัดลอกรายการ</button>
-					<div class="grid gap-3 mt-4"><a class="btn btn-outline text-base-content w-full" href={saleContacts.messenger} target="_blank" rel="noopener noreferrer">เปิด Messenger ↗</a><a class="btn btn-outline text-base-content w-full" href={lineUrl} target="_blank" rel="noopener noreferrer">ส่งรายการทาง LINE ↗</a></div>
+					<div class="grid gap-3 mt-4"><a class="btn btn-outline text-base-content w-full" href={saleContacts.messenger} target="_blank" rel="noopener noreferrer">เปิด Messenger <UiArrowUpRight size={16} class="inline-block align-middle" aria-hidden="true" /></a><a class="btn btn-outline text-base-content w-full" href={lineUrl} target="_blank" rel="noopener noreferrer">ส่งรายการทาง LINE <UiArrowUpRight size={16} class="inline-block align-middle" aria-hidden="true" /></a></div>
 					<p class="botanical-muted text-xs mt-3">Messenger: วางข้อความที่คัดลอก · LINE: เลือกส่งให้ {saleContacts.lineId}</p>
 					<button type="button" class="btn btn-ghost btn-sm w-full mt-3" onclick={() => { selectedIds = []; copyStatus = ''; }}>ล้างรายการ</button>
-				{:else}<p class="botanical-muted text-sm leading-relaxed mb-5">กด “เลือกไว้สอบถาม” ที่เกมที่สนใจ รายการและข้อความสำหรับส่งแชตจะปรากฏที่นี่</p><a class="btn btn-outline text-base-content w-full" href={saleContacts.messenger} target="_blank" rel="noopener noreferrer">สอบถามผ่าน Messenger ↗</a>{/if}
+				{:else}<p class="botanical-muted text-sm leading-relaxed mb-5">กด “เลือกไว้สอบถาม” ที่เกมที่สนใจ รายการและข้อความสำหรับส่งแชตจะปรากฏที่นี่</p><a class="btn btn-outline text-base-content w-full" href={saleContacts.messenger} target="_blank" rel="noopener noreferrer">สอบถามผ่าน Messenger <UiArrowUpRight size={16} class="inline-block align-middle" aria-hidden="true" /></a>{/if}
 				<div class="border-t border-base-300 mt-5 pt-5 text-sm"><p class="font-semibold">LINE ID: {saleContacts.lineId}</p><p class="botanical-muted text-xs mt-2">หากยังไม่เป็นเพื่อน เพิ่มด้วย ID นี้ใน LINE ก่อนส่งรายการ</p><button type="button" class="btn btn-ghost btn-sm mt-2" onclick={() => copy(saleContacts.lineId, 'คัดลอก LINE ID แล้ว')}>คัดลอก LINE ID</button></div>
 				<p role="status" class="text-sm text-primary mt-3">{copyStatus}</p>
 			</Surface>
 		</aside>
 	</div>
-	{#if selected.length}<a href="#inquiry" class="shortlist-bar lg:hidden bg-primary text-primary-content rounded-2xl shadow-lg px-5 py-3 flex justify-between gap-3"><span>{selected.length} เกมที่สนใจ</span><strong>ดูรายการ / ติดต่อ ↗</strong></a>{/if}
+	{#if selected.length}<a href="#inquiry" class="shortlist-bar lg:hidden bg-primary text-primary-content rounded-2xl shadow-lg px-5 py-3 flex justify-between gap-3"><span>{selected.length} เกมที่สนใจ</span><strong>ดูรายการ / ติดต่อ <UiArrowUpRight size={16} class="inline-block align-middle" aria-hidden="true" /></strong></a>{/if}
 </div>
 
 <style>

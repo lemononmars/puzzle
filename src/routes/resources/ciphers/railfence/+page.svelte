@@ -1,6 +1,10 @@
 <script lang="ts">
+import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import AnswerChecker from '#lib/components/AnswerChecker.svelte';
-	import { CheckCircleIcon, RepeatIcon, CopyIcon, CheckIcon } from 'svelte-feather-icons';
+	import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import RepeatIcon from '@lucide/svelte/icons/repeat';
+import CopyIcon from '@lucide/svelte/icons/copy';
+import CheckIcon from '@lucide/svelte/icons/check';
 
 	let inputText = 'WE ARE DISCOVERED FLEE AT ONCE';
 	let rails = 3;
@@ -108,7 +112,7 @@
 <div class="flex flex-col gap-8 w-full max-w-5xl mx-auto px-4 py-8 select-none">
 	<div class="flex items-center justify-between">
 		<a href="/resources/ciphers" class="btn btn-ghost btn-xs gap-1.5 font-bold">
-			← กลับไปคลังรหัสลับ
+			<UiArrowLeft size={16} class="inline-block align-middle" aria-hidden="true" /> กลับไปคลังรหัสลับ
 		</a>
 	</div>
 
@@ -164,7 +168,7 @@
 				on:click={() => (isSwapped = !isSwapped)}
 				class="btn btn-outline btn-xs gap-1.5 font-bold"
 			>
-				<RepeatIcon size="14" />
+				<RepeatIcon size={14} />
 				<span>{isSwapped ? 'สลับทิศทาง (ถอดรหัส ➔ เข้ารหัส)' : 'สลับทิศทาง (เข้ารหัส ➔ ถอดรหัส)'}</span>
 			</button>
 		</div>
@@ -200,10 +204,10 @@
 						<span class="block text-xs font-semibold text-base-content/70">ผลลัพธ์ (Output):</span>
 						<button on:click={copyOutput} class="btn btn-ghost btn-xs gap-1 text-base-content/70 hover:text-base-content">
 							{#if isCopied}
-								<CheckIcon size="14" class="text-success-content" />
+								<CheckIcon size={14} class="text-success-content" />
 								<span class="text-success-content">คัดลอกแล้ว</span>
 							{:else}
-								<CopyIcon size="14" />
+								<CopyIcon size={14} />
 								<span>คัดลอกข้อความ</span>
 							{/if}
 						</button>
@@ -248,7 +252,7 @@
 
 						{#if feedback[idx] === 'correct'}
 							<div class="flex items-center gap-1 text-xs font-bold text-success-content">
-								<CheckCircleIcon size="14" />
+								<CheckCircleIcon size={14} />
 								<span>ถูกต้อง!</span>
 							</div>
 						{:else if feedback[idx] === 'incorrect'}

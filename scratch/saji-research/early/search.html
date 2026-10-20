@@ -1,0 +1,1403 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171a1f">
+  <title>選考ファイル</title>
+  <script src="../game-settings.js?v=202609222218" data-host=".window-bar" data-before=".history-actions" defer></script>
+  <script src="../game-analytics.js" defer></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #171a1f;
+      --panel: #f7f8f8;
+      --paper: #ffffff;
+      --ink: #24292f;
+      --muted: #68727d;
+      --line: #d7dde2;
+      --strong-line: #aeb8c1;
+      --accent: #167b8c;
+      --accent-soft: #d9eef1;
+      --danger: #a54545;
+      --mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", "Roboto Mono", "Noto Sans Mono CJK JP", "Noto Sans JP", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+      touch-action: manipulation;
+    }
+
+    body {
+      height: 100svh;
+      min-height: 0;
+      padding: clamp(14px, 3vw, 36px);
+      display: flex;
+      overflow: hidden;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: var(--mono);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button,
+    input,
+    a {
+      font: inherit;
+      touch-action: manipulation;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    .app {
+      width: min(920px, 100%);
+      height: 100%;
+      min-height: 0;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid #3c424a;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.32);
+      transition: filter 260ms ease;
+    }
+
+    .app.intro-locked {
+      filter: blur(8px);
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .window-bar {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 12px 9px 17px;
+      color: #e9edf0;
+      background: #242930;
+      border-bottom: 1px solid #0d1013;
+    }
+
+    .file-mark {
+      width: 15px;
+      height: 19px;
+      flex: 0 0 auto;
+      position: relative;
+      border: 1px solid #aeb8c1;
+      background: #303741;
+    }
+
+    .file-mark::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 5px;
+      height: 5px;
+      background: #242930;
+      border-left: 1px solid #aeb8c1;
+      border-bottom: 1px solid #aeb8c1;
+    }
+
+    .file-name {
+      min-width: 0;
+      margin-right: auto;
+      overflow: hidden;
+      color: #f3f5f7;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .history-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .utility-button {
+      min-height: 32px;
+      padding: 5px 9px;
+      border: 1px solid #59616b;
+      border-radius: 2px;
+      color: #d8dde2;
+      background: transparent;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .utility-button:hover:not(:disabled),
+    .utility-button:focus-visible {
+      color: #fff;
+      border-color: #9da7b1;
+      background: #30363e;
+      outline: none;
+    }
+
+    .utility-button:disabled {
+      cursor: default;
+      opacity: 0.38;
+    }
+
+    .memo-area {
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      padding: clamp(22px, 5vh, 52px) clamp(20px, 7vw, 72px) clamp(62px, 8vh, 86px);
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .document {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: clamp(15px, 2vw, 17px);
+      line-height: 2.05;
+      letter-spacing: 0.035em;
+      user-select: text;
+      -webkit-user-select: text;
+    }
+
+    ::selection {
+      color: #0d3137;
+      background: #9fd9e1;
+    }
+
+    .document-title {
+      margin: 0 0 clamp(18px, 3.5vh, 34px);
+      font-size: clamp(18px, 3vw, 23px);
+      font-weight: 650;
+      line-height: 1.65;
+      letter-spacing: 0.06em;
+    }
+
+    .document p {
+      margin: 0;
+    }
+
+    .target,
+    .wrong-selection {
+      transition: opacity 680ms cubic-bezier(.22, .72, .28, 1);
+    }
+
+    .target[data-kind="period"] {
+      white-space: nowrap;
+    }
+
+    .target.erased {
+      opacity: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .wrong-selection.erased {
+      opacity: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .password-box {
+      width: min(420px, 100%);
+      margin: clamp(19px, 4vh, 38px) auto 0;
+      padding-top: clamp(13px, 2.5vh, 20px);
+      border-top: 1px solid var(--line);
+    }
+
+    .password-box label {
+      display: block;
+      margin-bottom: 9px;
+      color: #3e4851;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .password-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+
+    .password-row input {
+      width: 100%;
+      min-width: 0;
+      height: 42px;
+      padding: 8px 11px;
+      border: 1px solid var(--strong-line);
+      border-radius: 2px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.88);
+      outline: none;
+    }
+
+    .password-row input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-soft);
+    }
+
+    .submit-button {
+      min-width: 76px;
+      border: 1px solid #0e606d;
+      border-radius: 2px;
+      color: #fff;
+      background: var(--accent);
+      cursor: pointer;
+    }
+
+    .submit-button:hover,
+    .submit-button:focus-visible {
+      background: #106b79;
+      outline: 2px solid var(--accent-soft);
+      outline-offset: 1px;
+    }
+
+    .answer-status {
+      min-height: 1.6em;
+      margin: 8px 0 0;
+      color: var(--danger);
+      font-size: 12px;
+    }
+
+    .password-box.shake {
+      animation: shake 260ms ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+
+    .clipboard-shell {
+      width: min(380px, calc(100% - 24px));
+      height: min(440px, calc(100% - 74px));
+      position: absolute;
+      z-index: 8;
+      right: 12px;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(calc(100% - 43px));
+      transition: transform 240ms cubic-bezier(.2, .8, .2, 1);
+      pointer-events: none;
+    }
+
+    .clipboard-shell.open {
+      transform: translateY(0);
+    }
+
+    .clipboard-tab {
+      min-width: 138px;
+      height: 43px;
+      align-self: flex-end;
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 14px;
+      border: 1px solid #69737c;
+      border-bottom: 0;
+      border-radius: 3px 3px 0 0;
+      color: #e9eef1;
+      background: #303740;
+      box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .clipboard-tab::before {
+      content: "";
+      width: 11px;
+      height: 14px;
+      border: 1px solid currentColor;
+      box-shadow: inset 0 3px 0 #303740, inset 0 4px 0 currentColor;
+    }
+
+    .clipboard-tab:hover,
+    .clipboard-tab:focus-visible {
+      background: #39414b;
+      outline: none;
+    }
+
+    .clipboard-shell.has-update:not(.open) .clipboard-tab::after {
+      content: "";
+      width: 7px;
+      height: 7px;
+      position: absolute;
+      top: 7px;
+      right: 8px;
+      border-radius: 50%;
+      background: #56c2d1;
+      box-shadow: 0 0 0 3px rgba(86, 194, 209, 0.15);
+    }
+
+    .clipboard-panel {
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      padding: 28px 23px 22px;
+      overflow: auto;
+      border: 1px solid #818b94;
+      background: #e9ecee;
+      box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.18);
+      pointer-events: auto;
+    }
+
+    .clipboard-panel::before {
+      content: "";
+      width: 82px;
+      height: 24px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -45%);
+      border: 1px solid #68727a;
+      border-radius: 2px;
+      background: #b8c0c6;
+      box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .clipboard-paper {
+      min-height: calc(100% - 2px);
+      padding: 19px 18px 22px;
+      border: 1px solid #c9cfd4;
+      background: #fff;
+      box-shadow: 0 3px 9px rgba(35, 42, 48, 0.12);
+    }
+
+    .clipboard-title {
+      margin: 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      color: #303841;
+      font-size: 15px;
+      letter-spacing: normal;
+    }
+
+    .clipboard-title-word {
+      display: grid;
+      grid-template-columns: repeat(4, 1em);
+      column-gap: 0.08em;
+      width: max-content;
+    }
+
+    .clipboard-title-word > span {
+      text-align: center;
+    }
+
+    .clipboard-arrow {
+      display: block;
+      width: 1em;
+      margin: 9px 0 12px;
+      color: var(--accent);
+      font-size: 14px;
+      line-height: 1;
+      text-align: center;
+      will-change: transform;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .check-item {
+      min-height: 25px;
+      padding: 2px 4px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    .check-item.done {
+      color: #173e45;
+      background: var(--accent-soft);
+    }
+
+    .check-item.done.flash {
+      animation: row-flash 500ms ease;
+    }
+
+    @keyframes row-flash {
+      50% { background: #9ed8e0; }
+    }
+
+    .wrong-log {
+      display: grid;
+      gap: 6px;
+      margin: 0 0 15px;
+      padding: 0 0 14px;
+      border-bottom: 1px dashed #c8ced3;
+      color: #7a4a4a;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .wrong-log:empty {
+      display: none;
+    }
+
+    .wrong-entry {
+      margin: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 25px;
+      align-items: start;
+      gap: 7px;
+      padding: 7px 7px 7px 9px;
+      border-left: 2px solid #b96767;
+      background: #fbf1f1;
+      overflow-wrap: anywhere;
+    }
+
+    .wrong-entry-text {
+      min-width: 0;
+      white-space: pre-wrap;
+    }
+
+    .wrong-remove {
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      border: 1px solid #cfb5b5;
+      border-radius: 2px;
+      color: #805050;
+      background: #fff;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .wrong-remove:hover,
+    .wrong-remove:focus-visible {
+      border-color: #9e6060;
+      background: #f8e5e5;
+      outline: none;
+    }
+
+    .clipboard-instruction {
+      margin: 18px 0 0;
+      padding-top: 12px;
+      border-top: 1px solid #e0e4e7;
+      color: #69737b;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .toast {
+      max-width: calc(100% - 28px);
+      position: fixed;
+      z-index: 30;
+      left: 50%;
+      bottom: 18px;
+      transform: translate(-50%, 14px);
+      padding: 9px 13px;
+      border: 1px solid #4a555e;
+      border-radius: 2px;
+      color: #fff;
+      background: rgba(31, 36, 42, 0.94);
+      font-size: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .toast.show {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      z-index: 40;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(10, 13, 16, 0.68);
+    }
+
+    .modal-backdrop[hidden] {
+      display: none;
+    }
+
+    .intro-dialog {
+      width: min(480px, 100%);
+      padding: 30px 28px 26px;
+      border: 1px solid #77838c;
+      border-top: 4px solid var(--accent);
+      border-radius: 2px;
+      background: #fff;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .intro-label {
+      display: block;
+      margin-bottom: 15px;
+      color: #55727a;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+    }
+
+    .intro-dialog p {
+      margin: 0 0 25px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .intro-start {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid #0e606d;
+      border-radius: 2px;
+      color: #fff;
+      background: var(--accent);
+      cursor: pointer;
+    }
+
+    .intro-start:hover,
+    .intro-start:focus-visible {
+      background: #106b79;
+      outline: 2px solid var(--accent-soft);
+      outline-offset: 1px;
+    }
+
+    .success-dialog {
+      width: min(430px, 100%);
+      padding: 28px;
+      border: 1px solid #77838c;
+      border-top: 4px solid var(--accent);
+      border-radius: 2px;
+      background: #fff;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+
+    .record-dialog {
+      width: min(430px, 100%);
+      padding: 28px;
+      border: 1px solid #77838c;
+      border-top: 4px solid var(--accent);
+      border-radius: 2px;
+      background: #fff;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+
+    .record-dialog h2 {
+      margin: 0 0 20px;
+      font-size: 21px;
+      letter-spacing: 0.08em;
+    }
+
+    .record-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 17px;
+    }
+
+    .record-item {
+      display: grid;
+      gap: 8px;
+      padding: 17px 10px;
+      border: 1px solid var(--line);
+      background: #f7f9fa;
+    }
+
+    .record-label {
+      color: #626d76;
+      font-size: 11px;
+    }
+
+    .record-number {
+      color: #26343a;
+      font-size: 27px;
+      font-weight: 700;
+    }
+
+    .record-note,
+    .record-scope {
+      margin: 0;
+      color: #69737b;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .record-scope {
+      margin-bottom: 18px;
+      font-size: 10px;
+    }
+
+    .success-code {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 4px 8px;
+      color: #32616a;
+      background: var(--accent-soft);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .success-dialog h2 {
+      margin: 0 0 12px;
+      font-size: 23px;
+      letter-spacing: 0.08em;
+    }
+
+    .success-dialog p {
+      margin: 0 0 22px;
+      color: #59636d;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .success-actions {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .modal-close,
+    .share-button {
+      min-width: 132px;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border: 1px solid #0e606d;
+      border-radius: 2px;
+      color: #fff;
+      background: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .share-button {
+      border-color: #0f1419;
+      background: #0f1419;
+    }
+
+    .modal-close:hover,
+    .modal-close:focus-visible,
+    .share-button:hover,
+    .share-button:focus-visible {
+      filter: brightness(1.12);
+      outline: 2px solid var(--accent-soft);
+      outline-offset: 1px;
+    }
+
+    @media (max-width: 620px) {
+      body {
+        padding: 0;
+        background: var(--panel);
+      }
+
+      .app {
+        width: 100%;
+        height: 100svh;
+        min-height: 0;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .window-bar {
+        min-height: 48px;
+        padding-left: 13px;
+      }
+
+      .file-name {
+        font-size: 12px;
+      }
+
+      .utility-button {
+        padding-inline: 7px;
+        font-size: 10px;
+      }
+
+      .memo-area {
+        padding: clamp(20px, 4vh, 30px) 18px clamp(58px, 8vh, 76px);
+        background: var(--paper);
+      }
+
+      .document {
+        font-size: 15px;
+        line-height: 2.05;
+        letter-spacing: 0.015em;
+      }
+
+      .document-title {
+        margin-bottom: clamp(16px, 3vh, 24px);
+        font-size: 18px;
+      }
+
+      .target[data-kind="period"] {
+        white-space: normal;
+      }
+
+      .password-row {
+        grid-template-columns: 1fr;
+      }
+
+      .submit-button {
+        min-height: 42px;
+      }
+
+      .success-actions {
+        flex-direction: column;
+      }
+
+      .record-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .clipboard-shell {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        top: 48px;
+        right: 0;
+        bottom: 0;
+        transform: none;
+      }
+
+      .clipboard-shell.open {
+        transform: none;
+      }
+
+      .clipboard-tab {
+        min-width: 128px;
+        height: 38px;
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        margin: 0;
+      }
+
+      .clipboard-panel {
+        position: absolute;
+        inset: 52px 0 0;
+        padding: 24px 12px 12px;
+        transform: translateY(calc(100% + 1px));
+        transition: transform 240ms cubic-bezier(.2, .8, .2, 1);
+      }
+
+      .clipboard-shell.open .clipboard-panel {
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app intro-locked" id="app" inert aria-hidden="true">
+    <header class="window-bar">
+      <span class="file-mark" aria-hidden="true"></span>
+      <span class="file-name">selection_note.txt</span>
+      <div class="history-actions" aria-label="操作">
+        <button class="utility-button" id="undoButton" type="button" disabled>一つ戻る</button>
+        <button class="utility-button" id="resetButton" type="button">リセット</button>
+      </div>
+    </header>
+
+    <section class="memo-area">
+      <article class="document" id="sourceText">
+        <div id="puzzleText">
+          <h1 class="document-title"><span class="target" data-target="1" data-kind="range">「書き残し」</span>サーチテスト</h1>
+
+          <p>
+            必要なのは<span class="target" data-target="5" data-kind="range">　文字を書き写す　</span>力だけではない
+          </p>
+
+          <p>
+            本文<span class="target" data-target="0" data-kind="range">・行空き・</span>入れ替えた番号にはそれぞれ意味がある
+          </p>
+
+          <p>
+            入力した言葉を正解と照合し<span class="target" data-target="4" data-kind="range">、同一なら、</span>インプットを受け付ける<br>
+            選んだ文字は消える<span class="target" data-target="3" data-kind="range">。左右の文字は動かない。</span>はずれた文字も記録に残る
+          </p>
+        </div>
+
+        <form class="password-box" id="answerForm" autocomplete="off">
+          <label for="answerInput" id="passwordLabel"><span class="target" data-target="2" data-kind="range">一つのパスワー</span>ドを入力</label>
+          <div class="password-row">
+            <input id="answerInput" name="answer" type="text" inputmode="text" autocapitalize="off" spellcheck="false" aria-describedby="answerStatus">
+            <button class="submit-button" type="submit">認証</button>
+          </div>
+          <p class="answer-status" id="answerStatus" aria-live="polite"></p>
+        </form>
+      </article>
+    </section>
+
+    <aside class="clipboard-shell" id="clipboardShell">
+      <button class="clipboard-tab" id="clipboardToggle" type="button" aria-expanded="false" aria-controls="clipboardPanel">クリップボード</button>
+      <section class="clipboard-panel" id="clipboardPanel" aria-label="確認事項クリップボード">
+        <div class="clipboard-paper">
+          <div class="wrong-log" id="wrongLog" aria-live="polite"></div>
+          <h2 class="clipboard-title" aria-label="確認事項"><span class="clipboard-title-word" aria-hidden="true"><span>確</span><span>認</span><span>事</span><span>項</span></span></h2>
+          <span class="clipboard-arrow" aria-hidden="true"><span class="clipboard-arrow-symbol">▼</span></span>
+          <ol class="check-list" id="checkList">
+            <li class="check-item" data-row="0">①・〜・</li>
+            <li class="check-item" data-row="1">④「〜」</li>
+            <li class="check-item" data-row="2">⑥一〜ー</li>
+            <li class="check-item" data-row="3">③丸〜丸</li>
+            <li class="check-item" data-row="4">⑤息継ぎ〜息継ぎ</li>
+            <li class="check-item" data-row="5">②　〜　</li>
+          </ol>
+          <p class="clipboard-instruction">※条件を満たすには必要のない項目を削除</p>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <div class="modal-backdrop" id="introModal">
+    <section class="intro-dialog" role="dialog" aria-modal="true" aria-labelledby="introText">
+      <span class="intro-label">SCENE 01</span>
+      <p id="introText">学校のパソコンにあった見たことのないテキストファイルを開けてみた。</p>
+      <button class="intro-start" id="introStart" type="button">ファイルを開く</button>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="modal-backdrop" id="successModal" hidden>
+    <section class="success-dialog" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+      <span class="success-code">AUTHENTICATION COMPLETE</span>
+      <h2 id="successTitle">選考を通過しました</h2>
+      <p>仕組みに気づける者を確認しました</p>
+      <div class="success-actions">
+        <a class="share-button" id="xShareButton" href="#" target="_blank" rel="noopener noreferrer">Xでシェア</a>
+        <button class="modal-close" id="modalClose" type="button">閉じる</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="recordModal" hidden>
+    <section class="record-dialog" role="dialog" aria-modal="true" aria-labelledby="recordTitle">
+      <h2 id="recordTitle">記録</h2>
+      <div class="record-grid">
+        <div class="record-item">
+          <span class="record-label">総プレイ回数</span>
+          <strong class="record-number" id="playCount">—</strong>
+        </div>
+        <div class="record-item">
+          <span class="record-label">クリア数</span>
+          <strong class="record-number" id="clearCount">—</strong>
+        </div>
+      </div>
+      <p class="record-note">この画面は謎解きと関係ありません</p>
+      <p class="record-scope">公開ページ全体の記録です</p>
+      <button class="modal-close" id="recordClose" type="button">閉じる</button>
+    </section>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const clues = [
+        "①・〜・",
+        "④「〜」",
+        "⑥一〜ー",
+        "③丸〜丸",
+        "⑤息継ぎ〜息継ぎ",
+        "②　〜　"
+      ];
+      const rowMarks = ["①", "④", "⑥", "③", "⑤", "②"];
+      const encodedTargets = [
+        "44O76KGM56m644GN44O7",
+        "44CM5pu444GN5q6L44GX44CN",
+        "5LiA44Gk44Gu44OR44K544Ov44O8",
+        "44CC5bem5Y+z44Gu5paH5a2X44Gv5YuV44GL44Gq44GE44CC",
+        "44CB5ZCM5LiA44Gq44KJ44CB",
+        "44CA5paH5a2X44KS5pu444GN5YaZ44GZ44CA"
+      ];
+      const targetTexts = encodedTargets.map((value) => decodeURIComponent(escape(atob(value))));
+      const solved = new Set();
+      const history = [];
+      const wrongEntries = [];
+      const wrongGroups = new Map();
+
+      const puzzleText = document.getElementById("puzzleText");
+      const passwordLabel = document.getElementById("passwordLabel");
+      const targetElements = targetTexts.map((_, index) => document.querySelector(`[data-target="${index}"]`));
+      const checkItems = [...document.querySelectorAll(".check-item")];
+      const clipboardArrow = document.querySelector(".clipboard-arrow");
+      const wrongLog = document.getElementById("wrongLog");
+      const undoButton = document.getElementById("undoButton");
+      const resetButton = document.getElementById("resetButton");
+      const clipboardShell = document.getElementById("clipboardShell");
+      const clipboardToggle = document.getElementById("clipboardToggle");
+      const answerForm = document.getElementById("answerForm");
+      const answerInput = document.getElementById("answerInput");
+      const answerStatus = document.getElementById("answerStatus");
+      const app = document.getElementById("app");
+      const introModal = document.getElementById("introModal");
+      const introStart = document.getElementById("introStart");
+      const successModal = document.getElementById("successModal");
+      const xShareButton = document.getElementById("xShareButton");
+      const modalClose = document.getElementById("modalClose");
+      const recordModal = document.getElementById("recordModal");
+      const recordClose = document.getElementById("recordClose");
+      const playCount = document.getElementById("playCount");
+      const clearCount = document.getElementById("clearCount");
+      const toast = document.getElementById("toast");
+      let toastTimer = 0;
+      let lastFocusedElement = null;
+      let wrongSerial = 0;
+      let resetTapCount = 0;
+
+      const shareText = [
+        "WEB謎「サーチテスト」を解きました！",
+        "https://sajiqook.jp/game/search",
+        "",
+        "#サーチテスト",
+        "https://x.com/saji_qook/status/2093846858804429133?s=20"
+      ].join("\n");
+      xShareButton.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+
+      const statsEndpoint = "stats.php";
+      const visitorStorageKey = "search-test-global-visitor-id";
+
+      function createVisitorId() {
+        if (window.crypto && typeof window.crypto.randomUUID === "function") {
+          return window.crypto.randomUUID();
+        }
+
+        return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`;
+      }
+
+      const visitorId = (() => {
+        try {
+          const saved = localStorage.getItem(visitorStorageKey);
+          if (saved) return saved;
+          const created = createVisitorId();
+          localStorage.setItem(visitorStorageKey, created);
+          return created;
+        } catch {
+          return createVisitorId();
+        }
+      })();
+
+      function applyStats(stats) {
+        if (!stats || !Number.isFinite(stats.plays) || !Number.isFinite(stats.clears)) return;
+        playCount.textContent = String(stats.plays);
+        clearCount.textContent = String(stats.clears);
+      }
+
+      async function syncStats(action = "read") {
+        try {
+          const options = action === "read"
+            ? { cache: "no-store" }
+            : {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ action, visitorId })
+              };
+          const response = await fetch(statsEndpoint, options);
+          if (!response.ok) throw new Error("stats unavailable");
+          applyStats(await response.json());
+        } catch {
+          playCount.textContent = "—";
+          clearCount.textContent = "—";
+        }
+      }
+
+      syncStats("visit");
+
+      function normalize(value) {
+        return value.normalize("NFKC").replace(/[\s　]/g, "");
+      }
+
+      function showToast(message) {
+        window.clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add("show");
+        toastTimer = window.setTimeout(() => toast.classList.remove("show"), 1500);
+      }
+
+      function alignClipboardArrow() {
+        const firstItem = checkItems[0];
+        const textNode = [...firstItem.childNodes].find((node) => node.nodeType === Node.TEXT_NODE && node.data.length >= 4);
+        if (!textNode) return;
+
+        const fourthCharacter = document.createRange();
+        fourthCharacter.setStart(textNode, 3);
+        fourthCharacter.setEnd(textNode, 4);
+
+        clipboardArrow.style.transform = "none";
+        const characterRect = fourthCharacter.getBoundingClientRect();
+        const arrowRect = clipboardArrow.getBoundingClientRect();
+        const offset = characterRect.left + characterRect.width / 2 - (arrowRect.left + arrowRect.width / 2);
+        clipboardArrow.style.transform = `translateX(${offset}px)`;
+      }
+
+      function scheduleClipboardArrowAlignment() {
+        window.requestAnimationFrame(alignClipboardArrow);
+      }
+
+      function setClipboardOpen(open) {
+        clipboardShell.classList.toggle("open", open);
+        clipboardShell.classList.remove("has-update");
+        clipboardToggle.setAttribute("aria-expanded", String(open));
+      }
+
+      function markClipboardUpdated() {
+        if (!clipboardShell.classList.contains("open")) {
+          clipboardShell.classList.add("has-update");
+        }
+      }
+
+      function renderWrongEntries() {
+        wrongLog.replaceChildren();
+        wrongEntries.forEach((entry) => {
+          const line = document.createElement("div");
+          line.className = "wrong-entry";
+          line.dataset.wrongId = entry.id;
+
+          const text = document.createElement("span");
+          text.className = "wrong-entry-text";
+          text.textContent = entry.value;
+
+          const remove = document.createElement("button");
+          remove.className = "wrong-remove";
+          remove.type = "button";
+          remove.dataset.removeWrong = entry.id;
+          remove.setAttribute("aria-label", `「${entry.value}」を消す`);
+          remove.textContent = "×";
+
+          line.append(text, remove);
+          wrongLog.appendChild(line);
+        });
+      }
+
+      function eraseTarget(index) {
+        const element = targetElements[index];
+        element.classList.add("erased");
+        element.setAttribute("aria-hidden", "true");
+      }
+
+      function restoreTarget(index) {
+        const element = targetElements[index];
+        element.classList.remove("erased");
+        element.removeAttribute("aria-hidden");
+      }
+
+      function wrapWrongSelection(range, id) {
+        const root = puzzleText.contains(range.commonAncestorContainer)
+          ? puzzleText
+          : passwordLabel.contains(range.commonAncestorContainer)
+            ? passwordLabel
+            : null;
+        if (!root) return [];
+
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        const parts = [];
+        let node = walker.nextNode();
+
+        while (node) {
+          if (node.data && range.intersectsNode(node)) {
+            const start = node === range.startContainer ? range.startOffset : 0;
+            const end = node === range.endContainer ? range.endOffset : node.data.length;
+            if (end > start) parts.push({ node, start, end });
+          }
+          node = walker.nextNode();
+        }
+
+        const spans = [];
+        for (let i = parts.length - 1; i >= 0; i -= 1) {
+          const part = parts[i];
+          const selectedNode = part.node.splitText(part.start);
+          selectedNode.splitText(part.end - part.start);
+
+          const span = document.createElement("span");
+          span.className = "wrong-selection";
+          span.dataset.wrongSource = id;
+          selectedNode.parentNode.insertBefore(span, selectedNode);
+          span.appendChild(selectedNode);
+          spans.unshift(span);
+        }
+
+        requestAnimationFrame(() => {
+          spans.forEach((span) => span.classList.add("erased"));
+        });
+        return spans;
+      }
+
+      function unwrapWrongSpans(spans) {
+        spans.forEach((span) => {
+          if (!span.isConnected || !span.parentNode) return;
+          const parent = span.parentNode;
+          while (span.firstChild) parent.insertBefore(span.firstChild, span);
+          span.remove();
+          parent.normalize();
+        });
+      }
+
+      function restoreWrongSource(id, animate = true) {
+        const group = wrongGroups.get(id);
+        if (!group) return;
+        wrongGroups.delete(id);
+
+        if (!animate) {
+          unwrapWrongSpans(group.spans);
+          return;
+        }
+
+        group.spans.forEach((span) => span.classList.remove("erased"));
+        window.setTimeout(() => unwrapWrongSpans(group.spans), 700);
+      }
+
+      function removeWrongRecord(id, options = {}) {
+        const { animate = true, removeHistory = true } = options;
+        const entryIndex = wrongEntries.findIndex((entry) => entry.id === id);
+        if (entryIndex < 0) return;
+
+        wrongEntries.splice(entryIndex, 1);
+        if (removeHistory) {
+          let historyIndex = -1;
+          for (let i = history.length - 1; i >= 0; i -= 1) {
+            if (history[i].type === "wrong" && history[i].id === id) {
+              historyIndex = i;
+              break;
+            }
+          }
+          if (historyIndex >= 0) history.splice(historyIndex, 1);
+        }
+
+        restoreWrongSource(id, animate);
+        renderWrongEntries();
+        undoButton.disabled = history.length === 0;
+      }
+
+      function completeTarget(index) {
+        if (solved.has(index)) return;
+        solved.add(index);
+        history.push({ type: "correct", index });
+        eraseTarget(index);
+
+        const item = checkItems[index];
+        item.textContent = `${rowMarks[index]}${targetTexts[index]}`;
+        item.classList.add("done", "flash");
+        scheduleClipboardArrowAlignment();
+        window.setTimeout(() => item.classList.remove("flash"), 520);
+
+        undoButton.disabled = false;
+        markClipboardUpdated();
+        showToast("コピーを記録しました");
+      }
+
+      function recordWrong(value, range) {
+        const id = String(++wrongSerial);
+        const spans = wrapWrongSelection(range, id);
+        if (!spans.length) return;
+
+        wrongGroups.set(id, { spans });
+        wrongEntries.unshift({ id, value });
+        history.push({ type: "wrong", id });
+        renderWrongEntries();
+        undoButton.disabled = false;
+        markClipboardUpdated();
+        showToast("クリップボードに追加しました");
+      }
+
+      function selectedInsidePuzzle(selection) {
+        if (!selection.rangeCount) return false;
+        const range = selection.getRangeAt(0);
+        const insidePuzzle = puzzleText.contains(range.startContainer) && puzzleText.contains(range.endContainer);
+        const insideLabel = passwordLabel.contains(range.startContainer) && passwordLabel.contains(range.endContainer);
+        return insidePuzzle || insideLabel;
+      }
+
+      function handleClipboardAction(event) {
+        if (!introModal.hidden) return;
+        const selection = window.getSelection();
+        if (!selection || selection.isCollapsed || !selectedInsidePuzzle(selection)) return;
+
+        const raw = selection.toString();
+        const value = raw.replace(/\r\n/g, "\n");
+        if (!value.trim()) return;
+        const copiedRange = selection.getRangeAt(0).cloneRange();
+
+        if (event.clipboardData) {
+          event.preventDefault();
+          event.clipboardData.setData("text/plain", value);
+        }
+
+        const index = targetTexts.findIndex((text, targetIndex) => text === value && !solved.has(targetIndex));
+        window.setTimeout(() => {
+          selection.removeAllRanges();
+          if (index >= 0) completeTarget(index);
+          else recordWrong(value, copiedRange);
+        }, 0);
+      }
+
+      document.addEventListener("copy", handleClipboardAction);
+      document.addEventListener("cut", handleClipboardAction);
+
+      wrongLog.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-remove-wrong]");
+        if (!button) return;
+        removeWrongRecord(button.dataset.removeWrong);
+        showToast("本文に戻しました");
+      });
+
+      clipboardToggle.addEventListener("click", () => {
+        setClipboardOpen(!clipboardShell.classList.contains("open"));
+      });
+
+      undoButton.addEventListener("click", () => {
+        const action = history.pop();
+        if (!action) return;
+
+        if (action.type === "correct") {
+          solved.delete(action.index);
+          restoreTarget(action.index);
+          checkItems[action.index].textContent = clues[action.index];
+          checkItems[action.index].classList.remove("done", "flash");
+          scheduleClipboardArrowAlignment();
+        } else {
+          removeWrongRecord(action.id, { removeHistory: false });
+        }
+
+        undoButton.disabled = history.length === 0;
+        showToast("一つ前の状態に戻しました");
+      });
+
+      resetButton.addEventListener("click", async () => {
+        solved.clear();
+        [...wrongGroups.keys()].forEach((id) => restoreWrongSource(id, false));
+        history.length = 0;
+        wrongEntries.length = 0;
+        wrongSerial = 0;
+        targetElements.forEach((_, index) => restoreTarget(index));
+        checkItems.forEach((item, index) => {
+          item.textContent = clues[index];
+          item.classList.remove("done", "flash");
+        });
+        scheduleClipboardArrowAlignment();
+        renderWrongEntries();
+        undoButton.disabled = true;
+        answerInput.value = "";
+        answerStatus.textContent = "";
+        setClipboardOpen(false);
+        showToast("最初の状態に戻しました");
+
+        resetTapCount += 1;
+        if (resetTapCount >= 8) {
+          resetTapCount = 0;
+          await syncStats("read");
+          recordModal.hidden = false;
+          recordClose.focus();
+        }
+      });
+
+      async function digest(value) {
+        const bytes = new TextEncoder().encode(value);
+        const hash = await crypto.subtle.digest("SHA-256", bytes);
+        return [...new Uint8Array(hash)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+      }
+
+      answerForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const value = normalize(answerInput.value);
+        if (!value) {
+          answerStatus.textContent = "入力してください";
+          answerInput.focus();
+          return;
+        }
+
+        const accepted = new Set([
+          "f513806c222c8e2051883a1f01069ff68387fc7813cf1d87e325d17c705111b3",
+          "1a46de2cb18690697d6561522b0217a64725afb93ac352f4c447c1bb42a1688e"
+        ]);
+        const valueHash = await digest(value);
+        if (accepted.has(valueHash)) {
+          answerStatus.textContent = "";
+          lastFocusedElement = document.activeElement;
+          syncStats("clear");
+          successModal.hidden = false;
+          modalClose.focus();
+        } else {
+          answerStatus.textContent = "認証できませんでした";
+          const box = answerForm;
+          box.classList.remove("shake");
+          void box.offsetWidth;
+          box.classList.add("shake");
+        }
+      });
+
+      function closeModal() {
+        successModal.hidden = true;
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      introStart.addEventListener("click", () => {
+        introModal.hidden = true;
+        app.classList.remove("intro-locked");
+        app.removeAttribute("inert");
+        app.removeAttribute("aria-hidden");
+      });
+
+      modalClose.addEventListener("click", closeModal);
+      successModal.addEventListener("click", (event) => {
+        if (event.target === successModal) closeModal();
+      });
+      recordClose.addEventListener("click", () => {
+        recordModal.hidden = true;
+        resetButton.focus();
+      });
+      recordModal.addEventListener("click", (event) => {
+        if (event.target === recordModal) {
+          recordModal.hidden = true;
+          resetButton.focus();
+        }
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !successModal.hidden) closeModal();
+        if (event.key === "Escape" && !recordModal.hidden) {
+          recordModal.hidden = true;
+          resetButton.focus();
+        }
+      });
+
+      window.addEventListener("resize", scheduleClipboardArrowAlignment);
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", scheduleClipboardArrowAlignment);
+      }
+      scheduleClipboardArrowAlignment();
+
+      introStart.focus();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+## Technology overview: what is actually being used
+
+| Layer | Evidence in this catalogue | What that means for recreating an interaction |
+|---|---|---|
+| Custom HTML/CSS/JavaScript | Native text selection/clipboard in [Search](https://sajiqook.jp/game/search/) and [Kiritori](https://sajiqook.jp/game/kiritori/); viewport-driven grid layout in [Diary](https://sajiqook.jp/game/diary/); reload/session state in [CONNECT](https://sajiqook.jp/game/tconnect/). | Many signature interactions are ordinary browser affordances with carefully authored rules. A dedicated game engine is not required. |
+| SVG and DOM geometry | Shape paths, unit-area calculations and pointer resizing in [Mebakari](https://sajiqook.jp/game/mebakari/); map/wire/board UI in the relevant entries below. | SVG is well suited to selectable shapes and legible text; explicit geometry/state can stay independent of rendering. |
+| Native Canvas 2D | A custom frame loop in [Rain-Dodging Dash's application bundle](https://sajiqook.jp/game/ameyoke/assets/index-B1gA4Bq6.js) and [Blind Spot's game script](https://sajiqook.jp/game/blindspot/game.js). | Continuous animation and collision can use an ordinary canvas without Phaser/Pixi. See each entry for the actual loop and input mechanism. |
+| React applications | Identifiable runtimes in [Let's aim for the goal](https://sajiqook.jp/game/laftg/assets/index-B7tfBXWO.js), [choice](https://sajiqook.jp/game/sentaku/assets/index-CpF4TF9C.js), and [Rain-Dodging Dash](https://sajiqook.jp/game/ameyoke/assets/index-B1gA4Bq6.js). SPOITO additionally exposes vinext/Vite/RSC runtime markers. | React is the component/state layer here; it is not itself a physics/game engine. Svelte could serve the same application role in a new implementation. |
+| Godot Web export | The playable [You Are Newton demo](https://sajiqook.jp/game/youarenewton/game/index.html?build=0730-demo-cursor-sync&lang=ja) contains `GODOT_CONFIG`, `new Engine(...)`, and a `.wasm`/`.pck` loading path. | This is an actual game-engine export. Its separate React landing page should not be mistaken for the playable runtime. |
+| Browser-native audio and persistence | Web Audio synthesis appears across the public puzzle scripts; local/session storage preserves preferences or puzzle state. PHP-named endpoints handle state/validation/records in several games. | Audio and save/state infrastructure can remain small. Do not assume the frontend reveals all validation logic, especially in newer server-backed puzzles. |
+
+**Not established:** a single shared engine for the whole catalogue, the author's IDE/art tools, the complete backend architecture, or universal use/non-use of a library outside the inspected public assets. Tools and markers are reported per game below.
+

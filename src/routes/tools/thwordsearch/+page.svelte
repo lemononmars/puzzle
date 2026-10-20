@@ -1,29 +1,31 @@
 <script lang="ts">
-	import { search, getFirstLetter } from '#lib/thwordsearch.js';
+	import { search, getFirstLetter, disposeDictionaryWorker } from '#lib/thwordsearch.js';
 	import { slide } from 'svelte/transition';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import {
-		SearchIcon,
-		AlertOctagonIcon,
-		AlertTriangleIcon,
-		Share2Icon,
-		BookIcon,
-		ClockIcon,
-		Maximize2Icon,
-		TrendingUpIcon,
-		BookOpenIcon,
-		Trash2Icon,
-		XIcon
-	} from 'svelte-feather-icons';
-	import { getWordFrequency, getWordFrequencyTier } from '#lib/utils/dict_pythainlp.js';
+	import SearchIcon from '@lucide/svelte/icons/search';
+import AlertOctagonIcon from '@lucide/svelte/icons/alert-octagon';
+import AlertTriangleIcon from '@lucide/svelte/icons/triangle-alert';
+import Share2Icon from '@lucide/svelte/icons/share-2';
+import BookIcon from '@lucide/svelte/icons/book';
+import ClockIcon from '@lucide/svelte/icons/clock';
+import Maximize2Icon from '@lucide/svelte/icons/maximize-2';
+import TrendingUpIcon from '@lucide/svelte/icons/trending-up';
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import Trash2Icon from '@lucide/svelte/icons/trash-2';
+import XIcon from '@lucide/svelte/icons/x';
+	let frequencyData = $state<{quartiles:number[];values:Record<string,number>}>({quartiles:[0,0,0],values:{}});
+ const getWordFrequency = (word:string) => frequencyData.values[word] ?? 0;
+ function getWordFrequencyTier(value:number) {const [q1,q2,q3]=frequencyData.quartiles;if(!value)return null;return value>=q3?{label:'ใช้บ่อยมาก',color:'bg-error',icon:'🔥🔥🔥'}:value>=q2?{label:'ใช้บ่อย',color:'bg-warning',icon:'🔥🔥'}:value>=q1?{label:'ปานกลาง',color:'bg-info',icon:'🔥'}:{label:'พบน้อย',color:'bg-base-content/20',icon:''};}
 
 	let input: string = $state(page.url.searchParams.get('q') || '');
 	let query: string = $state(input);
 	let start: number = $state(0);
 	//const atHomePage: boolean = (!query)? true: false
 	let includeWiki: boolean = $state(false);
-	let queryResults: any = $state({ valid: false, count: 0, results: [] });
+	let searchError=$state('');
+ let searchSequence = 0;
+ let queryResults: any = $state({ valid: false, count: 0, results: [] });
 	let loading: boolean = $state(!!input);
 	let revealHistory: boolean = $state(false);
 	let strict: boolean = $state(true);
@@ -168,6 +170,7 @@
 	}
 
 	async function submit() {
+ const request=++searchSequence;searchError='';
 		if (!input) alert('ใส่คำก่อนสิเอ้อ!');
 		else {
 			query = input;
@@ -195,7 +198,10 @@
 			);
 
 			try {
-				queryResults = await search(query, includeWiki, abortController.signal, searchProgress, strict);
+				const result = await search(query, includeWiki, abortController.signal, searchProgress, strict, true);
+ if(request!==searchSequence)return;
+ queryResults=result;
+ frequencyData = queryResults.frequencyData ?? {quartiles:[0,0,0],values:{}};
 				allFirstLetters = [];
 				if (queryResults.results.length > 0) {
 					let latest = getFirstLetter(queryResults.results[0]);
@@ -209,10 +215,9 @@
 					}
 				}
 			} catch (e: any) {
-				console.error(e);
+				if(request===searchSequence&&e.name!=='AbortError')searchError=e.message||'ค้นหาไม่ได้ ลองอีกครั้ง';
 			} finally {
-				clearInterval(timerInterval);
-				loading = false;
+				if(request===searchSequence){clearInterval(timerInterval);loading=false;}
 			}
 		}
 	}
@@ -223,9 +228,8 @@
 			if (saved) history = JSON.parse(saved);
 		} catch (e) {}
 
-		if (input) {
-			submit();
-		}
+		if (input) submit();
+ return ()=>{abortController?.abort();clearInterval(timerInterval);disposeDictionaryWorker();};
 	});
 </script>
 
@@ -233,13 +237,13 @@
 <svelte:head>
 	<title>{title} | Code Breaker</title>
 	<meta name="description" content={description} />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
-	<meta property="og:url" content={url} />
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="/og-thai-wordsearch.png" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="/og-thai-wordsearch.png" />
+
+
+
+
+
+
+
 </svelte:head>
 
 <div class="flex flex-col justify-items-center text-center gap-2">
@@ -255,7 +259,7 @@
 				role="button"
 				tabindex="0"
 			>
-				<BookOpenIcon size="26" />
+				<BookOpenIcon size={26} />
 			</span>
 		</a>
 	</div>
@@ -266,17 +270,18 @@
 				class="input  input-sm lg:input-md lg:text-xl"
 				onkeypress={onKeypress}
 				bind:value={input}
+ aria-label="Thai word pattern"
 				placeholder="พิมพ์รูปแบบที่นี่"
 			/>
 			<div class="tooltip tooltip-bottom" data-tip="ค้นหา">
-				<span
+				<button type="button" aria-label="Search Thai words"
 					onclick={submit}
 					class="cursor-pointer text-primary hover:bg-primary/15 p-2 rounded-lg transition-all"
 					role="button"
 					tabindex="0"
 				>
-					<SearchIcon size="30" />
-				</span>
+					<SearchIcon size={30} />
+				</button>
 			</div>
 
 			<div class="tooltip tooltip-bottom" data-tip="วิธีใช้">
@@ -289,7 +294,7 @@
 					role="button"
 					tabindex="0"
 				>
-					<AlertOctagonIcon size="30" />
+					<AlertOctagonIcon size={30} />
 				</span>
 			</div>
 
@@ -301,7 +306,7 @@
 						role="button"
 						tabindex="0"
 					>
-						<Share2Icon size="30" />
+						<Share2Icon size={30} />
 					</span>
 				</div>
 				{#if shareCopied}
@@ -336,7 +341,7 @@
 					<span
 						class="{strict ? 'text-primary' : 'opacity-50'} transition-colors font-bold text-lg"
 					>
-						<Maximize2Icon size="24" />
+						<Maximize2Icon size={24} />
 					</span>
 				</label>
 			</div>
@@ -344,7 +349,7 @@
 				<label class="cursor-pointer flex items-center gap-1">
 					<input type="checkbox" class="checkbox checkbox-sm" bind:checked={includeWiki} />
 					<span class="{includeWiki ? 'text-primary' : 'opacity-50'} transition-colors">
-						<BookIcon size="24" />
+						<BookIcon size={24} />
 					</span>
 				</label>
 			</div>
@@ -358,7 +363,7 @@
 					<span
 						class="{sortByFreq ? 'text-secondary' : 'opacity-50'} transition-colors font-bold text-lg"
 					>
-						<TrendingUpIcon size="24" />
+						<TrendingUpIcon size={24} />
 					</span>
 				</label>
 			</div>
@@ -366,7 +371,7 @@
 				<label class="cursor-pointer flex items-center gap-1">
 					<input type="checkbox" class="checkbox checkbox-sm" bind:checked={revealHistory} />
 					<span class="{revealHistory ? 'text-primary' : 'opacity-50'} transition-colors">
-						<ClockIcon size="24" />
+						<ClockIcon size={24} />
 					</span>
 				</label>
 			</div>
@@ -380,7 +385,7 @@
 		>
 			<div class="flex items-center justify-between pb-3 mb-3 border-b border-base-300/60">
 				<div class="flex items-center gap-2">
-					<ClockIcon size="18" class="text-primary" />
+					<ClockIcon size={18} class="text-primary" />
 					<span class="font-bold text-sm text-base-content/90">ประวัติการค้นหา</span>
 					<span class="badge badge-sm badge-primary badge-outline font-mono">{history.length}</span>
 				</div>
@@ -389,7 +394,7 @@
 						class="btn btn-xs btn-ghost text-error-content hover:bg-error/15 gap-1 transition-colors"
 						onclick={clearHistory}
 					>
-						<Trash2Icon size="14" />
+						<Trash2Icon size={14} />
 						<span>ล้างประวัติ</span>
 					</button>
 				{/if}
@@ -415,7 +420,7 @@
 								title="ลบรายการนี้"
 								onclick={() => removeHistoryItem(h)}
 							>
-								<XIcon size="14" />
+								<XIcon size={14} />
 							</button>
 						</div>
 					{/each}
@@ -429,7 +434,9 @@
 	{/if}
 
 	<div class="overflow-x-auto mx-auto mt-4">
-		{#if loading}
+		{#if searchError}<p role="alert" class="text-error-content">{searchError}</p>{/if}
+ {#if loading}
+ <button type="button" class="btn btn-sm btn-outline" onclick={()=>{++searchSequence;abortController?.abort();clearInterval(timerInterval);loading=false;}}>Cancel search</button>
 			<div class="flex justify-center items-center py-16 flex-col gap-6">
 				<svg
 					class="animate-spin h-12 w-12 text-primary"
@@ -466,7 +473,7 @@
 		{:else if query}
 			{#if queryResults.aborted}
 				<div class="alert alert-warning shadow-sm my-4 flex gap-4 max-w-2xl mx-auto">
-					<AlertTriangleIcon size="24" />
+					<AlertTriangleIcon size={24} />
 					<span> หยุดการค้นหา! แสดงผลลัพธ์ที่ค้นพบแล้วบางส่วน...</span>
 				</div>
 			{/if}

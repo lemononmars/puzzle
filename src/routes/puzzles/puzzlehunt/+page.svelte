@@ -7,7 +7,8 @@ export let data: any;
 
 	import { dateToThaiString } from '#lib/utils/date.js';
 	import type { IPuzzleHunt } from '#lib/interfaces/index.js';
-	import { CalendarIcon, LayersIcon } from 'svelte-feather-icons';
+	import CalendarIcon from '@lucide/svelte/icons/calendar';
+import LayersIcon from '@lucide/svelte/icons/layers';
 
 	let puzzleHunts: IPuzzleHunt[] = data.puzzleHunts ?? (defaultPuzzleHunts);
 
@@ -98,14 +99,14 @@ $: ({ puzzleHunts } = data);
 						<div class="flex flex-wrap items-center justify-center gap-4 text-xs text-base-content/70 font-medium">
 							{#if ph.date}
 								<div class="flex items-center gap-1.5">
-									<CalendarIcon size="14" class="text-primary" />
+									<CalendarIcon size={14} class="text-primary" />
 									<span>{dateToThaiString(ph.date)}</span>
 								</div>
 							{/if}
 
 							{#if ph.puzzles}
 								<div class="flex items-center gap-1.5 text-primary font-bold">
-									<LayersIcon size="14" />
+									<LayersIcon size={14} />
 									<span>{ph.puzzles.length} ปริศนา</span>
 								</div>
 							{/if}

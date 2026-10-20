@@ -1,12 +1,11 @@
 <script lang="ts">
+import UiArrowRight from '@lucide/svelte/icons/arrow-right';
 	import { onMount } from 'svelte';
 	import { fade, scale } from 'svelte/transition';
-	import {
-		CheckCircleIcon,
-		XCircleIcon,
-		Volume2Icon,
-		RefreshCwIcon
-	} from 'svelte-feather-icons';
+	import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import Volume2Icon from '@lucide/svelte/icons/volume-2';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 
 	import { THAI_QUIZ_DATABASE, THAI_QUIZ_CATEGORIES } from '#lib/data/puzzles/thaiquiz/questions.js';
 	import type { ThaiQuizItem } from '#lib/data/puzzles/thaiquiz/types.js';
@@ -88,7 +87,7 @@
 				on:click={readQuestion}
 				title="TTS Voice"
 			>
-				<Volume2Icon size="13" class={isSpeaking ? 'animate-bounce' : ''} />
+				<Volume2Icon size={13} class={isSpeaking ? 'animate-bounce' : ''} />
 				<span class="text-[11px]">{isSpeaking ? 'Reading...' : 'Listen'}</span>
 			</button>
 
@@ -96,7 +95,7 @@
 				href="/puzzles/quiz"
 				class="inline-flex items-center text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-lg bg-base-300 text-base-content text-primary border border-primary/30 hover:bg-base-300 text-base-content transition-all shadow-sm"
 			>
-				Full Mode →
+				Full Mode <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 			</a>
 		</div>
 	</div>
@@ -137,9 +136,9 @@
 						</div>
 
 						{#if isAnswered && choice.isCorrect}
-							<CheckCircleIcon size="14" class="text-primary shrink-0" />
+							<CheckCircleIcon size={14} class="text-primary shrink-0" />
 						{:else if isAnswered && isSelected && !choice.isCorrect}
-							<XCircleIcon size="14" class="text-error-content shrink-0" />
+							<XCircleIcon size={14} class="text-error-content shrink-0" />
 						{/if}
 					</button>
 				{/each}
@@ -159,7 +158,7 @@
 						class="btn btn-xs btn-warning text-warning-content font-bold gap-1 shrink-0 px-2"
 						on:click={loadNewQuestion}
 					>
-						<RefreshCwIcon size="11" />
+						<RefreshCwIcon size={11} />
 						Next 🎲
 					</button>
 				</div>

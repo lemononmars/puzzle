@@ -3,7 +3,7 @@ export let data: any;
 
 
    import type { IMissingVowels } from '#lib/interfaces/index.js';
-   import { PlayCircleIcon } from 'svelte-feather-icons';
+   import PlayCircleIcon from '@lucide/svelte/icons/circle-play';
    import TitleTab from '#lib/components/TitleTab.svelte';
    import { fly } from 'svelte/transition';
 
@@ -160,7 +160,7 @@ $: ({ content } = data);
       </div>
    {:else}
       <button class="btn btn-primary btn-xl btn-wide h-20 mx-auto my-8 text-2xl gap-4 font-black shadow-2xl rounded-3xl" on:click={play}>
-         เริ่มเล่น <PlayCircleIcon size="32" />
+         เริ่มเล่น <PlayCircleIcon size={32} />
       </button>
    {/if}
 </div>

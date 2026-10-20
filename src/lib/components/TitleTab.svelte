@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { IContent } from '#lib/interfaces/index.js';
-	import { ChevronLeftIcon } from 'svelte-feather-icons';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
 	import { dateToThaiString } from '#lib/utils/date.js';
 
 	export let content: IContent;
@@ -12,7 +12,7 @@
 		class="p-2 rounded-xl bg-base-100 text-base-content border border-base-300 text-base-content/70 hover:text-base-content hover:border-primary/30 transition-all shrink-0 flex items-center justify-center"
 		title="กลับไปหน้ารายการปริศนา"
 	>
-		<ChevronLeftIcon size="20" />
+		<ChevronLeftIcon size={20} />
 	</a>
 
 	<h1 class="text-xl sm:text-2xl font-black tracking-tight text-base-content text-center flex-1 truncate px-2">

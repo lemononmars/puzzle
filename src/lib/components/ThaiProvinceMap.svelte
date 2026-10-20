@@ -1,19 +1,17 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { provinceDict, provinceEN } from '#lib/data/puzzles/thaimap/provinces.js';
-	import {
-		MapPinIcon,
-		CheckCircleIcon,
-		AwardIcon,
-		RotateCcwIcon,
-		CompassIcon,
-		PlusIcon,
-		MinusIcon,
-		MaximizeIcon,
-		XCircleIcon,
-		InfoIcon,
-		XIcon
-	} from 'svelte-feather-icons';
+	import MapPinIcon from '@lucide/svelte/icons/map-pin';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import AwardIcon from '@lucide/svelte/icons/award';
+import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
+import CompassIcon from '@lucide/svelte/icons/compass';
+import PlusIcon from '@lucide/svelte/icons/plus';
+import MinusIcon from '@lucide/svelte/icons/minus';
+import MaximizeIcon from '@lucide/svelte/icons/maximize';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import InfoIcon from '@lucide/svelte/icons/info';
+import XIcon from '@lucide/svelte/icons/x';
 
 	export let width: number = 900;
 
@@ -482,7 +480,7 @@
 		<!-- Target Question Header -->
 		<div class="relative overflow-hidden group">
 			<div class="absolute -right-4 -bottom-4 opacity-5 text-primary group-hover:scale-110 transition-transform duration-500">
-				<MapPinIcon size="80" />
+				<MapPinIcon size={80} />
 			</div>
 			<h2 class="text-[10px] uppercase tracking-widest text-base-content/70 font-bold mb-2.5 flex items-center gap-1.5">
 				<span class="w-1.5 h-1.5 bg-teal-400 rounded-full animate-ping"></span>
@@ -513,7 +511,7 @@
 				</div>
 			{:else}
 				<div class="text-center py-2 flex flex-col items-center">
-					<AwardIcon class="text-amber-400 mb-1 animate-bounce" size="36" />
+					<AwardIcon class="text-amber-400 mb-1 animate-bounce" size={36} />
 					<span class="text-lg font-black text-amber-400">หาครบ 77 จังหวัดแล้ว!</span>
 				</div>
 			{/if}
@@ -526,7 +524,7 @@
 			<div class="flex flex-col gap-2">
 				<div class="flex justify-between items-center w-full">
 					<span class="text-[10px] uppercase tracking-widest text-base-content/70 font-bold flex items-center gap-1.5">
-						<CompassIcon size="12" class="text-primary" />
+						<CompassIcon size={12} class="text-primary" />
 						ระดับความยาก
 					</span>
 					<button
@@ -534,7 +532,7 @@
 						class="p-1 rounded-lg hover:bg-base-100 text-base-content text-base-content/70 hover:text-base-content transition-all flex items-center justify-center"
 						title="แสดงคำอธิบายกฎกติกา"
 					>
-						<InfoIcon size="14" />
+						<InfoIcon size={14} />
 					</button>
 				</div>
 				<div class="grid grid-cols-3 gap-1.5 bg-base-100 text-base-content p-1 rounded-xl border border-base-300">
@@ -573,9 +571,9 @@
 		>
 			<div class="flex-shrink-0 mt-0.5">
 				{#if feedbackStatus === 'success'}
-					<CheckCircleIcon class="text-primary" size="20" />
+					<CheckCircleIcon class="text-primary" size={20} />
 				{:else}
-					<XCircleIcon class="text-red-400" size="20" />
+					<XCircleIcon class="text-red-400" size={20} />
 				{/if}
 			</div>
 			<div class="flex flex-col gap-0.5 text-xs font-medium">
@@ -594,7 +592,7 @@
 	<!-- Floating Overlay: Stats & Reset Button (Bottom-Right, inside the Gulf/empty sea space) -->
 	<div class="botanical-card relative md:absolute md:right-6 md:bottom-6 z-10 w-full md:w-60 bg-base-100 text-base-content backdrop-blur-md border border-base-300 p-4 md:p-5 rounded-2xl shadow-2xl flex flex-col gap-4 pointer-events-auto mb-4 md:mb-0">
 		<h2 class="text-xs font-bold text-base-content/70 uppercase tracking-widest flex items-center gap-1.5">
-			<AwardIcon class="text-amber-400" size="16" />
+			<AwardIcon class="text-amber-400" size={16} />
 			สถิติและคะแนนสะสม
 		</h2>
 
@@ -625,22 +623,22 @@
 		{#if gameStarted}
 			<div class="flex flex-col gap-2">
 				<button on:click={endSession} class="btn btn-outline hover:bg-slate-850 w-full btn-xs sm:btn-sm gap-1.5 rounded-xl border border-base-300 text-base-content/70 font-bold">
-					<XCircleIcon size="12" />
+					<XCircleIcon size={12} />
 					จบการทดสอบ (End Session)
 				</button>
 				<a href="/puzzles/thaimapquiz/leaderboard" class="btn btn-ghost btn-xs gap-1 text-primary hover:text-primary w-full justify-center rounded-xl">
-					<AwardIcon size="10" />
+					<AwardIcon size={10} />
 					ตารางคะแนน
 				</a>
 			</div>
 		{:else}
 			<div class="flex flex-col gap-2">
 				<button on:click={resetQuiz} class="btn btn-outline hover:bg-slate-850 w-full btn-xs sm:btn-sm gap-1.5 rounded-xl border border-base-300 text-base-content/70 font-bold">
-					<RotateCcwIcon size="12" />
+					<RotateCcwIcon size={12} />
 					เริ่มเล่นใหม่
 				</button>
 				<a href="/puzzles/thaimapquiz/leaderboard" class="btn btn-ghost btn-xs gap-1 text-primary hover:text-primary w-full justify-center rounded-xl">
-					<AwardIcon size="10" />
+					<AwardIcon size={10} />
 					ตารางคะแนน
 				</a>
 			</div>
@@ -653,13 +651,13 @@
 		<!-- Zoom and Pan Controls Overlaid on Map (Floating bottom-left to avoid overlaps) -->
 		<div class="botanical-card absolute left-4 bottom-4 z-20 flex flex-col gap-2 bg-base-100 text-base-content p-2 rounded-2xl border border-base-300 backdrop-blur-md shadow-2xl pointer-events-auto">
 			<button on:click={zoomIn} class="p-2.5 rounded-xl hover:bg-base-100 text-base-content text-base-content/70 hover:text-base-content transition-all" title="Zoom In">
-				<PlusIcon size="16" />
+				<PlusIcon size={16} />
 			</button>
 			<button on:click={zoomOut} class="p-2.5 rounded-xl hover:bg-base-100 text-base-content text-base-content/70 hover:text-base-content transition-all" title="Zoom Out">
-				<MinusIcon size="16" />
+				<MinusIcon size={16} />
 			</button>
 			<button on:click={resetZoom} class="p-2.5 rounded-xl hover:bg-base-100 text-base-content text-base-content/70 hover:text-base-content transition-all" title="Reset Zoom">
-				<MaximizeIcon size="16" />
+				<MaximizeIcon size={16} />
 			</button>
 			<div class="text-[9px] font-mono font-bold text-base-content/70 text-center border-t border-base-300 pt-1.5 mt-0.5">
 				{Math.round(zoomScale * 100)}%
@@ -1123,7 +1121,7 @@
 		<div class="absolute inset-0 bg-base-100 text-base-content backdrop-blur-[2px] z-30 flex flex-col items-center justify-center p-6 text-center select-none pointer-events-auto">
 			<div class="botanical-card bg-base-100 text-base-content border border-base-300 p-8 rounded-3xl max-w-sm w-full shadow-2xl flex flex-col gap-6 items-center">
 				<div class="w-16 h-16 bg-teal-500/10 border border-primary/30 rounded-2xl flex items-center justify-center text-primary">
-					<CompassIcon size="32" />
+					<CompassIcon size={32} />
 				</div>
 				<div class="flex flex-col gap-2">
 					<h3 class="text-xl font-bold text-base-content">ทดสอบความรู้ภูมิศาสตร์ไทย 🗺️</h3>
@@ -1146,7 +1144,7 @@
 		<div class="absolute inset-0 bg-base-100 text-base-content backdrop-blur-md z-40 flex flex-col items-center justify-center p-6 text-center select-none pointer-events-auto">
 			<div class="botanical-card bg-base-100 text-base-content border border-base-300 p-6 rounded-3xl max-w-lg w-full shadow-2xl flex flex-col gap-5 max-h-[90%] overflow-hidden">
 				<div class="flex items-center justify-center gap-2">
-					<AwardIcon class="text-amber-400 animate-bounce" size="28" />
+					<AwardIcon class="text-amber-400 animate-bounce" size={28} />
 					<h3 class="text-xl font-bold text-base-content">สรุปผลการทดสอบ</h3>
 				</div>
 
@@ -1169,7 +1167,7 @@
 					<!-- Correct List -->
 					<div class="flex flex-col gap-1.5">
 						<h4 class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-1.5 sticky top-0 bg-base-100 text-base-content py-1 z-10">
-							<CheckCircleIcon size="12" />
+							<CheckCircleIcon size={12} />
 							ทายถูกต้อง ({sessionCorrect.length})
 						</h4>
 						{#if sessionCorrect.length === 0}
@@ -1190,7 +1188,7 @@
 					<!-- Incorrect List -->
 					<div class="flex flex-col gap-1.5">
 						<h4 class="text-xs font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5 sticky top-0 bg-base-100 text-base-content py-1 z-10">
-							<XCircleIcon size="12" />
+							<XCircleIcon size={12} />
 							ทายผิดพลาด ({sessionIncorrect.length})
 						</h4>
 						{#if sessionIncorrect.length === 0}
@@ -1213,7 +1211,7 @@
 				{#if foundProvinces > 0}
 					<div class="bg-base-100 text-base-content border border-base-300 rounded-2xl p-3 flex flex-col gap-2">
 						<p class="text-xs font-bold text-primary flex items-center gap-1.5">
-							<AwardIcon size="12" />
+							<AwardIcon size={12} />
 							ส่งคะแนนขึ้นกระดานโลก ({foundProvinces} จังหวัด)
 						</p>
 						{#if submitStatus === 'success'}
@@ -1258,7 +1256,7 @@
 					href="/puzzles/thaimapquiz/leaderboard"
 					class="text-center text-xs font-bold text-primary hover:text-primary flex items-center justify-center gap-1 transition-all"
 				>
-					<AwardIcon size="12" /> ดูตารางคะแนนทั่วโลก
+					<AwardIcon size={12} /> ดูตารางคะแนนทั่วโลก
 				</a>
 			</div>
 		</div>
@@ -1270,11 +1268,11 @@
 			<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 max-w-md w-full shadow-2xl flex flex-col gap-6 relative animate-in fade-in zoom-in-95 duration-200">
 				<!-- Close button -->
 				<button on:click={() => showDifficultyModal = false} class="absolute top-4 right-4 p-1.5 rounded-xl hover:bg-base-100 text-base-content text-base-content/70 hover:text-base-content transition-all">
-					<XIcon size="18" />
+					<XIcon size={18} />
 				</button>
 
 				<div class="flex items-center gap-3">
-					<CompassIcon class="text-primary" size="24" />
+					<CompassIcon class="text-primary" size={24} />
 					<h3 class="text-xl font-bold text-base-content">คำอธิบายระดับความยาก</h3>
 				</div>
 

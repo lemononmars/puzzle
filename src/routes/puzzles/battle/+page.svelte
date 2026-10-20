@@ -1,25 +1,23 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { fade, fly, scale } from 'svelte/transition';
-	import {
-		UsersIcon,
-		PlayIcon,
-		PlusCircleIcon,
-		RefreshCwIcon,
-		AwardIcon,
-		ZapIcon,
-		CopyIcon,
-		CheckIcon,
-		ArrowLeftIcon,
-		ClockIcon,
-		AlertCircleIcon,
-		ArrowDownIcon,
-		ArrowRightIcon,
-		RefreshCwIcon as ShuffleIcon,
-		RotateCcwIcon,
-		EyeIcon,
-		RadioIcon
-	} from 'svelte-feather-icons';
+	import UsersIcon from '@lucide/svelte/icons/users';
+import PlayIcon from '@lucide/svelte/icons/play';
+import PlusCircleIcon from '@lucide/svelte/icons/plus-circle';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import AwardIcon from '@lucide/svelte/icons/award';
+import ZapIcon from '@lucide/svelte/icons/zap';
+import CopyIcon from '@lucide/svelte/icons/copy';
+import CheckIcon from '@lucide/svelte/icons/check';
+import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import ClockIcon from '@lucide/svelte/icons/clock';
+import AlertCircleIcon from '@lucide/svelte/icons/circle-alert';
+import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
+import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
+import ShuffleIcon from '@lucide/svelte/icons/refresh-cw';
+import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
+import EyeIcon from '@lucide/svelte/icons/eye';
+import RadioIcon from '@lucide/svelte/icons/radio';
 
 	import type {
 		BattleGameConfig,
@@ -1065,7 +1063,7 @@
 						class="btn btn-sm btn-ghost gap-1.5 text-base-content/70 hover:text-base-content"
 						title="กลับหน้า Puzzles"
 					>
-						<ArrowLeftIcon size="16" />
+						<ArrowLeftIcon size={16} />
 						<span class="hidden sm:inline">Puzzles</span>
 					</a>
 					<div class="h-6 w-px bg-base-100 text-base-content"></div>
@@ -1127,7 +1125,7 @@
 				<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 sm:p-4 shadow-xl flex flex-col md:flex-row justify-between items-stretch md:items-center gap-3">
 					<div class="flex items-center gap-2.5">
 						<div class="h-8 w-8 rounded-xl bg-emerald-500/20 text-primary flex items-center justify-center font-bold">
-							<ZapIcon size="16" />
+							<ZapIcon size={16} />
 						</div>
 						<div>
 							<h2 class="text-sm sm:text-base font-black text-base-content">ห้องประลองออนไลน์ (Battle Arena)</h2>
@@ -1162,7 +1160,7 @@
 							class="btn btn-primary btn-sm gap-1.5 font-bold text-primary-content shadow-lg shadow-emerald-900/40"
 							on:click={() => (showCreateModal = true)}
 						>
-							<PlusCircleIcon size="15" />
+							<PlusCircleIcon size={15} />
 							สร้างห้องใหม่ (Create)
 						</button>
 					</div>
@@ -1172,7 +1170,7 @@
 				{#if errorMessage}
 					<div class="alert alert-error shadow-lg rounded-2xl flex items-center justify-between text-error-content py-2" in:fly={{ y: -10 }}>
 						<div class="flex items-center gap-2">
-							<AlertCircleIcon size="16" />
+							<AlertCircleIcon size={16} />
 							<span class="text-xs sm:text-sm font-medium">{errorMessage}</span>
 						</div>
 						<button class="btn btn-xs btn-ghost" on:click={() => (errorMessage = '')}>ปิด</button>
@@ -1185,7 +1183,7 @@
 					<div class="lg:col-span-3 flex flex-col gap-3">
 						<div class="flex justify-between items-center border-b border-base-300 pb-2">
 							<div class="flex items-center gap-2">
-								<UsersIcon size="16" class="text-primary" />
+								<UsersIcon size={16} class="text-primary" />
 								<h3 class="text-sm sm:text-base font-bold text-base-content">ห้องแข่งขันที่เปิดอยู่ (Active Rooms)</h3>
 								<span class="badge badge-neutral badge-xs font-mono">{rooms.length}</span>
 							</div>
@@ -1195,7 +1193,7 @@
 								on:click={refreshRooms}
 								title="รีเฟรชรายการห้อง"
 							>
-								<RefreshCwIcon size="12" class={isLoadingRooms ? 'animate-spin' : ''} />
+								<RefreshCwIcon size={12} class={isLoadingRooms ? 'animate-spin' : ''} />
 								<span class="text-xs">รีเฟรช</span>
 							</button>
 						</div>
@@ -1216,7 +1214,7 @@
 									class="btn btn-xs btn-primary mt-1 gap-1 font-bold text-primary-content"
 									on:click={() => (showCreateModal = true)}
 								>
-									<PlusCircleIcon size="14" />
+									<PlusCircleIcon size={14} />
 									สร้างห้องแรก
 								</button>
 							</div>
@@ -1251,7 +1249,7 @@
 												<div class="flex items-center gap-1 text-xs text-base-content/70">
 													<span class="text-[10px] text-base-content/70">⏳ {timeAgo(r.created_at)}</span>
 													<span class="mx-1 text-base-content/70">•</span>
-													<UsersIcon size="12" />
+													<UsersIcon size={12} />
 													<span class="font-mono font-bold text-base-content text-xs">{playerCount}/{maxPlayers}</span>
 												</div>
 											</div>
@@ -1288,7 +1286,7 @@
 														class="btn btn-xs btn-outline border-primary/30 text-primary hover:bg-cyan-500/20 font-bold gap-1 shadow"
 														on:click={() => handleWatchRoom(r.room_id)}
 													>
-														<EyeIcon size="12" />
+														<EyeIcon size={12} />
 														ชมการแข่ง
 													</button>
 												{/if}
@@ -1312,7 +1310,7 @@
 					<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-2xl p-3.5 shadow-xl flex flex-col gap-3 h-fit">
 						<div class="flex items-center justify-between border-b border-base-300 pb-2">
 							<div class="flex items-center gap-2">
-								<RadioIcon size="15" class="text-primary animate-pulse" />
+								<RadioIcon size={15} class="text-primary animate-pulse" />
 								<h4 class="font-bold text-base-content text-sm">ผู้เล่นออนไลน์</h4>
 							</div>
 							<span class="badge badge-success badge-xs font-mono text-[10px] text-success-content">{onlinePlayers.length} คน</span>
@@ -1357,10 +1355,10 @@
 								title="คัดลอกลิงก์เชิญ"
 							>
 								{#if copiedCode}
-									<CheckIcon size="14" class="text-primary" />
+									<CheckIcon size={14} class="text-primary" />
 									<span class="text-primary font-bold">คัดลอกแล้ว!</span>
 								{:else}
-									<CopyIcon size="14" />
+									<CopyIcon size={14} />
 									<span>คัดลอกลิงก์</span>
 								{/if}
 							</button>
@@ -1388,7 +1386,7 @@
 								disabled={!allReady}
 								on:click={handleStartMatch}
 							>
-								<PlayIcon size="16" />
+								<PlayIcon size={16} />
 								เริ่มการประลอง (Start)
 							</button>
 						{:else}
@@ -1396,7 +1394,7 @@
 								class="btn btn-sm sm:btn-md gap-1.5 font-bold {myPlayer?.isReady ? 'btn-success text-success-content' : 'btn-warning text-warning-content'}"
 								on:click={handleToggleReady}
 							>
-								<CheckIcon size="16" />
+								<CheckIcon size={16} />
 								{myPlayer?.isReady ? 'พร้อมแล้ว (Ready!)' : 'กดพร้อม (Set Ready)'}
 							</button>
 						{/if}
@@ -1421,7 +1419,7 @@
 								</div>
 								{#if player.isReady}
 									<div class="absolute -bottom-1 -right-1 bg-emerald-500 text-base-content/70 rounded-full p-0.5 shadow-md">
-										<CheckIcon size="12" />
+										<CheckIcon size={12} />
 									</div>
 								{/if}
 							</div>
@@ -1438,7 +1436,7 @@
 					<!-- Empty Slot Placeholders -->
 					{#each Array(Math.max(0, (meta?.config?.maxPlayers || 4) - (currentRoom.players || []).length)) as _}
 						<div class="border border-dashed border-base-300 rounded-2xl p-4 flex flex-col items-center justify-center text-center gap-1 text-base-content/70 min-h-[140px]">
-							<UsersIcon size="22" />
+							<UsersIcon size={22} />
 							<span class="text-[11px] font-semibold">รอผู้เล่นเข้าร่วม...</span>
 							<button class="btn btn-xs btn-ghost text-base-content/70 hover:text-base-content" on:click={copyInviteLink}>
 								แชร์รหัส #{currentRoom.room_id}
@@ -1449,7 +1447,7 @@
 
 				{#if isHostUser && !allReady}
 					<div class="alert alert-info bg-info/20 border-info/40 rounded-2xl text-info-content flex items-center gap-2 py-2">
-						<AlertCircleIcon size="16" />
+						<AlertCircleIcon size={16} />
 						<span class="text-xs sm:text-sm font-medium">รอให้ผู้เล่นทุกคนกดปุ่ม "พร้อม (Ready)" เพื่อเริ่มเกมได้</span>
 					</div>
 				{/if}
@@ -1491,7 +1489,7 @@
 						</div>
 						{#if myPlayer?.isSpectator}
 							<div class="badge badge-info badge-sm font-bold gap-1 text-info-content animate-pulse">
-								<EyeIcon size="12" />
+								<EyeIcon size={12} />
 								<span>ผู้ชม (Spectator)</span>
 							</div>
 						{/if}
@@ -1513,7 +1511,7 @@
 						{/if}
 
 						<div class="flex items-center gap-2 bg-base-100 text-base-content border border-base-300 rounded-xl px-3 py-1.5">
-							<ClockIcon size="16" class={matchTimeRemaining <= 10 ? 'text-error-content animate-spin' : 'text-primary'} />
+							<ClockIcon size={16} class={matchTimeRemaining <= 10 ? 'text-error-content animate-spin' : 'text-primary'} />
 							<span class="font-mono text-base sm:text-lg font-black {matchTimeRemaining <= 10 ? 'text-error-content animate-pulse' : 'text-base-content'}">
 								{Math.floor(matchTimeRemaining / 60)}:{String(matchTimeRemaining % 60).padStart(2, '0')}
 							</span>
@@ -1565,7 +1563,7 @@
 												class="btn btn-square btn-outline border-base-300 text-warning-content hover:bg-amber-400/20 p-3 rounded-2xl shadow-inner"
 												title="สลับอักษร (Space)"
 											>
-												<ShuffleIcon size="18" />
+												<ShuffleIcon size={18} />
 											</button>
 
 											<div class="relative flex-1 w-full">
@@ -1688,12 +1686,12 @@
 										<div class="botanical-card absolute top-0 inset-x-0 mx-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
 											{currentTopClue || 'ต้น'}
 										</div>
-										<ArrowDownIcon class="absolute top-16 inset-x-0 mx-auto text-primary animate-bounce" size="20" />
+										<ArrowDownIcon class="absolute top-16 inset-x-0 mx-auto text-primary animate-bounce" size={20} />
 
 										<div class="botanical-card absolute left-0 inset-y-0 my-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
 											{currentLeftClue || 'ใบ'}
 										</div>
-										<ArrowRightIcon class="absolute left-24 inset-y-0 my-auto text-primary animate-pulse" size="20" />
+										<ArrowRightIcon class="absolute left-24 inset-y-0 my-auto text-primary animate-pulse" size={20} />
 
 										<input
 											type="text"
@@ -1709,12 +1707,12 @@
 											class:botanical-answer-input={true}
 										/>
 
-										<ArrowRightIcon class="absolute right-24 inset-y-0 my-auto text-primary -scale-x-100 animate-pulse" size="20" />
+										<ArrowRightIcon class="absolute right-24 inset-y-0 my-auto text-primary -scale-x-100 animate-pulse" size={20} />
 										<div class="botanical-card absolute right-0 inset-y-0 my-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
 											{currentRightClue || 'ดวง'}
 										</div>
 
-										<ArrowDownIcon class="absolute bottom-16 inset-x-0 mx-auto text-primary -scale-y-100 animate-bounce" size="20" />
+										<ArrowDownIcon class="absolute bottom-16 inset-x-0 mx-auto text-primary -scale-y-100 animate-bounce" size={20} />
 										<div class="botanical-card absolute bottom-0 inset-x-0 mx-auto w-24 h-14 rounded-2xl bg-base-100 text-base-content border-2 border-primary/30 text-primary flex items-center justify-center font-black text-lg sm:text-xl shadow-lg">
 											{currentBottomClue || 'ไม้'}
 										</div>
@@ -1727,7 +1725,7 @@
 											on:click={rerollCrossroadClues}
 											title="สลับคำใบ้ทิศทางอื่น"
 										>
-											<RotateCcwIcon size="16" />
+											<RotateCcwIcon size={16} />
 											เปลี่ยนคำใบ้
 										</button>
 
@@ -1983,7 +1981,7 @@
 					<!-- Live Scoreboard & Opponent Progress (1 col) -->
 					<div class="botanical-card bg-base-100 text-base-content backdrop-blur-xl border border-base-300 rounded-3xl p-4 sm:p-5 shadow-2xl flex flex-col gap-4">
 						<div class="flex items-center gap-2 border-b border-base-300 pb-3">
-							<AwardIcon size="18" class="text-warning-content" />
+							<AwardIcon size={18} class="text-warning-content" />
 							<h4 class="font-extrabold text-base-content text-base">คะแนนสด (Live Match)</h4>
 						</div>
 
@@ -2068,7 +2066,7 @@
 				<div class="flex items-center gap-4 mt-4">
 					{#if isHostUser}
 						<button class="btn btn-primary btn-md gap-2 font-bold text-primary-content shadow-xl" on:click={handleRematch}>
-							<RefreshCwIcon size="18" />
+							<RefreshCwIcon size={18} />
 							เริ่มแข่งใหม่ (Rematch)
 						</button>
 					{/if}
@@ -2088,7 +2086,7 @@
 		<div class="botanical-card modal-box bg-base-100 text-base-content border border-base-300 rounded-3xl p-5 sm:p-6 max-w-lg text-base-content shadow-2xl flex flex-col gap-4">
 			<div class="flex items-center justify-between border-b border-base-300 pb-2.5">
 				<h3 class="text-lg font-black text-base-content flex items-center gap-2">
-					<PlusCircleIcon size="18" class="text-primary" />
+					<PlusCircleIcon size={18} class="text-primary" />
 					สร้างห้องประลองใหม่ (Create Room)
 				</h3>
 				<button class="btn btn-xs btn-circle btn-ghost" on:click={() => (showCreateModal = false)}>✕</button>
@@ -2214,7 +2212,7 @@
 					{#if isCreatingRoom}
 						<span class="loading loading-spinner loading-xs"></span>
 					{:else}
-						<PlusCircleIcon size="16" />
+						<PlusCircleIcon size={16} />
 						สร้างห้องเลย
 					{/if}
 				</button>

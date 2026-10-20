@@ -9,6 +9,3 @@ declare namespace App {
 	// interface Session {}
 	// interface Stuff {}
 }
-
-declare module 'svelte-feather-icons';
-

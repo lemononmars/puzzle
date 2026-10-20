@@ -6,7 +6,8 @@ import { staticHiddenLinkPuzzles } from '#lib/data/puzzles/hiddenlink.js';
 
 
 	import type { IHiddenLink } from '#lib/data/puzzles/hiddenlink.js';
-	import { ChevronLeftIcon, ChevronRightIcon } from 'svelte-feather-icons';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import { dateToThaiString } from '#lib/utils/date.js';
 
 	let content: IHiddenLink | null = data.content;
@@ -57,7 +58,7 @@ $: ({ content, id } = data);
 				class="p-2 rounded-xl bg-base-100 text-base-content border border-base-300 text-base-content/70 hover:text-base-content hover:border-primary/30 transition-all shrink-0 flex items-center justify-center"
 				title="กลับไปหน้ารายการ Hidden Link"
 			>
-				<ChevronLeftIcon size="20" />
+				<ChevronLeftIcon size={20} />
 			</a>
 
 			<div class="flex items-center gap-3">
@@ -67,11 +68,11 @@ $: ({ content, id } = data);
 						class="p-2 rounded-xl bg-base-100 text-base-content border border-base-300 text-base-content/70 hover:text-base-content hover:border-primary/30 transition-all shrink-0 flex items-center justify-center"
 						title="ข้อก่อนหน้า"
 					>
-						<ChevronLeftIcon size="18" />
+						<ChevronLeftIcon size={18} />
 					</a>
 				{:else}
 					<button class="p-2 rounded-xl bg-base-100 text-base-content border border-base-300 text-base-content/70 cursor-not-allowed" disabled>
-						<ChevronLeftIcon size="18" />
+						<ChevronLeftIcon size={18} />
 					</button>
 				{/if}
 
@@ -85,11 +86,11 @@ $: ({ content, id } = data);
 						class="p-2 rounded-xl bg-base-100 text-base-content border border-base-300 text-base-content/70 hover:text-base-content hover:border-primary/30 transition-all shrink-0 flex items-center justify-center"
 						title="ข้อถัดไป"
 					>
-						<ChevronRightIcon size="18" />
+						<ChevronRightIcon size={18} />
 					</a>
 				{:else}
 					<button class="p-2 rounded-xl bg-base-100 text-base-content border border-base-300 text-base-content/70 cursor-not-allowed" disabled>
-						<ChevronRightIcon size="18" />
+						<ChevronRightIcon size={18} />
 					</button>
 				{/if}
 			</div>

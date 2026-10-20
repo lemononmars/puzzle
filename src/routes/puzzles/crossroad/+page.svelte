@@ -1,7 +1,16 @@
 <script lang="ts">
    import crossroad from '#lib/utils/crossroad_word.json'
-   import {wordLength} from '#lib/utils/thaiwords.js'
-   import {PlayCircleIcon, ArrowDownIcon, ArrowRightIcon, RefreshCcwIcon, HelpCircleIcon, CheckSquareIcon, PlusCircleIcon, SkipForwardIcon, Maximize2Icon, Minimize2Icon} from 'svelte-feather-icons'
+   import {wordLength} from '#lib/utils/thai-text.js'
+   import PlayCircleIcon from '@lucide/svelte/icons/circle-play';
+import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
+import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
+import RefreshCcwIcon from '@lucide/svelte/icons/refresh-ccw';
+import HelpCircleIcon from '@lucide/svelte/icons/circle-help';
+import CheckSquareIcon from '@lucide/svelte/icons/square-check';
+import PlusCircleIcon from '@lucide/svelte/icons/plus-circle';
+import SkipForwardIcon from '@lucide/svelte/icons/skip-forward';
+import Maximize2Icon from '@lucide/svelte/icons/maximize-2';
+import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
    import {onMount} from 'svelte'
 
    import {fly, fade} from 'svelte/transition'
@@ -248,10 +257,10 @@
 					title={isFullscreen ? 'ออกจากเต็มจอ' : 'เต็มจอ'}
 				>
 					{#if isFullscreen}
-						<Minimize2Icon size="16" />
+						<Minimize2Icon size={16} />
 						<span class="hidden sm:inline">ออกจากเต็มจอ</span>
 					{:else}
-						<Maximize2Icon size="16" />
+						<Maximize2Icon size={16} />
 						<span class="hidden sm:inline">เต็มจอ</span>
 					{/if}
 				</button>
@@ -259,7 +268,7 @@
 					on:click={() => (openModal = true)}
 					class="btn btn-ghost btn-xs sm:btn-sm gap-1 text-base-content hover:bg-base-200"
 				>
-					<HelpCircleIcon size="16" />
+					<HelpCircleIcon size={16} />
 					<span class="hidden sm:inline">วิธีเล่น</span>
 				</button>
 			</div>

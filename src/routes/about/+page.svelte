@@ -1,5 +1,7 @@
 <script lang="ts">
-   import {FacebookIcon, MailIcon, YoutubeIcon} from 'svelte-feather-icons'
+   import FacebookIcon from '@lucide/svelte/icons/globe';
+import MailIcon from '@lucide/svelte/icons/mail';
+import YoutubeIcon from '@lucide/svelte/icons/video';
 </script>
 
 <svelte:head>

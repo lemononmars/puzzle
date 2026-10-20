@@ -1,4 +1,5 @@
 <script lang="ts">
+import UiArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 	import PageHeading from '#lib/components/ui/PageHeading.svelte';
 	import ActionLink from '#lib/components/ui/ActionLink.svelte';
 	import { portfolio } from '#lib/data/portfolio.js';
@@ -31,7 +32,7 @@
 					<span class="door-sticker bg-accent text-accent-content">{['roll an idea', 'aha!', 'one more room', 'hello, world'][i]}</span>
 				</div>
 				<p class="botanical-eyebrow mt-5">{section.eyebrow}</p>
-				<h2 class="text-xl font-bold my-3 flex justify-between gap-3">{section.title}<span aria-hidden="true">↗</span></h2>
+				<h2 class="text-xl font-bold my-3 flex justify-between gap-3">{section.title}<span aria-hidden="true"><UiArrowUpRight size={16} class="inline-block align-middle" aria-hidden="true" /></span></h2>
 				<p class="botanical-muted text-sm leading-relaxed">{section.description}</p>
 			</a>
 		{/each}

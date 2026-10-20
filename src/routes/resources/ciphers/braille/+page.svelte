@@ -1,6 +1,11 @@
 <script lang="ts">
 	import AnswerChecker from '#lib/components/AnswerChecker.svelte';
-	import { ArrowLeftIcon, RepeatIcon, CopyIcon, CheckIcon, GlobeIcon, CheckCircleIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import RepeatIcon from '@lucide/svelte/icons/repeat';
+import CopyIcon from '@lucide/svelte/icons/copy';
+import CheckIcon from '@lucide/svelte/icons/check';
+import GlobeIcon from '@lucide/svelte/icons/globe';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 
 	// Helper to convert 6-dot array to Unicode Braille pattern character
 	function dotsToUnicodeBraille(dots: number[]): string {
@@ -174,7 +179,7 @@
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/resources/ciphers" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปหน้า Cipher Library</span>
 		</a>
 	</div>
@@ -198,7 +203,7 @@
 		<div class="flex items-center justify-between flex-wrap gap-3 border-b border-base-300 pb-3">
 			<div class="flex items-center gap-2">
 				<span class="text-xs font-bold text-base-content/70 flex items-center gap-1">
-					<GlobeIcon size="14" class="text-primary" />
+					<GlobeIcon size={14} class="text-primary" />
 					<span>ภาษา (Language):</span>
 				</span>
 				<div class="join border border-base-300 bg-base-100 text-base-content rounded-xl p-0.5">
@@ -231,7 +236,7 @@
 				on:click={() => (isSwapped = !isSwapped)}
 				class="btn btn-outline btn-xs gap-1.5 font-bold border-base-300 text-base-content/70 hover:bg-base-100 text-base-content"
 			>
-				<RepeatIcon size="14" />
+				<RepeatIcon size={14} />
 				<span>{isSwapped ? 'สลับ (ถอดรหัส Braille ➔ ข้อความ)' : 'สลับ (เข้ารหัส ข้อความ ➔ Braille)'}</span>
 			</button>
 		</div>
@@ -267,10 +272,10 @@
 					class="btn btn-sm btn-ghost gap-1.5 text-base-content/70 hover:text-base-content self-end"
 				>
 					{#if isCopied}
-						<CheckIcon size="14" class="text-primary" />
+						<CheckIcon size={14} class="text-primary" />
 						<span class="text-primary font-bold">คัดลอกสำเร็จ</span>
 					{:else}
-						<CopyIcon size="14" />
+						<CopyIcon size={14} />
 						<span>คัดลอกผลลัพธ์</span>
 					{/if}
 				</button>
@@ -306,7 +311,7 @@
 
 						{#if feedback[idx] === 'correct'}
 							<div class="flex items-center gap-1 text-xs font-bold text-primary">
-								<CheckCircleIcon size="14" />
+								<CheckCircleIcon size={14} />
 								<span>ถูกต้อง!</span>
 							</div>
 						{:else if feedback[idx] === 'incorrect'}

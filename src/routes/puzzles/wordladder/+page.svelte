@@ -1,9 +1,15 @@
 <script lang="ts">
+ import {saveGame,loadGame} from "#lib/progress/local.js";
+ let progressReady=false;
 	import { onMount, afterUpdate } from 'svelte';
 	import { fade, scale, fly } from 'svelte/transition';
-	import { buildWordList, generatePuzzle, bfsPath, splitSlots, diffSlots } from '#lib/wordladder/wordladder.js';
-	import dictJson from '#lib/dict.json';
-	import { HelpCircleIcon, Maximize2Icon, Minimize2Icon } from 'svelte-feather-icons';
+	import { splitSlots, diffSlots } from '#lib/wordladder/wordladder.js';
+	import {createLadderWorker} from "#lib/workers/ladder-client.js";
+ const ladder=createLadderWorker();
+ let generation=0;
+	import HelpCircleIcon from '@lucide/svelte/icons/circle-help';
+import Maximize2Icon from '@lucide/svelte/icons/maximize-2';
+import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
 
 	let isFullscreen = false;
 	function toggleFullscreen() {
@@ -61,8 +67,9 @@
 	}
 
 	// ─── Init ─────────────────────────────────────────────────────────────────
-	async function initPuzzle(n: typeof slotSize, seed?: number) {
-		loading = true;
+	async function initPuzzle(n: typeof slotSize, seed?: number, saved?: any) {
+		const request=++generation;
+ loading = true;revealingSolution=false;
 		solved = false;
 		showHint = false;
 		showSolution = false;
@@ -74,11 +81,10 @@
 
 		await new Promise((r) => setTimeout(r, 10));
 
-		wordList = buildWordList(dictJson as string[], n);
-		wordSet = new Set(wordList);
-
-		const useSeed = seed;
-		const puzzle = generatePuzzle(wordList, 3, n === 3 ? 5 : n === 4 ? 6 : n === 5 ? 7 : 8, useSeed);
+        let result;try{result=await ladder.run({action:'puzzle',size:n,seed});}catch(error){if(request===generation){errorMsg='โหลดคำศัพท์ไม่ได้ ลองใหม่อีกครั้ง';loading=false;}return;}
+ if(request!==generation)return;
+ wordList=result.words;wordSet=new Set(wordList);
+ const puzzle=result.puzzle;
 
 		if (!puzzle) {
 			errorMsg = 'ไม่สามารถสร้างโจทย์ได้ กรุณาลองใหม่';
@@ -90,7 +96,8 @@
 		end = puzzle.end;
 		minPath = puzzle.minPath;
 		chain = [start];
-		loading = false;
+ if(saved && saved.slotSize===n && Array.isArray(saved.chain) && saved.chain.length<500 && saved.chain.every((word:unknown)=>typeof word==='string'&&wordSet.has(word as string)) && saved.chain[0]===saved.start && wordSet.has(saved.end) && Array.isArray(saved.minPath)&&saved.minPath.every((word:unknown)=>typeof word==='string'&&wordSet.has(word as string)) && saved.chain.slice(1).every((word:string,index:number)=>diffSlots(splitSlots(saved.chain[index]),splitSlots(word))===1)) {start=saved.start;end=saved.end;chain=saved.chain;minPath=saved.minPath;solved=chain.at(-1)===end;}
+ loading = false;progressReady=true;
 
 		await new Promise((r) => setTimeout(r, 50));
 		inputEl?.focus();
@@ -101,7 +108,7 @@
 		initPuzzle(slotSize, randomSeed);
 	}
 
-	onMount(() => { initPuzzle(slotSize); });
+	onMount(() => {const saved=loadGame<any>('/puzzles/wordladder');if(saved&&[3,4,5,6].includes(saved.slotSize)) {slotSize=saved.slotSize;randomSeed=saved.randomSeed;initPuzzle(slotSize,randomSeed,saved);}else initPuzzle(slotSize);return ()=>ladder.dispose();});
 
 	afterUpdate(() => {
 		if (scrollEl) scrollEl.scrollTop = scrollEl.scrollHeight;
@@ -167,34 +174,20 @@
 
 	let revealingSolution = false;
 
-	function requestHint() {
-		if (solved || loading || revealingSolution) return;
-		const currentWord = chain[chain.length - 1] || start;
-		const path = bfsPath(currentWord, end, wordList);
-		if (path && path.length > 1) {
-			const nextWord = path[1];
-			chain = [...chain, nextWord];
-			errorMsg = '';
-			if (nextWord === end) solved = true;
-		}
-	}
-
-	async function revealSolution() {
-		if (solved || loading || revealingSolution) return;
-		revealingSolution = true;
-		await new Promise((r) => setTimeout(r, 20));
-
-		const currentWord = chain[chain.length - 1] || start;
-		const path = bfsPath(currentWord, end, wordList);
-		if (path && path.length > 1) {
-			chain = [...chain, ...path.slice(1)];
-		} else if (minPath && minPath.length > 0) {
-			chain = [...minPath];
-		}
-		solved = true;
-		errorMsg = '';
-		revealingSolution = false;
-	}
+ async function requestHint() {
+ if(solved||loading||revealingSolution)return;
+ const request=generation,current=chain.at(-1)||start;revealingSolution=true;
+ try{const path=await ladder.run({action:'path',start:current,end});if(request!==generation||chain.at(-1)!==current)return;if(path?.length>1){chain=[...chain,path[1]];errorMsg='';solved=path[1]===end;}}
+ catch(error){if(request===generation&&!(error instanceof DOMException&&error.name==='AbortError'))errorMsg='ค้นหาเส้นทางไม่ได้ ลองอีกครั้ง';}
+ finally {if(request===generation)revealingSolution=false;}
+ }
+ async function revealSolution() {
+ if(solved||loading||revealingSolution)return;
+ const request=generation,current=chain.at(-1)||start;revealingSolution=true;
+ try{const path=await ladder.run({action:'path',start:current,end});if(request!==generation||chain.at(-1)!==current)return;chain=path?.length>1?[...chain,...path.slice(1)]:[...minPath];solved=true;errorMsg='';}
+ catch(error){if(request===generation&&!(error instanceof DOMException&&error.name==='AbortError'))errorMsg='ค้นหาเส้นทางไม่ได้ ลองอีกครั้ง';}
+ finally {if(request===generation)revealingSolution=false;}
+ }
 
 	function copyResult() {
 		const steps = chain.length - 1;
@@ -234,6 +227,7 @@
 		}
 		return res;
 	}
+$: if(progressReady&&!loading&&chain.length)saveGame('/puzzles/wordladder','Thai Word Ladder',{slotSize,start,end,minPath,chain,randomSeed},solved);
 </script>
 
 <svelte:window on:keydown={onKeydown} />
@@ -263,10 +257,10 @@
 					title={isFullscreen ? 'ออกจากเต็มจอ' : 'เต็มจอ'}
 				>
 					{#if isFullscreen}
-						<Minimize2Icon size="16" />
+						<Minimize2Icon size={16} />
 						<span class="hidden sm:inline">ออกจากเต็มจอ</span>
 					{:else}
-						<Maximize2Icon size="16" />
+						<Maximize2Icon size={16} />
 						<span class="hidden sm:inline">เต็มจอ</span>
 					{/if}
 				</button>

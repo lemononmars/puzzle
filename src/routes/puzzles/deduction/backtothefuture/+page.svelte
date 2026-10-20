@@ -1,6 +1,14 @@
 <script lang="ts">
+import UiArrowRight from '@lucide/svelte/icons/arrow-right';
 	import { onDestroy } from 'svelte';
-	import { ArrowLeftIcon, RotateCcwIcon, AwardIcon, CheckIcon, XIcon, PlayIcon, ChevronDownIcon, ChevronUpIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';
+import AwardIcon from '@lucide/svelte/icons/award';
+import CheckIcon from '@lucide/svelte/icons/check';
+import XIcon from '@lucide/svelte/icons/x';
+import PlayIcon from '@lucide/svelte/icons/play';
+import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 
 	// Game state
 	let turnState: 'idle' | 'animating' | 'guessing' | 'revealed' = 'idle';
@@ -142,7 +150,7 @@
 	<!-- Navigation & Reset -->
 	<div class="flex items-center justify-between">
 		<a href="/puzzles/deduction" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปหน้า Deduction Games</span>
 		</a>
 
@@ -150,7 +158,7 @@
 			on:click={resetGame}
 			class="btn btn-ghost btn-xs gap-1.5 font-bold text-primary hover:text-primary hover:bg-indigo-500/10"
 		>
-			<RotateCcwIcon size="14" />
+			<RotateCcwIcon size={14} />
 			<span>เริ่มใหม่ (Reset)</span>
 		</button>
 	</div>
@@ -187,7 +195,7 @@
 					<!-- YOU WIN Screen (replaces Hand SVG when solved) -->
 					<div class="w-full py-8 flex flex-col items-center justify-center text-center space-y-5 animate-fade-in">
 						<div class="w-20 h-20 rounded-3xl bg-indigo-500/20 text-primary flex items-center justify-center border-2 border-indigo-500/40 shadow-2xl shadow-indigo-500/20 animate-bounce">
-							<AwardIcon size="48" />
+							<AwardIcon size={48} />
 						</div>
 						<div class="space-y-2">
 							<h2 class="text-3xl font-black text-primary tracking-tight">
@@ -288,12 +296,12 @@
 								<g transform="translate(154, 120)">
 									{#if turnState === 'animating'}
 										<circle r="24" fill="var(--color-primary)" filter="url(#glow)" class="animate-bounce" />
-										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size="22" font-weight="900">1</text>
+										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size={22} font-weight="900">1</text>
 									{:else}
 										{#key currentFinger}
 											<g class="drop-anim">
 												<circle r="26" fill="var(--color-secondary)" filter="url(#glow)" class="animate-pulse" />
-												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size="26" font-weight="900">?</text>
+												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size={26} font-weight="900">?</text>
 											</g>
 										{/key}
 									{/if}
@@ -305,12 +313,12 @@
 								<g transform="translate(215, 30)">
 									{#if turnState === 'animating'}
 										<circle r="24" fill="var(--color-primary)" filter="url(#glow)" class="animate-bounce" />
-										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size="22" font-weight="900">2</text>
+										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size={22} font-weight="900">2</text>
 									{:else}
 										{#key currentFinger}
 											<g class="drop-anim">
 												<circle r="26" fill="var(--color-secondary)" filter="url(#glow)" class="animate-pulse" />
-												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size="26" font-weight="900">?</text>
+												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size={26} font-weight="900">?</text>
 											</g>
 										{/key}
 									{/if}
@@ -322,12 +330,12 @@
 								<g transform="translate(255, 0)">
 									{#if turnState === 'animating'}
 										<circle r="24" fill="var(--color-primary)" filter="url(#glow)" class="animate-bounce" />
-										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size="22" font-weight="900">3</text>
+										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size={22} font-weight="900">3</text>
 									{:else}
 										{#key currentFinger}
 											<g class="drop-anim">
 												<circle r="26" fill="var(--color-secondary)" filter="url(#glow)" class="animate-pulse" />
-												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size="26" font-weight="900">?</text>
+												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size={26} font-weight="900">?</text>
 											</g>
 										{/key}
 									{/if}
@@ -339,12 +347,12 @@
 								<g transform="translate(296, 25)">
 									{#if turnState === 'animating'}
 										<circle r="24" fill="var(--color-primary)" filter="url(#glow)" class="animate-bounce" />
-										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size="22" font-weight="900">4</text>
+										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size={22} font-weight="900">4</text>
 									{:else}
 										{#key currentFinger}
 											<g class="drop-anim">
 												<circle r="26" fill="var(--color-secondary)" filter="url(#glow)" class="animate-pulse" />
-												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size="26" font-weight="900">?</text>
+												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size={26} font-weight="900">?</text>
 											</g>
 										{/key}
 									{/if}
@@ -356,12 +364,12 @@
 								<g transform="translate(336.5, 80)">
 									{#if turnState === 'animating'}
 										<circle r="24" fill="var(--color-primary)" filter="url(#glow)" class="animate-bounce" />
-										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size="22" font-weight="900">5</text>
+										<text x="0" y="8" text-anchor="middle" fill="var(--color-primary-content)" font-size={22} font-weight="900">5</text>
 									{:else}
 										{#key currentFinger}
 											<g class="drop-anim">
 												<circle r="26" fill="var(--color-secondary)" filter="url(#glow)" class="animate-pulse" />
-												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size="26" font-weight="900">?</text>
+												<text x="0" y="9" text-anchor="middle" fill="var(--color-secondary-content)" font-size={26} font-weight="900">?</text>
 											</g>
 										{/key}
 									{/if}
@@ -379,7 +387,7 @@
 						on:click={handleStartGame}
 						class="btn bg-primary text-primary-content hover:bg-primary/90 font-black text-lg w-full h-14 rounded-2xl border-none shadow-lg shadow-indigo-500/20 transition-all duration-200 hover:scale-[1.02] gap-2 flex items-center justify-center"
 					>
-						<PlayIcon size="20" fill="currentColor" />
+						<PlayIcon size={20} fill="currentColor" />
 						<span>เริ่มเล่น</span>
 					</button>
 				{:else if turnState === 'animating'}
@@ -427,9 +435,9 @@
 										: 'bg-rose-500/20 text-error-content border border-rose-500/30'}"
 								>
 									{#if status === 'correct'}
-										<CheckIcon size="20" />
+										<CheckIcon size={20} />
 									{:else}
-										<XIcon size="20" />
+										<XIcon size={20} />
 									{/if}
 								</div>
 								<div>
@@ -452,7 +460,7 @@
 							on:click={handleNextTurn}
 							class="btn bg-primary text-primary-content hover:bg-primary/90 font-black text-base w-full h-12 rounded-2xl border-none shadow-lg shadow-indigo-500/20 transition-all duration-200 hover:scale-[1.02]"
 						>
-							ถัดไป →
+							ถัดไป <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 						</button>
 					</div>
 				{/if}
@@ -468,9 +476,9 @@
 				>
 					<span>ประวัติการตอบ ({history.length} รายการ)</span>
 					{#if showHistory}
-						<ChevronUpIcon size="14" />
+						<ChevronUpIcon size={14} />
 					{:else}
-						<ChevronDownIcon size="14" />
+						<ChevronDownIcon size={14} />
 					{/if}
 				</button>
 

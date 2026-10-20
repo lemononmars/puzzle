@@ -4,14 +4,12 @@ export let data: any;
 
 	import { onMount, onDestroy } from 'svelte';
 	import type { PlayerInfo, GameState } from '#lib/interfaces/jeopardy.js';
-	import {
-		CheckCircleIcon,
-		XCircleIcon,
-		LockIcon,
-		UnlockIcon,
-		RefreshCwIcon,
-		UserXIcon
-	} from 'svelte-feather-icons';
+	import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import LockIcon from '@lucide/svelte/icons/lock';
+import UnlockIcon from '@lucide/svelte/icons/unlock';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import UserXIcon from '@lucide/svelte/icons/user-x';
 	import { supabaseClient } from '#lib/supabase.js';
 	import CountDownBar from '#lib/components/CountDownBar.svelte';
 
@@ -306,14 +304,14 @@ $: ({ id } = data);
 				on:click={toggleLockButton}
 			>
 				{#if gameState.isLocked}
-					<LockIcon size="18" /> Locked
+					<LockIcon size={18} /> Locked
 				{:else}
-					<UnlockIcon size="18" /> Open!
+					<UnlockIcon size={18} /> Open!
 				{/if}
 			</button>
 
 			<button class="btn btn-sm btn-outline btn-warning gap-1" on:click={resetButton}>
-				<RefreshCwIcon size="18" /> Reset
+				<RefreshCwIcon size={18} /> Reset
 			</button>
 		</div>
 	</div>
@@ -359,10 +357,10 @@ $: ({ id } = data);
 			</div>
 			<div class="flex justify-center gap-4">
 				<button class="btn btn-lg btn-success gap-2 px-8" on:click={correctAnswer}>
-					<CheckCircleIcon size="28" /> Correct (+${wager || currentScore})
+					<CheckCircleIcon size={28} /> Correct (+${wager || currentScore})
 				</button>
 				<button class="btn btn-lg btn-error gap-2 px-8" on:click={wrongAnswer}>
-					<XCircleIcon size="28" /> Wrong (-${wager || currentScore})
+					<XCircleIcon size={28} /> Wrong (-${wager || currentScore})
 				</button>
 			</div>
 		</div>
@@ -373,7 +371,7 @@ $: ({ id } = data);
 		<h2 class="text-xl font-bold mb-4 flex items-center justify-between">
 			<span>Players & Scoring Sync</span>
 			<button class="btn btn-xs btn-ghost text-error-content gap-1" on:click={() => (kicking = !kicking)}>
-				<UserXIcon size="14" /> {kicking ? 'Click player to kick' : 'Kick Player'}
+				<UserXIcon size={14} /> {kicking ? 'Click player to kick' : 'Kick Player'}
 			</button>
 		</h2>
 

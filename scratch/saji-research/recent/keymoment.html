@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101214">
+  <meta name="description" content="ある時刻にだけ開く金庫。モニターに映る文字を手がかりに、扉を開けてください。">
+  <title>KEY MOMENT</title>
+  <link rel="canonical" href="https://sajiqook.jp/game/keymoment/">
+  <style>
+    :root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; background: #101214; color: #e4e6e5; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 280px; min-height: 100svh; }
+    button, input { font: inherit; }
+    button { cursor: pointer; touch-action: manipulation; }
+    button:focus-visible, input:focus-visible { outline: 2px solid #d6dce0; outline-offset: 4px; }
+    button { -webkit-tap-highlight-color: transparent; }
+    .page-header { padding: 24px 32px 0; display: flex; align-items: center; justify-content: space-between; }
+    h1 { margin: 0; font-size: 18px; letter-spacing: .14em; font-weight: 400; }
+    .intro-link { border: 0; background: none; color: #979e9f; padding: 10px; font-size: 12px; }
+    main { min-height: calc(100svh - 68px); display: flex; align-items: center; justify-content: center; padding: 0 16px 24px; }
+    .safe { position: relative; width: min(860px, calc(100vw - 32px), calc(100svh - 84px)); aspect-ratio: 1; perspective: 1600px; isolation: isolate; }
+    .safe-frame { position: absolute; inset: 0; background: url('assets/locker-shell-v3.png') center / contain no-repeat; }
+    .cavity { position: absolute; inset: 6.3% 4% 7%; container-type: inline-size; background: #060809; border: clamp(8px, 1.6cqw, 18px) solid #292f32; box-shadow: inset 14px 12px 36px #000, inset -14px -12px 20px #000, 0 0 2px #000; }
+    .cavity-back { position: absolute; inset: 12% 10% 8%; border: 1px solid #282d2f; background: linear-gradient(135deg, #15191c, #090d10); box-shadow: inset 0 0 35px #000; }
+    .shelf { position: absolute; left: 0; right: 0; height: 5%; background: #22282c; box-shadow: 0 8px 15px #000; border-top: 1px solid #454c50; transform: perspective(400px) rotateX(30deg); }
+    .shelf:first-child { top: 35%; } .shelf:last-child { top: 69%; }
+    .safe-item { position: absolute; left: 14%; bottom: 30%; width: 50%; aspect-ratio: 2; padding: 0; border: 0; background: none; }
+    .safe-item::before { content: ""; position: absolute; left: 14%; right: 14%; bottom: 6%; height: 12%; border-radius: 50%; background: #000b; filter: blur(5px); }
+    .safe-item img { position: relative; display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .18s ease; }
+    .safe-item:hover img { transform: translateY(-2px); }
+    .safe-item:active img { transform: translateY(1px); }
+    .safe-item:focus-visible { outline: 1px solid #c8cece; outline-offset: 4px; border-radius: 4px; }
+    .success-panel { position: absolute; left: 14%; top: 14%; width: 50%; display: grid; justify-items: start; gap: clamp(6px, 1.5cqw, 12px); }
+    .success-panel h2 { margin: 0; font-size: clamp(16px, 4.2cqw, 26px); font-weight: 500; line-height: 1.3; letter-spacing: .04em; color: #edf0ef; }
+    .success-panel p { margin: 0; font-size: clamp(11px, 2.65cqw, 15px); line-height: 1.65; color: #c0c8ca; }
+    .success-panel .share-action { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; padding: 7px 16px; color: #171c1f; background: #c5cbce; border: 1px solid #a1abad; border-radius: 2px; text-decoration: none; font-size: clamp(12px, 2.7cqw, 15px); }
+    .success-panel .share-action:hover { background: #e0e4e6; }
+    .success-panel .settings-note { font-size: 10px; color: #9ca7ac; }
+    .success-panel .settings-note:empty { display: none; }
+    .safe-door { position: absolute; inset: 0; transform-origin: 95.8% 50%; transform-style: preserve-3d; }
+    .safe-art { width: 100%; height: 100%; object-fit: contain; display: block; pointer-events: none; clip-path: inset(6.3% 4% 7%); backface-visibility: hidden; }
+    .door-edge { position: absolute; left: 4%; top: 6.3%; width: 3.6%; height: 86.7%; background: repeating-linear-gradient(90deg, #4b5255 0 2px, #282f33 2px 8px, #3c4549 8px 12px); transform-origin: left center; transform: rotateY(90deg); border: 1px solid #646b6e; }
+    .door-back { position: absolute; inset: 6.3% 4% 7%; background: #353d41; border: 14px solid #242c30; transform: translateZ(-22px) rotateY(180deg); backface-visibility: hidden; }
+    .lock-bolts { position: absolute; top: 20%; left: 3%; width: 3%; height: 55%; transform: translateZ(-8px); transition: translate .25s ease-in; }
+    .lock-bolts i { position: absolute; left: 0; width: 100%; height: 7%; background: #626b6f; border: 1px solid #91999d; box-shadow: 0 2px 4px #000; }
+    .lock-bolts i:first-child { top: 0; } .lock-bolts i:nth-child(2) { top: 45%; } .lock-bolts i:last-child { bottom: 0; }
+    .safe.unlocked .lock-bolts { translate: 90% 0; }
+    .safe.unlocked .safe-door { transform: rotateY(76deg); }
+    .safe.opening .safe-door { animation: heavy-open 1.95s cubic-bezier(.2,.7,.16,1) both; }
+    @keyframes heavy-open { 0%, 12% { transform: rotateY(0deg); } 22% { transform: rotateY(3deg); } 78% { transform: rotateY(69deg); } 94% { transform: rotateY(77deg); } 100% { transform: rotateY(76deg); } }
+    .monitor { --bar-size: clamp(42px, 10cqw, 52px); position: absolute; left: 18.5%; top: 21.5%; width: 62.8%; height: 51.5%; background: #101315; border: 1px solid #272c2e; border-radius: 3px; container-type: inline-size; overflow: hidden; box-shadow: inset 0 0 28px #0008; backface-visibility: hidden; }
+    .monitor::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, #ffffff02 0px, #ffffff02 1px, transparent 1px, transparent 4px); }
+    .monitor-bar { height: var(--bar-size); padding: 4px 10px; display: flex; align-items: center; justify-content: space-between; }
+    .lock-icon { width: clamp(14px, 4cqw, 24px); height: clamp(14px, 4cqw, 24px); color: #8c9496; }
+    .icon-button { width: 36px; height: 36px; flex: 0 0 36px; padding: 7px; border: 0; background: transparent; color: #aeb5b6; display: grid; place-items: center; border-radius: 3px; }
+    .icon-button:focus-visible { outline: 1px solid #d6dce0; outline-offset: -2px; }
+    .icon-button:hover { background: #ffffff0c; color: #fff; }
+    .icon-button svg { width: clamp(18px, 5cqw, 25px); height: clamp(18px, 5cqw, 25px); }
+    .game { height: calc(100% - var(--bar-size)); display: grid; justify-items: center; align-content: center; gap: 1.5cqw; padding: 0 5% 2%; }
+    .phrase { margin: 0; white-space: nowrap; letter-spacing: .1em; font-size: clamp(12px, 4.2cqw, 25px); font-weight: 400; }
+    .clock { display: flex; align-items: center; justify-content: center; position: relative; padding: 0; border: 0; background: none; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-variant-numeric: tabular-nums; font-weight: 400; font-size: clamp(34px, 14.5cqw, 94px); letter-spacing: -.025em; line-height: 1.15; margin: 0; color: #f1f3f2; }
+    .clock .colon { padding: 0 .045em; transform: translateY(-.035em); animation: clock-blink 1s steps(1,end) infinite; }
+    .clock.broken .colon { animation: none; opacity: 1; }
+    @keyframes clock-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: .15; } }
+    .slots { width: 82%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3%; }
+    .slot { aspect-ratio: 1; border: 1px solid #70787a; background: #101315; display: grid; place-items: center; color: #edeff0; font-size: clamp(18px, 9cqw, 46px); border-radius: 2px; position: relative; }
+    button.slot { padding: 0; }
+    .slot.disabled { color: transparent; border-color: #353b3e; background: #202528; }
+    .slot.disabled::after { content: ""; position: absolute; left: -21%; top: calc(50% - .5px); width: 142%; height: 1px; background: #444c50; transform: rotate(-45deg); }
+    .slot.disabled { overflow: hidden; }
+    .slot.damaged { border-color: #8c969a; background: #141b1e; box-shadow: inset 0 0 15px #9bafb817; }
+    .glass-panel { user-select: none; -webkit-user-select: none; touch-action: manipulation; }
+    .crack { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .65; fill: none; stroke: #b0c0c7; stroke-width: .65; stroke-linejoin: round; }
+    .crack-step1, .crack-step2, .crack-step3, .crack-spread { display: none; }
+    .glass-panel:not([data-hits="0"]) .crack-step1,
+    .slot[data-hits="2"] .crack-step2, .slot[data-hits="3"] .crack-step2,
+    .clock[data-hits="4"] .crack-step2, .clock[data-hits="5"] .crack-step2, .clock[data-hits="6"] .crack-step2, .clock[data-hits="7"] .crack-step2, .clock[data-hits="8"] .crack-step2, .clock[data-hits="9"] .crack-step2,
+    .slot[data-hits="3"] .crack-step3, .clock[data-hits="7"] .crack-step3, .clock[data-hits="8"] .crack-step3, .clock[data-hits="9"] .crack-step3,
+    .glass-panel.broken .crack-spread, .glass-panel.broken .crack-step1, .glass-panel.broken .crack-step2, .glass-panel.broken .crack-step3 { display: initial; }
+    .glass-panel.broken .crack { opacity: .85; }
+    .clock .crack { z-index: 1; stroke-width: .45; }
+    .glass-impact { animation: glass-impact .14s ease-out; }
+    @keyframes glass-impact { 0% { filter: brightness(1.35); } 100% { filter: brightness(1); } }
+    .slot-text { position: relative; z-index: 1; text-shadow: 0 1px 4px #000; }
+    .slot.disabled .crack { opacity: .23; }
+    .feedback-row { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 0; }
+    .retry-button { border: 0; padding: 2px 4px; background: none; color: #c9d4d9; font-size: 10px; text-decoration: underline; }
+    [hidden] { display: none !important; }
+    .instruction { color: #d0d5d6; text-align: center; margin: 0; line-height: 1.65; font-size: clamp(10px, 3cqw, 17px); letter-spacing: .015em; }
+    .confirm { border: 1px solid #b7bec0; background: #c5cbce; color: #15191b; width: 56%; min-height: 32px; padding: 2% 4%; margin: 0; border-radius: 3px; letter-spacing: .15em; font-size: clamp(12px, 3.6cqw, 20px); font-weight: 500; }
+    .confirm:hover { background: #e0e4e6; }
+    .confirm:active { transform: translateY(1px); }
+    .confirm:disabled { cursor: default; opacity: .6; }
+    .feedback { margin: 0; min-height: 1.5em; font-size: clamp(9px, 2.5cqw, 15px); color: #b5bec1; text-align: center; }
+    .reject { animation: reject .26s linear; }
+    @keyframes reject { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+    dialog { width: min(420px, calc(100vw - 32px)); padding: 30px; background: #171c1f; color: #e4e8e9; border: 1px solid #50595d; border-radius: 4px; box-shadow: 0 20px 90px #0009; }
+    dialog::backdrop { background: #050708c9; backdrop-filter: blur(3px); }
+    #settings::backdrop { backdrop-filter: none; -webkit-backdrop-filter: none; }
+    dialog h2 { margin: 0 0 22px; font-size: 19px; font-weight: 500; letter-spacing: .07em; }
+    dialog p { margin: 0 0 16px; line-height: 1.9; font-size: 14px; color: #c1c9cc; }
+    .dialog-top { display: flex; align-items: flex-start; justify-content: space-between; }
+    .dialog-close { width: 40px; height: 40px; flex: 0 0 40px; padding: 0; margin: -8px -8px 0 12px; display: grid; place-items: center; background: none; border: 0; color: #adb6bb; font-size: 23px; line-height: 1; border-radius: 3px; }
+    .dialog-close:hover { background: #ffffff0c; }
+    .dialog-action { width: 100%; margin-top: 22px; padding: 12px; border: 1px solid #b7bec0; border-radius: 2px; color: #161a1c; background: #c5cbce; font-size: 14px; }
+    .checkbox-label { display: flex; gap: 10px; align-items: center; font-size: 14px; margin-bottom: 22px; }
+    input[type=checkbox] { width: 18px; height: 18px; accent-color: #c6ccce; }
+    .time-controls { display: flex; gap: 18px; justify-content: center; align-items: center; }
+    .number-field { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+    .wheel-shell { position: relative; width: 88px; height: 180px; background: #101416; border-radius: 4px; }
+    .wheel-shell::after { content: ""; position: absolute; inset: 72px 0; border-block: 1px solid #657075; pointer-events: none; }
+    .time-wheel { height: 180px; padding-block: 72px; overflow-y: auto; overflow-x: hidden; overscroll-behavior-y: contain; scroll-snap-type: y mandatory; scrollbar-width: none; touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; border-radius: 4px; }
+    .time-wheel::-webkit-scrollbar { display: none; }
+    .time-wheel:focus-visible { outline: 2px solid #d6dce0; outline-offset: 3px; }
+    .time-wheel.dragging { cursor: grabbing; scroll-snap-type: none; }
+    .time-wheel[aria-disabled="true"] { opacity: .35; overflow-y: hidden; cursor: default; touch-action: none; }
+    .wheel-number { display: flex; height: 36px; align-items: center; justify-content: center; scroll-snap-align: center; font-size: 23px; line-height: 36px; font-variant-numeric: tabular-nums; color: #edf0f1; opacity: .18; }
+    .wheel-number.selected { font-weight: 500; }
+    input:disabled { opacity: .4; }
+    .setting-help { margin-top: 14px; font-size: 12px; color: #8e999e; }
+    .setting-error { min-height: 1.5em; margin-bottom: 0; color: #d4a7a7; font-size: 13px; }
+    .setting-error:empty { display: none; }
+    @media (max-height: 500px) {
+      #settings { padding: 16px; }
+      #settings h2 { margin-bottom: 12px; }
+      #settings .checkbox-label { margin-bottom: 12px; }
+      #settings .wheel-shell, #settings .time-wheel { height: 108px; }
+      #settings .time-wheel { padding-block: 36px; }
+      #settings .wheel-shell::after { inset: 36px 0; }
+      #settings .setting-help { margin: 8px 0; }
+      #settings .dialog-action { margin-top: 12px; padding-block: 10px; }
+    }
+    .secondary-action { border: 1px solid #586368; background: none; color: #b9c2c6; }
+    @media (max-width: 600px) {
+      .page-header { padding: 16px 18px 0; }
+      h1 { font-size: 15px; }
+      main { padding: 0 4px 20px; min-height: calc(100svh - 54px); }
+      .safe { width: min(100vw, calc(100svh - 64px)); }
+      .safe { width: min(560px, calc(100svh - 110px)); flex-shrink: 0; }
+      main { overflow: hidden; }
+      .monitor { left: 18.5%; width: 62.8%; top: 21.5%; height: 51.5%; }
+      .game { padding-inline: 5%; gap: .8cqw; }
+      .clock { font-size: 12.5cqw; line-height: 1; }
+      .slots { width: 76%; }
+      .phrase { font-size: 4.2cqw; letter-spacing: .04em; }
+      .instruction { font-size: 3.1cqw; }
+      .confirm { padding-block: 2%; }
+      dialog { padding: 24px; }
+    }
+    @media (max-height: 500px) and (min-width: 601px) {
+      .page-header { position: absolute; inset: 0 0 auto; z-index: 2; padding: 8px 22px 0; }
+      main { height: 100svh; min-height: 100svh; overflow: hidden; padding: 0; }
+      .safe { width: min(560px, calc(100svh + 100px)); flex-shrink: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+    html, body { width: 100%; height: 100%; overflow: hidden; overscroll-behavior: none; touch-action: manipulation; }
+    body { height: 100dvh; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); }
+    main { min-height: 0; overflow: hidden; padding-bottom: 12px; }
+    .safe { width: min(860px, calc(100vw - 32px), calc(100dvh - 84px)); flex-shrink: 0; }
+    .header-actions { display: flex; align-items: center; gap: 4px; }
+    dialog { max-height: calc(100dvh - 24px); overflow-y: auto; overscroll-behavior: contain; }
+    .sound-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-size: 14px; }
+    .small-button { min-height: 40px; padding: 8px 14px; border: 1px solid #586368; background: transparent; color: #d0d6d8; border-radius: 2px; }
+    .small-button[aria-pressed=true] { background: #343d42; }
+    #volume { width: 100%; accent-color: #c5cbce; margin-bottom: 22px; }
+    .settings-links { display: grid; gap: 18px; margin: 8px 0 24px; }
+    .settings-links a { color: #e3e7e8; text-decoration: none; font-size: 14px; }
+    .settings-links small { display: block; color: #a7b1b5; font-size: 11px; line-height: 1.8; margin-top: 8px; }
+    .settings-note { font-size: 11px; color: #9ca7ac; }
+    .record-grid { margin: 0 0 20px; }
+    .record-grid div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #31393d; font-size: 14px; }
+    .record-grid dd { margin: 0; font-variant-numeric: tabular-nums; }
+    a.dialog-action { display: block; text-align: center; text-decoration: none; }
+    @media (max-width: 600px) {
+      .safe { width: min(560px, calc(100dvh - 110px), calc((100vw - 24px) / .628)); }
+      .success-panel { top: 10%; gap: 6px; }
+      main { min-height: 0; padding: 0 0 12px; }
+      .header-actions { gap: 0; }
+      .intro-link { padding: 10px 8px; }
+    }
+    @media (max-height: 500px) and (min-width: 601px) {
+      .page-header { position: static; padding: 8px 22px 0; }
+      .success-panel { top: 10%; gap: 6px; }
+      main { height: auto; min-height: 0; padding: 0; }
+      .safe { width: min(560px, calc(100dvh + 100px)); }
+      .game { gap: .8cqw; }
+      .clock { font-size: 12.5cqw; line-height: 1; }
+      .slots { width: 76%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="page-header"><h1>KEY MOMENT</h1><div class="header-actions"><button class="intro-link" id="reset">リセット</button><button class="intro-link" id="preferences-button" aria-haspopup="dialog" aria-controls="preferences">設定</button></div></header>
+  <main>
+    <section class="safe" id="safe" aria-label="時刻式金庫">
+      <div class="safe-frame" aria-hidden="true"></div>
+      <div class="cavity"><div class="cavity-back" aria-hidden="true"><div class="shelf"></div><div class="shelf"></div></div>
+        <section class="success-panel" id="success" aria-labelledby="success-title" hidden>
+          <h2 id="success-title" aria-live="polite"></h2><p id="success-message"></p>
+          <a class="share-action" id="share" href="https://x.com/intent/tweet" target="_blank" rel="noopener noreferrer">Xにシェア</a>
+          <p class="settings-note" id="clear-record-status" role="status"></p>
+        </section>
+        <button class="safe-item" id="safe-item" aria-haspopup="dialog" aria-controls="item-details" hidden disabled><img id="item-image" alt=""></button>
+      </div>
+      <div class="safe-door">
+        <div class="door-back" aria-hidden="true"></div><div class="door-edge" aria-hidden="true"></div><div class="lock-bolts" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img class="safe-art" src="assets/locker-shell-v3.png" alt="壁に埋め込まれた金属製の保管庫" width="1024" height="1024" fetchpriority="high">
+        <div class="monitor" id="monitor">
+          <div class="monitor-bar">
+            <svg class="lock-icon" id="lock-icon" aria-label="施錠中" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path id="shackle" d="M7 10V7a5 5 0 0 1 10 0v3"/><rect x="4" y="10" width="16" height="12" rx="1.5"/><path d="M12 14v4"/></svg>
+            <button class="icon-button" id="settings-button" aria-label="時計の設定" aria-haspopup="dialog" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 3 .7-1h4.6l.7 3 2 1 2.5-.4 2.1 3.7-2.1 2v2.3l2.1 2-2.1 3.7-2.5-.4-2 1-.7 3H9.7L9 20l-2-1-2.5.4-2.1-3.7 2.1-2v-2.3l-2.1-2 2.1-3.7L7 6l2-1z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <div class="game">
+            <p class="phrase" aria-live="polite"></p>
+            <button class="clock glass-panel" id="clock-glass" aria-label="時刻" data-hits="0" disabled><span id="clock-hour">00</span><span class="colon" aria-hidden="true">:</span><span id="clock-minute">00</span><svg class="crack" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M98 1 93 8 96 15 88 22 M93 8 83 4"/><path class="crack-step1" d="M88 22 78 29 80 38 M96 15 99 23"/><path class="crack-step2" d="M80 38 65 47 72 61 M78 29 70 20 59 25"/><path class="crack-step3" d="M72 61 54 76 56 89 M65 47 46 44 36 56"/><path class="crack-spread" d="M56 89 48 100 M36 56 22 50 5 68 M46 44 37 23 16 12 M72 61 87 72 99 66 M54 76 37 87 20 100 M37 23 44 3"/></svg></button>
+            <div class="slots" id="slots" aria-label="生成された4つの文字"><button class="slot" type="button" disabled><span class="slot-text"></span></button><button class="slot" type="button" disabled><span class="slot-text"></span></button><button class="slot glass-panel" id="slot-glass" aria-label="3文字目" data-hits="0" disabled><svg class="crack" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M98 1 91 7 96 14 88 21 M91 7 80 4"/><path class="crack-step1" d="M88 21 73 32 77 44 M96 14 99 23"/><path class="crack-step2" d="M77 44 57 53 65 72 M73 32 54 28 49 16"/><path class="crack-step3" d="M65 72 49 85 53 100 M57 53 35 45 20 54"/><path class="crack-spread" d="M20 54 5 47 0 30 M35 45 29 21 13 8 M65 72 84 85 96 100 M49 85 30 88 18 100 M77 44 95 50 100 62"/></svg><span class="slot-text"></span></button><button class="slot" type="button" disabled><span class="slot-text"></span></button></div>
+            <p class="instruction">正解となるときに<br>確定ボタンを押そう</p>
+            <button class="confirm" id="confirm" disabled>確定</button>
+            <div class="feedback-row"><p class="feedback" id="feedback" role="status" aria-live="polite"></p><button id="connection-retry" class="retry-button" hidden>再接続</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <dialog id="intro" aria-labelledby="intro-title">
+    <div class="dialog-top"><h2 id="intro-title">時刻式の金庫</h2><button class="dialog-close" id="intro-close" aria-label="閉じる">×</button></div>
+    <p>ここにあるのは、指定した時間にのみ開けることのできる金庫です。</p>
+    <p>モニターを手がかりに、金庫の扉を開けてください。</p>
+    <p class="settings-note" id="intro-status" role="status"></p>
+    <button class="dialog-action" id="start">はじめる</button>
+  </dialog>
+  <dialog id="settings" aria-labelledby="settings-title">
+    <form id="settings-form" novalidate>
+      <div class="dialog-top"><h2 id="settings-title">時計の設定</h2><button class="dialog-close" type="button" id="settings-close" aria-label="閉じる">×</button></div>
+      <label class="checkbox-label"><input type="checkbox" id="automatic" checked>時計を自動で合わせる</label>
+      <div class="time-controls" role="group" aria-label="時刻を選ぶ">
+        <div class="number-field"><div class="wheel-shell"><div class="time-wheel" id="hour-wheel" role="spinbutton" tabindex="-1" aria-label="時" aria-valuemin="0" aria-valuemax="29" aria-valuenow="0" aria-valuetext="00時" aria-disabled="true"></div></div><span aria-hidden="true">時</span></div>
+        <div class="number-field"><div class="wheel-shell"><div class="time-wheel" id="minute-wheel" role="spinbutton" tabindex="-1" aria-label="分" aria-valuemin="0" aria-valuemax="59" aria-valuenow="0" aria-valuetext="00分" aria-disabled="true"></div></div><span aria-hidden="true">分</span></div>
+      </div>
+      <input type="hidden" id="hour-input" value="0" disabled><input type="hidden" id="minute-input" value="0" disabled>
+      <p class="setting-help">時：00〜29　分：00〜59</p>
+      <p class="setting-error" id="setting-error" role="status"></p>
+      <button class="dialog-action" type="submit">適用</button>
+    </form>
+  </dialog>
+  <dialog id="item-details" aria-labelledby="item-title">
+    <div class="dialog-top"><h2 id="item-title"></h2><button class="dialog-close" data-close="item-details" aria-label="閉じる">×</button></div>
+    <p id="item-message"></p>
+  </dialog>
+  <dialog id="preferences" aria-labelledby="preferences-title">
+    <div class="dialog-top"><h2 id="preferences-title">設定</h2><button class="dialog-close" data-close="preferences" aria-label="設定を閉じる">×</button></div>
+    <div class="sound-row"><label for="volume">SE音量 <output id="volume-value">65%</output></label><button class="small-button" id="mute" aria-pressed="false">無音</button></div>
+    <input type="range" id="volume" min="0" max="100" value="65" aria-label="SE音量">
+    <nav class="settings-links" aria-label="関連リンク"><a href="https://sajiqook.jp/game/" target="_blank" rel="noopener noreferrer">他のゲーム ↗</a><a href="https://note.com/saji_q/n/ndf67bfc443b6" target="_blank" rel="noopener noreferrer">ヒント・解説 ↗<small>すべてのWEB謎のヒントと解説を、この有料記事ひとつで楽しめます。</small></a></nav>
+    <p class="settings-note">この画面の設定、内容は謎解きとは関係ありません。</p>
+  </dialog>
+  <dialog id="records" aria-labelledby="records-title">
+    <div class="dialog-top"><h2 id="records-title">記録</h2><button class="dialog-close" data-close="records" aria-label="記録を閉じる">×</button></div>
+    <dl class="record-grid"><div><dt>総プレイ回数</dt><dd id="record-plays">—</dd></div><div><dt>青バナナでクリア</dt><dd id="record-blue-clears">—</dd></div><div><dt>青バナナクリア率</dt><dd id="record-blue-rate">—</dd></div><div><dt>黄バナナでクリア</dt><dd id="record-yellow-clears">—</dd></div><div><dt>黄バナナクリア率</dt><dd id="record-yellow-rate">—</dd></div></dl>
+    <p class="settings-note" id="record-legacy" hidden></p>
+    <p class="settings-note" id="record-status" role="status" aria-live="polite"></p>
+    <button class="small-button" id="record-retry">再読み込み</button>
+    <p class="settings-note">この画面は謎解きとは関係ありません。</p>
+  </dialog>
+  <dialog id="source-notice" aria-labelledby="source-title"><div class="dialog-top"><h2 id="source-title">KEY MOMENT</h2><button class="dialog-close" data-close="source-notice" aria-label="閉じる">×</button></div><p>金庫の仕組みは、画面で確かめてください。</p></dialog>
+  <noscript>この謎を遊ぶにはJavaScriptを有効にしてください。</noscript>
+  <script src="app.min.js?v=8" defer></script>
+</body>
+</html>
+

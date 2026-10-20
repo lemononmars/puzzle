@@ -1,15 +1,14 @@
 <script lang="ts">
+import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import { wordDatabase } from '#lib/data/puzzles/spelling/words.js';
-	import {
-		SearchIcon,
-		BookOpenIcon,
-		CheckCircleIcon,
-		XCircleIcon,
-		ChevronLeftIcon,
-		ChevronRightIcon,
-		GridIcon,
-		ListIcon
-	} from 'svelte-feather-icons';
+	import SearchIcon from '@lucide/svelte/icons/search';
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+import GridIcon from '@lucide/svelte/icons/grid-2x2';
+import ListIcon from '@lucide/svelte/icons/list';
 
 	let searchQuery = '';
 	let wordTypeFilter: 'all' | 'native' | 'loan' = 'all';
@@ -77,7 +76,7 @@
 	<nav class="w-full border-b border-base-300 mb-6 pt-2">
 		<div class="flex items-center justify-between py-2 flex-wrap gap-2">
 			<a href="/resources" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/80 hover:text-base-content">
-				← กลับไปหน้าข้อมูล
+				<UiArrowLeft size={16} class="inline-block align-middle" aria-hidden="true" /> กลับไปหน้าข้อมูล
 			</a>
 			<a
 				href="/puzzles/spellingquiz"
@@ -93,7 +92,7 @@
 		<div
 			class="botanical-card w-16 h-16 rounded-2xl bg-base-100 text-base-content text-primary flex items-center justify-center shadow-xl border border-base-300"
 		>
-			<BookOpenIcon size="28" />
+			<BookOpenIcon size={28} />
 		</div>
 		<h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">พจนานุกรมคำสะกด</h1>
 		<p class="text-sm opacity-80 max-w-2xl leading-relaxed mx-auto">
@@ -106,7 +105,7 @@
 	<div class="botanical-card bg-base-200 text-base-content p-4 md:p-6 rounded-2xl border border-base-300 shadow-xl mb-6 flex flex-col gap-4">
 		<div class="flex flex-col md:flex-row gap-3">
 			<div class="relative flex-1">
-				<SearchIcon size="18" class="absolute left-3.5 top-1/2 -translate-y-1/2 text-base-content/50" />
+				<SearchIcon size={18} class="absolute left-3.5 top-1/2 -translate-y-1/2 text-base-content/50" />
 				<input
 					type="text"
 					bind:value={searchQuery}
@@ -176,14 +175,14 @@
 				class="p-1.5 rounded transition {viewMode === 'card' ? 'bg-primary text-primary-content' : 'hover:bg-base-300'}"
 				title="มุมมองการ์ด"
 			>
-				<GridIcon size="16" />
+				<GridIcon size={16} />
 			</button>
 			<button
 				on:click={() => (viewMode = 'table')}
 				class="p-1.5 rounded transition {viewMode === 'table' ? 'bg-primary text-primary-content' : 'hover:bg-base-300'}"
 				title="มุมมองตาราง"
 			>
-				<ListIcon size="16" />
+				<ListIcon size={16} />
 			</button>
 		</div>
 	</div>
@@ -191,7 +190,7 @@
 	<!-- Words Display -->
 	{#if paginatedWords.length === 0}
 		<div class="bg-base-200 p-12 rounded-2xl border border-base-300 text-center my-6">
-			<XCircleIcon size="48" class="mx-auto text-error-content/60 mb-3" />
+			<XCircleIcon size={48} class="mx-auto text-error-content/60 mb-3" />
 			<h3 class="text-lg font-bold">ไม่พบคำศัพท์ที่ค้นหา</h3>
 			<p class="text-xs opacity-70 my-2">ลองค้นหาด้วยคำอื่น หรือกดล้างตัวกรอง</p>
 			<button on:click={clearFilters} class="btn btn-outline btn-sm mt-3">ล้างตัวกรอง</button>
@@ -203,7 +202,7 @@
 					<div>
 						<div class="flex items-center justify-between gap-2 mb-3">
 							<span class="badge badge-success text-success-content gap-1.5 font-bold text-base py-3 px-3.5">
-								<CheckCircleIcon size="16" />
+								<CheckCircleIcon size={16} />
 								{item.correct}
 							</span>
 							{#if item.isLoanWord}
@@ -213,7 +212,7 @@
 
 						<!-- Incorrect spellings with XCircleIcon instead of text -->
 						<div class="flex items-start gap-2 text-base mt-3">
-							<XCircleIcon size="18" class="text-error-content flex-shrink-0 mt-1" />
+							<XCircleIcon size={18} class="text-error-content flex-shrink-0 mt-1" />
 							<div class="flex flex-wrap gap-1.5">
 								{#each item.incorrect as wrong}
 									<span class="badge badge-error text-error-content gap-1 text-base font-mono font-medium py-2.5 px-3">
@@ -247,7 +246,7 @@
 					{#each paginatedWords as item}
 						<tr class="hover:bg-base-300/30 border-b border-base-300">
 							<td class="font-bold text-success-content flex items-center gap-1.5 text-base">
-								<CheckCircleIcon size="16" />
+								<CheckCircleIcon size={16} />
 								{item.correct}
 							</td>
 							<td>
@@ -280,7 +279,7 @@
 				on:click={() => (currentPage -= 1)}
 				class="btn btn-outline btn-sm"
 			>
-				<ChevronLeftIcon size="16" />
+				<ChevronLeftIcon size={16} />
 			</button>
 			<span class="text-xs text-base-content/70 font-mono px-3">
 				หน้า {currentPage} / {totalPages}
@@ -290,7 +289,7 @@
 				on:click={() => (currentPage += 1)}
 				class="btn btn-outline btn-sm"
 			>
-				<ChevronRightIcon size="16" />
+				<ChevronRightIcon size={16} />
 			</button>
 		</div>
 	{/if}

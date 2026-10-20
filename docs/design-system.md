@@ -21,3 +21,5 @@ Font roles: DM Sans for English, Noto Sans Thai for the interface and headers, N
 ## Motion reference
 
 Use [Takayu Studio Motion Reference](https://motion-reference.takayustudio.jp/) as the reference when creating or revising animations and interactive motion for this project. Consult relevant examples for timing, easing, transitions, and interaction behavior, then adapt them to the Botanical Playroom components and visual style. Keep controls responsive and honor `prefers-reduced-motion` with a static or reduced-motion alternative.
+
+Puzzle listing cards use `src/lib/components/ui/PuzzlePreviewCard.svelte`: a consistent image preview above the title, without arrows, eyebrows, or descriptive copy. Use the puzzle artwork as the preview; use a neutral text-puzzle cover when the puzzle is entirely text. New puzzle lists should reuse this component rather than inventing a new card layout.

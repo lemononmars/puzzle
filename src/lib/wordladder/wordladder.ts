@@ -8,7 +8,7 @@
  * Uses splitWord from thaiwords.ts for slot segmentation.
  */
 
-import { splitWord } from '#lib/utils/thaiwords.js';
+import { splitWord } from '#lib/utils/thai-text.js';
 
 /** Alias for consistency with the rest of this module. */
 export const splitSlots = splitWord;

@@ -1,0 +1,48 @@
+{
+  "id": "positional-relationships",
+  "hasExercise": false,
+  "englishTitle": "Positional Relationships",
+  "thaiTitle": "ความสัมพันธ์เชิงตำแหน่ง",
+  "japaneseTitle": "位置関係",
+  "description": "ตีความการอยู่บน ล่าง ซ้าย ขวา ใน นอก หรือการซ้อนทับเป็นคำหรือคำสั่ง",
+  "chapter": {
+    "id": "visuals",
+    "hasExercise": false,
+    "englishTitle": "Shapes and Illustrations",
+    "thaiTitle": "รูปทรงและภาพประกอบ",
+    "japaneseTitle": "図形／イラスト",
+    "accent": "badge-info"
+  },
+  "detailedDescription": "กลไก **Positional Relationships** (ญี่ปุ่น: *位置関係*) เป็นเทคนิคสำคัญในหมวดหมู่ **รูปทรงและภาพประกอบ** (*Shapes and Illustrations*) มีสาระสำคัญคือ: ตีความการอยู่บน ล่าง ซ้าย ขวา ใน นอก หรือการซ้อนทับเป็นคำหรือคำสั่ง กลไกนี้ถูกใช้อย่างกว้างขวางในการออกแบบปริศนา *Nazotoki (謎解き)*, *Puzzle Hunt*, และ *Escape Room (リアル脱出ゲーム)* เพื่อท้าทายการคิดวิเคราะห์อย่างเป็นระบบและการเชื่อมโยงข้อมูลหลายมิติ",
+  "solvingTechnique": "1. วิเคราะห์จุดประสงค์หลัก: สังเกตความสัมพันธ์และเงื่อนไขเฉพาะของ **ความสัมพันธ์เชิงตำแหน่ง**\n2. แยกองค์ประกอบที่ไม่จำเป็นออก แล้วโฟกัสที่จุดสังเกตตามกฎของโจทย์\n3. ทวนสอบผลลัพธ์ที่ได้ว่าสอดคล้องกับบริบทและคำใบ้ทั้งหมด",
+  "technicalTerms": [
+    {
+      "en": "Positional Relationships",
+      "ja": "位置関係",
+      "th": "ความสัมพันธ์เชิงตำแหน่ง"
+    },
+    {
+      "en": "Mechanic",
+      "ja": "ギミック / 仕組み",
+      "th": "กลไกการไขปริศนา"
+    },
+    {
+      "en": "Deduction",
+      "ja": "推理 / 思考",
+      "th": "การอนุมานหาข้อสรุป"
+    }
+  ],
+  "puzzle": {
+    "title": "โจทย์ทดลอง: ไขรหัส ความสัมพันธ์เชิงตำแหน่ง",
+    "prompt": "พิจารณาแผนภาพกลไก ความสัมพันธ์เชิงตำแหน่ง (Positional Relationships) ด้านล่าง แล้วถอดรหัสคำตอบที่ถูกต้อง",
+    "hint": "สังเกตตัวอักษรและสัญลักษณ์ที่เน้นสีฟ้าภายในแผนภาพ",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-base-300)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"38\" fill=\"var(--color-base-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Positional Relationships Diagram</text>\n\n  <g transform=\"translate(90, 65)\">\n    <rect x=\"0\" y=\"0\" width=\"340\" height=\"85\" rx=\"12\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"2\"/>\n    <text x=\"170\" y=\"32\" fill=\"var(--color-base-content)\" font-size=\"14\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">ความสัมพันธ์เชิงตำแหน่ง</text>\n    <text x=\"170\" y=\"65\" fill=\"var(--color-primary)\" font-size=\"26\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\" letter-spacing=\"8\">POSI</text>\n  </g>\n  <text x=\"260\" y=\"185\" fill=\"var(--color-base-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">ถอดรหัสคำจากแผนภาพด้านบน</text>\n</svg>",
+    "solutionSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"38\" fill=\"var(--color-success-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Solved: POSI</text>\n\n  <g transform=\"translate(90, 65)\">\n    <rect x=\"0\" y=\"0\" width=\"340\" height=\"85\" rx=\"12\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"3\"/>\n    <text x=\"170\" y=\"32\" fill=\"var(--color-success-content)\" font-size=\"14\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">คำตอบที่ถูกต้อง</text>\n    <text x=\"170\" y=\"65\" fill=\"var(--color-success-content)\" font-size=\"28\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\" letter-spacing=\"8\">POSI</text>\n  </g>\n  <text x=\"260\" y=\"185\" fill=\"var(--color-success-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">ตรวจคำตอบสำเร็จ</text>\n</svg>",
+    "acceptedAnswers": [
+      "POSI",
+      "posi"
+    ],
+    "answerDisplay": "POSI",
+    "solutionExplanation": "วิเคราะห์ตามกลไก **Positional Relationships** (*ความสัมพันธ์เชิงตำแหน่ง*):\nเมื่อทำตามเงื่อนไขที่กำหนดในโจทย์ จะได้คำตอบสุดท้ายคือ **POSI**"
+  }
+}

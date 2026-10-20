@@ -1,6 +1,6 @@
 <script lang="ts">
 	import TheChaseGame from '#lib/components/TheChaseGame.svelte';
-	import { ArrowLeftIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
 </script>
 
 <svelte:head>
@@ -19,7 +19,7 @@
 					class="btn btn-xs sm:btn-sm btn-ghost gap-1 text-base-content/70 hover:text-base-content px-1.5"
 					title="กลับหน้า Puzzles"
 				>
-					<ArrowLeftIcon size="14" />
+					<ArrowLeftIcon size={14} />
 					<span class="hidden sm:inline text-xs">Puzzles</span>
 				</a>
 				<div class="h-4 w-px bg-base-100 text-base-content"></div>

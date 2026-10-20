@@ -1,4 +1,5 @@
 <script lang="ts">
+import UiArrowRight from '@lucide/svelte/icons/arrow-right';
 	export let url: string = '';
 	export let title: string;
 	export let description: string;
@@ -90,7 +91,7 @@
 				</div>
 				<div class="flex items-center text-xs font-semibold text-primary group-hover:text-primary">
 					<span>ดูรายละเอียด</span>
-					<span class="ml-1 transform group-hover:translate-x-1 transition-transform">→</span>
+					<span class="ml-1 transform group-hover:translate-x-1 transition-transform"><UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" /></span>
 				</div>
 			</div>
 		</div>

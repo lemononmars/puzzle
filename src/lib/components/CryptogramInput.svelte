@@ -1,5 +1,8 @@
 <script lang=ts>
-   import {splitWord, isUpper, isLower, isTall, isMiddle} from '#lib/utils/thaiwords.js'
+ import {saveGame,loadGame,fingerprint} from "#lib/progress/local.js";
+ let progressReady=false;
+ let progressPath="";
+   import {splitWord, isUpper, isLower, isTall, isMiddle} from '#lib/utils/thai-text.js'
    import { createEventDispatcher, onMount } from 'svelte';
 
 	const dispatch = createEventDispatcher();
@@ -8,7 +11,11 @@
 	}
 
    onMount(()=>{
-      setActiveLetters(0)
+      progressPath=window.location.pathname;
+      const saved=loadGame<any>(progressPath);
+      if(saved?.fingerprint===fingerprint(word)&&Array.isArray(saved.inputLetters)&&saved.inputLetters.length===inputLetters.length&&saved.inputLetters.every((letter:unknown)=>typeof letter==='string'&&letter.length<=5))inputLetters=saved.inputLetters;
+      usedPoolLetters=poolString.split("").map(letter=>inputLetters.includes(letter));
+ setActiveLetters(0);progressReady=true
    })
 
    export let word: string = "ว่าง"
@@ -142,6 +149,7 @@
       if(showUsedLetters && input !== '' && !poolString.includes(event.key)) return // prevent users from inputing weird letter
       inputLetter(input)
    }
+$: if(progressReady&&progressPath.startsWith('/puzzles/'))saveGame(progressPath,'Cryptogram',{fingerprint:fingerprint(word),inputLetters},inputLetters.join('')===word);
 </script>
 
 <svelte:window on:keydown={handleKeyPress}/>

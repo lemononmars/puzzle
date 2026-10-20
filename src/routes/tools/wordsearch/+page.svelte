@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { splitWord } from '#lib/utils/thaiwords.js';
-	import { SaveIcon, LinkIcon, EyeIcon } from 'svelte-feather-icons';
+	import { splitWord } from '#lib/utils/thai-text.js';
+	import SaveIcon from '@lucide/svelte/icons/save';
+import LinkIcon from '@lucide/svelte/icons/link';
+import EyeIcon from '@lucide/svelte/icons/eye';
 
 	let title = '';
 	let author = '';
@@ -268,15 +270,12 @@
 		name="description"
 		content="Create and play custom Word Search puzzles with support for Thai letters. Features difficulty levels and automatic grid generation."
 	/>
-	<meta property="og:title" content="Word Search Builder" />
-	<meta
-		property="og:description"
-		content="Create and play custom Word Search puzzles with support for Thai letters. Features difficulty levels and automatic grid generation."
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="/og-wordsearch-builder.png" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="/og-wordsearch-builder.png" />
+
+
+
+
+
+
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-8">
@@ -450,7 +449,7 @@
 							</div>
 							<a href={savedLink} target="_blank" class="btn btn-success btn-sm">เปิดเล่น</a>
 							<button class="btn btn-outline btn-sm" on:click={copyLink}>
-								<LinkIcon size="16" class="mr-1" /> คัดลอกลิงก์
+								<LinkIcon size={16} class="mr-1" /> คัดลอกลิงก์
 							</button>
 						</div>
 					{/if}

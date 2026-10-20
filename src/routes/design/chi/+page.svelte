@@ -1,4 +1,5 @@
 <script lang="ts">
+import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
  import PageHeading from '#lib/components/ui/PageHeading.svelte';
  const designs = [
   {file:'chi-01',title:'Maze Chi',group:'directions',description:'Paths carved into chi: search, wrong turns and discovery.'},
@@ -20,7 +21,7 @@
 </script>
 <svelte:head><title>Chi symbol sketchbook · Puzzle</title><meta name="description" content="Eleven chi symbol explorations: maze, cipher, woven chi, cube, square, infinity and a key. Browse the design sketchbook and download the SVGs." /></svelte:head>
 <div class="text-left">
- <a href="/portfolio" class="link link-primary text-sm">← Portfolio</a>
+ <a href="/portfolio" class="link link-primary text-sm"><UiArrowLeft size={16} class="inline-block align-middle" aria-hidden="true" /> Portfolio</a>
  <div class="mt-5"><PageHeading title="Chi symbol sketchbook" eyebrow="DESIGN / FROM A CROSSING TO A CLUE" description="χ / X เป็นจุดเริ่มต้นของการทดลองเหล่านี้ สำรวจทุกแนวทาง ตั้งแต่เขาวงกตไปจนถึงกุญแจ" /></div>
  <div class="controls"><div class="flex flex-wrap gap-2" aria-label="กลุ่มแบบสัญลักษณ์">{#each filters as option}<button class={`btn btn-sm ${filter===option.id?'btn-primary text-primary-content':'btn-outline'}`} aria-pressed={filter===option.id} onclick={()=>filter=option.id}>{option.label}</button>{/each}</div><div class="flex gap-2" aria-label="พื้นหลังตัวอย่าง"><button class="btn btn-sm btn-ghost" aria-pressed={background==='paper'} onclick={()=>background='paper'}>Paper</button><button class="btn btn-sm btn-ghost" aria-pressed={background==='moss'} onclick={()=>background='moss'}>Moss</button></div></div>
  <p class="botanical-muted text-xs mb-5" aria-live="polite">{shown.length} / {designs.length} designs · Vector sketches, ready to compare</p>

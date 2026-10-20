@@ -12,6 +12,7 @@ export default defineConfig({
     },
     environments: { client: { resolve: { conditions: ['browser'] } } },
     test: {
+        maxWorkers: 2,
         include: ['src/**/*.{test,spec}.{js,ts}'],
         setupFiles: ['./vitest.setup.ts']
     }

@@ -1,14 +1,12 @@
 <script lang="ts">
 	import Head from '#lib/components/Head.svelte';
-	import {
-		MessageSquareIcon,
-		ExternalLinkIcon,
-		CopyIcon,
-		CheckCircleIcon,
-		ChevronLeftIcon,
-		PackageIcon,
-		BookOpenIcon
-	} from 'svelte-feather-icons';
+	import MessageSquareIcon from '@lucide/svelte/icons/message-square';
+import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
+import CopyIcon from '@lucide/svelte/icons/copy';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+import PackageIcon from '@lucide/svelte/icons/package';
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
 
 	const product = {
 		title: 'Rebus Puzzle Book',
@@ -48,7 +46,7 @@
 	<!-- Breadcrumbs -->
 	<nav class="flex items-center gap-2 text-xs sm:text-sm text-base-content/70 mb-6">
 		<a href="/shop" class="flex items-center gap-1 hover:text-primary transition-colors">
-			<ChevronLeftIcon size="14" />
+			<ChevronLeftIcon size={14} />
 			<span>กลับไปหน้าร้านค้า (Shop)</span>
 		</a>
 		<span>/</span>
@@ -81,7 +79,7 @@
 			<!-- Product Details & Description -->
 			<div class="botanical-card p-6 rounded-2xl bg-base-100 text-base-content border border-base-300 text-left space-y-4">
 				<h2 class="text-lg font-bold text-base-content flex items-center gap-2">
-					<BookOpenIcon size="18" class="text-primary" />
+					<BookOpenIcon size={18} class="text-primary" />
 					<span>รายละเอียดสินค้า</span>
 				</h2>
 				<p class="text-sm text-base-content/70 leading-relaxed">
@@ -151,9 +149,9 @@
 						rel="noreferrer"
 						class="btn btn-primary text-primary-content btn-block gap-2 font-semibold text-sm shadow-xl shadow-teal-500/20 hover:scale-[1.01] transition-transform"
 					>
-						<MessageSquareIcon size="17" />
+						<MessageSquareIcon size={17} />
 						<span>สั่งซื้อผ่าน Facebook Inbox</span>
-						<ExternalLinkIcon size="14" />
+						<ExternalLinkIcon size={14} />
 					</a>
 
 					<!-- Fast-Track Message Copier -->
@@ -162,7 +160,7 @@
 							<span class="text-base-content/70 font-medium">ข้อความสั่งซื้อด่วน (กดคัดลอกได้ทันที):</span>
 							{#if copied}
 								<span class="text-primary font-bold flex items-center gap-1 text-[11px]">
-									<CheckCircleIcon size="13" />
+									<CheckCircleIcon size={13} />
 									<span>คัดลอกแล้ว!</span>
 								</span>
 							{/if}
@@ -180,7 +178,7 @@
 								class="btn btn-sm btn-outline btn-accent text-accent-content shrink-0 gap-1 text-xs"
 								title="กดเพื่อคัดลอกข้อความ"
 							>
-								<CopyIcon size="13" />
+								<CopyIcon size={13} />
 								<span>คัดลอก</span>
 							</button>
 						</div>
@@ -190,7 +188,7 @@
 				<!-- 3-Step Buying Guide -->
 				<div class="pt-4 border-t border-base-300 space-y-3">
 					<h3 class="text-xs font-bold uppercase tracking-wider text-base-content/70 flex items-center gap-1.5">
-						<PackageIcon size="14" class="text-primary" />
+						<PackageIcon size={14} class="text-primary" />
 						<span>ขั้นตอนการสั่งซื้อ</span>
 					</h3>
 					<div class="space-y-2 text-xs text-base-content/70">

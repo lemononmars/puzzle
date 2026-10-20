@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { ArrowLeftIcon, ZapIcon, AwardIcon } from 'svelte-feather-icons';
+import UiArrowRight from '@lucide/svelte/icons/arrow-right';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import ZapIcon from '@lucide/svelte/icons/zap';
+import AwardIcon from '@lucide/svelte/icons/award';
 </script>
 
 <svelte:head>
@@ -14,7 +17,7 @@
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/puzzles" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปหน้า Puzzles</span>
 		</a>
 	</div>
@@ -22,7 +25,7 @@
 	<!-- Header -->
 	<header class="text-center max-w-2xl mx-auto space-y-3">
 		<div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-secondary flex items-center justify-center border border-purple-500/20 mx-auto shadow-lg shadow-purple-500/5">
-			<ZapIcon size="32" />
+			<ZapIcon size={32} />
 		</div>
 		<h1 class="text-3xl lg:text-5xl font-black tracking-tight text-primary">
 			Deduction Games
@@ -41,7 +44,7 @@
 		>
 			<div class="space-y-4">
 				<div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-error-content flex items-center justify-center border border-rose-500/20 shadow-md">
-					<AwardIcon size="24" />
+					<AwardIcon size={24} />
 				</div>
 				<div class="space-y-1">
 					<span class="badge bg-rose-500/20 text-error-content border border-rose-500/40 text-xs px-2.5 py-0.5 font-bold rounded-lg">
@@ -56,7 +59,7 @@
 				</div>
 			</div>
 			<div class="btn btn-rose btn-sm bg-primary hover:bg-primary/90 text-primary-content font-bold rounded-xl border-none w-full shadow-lg">
-				เล่นเลย →
+				เล่นเลย <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 			</div>
 		</a>
 
@@ -67,7 +70,7 @@
 		>
 			<div class="space-y-4">
 				<div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-primary flex items-center justify-center border border-indigo-500/20 shadow-md">
-					<ZapIcon size="24" />
+					<ZapIcon size={24} />
 				</div>
 				<div class="space-y-1">
 					<span class="badge bg-indigo-500/20 text-primary border border-indigo-500/40 text-xs px-2.5 py-0.5 font-bold rounded-lg">
@@ -82,7 +85,7 @@
 				</div>
 			</div>
 			<div class="btn btn-indigo btn-sm bg-primary hover:bg-primary/90 text-primary-content font-bold rounded-xl border-none w-full shadow-lg">
-				เล่นเลย →
+				เล่นเลย <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 			</div>
 		</a>
 
@@ -93,7 +96,7 @@
 		>
 			<div class="space-y-4">
 				<div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-primary flex items-center justify-center border border-primary/30 shadow-md">
-					<ZapIcon size="24" />
+					<ZapIcon size={24} />
 				</div>
 				<div class="space-y-1">
 					<span class="badge bg-cyan-500/20 text-primary border border-primary/30 text-xs px-2.5 py-0.5 font-bold rounded-lg">
@@ -108,7 +111,7 @@
 				</div>
 			</div>
 			<div class="btn btn-cyan btn-sm bg-cyan-500 hover:bg-cyan-400 text-base-content/70 font-bold rounded-xl border-none w-full shadow-lg">
-				เล่นเลย →
+				เล่นเลย <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 			</div>
 		</a>
 
@@ -119,7 +122,7 @@
 		>
 			<div class="space-y-4">
 				<div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-warning-content flex items-center justify-center border border-amber-500/20 shadow-md">
-					<ZapIcon size="24" />
+					<ZapIcon size={24} />
 				</div>
 				<div class="space-y-1">
 					<span class="badge bg-amber-500/20 text-warning-content border border-amber-500/40 text-xs px-2.5 py-0.5 font-bold rounded-lg">
@@ -134,7 +137,7 @@
 				</div>
 			</div>
 			<div class="btn btn-amber btn-sm bg-primary hover:bg-primary/90 text-primary-content font-bold rounded-xl border-none w-full shadow-lg">
-				เล่นเลย →
+				เล่นเลย <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 			</div>
 		</a>
 	</div>

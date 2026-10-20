@@ -1,0 +1,1093 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>色を増やし驚きを見つけよう！</title>
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="色を増やし驚きを見つけよう！">
+  <meta name="twitter:card" content="summary">
+  <script src="../game-settings.js?v=202609222218" data-host=".language" defer></script>
+  <script src="../game-analytics.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap">
+  <style>
+    :root {
+      --active-color: #8c55c7;
+      --active-rgb: 140, 85, 199;
+      --ink: #181818;
+      --muted: #777;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      overflow-x: hidden;
+      overflow-x: clip;
+      /* スマホでのダブルタップ拡大を無効化（ピンチ操作での拡大は残す） */
+      touch-action: manipulation;
+    }
+
+    body {
+      min-height: 100dvh;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      color: var(--ink);
+      background: #fff;
+      font-family: Jost, "游ゴシック体", YuGothic, "Yu Gothic Medium", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .game {
+      position: relative;
+      display: grid;
+      min-height: 100svh;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      overflow-x: clip;
+      grid-template-rows: auto 1fr;
+      isolation: isolate;
+    }
+
+    .topbar {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(110px, 1fr) minmax(220px, 2fr) minmax(135px, 1fr);
+      align-items: start;
+      gap: 18px;
+      padding: 24px clamp(18px, 4vw, 54px) 0;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .palette {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 10px;
+      min-height: 42px;
+      min-width: 0;
+    }
+
+    .color-dot {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      outline: 0;
+      background: var(--dot-color);
+      cursor: pointer;
+      transition: transform 140ms ease;
+    }
+
+    .color-dot:hover {
+      transform: translateY(-1px);
+    }
+
+    .color-dot.is-active {
+      outline: 2px solid #aaa;
+      outline-offset: 3px;
+    }
+
+    .color-dot:focus-visible,
+    .bang-dot:focus-visible,
+    .lang-button:focus-visible,
+    .letter-button:focus-visible,
+    .enter-button:focus-visible,
+    .edit-button:focus-visible,
+    .share-button:focus-visible,
+    .close-button:focus-visible,
+    .record-close:focus-visible {
+      outline: 2px solid #111;
+      outline-offset: 3px;
+    }
+
+    .title {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      margin: 0;
+      color: #ff4d58;
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      line-height: 1.28;
+      text-align: center;
+    }
+
+    .bang {
+      position: relative;
+      display: inline-block;
+      flex: 0 0 0.34em;
+      width: 0.34em;
+      height: 1em;
+      margin-left: 0.03em;
+      color: inherit;
+      transform: translateY(0.06em);
+    }
+
+    .bang-stem {
+      position: absolute;
+      top: 0.05em;
+      left: 50%;
+      width: 0.12em;
+      height: 0.58em;
+      border-radius: 0;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    .bang-dot {
+      position: absolute;
+      bottom: 0.06em;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      min-width: 0;
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      outline: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      color: #ff4d58;
+      background: #ff4d58;
+      font-size: 0;
+      line-height: 0;
+      cursor: pointer;
+      transform: translateX(-50%);
+      transition: outline-color 140ms ease;
+    }
+
+    .bang-dot.is-active {
+      outline: 1px solid #aaa;
+      outline-offset: 1px;
+    }
+
+    .language {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 2px;
+      min-height: 30px;
+      padding-top: 1px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .language .sq-settings-trigger.sq-settings-trigger--embedded {
+      margin-left: 8px;
+    }
+
+    .lang-button {
+      padding: 3px 4px;
+      border: 0;
+      border-radius: 4px;
+      color: #777;
+      background: transparent;
+      font-size: 12px;
+      cursor: pointer;
+      transition: color 160ms ease, background 160ms ease;
+    }
+
+    .lang-button.is-active {
+      color: #111;
+      background: #eee;
+    }
+
+    .language-divider {
+      color: #aaa;
+    }
+
+    .play-area {
+      display: grid;
+      place-items: center;
+      min-height: 0;
+      min-width: 0;
+      max-width: 100%;
+      padding: 50px 20px 70px;
+    }
+
+    .console {
+      width: min(560px, 100%);
+      min-width: 0;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .input-trail {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 24px;
+      margin-bottom: 20px;
+    }
+
+    .trail-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #222;
+      animation: trail-in 180ms ease both;
+    }
+
+    .button-stage {
+      display: grid;
+      min-height: 94px;
+      min-width: 0;
+      max-width: 100%;
+      place-items: center;
+    }
+
+    .letter-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(12px, 3vw, 20px);
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .letter-button {
+      width: clamp(50px, 17vw, 76px);
+      aspect-ratio: 1;
+      padding: 0;
+      border: 2px solid #111;
+      border-radius: 50%;
+      color: transparent;
+      background: #fff;
+      cursor: pointer;
+      transform-origin: center;
+      transition: transform 110ms ease, background 140ms ease;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .letter-button:hover {
+      background: #f5f5f5;
+      transform: translateY(-3px);
+    }
+
+    .letter-button:active,
+    .letter-button.is-pressed {
+      background: #e9e9e9;
+      transform: scale(0.91);
+    }
+
+    .letter-button:disabled {
+      border-color: #aaa;
+      background: #d9d9d9;
+      cursor: default;
+      animation: none;
+      opacity: 1;
+    }
+
+    .letter-button:disabled:hover {
+      background: #d9d9d9;
+      transform: none;
+    }
+
+    .enter-button {
+      width: min(386px, calc(100% - 24px));
+      height: 57px;
+      margin-top: 22px;
+      border: 2px solid #111;
+      border-radius: 29px;
+      color: #111;
+      background: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-indent: 0.25em;
+      cursor: pointer;
+      transition: transform 120ms ease, background 140ms ease;
+    }
+
+    .enter-button:hover {
+      background: #f1f1f1;
+    }
+
+    .enter-button:active {
+      transform: translateY(2px);
+    }
+
+    .edit-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .edit-button {
+      min-width: 96px;
+      height: 34px;
+      padding: 0 14px;
+      border: 1px solid #777;
+      border-radius: 18px;
+      color: #333;
+      background: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .edit-button:hover:not(:disabled) {
+      background: #f1f1f1;
+    }
+
+    .edit-button:disabled {
+      border-color: #ccc;
+      color: #aaa;
+      background: #f3f3f3;
+      cursor: default;
+    }
+
+    .message {
+      min-height: 26px;
+      margin: 17px 0 0;
+      color: #555;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+    }
+
+    .console.shake {
+      animation: shake 300ms ease;
+    }
+
+    .clear-dialog {
+      width: min(620px, calc(100% - 28px));
+      max-height: calc(100svh - 28px);
+      margin: auto;
+      padding: 0;
+      overflow: auto;
+      border: 2px solid #111;
+      border-radius: 12px;
+      outline: 0;
+      color: #111;
+      background: #fff;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+    }
+
+    .clear-dialog[open] {
+      animation: modal-in 520ms cubic-bezier(0.2, 0.82, 0.3, 1.08);
+    }
+
+    .clear-dialog::backdrop {
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .clear-content {
+      position: relative;
+      padding: 42px clamp(22px, 6vw, 42px) 34px;
+      text-align: center;
+    }
+
+    .clear-title {
+      margin: 0;
+      color: #111;
+      font-size: clamp(24px, 5vw, 34px);
+      letter-spacing: 0.14em;
+      text-indent: 0.14em;
+    }
+
+    .clear-copy {
+      margin: 14px 0 25px;
+      color: #222;
+      font-size: clamp(17px, 3.8vw, 21px);
+      line-height: 1.7;
+    }
+
+    .share-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 190px;
+      height: 48px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 24px;
+      color: #fff;
+      background: #08090d;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .share-x {
+      font-size: 19px;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      padding: 0;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.72);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .record-dialog {
+      width: min(340px, calc(100% - 28px));
+      max-height: calc(100svh - 28px);
+      margin: auto;
+      padding: 30px 24px 24px;
+      overflow: auto;
+      border: 2px solid #111;
+      border-radius: 12px;
+      outline: 0;
+      color: #111;
+      background: #fff;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+      font: inherit;
+      text-align: center;
+    }
+
+    .record-dialog[open] {
+      animation: modal-in 520ms cubic-bezier(0.2, 0.82, 0.3, 1.08);
+    }
+
+    .record-dialog::backdrop {
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .record-title {
+      margin: 0 0 18px;
+      font-size: 20px;
+      letter-spacing: 0.14em;
+      text-indent: 0.14em;
+    }
+
+    .record-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 0 0 16px;
+    }
+
+    .record-item {
+      padding: 12px 6px 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .record-label {
+      display: block;
+      color: #777;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .record-number {
+      display: block;
+      margin-top: 4px;
+      color: #111;
+      font-size: 28px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .record-note {
+      margin: 0;
+      color: #555;
+      font-size: 13px;
+    }
+
+    .record-scope {
+      margin: 6px 0 0;
+      color: #999;
+      font-size: 11px;
+    }
+
+    .record-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      padding: 0;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      color: #666;
+      background: #fff;
+      font-size: 17px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @keyframes trail-in {
+      from { opacity: 0; transform: scale(0); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-7px); }
+      55% { transform: translateX(6px); }
+      80% { transform: translateX(-3px); }
+    }
+
+    @keyframes modal-in {
+      from { opacity: 0; transform: translateY(18px) scale(0.92); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 680px) {
+      .topbar {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px 10px;
+        padding-top: max(18px, env(safe-area-inset-top));
+        padding-right: max(18px, env(safe-area-inset-right));
+        padding-left: max(18px, env(safe-area-inset-left));
+      }
+
+      .title {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding: 0 10px;
+      }
+
+      .palette {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .language {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .play-area {
+        padding: 25px max(14px, env(safe-area-inset-right)) max(54px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+      }
+    }
+
+    @media (max-width: 390px) {
+      .topbar {
+        padding-inline: 14px;
+      }
+
+      .color-dot {
+        width: 26px;
+        height: 26px;
+      }
+
+      .bang-dot {
+        width: 3px;
+        height: 3px;
+      }
+
+      .letter-row {
+        gap: 8px;
+      }
+
+      .enter-button {
+        height: 52px;
+        margin-top: 18px;
+      }
+
+      .clear-content {
+        padding: 22px 18px 28px;
+      }
+    }
+
+    @media (max-width: 340px) {
+      .title {
+        font-size: 22px;
+      }
+
+      .topbar {
+        gap: 16px 8px;
+        padding-inline: 10px;
+      }
+
+      .play-area {
+        padding-top: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="game" id="game">
+    <header class="topbar">
+      <div class="palette" id="palette" aria-label="見つけた色"></div>
+
+      <h1 class="title">
+        <span>色を増やし驚きを見つけよう</span>
+        <span class="bang">
+          <span class="bang-stem" aria-hidden="true"></span>
+          <button class="bang-dot" id="redDot" type="button" aria-label="タイトルの赤い丸"></button>
+        </span>
+      </h1>
+
+      <div class="language" aria-label="言語">
+        <button class="lang-button is-active" type="button" data-lang="jp" aria-pressed="true">日本語</button>
+        <span class="language-divider" aria-hidden="true">/</span>
+        <button class="lang-button" type="button" data-lang="en" aria-pressed="false">英語</button>
+      </div>
+    </header>
+
+    <section class="play-area" aria-label="色の謎">
+      <div class="console" id="console">
+        <div class="input-trail" id="inputTrail" aria-label="入力した文字数"></div>
+        <div class="button-stage">
+          <div class="letter-row" id="letterRow"></div>
+        </div>
+        <button class="enter-button" id="enterButton" type="button">ENTER</button>
+        <div class="edit-actions" aria-label="入力の修正">
+          <button class="edit-button" id="undoButton" type="button">一文字消す</button>
+          <button class="edit-button" id="clearButton" type="button">クリア</button>
+        </div>
+        <p class="message" id="message" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="clear-dialog" id="clearDialog" aria-labelledby="clearTitle">
+    <button class="close-button" id="closeButton" type="button" aria-label="閉じる">×</button>
+    <div class="clear-content">
+      <h2 class="clear-title" id="clearTitle"></h2>
+      <p class="clear-copy" id="clearCopy"></p>
+      <button class="share-button" id="shareButton" type="button">
+        <span class="share-x" aria-hidden="true">𝕏</span>
+        <span>Xへシェア</span>
+      </button>
+    </div>
+  </dialog>
+
+  <dialog class="record-dialog" id="recordDialog" aria-labelledby="recordTitle">
+    <button class="record-close" id="recordClose" type="button" aria-label="閉じる">×</button>
+    <h2 class="record-title" id="recordTitle">きろく</h2>
+    <div class="record-grid">
+      <div class="record-item">
+        <span class="record-label">総プレイ回数</span>
+        <strong class="record-number" id="playCount">—</strong>
+      </div>
+      <div class="record-item">
+        <span class="record-label">総クリア人数</span>
+        <strong class="record-number" id="clearCount">—</strong>
+      </div>
+    </div>
+    <p class="record-note">この画面は謎解きと関係ありません</p>
+    <p class="record-scope">公開ページ全体の記録です</p>
+  </dialog>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const unpack = (encoded) => new TextDecoder().decode(
+        Uint8Array.from(atob(encoded), (character) => character.charCodeAt(0))
+      );
+
+      const COLORS = {
+        red:    { jp: unpack("44GC44GL"),         en: unpack("44KM44Gj44Gp"),     color: "#ef3c48", rgb: "239, 60, 72" },
+        orange: { jp: unpack("44Gg44GE44Gg44GE"), en: unpack("44GK44KM44KT44GY"), color: "#f08a32", rgb: "240, 138, 50" },
+        yellow: { jp: unpack("44GN"),             en: unpack("44GE44GI44KN44O8"), color: "#f4ca3a", rgb: "244, 202, 58" },
+        green:  { jp: unpack("44G/44Gp44KK"),     en: unpack("44GQ44KK44O844KT"), color: "#36a96b", rgb: "54, 169, 107" },
+        blue:   { jp: unpack("44GC44GK"),         en: unpack("44G244KL44O8"),     color: "#398de2", rgb: "57, 141, 226" },
+        purple: { jp: unpack("44KA44KJ44GV44GN"), en: unpack("44Gx44O844G344KL"), color: "#8c55c7", rgb: "140, 85, 199" },
+        pink:   { jp: unpack("44KC44KC"),         en: unpack("44G044KT44GP"),     color: "#ef83ae", rgb: "239, 131, 174" },
+        black:  { jp: unpack("44GP44KN"),         en: unpack("44G244KJ44Gj44GP"), color: "#252631", rgb: "37, 38, 49" },
+        white:  { jp: unpack("44GX44KN"),         en: unpack("44G744KP44GE44Go"), color: "#f3f0df", rgb: "243, 240, 223" },
+        gray:   { jp: unpack("44Gv44GE"),         en: unpack("44GQ44KM44O8"),     color: "#8a8f9b", rgb: "138, 143, 155" },
+        brown:  { jp: unpack("44Gh44KD"),         en: unpack("44G244KJ44GG44KT"), color: "#8b593f", rgb: "139, 89, 63" }
+      };
+
+      const TOKEN = unpack("44GK44Gp44KN44GN");
+      const SOURCE_WARNING = unpack("44KE44KL44KT44Gg44Gq77yB77yf5LuK4oCm77yB44GT44GT44Gn77yB");
+      const unlocked = new Set(["red", "pink", "purple"]);
+      const paletteOrder = ["pink", "purple"];
+      const buffer = [];
+
+      const palette = document.getElementById("palette");
+      const redDot = document.getElementById("redDot");
+      const letterRow = document.getElementById("letterRow");
+      const inputTrail = document.getElementById("inputTrail");
+      const enterButton = document.getElementById("enterButton");
+      const undoButton = document.getElementById("undoButton");
+      const clearInputButton = document.getElementById("clearButton");
+      const consolePanel = document.getElementById("console");
+      const message = document.getElementById("message");
+      const clearDialog = document.getElementById("clearDialog");
+      const clearTitle = document.getElementById("clearTitle");
+      const clearCopy = document.getElementById("clearCopy");
+      const closeButton = document.getElementById("closeButton");
+      const shareButton = document.getElementById("shareButton");
+      const langButtons = [...document.querySelectorAll(".lang-button")];
+      const recordDialog = document.getElementById("recordDialog");
+      const recordClose = document.getElementById("recordClose");
+      const playCount = document.getElementById("playCount");
+      const clearCount = document.getElementById("clearCount");
+
+      let selectedColor = "purple";
+      let language = "jp";
+      let secretTapCount = 0;
+      let secretTapLang = null;
+
+      const statsEndpoint = "stats.php";
+      const visitorStorageKey = "iroiro-global-visitor-id";
+
+      const createVisitorId = () => {
+        if (window.crypto && typeof window.crypto.randomUUID === "function") {
+          return window.crypto.randomUUID();
+        }
+
+        return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`;
+      };
+
+      const visitorId = (() => {
+        try {
+          const saved = localStorage.getItem(visitorStorageKey);
+          if (saved) {
+            return saved;
+          }
+
+          const created = createVisitorId();
+          localStorage.setItem(visitorStorageKey, created);
+          return created;
+        } catch {
+          return createVisitorId();
+        }
+      })();
+
+      const applyStats = (stats) => {
+        if (!stats || !Number.isFinite(stats.challengers) || !Number.isFinite(stats.clears)) {
+          return;
+        }
+
+        playCount.textContent = String(stats.challengers);
+        clearCount.textContent = String(stats.clears);
+      };
+
+      const syncStats = async (action = "read") => {
+        try {
+          const options = action === "read"
+            ? { cache: "no-store" }
+            : {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ action, visitorId })
+              };
+          const response = await fetch(statsEndpoint, options);
+          if (!response.ok) {
+            throw new Error("stats unavailable");
+          }
+          applyStats(await response.json());
+        } catch {
+          playCount.textContent = "—";
+          clearCount.textContent = "—";
+        }
+      };
+
+      syncStats("visit");
+
+      clearTitle.textContent = unpack("5q2j6Kej77yB");
+      clearCopy.textContent = unpack("6KaL5LqL6ama44GN44KS44G/44Gk44GR44Gf77yB");
+
+      const setActiveColor = () => {
+        const active = COLORS[selectedColor];
+        document.documentElement.style.setProperty("--active-color", active.color);
+        document.documentElement.style.setProperty("--active-rgb", active.rgb);
+      };
+
+      const renderPalette = () => {
+        palette.replaceChildren();
+
+        paletteOrder.forEach((colorId, index) => {
+          const color = COLORS[colorId];
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "color-dot";
+          dot.style.setProperty("--dot-color", color.color);
+          dot.dataset.color = colorId;
+          dot.setAttribute("aria-label", `${index + 1}番目の色`);
+          dot.setAttribute("aria-pressed", String(selectedColor === colorId));
+          dot.classList.toggle("is-active", selectedColor === colorId);
+          dot.addEventListener("click", () => selectColor(colorId));
+          palette.append(dot);
+        });
+
+        redDot.classList.toggle("is-active", selectedColor === "red");
+        redDot.setAttribute("aria-pressed", String(selectedColor === "red"));
+      };
+
+      const createButtons = () => {
+        Array.from({ length: 4 }, (_, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "letter-button";
+          button.addEventListener("click", () => {
+            const character = [...COLORS[selectedColor][language]][index];
+            if (character === undefined) {
+              return;
+            }
+            buffer.push({ character, color: selectedColor, language, index });
+            renderTrail();
+            message.textContent = "";
+            button.classList.add("is-pressed");
+            window.setTimeout(() => button.classList.remove("is-pressed"), 140);
+          });
+          letterRow.append(button);
+        });
+      };
+
+      const renderButtons = () => {
+        const characters = [...COLORS[selectedColor][language]];
+
+        [...letterRow.children].forEach((button, index) => {
+          const disabled = characters[index] === undefined;
+          button.disabled = disabled;
+          button.setAttribute(
+            "aria-label",
+            disabled ? `${index + 1}番目のボタン（使用不可）` : `${index + 1}番目のボタン`
+          );
+        });
+      };
+
+      const renderTrail = () => {
+        inputTrail.replaceChildren();
+        buffer.forEach(() => {
+          const dot = document.createElement("span");
+          dot.className = "trail-dot";
+          inputTrail.append(dot);
+        });
+        inputTrail.setAttribute("aria-label", `${buffer.length}文字入力中`);
+        undoButton.disabled = buffer.length === 0;
+        clearInputButton.disabled = buffer.length === 0;
+      };
+
+      const selectColor = (colorId) => {
+        if (!unlocked.has(colorId)) {
+          return;
+        }
+        selectedColor = colorId;
+        setActiveColor();
+        renderPalette();
+        renderButtons();
+      };
+
+      const setLanguage = (nextLanguage) => {
+        language = nextLanguage;
+        langButtons.forEach((button) => {
+          const active = button.dataset.lang === language;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+        renderButtons();
+      };
+
+      const resetBuffer = () => {
+        buffer.length = 0;
+        renderTrail();
+      };
+
+      const shake = () => {
+        consolePanel.classList.remove("shake");
+        void consolePanel.offsetWidth;
+        consolePanel.classList.add("shake");
+      };
+
+      const findColor = (value) => Object.entries(COLORS).find(([, names]) => (
+        names.jp === value || names.en === value
+      ));
+
+      const solve = () => {
+        message.textContent = "";
+        resetBuffer();
+        syncStats("clear");
+        if (typeof clearDialog.showModal === "function") {
+          clearDialog.showModal();
+        } else {
+          clearDialog.setAttribute("open", "");
+        }
+      };
+
+      const submit = () => {
+        const value = buffer.map((item) => item.character).join("");
+
+        if (!value) {
+          message.textContent = "ボタンを押してみよう";
+          shake();
+          return;
+        }
+
+        if (value === TOKEN && unlocked.has("blue")) {
+          solve();
+          return;
+        }
+
+        const colorEntry = findColor(value);
+        if (colorEntry) {
+          const [colorId] = colorEntry;
+
+          if (unlocked.has(colorId)) {
+            message.textContent = "その色はもう見つけているみたい";
+            shake();
+            resetBuffer();
+            return;
+          }
+
+          unlocked.add(colorId);
+          paletteOrder.push(colorId);
+          selectedColor = colorId;
+          setActiveColor();
+          renderPalette();
+          renderButtons();
+          resetBuffer();
+          message.textContent = "新しい色を見つけた！";
+          return;
+        }
+
+        message.textContent = "何も起こらないようだ";
+        shake();
+        resetBuffer();
+      };
+
+      redDot.addEventListener("click", () => selectColor("red"));
+      const trackSecretTap = async (tappedLang) => {
+        secretTapCount = secretTapLang === null || secretTapLang === tappedLang ? 1 : secretTapCount + 1;
+        secretTapLang = tappedLang;
+
+        if (secretTapCount < 8) {
+          return;
+        }
+
+        secretTapCount = 0;
+        secretTapLang = null;
+        await syncStats("read");
+
+        if (!recordDialog.open) {
+          if (typeof recordDialog.showModal === "function") {
+            recordDialog.showModal();
+          } else {
+            recordDialog.setAttribute("open", "");
+          }
+        }
+      };
+
+      langButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setLanguage(button.dataset.lang);
+          trackSecretTap(button.dataset.lang);
+        });
+      });
+
+      recordClose.addEventListener("click", () => {
+        if (typeof recordDialog.close === "function") {
+          recordDialog.close();
+        } else {
+          recordDialog.removeAttribute("open");
+        }
+      });
+      enterButton.addEventListener("click", submit);
+      undoButton.addEventListener("click", () => {
+        buffer.pop();
+        renderTrail();
+        message.textContent = "";
+      });
+      clearInputButton.addEventListener("click", () => {
+        resetBuffer();
+        message.textContent = "";
+      });
+      consolePanel.addEventListener("animationend", () => consolePanel.classList.remove("shake"));
+
+      closeButton.addEventListener("click", () => {
+        if (typeof clearDialog.close === "function") {
+          clearDialog.close();
+        } else {
+          clearDialog.removeAttribute("open");
+        }
+      });
+
+      shareButton.addEventListener("click", () => {
+        const shareUrl = "https://sajiqook.jp/game/iroiro";
+        // 告知ポストの URL。公開後にここへ貼ると、ハッシュタグの下に改行して差し込まれる。
+        const originalPostUrl = "https://x.com/saji_qook/status/2093113455444365584?s=20";
+        const params = new URLSearchParams({
+          text: `WEB謎『色々』を解きました！\n${shareUrl}\n\n#iroiro${originalPostUrl ? `\n${originalPostUrl}` : ""}`
+        });
+        window.open(`https://twitter.com/intent/tweet?${params.toString()}`, "_blank", "noopener,noreferrer");
+      });
+
+      const warnSourceView = () => window.alert(SOURCE_WARNING);
+      const isSourceShortcut = (event) => {
+        const key = event.key.toLowerCase();
+        const sourceKey = key === "u" || event.code === "KeyU";
+        const windowsSource = event.ctrlKey && !event.altKey && sourceKey;
+        const macSource = event.metaKey && event.altKey && sourceKey;
+        return windowsSource || macSource;
+      };
+
+      document.addEventListener("keydown", (event) => {
+        if (!isSourceShortcut(event)) {
+          return;
+        }
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        warnSourceView();
+      }, true);
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && !clearDialog.open && !recordDialog.open) {
+          event.preventDefault();
+          submit();
+        }
+        if ((event.key === "Backspace" || event.key === "Escape") && buffer.length && !clearDialog.open && !recordDialog.open) {
+          event.preventDefault();
+          buffer.pop();
+          renderTrail();
+        }
+      });
+
+      setActiveColor();
+      renderPalette();
+      createButtons();
+      renderButtons();
+      renderTrail();
+    })();
+  </script>
+</body>
+</html>

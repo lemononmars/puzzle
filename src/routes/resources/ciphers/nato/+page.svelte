@@ -1,6 +1,10 @@
 <script lang="ts">
 	import AnswerChecker from '#lib/components/AnswerChecker.svelte';
-	import { ArrowLeftIcon, RadioIcon, CopyIcon, CheckIcon, CheckCircleIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import RadioIcon from '@lucide/svelte/icons/radio';
+import CopyIcon from '@lucide/svelte/icons/copy';
+import CheckIcon from '@lucide/svelte/icons/check';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 
 	let inputText = 'CODEBREAKER';
 	let isSwapped = false; // false = Text -> NATO | true = NATO -> Text
@@ -103,7 +107,7 @@
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/resources/ciphers" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปหน้า Cipher Library</span>
 		</a>
 	</div>
@@ -111,7 +115,7 @@
 	<!-- Header -->
 	<header class="text-center max-w-2xl mx-auto space-y-3">
 		<div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-primary flex items-center justify-center border border-primary/30 mx-auto shadow-lg shadow-emerald-500/5">
-			<RadioIcon size="32" />
+			<RadioIcon size={32} />
 		</div>
 		<h1 class="text-3xl lg:text-4xl font-black tracking-tight text-base-content">
 			NATO Phonetic Alphabet 🎙️
@@ -159,10 +163,10 @@
 					class="btn btn-sm btn-ghost gap-1.5 text-base-content/70 hover:text-base-content self-end"
 				>
 					{#if isCopied}
-						<CheckIcon size="14" class="text-primary" />
+						<CheckIcon size={14} class="text-primary" />
 						<span class="text-primary font-bold">คัดลอกสำเร็จ</span>
 					{:else}
-						<CopyIcon size="14" />
+						<CopyIcon size={14} />
 						<span>คัดลอกผลลัพธ์</span>
 					{/if}
 				</button>
@@ -198,7 +202,7 @@
 
 						{#if feedback[idx] === 'correct'}
 							<div class="flex items-center gap-1 text-xs font-bold text-primary">
-								<CheckCircleIcon size="14" />
+								<CheckCircleIcon size={14} />
 								<span>ถูกต้อง!</span>
 							</div>
 						{:else if feedback[idx] === 'incorrect'}

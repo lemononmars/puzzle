@@ -1,0 +1,48 @@
+{
+  "id": "japanese-prefectures",
+  "hasExercise": false,
+  "englishTitle": "Japanese Prefectures",
+  "thaiTitle": "จังหวัดของญี่ปุ่น",
+  "japaneseTitle": "都道府県",
+  "description": "อ้างอิงชื่อ ตำแหน่ง รูปร่าง หรือการแบ่งเขตของ 47 จังหวัดญี่ปุ่น",
+  "chapter": {
+    "id": "themes",
+    "hasExercise": false,
+    "englishTitle": "Reference Themes",
+    "thaiTitle": "ชุดความรู้และหัวข้ออ้างอิง",
+    "japaneseTitle": "題材系",
+    "accent": "badge-accent"
+  },
+  "detailedDescription": "กลไก **Japanese Prefectures** (ญี่ปุ่น: *都道府県*) เป็นเทคนิคสำคัญในหมวดหมู่ **ชุดความรู้และหัวข้ออ้างอิง** (*Reference Themes*) มีสาระสำคัญคือ: อ้างอิงชื่อ ตำแหน่ง รูปร่าง หรือการแบ่งเขตของ 47 จังหวัดญี่ปุ่น กลไกนี้ถูกใช้อย่างกว้างขวางในการออกแบบปริศนา *Nazotoki (謎解き)*, *Puzzle Hunt*, และ *Escape Room (リアル脱出ゲーム)* เพื่อท้าทายการคิดวิเคราะห์อย่างเป็นระบบและการเชื่อมโยงข้อมูลหลายมิติ",
+  "solvingTechnique": "1. วิเคราะห์จุดประสงค์หลัก: สังเกตความสัมพันธ์และเงื่อนไขเฉพาะของ **จังหวัดของญี่ปุ่น**\n2. แยกองค์ประกอบที่ไม่จำเป็นออก แล้วโฟกัสที่จุดสังเกตตามกฎของโจทย์\n3. ทวนสอบผลลัพธ์ที่ได้ว่าสอดคล้องกับบริบทและคำใบ้ทั้งหมด",
+  "technicalTerms": [
+    {
+      "en": "Japanese Prefectures",
+      "ja": "都道府県",
+      "th": "จังหวัดของญี่ปุ่น"
+    },
+    {
+      "en": "Mechanic",
+      "ja": "ギミック / 仕組み",
+      "th": "กลไกการไขปริศนา"
+    },
+    {
+      "en": "Deduction",
+      "ja": "推理 / 思考",
+      "th": "การอนุมานหาข้อสรุป"
+    }
+  ],
+  "puzzle": {
+    "title": "โจทย์ทดลอง: ไขรหัส จังหวัดของญี่ปุ่น",
+    "prompt": "พิจารณาแผนภาพกลไก จังหวัดของญี่ปุ่น (Japanese Prefectures) ด้านล่าง แล้วถอดรหัสคำตอบที่ถูกต้อง",
+    "hint": "สังเกตตัวอักษรและสัญลักษณ์ที่เน้นสีฟ้าภายในแผนภาพ",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-base-300)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"38\" fill=\"var(--color-base-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Japanese Prefectures Diagram</text>\n\n  <g transform=\"translate(90, 65)\">\n    <rect x=\"0\" y=\"0\" width=\"340\" height=\"85\" rx=\"12\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"2\"/>\n    <text x=\"170\" y=\"32\" fill=\"var(--color-base-content)\" font-size=\"14\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">จังหวัดของญี่ปุ่น</text>\n    <text x=\"170\" y=\"65\" fill=\"var(--color-primary)\" font-size=\"26\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\" letter-spacing=\"8\">JAPA</text>\n  </g>\n  <text x=\"260\" y=\"185\" fill=\"var(--color-base-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">ถอดรหัสคำจากแผนภาพด้านบน</text>\n</svg>",
+    "solutionSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"38\" fill=\"var(--color-success-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Solved: JAPA</text>\n\n  <g transform=\"translate(90, 65)\">\n    <rect x=\"0\" y=\"0\" width=\"340\" height=\"85\" rx=\"12\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"3\"/>\n    <text x=\"170\" y=\"32\" fill=\"var(--color-success-content)\" font-size=\"14\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">คำตอบที่ถูกต้อง</text>\n    <text x=\"170\" y=\"65\" fill=\"var(--color-success-content)\" font-size=\"28\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\" letter-spacing=\"8\">JAPA</text>\n  </g>\n  <text x=\"260\" y=\"185\" fill=\"var(--color-success-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">ตรวจคำตอบสำเร็จ</text>\n</svg>",
+    "acceptedAnswers": [
+      "JAPA",
+      "japa"
+    ],
+    "answerDisplay": "JAPA",
+    "solutionExplanation": "วิเคราะห์ตามกลไก **Japanese Prefectures** (*จังหวัดของญี่ปุ่น*):\nเมื่อทำตามเงื่อนไขที่กำหนดในโจทย์ จะได้คำตอบสุดท้ายคือ **JAPA**"
+  }
+}

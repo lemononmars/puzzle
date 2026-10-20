@@ -11,3 +11,9 @@ coverage/
 .pkg-extract-*/
 .vercel_build_output
 .vercel/
+
+/static/pagefind/
+/static/search-records.json
+/playwright-report/
+/test-results/
+/artifacts/bundles.json

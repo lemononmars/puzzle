@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f1efe8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WEB謎「CONNECT」">
+<meta property="og:description" content="交信実験">
+<meta property="og:url" content="https://sajiqook.jp/game/tconnect/">
+<meta property="og:image" content="https://sajiqook.jp/game/tconnect/connect_logo.jpg">
+<meta property="og:image:secure_url" content="https://sajiqook.jp/game/tconnect/connect_logo.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="480">
+<meta property="og:image:height" content="300">
+<meta property="og:image:alt" content="CONNECT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WEB謎「CONNECT」">
+<meta name="twitter:description" content="交信実験">
+<meta name="twitter:image" content="https://sajiqook.jp/game/tconnect/connect_logo.jpg">
+<meta name="twitter:image:alt" content="CONNECT">
+<title>交信実験</title>
+<script src="../game-settings.js?v=202609222218" data-host=".top" defer></script>
+<script src="../game-analytics.js" defer></script>
+<style>
+:root{--ink:#20262b;--muted:#697177;--line:#c9ced0;--paper:#fbfaf5;--panel:#f0f2ef;--red:#b53035;--dark:#273139;--green:#416c5b}
+*{box-sizing:border-box;-webkit-touch-callout:none}
+body{user-select:none;-webkit-user-select:none}input{user-select:text;-webkit-user-select:text}
+html,body{width:100%;height:100%;margin:0;touch-action:manipulation}
+body{overflow:hidden;background:#e8e6df;color:var(--ink);font-family:ui-monospace,"SFMono-Regular","Yu Gothic",Meiryo,monospace;-webkit-tap-highlight-color:transparent}
+button,input{font:inherit;color:inherit}
+.app{display:grid;grid-template-rows:auto minmax(0,1fr);width:min(680px,100%);height:100dvh;margin:auto;padding:14px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:1px 2px 11px}
+h1{margin:0;font-size:clamp(19px,4vw,26px);letter-spacing:.12em;white-space:nowrap}
+.nav{display:flex;gap:6px}.nav button{min-height:36px;padding:0 11px;border:1px solid #949b9f;border-radius:3px;background:#fafafa;font-size:11px;font-weight:700;cursor:pointer}.nav button:disabled{border-color:#d0d2d2;background:#e1e1de;color:#a4a5a3;cursor:default}.nav button:active:not(:disabled){background:#e7e9e7}
+.nav button.at-limit,.nav button.at-limit:active{border-color:#d0d2d2;background:#e1e1de;color:#92938f}
+.terminal{display:flex;flex-direction:column;min-height:0;overflow:hidden;border:2px solid var(--dark);border-radius:4px;background:var(--paper);box-shadow:5px 6px 0 #a6a49d}
+.terminal-head{display:flex;align-items:center;justify-content:space-between;min-height:43px;padding:8px 13px;background:var(--dark);color:#fff}.terminal-head strong{font-size:12px;letter-spacing:.12em}.lamp{display:flex;align-items:center;gap:7px;color:#dce4df;font-size:10px}.lamp:before{width:9px;height:9px;border-radius:50%;background:#7eb49c;box-shadow:0 0 0 2px #ffffff1f;content:""}
+.terminal-head{flex-shrink:0;gap:8px}.terminal-head .nav{color:var(--ink)}
+@media(max-width:520px){.terminal-head{padding-inline:9px}.terminal-head strong{font-size:9px;letter-spacing:.04em}.terminal-head .nav{flex-shrink:0}}
+.screen{flex:1;min-height:0;overflow-y:auto;padding:clamp(14px,4vw,27px);overscroll-behavior:contain}
+.date-row{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:17px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.date{margin:0;font-size:clamp(18px,4.5vw,25px);font-weight:800;letter-spacing:.06em}.day-name{color:var(--muted);font-size:11px;font-weight:700}
+.notice{padding:15px 16px;border:1px solid #b9bfc0;background:#fff;font-size:clamp(13px,3vw,15px);line-height:1.9}.notice p{margin:0}.notice p+p{margin-top:8px}.red{color:var(--red);font-weight:900}
+.success-line{border-color:#8ca899;background:#f4faf6}.success-line strong{color:var(--green)}
+.sender{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin-top:17px}.sender input{min-width:0;height:47px;padding:0 14px;border:1px solid #959da0;border-radius:3px;background:#fff;font-size:18px;text-align:center;outline:none}.sender input:focus{border-color:#3d6f61;box-shadow:0 0 0 2px #3d6f6122}.sender button{min-width:105px;border:0;border-radius:3px;background:var(--dark);color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;cursor:pointer}.sender button:active{background:#10171c}
+.error{min-height:19px;margin:6px 0 0;color:var(--red);font-size:11px;text-align:center}
+.log{margin-top:21px}.log-title{display:flex;align-items:center;gap:10px;margin-bottom:9px;color:#4c555b;font-size:10px;font-weight:800;letter-spacing:.12em}.log-title:after{flex:1;height:1px;background:#cfd2d1;content:""}
+.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(75px,1fr));gap:8px}
+#timeGlitch{position:fixed;inset:0;z-index:9999;overflow:hidden;pointer-events:none}
+.glitch-band{position:absolute;overflow:hidden;background:#e8e6df;opacity:0;animation:glitch-cut .76s steps(1,end) both;animation-delay:var(--delay)}
+.glitch-band>.app{position:absolute;margin:0;max-width:none;pointer-events:none;transform:translateX(0);animation:glitch-offset .76s steps(1,end) both;animation-delay:var(--delay);text-shadow:2px 0 #20262b38,-2px 0 #20262b22}
+@keyframes glitch-cut{0%{opacity:0}7%{opacity:.95}15%{opacity:.72}23%{opacity:0}37%{opacity:.9}46%{opacity:.7}55%{opacity:0}68%{opacity:.8}77%{opacity:0}100%{opacity:0}}
+@keyframes glitch-offset{0%{transform:translateX(0)}7%{transform:translateX(var(--shift))}15%{transform:translateX(calc(var(--shift) * -.45))}23%{transform:translateX(0)}37%{transform:translateX(calc(var(--shift) * -.8))}46%{transform:translateX(calc(var(--shift) * .35))}55%{transform:translateX(0)}68%{transform:translateX(calc(var(--shift) * .2))}77%,100%{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){#timeGlitch{display:none}}
+.slot{position:relative;min-width:0;padding:10px 5px 8px;border:1px solid #aeb4b6;background:#fff;text-align:center}.slot.current{border:2px solid var(--green);padding:9px 4px 7px}.slot small{display:block;overflow:hidden;color:#72787c;font-size:9px;white-space:nowrap;text-overflow:ellipsis}.slot strong{display:grid;height:44px;place-items:center;font-size:25px}.slot .blank{color:#c3c7c8}.slot.current:after{position:absolute;top:-7px;right:6px;padding:1px 5px;background:var(--green);color:#fff;font-size:8px;content:"表示中"}
+dialog{width:min(390px,calc(100% - 28px));margin:auto;padding:0;border:2px solid var(--dark);border-radius:4px;background:var(--paper);box-shadow:6px 7px 0 #15191c55}dialog::backdrop{background:#242a2f99}.dialog-body{padding:25px 22px;text-align:center}.dialog-body h2{margin:0 0 14px;font-size:21px;letter-spacing:.08em}.dialog-body p{margin:7px 0;font-size:13px;line-height:1.8}.dialog-body button{width:100%;min-height:44px;margin-top:18px;border:0;border-radius:3px;background:var(--dark);color:#fff;font-weight:800;cursor:pointer}.dialog-body .sub-button{margin-top:9px;border:1px solid #8f9699;background:transparent;color:var(--ink)}.complete h2{color:var(--green)}
+.shake{animation:shake .28s}@keyframes shake{25%{transform:translateX(-4px)}50%{transform:translateX(4px)}75%{transform:translateX(-2px)}}
+@media(max-width:520px){.app{padding:8px}.top{padding-bottom:8px}h1{font-size:18px}.nav{gap:4px}.nav button{min-height:33px;padding-inline:8px;font-size:10px}.terminal{box-shadow:3px 4px 0 #a6a49d}.screen{padding:14px 12px}.sender{grid-template-columns:minmax(0,1fr) 85px}.sender button{min-width:0}.notice{padding:13px}.slot strong{height:38px}.slots{gap:5px}}
+@media(max-height:650px){.app{padding-top:5px;padding-bottom:5px}.top{padding-bottom:5px}.terminal-head{min-height:35px}.screen{height:calc(100% - 35px);padding-top:10px}.date-row{margin-bottom:10px;padding-bottom:7px}.notice{padding:10px 12px;line-height:1.65}.sender{margin-top:10px}.log{margin-top:11px}.slot{padding-top:6px}.slot strong{height:31px}}
+</style>
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <h1>交信実験</h1>
+  </header>
+  <section class="terminal" id="terminal">
+    <div class="terminal-head"><strong>TIME COMMUNICATION</strong><nav class="nav" aria-label="日付の操作"><button id="next" type="button">みらいへ</button><button id="reset" type="button">リセット</button></nav></div>
+    <div class="screen">
+      <div class="date-row"><p class="date" id="date"></p><span class="day-name" id="dayName"></span></div>
+      <div id="content"></div>
+      <form class="sender" id="sender"><input id="letter" maxlength="1" autocomplete="off" inputmode="text" aria-label="送信するひらがな" placeholder="ひらがな一文字"><button type="submit">文字を送る</button></form>
+      <p class="error" id="error" aria-live="polite"></p>
+      <section class="log"><div class="log-title">通信記録</div><div class="slots" id="slots"></div></section>
+    </div>
+  </section>
+</main>
+
+<dialog id="connected">
+  <div class="dialog-body">
+    <h2>過去との通信に成功</h2>
+    <p>二日分の文字から、通信経路が開きました。</p>
+    <p><strong>実験はまだ終わっていません。</strong></p>
+    <button id="continue" type="button">受信内容を確認する</button>
+  </div>
+</dialog>
+
+<dialog id="complete" class="complete">
+  <div class="dialog-body">
+    <h2>未来との通信に成功</h2>
+    <p>指定した三文字が、<br>未来へ届きました。</p>
+    <button id="shareX" type="button">Xでシェア</button>
+    <button id="closeComplete" class="sub-button" type="button">通信記録を見る</button>
+  </div>
+</dialog>
+
+<dialog id="records">
+  <div class="dialog-body">
+    <h2>通信記録の集計</h2>
+    <p>総プレイ回数：<strong id="plays">—</strong></p>
+    <p>クリア数：<strong id="clears">—</strong></p>
+    <p id="statsStatus" role="status"></p>
+    <p>この画面は謎解きと関係ありません。</p>
+    <button id="closeRecords" type="button">閉じる</button>
+  </div>
+</dialog>
+
+<script>
+(()=>{
+"use strict";
+const KEY="past-communication-puzzle-v1";
+const DAYS={"-1":{date:"2026年9月6日",name:"0日目"},"0":{date:"2026年9月7日",name:"1日目"},"1":{date:"2026年9月8日",name:"2日目"}};
+const $=id=>document.getElementById(id);
+const fresh=()=>({version:1,day:0,learned:false,stage:1,letters:{"-1":"","0":"","1":""},connectedShown:false,complete:false,completeShown:false});
+function read(){
+  const nav=performance.getEntriesByType("navigation")[0];
+  if(!nav||nav.type!=="reload")return fresh();
+  try{const old=JSON.parse(sessionStorage.getItem(KEY)||"null");return old&&old.version===1?old:fresh()}catch{return fresh()}
+}
+let state=read();
+const navigation=performance.getEntriesByType("navigation")[0];
+const pastLimit=!!(navigation&&navigation.type==="reload"&&state.learned&&state.day===-1);
+const returningToPast=!!(navigation&&navigation.type==="reload"&&state.learned&&!state.complete&&state.day>-1);
+if(returningToPast)state.day--;
+if(state.stage===1)state.letters["-1"]="";
+const content=$("content"),slots=$("slots"),input=$("letter"),error=$("error"),terminal=$("terminal");
+let dialogTimer;
+const VISITOR_KEY="past-communication-visitor-v1",CLEAR_KEY="past-communication-cleared-v1";
+let soundContext;
+function getSoundContext(){
+  const AudioEngine=window.AudioContext||window.webkitAudioContext;
+  if(!AudioEngine)return null;
+  if(!soundContext)soundContext=new AudioEngine();
+  return soundContext;
+}
+function prepareSound(){
+  const context=getSoundContext();
+  if(context&&context.state==="suspended")context.resume().catch(()=>{});
+}
+document.addEventListener("pointerdown",prepareSound,true);
+document.addEventListener("keydown",prepareSound,true);
+function playSound(kind){
+  const context=getSoundContext();
+  if(!context)return;
+  const play=()=>{
+    if(context.state!=="running")return;
+    const start=context.currentTime+.006;
+    const tone=(from,to,delay,duration,type="sine",volume=.025)=>{
+      const oscillator=context.createOscillator(),gain=context.createGain(),at=start+delay;
+      oscillator.type=type;oscillator.frequency.setValueAtTime(from,at);oscillator.frequency.exponentialRampToValueAtTime(to,at+duration);
+      gain.gain.setValueAtTime(.0001,at);gain.gain.exponentialRampToValueAtTime(volume,at+.012);gain.gain.exponentialRampToValueAtTime(.0001,at+duration);
+      oscillator.connect(gain).connect(context.destination);oscillator.start(at);oscillator.stop(at+duration+.02);
+    };
+    if(kind==="popup"){
+      tone(620,660,0,.12,"sine",.026);tone(780,830,.085,.13,"sine",.024);tone(940,990,.17,.18,"sine",.022);
+    }else if(kind==="error"){
+      tone(175,125,0,.13,"square",.022);tone(155,110,.165,.13,"square",.018);
+    }
+  };
+  if(context.state==="running")play();
+  else context.resume().then(play).catch(()=>{});
+}
+function visitorId(){
+  try{
+    let id=localStorage.getItem(VISITOR_KEY);
+    if(!id){id=crypto.randomUUID();localStorage.setItem(VISITOR_KEY,id)}
+    return id;
+  }catch{
+    try{
+      let id=sessionStorage.getItem(VISITOR_KEY);
+      if(!id){id=crypto.randomUUID();sessionStorage.setItem(VISITOR_KEY,id)}
+      return id;
+    }catch{return null}
+  }
+}
+const visitor=visitorId();
+async function statsRequest(action){
+  if(location.protocol==="file:")throw new Error("unavailable");
+  const options={cache:"no-store"};
+  if(action!=="read"){
+    if(!visitor)throw new Error("unavailable");
+    options.method="POST";options.headers={"Content-Type":"application/json"};
+    options.body=JSON.stringify({action,visitorId:visitor});
+  }
+  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),6000);
+  try{
+    const response=await fetch("stats.php",{...options,signal:controller.signal});
+    if(!response.ok)throw new Error("unavailable");
+    const data=await response.json();
+    if(!Number.isInteger(data.plays)||!Number.isInteger(data.clears))throw new Error("unavailable");
+    return data;
+  }finally{clearTimeout(timeout)}
+}
+let statsPending=Promise.resolve();
+function count(action){statsPending=statsPending.then(()=>statsRequest(action)).catch(()=>null)}
+async function showRecords(){
+  openDialog("records");$("plays").textContent=$("clears").textContent="—";$("statsStatus").textContent="読み込み中…";
+  try{
+    await statsPending;const data=await statsRequest("read");
+    $("plays").textContent=data.plays;$("clears").textContent=data.clears;$("statsStatus").textContent="";
+  }catch{$("statsStatus").textContent="集計に接続できません。PHP対応サーバーでご確認ください。"}
+}
+function save(){try{sessionStorage.setItem(KEY,JSON.stringify(state))}catch{}}
+function openDialog(id){const d=$(id);if(!d.open){d.showModal?d.showModal():d.setAttribute("open","");playSound("popup")}}
+function closeDialog(id){const d=$(id);if(d.close)d.close();else d.removeAttribute("open")}
+function key(day){return String(day)}
+function record(day){return state.letters[key(day)]||""}
+function firstSolved(){return record(0)==="か"&&record(1)==="こ"}
+function secondSolved(){return record(-1)==="み"&&record(0)==="ら"&&record(1)==="い"}
+function notice(){
+  if(state.day===-1){
+    return '<div class="notice"><p>文字を送ってください。</p></div>';
+  }
+  if(state.day===0){
+    const base='<p><strong>時間交信実験</strong><br>一日に送れる文字は、ひとつだけ。必要な言葉は「<span class="red">みらい</span>」で分かる。</p>';
+    return `<div class="notice">${base}</div>`;
+  }
+  if(state.stage===1)return '<div class="notice"><p>通信に必要な言葉は「<span class="red">かこ</span>」。外の世界でこうしんを図り文字を送ってください。</p></div>';
+  return '<div class="notice success-line"><p><strong>第二通信を受信しました。</strong></p><p>外の世界でこうしんを図り過去から文字を送ってください。</p></div>';
+}
+function drawSlots(){
+  const days=[-1,0,1].filter(day=>day<=state.day&&record(day));
+  slots.innerHTML=days.map(day=>`<div class="slot${state.day===day?" current":""}"><small>${DAYS[key(day)].name}</small><strong>${record(day)}</strong></div>`).join("");
+}
+function render(){
+  clearTimeout(dialogTimer);
+  const info=DAYS[key(state.day)];
+  $("date").textContent=info.date;$("dayName").textContent=info.name;
+  $("next").classList.toggle("at-limit",state.day>=1);
+  content.innerHTML=notice();drawSlots();
+  input.value=record(state.day);error.textContent="";
+  save();
+  if(state.stage===2&&!state.connectedShown){state.connectedShown=true;save();dialogTimer=setTimeout(()=>openDialog("connected"),180)}
+  if(state.complete&&!state.completeShown){state.completeShown=true;save();dialogTimer=setTimeout(()=>openDialog("complete"),180)}
+}
+function invalid(){error.textContent="ひらがなを一文字だけ入力してください";playSound("error");terminal.classList.remove("shake");void terminal.offsetWidth;terminal.classList.add("shake")}
+function send(){
+  if(state.day===-1&&state.stage===1){error.textContent="まだ未来からの信号がない";playSound("error");return}
+  const value=input.value.trim();
+  if(!/^[ぁ-ん]$/.test(value)){invalid();return}
+  state.letters[key(state.day)]=value;
+  if(state.stage===1&&firstSolved()){state.stage=2;state.connectedShown=false}
+  else if(state.stage===2&&secondSolved()&&!state.complete){
+    state.complete=true;state.completeShown=false;
+    try{localStorage.setItem(CLEAR_KEY,"1")}catch{}
+    count("clear");
+  }
+  save();render();
+}
+$("sender").addEventListener("submit",e=>{e.preventDefault();send()});
+$("next").onclick=()=>{
+  if(state.day>=1){error.textContent="これ以上の未来へは進めない";playSound("error");return}
+  state.day++;if(state.day===1)state.learned=true;save();render();
+};
+let resetTaps=0,lastReset=0;
+$("reset").onclick=()=>{
+  const now=Date.now();resetTaps=now-lastReset<=4000?resetTaps+1:1;lastReset=now;
+  if(resetTaps===8){resetTaps=0;showRecords();return}
+  clearTimeout(dialogTimer);
+  ["connected","complete","records"].forEach(closeDialog);
+  state=fresh();save();render();
+};
+$("closeRecords").onclick=()=>closeDialog("records");
+$("continue").onclick=()=>closeDialog("connected");
+$("closeComplete").onclick=()=>closeDialog("complete");
+$("shareX").onclick=()=>{
+  const message='WEB謎「CONNECT」を解きました！\n\nhttps://sajiqook.jp/game/tconnect\n\n#CONNECT\n\nhttps://x.com/saji_qook/status/2096735237917257782?s=20';
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}`,"_blank","noopener,noreferrer");
+};
+$("connected").addEventListener("cancel",e=>e.preventDefault());
+$("complete").addEventListener("cancel",e=>e.preventDefault());
+document.addEventListener("contextmenu",e=>e.preventDefault());
+document.addEventListener("dragstart",e=>e.preventDefault());
+document.addEventListener("keydown",e=>{
+  const k=e.key.toLowerCase();
+  if(k==="f12"||((e.ctrlKey||e.metaKey)&&k==="u")||((e.ctrlKey||e.metaKey)&&(e.shiftKey||e.altKey)&&["i","j","c","u"].includes(k))){e.preventDefault();e.stopPropagation()}
+},true);
+function timeGlitch(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const app=document.querySelector("main.app"),rect=app.getBoundingClientRect();
+  const overlay=document.createElement("div");overlay.id="timeGlitch";overlay.setAttribute("aria-hidden","true");overlay.inert=true;
+  const targets=[...app.querySelectorAll("h1,.terminal-head,.date,.notice p,.sender,.log-title,.slot")];
+  const positions=targets.flatMap((node,index)=>{
+    const r=node.getBoundingClientRect();
+    return [{y:r.top+r.height*.52,h:3+index%4},{y:r.top+r.height*.76,h:2+index%3}];
+  }).filter(p=>p.y>=rect.top&&p.y+p.h<=Math.min(rect.bottom,innerHeight));
+  positions.slice(0,18).forEach((p,index)=>{
+    const band=document.createElement("div");band.className="glitch-band";
+    const shift=(index%2?-1:1)*(5+(index%4)*3);
+    band.style.cssText=`left:${rect.left}px;top:${p.y}px;width:${rect.width}px;height:${p.h}px;--shift:${shift}px;--delay:${index%4*17}ms`;
+    const copy=app.cloneNode(true);
+    copy.querySelectorAll("[id]").forEach(node=>node.removeAttribute("id"));
+    copy.querySelectorAll("input").forEach(node=>{node.value=input.value;node.removeAttribute("name")});
+    copy.style.cssText=`left:0;top:${rect.top-p.y}px;width:${rect.width}px;height:${rect.height}px`;
+    band.appendChild(copy);overlay.appendChild(band);
+  });
+  document.body.appendChild(overlay);
+  function finish(){overlay.remove();window.removeEventListener("resize",finish);window.removeEventListener("pagehide",finish)}
+  window.addEventListener("resize",finish);window.addEventListener("pagehide",finish);
+  setTimeout(finish,850);
+}
+save();render();if(returningToPast)requestAnimationFrame(timeGlitch);
+if(pastLimit){error.textContent="これ以上の過去へは戻れない";playSound("error")}
+count("visit");
+try{if(localStorage.getItem(CLEAR_KEY)==="1"||state.complete)count("clear")}catch{if(state.complete)count("clear")}
+})();
+</script>
+</body>
+</html>

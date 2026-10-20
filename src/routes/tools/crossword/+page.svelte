@@ -1,25 +1,24 @@
 <script lang="ts">
-	import { search, splitWord } from '#lib/thwordsearch.js';
-	import { onMount } from 'svelte';
+	import { search, splitWord, disposeDictionaryWorker } from '#lib/thwordsearch.js';
+	import { onMount, onDestroy } from 'svelte';
+ onDestroy(()=>{suggestionAbort?.abort();solveAbort?.abort();disposeDictionaryWorker();});
 	import { beforeNavigate } from '$app/navigation';
-	import {
-		PlusSquareIcon,
-		MinusSquareIcon,
-		CheckSquareIcon,
-		DownloadIcon,
-		CornerUpLeftIcon,
-		GridIcon,
-		HashIcon,
-		Maximize2Icon,
-		ZapIcon,
-		ClipboardIcon,
-		XIcon,
-		CloudIcon,
-		ExternalLinkIcon,
-		InfoIcon,
-		ChevronRightIcon,
-		CheckCircleIcon
-	} from 'svelte-feather-icons';
+	import PlusSquareIcon from '@lucide/svelte/icons/square-plus';
+import MinusSquareIcon from '@lucide/svelte/icons/square-minus';
+import CheckSquareIcon from '@lucide/svelte/icons/square-check';
+import DownloadIcon from '@lucide/svelte/icons/download';
+import CornerUpLeftIcon from '@lucide/svelte/icons/corner-up-left';
+import GridIcon from '@lucide/svelte/icons/grid-2x2';
+import HashIcon from '@lucide/svelte/icons/hash';
+import Maximize2Icon from '@lucide/svelte/icons/maximize-2';
+import ZapIcon from '@lucide/svelte/icons/zap';
+import ClipboardIcon from '@lucide/svelte/icons/clipboard';
+import XIcon from '@lucide/svelte/icons/x';
+import CloudIcon from '@lucide/svelte/icons/cloud';
+import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
+import InfoIcon from '@lucide/svelte/icons/info';
+import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 
 	let cellSize = 44; // px
 	let numZoom = 1.0;
@@ -1070,19 +1069,13 @@
 		content="Build and share Thai crossword puzzles with this advanced tool. Features smart word suggestions and automated solving."
 	/>
 
-	<meta
-		property="og:title"
-		content="Thai Crossword Builder"
-	/>
 
-	<meta
-		property="og:description"
-		content="Build and share Thai crossword puzzles with this advanced tool. Features smart word suggestions and automated solving."
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="/og-crossword-builder.png" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="/og-crossword-builder.png" />
+
+
+
+
+
+
 </svelte:head>
 
 <svelte:window on:keydown={handleKeydown}></svelte:window>
@@ -1125,7 +1118,7 @@
 					<div
 						class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-content"
 					>
-						<GridIcon size="18" />
+						<GridIcon size={18} />
 					</div>
 					<span class="text-xs font-black tracking-tighter hidden lg:block uppercase">Builder</span>
 				</div>
@@ -1143,7 +1136,7 @@
 							updateSuggestions();
 						}}
 					>
-						<InfoIcon size="14" />
+						<InfoIcon size={14} />
 					</button>
 				</div>
 			</div>
@@ -1164,14 +1157,14 @@
 								class="btn btn-ghost btn-xs text-primary px-1 sm:px-2"
 								disabled={showResizeControls}
 							>
-								<PlusSquareIcon size="16" />
+								<PlusSquareIcon size={16} />
 							</button>
 						</div>
 						<div class="tooltip tooltip-bottom" data-tip="ปรับขนาดตาราง">
 							<button
 								on:click={() => showResizeControls = !showResizeControls}
 								class="btn btn-ghost btn-xs {showResizeControls ? 'text-primary' : 'opacity-40'} px-1 sm:px-2"
-							><Maximize2Icon size="16" /></button>
+							><Maximize2Icon size={16} /></button>
 						</div>
 
 						<div
@@ -1187,7 +1180,7 @@
 								class="btn btn-ghost btn-xs text-primary px-1 sm:px-2"
 								disabled={showResizeControls}
 							>
-								<ClipboardIcon size="16" />
+								<ClipboardIcon size={16} />
 							</button>
 						</div>
 						<div class="tooltip tooltip-bottom" data-tip="ย้อนกลับ">
@@ -1196,7 +1189,7 @@
 								disabled={history.length === 0 || showResizeControls}
 								class="btn btn-ghost btn-xs px-1 sm:px-2"
 							>
-								<CornerUpLeftIcon size="16" />
+								<CornerUpLeftIcon size={16} />
 							</button>
 						</div>
 
@@ -1212,7 +1205,7 @@
 									role="button"
 									class="btn btn-ghost btn-xs px-1 flex items-center justify-center"
 								>
-									<GridIcon size="14" class="text-primary" />
+									<GridIcon size={14} class="text-primary" />
 								</div>
 								<div
 									tabindex="0"
@@ -1234,7 +1227,7 @@
 									role="button"
 									class="btn btn-ghost btn-xs px-1 flex items-center justify-center"
 								>
-									<HashIcon size="14" class="text-primary" />
+									<HashIcon size={14} class="text-primary" />
 								</div>
 								<div
 									tabindex="0"
@@ -1271,7 +1264,7 @@
 											: 'opacity-40'} px-1 sm:px-2"
 										disabled={showResizeControls}
 									>
-										<ZapIcon size="16" />
+										<ZapIcon size={16} />
 									</button>
 								</div>
 								<div class="tooltip tooltip-bottom" data-tip="เติมคำอัตโนมัติ">
@@ -1280,7 +1273,7 @@
 										class="btn btn-ghost btn-xs text-emerald-600 gap-1 px-1.5 sm:px-2"
 										disabled={showResizeControls}
 									>
-										<CheckSquareIcon size="16" />
+										<CheckSquareIcon size={16} />
 									</button>
 								</div>
 							</div>
@@ -1292,7 +1285,7 @@
 									></span>
 
 									<ZapIcon
-										size="10"
+										size={10}
 										class="absolute text-secondary animate-spin-slow"
 									/>
 								</div>
@@ -1338,7 +1331,7 @@
 								>
 							</button>
 							{#if step.s < 3}
-								<ChevronRightIcon size="10" class="opacity-10 mx-0" />
+								<ChevronRightIcon size={10} class="opacity-10 mx-0" />
 							{/if}
 						{/each}
 					</div>
@@ -1370,14 +1363,14 @@
 									on:click={addRowTop}
 									class="join-item btn btn-ghost btn-xs text-primary px-2"
 								>
-									<PlusSquareIcon size="14" />
+									<PlusSquareIcon size={14} />
 								</button>
 								<button
 									on:click={removeRowTop}
 									class="join-item btn btn-ghost btn-xs text-error-content px-2"
 									disabled={rows <= 3}
 								>
-									<MinusSquareIcon size="14" />
+									<MinusSquareIcon size={14} />
 								</button>
 							</div>
 						</div>
@@ -1394,14 +1387,14 @@
 									on:click={addColLeft}
 									class="join-item btn btn-ghost btn-xs text-primary py-2 h-auto"
 								>
-									<PlusSquareIcon size="14" />
+									<PlusSquareIcon size={14} />
 								</button>
 								<button
 									on:click={removeColLeft}
 									class="join-item btn btn-ghost btn-xs text-error-content py-2 h-auto"
 									disabled={cols <= 3}
 								>
-									<MinusSquareIcon size="14" />
+									<MinusSquareIcon size={14} />
 								</button>
 							</div>
 						</div>
@@ -1468,7 +1461,7 @@
 													class="w-16 h-16 rounded-full border-4 border-primary/20 border-t-primary animate-spin"
 												></div>
 												<ZapIcon
-													size="24"
+													size={24}
 													class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-secondary animate-pulse"
 												/>
 											</div>
@@ -1512,14 +1505,14 @@
 										on:click={addColRight}
 										class="join-item btn btn-ghost btn-xs text-primary py-2 h-auto"
 									>
-										<PlusSquareIcon size="14" />
+										<PlusSquareIcon size={14} />
 									</button>
 									<button
 										on:click={removeColRight}
 										class="join-item btn btn-ghost btn-xs text-error-content py-2 h-auto"
 										disabled={cols <= 3}
 									>
-										<MinusSquareIcon size="14" />
+										<MinusSquareIcon size={14} />
 									</button>
 								</div>
 							</div>
@@ -1537,14 +1530,14 @@
 									on:click={addRowBottom}
 									class="join-item btn btn-ghost btn-xs text-primary px-2"
 								>
-									<PlusSquareIcon size="14" />
+									<PlusSquareIcon size={14} />
 								</button>
 								<button
 									on:click={removeRowBottom}
 									class="join-item btn btn-ghost btn-xs text-error-content px-2"
 									disabled={rows <= 3}
 								>
-									<MinusSquareIcon size="14" />
+									<MinusSquareIcon size={14} />
 								</button>
 							</div>
 						</div>
@@ -1637,7 +1630,7 @@
 				>
 					<div class="flex items-center gap-3">
 						<div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
-							<CloudIcon class="text-primary" size="20" />
+							<CloudIcon class="text-primary" size={20} />
 						</div>
 						<h3 class="font-bold">ข้อมูลปริศนา</h3>
 					</div>
@@ -1679,7 +1672,7 @@
 								{#if isSavingToDB && isPublic}
 									<span class="loading loading-spinner loading-xs"></span>
 								{/if}
-								<CloudIcon size="18" />
+								<CloudIcon size={18} />
 								<div class="flex flex-col items-start leading-tight">
 									<span class="text-xs font-bold">บันทึก Cloud</span>
 									<span class="text-[8px] opacity-70 uppercase tracking-tighter">Public</span>
@@ -1693,7 +1686,7 @@
 								{#if isSavingToDB && !isPublic}
 									<span class="loading loading-spinner loading-xs"></span>
 								{/if}
-								<ZapIcon size="18" />
+								<ZapIcon size={18} />
 								<div class="flex flex-col items-start leading-tight">
 									<span class="text-xs font-bold">บันทึกส่วนตัว</span>
 									<span class="text-[8px] opacity-70 uppercase tracking-tighter">Private</span>
@@ -1704,15 +1697,15 @@
 
 						<div class="grid grid-cols-3 gap-2">
 							<button class="btn btn-outline btn-sm gap-2 px-1" on:click={exportCSV}>
-								<DownloadIcon size="14" />
+								<DownloadIcon size={14} />
 								<span class="text-[10px]">CSV</span>
 							</button>
 							<button class="btn btn-outline btn-sm gap-2 px-1" on:click={() => exportPNG(false)}>
-								<GridIcon size="14" />
+								<GridIcon size={14} />
 								<span class="text-[10px]">รูปตาราง</span>
 							</button>
 							<button class="btn btn-outline btn-sm gap-2 px-1" on:click={() => exportPNG(true)}>
-								<CheckSquareIcon size="14" />
+								<CheckSquareIcon size={14} />
 								<span class="text-[10px]">รูปเฉลย</span>
 							</button>
 						</div>
@@ -1734,7 +1727,7 @@
 										rel="noreferrer"
 									>
 										<span>เปิดหน้าเล่น</span>
-										<ExternalLinkIcon size="12" />
+										<ExternalLinkIcon size={12} />
 									</a>
 								</div>
 							{/if}
@@ -1760,7 +1753,7 @@
 								class="btn btn-primary btn-block rounded-2xl shadow-lg shadow-primary/20"
 								on:click={() => showResizeControls = false}
 							>
-								<CheckCircleIcon size="18" />
+								<CheckCircleIcon size={18} />
 								<span>เสร็จสิ้น</span>
 							</button>
 						</div>
@@ -1783,12 +1776,12 @@
 
 									<li>
 										<span class="inline-flex items-center gap-2">
-											กด <CheckSquareIcon size="16" /> เพื่อเติมคำที่เหลือในตารางให้โดยอัตโนมัติ
+											กด <CheckSquareIcon size={16} /> เพื่อเติมคำที่เหลือในตารางให้โดยอัตโนมัติ
 										</span>
 									</li>
 									<li>
 										<span class="inline-flex items-center gap-2"
-											>กด <ZapIcon size="16" /> เพื่อตัดคำที่ใช้ไม่ได้ออก</span
+											>กด <ZapIcon size={16} /> เพื่อตัดคำที่ใช้ไม่ได้ออก</span
 										>
 									</li>
 									<li>เมื่อสร้างตารางเสร็จแล้ว คลิก <strong>"เพิ่มคำใบ้"</strong></li>
@@ -1986,11 +1979,11 @@
 				shadow-2xl border-none text-base-content font-bold py-3 px-6 rounded-2xl animate-fade-in flex items-center gap-3 min-w-[200px]"
 			>
 				{#if t.type === 'success'}
-					<CheckSquareIcon size="18" />
+					<CheckSquareIcon size={18} />
 				{:else if t.type === 'error'}
-					<XIcon size="18" />
+					<XIcon size={18} />
 				{:else}
-					<ZapIcon size="18" />
+					<ZapIcon size={18} />
 				{/if}
 				<span class="text-sm">{t.message}</span>
 			</div>

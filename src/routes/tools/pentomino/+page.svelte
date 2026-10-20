@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { solvePentomino, countSolutions } from '#lib/pentomino_engine.js';
 	import { fade } from 'svelte/transition';
-	import { HelpCircleIcon } from 'svelte-feather-icons';
+	import HelpCircleIcon from '@lucide/svelte/icons/circle-help';
 
 	type ForcedCell = { r: number; c: number; id: string };
 	type BlockedCell = [number, number];
@@ -272,7 +272,7 @@
 			class="btn btn-circle btn-xs sm:btn-sm btn-ghost text-base-content/70 hover:text-base-content border border-base-300"
 			title="วิธีใช้"
 		>
-			<HelpCircleIcon size="14" />
+			<HelpCircleIcon size={14} />
 		</button>
 	</header>
 

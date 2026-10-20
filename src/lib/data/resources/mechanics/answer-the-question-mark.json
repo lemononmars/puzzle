@@ -1,0 +1,50 @@
+{
+  "id": "answer-the-question-mark",
+  "hasExercise": false,
+  "englishTitle": "Answer the Question Mark",
+  "thaiTitle": "หาคำตอบแทนเครื่องหมายคำถาม",
+  "japaneseTitle": "？を答える",
+  "description": "พิจารณารูปแบบหรือความสัมพันธ์รอบเครื่องหมายคำถาม แล้วหาสิ่งที่ควรอยู่ในตำแหน่งนั้น",
+  "chapter": {
+    "id": "basics",
+    "hasExercise": false,
+    "englishTitle": "Puzzle-Solving Basics",
+    "thaiTitle": "พื้นฐานการไขปริศนา",
+    "japaneseTitle": "謎解きの基本",
+    "accent": "badge-primary"
+  },
+  "detailedDescription": "กลไก **Answer the Question Mark** (ญี่ปุ่น: *？を答える*) เป็นหัวใจพื้นฐานที่สุดของเกมแนว *Nazotoki (謎解き)* และ *Escape Room (リアル脱出ゲーム)* โดยโจทย์จะจัดวางข้อมูล เช่น ตัวอักษร, สัญลักษณ์, หรือรูปทรง ที่มีการเปลี่ยนแปลงอย่างมีแบบแผน (*Pattern*) แล้วเว้นตำแหน่งหนึ่งไว้ด้วยเครื่องหมายคำถาม `?` เพื่อให้ผู้เล่นวิเคราะห์ความสัมพันธ์และหาคำตอบมาเติมให้สมบูรณ์",
+  "solvingTechnique": "1. สังเกตทิศทางของการเปลี่ยนแปลง (ซ้ายไปขวา, บนลงล่าง, หรือวนตามเข็มนาฬิกา)\n2. แปลงองค์ประกอบให้อยู่ในรูปตัวเลขหรือลำดับ (เช่น ลำดับ Alphabet A=1, C=3, E=5, G=7)\n3. คำนวณความต่าง (Step) เพื่อหาค่าของตำแหน่ง `?`",
+  "technicalTerms": [
+    {
+      "en": "Question Mark",
+      "ja": "はてな / クエスチョンマーク",
+      "th": "เครื่องหมายคำถามที่เป็นเป้าหมาย"
+    },
+    {
+      "en": "Pattern",
+      "ja": "パターン / 規則性",
+      "th": "รูปแบบหรือความสัมพันธ์เชิงตรรกะ"
+    },
+    {
+      "en": "Sequence",
+      "ja": "数列 / シーケンス",
+      "th": "ลำดับที่เปลี่ยนแปลงอย่างเป็นระบบ"
+    }
+  ],
+  "puzzle": {
+    "title": "โจทย์ทดลอง: ลำดับอักษรปริศนา",
+    "prompt": "พิจารณารูปแบบของตัวอักษรในวงกลมทั้ง 5 แล้วหาว่าตัวอักษรใดควรแทนที่เครื่องหมาย [ ? ]",
+    "hint": "สังเกตตำแหน่งของตัวอักษรใน Alphabet (ภาษาอังกฤษ) แล้วนับระยะห่างระหว่างแต่ละตัว",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-base-300)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"42\" fill=\"var(--color-base-content)\" font-size=\"14\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Alphabet Sequence</text>\n  \n  <line x1=\"60\" y1=\"120\" x2=\"460\" y2=\"120\" stroke=\"var(--color-base-300)\" stroke-width=\"4\" stroke-dasharray=\"6,6\"/>\n  \n  <circle cx=\"60\" cy=\"120\" r=\"32\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"3\"/>\n  <text x=\"60\" y=\"128\" fill=\"var(--color-base-content)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">A</text>\n  <text x=\"60\" y=\"175\" fill=\"var(--color-base-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">(1)</text>\n\n  <text x=\"110\" y=\"110\" fill=\"var(--color-primary)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">+2</text>\n  <path d=\"M96 120 L124 120 M118 115 L124 120 L118 125\" stroke=\"var(--color-primary)\" stroke-width=\"2\" fill=\"none\"/>\n\n  <circle cx=\"160\" cy=\"120\" r=\"32\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"3\"/>\n  <text x=\"160\" y=\"128\" fill=\"var(--color-base-content)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">C</text>\n  <text x=\"160\" y=\"175\" fill=\"var(--color-base-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">(3)</text>\n\n  <text x=\"210\" y=\"110\" fill=\"var(--color-primary)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">+2</text>\n  <path d=\"M196 120 L224 120 M218 115 L224 120 L218 125\" stroke=\"var(--color-primary)\" stroke-width=\"2\" fill=\"none\"/>\n\n  <circle cx=\"260\" cy=\"120\" r=\"32\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"3\"/>\n  <text x=\"260\" y=\"128\" fill=\"var(--color-base-content)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">E</text>\n  <text x=\"260\" y=\"175\" fill=\"var(--color-base-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">(5)</text>\n\n  <text x=\"310\" y=\"110\" fill=\"var(--color-primary)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">+2</text>\n  <path d=\"M296 120 L324 120 M318 115 L324 120 L318 125\" stroke=\"var(--color-primary)\" stroke-width=\"2\" fill=\"none\"/>\n\n  <circle cx=\"360\" cy=\"120\" r=\"32\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"3\"/>\n  <text x=\"360\" y=\"128\" fill=\"var(--color-base-content)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">G</text>\n  <text x=\"360\" y=\"175\" fill=\"var(--color-base-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">(7)</text>\n\n  <text x=\"410\" y=\"110\" fill=\"var(--color-accent-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">+2</text>\n  <path d=\"M396 120 L424 120 M418 115 L424 120 L418 125\" stroke=\"var(--color-accent-content)\" stroke-width=\"2\" fill=\"none\"/>\n\n  <circle cx=\"460\" cy=\"120\" r=\"32\" fill=\"var(--color-accent)\" stroke=\"var(--color-accent-content)\" stroke-width=\"3\"/>\n  <text x=\"460\" y=\"129\" fill=\"var(--color-accent-content)\" font-size=\"26\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">?</text>\n</svg>",
+    "solutionSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"42\" fill=\"var(--color-success-content)\" font-size=\"14\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Solution Revealed</text>\n  \n  <line x1=\"60\" y1=\"120\" x2=\"460\" y2=\"120\" stroke=\"var(--color-base-300)\" stroke-width=\"4\" stroke-dasharray=\"6,6\"/>\n  \n  <circle cx=\"60\" cy=\"120\" r=\"32\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"3\"/>\n  <text x=\"60\" y=\"128\" fill=\"var(--color-base-content)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">A</text>\n  \n  <circle cx=\"160\" cy=\"120\" r=\"32\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"3\"/>\n  <text x=\"160\" y=\"128\" fill=\"var(--color-base-content)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">C</text>\n  \n  <circle cx=\"260\" cy=\"120\" r=\"32\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"3\"/>\n  <text x=\"260\" y=\"128\" fill=\"var(--color-base-content)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">E</text>\n  \n  <circle cx=\"360\" cy=\"120\" r=\"32\" fill=\"var(--color-base-200)\" stroke=\"var(--color-primary)\" stroke-width=\"3\"/>\n  <text x=\"360\" y=\"128\" fill=\"var(--color-base-content)\" font-size=\"24\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">G</text>\n  \n  <circle cx=\"460\" cy=\"120\" r=\"32\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"4\"/>\n  <text x=\"460\" y=\"128\" fill=\"var(--color-success-content)\" font-size=\"26\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">I</text>\n  <text x=\"460\" y=\"175\" fill=\"var(--color-success-content)\" font-size=\"12\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">(9)</text>\n</svg>",
+    "acceptedAnswers": [
+      "I",
+      "i",
+      "ไอ",
+      "9"
+    ],
+    "answerDisplay": "I",
+    "solutionExplanation": "พิจารณาลำดับของตัวอักษรภาษาอังกฤษในตาราง *Alphabet*:\n- A คือลำดับที่ 1\n- C คือลำดับที่ 3 (+2)\n- E คือลำดับที่ 5 (+2)\n- G คือลำดับที่ 7 (+2)\nดังนั้น ตำแหน่ง `?` คือลำดับที่ 7 + 2 = 9 ซึ่งตรงกับตัวอักษร **I**"
+  }
+}

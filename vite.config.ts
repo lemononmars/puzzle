@@ -5,7 +5,17 @@ import vercel from '@sveltejs/adapter-vercel';
 import node from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
-export default defineConfig({
+// Separate optimizer output for concurrent preview ports and production/check runs.
+const portIndex = process.argv.indexOf('--port');
+const requestedPort = process.argv.find(arg => arg.startsWith('--port='))?.slice(7)
+	?? (portIndex >= 0 ? process.argv[portIndex + 1] : undefined)
+	?? process.env.npm_config_port
+	?? '5173';
+const cachePort = /^\d{1,5}$/.test(requestedPort) ? requestedPort : '5173';
+export default defineConfig(({ command }) => ({
+	cacheDir: command === 'serve' ? `node_modules/.vite/dev-${cachePort}` : 'node_modules/.vite/build',
+	server: { port: 5173, strictPort: true },
+	optimizeDeps: { exclude: ['@lucide/svelte'] },
 	plugins: [
 		tailwindcss(),
 		sveltekit({
@@ -15,5 +25,6 @@ export default defineConfig({
 			compilerOptions: { compatibility: { componentApi: 4 } }
 		})
 	],
-	build: { chunkSizeWarningLimit: 18000 },
-});
+	worker: { format: 'es' },
+	build: { chunkSizeWarningLimit: 500 },
+}));

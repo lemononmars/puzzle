@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { BookOpenIcon, ArrowLeftIcon, HashIcon, ChevronUpIcon } from 'svelte-feather-icons';
+	import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import HashIcon from '@lucide/svelte/icons/hash';
+import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 
 	let showScrollTop = false;
 
@@ -179,7 +182,7 @@
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/resources" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปหน้าแหล่งทรัพยากร</span>
 		</a>
 	</div>
@@ -187,7 +190,7 @@
 	<!-- Header -->
 	<header class="text-center max-w-2xl mx-auto space-y-3">
 		<div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-primary flex items-center justify-center border border-primary/30 mx-auto shadow-lg shadow-emerald-500/5">
-			<BookOpenIcon size="32" />
+			<BookOpenIcon size={32} />
 		</div>
 		<h1 class="text-3xl lg:text-4xl font-black tracking-tight text-base-content">
 			Puzzle Knowledge & References 📚
@@ -200,7 +203,7 @@
 	<!-- Quick Navigation Category Badges Bar at Page Top -->
 	<div class="botanical-card bg-base-100 text-base-content border border-base-300 rounded-3xl p-4 sm:p-5 shadow-xl space-y-3">
 		<div class="flex items-center gap-2 text-xs font-bold text-base-content/70 uppercase tracking-wider">
-			<HashIcon size="14" class="text-primary" />
+			<HashIcon size={14} class="text-primary" />
 			<span>หมวดหมู่ข้อมูล (Quick Jump):</span>
 		</div>
 		<div class="flex flex-wrap gap-2">
@@ -241,6 +244,6 @@
 		class="fixed bottom-6 right-6 z-50 btn btn-circle bg-emerald-500 hover:bg-emerald-400 text-base-content/70 border-none shadow-2xl transition-all duration-300"
 		title="Scroll to Top"
 	>
-		<ChevronUpIcon size="22" />
+		<ChevronUpIcon size={22} />
 	</button>
 {/if}

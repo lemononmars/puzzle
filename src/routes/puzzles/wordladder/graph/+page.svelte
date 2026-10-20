@@ -1,8 +1,11 @@
 <script lang="ts">
+import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { buildWordList, splitSlots, diffSlots } from '#lib/wordladder/wordladder.js';
-	import dictJson from '#lib/dict.json';
+	import {createLadderWorker} from "#lib/workers/ladder-client.js";
+ const ladder=createLadderWorker();
+ let computeId=0;
+
 
 	type SlotSize = 3 | 4 | 5 | 6;
 
@@ -13,58 +16,22 @@
 	let isolatedCount = 0;
 
 	// ── Union-Find ─────────────────────────────────────────────
-	function buildComponents(words: string[]): string[][] {
-		const n = words.length;
-		const parent = Int32Array.from({ length: n }, (_, i) => i);
-		const rank   = new Int32Array(n);
-
-		function find(x: number): number {
-			while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; }
-			return x;
-		}
-		function union(a: number, b: number) {
-			a = find(a); b = find(b);
-			if (a === b) return;
-			if (rank[a] < rank[b]) { const t = a; a = b; b = t; }
-			parent[b] = a;
-			if (rank[a] === rank[b]) rank[a]++;
-		}
-
-		// Pre-compute splits once
-		const splits = words.map(splitSlots);
-
-		// O(n²) adjacency
-		for (let i = 0; i < n; i++) {
-			for (let j = i + 1; j < n; j++) {
-				if (diffSlots(splits[i], splits[j]) === 1) union(i, j);
-			}
-		}
-
-		// Group by root
-		const groups = new Map<number, string[]>();
-		for (let i = 0; i < n; i++) {
-			const r = find(i);
-			if (!groups.has(r)) groups.set(r, []);
-			groups.get(r)!.push(words[i]);
-		}
-
-		return [...groups.values()].sort((a, b) => b.length - a.length);
-	}
-
 	async function compute(n: SlotSize) {
 		loading = true;
 		components = [];
 		await new Promise(r => setTimeout(r, 20));
 
-		const words = buildWordList(dictJson as string[], n);
-		wordCount = words.length;
-		const comps = buildComponents(words);
+		const id=++computeId;
+ let result;try{result=await ladder.run({action:'graph',size:n});}catch{if(id===computeId)loading=false;return;}
+ if(id!==computeId)return;
+ wordCount=result.wordCount;
+ const comps:string[][]=result.components;
 		components = comps;
 		isolatedCount = comps.filter(c => c.length === 1).length;
 		loading = false;
 	}
 
-	onMount(() => compute(slotSize));
+	onMount(() => {compute(slotSize);return ()=>ladder.dispose();});
 
 	function changeSize(n: number) {
 		if (n === slotSize && !loading) return;
@@ -102,7 +69,7 @@
 			href="/puzzles/wordladder"
 			class="px-3 py-1.5 rounded-lg text-xs font-bold bg-base-100 text-base-content border border-base-300 text-base-content/70 hover:bg-base-100 text-base-content transition-colors flex items-center gap-1 shrink-0"
 		>
-			← กลับไปยังเกม
+			<UiArrowLeft size={16} class="inline-block align-middle" aria-hidden="true" /> กลับไปยังเกม
 		</a>
 	</div>
 

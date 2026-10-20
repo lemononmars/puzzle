@@ -1,4 +1,5 @@
 <script lang="ts">
+import UiRotateCw from '@lucide/svelte/icons/rotate-cw';
  const letters = 'PLAYIDEACLUEWORD'.split('');
  const words = ['PLAY','IDEA','CLUE','WORD'];
  let wordIndex = $state(0);
@@ -16,7 +17,7 @@
    {#each letters as letter, i}<button type="button" class:highlight={chosen.includes(i)} aria-pressed={chosen.includes(i)} aria-label={`${letter}, ช่อง ${i + 1}`} onclick={() => pick(i)}>{letter}</button>{/each}
   </div>
   <p class="feedback" role="status">{solved ? 'ใช่เลย! อีกคำไหม? ✦' : chosen.length === 4 ? 'ลองเรียงใหม่อีกครั้ง ↻' : result || 'แตะตัวอักษร แล้วลองค้นพบคำแรก'}</p>
-  <div class="flex justify-between gap-2 mt-3"><button class="btn btn-xs btn-ghost" onclick={() => chosen=[]}>เริ่มใหม่</button><button class="btn btn-xs btn-outline btn-primary" onclick={next}>สลับคำ ↻</button></div>
+  <div class="flex justify-between gap-2 mt-3"><button class="btn btn-xs btn-ghost" onclick={() => chosen=[]}>เริ่มใหม่</button><button class="btn btn-xs btn-outline btn-primary" onclick={next}>สลับคำ <UiRotateCw size={16} class="inline-block align-middle" aria-hidden="true" /></button></div>
  </div>
  <div class="sticker bg-accent text-accent-content" aria-hidden="true"><strong>{solved ? 'aha!' : 'tap!'}</strong><small>follow a little clue</small></div>
 </div>

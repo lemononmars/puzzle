@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { AwardIcon, MonitorIcon, UserIcon, TvIcon } from 'svelte-feather-icons';
+	import AwardIcon from '@lucide/svelte/icons/award';
+import MonitorIcon from '@lucide/svelte/icons/monitor';
+import UserIcon from '@lucide/svelte/icons/user';
+import TvIcon from '@lucide/svelte/icons/tv';
 
 	let roomId: string = '101';
 </script>
@@ -12,7 +15,7 @@
 <div class="container mx-auto px-4 py-12 max-w-3xl">
 	<div class="text-center mb-10">
 		<div class="inline-flex items-center justify-center p-4 bg-amber-500/10 text-warning-content rounded-full mb-4">
-			<AwardIcon size="44" />
+			<AwardIcon size={44} />
 		</div>
 		<h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3 text-primary">
 			Jeopardy Quiz
@@ -42,7 +45,7 @@
 			class="card bg-base-200 hover:bg-base-300 transition-all hover:scale-105 shadow-xl border border-base-content/10"
 		>
 			<div class="card-body items-center text-center p-6">
-				<MonitorIcon size="40" class="text-accent-content mb-2" />
+				<MonitorIcon size={40} class="text-accent-content mb-2" />
 				<h2 class="card-title text-xl font-bold">Host</h2>
 				<p class="text-xs text-base-content/60">ควบคุมเกม ให้/ลบคะแนน ปลดล็อคปุ่ม</p>
 				<button class="btn btn-accent btn-sm btn-block mt-4">เข้าสู่ Host ({roomId})</button>
@@ -54,7 +57,7 @@
 			class="card bg-base-200 hover:bg-base-300 transition-all hover:scale-105 shadow-xl border border-base-content/10"
 		>
 			<div class="card-body items-center text-center p-6">
-				<UserIcon size="40" class="text-success-content mb-2" />
+				<UserIcon size={40} class="text-success-content mb-2" />
 				<h2 class="card-title text-xl font-bold">Player</h2>
 				<p class="text-xs text-base-content/60">กดปุ่มแย่งตอบ ส่งคะแนนเดิมพัน และคำตอบ</p>
 				<button class="btn btn-success btn-sm btn-block mt-4">เข้าสู่ Player ({roomId})</button>
@@ -66,7 +69,7 @@
 			class="card bg-base-200 hover:bg-base-300 transition-all hover:scale-105 shadow-xl border border-base-content/10"
 		>
 			<div class="card-body items-center text-center p-6">
-				<TvIcon size="40" class="text-info-content mb-2" />
+				<TvIcon size={40} class="text-info-content mb-2" />
 				<h2 class="card-title text-xl font-bold">Audience</h2>
 				<p class="text-xs text-base-content/60">จอแสดงผลคะแนนและปุ่มกดสด สำหรับผู้ชม/สตรีม</p>
 				<button class="btn btn-info btn-sm btn-block mt-4">เข้าสู่ Audience ({roomId})</button>

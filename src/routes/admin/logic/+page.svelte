@@ -1,6 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { ArrowLeftIcon, PlusIcon, ExternalLinkIcon, CheckCircleIcon, GridIcon, EyeIcon, EditIcon, XIcon, Trash2Icon, ChevronLeftIcon, ChevronRightIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import PlusIcon from '@lucide/svelte/icons/plus';
+import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import GridIcon from '@lucide/svelte/icons/grid-2x2';
+import EyeIcon from '@lucide/svelte/icons/eye';
+import EditIcon from '@lucide/svelte/icons/square-pen';
+import XIcon from '@lucide/svelte/icons/x';
+import Trash2Icon from '@lucide/svelte/icons/trash-2';
+import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import type { ILogicPuzzle } from '#lib/interfaces/index.js';
 	import LogicPuzzleThumbnail from '#lib/components/LogicPuzzleThumbnail.svelte';
 
@@ -267,14 +277,14 @@
 			on:click={openAddModal}
 			class="btn bg-gradient-to-r from-base-200 to-base-200 hover:from-base-200 hover:to-base-200 text-base-content/70 font-bold border-none px-5 rounded-2xl shadow-lg flex items-center gap-2 self-start md:self-auto"
 		>
-			<PlusIcon size="18" />
+			<PlusIcon size={18} />
 			<span>เพิ่ม Logic Puzzle</span>
 		</button>
 	</header>
 
 	{#if successMsg}
 		<div class="alert alert-success text-sm font-bold rounded-2xl shadow-lg">
-			<CheckCircleIcon size="18" />
+			<CheckCircleIcon size={18} />
 			<span>{successMsg}</span>
 		</div>
 	{/if}
@@ -337,7 +347,7 @@
 										on:click={() => handleEdit(p)}
 										class="btn btn-ghost btn-xs text-amber-400 hover:bg-amber-500/10 gap-1 font-bold rounded-lg"
 									>
-										<EditIcon size="12" />
+										<EditIcon size={12} />
 										<span>แก้ไข</span>
 									</button>
 								</td>
@@ -357,7 +367,7 @@
 							disabled={currentPage === 1}
 							on:click={() => (currentPage -= 1)}
 						>
-							<ChevronLeftIcon size="14" />
+							<ChevronLeftIcon size={14} />
 							<span>ก่อนหน้า</span>
 						</button>
 						<span class="px-3 py-1 bg-base-100 text-base-content border border-base-300 rounded-lg font-mono font-bold text-primary">
@@ -369,7 +379,7 @@
 							on:click={() => (currentPage += 1)}
 						>
 							<span>ถัดไป</span>
-							<ChevronRightIcon size="14" />
+							<ChevronRightIcon size={14} />
 						</button>
 					</div>
 				</div>
@@ -387,7 +397,7 @@
 				on:click={closeModal}
 				class="absolute top-3 right-3 z-20 btn btn-circle btn-sm bg-base-100 text-base-content text-base-content/70 hover:text-base-content border-base-300 hover:bg-base-100 text-base-content"
 			>
-				<XIcon size="18" />
+				<XIcon size={18} />
 			</button>
 
 			<!-- LEFT COLUMN: Live Preview / Image -->
@@ -403,7 +413,7 @@
 				{:else}
 					<div class="flex flex-col items-center justify-center text-center p-6 space-y-3 text-base-content/70">
 						<div class="w-16 h-16 rounded-2xl bg-base-100 text-base-content border border-base-300 flex items-center justify-center text-purple-400 shadow-inner">
-							<EyeIcon size="28" />
+							<EyeIcon size={28} />
 						</div>
 						<h4 class="font-bold text-base-content/70 text-sm">ตัวอย่างปริศนา (Live Preview)</h4>
 						<p class="text-xs text-base-content/70 max-w-xs font-light">
@@ -419,10 +429,10 @@
 				<div class="border-b border-base-300 pb-3 pr-8">
 					<h2 class="text-xl font-bold flex items-center gap-2">
 						{#if editingId}
-							<EditIcon size="20" class="text-amber-400" />
+							<EditIcon size={20} class="text-amber-400" />
 							<span class="text-amber-400">แก้ไข Logic Puzzle #{editingId}</span>
 						{:else}
-							<PlusIcon size="20" class="text-primary" />
+							<PlusIcon size={20} class="text-primary" />
 							<span class="text-primary">เพิ่ม Logic Puzzle ใหม่</span>
 						{/if}
 					</h2>
@@ -557,7 +567,7 @@
 							class="btn btn-error btn-outline btn-sm font-bold gap-1 rounded-xl text-rose-400 border-rose-500/40 hover:bg-rose-500/20"
 							disabled={isDeleting}
 						>
-							<Trash2Icon size="14" />
+							<Trash2Icon size={14} />
 							<span>{isDeleting ? 'กำลังลบ...' : 'ลบปริศนา'}</span>
 						</button>
 					{/if}

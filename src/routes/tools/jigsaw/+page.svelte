@@ -256,15 +256,12 @@
 		name="description"
 		content="Play the ultimate interactive Jigsaw Quiz game. Select tiles to reveal clues and guess the mystery image in this game master console presentation."
 	/>
-	<meta property="og:title" content="Jigsaw Quiz" />
-	<meta
-		property="og:description"
-		content="Play the ultimate interactive Jigsaw Quiz game. Select tiles to reveal clues and guess the mystery image in this game master console presentation."
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="/og-jigsaw-quiz.png" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="/og-jigsaw-quiz.png" />
+
+
+
+
+
+
 </svelte:head>
 
 <div class="min-h-screen bg-base-200 p-4 lg:p-8">

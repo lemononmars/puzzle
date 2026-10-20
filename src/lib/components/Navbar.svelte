@@ -1,21 +1,23 @@
 <script lang="ts">
+ import LocalDataSettings from "#lib/components/LocalDataSettings.svelte";
+ import PageIcon from "#lib/components/ui/PageIcon.svelte";
+ import ChevronDown from "@lucide/svelte/icons/chevron-down";
+ import Sparkles from "@lucide/svelte/icons/sparkles";
 	import { preventDefault } from 'svelte/legacy';
 	import PWAInstallSettings from '#lib/components/PWAInstallSettings.svelte';
 
 
-	import {
-		MoreHorizontalIcon,
-		HomeIcon,
-		PlayCircleIcon,
-		ShoppingCartIcon,
-		BriefcaseIcon,
-		MailIcon,
-		ToolIcon,
-		BookOpenIcon,
-		UserIcon,
-		Edit3Icon,
-		XIcon
-	} from 'svelte-feather-icons';
+	import MoreHorizontalIcon from '@lucide/svelte/icons/ellipsis';
+import HomeIcon from '@lucide/svelte/icons/home';
+import PlayCircleIcon from '@lucide/svelte/icons/circle-play';
+import ShoppingCartIcon from '@lucide/svelte/icons/shopping-cart';
+import BriefcaseIcon from '@lucide/svelte/icons/briefcase';
+import MailIcon from '@lucide/svelte/icons/mail';
+import ToolIcon from '@lucide/svelte/icons/wrench';
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import UserIcon from '@lucide/svelte/icons/user';
+import Edit3Icon from '@lucide/svelte/icons/pencil-line';
+import XIcon from '@lucide/svelte/icons/x';
 	import { username } from '#lib/store/index.js';
 	import { page } from '$app/state';
  import catalog from '#lib/data/catalog.json';
@@ -32,10 +34,9 @@
  const compact = [
  { title:'เล่น', links:[['/puzzles','ห้องเล่นทั้งหมด'],...catalog.puzzles.map(group => ['/puzzles/'+group.id,group.title])] },
  { title:'สร้าง', links:[['/tools','กล่องเครื่องมือทั้งหมด'],...catalog.tools.map(group => ['/tools/'+group.id,group.title])] },
- { title:'ค้น', links:[['/resources','ข้อมูลทั้งหมด'],...catalog.resources.map(group => ['/resources/'+group.id,group.title])] },
- { title:'เพิ่มเติม', links:[['/portfolio','ผลงาน / เกี่ยวกับฉัน'],['/contact','ติดต่อร่วมงาน'],['/shop','ร้านหนังสือปริศนา']] }
+ { title:'ค้น', links:[['/search','ค้นหาทั้งเว็บไซต์'],['/resources','ข้อมูลทั้งหมด'],...catalog.resources.map(group => ['/resources/'+group.id,group.title])] },
+ { title:'เพิ่มเติม', links:[['/library','ปริศนาของฉัน'],['/portfolio','ผลงาน / เกี่ยวกับฉัน'],['/contact','ติดต่อร่วมงาน'],['/shop','ร้านหนังสือปริศนา']] }
  ];
- function pageMark(href: string) { const puzzleGroup = catalog.puzzles.find(group => href === "/puzzles/"+group.id); const toolGroup = catalog.tools.find(group => href === "/tools/"+group.id); if (puzzleGroup || toolGroup) return (puzzleGroup || toolGroup)!.mark; return ({'/puzzles':'▦','/puzzles/deduction':'◈','/puzzles/logicpuzzle':'▧','/puzzles/spellingquiz':'ก','/tools':'⚒','/tools/wordsearch':'⌕','/tools/crossword':'▦','/tools/pentomino':'▰','/resources':'▤','/resources/logictutorial':'▧','/resources/spellingdictionary':'ก','/resources/knowledge':'◈','/resources/ciphers':'⌘','/resources/mechanics':'⚙','/portfolio':'✦','/contact':'✉','/shop':'▤'} as Record<string,string>)[href] ?? '•'; }
  function openSection(index: number) { if (window.matchMedia("(min-width:1024px)").matches) { desktopMenu = index; } else { section = index; openMore = true; } }
 	afterNavigate(() => { openMore = false; desktopMenu = null; });
 	let openNameModal = $state(false);
@@ -72,17 +73,17 @@
 
 <svelte:window onkeydown={(event) => { if (event.key === 'Escape') desktopMenu = null; }} />
 <div class="compact-navbar bg-base-100 text-base-content">
- <a href="/" class="brand" aria-label="Puzzle หน้าแรก"><span class="bg-primary text-primary-content" aria-hidden="true">✦</span><strong>Puzzle</strong></a>
+ <a href="/" class="brand" aria-label="Puzzle หน้าแรก"><span class="bg-primary text-primary-content" aria-hidden="true"><Sparkles size={21} /></span><strong>Puzzle</strong></a>
  <nav aria-label="เมนูหลัก" class="compact-links">
-  <a href="/" aria-current={currentPath === '/' ? 'page' : undefined} class:active={currentPath === '/'}><HomeIcon size="19" /><span>หน้าแรก</span></a>
+  <a href="/" aria-current={currentPath === '/' ? 'page' : undefined} class:active={currentPath === '/'}><HomeIcon size={19} /><span>หน้าแรก</span></a>
   {#each compact as group, i}
    {@const Icon = [PlayCircleIcon, ToolIcon, BookOpenIcon, MoreHorizontalIcon][i]}
-   {@const active = i === 3 ? ['shop','portfolio','contact'].some(isActive) : isActive(links[i + 1])}
+   {@const active = i === 3 ? ['shop','portfolio','contact','library'].some(isActive) : isActive(links[i + 1])}
    <div class="nav-group" role="group" aria-label={group.title} onpointerenter={() => { if (window.matchMedia('(min-width:1024px)').matches) desktopMenu = i; }} onpointerleave={() => desktopMenu = null} onfocusout={(event) => { if (!(event.relatedTarget instanceof Node) || !event.currentTarget.contains(event.relatedTarget)) desktopMenu = null; }}>
-    <button type="button" aria-expanded={desktopMenu === i || (openMore && section === i)} aria-controls={desktopMenu === i ? 'desktop-submenu-' + i : undefined} class:active={active || desktopMenu === i || (openMore && section === i)} onclick={() => openSection(i)}><Icon size="19" /><span>{group.title}</span><span class="chevron" aria-hidden="true">⌄</span></button>
+    <button type="button" aria-expanded={desktopMenu === i || (openMore && section === i)} aria-controls={desktopMenu === i ? 'desktop-submenu-' + i : undefined} class:active={active || desktopMenu === i || (openMore && section === i)} onclick={() => openSection(i)}><Icon size={19} /><span>{group.title}</span><span class="chevron" aria-hidden="true"><ChevronDown size={13} /></span></button>
     {#if desktopMenu === i}<div class="dropdown-bridge" id={'desktop-submenu-' + i}><nav class="dropdown-panel bg-base-100 text-base-content" aria-label={group.title + ' — เมนูย่อย'}>
-     {#each group.links as [href, label]}<a {href} onclick={() => desktopMenu = null} aria-current={currentPath === href ? 'page' : undefined}><span class="page-mark" aria-hidden="true">{pageMark(href)}</span>{label}</a>{/each}
-     {#if i === 3}<button type="button" onclick={handleOpenModal}><UserIcon size="16" />ตั้งค่าผู้เล่น: {$username || 'Guest'}</button>{/if}
+     {#each group.links as [href, label]}<a {href} onclick={() => desktopMenu = null} aria-current={currentPath === href ? 'page' : undefined}><span class="page-mark" aria-hidden="true"><PageIcon {href} size={18} /></span>{label}</a>{/each}
+     {#if i === 3}<button type="button" onclick={handleOpenModal}><UserIcon size={16} />ตั้งค่าผู้เล่น: {$username || 'Guest'}</button>{/if}
     </nav></div>{/if}
    </div>
   {/each}
@@ -91,9 +92,9 @@
 <BottomSheet bind:open={openMore} title={compact[section].title}>
  <nav aria-label={compact[section].title} class="grid gap-2">
   {#each compact[section].links as [href, label]}
-   <a {href} onclick={() => openMore = false} aria-current={currentPath === href ? 'page' : undefined} class="flex items-center justify-between min-h-12 px-4 rounded-xl hover:bg-base-200 text-base-content"><span aria-hidden="true">{pageMark(href)}</span><span>{label}</span></a>
+   <a {href} onclick={() => openMore = false} aria-current={currentPath === href ? 'page' : undefined} class="flex items-center justify-between min-h-12 px-4 rounded-xl hover:bg-base-200 text-base-content"><span aria-hidden="true"><PageIcon {href} size={18} /></span><span>{label}</span></a>
   {/each}
-  {#if section === 3}<button type="button" onclick={handleOpenModal} class="btn btn-ghost justify-start"><UserIcon size="18" />ตั้งค่าผู้เล่น: {$username || 'Guest'}</button>{/if}
+  {#if section === 3}<button type="button" onclick={handleOpenModal} class="btn btn-ghost justify-start"><UserIcon size={18} />ตั้งค่าผู้เล่น: {$username || 'Guest'}</button>{/if}
  </nav>
 </BottomSheet>
 <style>
@@ -114,12 +115,12 @@
 				aria-label="ปิดการตั้งค่า"
 				class="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 text-base-content hover:bg-base-200"
 			>
-				<XIcon size="18" />
+				<XIcon size={18} />
 			</button>
 
 			<div class="flex items-center gap-3 mb-4">
 				<div class="w-10 h-10 rounded-2xl bg-primary/20 text-primary flex items-center justify-center shrink-0">
-					<Edit3Icon size="20" />
+					<Edit3Icon size={20} />
 				</div>
 				<div>
 					<h3 id="player-settings-heading" class="font-extrabold text-lg text-base-content">ตั้งค่าผู้เล่น</h3>
@@ -149,7 +150,8 @@
 					</button>
 				</div>
 			</form>
-			<PWAInstallSettings />
+			<LocalDataSettings />
+ <PWAInstallSettings />
 		</div>
 
 		<form method="dialog" class="modal-backdrop"><button aria-label="ปิดการตั้งค่า">ปิด</button></form>

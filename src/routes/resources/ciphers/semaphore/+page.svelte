@@ -1,6 +1,8 @@
 <script lang="ts">
 	import AnswerChecker from '#lib/components/AnswerChecker.svelte';
-	import { ArrowLeftIcon, FlagIcon, CheckCircleIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import FlagIcon from '@lucide/svelte/icons/flag';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 
 	let inputText = 'CODEBREAKER';
 
@@ -75,7 +77,7 @@
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/resources/ciphers" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปหน้า Cipher Library</span>
 		</a>
 	</div>
@@ -83,7 +85,7 @@
 	<!-- Header -->
 	<header class="text-center max-w-2xl mx-auto space-y-3">
 		<div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center border border-amber-500/20 mx-auto shadow-lg shadow-amber-500/5">
-			<FlagIcon size="32" />
+			<FlagIcon size={32} />
 		</div>
 		<h1 class="text-3xl lg:text-4xl font-black tracking-tight text-base-content">
 			Flag Semaphore (รหัสธงสัญญาณ) 🚩
@@ -176,7 +178,7 @@
 
 						{#if feedback[idx] === 'correct'}
 							<div class="flex items-center gap-1 text-xs font-bold text-primary">
-								<CheckCircleIcon size="14" />
+								<CheckCircleIcon size={14} />
 								<span>ถูกต้อง!</span>
 							</div>
 						{:else if feedback[idx] === 'incorrect'}

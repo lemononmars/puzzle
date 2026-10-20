@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { ExternalLinkIcon, PlayCircleIcon, ArrowLeftIcon } from 'svelte-feather-icons';
+import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
+import UiArrowRight from '@lucide/svelte/icons/arrow-right';
+	import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
+import PlayCircleIcon from '@lucide/svelte/icons/circle-play';
+import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
 
 	const playlistUrl = 'https://www.youtube.com/playlist?list=PLKQysr88T8R9i-hKPYRy0ql5_82Kogqn9';
 
@@ -142,17 +146,17 @@
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/resources" class="btn btn-ghost btn-xs gap-1.5 font-bold">
-			← กลับไปหน้าแหล่งทรัพยากร
+			<UiArrowLeft size={16} class="inline-block align-middle" aria-hidden="true" /> กลับไปหน้าแหล่งทรัพยากร
 		</a>
 		<a href="/puzzles/logicpuzzle" class="btn btn-ghost btn-xs gap-1.5 font-bold text-purple-400">
-			<span>เข้าสู่คลังโจทย์ Logic Puzzles →</span>
+			<span>เข้าสู่คลังโจทย์ Logic Puzzles <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" /></span>
 		</a>
 	</div>
 
 	<!-- Header -->
 	<header class="text-center max-w-2xl mx-auto space-y-3">
 		<div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center border border-amber-500/20 mx-auto">
-			<PlayCircleIcon size="32" />
+			<PlayCircleIcon size={32} />
 		</div>
 		<h1 class="text-3xl lg:text-4xl font-black tracking-tight text-base-content">
 			21 ปริศนา Logic Puzzle Tutorials 🎥
@@ -175,7 +179,7 @@
 			rel="noopener"
 			class="btn btn-warning gap-2 shrink-0 font-bold shadow-lg hover:scale-105 transition-transform"
 		>
-			<ExternalLinkIcon size="18" />
+			<ExternalLinkIcon size={18} />
 			<span>เปิดดูบน YouTube</span>
 		</a>
 	</div>
@@ -211,7 +215,7 @@
 					</p>
 					<div class="pt-1 text-xs font-semibold text-amber-400 flex items-center justify-between">
 						<span>ดูวิดีโอสอน</span>
-						<ExternalLinkIcon size="14" />
+						<ExternalLinkIcon size={14} />
 					</div>
 				</div>
 			</a>

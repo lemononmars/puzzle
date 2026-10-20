@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { DownloadIcon, CheckCircleIcon } from 'svelte-feather-icons';
+	import DownloadIcon from '@lucide/svelte/icons/download';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 
 	interface InstallPrompt extends Event {
 		prompt(): Promise<void>;
@@ -58,10 +59,10 @@
 	<h4 id="install-heading" class="font-bold text-sm">แอป Puzzle</h4>
 	<p class="mt-1 text-xs text-base-content/70">เพิ่ม Puzzle บนหน้าจอหลัก เพื่อเปิดเล่นได้สะดวก</p>
 	{#if installed}
-		<p class="mt-3 flex items-center gap-2 text-sm"><CheckCircleIcon size="16" />ติดตั้งแอปแล้ว</p>
+		<p class="mt-3 flex items-center gap-2 text-sm"><CheckCircleIcon size={16} />ติดตั้งแอปแล้ว</p>
 	{:else if prompt || installing}
 		<button type="button" onclick={install} disabled={installing} class="btn btn-primary text-primary-content btn-sm mt-3 rounded-xl">
-			<DownloadIcon size="16" />{installing ? 'กำลังติดตั้ง…' : 'ติดตั้งแอป'}
+			<DownloadIcon size={16} />{installing ? 'กำลังติดตั้ง…' : 'ติดตั้งแอป'}
 		</button>
 	{:else}
 		<p class="mt-3 rounded-xl bg-base-200 text-base-content p-3 text-xs leading-relaxed">

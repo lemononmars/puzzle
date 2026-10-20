@@ -1,0 +1,45 @@
+{
+  "id": "follow-the-arrows",
+  "hasExercise": false,
+  "englishTitle": "Follow the Arrows",
+  "thaiTitle": "อ่านตามลูกศร",
+  "japaneseTitle": "矢印を読む",
+  "description": "ใช้ทิศทางหรือลำดับของลูกศรเป็นเส้นทางในการเลือกและอ่านข้อมูล",
+  "chapter": {
+    "id": "basics",
+    "hasExercise": false,
+    "englishTitle": "Puzzle-Solving Basics",
+    "thaiTitle": "พื้นฐานการไขปริศนา",
+    "japaneseTitle": "謎解きの基本",
+    "accent": "badge-primary"
+  },
+  "detailedDescription": "กลไก **Follow the Arrows** (ญี่ปุ่น: *矢印を読む*) ใช้ลูกศรเป็นตัวนำทางผ่านตารางหรือกลุ่มข้อความ ผู้เล่นต้องเริ่มต้นที่จุดเริ่มที่ระบุ แล้วเคลื่อนที่ไปตามทิศทางของลูกศรเพื่อเก็บตัวอักษรระหว่างทางมาประกอบเป็นคำตอบ",
+  "solvingTechnique": "1. หาจุดเริ่มต้น (Start) หรือช่องที่มีสัญลักษณ์เปิด\n2. เดินตามทิศทางลูกศรทีละก้าว บันทึกตัวอักษรที่ผ่าน\n3. ตรวจสอบว่าเส้นทางสิ้นสุดอย่างสมบูรณ์โดยไม่มีทางตัน",
+  "technicalTerms": [
+    {
+      "en": "Arrow Trail",
+      "ja": "矢印の軌跡",
+      "th": "เส้นทางการเดินตามลูกศร"
+    },
+    {
+      "en": "Grid Traversal",
+      "ja": "グリッド探索",
+      "th": "การเดินทางผ่านช่องตาราง"
+    }
+  ],
+  "puzzle": {
+    "title": "โจทย์ทดลอง: เดินตามลูกศรสะกดคำ",
+    "prompt": "เริ่มต้นที่ช่อง S ด้านซ้ายบน แล้วเดินตามทิศทางลูกศรเพื่อสะกดคำภาษาอังกฤษ 4 ตัวอักษร",
+    "hint": "เดินจาก S ไปทางขวา ไปทางขวา แล้วลงล่าง",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-base-300)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"36\" fill=\"var(--color-base-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">3x3 Grid Navigation</text>\n\n  <g transform=\"translate(170, 55)\">\n    <rect x=\"0\" y=\"0\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"1.5\"/>\n    <text x=\"27\" y=\"30\" fill=\"var(--color-primary)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">S</text>\n    \n    <path d=\"M42 22 L68 22 M63 17 L68 22 L63 27\" stroke=\"var(--color-accent-content)\" stroke-width=\"2.5\" fill=\"none\"/>\n\n    <rect x=\"60\" y=\"0\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"1.5\"/>\n    <text x=\"87\" y=\"30\" fill=\"var(--color-primary)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">T</text>\n\n    <path d=\"M102 22 L128 22 M123 17 L128 22 L123 27\" stroke=\"var(--color-accent-content)\" stroke-width=\"2.5\" fill=\"none\"/>\n\n    <rect x=\"120\" y=\"0\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"1.5\"/>\n    <text x=\"147\" y=\"30\" fill=\"var(--color-primary)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">A</text>\n\n    <path d=\"M147 38 L147 62 M142 57 L147 62 L152 57\" stroke=\"var(--color-accent-content)\" stroke-width=\"2.5\" fill=\"none\"/>\n\n    <rect x=\"0\" y=\"50\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"1.5\"/>\n    <text x=\"27\" y=\"80\" fill=\"var(--color-base-content)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">M</text>\n\n    <rect x=\"60\" y=\"50\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"1.5\"/>\n    <text x=\"87\" y=\"80\" fill=\"var(--color-base-content)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">O</text>\n\n    <rect x=\"120\" y=\"50\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"1.5\"/>\n    <text x=\"147\" y=\"80\" fill=\"var(--color-primary)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">R</text>\n\n    <rect x=\"0\" y=\"100\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"1.5\"/>\n    <text x=\"27\" y=\"130\" fill=\"var(--color-base-content)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">P</text>\n\n    <rect x=\"60\" y=\"100\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"1.5\"/>\n    <text x=\"87\" y=\"130\" fill=\"var(--color-base-content)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">L</text>\n\n    <rect x=\"120\" y=\"100\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"1.5\"/>\n    <text x=\"147\" y=\"130\" fill=\"var(--color-base-content)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">K</text>\n  </g>\n</svg>",
+    "solutionSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"36\" fill=\"var(--color-success-content)\" font-size=\"13\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Solution Path: S → T → A → R</text>\n\n  <g transform=\"translate(170, 55)\">\n    <rect x=\"0\" y=\"0\" width=\"55\" height=\"45\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n    <text x=\"27\" y=\"30\" fill=\"var(--color-success-content)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">S</text>\n    \n    <path d=\"M42 22 L68 22 M63 17 L68 22 L63 27\" stroke=\"var(--color-success-content)\" stroke-width=\"3\" fill=\"none\"/>\n\n    <rect x=\"60\" y=\"0\" width=\"55\" height=\"45\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n    <text x=\"87\" y=\"30\" fill=\"var(--color-success-content)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">T</text>\n\n    <path d=\"M102 22 L128 22 M123 17 L128 22 L123 27\" stroke=\"var(--color-success-content)\" stroke-width=\"3\" fill=\"none\"/>\n\n    <rect x=\"120\" y=\"0\" width=\"55\" height=\"45\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n    <text x=\"147\" y=\"30\" fill=\"var(--color-success-content)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">A</text>\n\n    <path d=\"M147 38 L147 62 M142 57 L147 62 L152 57\" stroke=\"var(--color-success-content)\" stroke-width=\"3\" fill=\"none\"/>\n\n    <rect x=\"0\" y=\"50\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-300)\" stroke-width=\"1.5\" opacity=\"0.4\"/>\n    <rect x=\"60\" y=\"50\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-300)\" stroke-width=\"1.5\" opacity=\"0.4\"/>\n\n    <rect x=\"120\" y=\"50\" width=\"55\" height=\"45\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n    <text x=\"147\" y=\"80\" fill=\"var(--color-success-content)\" font-size=\"20\" font-weight=\"bold\" font-family=\"DM Sans, Noto Serif Thai\" text-anchor=\"middle\">R</text>\n\n    <rect x=\"0\" y=\"100\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-300)\" stroke-width=\"1.5\" opacity=\"0.4\"/>\n    <rect x=\"60\" y=\"100\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-300)\" stroke-width=\"1.5\" opacity=\"0.4\"/>\n    <rect x=\"120\" y=\"100\" width=\"55\" height=\"45\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-300)\" stroke-width=\"1.5\" opacity=\"0.4\"/>\n  </g>\n</svg>",
+    "acceptedAnswers": [
+      "STAR",
+      "star",
+      "ดวงดาว",
+      "ดาว"
+    ],
+    "answerDisplay": "STAR",
+    "solutionExplanation": "เริ่มต้นที่ช่อง **S**:\n1. ลูกศรชี้ขวาไปยังช่อง **T**\n2. ลูกศรชี้ขวาต่อไปยังช่อง **A**\n3. ลูกศรชี้ลงไปยังช่อง **R**\nคำตอบที่ได้คือ **STAR** (ดวงดาว)"
+  }
+}

@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { SaveIcon, LinkIcon, ChevronUpIcon, ChevronDownIcon, Trash2Icon, PlusIcon } from 'svelte-feather-icons';
+	import SaveIcon from '@lucide/svelte/icons/save';
+import LinkIcon from '@lucide/svelte/icons/link';
+import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
+import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+import Trash2Icon from '@lucide/svelte/icons/trash-2';
+import PlusIcon from '@lucide/svelte/icons/plus';
 
 	let title = '';
 	let author = '';
@@ -116,12 +121,9 @@
 		name="description"
 		content="Create and play custom Missing Vowels puzzles. Strip vowels and challenge others to guess the original words."
 	/>
-	<meta property="og:title" content="Missing Vowels Builder" />
-	<meta
-		property="og:description"
-		content="Create and play custom Missing Vowels puzzles. Strip vowels and challenge others to guess the original words."
-	/>
-	<meta property="og:type" content="website" />
+
+
+
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-8">
@@ -163,7 +165,7 @@
 						on:click={() => saveToDatabase(true)}
 						disabled={isSaving}
 					>
-						<SaveIcon size="18" class="mr-1.5" />
+						<SaveIcon size={18} class="mr-1.5" />
 						{isSaving ? 'บันทึก...' : 'บันทึกสู่สาธารณะ'}
 					</button>
 					<button
@@ -192,7 +194,7 @@
 						</div>
 						<a href={savedLink} target="_blank" rel="noreferrer" class="btn btn-success btn-sm">เปิดเล่น</a>
 						<button class="btn btn-outline btn-sm" on:click={copyLink}>
-							<LinkIcon size="16" class="mr-1" /> คัดลอกลิงก์
+							<LinkIcon size={16} class="mr-1" /> คัดลอกลิงก์
 						</button>
 					</div>
 				{/if}
@@ -217,7 +219,7 @@
 									disabled={idx === 0}
 									title="เลื่อนขึ้น"
 								>
-									<ChevronUpIcon size="14" />
+									<ChevronUpIcon size={14} />
 								</button>
 								<button
 									class="btn btn-ghost btn-xs p-0 h-auto hover:text-primary disabled:opacity-30"
@@ -225,7 +227,7 @@
 									disabled={idx === answers.length - 1}
 									title="เลื่อนลง"
 								>
-									<ChevronDownIcon size="14" />
+									<ChevronDownIcon size={14} />
 								</button>
 							</div>
 
@@ -254,7 +256,7 @@
 								on:click={() => removeWord(idx)}
 								title="ลบคำนี้"
 							>
-								<Trash2Icon size="16" />
+								<Trash2Icon size={16} />
 							</button>
 						</div>
 					{/each}
@@ -265,7 +267,7 @@
 					class="btn btn-secondary btn-outline btn-sm btn-block gap-1 mt-2"
 					on:click={addWord}
 				>
-					<PlusIcon size="16" />
+					<PlusIcon size={16} />
 					เพิ่มโจทย์
 				</button>
 			</div>

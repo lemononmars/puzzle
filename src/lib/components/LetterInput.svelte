@@ -1,5 +1,5 @@
 <script lang=ts>
-   import {splitWord, isUpper, isLower, isTall} from '#lib/utils/thaiwords.js'
+   import {splitWord, isUpper, isLower, isTall} from '#lib/utils/thai-text.js'
    import {fade} from 'svelte/transition'
 
    import { createEventDispatcher } from 'svelte';

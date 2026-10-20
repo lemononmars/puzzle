@@ -1,0 +1,41 @@
+<script lang="ts">
+ import Puzzle from '@lucide/svelte/icons/puzzle';
+ import Grid from '@lucide/svelte/icons/grid-2x2';
+ import CircleHelp from '@lucide/svelte/icons/circle-help';
+ import PencilRuler from '@lucide/svelte/icons/pencil-ruler';
+ import Dices from '@lucide/svelte/icons/dices';
+ import Brain from '@lucide/svelte/icons/brain';
+ import Compass from '@lucide/svelte/icons/compass';
+ import Wrench from '@lucide/svelte/icons/wrench';
+ import Search from '@lucide/svelte/icons/search';
+ import Mic from '@lucide/svelte/icons/mic';
+ import Hand from '@lucide/svelte/icons/hand';
+ import KeyRound from '@lucide/svelte/icons/key-round';
+ import LockKeyhole from '@lucide/svelte/icons/lock-keyhole';
+ import SpellCheck from '@lucide/svelte/icons/spell-check';
+ import Library from '@lucide/svelte/icons/library';
+ import Settings from '@lucide/svelte/icons/settings';
+ import BookOpen from '@lucide/svelte/icons/book-open';
+ import Briefcase from '@lucide/svelte/icons/briefcase';
+ import Mail from '@lucide/svelte/icons/mail';
+ import Store from '@lucide/svelte/icons/store';
+ import Map from '@lucide/svelte/icons/map';
+ import Link from '@lucide/svelte/icons/link';
+ import LetterText from '@lucide/svelte/icons/letter-text';
+ import Route from '@lucide/svelte/icons/route';
+ import Flower2 from '@lucide/svelte/icons/flower-2';
+ import Layers from '@lucide/svelte/icons/layers';
+ import Network from '@lucide/svelte/icons/network';
+ import CalendarDays from '@lucide/svelte/icons/calendar-days';
+ import SquareRadical from '@lucide/svelte/icons/square-radical';
+ import Flame from '@lucide/svelte/icons/flame';
+ import Flag from '@lucide/svelte/icons/flag';
+ import Volume2 from '@lucide/svelte/icons/volume-2';
+ import MousePointerClick from '@lucide/svelte/icons/mouse-pointer-click';
+ import Code from '@lucide/svelte/icons/code';
+ let { href = '', size = 24 }: { href?: string; size?: number } = $props();
+ const icons = { search:Search, quizzes:CircleHelp, crafted:PencilRuler, generated:Dices, logic:Brain, explore:Compass, builders:Wrench, solvers:Search, hosting:Mic, 'play-aids':Hand, checking:KeyRound, ciphers:LockKeyhole, spellingdictionary:SpellCheck, knowledge:Library, mechanics:Settings, logictutorial:BookOpen, puzzles:Puzzle, tools:Wrench, resources:Library, portfolio:Briefcase, contact:Mail, shop:Store, quiz:CircleHelp, thechase:Route, thaimapquiz:Map, rebus:Puzzle, hiddenlink:Link, wordsearch:Search, crossword:Grid, alphabet:LetterText, missingvowels:LetterText, cryptogram:LockKeyhole, enigmarch:CalendarDays, crossroad:Route, spellingbee:Flower2, blanks:LetterText, spellingquiz:SpellCheck, wordladder:Network, boggle:Grid, eulersquare:Grid, logicpuzzle:Brain, mathsticks:Flame, mathdle:SquareRadical, deduction:Compass, puzzlehunt:Flag, pentomino:Layers, thwordsearch:Search, jigsaw:Puzzle, jeopardy:Mic, countdown:LetterText, button:MousePointerClick, check:KeyRound, 'board-games':Dices, 'puzzle-crafter':PencilRuler, 'escape-rooms':KeyRound, 'web-development':Code };
+ let key = $derived(href.split('?')[0].split('/').filter(Boolean).filter(part => !/^\d+$/.test(part)).at(-1) ?? 'puzzles');
+ let Icon = $derived(icons[key as keyof typeof icons] ?? Puzzle);
+</script>
+<Icon {size} aria-hidden="true" />

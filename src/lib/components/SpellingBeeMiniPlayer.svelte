@@ -1,9 +1,14 @@
 <script lang="ts">
+import UiArrowRight from '@lucide/svelte/icons/arrow-right';
 	import { onMount, onDestroy } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { search, isUpper, isLower } from '#lib/utils/thaiwords.js';
 	import { numPuzzles } from '#lib/data/puzzles/spellingbee/index.js';
-	import { RefreshCwIcon, CheckCircleIcon, XCircleIcon, PauseIcon, PlayIcon } from 'svelte-feather-icons';
+	import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import PauseIcon from '@lucide/svelte/icons/pause';
+import PlayIcon from '@lucide/svelte/icons/play';
 	import { username } from '#lib/store/index.js';
 	import { flip } from 'svelte/animate';
 
@@ -289,9 +294,9 @@
 					title={isPaused ? 'Resume timer' : 'Pause timer'}
 				>
 					{#if isPaused}
-						<PlayIcon size="15" class="text-primary" />
+						<PlayIcon size={15} class="text-primary" />
 					{:else}
-						<PauseIcon size="15" class="text-primary" />
+						<PauseIcon size={15} class="text-primary" />
 						<span class="text-primary">{timeString}</span>
 					{/if}
 				</button>
@@ -302,7 +307,7 @@
 					class="p-2 sm:p-2.5 rounded-lg sm:rounded-xl bg-base-100 text-base-content border border-base-300 text-base-content/70 hover:text-primary hover:border-primary/30 transition-colors shrink-0"
 					title="Shuffle & clear"
 				>
-					<RefreshCwIcon size="16" />
+					<RefreshCwIcon size={16} />
 				</button>
 
 				<!-- Textfield -->
@@ -320,7 +325,7 @@
 							on:click={() => (answer = '')}
 							class="absolute right-2 top-1/2 -translate-y-1/2 text-base-content/70 hover:text-base-content/70"
 						>
-							<XCircleIcon size="15" />
+							<XCircleIcon size={15} />
 						</button>
 					{/if}
 				</div>
@@ -345,7 +350,7 @@
 						: 'bg-base-300 text-base-content text-primary border border-primary/30'}"
 				>
 					{#if log.type === 'success'}
-						<CheckCircleIcon size="14" />
+						<CheckCircleIcon size={14} />
 					{/if}
 					<span>{log.text}</span>
 				</div>
@@ -397,7 +402,7 @@
 					class="px-5 py-1.5 rounded-lg font-bold text-xs bg-emerald-500 hover:bg-emerald-400 !text-primary-content transition-all shadow-md shadow-emerald-500/20"
 
 				>
-					Next Puzzle 🎲 →
+					Next Puzzle 🎲 <UiArrowRight size={16} class="inline-block align-middle" aria-hidden="true" />
 				</button>
 			{/if}
 		</div>

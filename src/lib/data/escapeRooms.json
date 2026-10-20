@@ -402,5 +402,16 @@
     "Apartment on Green",
     "Escape from Prison (Tokyo)",
     "『摩訶不思議な部屋からの脱出』"
+  ],
+  "createdRooms": [
+    {
+      "id": "figure-it-out",
+      "title": "Figure it Out",
+      "platform": "Escape Simulator · Steam Workshop",
+      "description": "Catch a flight in 15 minutes while the staff are unavailable. Three language-independent puzzles, plus a hidden bonus puzzle, with no outside knowledge required.",
+      "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=2632888612",
+      "updatedHref": "https://steamcommunity.com/sharedfiles/filedetails/?id=2641286025",
+      "note": "The original Workshop listing is an older playable version; its description recommends the updated room."
+    }
   ]
 }

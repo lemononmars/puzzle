@@ -1,6 +1,8 @@
 <script lang="ts">
 	import AnswerChecker from '#lib/components/AnswerChecker.svelte';
-	import { ArrowLeftIcon, CheckCircleIcon, DownloadIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import DownloadIcon from '@lucide/svelte/icons/download';
 	import PigpenSVG from '#lib/components/PigpenSVG.svelte';
 	import PigpenGridHelper from '#lib/components/PigpenGridHelper.svelte';
 
@@ -69,7 +71,7 @@
 <div class="flex flex-col gap-8 w-full max-w-5xl mx-auto px-4 py-8 select-none">
 	<div class="flex items-center justify-between">
 		<a href="/resources/ciphers" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปคลังรหัสลับ</span>
 		</a>
 	</div>
@@ -103,7 +105,7 @@
 				on:click={exportImage}
 				class="btn btn-primary btn-xs gap-1.5 font-bold rounded-xl shadow-md"
 			>
-				<DownloadIcon size="14" />
+				<DownloadIcon size={14} />
 				<span>ส่งออกภาพ (Export Image)</span>
 			</button>
 		</div>
@@ -181,7 +183,7 @@
 
 						{#if feedback[idx] === 'correct'}
 							<div class="flex items-center gap-1 text-xs font-bold text-primary">
-								<CheckCircleIcon size="14" />
+								<CheckCircleIcon size={14} />
 								<span>ถูกต้อง!</span>
 							</div>
 						{:else if feedback[idx] === 'incorrect'}

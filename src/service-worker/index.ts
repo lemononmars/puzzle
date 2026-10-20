@@ -5,20 +5,15 @@ import { asset } from '$app/paths';
 
 const CACHE_NAME = `puzzle-v${version}`;
 
-// Filter out large media from initial precache
-const PRECACHE_ASSETS = [
-	...immutable.map(({ path }) => path),
-	...assets.map(({ path }) => asset(path)).filter(
-		(f) =>
-			!f.endsWith('.map') &&
-			!f.startsWith('/podcast/') &&
-			!f.startsWith('/og-') &&
-			!f.endsWith('.mp3') &&
-			!f.endsWith('.wav')
-	)
+// Precache only the shell. Route chunks, dictionaries, workers, and puzzle
+// images are cached when requested, so an unrelated visit stays lightweight.
+const immutablePaths=immutable.map(({path})=>path);
+const staticPaths=assets.map(({path})=>asset(path));
+const PRECACHE_ASSETS=[
+ ...immutablePaths.filter(path=>path.includes('/entry/')||path.endsWith('.css')),
+ ...staticPaths.filter(path=>['/favicon.svg','/favicon.png','/manifest.webmanifest','/icons/apple-touch-icon.png'].includes(path))
 ];
-
-const ASSET_SET = new Set(PRECACHE_ASSETS);
+const ASSET_SET=new Set([...immutablePaths,...staticPaths]);
 
 self.addEventListener('install', (event: any) => {
 	event.waitUntil(
@@ -47,6 +42,7 @@ self.addEventListener('fetch', (event: any) => {
 	if (request.method !== 'GET') return;
 
 	const url = new URL(request.url);
+ if(url.origin!==self.location.origin)return;
 
 	// Bypass dynamic API, auth, supabase realtime, and dev hot-module-reloading
 	if (

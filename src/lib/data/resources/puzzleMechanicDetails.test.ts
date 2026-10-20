@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-	MECHANIC_DETAILS,
+	getMechanicDetail,
 	getAllMechanicIds,
 	getAdjacentMechanics
 } from './puzzleMechanicDetails';
@@ -13,8 +13,11 @@ describe('puzzleMechanicDetails dictionary', () => {
 		expect([...ids].sort()).toEqual(catalogIds.sort());
 	});
 
-	it('has complete information, valid vector SVG, and answers for every mechanic', () => {
-		for (const [id, detail] of Object.entries(MECHANIC_DETAILS)) {
+	it('has complete information, valid vector SVG, and answers for every mechanic', async () => {
+		const ids = getAllMechanicIds();
+ const details = await Promise.all(ids.map(id => getMechanicDetail(id)));
+ for (const [index, id] of ids.entries()) {
+ const detail = details[index]!;
 			expect(detail.id).toBe(id);
 			expect(detail.englishTitle.trim()).not.toBe('');
 			expect(detail.thaiTitle.trim()).not.toBe('');

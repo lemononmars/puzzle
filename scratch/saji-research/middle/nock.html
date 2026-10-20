@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>knock</title>
+  <meta name="description" content="何とかして入会をしよう！">
+  <link rel="canonical" href="https://sajiqook.jp/game/nock/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="knock">
+  <meta property="og:description" content="何とかして入会をしよう！">
+  <meta property="og:url" content="https://sajiqook.jp/game/nock/">
+  <meta property="og:image" content="https://sajiqook.jp/game/nock/assets/knock-thumbnail.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://sajiqook.jp/game/nock/assets/knock-thumbnail.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='white' stroke='%23272727' stroke-width='2' d='M7 3h18v26H7z'/%3E%3Ccircle cx='21' cy='17' r='2' fill='%23272727'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=20260913-share-fix">
+  <link rel="stylesheet" href="settings.css?v=20260913-share-fix">
+  <link rel="stylesheet" href="secrets.css?v=20260912-records">
+</head>
+<body>
+  <main class="game">
+    <header><div class="heading-copy"><h1>何とかして入会をしよう！</h1><p class="dialogue-note" hidden>※セリフは謎に一切関係ありません。</p></div>
+      <button class="settings-toggle" type="button" aria-haspopup="dialog">設定</button>
+      <div class="timer" role="img" aria-label="タイマー：待機中">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle class="dial" cx="32" cy="32" r="27"/><path class="ticks" d="M32 8v4 M56 32h-4 M32 56v-4 M8 32h4"/><g class="hand"><path d="M32 32V13"/><circle cx="32" cy="32" r="2.5"/></g></svg>
+      </div>
+    </header>
+    <section class="play-area" aria-label="扉と盤面">
+      <div class="door-stage">
+        <div class="door-frame">
+          <div class="peek-layer" aria-hidden="true" hidden><img class="peek-character" alt="" draggable="false"></div>
+          <button class="door" type="button" aria-label="扉を叩く"><span class="door-panel upper"></span><span class="door-panel lower"></span><span class="knob"></span></button>
+          <div class="welcome" aria-hidden="true"><p>ようこそ！</p><p class="success-description">見事入会に成功した。</p><div class="success-actions" hidden><a class="share primary" href="#" target="_blank" rel="noopener noreferrer">Xにシェア</a><button class="retry" type="button">もう一度試す</button></div></div>
+        </div>
+        <div class="reunion-layer" aria-hidden="true" hidden><img class="grandpa" src="assets/grandpa-gag.png" alt="" draggable="false"><img class="grandma" src="assets/grandma-gag.png" alt="" draggable="false"></div>
+        <p class="rank-message" hidden>ランクが上がった！</p>
+        <p class="reply-message" hidden>誤解です！</p>
+        <p class="door-dialogue" hidden aria-hidden="true"></p>
+        <div class="vet-layer" aria-hidden="true" hidden><div class="vet-result"><span class="examining">診察中…</span><span class="healthy">異常なし！</span></div><img src="assets/monster-gag-transparent.png" alt="" draggable="false"></div>
+        <div class="coral-layer" aria-hidden="true" hidden><img src="assets/coral-gag.png" alt="" draggable="false"></div>
+      </div>
+      <div class="tokens" role="group" aria-label="回数の四角"></div>
+      <div class="board" role="group" aria-label="5つのマス"></div>
+      <div class="actions"><button class="undo" type="button" disabled>一つ戻る</button><button class="confirm primary" type="button" disabled>確定</button></div>
+    </section>
+    <p class="status sr-only" role="status" aria-live="polite"></p>
+  </main>
+  <dialog class="settings-dialog" aria-labelledby="settings-title">
+    <div class="settings-heading"><h2 id="settings-title">設定</h2><button class="settings-close" type="button" aria-label="設定を閉じる">×</button></div>
+    <label class="volume-label" for="volume">SE音量 <output id="volume-value" for="volume">65%</output></label>
+    <input id="volume" type="range" min="0" max="100" step="5" value="65">
+    <fieldset class="settings-options"><legend>セリフ</legend>
+      <label><input type="radio" name="dialogue" value="off" checked>オフ</label>
+      <label><input type="radio" name="dialogue" value="on">オン</label>
+    </fieldset>
+    <fieldset class="settings-options"><legend>時間調整</legend>
+      <label><input type="radio" name="duration" value="3000" checked>3秒</label>
+      <label><input type="radio" name="duration" value="5000">5秒</label>
+      <label><input type="radio" name="duration" value="10000">10秒</label>
+    </fieldset>
+    <nav class="settings-links" aria-label="関連リンク">
+      <a href="https://note.com/saji_q/n/ndf67bfc443b6" target="_blank" rel="noopener noreferrer"><strong>ヒント・解説 ↗</strong><span>すべてのWEB謎のヒントと解説を、この有料記事ひとつで楽しめます。</span></a>
+      <a href="https://sajiqook.jp/game/" target="_blank" rel="noopener noreferrer"><strong>他のゲーム ↗</strong></a>
+    </nav>
+    <p class="settings-note">この画面の設定、内容は謎解きとは関係ありません。</p>
+  </dialog>
+  <dialog class="settings-dialog records-dialog" aria-labelledby="records-title">
+    <div class="settings-heading"><h2 id="records-title">きろく</h2><button class="settings-close records-close" type="button" aria-label="きろくを閉じる">×</button></div>
+    <p class="records-status" role="status" aria-live="polite"></p>
+    <dl class="records-totals" hidden><div><dt>総プレイ回数</dt><dd class="records-plays"></dd></div><div><dt>クリア回数</dt><dd class="records-clears"></dd></div><div><dt>クリア率</dt><dd class="records-rate"></dd></div></dl>
+    <p class="settings-note">同じブラウザからの再読み込み・再挑戦は重複して数えません。記録の反映には約1分かかる場合があります。</p>
+    <p class="settings-note">この画面は謎解きとは関係ありません。</p>
+  </dialog>
+  <script src="game.js?v=20260913-quote-share" defer></script>
+  <script src="../game-analytics.js" defer></script>
+</body>
+</html>
+

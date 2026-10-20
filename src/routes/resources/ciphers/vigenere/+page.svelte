@@ -1,6 +1,11 @@
 <script lang="ts">
 	import AnswerChecker from '#lib/components/AnswerChecker.svelte';
-	import { ArrowLeftIcon, CheckCircleIcon, CopyIcon, CheckIcon, ChevronLeftIcon, ChevronRightIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import CopyIcon from '@lucide/svelte/icons/copy';
+import CheckIcon from '@lucide/svelte/icons/check';
+import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 
 	let inputText = 'ATTACKATDAWN';
 	let key = 'LEMON';
@@ -87,7 +92,7 @@
 <div class="flex flex-col gap-8 w-full max-w-5xl mx-auto px-4 py-8 select-none">
 	<div class="flex items-center justify-between">
 		<a href="/resources/ciphers" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปคลังรหัสลับ</span>
 		</a>
 	</div>
@@ -143,10 +148,10 @@
 					class="btn btn-sm btn-ghost gap-1.5 text-base-content/70 hover:text-base-content self-end"
 				>
 					{#if isCopied}
-						<CheckIcon size="14" class="text-primary" />
+						<CheckIcon size={14} class="text-primary" />
 						<span class="text-primary font-bold">คัดลอกแล้ว</span>
 					{:else}
-						<CopyIcon size="14" />
+						<CopyIcon size={14} />
 						<span>คัดลอกข้อความ</span>
 					{/if}
 				</button>
@@ -171,7 +176,7 @@
 					on:click={() => currentStep--}
 					class="btn btn-ghost btn-xs text-base-content/70 disabled:text-base-content/70"
 				>
-					<ChevronLeftIcon size="16" />
+					<ChevronLeftIcon size={16} />
 				</button>
 				<span class="text-xs font-mono font-bold text-amber-400">
 					Step {safeStep + 1} / {maxSteps}
@@ -181,7 +186,7 @@
 					on:click={() => currentStep++}
 					class="btn btn-ghost btn-xs text-base-content/70 disabled:text-base-content/70"
 				>
-					<ChevronRightIcon size="16" />
+					<ChevronRightIcon size={16} />
 				</button>
 			</div>
 		</div>
@@ -262,7 +267,7 @@
 						<span class="text-xs font-bold text-amber-400">ข้อที่ {ex.id}: {ex.cipherText}</span>
 						{#if feedback[idx] === 'correct'}
 							<span class="text-xs font-bold text-primary flex items-center gap-1">
-								<CheckCircleIcon size="14" />
+								<CheckCircleIcon size={14} />
 								<span>ถูกต้อง!</span>
 							</span>
 						{:else if feedback[idx] === 'incorrect'}

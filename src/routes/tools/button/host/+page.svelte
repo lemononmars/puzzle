@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import type { PlayerInfo, GameState } from '#lib/interfaces/jeopardy.js';
-	import { CheckCircleIcon, XCircleIcon } from 'svelte-feather-icons';
+	import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
 	import { supabaseClient } from '#lib/supabase.js';
 	import { storePlayerList } from '#lib/store/index.js';
 
@@ -205,10 +206,10 @@
 		<div class="flex flex-col items-center gap-y-4 w-full mt-4">
 			<div class="join gap-2">
 				<button class="join-item btn btn-lg btn-outline btn-success" on:click={correctAnswer}>
-					<CheckCircleIcon size="36" />
+					<CheckCircleIcon size={36} />
 				</button>
 				<button class="join-item btn btn-lg btn-outline btn-error" on:click={wrongAnswer}>
-					<XCircleIcon size="36" />
+					<XCircleIcon size={36} />
 				</button>
 			</div>
 

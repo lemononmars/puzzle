@@ -1,0 +1,49 @@
+{
+  "id": "read-in-number-order",
+  "hasExercise": false,
+  "englishTitle": "Read in Number Order",
+  "thaiTitle": "อ่านตามลำดับตัวเลข",
+  "japaneseTitle": "数字順に読む",
+  "description": "เรียงตัวอักษรหรือชิ้นส่วนตามหมายเลขกำกับก่อนอ่านเป็นข้อความหรือคำตอบ",
+  "chapter": {
+    "id": "basics",
+    "hasExercise": false,
+    "englishTitle": "Puzzle-Solving Basics",
+    "thaiTitle": "พื้นฐานการไขปริศนา",
+    "japaneseTitle": "謎解きの基本",
+    "accent": "badge-primary"
+  },
+  "detailedDescription": "กลไก **Read in Number Order** (ญี่ปุ่น: *数字順に読む*) นิยมใช้ในขั้นตอน *Extraction* ของปริศนา เมื่อผู้เล่นได้รับข้อมูลตัวอักษรที่กระจัดกระจายและมีตัวเลขเล็ก ๆ กำกับไว้ การเรียงอ่านตามลำดับตัวเลข 1, 2, 3, ... จะแปลงความสับสนให้กลายเป็นคำตอบที่มีความหมาย",
+  "solvingTechnique": "1. ค้นหาตัวเลขกำกับทั้งหมดตั้งแต่เลข 1 ถึงเลขสูงสุด\n2. จับคู่ตัวอักษรที่ตรงกับแต่ละหมายเลข\n3. เขียนเรียงตัวอักษรตามลำดับ 1 → 2 → 3 → 4 เพื่ออ่านเป็นคำตอบ",
+  "technicalTerms": [
+    {
+      "en": "Number Order",
+      "ja": "数字順",
+      "th": "การอ่านเรียงตามลำดับตัวเลข"
+    },
+    {
+      "en": "Extraction",
+      "ja": "抽出",
+      "th": "การดึงตัวอักษรมาประกอบเป็นคำตอบ"
+    },
+    {
+      "en": "Passcode",
+      "ja": "パスコード",
+      "th": "รหัสผ่านหรือคำเป้าหมาย"
+    }
+  ],
+  "puzzle": {
+    "title": "โจทย์ทดลอง: เรียงกล่องตามตัวเลข",
+    "prompt": "นำตัวอักษรในกล่องมาเรียงอ่านตามลำดับหมายเลขกำกับ (1, 2, 3, 4) เพื่อหาคำตอบภาษาอังกฤษ",
+    "hint": "หาว่ากล่องหมายเลข 1 คือตัวอะไร, หมายเลข 2 คือตัวอะไร แล้วไล่ไปจนครบ",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-base-300)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"42\" fill=\"var(--color-base-content)\" font-size=\"14\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Jumbled Numbered Boxes</text>\n\n  <g transform=\"translate(60, 80)\">\n    <rect width=\"80\" height=\"80\" rx=\"12\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"2\"/>\n    <circle cx=\"64\" cy=\"18\" r=\"12\" fill=\"#3b82f6\"/>\n    <text x=\"64\" y=\"23\" fill=\"#ffffff\" font-size=\"11\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">4</text>\n    <text x=\"40\" y=\"55\" fill=\"var(--color-base-content)\" font-size=\"32\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">E</text>\n  </g>\n\n  <g transform=\"translate(165, 80)\">\n    <rect width=\"80\" height=\"80\" rx=\"12\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"2\"/>\n    <circle cx=\"64\" cy=\"18\" r=\"12\" fill=\"#3b82f6\"/>\n    <text x=\"64\" y=\"23\" fill=\"#ffffff\" font-size=\"11\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">1</text>\n    <text x=\"40\" y=\"55\" fill=\"var(--color-base-content)\" font-size=\"32\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">C</text>\n  </g>\n\n  <g transform=\"translate(270, 80)\">\n    <rect width=\"80\" height=\"80\" rx=\"12\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"2\"/>\n    <circle cx=\"64\" cy=\"18\" r=\"12\" fill=\"#3b82f6\"/>\n    <text x=\"64\" y=\"23\" fill=\"#ffffff\" font-size=\"11\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">3</text>\n    <text x=\"40\" y=\"55\" fill=\"var(--color-base-content)\" font-size=\"32\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">D</text>\n  </g>\n\n  <g transform=\"translate(375, 80)\">\n    <rect width=\"80\" height=\"80\" rx=\"12\" fill=\"var(--color-base-200)\" stroke=\"var(--color-base-content)\" stroke-width=\"2\"/>\n    <circle cx=\"64\" cy=\"18\" r=\"12\" fill=\"#3b82f6\"/>\n    <text x=\"64\" y=\"23\" fill=\"#ffffff\" font-size=\"11\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">2</text>\n    <text x=\"40\" y=\"55\" fill=\"var(--color-base-content)\" font-size=\"32\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">O</text>\n  </g>\n</svg>",
+    "solutionSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 520 220\" class=\"w-full max-w-lg mx-auto select-none\">\n  <rect width=\"520\" height=\"220\" rx=\"16\" fill=\"var(--color-base-100)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n  <text x=\"260\" y=\"42\" fill=\"var(--color-success-content)\" font-size=\"14\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">Solution: Sorted 1 → 2 → 3 → 4</text>\n\n  <g transform=\"translate(60, 80)\">\n    <rect width=\"80\" height=\"80\" rx=\"12\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n    <circle cx=\"64\" cy=\"18\" r=\"12\" fill=\"var(--color-success-content)\"/>\n    <text x=\"64\" y=\"23\" fill=\"#ffffff\" font-size=\"11\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">1</text>\n    <text x=\"40\" y=\"55\" fill=\"var(--color-success-content)\" font-size=\"32\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">C</text>\n  </g>\n\n  <g transform=\"translate(165, 80)\">\n    <rect width=\"80\" height=\"80\" rx=\"12\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n    <circle cx=\"64\" cy=\"18\" r=\"12\" fill=\"var(--color-success-content)\"/>\n    <text x=\"64\" y=\"23\" fill=\"#ffffff\" font-size=\"11\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">2</text>\n    <text x=\"40\" y=\"55\" fill=\"var(--color-success-content)\" font-size=\"32\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">O</text>\n  </g>\n\n  <g transform=\"translate(270, 80)\">\n    <rect width=\"80\" height=\"80\" rx=\"12\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n    <circle cx=\"64\" cy=\"18\" r=\"12\" fill=\"var(--color-success-content)\"/>\n    <text x=\"64\" y=\"23\" fill=\"#ffffff\" font-size=\"11\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">3</text>\n    <text x=\"40\" y=\"55\" fill=\"var(--color-success-content)\" font-size=\"32\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">D</text>\n  </g>\n\n  <g transform=\"translate(375, 80)\">\n    <rect width=\"80\" height=\"80\" rx=\"12\" fill=\"var(--color-success)\" stroke=\"var(--color-success-content)\" stroke-width=\"2\"/>\n    <circle cx=\"64\" cy=\"18\" r=\"12\" fill=\"var(--color-success-content)\"/>\n    <text x=\"64\" y=\"23\" fill=\"#ffffff\" font-size=\"11\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">4</text>\n    <text x=\"40\" y=\"55\" fill=\"var(--color-success-content)\" font-size=\"32\" font-family=\"DM Sans, Noto Serif Thai\" font-weight=\"bold\" text-anchor=\"middle\">E</text>\n  </g>\n</svg>",
+    "acceptedAnswers": [
+      "CODE",
+      "code",
+      "โค้ด"
+    ],
+    "answerDisplay": "CODE",
+    "solutionExplanation": "เรียงตัวอักษรตามตัวเลขกำกับ:\n- หมายเลข 1 คือตัว **C**\n- หมายเลข 2 คือตัว **O**\n- หมายเลข 3 คือตัว **D**\n- หมายเลข 4 คือตัว **E**\nเมื่อนำมาต่อกันจะได้คำว่า **CODE**"
+  }
+}

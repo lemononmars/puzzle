@@ -1,6 +1,11 @@
 <script lang="ts">
+import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import AnswerChecker from '#lib/components/AnswerChecker.svelte';
-	import { ArrowLeftIcon, CheckCircleIcon, RepeatIcon, CopyIcon, CheckIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
+import RepeatIcon from '@lucide/svelte/icons/repeat';
+import CopyIcon from '@lucide/svelte/icons/copy';
+import CheckIcon from '@lucide/svelte/icons/check';
 
 	let langMode: 'ENG' | 'THAI' = 'ENG';
 	let inputText = 'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG';
@@ -111,7 +116,7 @@
 <div class="flex flex-col gap-8 w-full max-w-5xl mx-auto px-4 py-8 select-none">
 	<div class="flex items-center justify-between">
 		<a href="/resources/ciphers" class="btn btn-ghost btn-xs gap-1.5 font-bold">
-			← กลับไปคลังรหัสลับ
+			<UiArrowLeft size={16} class="inline-block align-middle" aria-hidden="true" /> กลับไปคลังรหัสลับ
 		</a>
 	</div>
 
@@ -182,7 +187,7 @@
 
 			<!-- Left-Right Toggle Button -->
 			<button on:click={toggleSwap} class="btn btn-sm btn-outline gap-2 font-bold">
-				<RepeatIcon size="16" />
+				<RepeatIcon size={16} />
 				<span>{isSwapped ? 'โหมด: ถอดรหัส (Shift ←)' : 'โหมด: เข้ารหัส (Shift →)'}</span>
 			</button>
 		</div>
@@ -229,10 +234,10 @@
 					</label>
 					<button on:click={copyOutput} class="btn btn-ghost btn-xs gap-1 font-bold text-primary">
 						{#if isCopied}
-							<CheckIcon size="14" />
+							<CheckIcon size={14} />
 							<span>คัดลอกแล้ว</span>
 						{:else}
-							<CopyIcon size="14" />
+							<CopyIcon size={14} />
 							<span>คัดลอก</span>
 						{/if}
 					</button>
@@ -272,7 +277,7 @@
 
 						{#if feedback[idx] === 'correct'}
 							<div class="flex items-center gap-1 text-xs font-bold text-success-content">
-								<CheckCircleIcon size="14" />
+								<CheckCircleIcon size={14} />
 								<span>ถูกต้อง!</span>
 							</div>
 						{:else if feedback[idx] === 'incorrect'}

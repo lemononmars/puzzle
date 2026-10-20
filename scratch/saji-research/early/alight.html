@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>FLIP THE SWITCH</title>
+  <script src="../game-settings.js?v=202609222218" data-host=".top-actions" data-before="#translationButton" defer></script>
+  <script src="../game-analytics.js" defer></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --room: #fff;
+      --panel: #fff;
+      --ink: #222;
+      --muted: #6b6b6b;
+      --key: #fff;
+      --key-border: #aaa;
+      --key-shadow: #d8d8d8;
+      --accent: #383838;
+      --disabled: #e9e9e9;
+      --dark-opacity: 0;
+      --warm-opacity: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+      overflow-x: hidden;
+      touch-action: manipulation;
+    }
+
+    body {
+      position: relative;
+      min-height: 100svh;
+      color: var(--ink);
+      background: var(--room);
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, system-ui, sans-serif;
+      transition: color 420ms ease, background-color 420ms ease;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body::before,
+    body::after {
+      position: fixed;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+    }
+
+    body::before {
+      z-index: 9;
+      background: radial-gradient(
+        ellipse 72% 46% at 50% 51%,
+        rgba(255, 173, 70, 0.78) 0 43%,
+        rgba(255, 112, 12, 0.8) 62%,
+        rgba(62, 24, 1, 0.88) 84%,
+        rgba(0, 0, 0, 0.94) 100%
+      );
+      opacity: var(--warm-opacity);
+      transition: opacity 180ms ease;
+    }
+
+    body::after {
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.88);
+      box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.72);
+      opacity: var(--dark-opacity);
+      transition: opacity 160ms ease;
+    }
+
+    body[data-mode="black"] {
+      --dark-opacity: 1;
+    }
+
+    body[data-mode="orange"] {
+      --warm-opacity: 1;
+    }
+
+    button {
+      color: inherit;
+      font: inherit;
+      touch-action: manipulation;
+    }
+
+    .top-actions {
+      position: fixed;
+      z-index: 5;
+      top: max(12px, env(safe-area-inset-top));
+      right: max(12px, env(safe-area-inset-right));
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .translation-button {
+      min-height: 36px;
+      padding: 7px 12px;
+      border: 1px solid var(--key-border);
+      border-radius: 4px;
+      color: var(--ink);
+      background: var(--panel);
+      box-shadow: 0 2px 0 var(--key-shadow);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .translation-button[aria-pressed="true"] {
+      box-shadow: inset 0 1px 2px var(--key-shadow);
+      transform: translateY(1px);
+    }
+
+    .game {
+      display: grid;
+      width: min(880px, 100%);
+      min-height: 100svh;
+      margin: 0 auto;
+      padding: clamp(18px, 4vh, 42px) clamp(14px, 4vw, 36px);
+      place-items: center;
+    }
+
+    .panel {
+      width: 100%;
+      padding: clamp(24px, 5vw, 48px) clamp(16px, 5vw, 48px) clamp(22px, 5vw, 42px);
+      border: 1px solid var(--key-border);
+      border-radius: 12px;
+      background: var(--panel);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: border-color 420ms ease, background-color 420ms ease, box-shadow 420ms ease;
+    }
+
+    .instruction {
+      margin: 0 0 clamp(26px, 5vh, 48px);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: clamp(15px, 3.1vw, 21px);
+      font-weight: 700;
+      letter-spacing: 0.055em;
+      line-height: 1.55;
+    }
+
+    .switch-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: clamp(30px, 7vh, 64px);
+    }
+
+    .switch-label {
+      color: var(--muted);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .light-switch {
+      position: relative;
+      display: grid;
+      width: 82px;
+      height: 58px;
+      padding: 8px;
+      border: 2px solid var(--key-border);
+      border-radius: 6px;
+      background: var(--panel);
+      box-shadow: inset 0 0 0 2px var(--key-shadow), 0 3px 0 var(--key-shadow);
+      cursor: pointer;
+      perspective: 160px;
+      transition: border-color 300ms ease, background-color 300ms ease, box-shadow 300ms ease;
+    }
+
+    .switch-rocker {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--key-border);
+      border-radius: 3px;
+      background: var(--key);
+      box-shadow: inset -7px 0 0 var(--key-shadow), 2px 0 0 var(--key-shadow);
+      transform: rotateY(-9deg);
+      transform-origin: center center;
+      transition: transform 110ms ease, background-color 300ms ease, border-color 300ms ease, box-shadow 110ms ease;
+    }
+
+    .switch-rocker::after {
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 50%;
+      width: 1px;
+      background: var(--key-border);
+      content: "";
+    }
+
+    .light-switch[aria-pressed="false"] .switch-rocker {
+      box-shadow: inset 7px 0 0 var(--key-shadow), -1px 0 0 var(--key-shadow);
+      transform: rotateY(9deg);
+    }
+
+    .light-switch:active .switch-rocker {
+      transform: rotateY(0deg) scale(0.98);
+    }
+
+    .keys {
+      display: grid;
+      width: min(560px, 100%);
+      margin: 0 auto;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: clamp(5px, 1.4vw, 12px);
+    }
+
+    .letter-key {
+      display: grid;
+      width: 100%;
+      aspect-ratio: 1;
+      place-items: center;
+      padding: 0;
+      border: 1px solid var(--key-border);
+      border-radius: clamp(5px, 1.2vw, 9px);
+      background: var(--key);
+      box-shadow: 0 3px 0 var(--key-shadow);
+      cursor: pointer;
+      transition: background-color 360ms ease, border-color 360ms ease, box-shadow 360ms ease, transform 90ms ease;
+    }
+
+    .letter-key::after {
+      width: 13%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+      opacity: 0.13;
+    }
+
+    .letter-key:active:not(:disabled) {
+      box-shadow: 0 1px 0 var(--key-shadow);
+      transform: translateY(2px);
+    }
+
+    .letter-key:disabled {
+      border-style: dashed;
+      background: var(--disabled);
+      box-shadow: none;
+      cursor: default;
+      opacity: 0.38;
+    }
+
+    body[data-mode="orange"] .letter-key {
+      border-color: #bd681b;
+      background: #ffb45f;
+      box-shadow: 0 3px 0 #a85a16;
+    }
+
+    body[data-mode="orange"] .panel {
+      box-shadow: 0 0 50px 18px rgba(255, 140, 30, 0.3);
+    }
+
+    .input-area {
+      min-height: 104px;
+      margin-top: clamp(30px, 7vh, 62px);
+    }
+
+    .input-label {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    .input-marks {
+      min-height: 32px;
+      margin: 0;
+      font-size: clamp(17px, 4vw, 22px);
+      letter-spacing: 0.28em;
+      line-height: 1.4;
+    }
+
+    .edit-actions {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .edit-button {
+      min-width: 78px;
+      min-height: 34px;
+      padding: 5px 12px;
+      border: 1px solid var(--key-border);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--muted);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+    }
+
+    .edit-button:disabled {
+      cursor: default;
+      opacity: 0.32;
+    }
+
+    .panel.shake {
+      animation: shake 290ms ease;
+    }
+
+    .modal {
+      position: fixed;
+      z-index: 20;
+      inset: 0;
+      display: grid;
+      padding: 20px;
+      place-items: center;
+      background: rgba(12, 11, 9, 0.66);
+    }
+
+    .modal[hidden] {
+      display: none;
+    }
+
+    .modal-card {
+      width: min(380px, 100%);
+      padding: 34px 24px 28px;
+      border: 2px solid #555;
+      border-radius: 9px;
+      color: #222;
+      background: #fff;
+      text-align: center;
+    }
+
+    .modal-card h2 {
+      margin: 0 0 24px;
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: clamp(24px, 6vw, 32px);
+      letter-spacing: 0.04em;
+      line-height: 1.45;
+    }
+
+    .close-button {
+      min-width: 110px;
+      min-height: 40px;
+      border: 1px solid #222;
+      border-radius: 4px;
+      color: #fff;
+      background: #222;
+      cursor: pointer;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .share-link {
+      display: inline-grid;
+      min-width: 110px;
+      min-height: 40px;
+      place-items: center;
+      padding: 8px 14px;
+      border: 1px solid #1f1f1f;
+      border-radius: 4px;
+      color: #fff;
+      background: #111;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .stats-list {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 8px;
+    }
+
+    .stats-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 10px 12px;
+      border-bottom: 1px solid #d7d0c4;
+    }
+
+    .stats-row dt,
+    .stats-row dd {
+      margin: 0;
+    }
+
+    .stats-row dd {
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .stats-note {
+      margin: 15px 0 20px;
+      color: #716d65;
+      font-size: 12px;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      55% { transform: translateX(5px); }
+      80% { transform: translateX(-2px); }
+    }
+
+    @media (max-height: 720px) {
+      .game {
+        padding-block: 10px;
+      }
+
+      .panel {
+        padding-block: 18px 14px;
+      }
+
+      .instruction {
+        margin-bottom: 15px;
+      }
+
+      .switch-area {
+        margin-bottom: 20px;
+      }
+
+      .light-switch {
+        width: 72px;
+        height: 52px;
+        padding: 7px;
+      }
+
+      .input-area {
+        min-height: 90px;
+        margin-top: 20px;
+      }
+
+      .edit-actions {
+        margin-top: 7px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .top-actions {
+        top: max(8px, env(safe-area-inset-top));
+        right: max(8px, env(safe-area-inset-right));
+        gap: 6px;
+      }
+
+      .translation-button {
+        min-height: 32px;
+        padding: 5px 9px;
+        font-size: 11px;
+      }
+
+      .panel {
+        padding-inline: 12px;
+      }
+
+      .instruction {
+        font-size: 13px;
+      }
+
+      .keys {
+        gap: 5px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body data-mode="white">
+  <header class="top-actions" aria-label="操作">
+    <button class="translation-button" id="translationButton" type="button" aria-pressed="false">都合の良い翻訳</button>
+  </header>
+
+  <main class="game">
+    <section class="panel" id="panel" aria-label="switch puzzle">
+      <p class="instruction"><span id="instructionFirst">MAKE THE RIGHT LIGHT,</span><br><span id="instructionSecond">THEN FLIP THE SWITCH.</span></p>
+
+      <div class="switch-area">
+        <span class="switch-label" id="onLabel" aria-hidden="true">ON</span>
+        <button class="light-switch" id="lightSwitch" type="button" aria-label="light switch" aria-pressed="true">
+          <span class="switch-rocker" aria-hidden="true"></span>
+        </button>
+        <span class="switch-label" id="offLabel" aria-hidden="true">OFF</span>
+      </div>
+
+      <div class="keys" id="keys" aria-label="six buttons">
+        <button class="letter-key" type="button" aria-label="button 1"></button>
+        <button class="letter-key" type="button" aria-label="button 2"></button>
+        <button class="letter-key" type="button" aria-label="button 3"></button>
+        <button class="letter-key" type="button" aria-label="button 4"></button>
+        <button class="letter-key" type="button" aria-label="button 5"></button>
+        <button class="letter-key" type="button" aria-label="button 6" disabled></button>
+      </div>
+
+      <section class="input-area" aria-label="input">
+        <p class="input-label" id="inputLabel">INPUT</p>
+        <p class="input-marks" id="inputMarks" aria-live="polite"></p>
+        <div class="edit-actions">
+          <button class="edit-button" id="backButton" type="button" disabled>BACK</button>
+          <button class="edit-button" id="clearButton" type="button" disabled>CLEAR</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="modal" id="clearModal" role="dialog" aria-modal="true" aria-labelledby="clearTitle" hidden>
+    <div class="modal-card">
+      <h2 id="clearTitle">You found the ideal light!</h2>
+      <div class="modal-actions">
+        <a class="share-link" id="xShare" href="#" target="_blank" rel="noopener noreferrer">SHARE ON X</a>
+        <button class="close-button" id="closeModal" type="button">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="statsModal" role="dialog" aria-modal="true" aria-labelledby="statsTitle" hidden>
+    <div class="modal-card">
+      <h2 id="statsTitle">記録</h2>
+      <dl class="stats-list">
+        <div class="stats-row"><dt>総プレイ回数</dt><dd id="playCount">—</dd></div>
+        <div class="stats-row"><dt>クリア数</dt><dd id="clearCount">—</dd></div>
+      </dl>
+      <p class="stats-note">この画面は謎解きと関係ありません</p>
+      <button class="close-button" id="closeStats" type="button">閉じる</button>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const unlock = value => {
+        const raw = atob(value);
+        return [...raw].map((char, index) => String.fromCharCode(
+          char.charCodeAt(0) ^ ((173 + index * 29) & 255)
+        )).join("");
+      };
+      const [bankA, bankB, bankC, answer] = unlock("+oKuUGRCGTTU8YSQRnQCLjrfy5i4SWMc").split("|");
+      const banks = [bankA, bankB, bankC];
+      const visualModes = ["white", "black", "orange"];
+
+      const state = {
+        mode: 0,
+        isOn: true,
+        darkCycles: 0,
+        input: "",
+        translated: false,
+        translationTaps: 0,
+        clearRecorded: false
+      };
+
+      const panel = document.getElementById("panel");
+      const lightSwitch = document.getElementById("lightSwitch");
+      const keys = [...document.querySelectorAll(".letter-key")];
+      const inputMarks = document.getElementById("inputMarks");
+      const backButton = document.getElementById("backButton");
+      const clearButton = document.getElementById("clearButton");
+      const clearModal = document.getElementById("clearModal");
+      const translationButton = document.getElementById("translationButton");
+      const xShare = document.getElementById("xShare");
+      const statsModal = document.getElementById("statsModal");
+      const playCount = document.getElementById("playCount");
+      const clearCount = document.getElementById("clearCount");
+
+      const copy = {
+        original: {
+          first: "MAKE THE RIGHT LIGHT,",
+          second: "THEN FLIP THE SWITCH.",
+          on: "ON",
+          off: "OFF",
+          input: "INPUT",
+          back: "BACK",
+          clear: "CLEAR",
+          result: "You found the ideal light!",
+          share: "SHARE ON X",
+          close: "CLOSE"
+        },
+        translated: {
+          first: "理想のLIGHTを作り",
+          second: "スイッチを押そう。",
+          on: "点灯",
+          off: "消灯",
+          input: "入力",
+          back: "一つ戻す",
+          clear: "消去",
+          result: "理想の光を見つけた！",
+          share: "Xでシェア",
+          close: "閉じる"
+        }
+      };
+
+      const renderLanguage = () => {
+        const words = state.translated ? copy.translated : copy.original;
+        document.documentElement.lang = state.translated ? "ja" : "en";
+        translationButton.setAttribute("aria-pressed", String(state.translated));
+        document.getElementById("instructionFirst").textContent = words.first;
+        document.getElementById("instructionSecond").textContent = words.second;
+        document.getElementById("onLabel").textContent = words.on;
+        document.getElementById("offLabel").textContent = words.off;
+        document.getElementById("inputLabel").textContent = words.input;
+        backButton.textContent = words.back;
+        clearButton.textContent = words.clear;
+        document.getElementById("clearTitle").textContent = words.result;
+        xShare.textContent = words.share;
+        document.getElementById("closeModal").textContent = words.close;
+      };
+
+      const isCorrect = () => state.input === answer;
+
+      const getVisitorId = () => {
+        const key = "allLightVisitorId";
+        let visitorId = localStorage.getItem(key);
+        if (!visitorId) {
+          visitorId = typeof crypto.randomUUID === "function"
+            ? crypto.randomUUID()
+            : `${Date.now()}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`;
+          localStorage.setItem(key, visitorId);
+        }
+        return visitorId;
+      };
+
+      const statsRequest = async (action = "") => {
+        const options = action
+          ? {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ action, visitorId: getVisitorId() })
+            }
+          : { cache: "no-store" };
+        const response = await fetch("stats.php", options);
+        if (!response.ok) throw new Error("stats unavailable");
+        return response.json();
+      };
+
+      const openStats = async () => {
+        statsModal.hidden = false;
+        playCount.textContent = "…";
+        clearCount.textContent = "…";
+        document.getElementById("closeStats").focus();
+        try {
+          const stats = await statsRequest();
+          playCount.textContent = String(stats.plays);
+          clearCount.textContent = String(stats.clears);
+        } catch (_) {
+          playCount.textContent = "—";
+          clearCount.textContent = "—";
+        }
+      };
+
+      const render = () => {
+        document.body.dataset.mode = visualModes[state.mode];
+        lightSwitch.setAttribute("aria-pressed", String(state.isOn));
+        keys.forEach((key, index) => {
+          key.disabled = index >= banks[state.mode].length || state.input.length >= answer.length;
+        });
+        inputMarks.textContent = "●".repeat(state.input.length);
+        inputMarks.setAttribute("aria-label", `${state.input.length} characters entered`);
+        backButton.disabled = state.input.length === 0;
+        clearButton.disabled = state.input.length === 0;
+      };
+
+      lightSwitch.addEventListener("click", () => {
+        if (isCorrect()) {
+          clearModal.hidden = false;
+          if (!state.clearRecorded) {
+            state.clearRecorded = true;
+            statsRequest("clear").catch(() => {});
+          }
+          document.getElementById("closeModal").focus();
+          return;
+        }
+
+        if (state.isOn) {
+          state.isOn = false;
+          state.mode = 1;
+          state.darkCycles += 1;
+        } else {
+          state.isOn = true;
+          if (state.darkCycles >= 4) {
+            state.darkCycles = 0;
+            state.mode = 2;
+          } else {
+            state.mode = 0;
+          }
+        }
+
+        if (state.input.length === answer.length) {
+          panel.classList.remove("shake");
+          void panel.offsetWidth;
+          panel.classList.add("shake");
+        }
+        render();
+      });
+
+      keys.forEach((key, index) => {
+        key.addEventListener("click", () => {
+          if (state.input.length >= answer.length) return;
+          state.input += banks[state.mode][index];
+          state.darkCycles = 0;
+          render();
+        });
+      });
+
+      backButton.addEventListener("click", () => {
+        state.input = state.input.slice(0, -1);
+        state.darkCycles = 0;
+        render();
+      });
+
+      clearButton.addEventListener("click", () => {
+        state.input = "";
+        state.darkCycles = 0;
+        render();
+      });
+
+      translationButton.addEventListener("click", () => {
+        state.translated = !state.translated;
+        state.translationTaps += 1;
+        renderLanguage();
+        if (state.translationTaps >= 8) {
+          state.translationTaps = 0;
+          openStats();
+        }
+      });
+
+      document.addEventListener("click", event => {
+        if (event.target !== translationButton) state.translationTaps = 0;
+      });
+
+      const isSourceShortcut = event => {
+        const sourceKey = event.key.toLowerCase() === "u" || event.code === "KeyU";
+        return (event.ctrlKey && !event.altKey && sourceKey)
+          || (event.metaKey && event.altKey && sourceKey);
+      };
+
+      document.addEventListener("keydown", event => {
+        if (!isSourceShortcut(event)) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        window.alert("やるんだな!?今!ここで!");
+      }, true);
+
+      document.getElementById("closeModal").addEventListener("click", () => {
+        clearModal.hidden = true;
+      });
+
+      clearModal.addEventListener("click", event => {
+        if (event.target === clearModal) clearModal.hidden = true;
+      });
+
+      document.getElementById("closeStats").addEventListener("click", () => {
+        statsModal.hidden = true;
+      });
+
+      statsModal.addEventListener("click", event => {
+        if (event.target === statsModal) statsModal.hidden = true;
+      });
+
+      xShare.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(
+        "WEB謎「AllLight」を解きました！\n\n" +
+        "https://sajiqook.jp/game/alight\n\n" +
+        "#AllLight\n" +
+        "https://x.com/saji_qook/status/2096010444314141171?s=20"
+      );
+
+      renderLanguage();
+      render();
+      statsRequest("visit").catch(() => {});
+    })();
+  </script>
+</body>
+</html>

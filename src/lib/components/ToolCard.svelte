@@ -15,7 +15,7 @@
 		<div
 			class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-2xl bg-base-100 text-base-content shadow-inner flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-base-300"
 		>
-			<svelte:component this={icon} size="24" class="{color}" />
+			<svelte:component this={icon} size={24} class="{color}" />
 		</div>
 		<div class="flex flex-col gap-0.5 flex-1 min-w-0">
 			<h3 class="card-title text-base sm:text-lg font-bold text-base-content group-hover:text-primary transition-colors line-clamp-1">

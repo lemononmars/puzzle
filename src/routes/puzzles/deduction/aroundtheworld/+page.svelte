@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { ArrowLeftIcon, ChevronDownIcon, ChevronUpIcon, GlobeIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
+import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
+import GlobeIcon from '@lucide/svelte/icons/globe';
 
 	const targetSequence = ['A', 'R', 'O', 'U', 'N', 'D', 'T', 'H', 'E', 'W', 'O', 'R', 'L', 'D'];
 
@@ -99,7 +102,7 @@
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/puzzles/deduction" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>กลับไปหน้า Deduction Games</span>
 		</a>
 	</div>
@@ -109,7 +112,7 @@
 		<!-- Header Info -->
 		<div class="space-y-3 text-center">
 			<div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-primary flex items-center justify-center border border-primary/30 mx-auto shadow-md">
-				<GlobeIcon size="28" />
+				<GlobeIcon size={28} />
 			</div>
 			<h1 class="text-2xl sm:text-4xl font-black text-base-content">Around the World</h1>
 
@@ -174,9 +177,9 @@
 				>
 					<span>ประวัติการเดินทาง ({history.length} รายการ)</span>
 					{#if showHistory}
-						<ChevronUpIcon size="14" />
+						<ChevronUpIcon size={14} />
 					{:else}
-						<ChevronDownIcon size="14" />
+						<ChevronDownIcon size={14} />
 					{/if}
 				</button>
 

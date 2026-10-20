@@ -1,0 +1,9 @@
+{
+  "csrf": "b3335711cdfe00cbe67a3d4f76c463f87a04b81ffbd54e45",
+  "view": {
+    "html": "<section class=\"cover-scene scene\" aria-label=\"アルバムの表紙\"><div class=\"album-cover\"><div class=\"cover-spine\" aria-hidden=\"true\"><i></i><i></i><b></b></div><div class=\"cover-content\"><h1 class=\"title-label\"><span class=\"image-surface title-surface\" data-image=\"49cf9d6c66139b3f514c8b358432bd67\" tabindex=\"0\" role=\"img\" aria-label=\"かんさつの記録\" style=\"aspect-ratio:1200/288\"><img class=\"source-image\" src=\"api.php?action=image&ticket=beffaaeaedbab121a814ae7433dd9021d6b26e6ca81be8b2\" alt=\"かんさつの記録\" draggable=\"false\" width=\"1200\" height=\"288\"></span></h1><div class=\"stars-label\" role=\"img\" aria-label=\"解けた写真 0枚\"><span class=\"progress-star\" aria-hidden=\"true\">☆</span> <span class=\"progress-star\" aria-hidden=\"true\">☆</span> </div><button class=\"paper-button open-button\" id=\"open-album\" data-action=\"open\">ひらく <span aria-hidden=\"true\">›</span></button></div></div><p class=\"desk-caption\">あいつと作った、一冊のアルバム。</p></section>",
+    "mode": "cover",
+    "page": 0
+  },
+  "recorded": true
+}

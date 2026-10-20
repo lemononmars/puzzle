@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>日曜日の予定</title>
+  <script src="../game-analytics.js" defer></script>
+  <link rel="canonical" href="https://sajiqook.jp/game/diary/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="日曜日の予定">
+  <meta property="og:url" content="https://sajiqook.jp/game/diary/">
+  <meta property="og:image" content="https://sajiqook.jp/game/diary/diary_logo_sunday.jpg">
+  <meta property="og:image:secure_url" content="https://sajiqook.jp/game/diary/diary_logo_sunday.jpg">
+  <meta property="og:image:width" content="480">
+  <meta property="og:image:height" content="300">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="日曜日の予定">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="日曜日の予定">
+  <meta name="twitter:image" content="https://sajiqook.jp/game/diary/diary_logo_sunday.jpg">
+  <meta name="twitter:image:alt" content="日曜日の予定">
+  <style>
+    :root {
+      --cell: 48px;
+      --viewport-left: 0px;
+      --viewport-width: 100%;
+      --ink: #27303a;
+      --blue-line: rgba(116, 174, 207, 0.22);
+      --red: #cf4b46;
+      --paper: #fffefb;
+      --calendar-line: rgba(78, 108, 126, 0.3);
+      --sunday: rgba(255, 224, 126, 0.34);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      :root {
+        --cell: 65px;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+      overflow-x: hidden;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
+    }
+
+    body {
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HG行書体", "HGP行書体", serif;
+      font-size: 16px;
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      touch-action: pan-y pinch-zoom;
+    }
+
+    .page {
+      width: var(--viewport-width);
+      min-height: 100vh;
+      padding: 19px 0 42px;
+      overflow-x: clip;
+      transform: translateX(var(--viewport-left));
+      transform-origin: top left;
+    }
+
+    .site-menu {
+      width: min(calc(100% - 32px), 620px);
+      margin: -7px auto 18px;
+      border: 1px solid rgba(91, 139, 165, 0.24);
+      border-radius: 5px 7px 6px 4px;
+      background: rgba(255, 254, 251, 0.88);
+      box-shadow: 0 2px 7px rgba(45, 67, 78, 0.05);
+      overflow: hidden;
+      transform: rotate(-0.08deg);
+    }
+
+    .menu-trigger {
+      display: flex;
+      width: 100%;
+      min-height: 38px;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 7px 14px 6px;
+      border: 0;
+      color: #607986;
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent calc(100% - 1px),
+          rgba(105, 170, 205, 0.22) calc(100% - 1px)
+        );
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-indent: 0.22em;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    .menu-trigger:hover {
+      color: #3f5f70;
+      background-color: rgba(116, 174, 207, 0.07);
+    }
+
+    .menu-trigger:focus-visible,
+    .menu-link:focus-visible {
+      outline: 2px dashed rgba(84, 127, 150, 0.58);
+      outline-offset: -4px;
+    }
+
+    .menu-toggle-mark {
+      position: relative;
+      width: 16px;
+      height: 16px;
+      border: 1.4px solid rgba(207, 75, 70, 0.78);
+      border-radius: 49% 52% 46% 55%;
+      transform: rotate(-7deg);
+    }
+
+    .menu-toggle-mark::before,
+    .menu-toggle-mark::after {
+      position: absolute;
+      top: 6px;
+      left: 3px;
+      width: 8px;
+      height: 1.4px;
+      background: rgba(207, 75, 70, 0.78);
+      content: "";
+      transition: transform 220ms ease;
+    }
+
+    .menu-toggle-mark::after {
+      transform: rotate(90deg);
+    }
+
+    .site-menu.is-open .menu-toggle-mark::before {
+      transform: rotate(180deg);
+    }
+
+    .site-menu.is-open .menu-toggle-mark::after {
+      transform: rotate(180deg);
+    }
+
+    .menu-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      visibility: hidden;
+      opacity: 0;
+      transition:
+        grid-template-rows 300ms ease,
+        opacity 210ms ease,
+        visibility 0s linear 300ms;
+    }
+
+    .site-menu.is-open .menu-panel {
+      grid-template-rows: 1fr;
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0s;
+    }
+
+    .menu-panel-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.55fr;
+      min-height: 0;
+      overflow: hidden;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255, 254, 251, 0.96) 0,
+          rgba(255, 254, 251, 0.96) 31px,
+          rgba(116, 174, 207, 0.15) 31px,
+          rgba(116, 174, 207, 0.15) 32px
+        );
+    }
+
+    .menu-link {
+      display: flex;
+      min-height: 91px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      padding: 14px 16px;
+      color: #344b57;
+      text-align: center;
+      text-decoration: none;
+      transition: color 160ms ease, background-color 160ms ease;
+    }
+
+    .menu-link + .menu-link {
+      border-left: 1px dashed rgba(83, 126, 148, 0.3);
+    }
+
+    .menu-link-title {
+      color: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .menu-link-title::after {
+      display: inline-block;
+      margin-left: 5px;
+      color: rgba(207, 75, 70, 0.78);
+      font-size: 11px;
+      content: "↗";
+      transform: rotate(-5deg);
+    }
+
+    .menu-link small {
+      max-width: 320px;
+      color: #74828a;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .menu-link:hover {
+      color: #913f3b;
+      background: rgba(255, 224, 126, 0.18);
+    }
+
+    .menu-link:hover small {
+      color: #5b6970;
+    }
+
+    .menu-note {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 8px 12px 9px;
+      border-top: 1px dashed rgba(83, 126, 148, 0.24);
+      color: #859096;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .masthead {
+      position: relative;
+      padding: 0 18px;
+      text-align: center;
+    }
+
+    .scale-doodle {
+      position: absolute;
+      top: -3px;
+      right: 18px;
+      width: 54px;
+      height: 39px;
+      color: #688393;
+      opacity: 0.34;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      touch-action: manipulation;
+      transform: rotate(-7deg);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .scale-doodle:focus-visible {
+      border-radius: 6px;
+      outline: 2px dashed rgba(84, 127, 150, 0.5);
+      outline-offset: 4px;
+    }
+
+    .lens {
+      position: absolute;
+      display: block;
+      border: 1.5px solid currentColor;
+      border-radius: 48% 52% 51% 49%;
+    }
+
+    .lens::after {
+      position: absolute;
+      height: 1.5px;
+      background: currentColor;
+      content: "";
+      transform: rotate(45deg);
+      transform-origin: left center;
+    }
+
+    .lens-small {
+      top: 17px;
+      left: 3px;
+      width: 13px;
+      height: 13px;
+    }
+
+    .lens-small::after {
+      top: 10px;
+      left: 10px;
+      width: 8px;
+    }
+
+    .lens-large {
+      top: 1px;
+      right: 5px;
+      width: 25px;
+      height: 25px;
+    }
+
+    .lens-large::after {
+      top: 20px;
+      left: 20px;
+      width: 12px;
+    }
+
+    .date {
+      margin: 0;
+      color: var(--red);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 8px 0 19px;
+      color: #202a32;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      line-height: 1.25;
+      text-indent: 0.12em;
+      transform: rotate(-0.6deg);
+    }
+
+    .puzzle {
+      width: 100%;
+    }
+
+    .calendar-head {
+      display: grid;
+      grid-template-columns: repeat(7, var(--cell));
+      width: calc(var(--cell) * 7);
+      height: 0;
+      margin: 0 auto;
+      overflow: hidden;
+      color: #52616a;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: height 420ms ease, opacity 420ms ease 90ms, transform 420ms ease 90ms;
+      visibility: hidden;
+    }
+
+    .calendar-head span {
+      display: grid;
+      place-items: center;
+      height: var(--cell);
+      border: 1px solid var(--calendar-line);
+      border-bottom: 0;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .calendar-head span + span {
+      border-left: 0;
+    }
+
+    .calendar-head span:first-child {
+      color: #9b504b;
+      background: var(--sunday);
+    }
+
+    .puzzle.solved .calendar-head {
+      height: var(--cell);
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    .board-wrap {
+      width: 100%;
+      overflow: hidden;
+      background: repeating-linear-gradient(
+        to bottom,
+        var(--paper) 0,
+        var(--paper) calc(var(--cell) - 1px),
+        rgba(105, 170, 205, 0.24) calc(var(--cell) - 1px),
+        rgba(105, 170, 205, 0.24) var(--cell)
+      );
+    }
+
+    .board {
+      display: grid;
+      grid-auto-rows: var(--cell);
+      justify-content: start;
+      width: max-content;
+      margin: 0 auto;
+    }
+
+    .cell {
+      position: relative;
+      display: grid;
+      width: var(--cell);
+      height: var(--cell);
+      place-items: center;
+      border: 1px solid transparent;
+      color: #253039;
+      font-size: 25px;
+      line-height: 1;
+      transition: border-color 420ms ease, background-color 420ms ease, color 250ms ease;
+    }
+
+    .glyph {
+      display: inline-block;
+      font-weight: 600;
+      text-shadow: 0.35px 0.25px 0 rgba(39, 48, 58, 0.24);
+      transform-origin: 50% 70%;
+    }
+
+    .cell:nth-child(6n + 1) .glyph {
+      transform: rotate(-2.8deg) translate(0, 1px);
+    }
+
+    .cell:nth-child(6n + 2) .glyph {
+      transform: rotate(1.8deg) translate(1px, -1px);
+    }
+
+    .cell:nth-child(6n + 3) .glyph {
+      transform: rotate(-1.2deg) translate(-1px, 0) scale(1.03);
+    }
+
+    .cell:nth-child(6n + 4) .glyph {
+      transform: rotate(2.3deg) translate(0, 1px) scale(0.97);
+    }
+
+    .cell:nth-child(6n + 5) .glyph {
+      transform: rotate(-1.7deg) translate(1px, -1px);
+    }
+
+    .cell:nth-child(6n) .glyph {
+      transform: rotate(0.8deg) translate(-1px, 1px) scale(1.02);
+    }
+
+    .cell.marked::after {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: calc(var(--cell) - 12px);
+      height: calc(var(--cell) - 12px);
+      border: 1.7px solid var(--red);
+      border-radius: 48% 53% 47% 55%;
+      content: "";
+      pointer-events: none;
+      transform: rotate(-8deg);
+    }
+
+    .puzzle.solved .cell {
+      border-color: var(--calendar-line);
+    }
+
+    .puzzle.solved .cell.is-sunday {
+      color: #8c433f;
+      background: var(--sunday);
+    }
+
+    .answer-area {
+      width: min(100% - 32px, 420px);
+      margin: 27px auto 0;
+      text-align: center;
+    }
+
+    .question-text {
+      margin: 0 0 12px;
+      color: #455c68;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+    }
+
+    .answer-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 9px;
+    }
+
+    .answer-input,
+    .submit-button {
+      height: 44px;
+      border-radius: 5px;
+      font: inherit;
+    }
+
+    .answer-input {
+      min-width: 0;
+      padding: 0 12px;
+      border: 1px solid rgba(72, 101, 119, 0.38);
+      outline: 0;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.83);
+      box-shadow: inset 0 -1px 0 rgba(91, 158, 195, 0.18);
+      font-size: 18px;
+    }
+
+    .answer-input:focus-visible {
+      border-color: #547f96;
+      box-shadow: 0 0 0 3px rgba(84, 127, 150, 0.14);
+    }
+
+    .submit-button {
+      padding: 0 18px;
+      border: 1px solid #3f6476;
+      color: #fff;
+      background: #4c7385;
+      box-shadow: 0 2px 0 #355363;
+      cursor: pointer;
+      transition: transform 120ms ease, background 160ms ease;
+    }
+
+    .submit-button:hover {
+      background: #40697c;
+    }
+
+    .submit-button:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 0 #355363;
+    }
+
+    .result {
+      min-height: 29px;
+      margin: 13px 0 0;
+      color: #78534d;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    .puzzle.solved .result {
+      color: #47725c;
+    }
+
+    .answer-area.shake {
+      animation: shake 280ms ease-in-out;
+    }
+
+    .success-dialog,
+    .record-dialog {
+      width: min(330px, calc(100% - 32px));
+      margin: auto;
+      padding: 30px 26px 24px;
+      border: 1px solid rgba(80, 112, 127, 0.28);
+      border-radius: 9px 12px 8px 11px;
+      outline: 0;
+      color: var(--ink);
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255, 254, 249, 0.98) 0,
+          rgba(255, 254, 249, 0.98) 31px,
+          rgba(116, 174, 207, 0.2) 31px,
+          rgba(116, 174, 207, 0.2) 32px
+        );
+      box-shadow: 0 18px 50px rgba(37, 48, 57, 0.22);
+      font: inherit;
+      text-align: center;
+    }
+
+    .success-dialog[open],
+    .record-dialog[open] {
+      animation: pop-in 330ms cubic-bezier(0.2, 0.85, 0.25, 1.15);
+    }
+
+    .success-dialog::backdrop,
+    .record-dialog::backdrop {
+      background: rgba(35, 47, 54, 0.32);
+      backdrop-filter: blur(1.5px);
+    }
+
+    .success-mark {
+      margin: -13px 0 -5px;
+      color: var(--red);
+      font-size: 58px;
+      font-weight: 500;
+      line-height: 1;
+      transform: rotate(-7deg);
+    }
+
+    .success-title {
+      margin: 0;
+      color: #3f6c58;
+      font-size: 27px;
+      letter-spacing: 0.13em;
+      text-indent: 0.13em;
+      transform: rotate(-1deg);
+    }
+
+    .success-copy {
+      margin: 9px 0 20px;
+      color: #5d676d;
+      font-size: 16px;
+    }
+
+    .share-button,
+    .dialog-close {
+      border: 0;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .share-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 164px;
+      height: 43px;
+      padding: 0 18px;
+      border-radius: 22px;
+      color: #fff;
+      background: #101010;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+      font-weight: 600;
+    }
+
+    .share-symbol {
+      font-family: Arial, sans-serif;
+      font-size: 19px;
+    }
+
+    .dialog-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      color: #69757b;
+      background: transparent;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .share-button:focus-visible,
+    .dialog-close:focus-visible {
+      outline: 3px solid rgba(84, 127, 150, 0.28);
+      outline-offset: 3px;
+    }
+
+    .record-title {
+      margin: 2px 0 19px;
+      color: #3e5f70;
+      font-size: 23px;
+      letter-spacing: 0.08em;
+    }
+
+    .record-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 0 0 18px;
+    }
+
+    .record-item {
+      padding: 11px 6px 9px;
+      border: 1px solid rgba(78, 108, 126, 0.25);
+      border-radius: 7px 9px 6px 8px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .record-label {
+      display: block;
+      color: #68757c;
+      font-size: 13px;
+    }
+
+    .record-number {
+      display: block;
+      margin-top: 3px;
+      color: #334d5b;
+      font-size: 29px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .record-note {
+      margin: 0;
+      color: #9a4e49;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .record-scope {
+      margin: 7px 0 0;
+      color: #7a858a;
+      font-size: 12px;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px) rotate(-0.3deg); }
+      55% { transform: translateX(4px) rotate(0.25deg); }
+      78% { transform: translateX(-2px); }
+    }
+
+    @keyframes pop-in {
+      from {
+        opacity: 0;
+        transform: translateY(9px) scale(0.94) rotate(0.8deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .site-menu {
+        width: calc(100% - 22px);
+        margin-bottom: 15px;
+      }
+
+      .menu-panel-inner {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+      }
+
+      .menu-link {
+        min-height: 106px;
+        padding: 13px 8px;
+      }
+
+      .menu-link-title {
+        font-size: 14px;
+        letter-spacing: 0.03em;
+      }
+
+      .menu-link small {
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      h1 {
+        font-size: 26px;
+        letter-spacing: 0.08em;
+        text-indent: 0.08em;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="site-menu" id="siteMenu" aria-label="設定と関連ページ">
+      <button class="menu-trigger" id="menuTrigger" type="button" aria-expanded="false" aria-controls="menuPanel">
+        <span>設定</span>
+        <i class="menu-toggle-mark" aria-hidden="true"></i>
+      </button>
+      <div class="menu-panel" id="menuPanel" aria-hidden="true" inert>
+        <div class="menu-panel-inner">
+          <a class="menu-link" href="https://sajiqook.jp/game/" target="_blank" rel="noopener noreferrer" tabindex="-1">
+            <span class="menu-link-title">他のゲーム</span>
+          </a>
+          <a class="menu-link" href="https://note.com/saji_q/n/ndf67bfc443b6" target="_blank" rel="noopener noreferrer" tabindex="-1">
+            <span class="menu-link-title">ヒント・解説</span>
+            <small>すべてのWEB謎のヒントと解説を、この有料記事ひとつで楽しめます。</small>
+          </a>
+          <p class="menu-note">この画面は謎解きとは関係ありません。</p>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <p class="date">2026年8月27日</p>
+      <h1>日曜日の予定</h1>
+      <button class="scale-doodle" id="statsTrigger" type="button" aria-label="虫めがね">
+        <span class="lens lens-small" aria-hidden="true"></span>
+        <span class="lens lens-large" aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <section class="puzzle" id="puzzle" aria-label="日記のもんだい">
+      <div class="calendar-head" aria-hidden="true">
+        <span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board" id="board" role="group" aria-label="日記の文字"></div>
+      </div>
+
+      <form class="answer-area" id="answerForm" autocomplete="off">
+        <p class="question-text">目的はなんでしょう？</p>
+        <div class="answer-row">
+          <label for="answer" hidden>こたえ</label>
+          <input class="answer-input" id="answer" name="answer" type="text" inputmode="text" aria-label="こたえ" maxlength="12">
+          <button class="submit-button" type="submit">決定</button>
+        </div>
+        <p class="result" id="result" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <dialog class="success-dialog" id="successDialog" aria-labelledby="successTitle">
+    <button class="dialog-close" id="dialogClose" type="button" aria-label="とじる">×</button>
+    <p class="success-mark" aria-hidden="true">◎</p>
+    <h2 class="success-title" id="successTitle">せいかい！</h2>
+    <p class="success-copy">目的がわかりました</p>
+    <button class="share-button" id="shareButton" type="button">
+      <span class="share-symbol" aria-hidden="true">𝕏</span>
+      <span>Xでシェア</span>
+    </button>
+  </dialog>
+
+  <dialog class="record-dialog" id="recordDialog" aria-labelledby="recordTitle">
+    <button class="dialog-close" id="recordClose" type="button" aria-label="とじる">×</button>
+    <h2 class="record-title" id="recordTitle">きろく</h2>
+    <div class="record-grid">
+      <div class="record-item">
+        <span class="record-label">挑戦者数</span>
+        <strong class="record-number" id="challengeCount">—</strong>
+      </div>
+      <div class="record-item">
+        <span class="record-label">クリア者数</span>
+        <strong class="record-number" id="clearCount">—</strong>
+      </div>
+    </div>
+    <p class="record-note">この画面は謎解きと関係ありません</p>
+    <p class="record-scope">公開ページ全体の記録です</p>
+  </dialog>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const CH = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--cell"));
+      const text = "そこは静かなのだろう。週末、消す準備は済ませた。君を守るためだ";
+      const board = document.getElementById("board");
+      const puzzle = document.getElementById("puzzle");
+      const calendarHead = document.querySelector(".calendar-head");
+      const form = document.getElementById("answerForm");
+      const input = document.getElementById("answer");
+      const result = document.getElementById("result");
+      const successDialog = document.getElementById("successDialog");
+      const dialogClose = document.getElementById("dialogClose");
+      const shareButton = document.getElementById("shareButton");
+      const statsTrigger = document.getElementById("statsTrigger");
+      const recordDialog = document.getElementById("recordDialog");
+      const recordClose = document.getElementById("recordClose");
+      const challengeCount = document.getElementById("challengeCount");
+      const clearCount = document.getElementById("clearCount");
+      const siteMenu = document.getElementById("siteMenu");
+      const menuTrigger = document.getElementById("menuTrigger");
+      const menuPanel = document.getElementById("menuPanel");
+      const menuLinks = [...menuPanel.querySelectorAll("a")];
+      const vv = window.visualViewport;
+      const entries = [...Array(6).fill("　"), ...text];
+      let frame = 0;
+      let secretTapCount = 0;
+
+      const recordState = {
+        challengers: null,
+        clears: null
+      };
+      const statsEndpoint = "stats.php";
+      const visitorStorageKey = "diary-global-visitor-id";
+
+      const createVisitorId = () => {
+        if (window.crypto && typeof window.crypto.randomUUID === "function") {
+          return window.crypto.randomUUID();
+        }
+
+        return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`;
+      };
+
+      const visitorId = (() => {
+        try {
+          const saved = localStorage.getItem(visitorStorageKey);
+          if (saved) {
+            return saved;
+          }
+
+          const created = createVisitorId();
+          localStorage.setItem(visitorStorageKey, created);
+          return created;
+        } catch {
+          return createVisitorId();
+        }
+      })();
+
+      const applyStats = (stats) => {
+        if (!stats || !Number.isFinite(stats.challengers) || !Number.isFinite(stats.clears)) {
+          return;
+        }
+
+        recordState.challengers = stats.challengers;
+        recordState.clears = stats.clears;
+        challengeCount.textContent = String(stats.challengers);
+        clearCount.textContent = String(stats.clears);
+      };
+
+      const syncStats = async (action = "read") => {
+        try {
+          const options = action === "read"
+            ? { cache: "no-store" }
+            : {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ action, visitorId })
+              };
+          const response = await fetch(statsEndpoint, options);
+          if (!response.ok) {
+            throw new Error("stats unavailable");
+          }
+          applyStats(await response.json());
+        } catch {
+          challengeCount.textContent = "—";
+          clearCount.textContent = "—";
+        }
+      };
+
+      syncStats("visit");
+
+      const setMenuOpen = (isOpen) => {
+        siteMenu.classList.toggle("is-open", isOpen);
+        menuTrigger.setAttribute("aria-expanded", String(isOpen));
+        menuPanel.setAttribute("aria-hidden", String(!isOpen));
+        menuPanel.inert = !isOpen;
+        menuLinks.forEach((link) => {
+          link.tabIndex = isOpen ? 0 : -1;
+        });
+      };
+
+      menuTrigger.addEventListener("click", () => {
+        setMenuOpen(menuTrigger.getAttribute("aria-expanded") !== "true");
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && menuTrigger.getAttribute("aria-expanded") === "true") {
+          setMenuOpen(false);
+          menuTrigger.focus();
+        }
+      });
+
+      entries.forEach((character, index) => {
+        const cell = document.createElement("span");
+        const glyph = document.createElement("span");
+        cell.className = "cell";
+        glyph.className = "glyph";
+        glyph.textContent = character;
+        cell.append(glyph);
+
+        if (index < 6) {
+          cell.setAttribute("aria-hidden", "true");
+        }
+        if (index % 7 === 0) {
+          cell.classList.add("is-sunday");
+        }
+        if (index === 32) {
+          cell.classList.add("marked");
+        }
+
+        board.append(cell);
+      });
+
+      const viewportWidth = () => (vv ? vv.width : window.innerWidth);
+      const viewportLeft = () => (vv ? vv.offsetLeft : 0);
+      const desktopLayout = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+      const columnCount = (width) => {
+        if (!desktopLayout.matches) {
+          return Math.max(1, Math.floor(width / CH));
+        }
+
+        if (width < 540) {
+          return Math.max(1, Math.min(6, Math.floor(width / 75)));
+        }
+
+        if (width <= 650) {
+          return 7;
+        }
+
+        return Math.max(8, Math.floor(width / 75));
+      };
+
+      const layout = () => {
+        frame = 0;
+        const width = viewportWidth();
+        const left = viewportLeft();
+        const cols = columnCount(width);
+        document.documentElement.style.setProperty("--viewport-width", `${width}px`);
+        document.documentElement.style.setProperty("--viewport-left", `${left}px`);
+        board.style.gridTemplateColumns = `repeat(${cols}, ${CH}px)`;
+      };
+
+      const requestLayout = () => {
+        if (!frame) {
+          frame = window.requestAnimationFrame(layout);
+        }
+      };
+
+      if (vv) {
+        vv.addEventListener("resize", requestLayout);
+        vv.addEventListener("scroll", requestLayout);
+      }
+      window.addEventListener("resize", requestLayout);
+      layout();
+
+      const accepted = [
+        ["こ", "ろ", "す", "た", "め"].join(""),
+        ["コ", "ロ", "ス", "タ", "メ"].join(""),
+        ["殺", "す", "た", "め"].join(""),
+        ["殺", "す", "為"].join(""),
+        ["こ", "ろ", "す", "為"].join("")
+      ];
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const value = input.value.trim().replaceAll(" ", "").replaceAll("　", "");
+
+        if (accepted.includes(value)) {
+          puzzle.classList.add("solved");
+          calendarHead.setAttribute("aria-hidden", "false");
+          result.textContent = "せいかい";
+          input.setAttribute("aria-invalid", "false");
+          syncStats("clear");
+          if (!successDialog.open) {
+            successDialog.showModal();
+          }
+          return;
+        }
+
+        if (successDialog.open) {
+          successDialog.close();
+        }
+        puzzle.classList.remove("solved");
+        calendarHead.setAttribute("aria-hidden", "true");
+        result.textContent = "ちがうみたい";
+        input.setAttribute("aria-invalid", "true");
+        form.classList.remove("shake");
+        void form.offsetWidth;
+        form.classList.add("shake");
+      });
+
+      form.addEventListener("animationend", () => {
+        form.classList.remove("shake");
+      });
+
+      dialogClose.addEventListener("click", () => {
+        successDialog.close();
+      });
+
+      shareButton.addEventListener("click", () => {
+        const shareUrl = "https://sajiqook.jp/game/diary";
+        const originalPostUrl = "https://x.com/saji_qook/status/2092748934129017086?s=20";
+        const params = new URLSearchParams({
+          text: `WEB謎『日曜日の予定』を解きました！\n${shareUrl}\n\n#日曜日の予定\n${originalPostUrl}`
+        });
+
+        window.open(`https://twitter.com/intent/tweet?${params.toString()}`, "_blank", "noopener,noreferrer");
+      });
+
+      statsTrigger.addEventListener("click", async () => {
+        secretTapCount += 1;
+
+        if (secretTapCount < 8) {
+          return;
+        }
+
+        secretTapCount = 0;
+        await syncStats("read");
+
+        if (!recordDialog.open) {
+          recordDialog.showModal();
+        }
+      });
+
+      recordClose.addEventListener("click", () => {
+        recordDialog.close();
+      });
+    })();
+  </script>
+</body>
+</html>
+

@@ -2,20 +2,18 @@
 	import { onMount } from 'svelte';
 	import KeyboardLayout from '#lib/components/KeyboardLayout.svelte';
 	import dict from '#lib/dict.json';
-	import {
-		AwardIcon,
-		HeartIcon,
-		ArrowLeftIcon,
-		ChevronLeftIcon,
-		PlayIcon,
-		RefreshCwIcon,
-		XCircleIcon,
-		ClockIcon,
-		BookOpenIcon,
-		SendIcon,
-		Maximize2Icon,
-		Minimize2Icon
-	} from 'svelte-feather-icons';
+	import AwardIcon from '@lucide/svelte/icons/award';
+import HeartIcon from '@lucide/svelte/icons/heart';
+import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+import PlayIcon from '@lucide/svelte/icons/play';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import XCircleIcon from '@lucide/svelte/icons/circle-x';
+import ClockIcon from '@lucide/svelte/icons/clock';
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import SendIcon from '@lucide/svelte/icons/send';
+import Maximize2Icon from '@lucide/svelte/icons/maximize-2';
+import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
 
 	// Global leaderboard submission
 	let submitName = '';
@@ -705,15 +703,15 @@
 						title={isFullscreen ? 'ออกจากเต็มจอ' : 'เต็มจอ'}
 					>
 						{#if isFullscreen}
-							<Minimize2Icon size="16" />
+							<Minimize2Icon size={16} />
 							<span class="hidden sm:inline">ออกจากเต็มจอ</span>
 						{:else}
-							<Maximize2Icon size="16" />
+							<Maximize2Icon size={16} />
 							<span class="hidden sm:inline">เต็มจอ</span>
 						{/if}
 					</button>
 					<a href="/puzzles/blanks/leaderboard" class="btn btn-ghost btn-xs sm:btn-sm gap-1 text-base-content hover:bg-base-200">
-						<AwardIcon size="16" />
+						<AwardIcon size={16} />
 						<span class="hidden sm:inline">ตารางคะแนน</span>
 					</a>
 				</div>
@@ -725,7 +723,7 @@
 					on:click={beginCountdown}
 					class="btn btn-primary text-primary-content w-full py-4 rounded-2xl font-black text-xl sm:text-2xl shadow-lg active:scale-95 transition-all flex items-center justify-center gap-3"
 				>
-					<PlayIcon size="28" />
+					<PlayIcon size={28} />
 					เริ่มเล่นเกมใหม่ 🚀
 				</button>
 			</div>
@@ -807,13 +805,13 @@
 							on:click={goHome}
 							class="btn btn-ghost btn-sm gap-1.5 opacity-60 hover:opacity-100 text-base-content font-bold"
 						>
-							<ArrowLeftIcon size="14" /> กลับหน้าหลัก
+							<ArrowLeftIcon size={14} /> กลับหน้าหลัก
 						</button>
 						<button
 							on:click={triggerGameOver}
 							class="btn btn-ghost btn-sm gap-1.5 text-error-content font-bold hover:bg-error/10 border-none rounded-xl"
 						>
-							<XCircleIcon size="14" /> จบเกม
+							<XCircleIcon size={14} /> จบเกม
 						</button>
 					</div>
 					<button
@@ -821,9 +819,9 @@
 						class="btn btn-ghost btn-sm gap-1.5 text-base-content font-bold bg-base-100 text-base-content hover:bg-base-100 text-base-content border-none rounded-xl"
 					>
 						{#if isFullscreen}
-							<Minimize2Icon size="14" /> ย่อขนาด{#if gameMode !== 'endless'}<span class="opacity-50 text-[10px] ml-1 font-mono">[Space]</span>{/if}
+							<Minimize2Icon size={14} /> ย่อขนาด{#if gameMode !== 'endless'}<span class="opacity-50 text-[10px] ml-1 font-mono">[Space]</span>{/if}
 						{:else}
-							<Maximize2Icon size="14" /> ขยายเต็มจอ{#if gameMode !== 'endless'}<span class="opacity-50 text-[10px] ml-1 font-mono">[Space]</span>{/if}
+							<Maximize2Icon size={14} /> ขยายเต็มจอ{#if gameMode !== 'endless'}<span class="opacity-50 text-[10px] ml-1 font-mono">[Space]</span>{/if}
 						{/if}
 					</button>
 				</div>
@@ -1117,7 +1115,7 @@
 					<div class="card bg-base-100 text-base-content border border-base-300 shadow-md w-full">
 						<div class="card-body p-3 flex flex-col gap-2.5">
 							<p class="text-xs font-black text-base-content flex items-center gap-1.5">
-								<AwardIcon size="14" class="text-warning-content" />
+								<AwardIcon size={14} class="text-warning-content" />
 								ส่งคะแนนขึ้นกระดานโลก
 							</p>
 							{#if submitStatus === 'success'}
@@ -1144,7 +1142,7 @@
 										{#if submitStatus === 'loading'}
 											<span class="loading loading-spinner loading-xs" />
 										{:else}
-											<SendIcon size="12" /> ส่ง
+											<SendIcon size={12} /> ส่ง
 										{/if}
 									</button>
 								</div>
@@ -1159,21 +1157,21 @@
 						on:click={beginCountdown}
 						class="btn btn-primary flex-1 gap-2 btn-sm sm:btn-md font-black text-xs sm:text-sm shadow-md"
 					>
-						<RefreshCwIcon size="14" />
+						<RefreshCwIcon size={14} />
 						เล่นอีกรอบ!
 					</button>
 					<button
 						on:click={goHome}
 						class="btn btn-outline flex-1 gap-2 btn-sm sm:btn-md font-black text-xs sm:text-sm shadow-md"
 					>
-						<ArrowLeftIcon size="14" />
+						<ArrowLeftIcon size={14} />
 						กลับหน้าหลัก
 					</button>
 					<a
 						href="/puzzles/blanks/leaderboard"
 						class="btn btn-outline btn-warning flex-1 gap-2 btn-sm sm:btn-md font-black text-xs sm:text-sm shadow-md"
 					>
-						<AwardIcon size="14" />
+						<AwardIcon size={14} />
 						ตารางคะแนน
 					</a>
 				</div>
@@ -1185,7 +1183,7 @@
 					>
 						<div class="card-body p-4 sm:p-5">
 							<h3 class="text-sm sm:text-base font-black text-error-content flex items-center gap-2 mb-2">
-								<BookOpenIcon size="18" class="hidden sm:inline" />
+								<BookOpenIcon size={18} class="hidden sm:inline" />
 								ข้อที่ตอบผิด ({missedWords.length} คำ)
 							</h3>
 

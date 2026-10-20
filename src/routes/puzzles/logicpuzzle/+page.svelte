@@ -6,7 +6,17 @@ export let data: any;
 
 
 	import { onMount } from 'svelte';
-	import { ArrowLeftIcon, BookOpenIcon, ExternalLinkIcon, GridIcon, PlayIcon, RefreshCwIcon, SearchIcon, SlidersIcon, XIcon, ChevronLeftIcon, ChevronRightIcon } from 'svelte-feather-icons';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+import BookOpenIcon from '@lucide/svelte/icons/book-open';
+import ExternalLinkIcon from '@lucide/svelte/icons/external-link';
+import GridIcon from '@lucide/svelte/icons/grid-2x2';
+import PlayIcon from '@lucide/svelte/icons/play';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import SearchIcon from '@lucide/svelte/icons/search';
+import SlidersIcon from '@lucide/svelte/icons/sliders-horizontal';
+import XIcon from '@lucide/svelte/icons/x';
+import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
+import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import type { ILogicPuzzle } from '#lib/interfaces/index.js';
 	import LogicPuzzleThumbnail from '#lib/components/LogicPuzzleThumbnail.svelte';
 
@@ -132,14 +142,14 @@ $: ({ initialPuzzles } = data);
 	<!-- Navigation -->
 	<div class="flex items-center justify-between">
 		<a href="/puzzles" class="btn btn-ghost btn-xs gap-1.5 font-bold text-base-content/70 hover:text-base-content">
-			<ArrowLeftIcon size="14" />
+			<ArrowLeftIcon size={14} />
 			<span>Back to Puzzles</span>
 		</a>
 		<a
 			href="/resources/logictutorial"
 			class="btn btn-ghost btn-xs gap-1.5 text-warning-content hover:bg-amber-500/10 font-bold"
 		>
-			<BookOpenIcon size="14" />
+			<BookOpenIcon size={14} />
 			<span>Tutorials & Guides</span>
 		</a>
 	</div>
@@ -149,7 +159,7 @@ $: ({ initialPuzzles } = data);
 		<div
 			class="w-16 h-16 rounded-2xl bg-purple-500/10 text-secondary flex items-center justify-center border border-purple-500/20 mx-auto shadow-lg shadow-purple-500/5"
 		>
-			<GridIcon size="36" />
+			<GridIcon size={36} />
 		</div>
 		<h1 class="text-3xl lg:text-4xl font-black tracking-tight text-base-content">
 			Logic Puzzles
@@ -166,7 +176,7 @@ $: ({ initialPuzzles } = data);
 			<!-- Search Input -->
 			<div class="relative flex-1">
 				<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-base-content/70">
-					<SearchIcon size="18" />
+					<SearchIcon size={18} />
 				</div>
 				<input
 					type="text"
@@ -179,7 +189,7 @@ $: ({ initialPuzzles } = data);
 						on:click={() => (searchQuery = '')}
 						class="absolute inset-y-0 right-0 pr-3 flex items-center text-base-content/70 hover:text-base-content/70"
 					>
-						<XIcon size="16" />
+						<XIcon size={16} />
 					</button>
 				{/if}
 			</div>
@@ -254,7 +264,7 @@ $: ({ initialPuzzles } = data);
 		<!-- Filter Summary Bar -->
 		<div class="flex items-center justify-between flex-wrap gap-2 pt-1 text-xs">
 			<div class="flex items-center gap-2 text-base-content/70">
-				<SlidersIcon size="14" class="text-secondary" />
+				<SlidersIcon size={14} class="text-secondary" />
 				<span>Puzzles found: <strong class="text-secondary font-extrabold">{filteredPuzzles.length}</strong></span>
 			</div>
 
@@ -263,7 +273,7 @@ $: ({ initialPuzzles } = data);
 					on:click={resetFilters}
 					class="btn btn-ghost btn-xs text-xs text-base-content/70 hover:text-error-content gap-1"
 				>
-					<RefreshCwIcon size="12" />
+					<RefreshCwIcon size={12} />
 					<span>Reset Filters</span>
 				</button>
 			{/if}
@@ -322,7 +332,7 @@ $: ({ initialPuzzles } = data);
 									on:click={() => (activePuzzleModal = puzzle)}
 									class="btn btn-primary btn-sm rounded-xl font-bold gap-1 text-xs shadow-md shadow-purple-500/10"
 								>
-									<PlayIcon size="14" />
+									<PlayIcon size={14} />
 									<span>Play</span>
 								</button>
 								<a
@@ -331,7 +341,7 @@ $: ({ initialPuzzles } = data);
 									rel="noopener noreferrer"
 									class="btn btn-outline btn-sm rounded-xl font-bold gap-1 text-xs border-base-300 text-base-content/70 hover:bg-base-100 text-base-content hover:text-base-content"
 								>
-									<ExternalLinkIcon size="13" />
+									<ExternalLinkIcon size={13} />
 									<span>Open Tab</span>
 								</a>
 							</div>
@@ -350,7 +360,7 @@ $: ({ initialPuzzles } = data);
 							disabled={currentPage === 1}
 							on:click={() => (currentPage -= 1)}
 						>
-							<ChevronLeftIcon size="16" />
+							<ChevronLeftIcon size={16} />
 							<span>Previous</span>
 						</button>
 						<span class="px-3.5 py-1.5 bg-base-100 text-base-content border border-base-300 rounded-xl font-mono font-bold text-secondary text-xs">
@@ -362,7 +372,7 @@ $: ({ initialPuzzles } = data);
 							on:click={() => (currentPage += 1)}
 						>
 							<span>Next</span>
-							<ChevronRightIcon size="16" />
+							<ChevronRightIcon size={16} />
 						</button>
 					</div>
 				</div>
@@ -379,7 +389,7 @@ $: ({ initialPuzzles } = data);
 			<div class="flex items-center justify-between p-3.5 px-6 border-b border-base-300 bg-base-100 text-base-content shrink-0">
 				<div class="flex items-center gap-3">
 					<div class="w-9 h-9 rounded-xl bg-purple-500/20 text-secondary flex items-center justify-center border border-purple-500/30">
-						<GridIcon size="20" />
+						<GridIcon size={20} />
 					</div>
 					<div>
 						<h3 class="text-base font-bold text-base-content leading-tight">
@@ -397,14 +407,14 @@ $: ({ initialPuzzles } = data);
 						rel="noopener noreferrer"
 						class="btn btn-ghost btn-xs text-base-content/70 hover:text-base-content gap-1"
 					>
-						<ExternalLinkIcon size="14" />
+						<ExternalLinkIcon size={14} />
 						<span class="hidden sm:inline">Open External</span>
 					</a>
 					<button
 						on:click={() => (activePuzzleModal = null)}
 						class="btn btn-circle btn-ghost btn-xs text-base-content/70 hover:text-base-content"
 					>
-						<XIcon size="20" />
+						<XIcon size={20} />
 					</button>
 				</div>
 			</div>

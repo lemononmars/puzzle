@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import crossroadData from '#lib/utils/crossroad_word.json';
-import { wordLength } from '#lib/utils/thaiwords.js';
+import { wordLength } from '#lib/utils/thai-text.js';
 import { signPayload } from '#lib/server/puzzleToken.js';
 
 const words = Object.keys(crossroadData);

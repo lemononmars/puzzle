@@ -1,18 +1,16 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { fade, fly, scale, slide } from 'svelte/transition';
-	import {
-		ZapIcon,
-		ShieldIcon,
-		TrendingUpIcon,
-		TrendingDownIcon,
-		PlayIcon,
-		RefreshCwIcon,
-		Volume2Icon,
-		VolumeXIcon,
-		ActivityIcon,
-		ArrowRightIcon
-	} from 'svelte-feather-icons';
+	import ZapIcon from '@lucide/svelte/icons/zap';
+import ShieldIcon from '@lucide/svelte/icons/shield';
+import TrendingUpIcon from '@lucide/svelte/icons/trending-up';
+import TrendingDownIcon from '@lucide/svelte/icons/trending-down';
+import PlayIcon from '@lucide/svelte/icons/play';
+import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
+import Volume2Icon from '@lucide/svelte/icons/volume-2';
+import VolumeXIcon from '@lucide/svelte/icons/volume-x';
+import ActivityIcon from '@lucide/svelte/icons/activity';
+import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 	import type { TheChaseQuestion, ChaserProfile, TableOffers, ChaseGamePhase } from '#lib/data/puzzles/thechase/types.js';
 	import { CHASERS, getRandomChaser, calculateOffers, resolveBoardStepState } from '#lib/data/puzzles/thechase/engine.js';
 	import { answerQuizQuestion, startQuizSession, type DeliveredQuizQuestion } from '#lib/quiz/client.js';
@@ -572,10 +570,10 @@
 			title={isSpeechMuted ? 'เปิดเสียงอ่าน TTS' : 'ปิดเสียงอ่าน TTS'}
 		>
 			{#if isSpeechMuted}
-				<VolumeXIcon size="13" />
+				<VolumeXIcon size={13} />
 				<span>Muted</span>
 			{:else}
-				<Volume2Icon size="13" />
+				<Volume2Icon size={13} />
 				<span>TTS On</span>
 			{/if}
 		</button>
@@ -593,7 +591,7 @@
 					<span class="text-4xl sm:text-5xl">{chaser.avatarEmoji}</span>
 					<div>
 						<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/30 text-warning-content text-[11px] font-black">
-							<ZapIcon size="11" class="animate-pulse" />
+							<ZapIcon size={11} class="animate-pulse" />
 							<span>The Chase UK Quiz Show</span>
 						</div>
 						<h2 class="text-2xl sm:text-3xl font-black text-base-content tracking-tight mt-1">
@@ -608,7 +606,7 @@
 					on:click={() => (chaser = getRandomChaser())}
 					title="สุ่ม Chaser ท่านอื่น"
 				>
-					<RefreshCwIcon size="13" />
+					<RefreshCwIcon size={13} />
 					<span>สุ่มผู้ล่าคนใหม่</span>
 				</button>
 			</div>
@@ -648,7 +646,7 @@
 					class="btn btn-warning btn-md font-black text-warning-content gap-2 px-10 rounded-2xl shadow-xl shadow-amber-500/20 w-full sm:w-auto"
 					on:click={startCashBuilder}
 				>
-					<PlayIcon size="18" />
+					<PlayIcon size={18} />
 					<span>เข้าสู่สังเวียน The Chase!</span>
 				</button>
 			</div>
@@ -752,7 +750,7 @@
 				on:click={proceedToOffers}
 			>
 				<span>ไปรับข้อเสนอของผู้ล่า</span>
-				<ArrowRightIcon size="16" />
+				<ArrowRightIcon size={16} />
 			</button>
 		</div>
 
@@ -816,7 +814,7 @@
 					on:click={() => selectOffer('high')}
 				>
 					<div class="inline-flex items-center gap-1 text-[10px] font-black text-error-content bg-red-500/10 px-2.5 py-0.5 rounded-full border border-red-500/20">
-						<TrendingUpIcon size="11" />
+						<TrendingUpIcon size={11} />
 						<span>ข้อเสนอสูง (เริ่มขั้น 2)</span>
 					</div>
 					<div class="text-2xl sm:text-3xl font-black text-error-content font-mono group-hover:scale-105 transition-transform">
@@ -834,7 +832,7 @@
 					on:click={() => selectOffer('mid')}
 				>
 					<div class="inline-flex items-center gap-1 text-[10px] font-black text-warning-content bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20">
-						<ShieldIcon size="11" />
+						<ShieldIcon size={11} />
 						<span>ข้อเสนอปกติ (เริ่มขั้น 3)</span>
 					</div>
 					<div class="text-2xl sm:text-3xl font-black text-warning-content font-mono group-hover:scale-105 transition-transform">
@@ -852,7 +850,7 @@
 					on:click={() => selectOffer('low')}
 				>
 					<div class="inline-flex items-center gap-1 text-[10px] font-black text-primary bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-primary/30">
-						<TrendingDownIcon size="11" />
+						<TrendingDownIcon size={11} />
 						<span>ข้อเสนอต่ำ (เริ่มขั้น 5)</span>
 					</div>
 					<div class="text-2xl sm:text-3xl font-black text-primary font-mono group-hover:scale-105 transition-transform">
@@ -1009,7 +1007,7 @@
 				on:click={proceedToFinalChase}
 			>
 				<span>เข้าสู่รอบตัดสิน The Final Chase!</span>
-				<ArrowRightIcon size="16" />
+				<ArrowRightIcon size={16} />
 			</button>
 		</div>
 
@@ -1024,7 +1022,7 @@
 				คุณมีเวลา <strong>60 วินาที</strong> ในการตอบคำถามให้ได้มากที่สุด ทุก 1 ข้อที่ถูกต้องจะเพิ่ม <strong>Target Step (ก้าวหนี)</strong> ให้กับคุณ!
 			</p>
 			<button class="btn btn-warning btn-md font-black text-warning-content px-8 rounded-2xl mt-2" on:click={startFinalPlayerRound}>
-				<PlayIcon size="18" />
+				<PlayIcon size={18} />
 				<span>เริ่มจับเวลา 60 วินาที</span>
 			</button>
 		</div>
@@ -1123,7 +1121,7 @@
 				{@const q = finalQuestions[finalQIdx]}
 				<div class="bg-gradient-to-br from-amber-950/80 to-base-200 border-2 border-amber-500 rounded-3xl p-5 sm:p-7 shadow-2xl flex flex-col gap-4 animate-pulse">
 					<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-warning-content text-xs font-black w-fit">
-						<ActivityIcon size="14" />
+						<ActivityIcon size={14} />
 						<span>PUSHBACK OPPORTUNITY! (ผู้ล่าตอบผิด!)</span>
 					</div>
 
@@ -1174,7 +1172,7 @@
 
 			<div class="flex items-center justify-center gap-3 mt-2">
 				<button class="btn btn-warning font-black text-warning-content px-8 rounded-2xl" on:click={resetAll}>
-					<RefreshCwIcon size="16" />
+					<RefreshCwIcon size={16} />
 					<span>เล่นใหม่อีกครั้ง</span>
 				</button>
 			</div>
@@ -1192,7 +1190,7 @@
 
 			<div class="flex items-center justify-center gap-3 mt-2">
 				<button class="btn btn-error font-black text-error-content px-8 rounded-2xl" on:click={resetAll}>
-					<RefreshCwIcon size="16" />
+					<RefreshCwIcon size={16} />
 					<span>ท้าดวลอีกครั้ง</span>
 				</button>
 			</div>
