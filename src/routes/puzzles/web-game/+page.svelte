@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Web Game · Puzzle</title>
+	<title>Web Game · Chi Fun</title>
 	<meta name="description" content="แก้ปริศนาบนหน้าเว็บไซต์" />
 </svelte:head>
 

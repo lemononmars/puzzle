@@ -51,7 +51,7 @@ import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
 </script>
 
 <svelte:head>
-	<title>Word Graph – Connected Components | Code Breaker</title>
+	<title>Word Graph – Connected Components | Chi Fun</title>
 	<meta name="description" content="กราฟคำภาษาไทย — แสดง connected components สำหรับคำ 3-6 ช่อง" />
 </svelte:head>
 

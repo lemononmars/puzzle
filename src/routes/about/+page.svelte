@@ -1,35 +1,125 @@
 <script lang="ts">
-   import FacebookIcon from '@lucide/svelte/icons/globe';
-import MailIcon from '@lucide/svelte/icons/mail';
-import YoutubeIcon from '@lucide/svelte/icons/video';
+	import PageHeading from '#lib/components/ui/PageHeading.svelte';
+	import Surface from '#lib/components/ui/Surface.svelte';
+	import LinkCard from '#lib/components/ui/LinkCard.svelte';
+	import ActionLink from '#lib/components/ui/ActionLink.svelte';
+	import { brand } from '#lib/brand.js';
+	const doors = [
+		{
+			href: '/puzzles',
+			title: 'เล่นให้ร้องอ๋อ',
+			description:
+				'เลือกควิซ ปริศนาคำ ตรรกะ ปริศนาทำมือ และเกมที่สร้างโจทย์ใหม่ได้ ลองคิดคนเดียวหรือชวนเพื่อนมาช่วยกันไข'
+		},
+		{
+			href: '/tools',
+			title: 'สร้างปริศนาของคุณ',
+			description:
+				'เครื่องมือสร้างเกมค้นหาคำ ครอสเวิร์ด และกิจกรรม พร้อมตัวช่วยค้นคำและเครื่องมือสำหรับจัดเกม'
+		},
+		{
+			href: '/resources',
+			title: 'เติมไอเดียและความรู้',
+			description:
+				'สำรวจรหัสลับ คำสะกด คลังความรู้ กลไกปริศนา และคู่มือตรรกะ เก็บไว้เป็นเบาะแสสำหรับครั้งต่อไป'
+		},
+		{
+			href: '/portfolio',
+			title: 'รู้จักคนทำและงานเบื้องหลัง',
+			description:
+				'ผลงานออกแบบเกม ประดิษฐ์ปริศนา บันทึกห้องหลบหนี และเว็บไซต์ของ Sakulbuth Ekvittayaniphon หรือ lemononmars'
+		}
+	];
 </script>
 
-<svelte:head>
-   <title>About</title>
-</svelte:head>
-
-<h1>Connect</h1>
-
-<div class="flex flex-col sm:flex-row gap-4 w-full justify-around">
-   <a href="//facebook.com/codebreakerTH" target="_blank">
-      <FacebookIcon size=5x class='m-auto'/>
-      facebook page
-   </a>
-
-   <div class='flex flex-col justify-center items-center'>
-   <a href="//youtube.com/@codebreakerth" target="_blank">
-      <YoutubeIcon size=5x class='m-auto'/>
-      <div>Youtube Channel</div>
-   </a>
-   </div>
-
-   <a href="mailto:codebreakerth@gmail.com" target="_blank">
-      <MailIcon size=5x class='m-auto'/>
-      E-mail
-   </a>
-
-   <a href="//www.tiktok.com/@codebreakerthailand" target="_blank">
-      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="hsl(var(--p))" class="hover:opacity-70 m-auto" ><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-      Tiktok page
-   </a>
+<svelte:head
+	><title>เกี่ยวกับ Chi Fun · ไขสนุก</title><meta
+		name="description"
+		content={brand.description}
+	/></svelte:head
+>
+<div class="text-left space-y-6">
+	<PageHeading
+		title="Chi Fun / ไขสนุก"
+		eyebrow="A LITTLE CURIOSITY, A LOT OF AHA!"
+		description="พื้นที่สำหรับคนที่สนุกกับการลองคิด เชื่อมเบาะแส และค้นพบคำตอบด้วยตัวเอง"
+	/>
+	<Surface
+		><section class="identity" aria-labelledby="name-meaning">
+			<div class="symbol bg-base-200 text-base-content">
+				<img
+					src={brand.symbol}
+					alt="Chi Key: อักษร chi ที่มีรูปทรงของกุญแจ"
+					width="280"
+					height="240"
+				/>
+			</div>
+			<div class="space-y-4">
+				<h2 id="name-meaning" class="text-xl font-bold">ชื่อที่ชวนให้ “ไข” อย่างสนุก</h2>
+				<p>
+					<strong>Chi Fun คือ ไขสนุก</strong> — เอาคำว่า “ไข” ในการไขปริศนา มาจับคู่กับ
+					<span lang="en">Fun</span> หรือความสนุก ชื่อนี้ชวนให้มองการหาคำตอบเป็นการเล่นกับความสงสัย ลองผิดได้
+					เปลี่ยนมุมมองได้ และเพลิดเพลินกับจังหวะที่อะไร ๆ เริ่มเชื่อมกัน
+				</p>
+				<p>
+					คำว่า <span lang="en">Chi</span> ยังโยงกับอักษรกรีก <span lang="el">χ</span>
+					ซึ่งเป็นต้นทางของสัญลักษณ์ <strong>Chi Key</strong> สองเส้นที่ตัดกันถูกออกแบบให้เป็นกุญแจ เหมือนการนำเบาะแสมาประกอบกันจนไขทางไปสู่คำตอบได้
+				</p>
+				<p class="botanical-muted">
+					ไม่ต้องเก่งก่อนถึงจะเริ่มได้ แค่มีความสงสัยสักนิด แล้วลองเปิดประตูดู
+				</p>
+			</div>
+		</section></Surface
+	>
+	<section aria-labelledby="offerings">
+		<h2 id="offerings" class="text-xl font-bold mb-5">มีอะไรให้ลองบ้าง?</h2>
+		<div class="grid gap-5 sm:grid-cols-2">
+			{#each doors as door}<LinkCard {...door} />{/each}
+		</div>
+	</section>
+	<Surface
+		><section class="space-y-4" aria-labelledby="behind-site">
+			<h2 id="behind-site" class="text-xl font-bold">จากความชอบปริศนา สู่พื้นที่ให้ลองเล่น</h2>
+			<p>
+				Chi Fun สร้างและดูแลโดย <strong>Sakulbuth Ekvittayaniphon</strong> หรือ
+				<strong>lemononmars</strong> เป็นที่รวมปริศนาที่อยากชวนเล่น เครื่องมือที่อยากใช้ และเรื่องเกี่ยวกับเกมกับปริศนาที่อยากแบ่งปัน
+			</p>
+			<p>
+				ถ้าอยากชวนกันทำปริศนาตามธีม กิจกรรมกลุ่ม บอร์ดเกม หรือเว็บไซต์ที่มีไอเดียสนุก ๆ
+				ลองแวะมาคุยกันได้ ส่วนใครอยากพาปริศนาออกจากหน้าจอ ก็มีหนังสือให้เลือกในร้านด้วย
+			</p>
+			<div class="flex flex-wrap gap-3">
+				<ActionLink href="/puzzles">เริ่มไขสนุก</ActionLink><ActionLink href="/contact" secondary
+					>ติดต่อร่วมงาน</ActionLink
+				><a href="/shop" class="btn btn-ghost">ร้านหนังสือปริศนา</a>
+			</div>
+		</section></Surface
+	>
 </div>
+
+<style>
+	.identity {
+		display: grid;
+		grid-template-columns: 200px minmax(0, 1fr);
+		gap: 32px;
+		align-items: center;
+		line-height: 1.85;
+	}
+	.symbol {
+		border-radius: 24px;
+		padding: 16px;
+	}
+	.symbol img {
+		width: 100%;
+		height: auto;
+	}
+	@media (max-width: 640px) {
+		.identity {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+		.symbol {
+			width: 150px;
+		}
+	}
+</style>

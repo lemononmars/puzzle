@@ -1,0 +1,2331 @@
+[
+  {
+    "id": "P1",
+    "set": "P",
+    "title": "Passing place",
+    "lesson": "Clearing changes access: choose the pair order before committing a die to an edge.",
+    "hint": "Plan the order of the pairs. Keep a standing square behind the die you still need to move.",
+    "maxMoves": 6,
+    "solution": [
+      "left",
+      {
+        "wait": 6500
+      },
+      "right",
+      "right",
+      "down",
+      "left",
+      "left",
+      "left",
+      {
+        "wait": 6500
+      },
+      "up",
+      "up",
+      "up",
+      "right",
+      "right",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "player": {
+        "x": 3,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 4,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 3,
+          "top": 2,
+          "kind": "normal",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 4,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 0,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 6,
+          "x": 2,
+          "y": 2,
+          "top": 2,
+          "kind": "normal",
+          "east": 4,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Access and order",
+      "insight": "Clearing changes access: choose the pair order before committing a die to an edge.",
+      "temptation": "A convenient first pair can strand another die against an edge or hole.",
+      "searchStates": 1249,
+      "verifiedDiceMoved": 3,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P2",
+    "set": "P",
+    "title": "Shared courtyard",
+    "lesson": "Clearing changes access: choose the pair order before committing a die to an edge.",
+    "hint": "Plan the order of the pairs. Keep a standing square behind the die you still need to move.",
+    "maxMoves": 6,
+    "solution": [
+      "right",
+      "right",
+      "right",
+      "up",
+      "up",
+      "right",
+      "up",
+      "up",
+      "left",
+      "left",
+      "down",
+      "left",
+      {
+        "wait": 6500
+      },
+      "up",
+      "right",
+      "right",
+      "right",
+      "down",
+      "down",
+      "left",
+      "left",
+      {
+        "wait": 6500
+      },
+      "up",
+      "up",
+      "right",
+      "down",
+      "down",
+      "down",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 4,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 3,
+          "top": 2,
+          "kind": "normal",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 5,
+          "x": 0,
+          "y": 0,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 6,
+          "x": 2,
+          "y": 2,
+          "top": 2,
+          "kind": "normal",
+          "east": 4,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Access and order",
+      "insight": "Clearing changes access: choose the pair order before committing a die to an edge.",
+      "temptation": "A convenient first pair can strand another die against an edge or hole.",
+      "searchStates": 7328,
+      "verifiedDiceMoved": 4,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P3",
+    "set": "P",
+    "title": "Close the gate last",
+    "lesson": "Clearing changes access: choose the pair order before committing a die to an edge.",
+    "hint": "Plan the order of the pairs. Keep a standing square behind the die you still need to move.",
+    "maxMoves": 7,
+    "solution": [
+      "up",
+      "up",
+      "right",
+      {
+        "wait": 6500
+      },
+      "left",
+      "down",
+      "left",
+      "down",
+      "down",
+      {
+        "wait": 6500
+      },
+      "down",
+      "right",
+      "right",
+      "up",
+      "up",
+      "right",
+      "up",
+      "left",
+      "left",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 4
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 4,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 3,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 5,
+          "x": 0,
+          "y": 4,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 6,
+          "x": 3,
+          "y": 0,
+          "top": 2,
+          "kind": "normal",
+          "east": 6,
+          "north": 3
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Access and order",
+      "insight": "Clearing changes access: choose the pair order before committing a die to an edge.",
+      "temptation": "A convenient first pair can strand another die against an edge or hole.",
+      "searchStates": 2321,
+      "verifiedDiceMoved": 3,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P4",
+    "set": "P",
+    "title": "Three crowded beds",
+    "lesson": "Clearing changes access: choose the pair order before committing a die to an edge.",
+    "hint": "Plan the order of the pairs. Keep a standing square behind the die you still need to move.",
+    "maxMoves": 7,
+    "solution": [
+      "down",
+      "right",
+      "right",
+      "right",
+      "up",
+      "left",
+      "left",
+      {
+        "wait": 6500
+      },
+      "down",
+      "down",
+      "down",
+      {
+        "wait": 6500
+      },
+      "right",
+      "up",
+      "left",
+      "up",
+      "up",
+      "right",
+      "right",
+      "down",
+      "left",
+      "left",
+      "up",
+      "left",
+      "down",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 0,
+          "top": 2,
+          "kind": "normal",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 3,
+          "top": 2,
+          "kind": "normal",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 2,
+          "top": 2,
+          "kind": "normal",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 4,
+          "top": 2,
+          "kind": "normal",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 2,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 6,
+          "x": 0,
+          "y": 0,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Access and order",
+      "insight": "Clearing changes access: choose the pair order before committing a die to an edge.",
+      "temptation": "A convenient first pair can strand another die against an edge or hole.",
+      "searchStates": 1245,
+      "verifiedDiceMoved": 3,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P5",
+    "set": "P",
+    "title": "The long way round",
+    "lesson": "A wooden die must reach the right location with the right orientation; the shortest spatial route can show the wrong face.",
+    "hint": "Trace the side faces through the turns. A detour can be necessary even when the target is nearby.",
+    "maxMoves": 6,
+    "solution": [
+      "down",
+      {
+        "wait": 5600
+      },
+      "down",
+      "down",
+      "left",
+      "left",
+      "left",
+      "right",
+      "right",
+      "up",
+      "left",
+      "left"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "player": {
+        "x": 4,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 4,
+          "top": 3,
+          "kind": "wood",
+          "east": 5,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 4,
+          "y": 2,
+          "top": 3,
+          "kind": "wood",
+          "east": 1,
+          "north": 2
+        },
+        {
+          "id": 3,
+          "x": 4,
+          "y": 4,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 3,
+          "top": 2,
+          "kind": "normal",
+          "east": 6,
+          "north": 3
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Orientation",
+      "insight": "A wooden die must reach the right location with the right orientation; the shortest spatial route can show the wrong face.",
+      "temptation": "Pushing straight toward the partner can leave the wrong number facing up.",
+      "searchStates": 2214,
+      "verifiedDiceMoved": 3,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P6",
+    "set": "P",
+    "title": "Turn before the doorway",
+    "lesson": "A wooden die must reach the right location with the right orientation; the shortest spatial route can show the wrong face.",
+    "hint": "Trace the side faces through the turns. A detour can be necessary even when the target is nearby.",
+    "maxMoves": 6,
+    "solution": [
+      "up",
+      "left",
+      {
+        "wait": 5600
+      },
+      "left",
+      "left",
+      "down",
+      "down",
+      "right",
+      "right",
+      "up",
+      "up",
+      "up",
+      "up",
+      "right",
+      "right",
+      "down",
+      "down",
+      "down"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 2,
+          "top": 3,
+          "kind": "wood",
+          "east": 2,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 4,
+          "top": 5,
+          "kind": "wood",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 2,
+          "top": 2,
+          "kind": "normal",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 4,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Orientation",
+      "insight": "A wooden die must reach the right location with the right orientation; the shortest spatial route can show the wrong face.",
+      "temptation": "Pushing straight toward the partner can leave the wrong number facing up.",
+      "searchStates": 9476,
+      "verifiedDiceMoved": 3,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P7",
+    "set": "P",
+    "title": "Two wooden keys",
+    "lesson": "A wooden die must reach the right location with the right orientation; the shortest spatial route can show the wrong face.",
+    "hint": "Trace the side faces through the turns. A detour can be necessary even when the target is nearby.",
+    "maxMoves": 7,
+    "solution": [
+      "left",
+      "down",
+      "left",
+      "left",
+      "up",
+      "up",
+      "up",
+      "left",
+      "up",
+      "right",
+      "right",
+      {
+        "wait": 5600
+      },
+      "right",
+      "down",
+      "left",
+      "up",
+      "left",
+      "down",
+      "left",
+      "down",
+      "down",
+      "right",
+      "down",
+      "right",
+      "right",
+      "up",
+      "left"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 4,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 1,
+          "top": 3,
+          "kind": "wood",
+          "east": 1,
+          "north": 2
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 3,
+          "top": 5,
+          "kind": "wood",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Orientation",
+      "insight": "A wooden die must reach the right location with the right orientation; the shortest spatial route can show the wrong face.",
+      "temptation": "Pushing straight toward the partner can leave the wrong number facing up.",
+      "searchStates": 9675,
+      "verifiedDiceMoved": 3,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P8",
+    "set": "P",
+    "title": "One square to turn",
+    "lesson": "A wooden die must reach the right location with the right orientation; the shortest spatial route can show the wrong face.",
+    "hint": "Trace the side faces through the turns. A detour can be necessary even when the target is nearby.",
+    "maxMoves": 7,
+    "solution": [
+      "down",
+      "down",
+      "left",
+      "left",
+      "left",
+      "down",
+      "down",
+      "right",
+      "up",
+      "left",
+      "up",
+      "right",
+      "right",
+      "right",
+      {
+        "wait": 5600
+      },
+      "right",
+      "down",
+      "down",
+      "left",
+      "up",
+      "right",
+      "up",
+      "up",
+      "left",
+      "left",
+      "down",
+      "right",
+      "down",
+      "right",
+      "up"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 4
+        }
+      ],
+      "player": {
+        "x": 3,
+        "y": 0,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 4,
+          "y": 3,
+          "top": 2,
+          "kind": "wood",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 3,
+          "top": 5,
+          "kind": "wood",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 3,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 4,
+          "y": 0,
+          "top": 2,
+          "kind": "normal",
+          "east": 4,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Orientation",
+      "insight": "A wooden die must reach the right location with the right orientation; the shortest spatial route can show the wrong face.",
+      "temptation": "Pushing straight toward the partner can leave the wrong number facing up.",
+      "searchStates": 5629,
+      "verifiedDiceMoved": 2,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P9",
+    "set": "P",
+    "title": "Borrowed bank",
+    "lesson": "A sliding die needs a useful bank, and that bank must remain until the route is complete.",
+    "hint": "Work out where each ice die will stop before clearing any potential stopper. Wood can change both its face and its blocking position.",
+    "maxMoves": 5,
+    "solution": [
+      "left",
+      {
+        "wait": 290
+      },
+      "up",
+      "left",
+      "down",
+      {
+        "wait": 290
+      },
+      {
+        "wait": 6020
+      },
+      "down",
+      "left",
+      "left",
+      "up",
+      "right",
+      "right",
+      "right"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 4,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 1,
+          "top": 2,
+          "kind": "ice",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 4,
+          "y": 0,
+          "top": 2,
+          "kind": "ice",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 3,
+          "top": 2,
+          "kind": "normal",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 1,
+          "top": 3,
+          "kind": "wood",
+          "east": 2,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Momentum",
+      "insight": "A sliding die needs a useful bank, and that bank must remain until the route is complete.",
+      "temptation": "Clearing the easy pair first can remove the stopper needed by the remaining ice.",
+      "searchStates": 5711,
+      "verifiedDiceMoved": 2,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P10",
+    "set": "P",
+    "title": "Pass the stopper",
+    "lesson": "A sliding die needs a useful bank, and that bank must remain until the route is complete.",
+    "hint": "Work out where each ice die will stop before clearing any potential stopper. Wood can change both its face and its blocking position.",
+    "maxMoves": 6,
+    "solution": [
+      "up",
+      {
+        "wait": 6500
+      },
+      "up",
+      "left",
+      "left",
+      "down",
+      "down",
+      "right",
+      {
+        "wait": 670
+      },
+      "down",
+      "right",
+      "right",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 1,
+          "top": 2,
+          "kind": "ice",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 3,
+          "top": 2,
+          "kind": "ice",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "top": 2,
+          "kind": "normal",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 4,
+          "top": 5,
+          "kind": "wood",
+          "east": 4,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Momentum",
+      "insight": "A sliding die needs a useful bank, and that bank must remain until the route is complete.",
+      "temptation": "Clearing the easy pair first can remove the stopper needed by the remaining ice.",
+      "searchStates": 5230,
+      "verifiedDiceMoved": 3,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P11",
+    "set": "P",
+    "title": "Two frozen lanes",
+    "lesson": "A sliding die needs a useful bank, and that bank must remain until the route is complete.",
+    "hint": "Work out where each ice die will stop before clearing any potential stopper. Wood can change both its face and its blocking position.",
+    "maxMoves": 8,
+    "solution": [
+      "down",
+      "down",
+      "down",
+      "right",
+      "down",
+      "left",
+      {
+        "wait": 290
+      },
+      "up",
+      {
+        "wait": 1100
+      },
+      "up",
+      "up",
+      "right",
+      "up",
+      "right",
+      "right",
+      "down",
+      "left",
+      "left",
+      "up",
+      "left",
+      "down",
+      "down",
+      "down",
+      "left",
+      "down",
+      "right",
+      "right",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 4,
+          "y": 4,
+          "top": 2,
+          "kind": "ice",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 4,
+          "top": 2,
+          "kind": "ice",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 3,
+          "top": 2,
+          "kind": "wood",
+          "east": 3,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Momentum",
+      "insight": "A sliding die needs a useful bank, and that bank must remain until the route is complete.",
+      "temptation": "Clearing the easy pair first can remove the stopper needed by the remaining ice.",
+      "searchStates": 8325,
+      "verifiedDiceMoved": 2,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P12",
+    "set": "P",
+    "title": "Return the bank",
+    "lesson": "A sliding die needs a useful bank, and that bank must remain until the route is complete.",
+    "hint": "Work out where each ice die will stop before clearing any potential stopper. Wood can change both its face and its blocking position.",
+    "maxMoves": 10,
+    "solution": [
+      "left",
+      "down",
+      "left",
+      "down",
+      "down",
+      "right",
+      "right",
+      "up",
+      "left",
+      {
+        "wait": 290
+      },
+      "down",
+      "left",
+      "up",
+      {
+        "wait": 290
+      },
+      "right",
+      "up",
+      "left",
+      {
+        "wait": 480
+      },
+      {
+        "wait": 6020
+      },
+      "left",
+      "left",
+      "down",
+      "right",
+      "up",
+      "right",
+      "right",
+      "down",
+      "down",
+      "left",
+      "up",
+      "right",
+      "up",
+      "left",
+      "down",
+      "left",
+      "left",
+      "up",
+      "up",
+      "right",
+      "down",
+      "left",
+      "down",
+      "right",
+      "up",
+      "right",
+      "down"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "player": {
+        "x": 4,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 3,
+          "top": 2,
+          "kind": "ice",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 4,
+          "top": 2,
+          "kind": "ice",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 3,
+          "top": 2,
+          "kind": "normal",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 3,
+          "top": 5,
+          "kind": "wood",
+          "east": 1,
+          "north": 3
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Momentum",
+      "insight": "A sliding die needs a useful bank, and that bank must remain until the route is complete.",
+      "temptation": "Clearing the easy pair first can remove the stopper needed by the remaining ice.",
+      "searchStates": 3598,
+      "verifiedDiceMoved": 2,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P13",
+    "set": "P",
+    "title": "Stay above ground",
+    "lesson": "The current supporting die is a resource: preserve a route onto the next movable die before the first group disappears.",
+    "hint": "Plan which die Pip will be riding after the first match. Metal is a bridge, not a die you can roll.",
+    "maxMoves": 6,
+    "solution": [
+      "up",
+      "right",
+      "up",
+      "up",
+      "up",
+      "right",
+      "down",
+      "right"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 4,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 4,
+          "top": 3,
+          "kind": "stone",
+          "east": 2,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "top": 6,
+          "kind": "normal",
+          "east": 5,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 4,
+          "y": 1,
+          "top": 2,
+          "kind": "metal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 0,
+          "top": 3,
+          "kind": "metal",
+          "east": 2,
+          "north": 1
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 0,
+          "top": 3,
+          "kind": "metal",
+          "east": 6,
+          "north": 2
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Stance and support",
+      "insight": "The current supporting die is a resource: preserve a route onto the next movable die before the first group disappears.",
+      "temptation": "Making a match from the wrong support can leave Pip on the ground with stone still to move.",
+      "searchStates": 14336,
+      "verifiedDiceMoved": 2,
+      "searchModel": "event-timed movement, riding and transfers"
+    }
+  },
+  {
+    "id": "P14",
+    "set": "P",
+    "title": "A borrowed foothold",
+    "lesson": "The current supporting die is a resource: preserve a route onto the next movable die before the first group disappears.",
+    "hint": "Plan which die Pip will be riding after the first match. Metal is a bridge, not a die you can roll.",
+    "maxMoves": 6,
+    "solution": [
+      "right",
+      "up",
+      "left",
+      "down",
+      "right",
+      "up",
+      "right",
+      "up"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 3,
+          "top": 6,
+          "kind": "stone",
+          "east": 3,
+          "north": 2
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 2,
+          "top": 4,
+          "kind": "normal",
+          "east": 1,
+          "north": 2
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 4,
+          "top": 2,
+          "kind": "metal",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 1,
+          "top": 3,
+          "kind": "metal",
+          "east": 6,
+          "north": 2
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 0,
+          "top": 3,
+          "kind": "metal",
+          "east": 1,
+          "north": 2
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Stance and support",
+      "insight": "The current supporting die is a resource: preserve a route onto the next movable die before the first group disappears.",
+      "temptation": "Making a match from the wrong support can leave Pip on the ground with stone still to move.",
+      "searchStates": 12019,
+      "verifiedDiceMoved": 2,
+      "searchModel": "event-timed movement, riding and transfers"
+    }
+  },
+  {
+    "id": "P15",
+    "set": "P",
+    "title": "Trade the driver",
+    "lesson": "The current supporting die is a resource: preserve a route onto the next movable die before the first group disappears.",
+    "hint": "Plan which die Pip will be riding after the first match. Metal is a bridge, not a die you can roll.",
+    "maxMoves": 8,
+    "solution": [
+      "right",
+      "right",
+      "down",
+      "right",
+      "up",
+      "left",
+      "left",
+      "up",
+      {
+        "direction": "up",
+        "transfer": true
+      },
+      "right"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 2,
+          "top": 3,
+          "kind": "stone",
+          "east": 5,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 0,
+          "top": 2,
+          "kind": "normal",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 4,
+          "y": 1,
+          "top": 2,
+          "kind": "metal",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 1,
+          "top": 3,
+          "kind": "metal",
+          "east": 2,
+          "north": 1
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 3,
+          "top": 3,
+          "kind": "metal",
+          "east": 2,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Stance and support",
+      "insight": "The current supporting die is a resource: preserve a route onto the next movable die before the first group disappears.",
+      "temptation": "Making a match from the wrong support can leave Pip on the ground with stone still to move.",
+      "searchStates": 10174,
+      "verifiedDiceMoved": 2,
+      "searchModel": "event-timed movement, riding and transfers"
+    }
+  },
+  {
+    "id": "P16",
+    "set": "P",
+    "title": "The last bridge",
+    "lesson": "The current supporting die is a resource: preserve a route onto the next movable die before the first group disappears.",
+    "hint": "Plan which die Pip will be riding after the first match. Metal is a bridge, not a die you can roll.",
+    "maxMoves": 10,
+    "solution": [
+      "left",
+      "down",
+      "down",
+      "left",
+      "up",
+      {
+        "direction": "up",
+        "transfer": true
+      },
+      "right",
+      "right",
+      "right",
+      "down",
+      "down",
+      "down",
+      "left",
+      "left",
+      "up",
+      {
+        "direction": "left",
+        "transfer": true
+      },
+      "down",
+      "up",
+      "up",
+      "up",
+      "left"
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 3,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 0,
+          "top": 5,
+          "kind": "stone",
+          "east": 6,
+          "north": 3
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 3,
+          "top": 6,
+          "kind": "normal",
+          "east": 3,
+          "north": 2
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 1,
+          "top": 2,
+          "kind": "metal",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 1,
+          "top": 3,
+          "kind": "metal",
+          "east": 2,
+          "north": 1
+        },
+        {
+          "id": 5,
+          "x": 0,
+          "y": 2,
+          "top": 3,
+          "kind": "metal",
+          "east": 2,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Stance and support",
+      "insight": "The current supporting die is a resource: preserve a route onto the next movable die before the first group disappears.",
+      "temptation": "Making a match from the wrong support can leave Pip on the ground with stone still to move.",
+      "searchStates": 13004,
+      "verifiedDiceMoved": 2,
+      "searchModel": "event-timed movement, riding and transfers"
+    }
+  },
+  {
+    "id": "P17",
+    "set": "P",
+    "title": "Different answers",
+    "lesson": "The same space plays different roles for different materials; coordinate a wood orientation with an ice stopping position.",
+    "hint": "Separate the 2-group plan from the 3-group plan, then check which route or stopper each plan needs from the other.",
+    "maxMoves": 5,
+    "solution": [
+      "left",
+      {
+        "wait": 480
+      },
+      "up",
+      {
+        "wait": 5620
+      },
+      "left",
+      "left",
+      "up",
+      "left",
+      "down",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "player": {
+        "x": 4,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 1,
+          "top": 5,
+          "kind": "wood",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 2,
+          "top": 2,
+          "kind": "ice",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 2,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 4,
+          "top": 3,
+          "kind": "stone",
+          "east": 2,
+          "north": 1
+        },
+        {
+          "id": 5,
+          "x": 0,
+          "y": 3,
+          "top": 3,
+          "kind": "metal",
+          "east": 5,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Synthesis",
+      "insight": "The same space plays different roles for different materials; coordinate a wood orientation with an ice stopping position.",
+      "temptation": "Treating wood like a slider, or clearing stone/metal before the ice is parked, breaks the intended route.",
+      "searchStates": 8083,
+      "verifiedDiceMoved": 2,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P18",
+    "set": "P",
+    "title": "Timber on ice",
+    "lesson": "The same space plays different roles for different materials; coordinate a wood orientation with an ice stopping position.",
+    "hint": "Separate the 2-group plan from the 3-group plan, then check which route or stopper each plan needs from the other.",
+    "maxMoves": 6,
+    "solution": [
+      "up",
+      "up",
+      "up",
+      "right",
+      "right",
+      "down",
+      "down",
+      "down",
+      "right",
+      "up",
+      "left",
+      "up",
+      "right",
+      {
+        "wait": 6500
+      },
+      "down",
+      "down",
+      "down",
+      "left",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 2,
+          "top": 5,
+          "kind": "wood",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 4,
+          "top": 2,
+          "kind": "ice",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 0,
+          "top": 3,
+          "kind": "stone",
+          "east": 6,
+          "north": 2
+        },
+        {
+          "id": 5,
+          "x": 4,
+          "y": 0,
+          "top": 3,
+          "kind": "metal",
+          "east": 6,
+          "north": 2
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Synthesis",
+      "insight": "The same space plays different roles for different materials; coordinate a wood orientation with an ice stopping position.",
+      "temptation": "Treating wood like a slider, or clearing stone/metal before the ice is parked, breaks the intended route.",
+      "searchStates": 2887,
+      "verifiedDiceMoved": 2,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P19",
+    "set": "P",
+    "title": "One path, two stances",
+    "lesson": "The same space plays different roles for different materials; coordinate a wood orientation with an ice stopping position.",
+    "hint": "Separate the 2-group plan from the 3-group plan, then check which route or stopper each plan needs from the other.",
+    "maxMoves": 9,
+    "solution": [
+      "down",
+      "down",
+      "left",
+      "up",
+      "up",
+      {
+        "wait": 6500
+      },
+      "up",
+      "left",
+      "left",
+      "down",
+      "left",
+      "down",
+      "down",
+      "right",
+      "up",
+      "left",
+      "up",
+      "right",
+      "right",
+      "up",
+      "right",
+      "down",
+      "down",
+      "down",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "player": {
+        "x": 4,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 2,
+          "top": 4,
+          "kind": "wood",
+          "east": 1,
+          "north": 2
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 4,
+          "top": 2,
+          "kind": "ice",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 1,
+          "north": 3
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 1,
+          "top": 3,
+          "kind": "stone",
+          "east": 6,
+          "north": 2
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 0,
+          "top": 3,
+          "kind": "metal",
+          "east": 6,
+          "north": 2
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Synthesis",
+      "insight": "The same space plays different roles for different materials; coordinate a wood orientation with an ice stopping position.",
+      "temptation": "Treating wood like a slider, or clearing stone/metal before the ice is parked, breaks the intended route.",
+      "searchStates": 529,
+      "verifiedDiceMoved": 2,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  },
+  {
+    "id": "P20",
+    "set": "P",
+    "title": "The patient garden",
+    "lesson": "The same space plays different roles for different materials; coordinate a wood orientation with an ice stopping position.",
+    "hint": "Separate the 2-group plan from the 3-group plan, then check which route or stopper each plan needs from the other.",
+    "maxMoves": 9,
+    "solution": [
+      "left",
+      "down",
+      "right",
+      {
+        "wait": 480
+      },
+      "up",
+      "right",
+      {
+        "wait": 6500
+      },
+      "right",
+      "down",
+      "down",
+      "down",
+      "left",
+      "up",
+      "up",
+      "right",
+      "up",
+      "left",
+      "left",
+      "down",
+      "left",
+      "left",
+      "up",
+      "up",
+      "right",
+      "down",
+      "down",
+      {
+        "wait": 6500
+      }
+    ],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 3,
+          "top": 4,
+          "kind": "wood",
+          "east": 6,
+          "north": 2
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 2,
+          "top": 2,
+          "kind": "ice",
+          "east": 4,
+          "north": 1
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 1,
+          "top": 2,
+          "kind": "normal",
+          "east": 3,
+          "north": 1
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 3,
+          "top": 3,
+          "kind": "stone",
+          "east": 6,
+          "north": 2
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 4,
+          "top": 3,
+          "kind": "metal",
+          "east": 5,
+          "north": 1
+        }
+      ],
+      "sinkDuration": 6000
+    },
+    "design": {
+      "family": "Synthesis",
+      "insight": "The same space plays different roles for different materials; coordinate a wood orientation with an ice stopping position.",
+      "temptation": "Treating wood like a slider, or clearing stone/metal before the ice is parked, breaks the intended route.",
+      "searchStates": 7012,
+      "verifiedDiceMoved": 3,
+      "searchModel": "ground movement with event waits; later candidates fully settle groups"
+    }
+  }
+]

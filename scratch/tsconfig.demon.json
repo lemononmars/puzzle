@@ -1,0 +1,4 @@
+{"extends":"../tsconfig.json","include":["../src/lib/components/DemonDiceGame.svelte","../src/lib/components/DevilDiceBoard.svelte","../src/lib/games/devilDice*.ts","../src/lib/games/demonDice*.ts","../src/app.d.ts","../src/lib/server/demonDiceRooms*.ts","../src/routes/puzzles/pips-plot/battle/+page.svelte","../src/routes/api/demon-dice/battle/**/*.ts","../src/lib/components/DemonDieIcon.svelte","../src/routes/puzzles/pips-plot/+page.svelte"]}
+
+
+

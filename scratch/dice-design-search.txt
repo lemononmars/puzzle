@@ -1,0 +1,19 @@
+FOUND 0 2 cost 4 nodes 1372 actions 13
+FOUND 0 3 cost 5 nodes 2537 actions 17
+FOUND 0 4 cost 7 nodes 2321 actions 20
+FAMILY 0 complete 4
+FAMILY 1 complete 4
+FOUND 2 3 cost 6 nodes 5230 actions 12
+FOUND 2 4 cost 8 nodes 8325 actions 27
+FAMILY 2 complete 4
+FOUND 3 1 cost 8 nodes 10174 actions 10
+FOUND 3 2 cost 6 nodes 14336 actions 8
+FOUND 3 3 cost 6 nodes 12019 actions 8
+FOUND 3 4 cost 10 nodes 13004 actions 21
+FAMILY 3 complete 4
+FOUND 4 1 cost 9 nodes 529 actions 25
+FOUND 4 2 cost 5 nodes 8083 actions 9
+FOUND 4 3 cost 9 nodes 7012 actions 26
+FOUND 4 4 cost 6 nodes 2887 actions 19
+FAMILY 4 complete 4
+TOTAL 20

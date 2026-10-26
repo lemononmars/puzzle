@@ -1,0 +1,9 @@
+7:02:19 PM [vite] (ssr) connected.
+7:02:22 PM [vite] (client) Forced re-optimization of dependencies
+
+  VITE v8.3.4  ready in 12263 ms
+
+  ➜  Local:   http://localhost:5195/
+{"startupMs":13054,"pass":false}
+  ➜  Network: use --host to expose
+{"startupMs":13056,"pass":false}

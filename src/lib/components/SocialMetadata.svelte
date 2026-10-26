@@ -1,4 +1,5 @@
 <script lang="ts">
+ import {brand} from "#lib/brand.js";
  import { page } from '$app/state';
  import { socialMetadata } from '#lib/metadata/social.js';
  let meta=$derived(socialMetadata(page.url.pathname,page.data,page.url.origin));
@@ -6,7 +7,7 @@
 <svelte:head>
  <link rel="canonical" href={meta.canonical} />
  {#if meta.noindex}<meta name="robots" content="noindex, nofollow" />{/if}
- <meta property="og:site_name" content="Puzzle" />
+ <meta property="og:site_name" content={brand.name} />
  <meta property="og:title" content={meta.title} />
  <meta property="og:description" content={meta.description} />
  <meta property="og:url" content={meta.canonical} />

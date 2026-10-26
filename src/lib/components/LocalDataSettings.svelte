@@ -1,5 +1,4 @@
 <script lang="ts">
-	let { showLibraryLink = true }: { showLibraryLink?: boolean } = $props();
 	import {
 		storageMessage,
 		exportBackup,
@@ -44,11 +43,9 @@
 	class="mt-5 pt-5 border-t border-base-300 space-y-3 text-left"
 	aria-label="Local puzzle data"
 >
-	<h3 class="font-bold">ความคืบหน้าและรายการโปรด</h3>
+	<h3 class="font-bold">ข้อมูลเกมในเครื่อง</h3>
 	<p class="text-xs botanical-muted">เก็บเฉพาะในเบราว์เซอร์นี้ ไม่มีบัญชีหรือการซิงก์ข้ามเครื่อง</p>
-	{#if showLibraryLink}<a href="/library" class="btn btn-sm btn-outline"
-			>My puzzles / ปริศนาของฉัน</a
-		>{/if}
+
 	<div class="flex flex-wrap gap-2">
 		<button type="button" class="btn btn-sm btn-outline" onclick={download}>Export backup</button
 		><label class="btn btn-sm btn-outline"
@@ -65,7 +62,7 @@
 		>
 	</div>
 	{#if confirm}<div class="bg-error text-error-content rounded-xl p-3 text-sm space-y-2">
-			<p>ล้างรายการโปรด โน้ต เกมที่บันทึก และประวัติคำตอบในเครื่องนี้? ชื่อผู้เล่นจะยังอยู่</p>
+			<p>ล้างเกมที่บันทึก และประวัติคำตอบในเครื่องนี้? ชื่อผู้เล่นจะยังอยู่</p>
 			<button
 				type="button"
 				class="btn btn-sm btn-error text-error-content"

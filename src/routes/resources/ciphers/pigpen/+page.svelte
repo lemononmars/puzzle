@@ -64,7 +64,7 @@ import DownloadIcon from '@lucide/svelte/icons/download';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Pigpen Cipher (รหัสคอกหมู) 🔐</title>
+	<title>Chi Fun | Pigpen Cipher (รหัสคอกหมู) 🔐</title>
 	<meta name="description" content="คู่มือและแบบฝึกหัดถอดรหัสลับ Pigpen Cipher พร้อมเครื่องมือแปลงรหัสเวกเตอร์ SVG" />
 </svelte:head>
 

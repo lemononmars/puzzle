@@ -233,7 +233,7 @@ $: if(progressReady&&!loading&&chain.length)saveGame('/puzzles/wordladder','Thai
 <svelte:window on:keydown={onKeydown} />
 
 <svelte:head>
-	<title>Word Ladder | Code Breaker</title>
+	<title>Word Ladder | Chi Fun</title>
 	<meta name="description" content="ปริศนาบันไดคำ (Word Ladder) เปลี่ยนคำภาษาไทยทีละหนึ่งช่องเพื่อไปให้ถึงคำปลายทาง" />
 </svelte:head>
 

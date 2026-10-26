@@ -1044,7 +1044,7 @@ import RadioIcon from '@lucide/svelte/icons/radio';
 
 <svelte:head>
  <meta name="robots" content="noindex, nofollow" />
-	<title>Code Breaker | Puzzle Battle Arena</title>
+	<title>Chi Fun | Puzzle Battle Arena</title>
 	<meta
 		name="description"
 		content="ห้องประลองปริศนาออนไลน์แบบเรียลไทม์ ท้าประลองความไวและปัญญาในโหมด Multiplayer"

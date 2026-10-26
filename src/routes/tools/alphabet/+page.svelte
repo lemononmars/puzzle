@@ -102,7 +102,7 @@ import PlusIcon from '@lucide/svelte/icons/plus';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Alphabet Builder</title>
+	<title>Chi Fun | Alphabet Builder</title>
 	<meta
 		name="description"
 		content="Create and play custom Alphabet puzzles. Challenge players to guess the hidden words from hints."

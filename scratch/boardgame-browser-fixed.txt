@@ -1,0 +1,13 @@
+1280 /boardgame 200 Board games false
+1280 /boardgame/wordwars 200 Word Wars false
+1280 /boardgame/settings 200 Player settings false
+1280 /boardgame/pakklongdice 200 Pakklong Talat - the Dice Game false
+1280 /boardgame/pakklongboard 200 Pakklong Talat - The Board Game false
+1280 /boardgame/spacespy 200 Space Spy false
+390 /boardgame 200 Board games false
+390 /boardgame/wordwars 200 Word Wars false
+390 /boardgame/settings 200 Player settings false
+390 /boardgame/pakklongdice 200 Pakklong Talat - the Dice Game false
+390 /boardgame/pakklongboard 200 Pakklong Talat - The Board Game false
+390 /boardgame/spacespy 200 Space Spy false
+PAGE ERRORS []

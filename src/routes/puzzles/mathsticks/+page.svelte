@@ -92,7 +92,7 @@
 </script>
 
 <svelte:head>
-	<title>Mathsticks | Code Breaker</title>
+	<title>Mathsticks | Chi Fun</title>
 	<meta name="description" content="ปริศนาย้ายไม้ขีดไฟเพื่อแก้สมการคณิตศาสตร์ (Mathsticks)" />
 </svelte:head>
 

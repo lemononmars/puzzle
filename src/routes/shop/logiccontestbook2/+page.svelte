@@ -193,7 +193,7 @@ import AlertCircleIcon from '@lucide/svelte/icons/circle-alert';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Logic Puzzle Contest 2 Book</title>
+	<title>Chi Fun | Logic Puzzle Contest 2 Book</title>
 </svelte:head>
 
 <Head

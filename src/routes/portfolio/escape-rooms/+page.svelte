@@ -52,7 +52,7 @@ import UiArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 				<thead><tr><th scope="col">Date</th><th scope="col">Room</th><th scope="col">Venue</th><th scope="col">City</th><th scope="col">Field note</th></tr></thead>
 				<tbody>{#each filtered as room (room.id)}<tr>
 					<td>{#if room.date}<time datetime={room.date}>{dateLabel(room.date)}</time>{:else}Not recorded{/if}</td>
-					<th scope="row">{room.title}</th><td>{room.venue}</td><td>{room.city === 'Totonro, CA' ? 'Toronto, CA' : room.city}</td>
+					<th scope="row"><a href={room.href} target="_blank" rel="noopener noreferrer" class="link link-hover inline-flex items-center gap-1" aria-label={`${room.title} — ${room.linkLabel} (opens in a new tab)`}>{room.title}<UiArrowUpRight size={14} aria-hidden="true" /></a><span class="botanical-muted mt-1 block text-xs font-normal">{room.linkLabel}</span></th><td>{room.venue}</td><td>{room.city === 'Totonro, CA' ? 'Toronto, CA' : room.city}</td>
 					<td>{#if room.note}<p class="leading-relaxed">{room.note}</p>{:else}<span class="botanical-muted">—</span>{/if}</td>
 				</tr>{:else}<tr><td colspan="5" class="py-8 text-center">No visits match these filters.</td></tr>{/each}</tbody>
 			</table>

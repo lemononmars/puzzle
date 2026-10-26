@@ -85,7 +85,7 @@ import LayersIcon from '@lucide/svelte/icons/layers';
 </script>
 
 <svelte:head>
-	<title>{title} | Code Breaker</title>
+	<title>{title} | Chi Fun</title>
 	<meta name="description" content={description} />
 </svelte:head>
 

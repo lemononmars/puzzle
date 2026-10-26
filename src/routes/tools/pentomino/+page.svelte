@@ -254,7 +254,7 @@
 </script>
 
 <svelte:head>
-	<title>8x8 Pentomino Solver | Code Breaker</title>
+	<title>8x8 Pentomino Solver | Chi Fun</title>
 	<meta
 		name="description"
 		content="Solve 8x8 pentomino puzzles with custom obstacles and forced piece positions."

@@ -2,7 +2,7 @@
 import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
 </script>
 <svelte:head>
-	<title>Logic Puzzle Contest 2 Book — Errata | Code Breaker</title>
+	<title>Logic Puzzle Contest 2 Book — Errata | Chi Fun</title>
 </svelte:head>
 
 <main class="max-w-3xl mx-auto p-6 pb-24 space-y-4">

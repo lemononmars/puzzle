@@ -1,0 +1,79 @@
+A1 cleared
+A2 cleared
+A3 cleared
+A4 cleared
+A5 cleared
+B1 cleared
+B2 cleared
+B3 cleared
+B4 cleared
+B5 cleared
+C1 cleared
+C2 cleared
+C3 cleared
+C4 cleared
+C5 cleared
+D1 cleared
+D2 cleared
+D3 cleared
+D4 cleared
+D5 cleared
+E1 cleared
+E2 cleared
+E3 cleared
+E4 cleared
+E5 cleared
+Moved while ice was sliding
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toHaveAttribute(expected) failed
+
+Locator: locator('.scene')
+Expected: "true"
+Timeout: 120000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toHaveAttribute" locator('.scene') with timeout 120000ms
+  - waiting for locator('.scene')
+
+    at captureRawStack (C:\coding projects\puzzle\node_modules\playwright-core\lib\coreBundle.js:9282:17)
+    at callMatcherAsStep (C:\coding projects\puzzle\node_modules\playwright\lib\matchers\expect.js:13316:57)
+    at Object.toHaveAttribute (C:\coding projects\puzzle\node_modules\playwright\lib\matchers\expect.js:13308:23)
+    at rendered (C:\coding projects\puzzle\scratch\verify-demon-modes.mjs:8:64)
+    at C:\coding projects\puzzle\scratch\verify-demon-modes.mjs:22:72 {
+  matcherResult: {
+    name: 'toHaveAttribute',
+    expected: 'true',
+    message: 'expect(locator).toHaveAttribute(expected) failed\n' +
+      '\n' +
+      "Locator: locator('.scene')\n" +
+      'Expected: "true"\n' +
+      'Timeout: 120000ms\n' +
+      'Error: element(s) not found\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toHaveAttribute" locator('.scene') with timeout 120000ms\n` +
+      "  - waiting for locator('.scene')\n",
+    pass: false,
+    actual: undefined,
+    log: [
+      `  - Expect "toHaveAttribute" locator('.scene') with timeout 120000ms`,
+      "  - waiting for locator('.scene')"
+    ],
+    timeout: 120000,
+    ariaSnapshot: '- main:\n' +
+      '  - text: PUZZLE / 500\n' +
+      '  - heading "ขอพักไขปริศนาสักครู่" [level=1]\n' +
+      '  - paragraph: หน้านี้เปิดไม่ได้ในตอนนี้ ลองเปิดใหม่อีกครั้ง หรือเลือกสำรวจหน้าอื่นได้จากลิงก์ด้านล่าง\n' +
+      '  - navigation "กลับไปสำรวจ":\n' +
+      '    - link "กลับหน้าหลัก":\n' +
+      '      - /url: /\n' +
+      '    - link "หาเกมใหม่เล่น":\n' +
+      '      - /url: /puzzles'
+  }
+}
+
+Node.js v22.13.1

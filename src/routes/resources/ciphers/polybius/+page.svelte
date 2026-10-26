@@ -116,7 +116,7 @@ import GlobeIcon from '@lucide/svelte/icons/globe';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Polybius Square Cipher</title>
+	<title>Chi Fun | Polybius Square Cipher</title>
 	<meta name="description" content="คู่มือและแบบฝึกหัด Polybius Square Cipher ตารางพิกัด 5x5 และตารางภาษาไทย 8x8" />
 </svelte:head>
 

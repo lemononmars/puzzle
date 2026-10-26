@@ -251,7 +251,7 @@
 </script>
 
 <svelte:head>
-	<title>Jigsaw Quiz | Code Breaker</title>
+	<title>Jigsaw Quiz | Chi Fun</title>
 	<meta
 		name="description"
 		content="Play the ultimate interactive Jigsaw Quiz game. Select tiles to reveal clues and guess the mystery image in this game master console presentation."

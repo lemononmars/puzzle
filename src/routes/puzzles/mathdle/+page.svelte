@@ -161,7 +161,7 @@
 <svelte:window on:keydown={onKeydown} />
 
 <svelte:head>
-	<title>Mathdle | Code Breaker</title>
+	<title>Mathdle | Chi Fun</title>
 	<meta name="description" content="เกมนิรนัยทายสมการคณิตศาสตร์ประจำวัน (Mathdle)" />
 </svelte:head>
 

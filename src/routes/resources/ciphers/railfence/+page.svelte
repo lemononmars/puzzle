@@ -105,7 +105,7 @@ import CheckIcon from '@lucide/svelte/icons/check';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Rail Fence Cipher 🔐</title>
+	<title>Chi Fun | Rail Fence Cipher 🔐</title>
 	<meta name="description" content="คู่มือและแบบฝึกหัด Rail Fence Cipher รหัสลับแบบซิกแซก" />
 </svelte:head>
 

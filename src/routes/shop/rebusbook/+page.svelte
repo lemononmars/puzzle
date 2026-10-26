@@ -32,7 +32,7 @@ import BookOpenIcon from '@lucide/svelte/icons/book-open';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Rebus Puzzle Book</title>
+	<title>Chi Fun | Rebus Puzzle Book</title>
 </svelte:head>
 
 <Head

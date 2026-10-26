@@ -131,7 +131,7 @@ $: ({ initialPuzzles } = data);
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Logic Puzzles Collection 🧩</title>
+	<title>Chi Fun | Logic Puzzles Collection 🧩</title>
 	<meta
 		name="description"
 		content="Collection of logic puzzles (Slitherlink, Sudoku, Masyu, Akari) with search, filter, and online player"

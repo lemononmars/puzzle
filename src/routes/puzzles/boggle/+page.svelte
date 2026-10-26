@@ -517,7 +517,7 @@ import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | เส้นทางศัพท์ 🧭</title>
+	<title>Chi Fun | เส้นทางศัพท์ 🧭</title>
 	<meta name="description" content="ลากเส้นเชื่อมตัวอักษรเพื่อผสมคำภาษาไทยในพจนานุกรม" />
 </svelte:head>
 

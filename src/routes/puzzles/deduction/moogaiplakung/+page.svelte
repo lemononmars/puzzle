@@ -95,7 +95,7 @@ import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 </script>
 
 <svelte:head>
-	<title>Puzzle | หมู ไก่ ปลา กุ้ง 🦐</title>
+	<title>Chi Fun | หมู ไก่ ปลา กุ้ง 🦐</title>
 	<meta
 		name="description"
 		content="เกมไขความลับจากรูปคำภาษาไทย หมู ไก่ ปลา กุ้ง"

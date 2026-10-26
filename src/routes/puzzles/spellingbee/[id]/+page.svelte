@@ -157,7 +157,7 @@ $: ({ content } = data);
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Spelling Bee 🐝</title>
+	<title>Chi Fun | Spelling Bee 🐝</title>
 	<meta name="description" content="ผสมคำจากตัวอักษร 7 ตัวที่กำหนด" />
 </svelte:head>
 

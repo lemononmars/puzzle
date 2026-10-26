@@ -1,0 +1,155 @@
+{"market":{"x":45,"y":405.0625,"width":1134,"height":29.90625},"canvas":null,"pageWidth":1600,"documentWidth":1600}
+BODY Board games
+Player settings
+
+ROOM JLOH
+
+Pakklong Talat
+
+Collect flowers, plan your market visits, and arrange beautiful bouquets.
+
+Leave room
+Turn 1 · Planning
+
+Plan your shop visits with time tokens. Lower numbers buy first.
+
+1
+Early bird
+2
+Planning
+3
+Market buying
+4
+Aftermarket
+5
+Arranging
+Marketplace Bazaar
+6 shops
+1
+Restaurant
+
+Collect money
+
+฿1
+฿3
+Choose a token first
+2
+Rose
+
+1 money per flower
+
+Q3
+Pink
+Choose a token first
+3
+Orchid
+
+1 money per flower
+
+Q2
+Blue
+Q3
+Blue
+Choose a token first
+4
+Mums
+
+1 money per flower
+
+Q4
+White
+Choose a token first
+5
+Bookstore
+
+Draw an order
+
+1
+Pink
+1
+Blue
+1
+White
+Q8
+4 pts
+2
+Pink
+1
+Blue
+1
+White
+Q10
+6 pts
+Choose a token first
+6
+Tool
+
+Upgrade your shop
+
+Level 2
+two clocks
+฿4
+Level 4
+฿
+Choose a token first
+Your flower shop
+0 pts
+
+misty_dream
+
+Money
+฿5
+Ribbons
+1
+Action cubes
+0
+Clock level
+0
+Plan your visits
+
+Select a time token, then place it at a shop. Assign at least four. Select a placed token to remove it.
+
+1
+2
+3
+4
+x
+x
+
+0 / 6 shops planned
+
+Fresh flowers 0/3 vases
+♧
+Empty
+♧
+Empty
+♧
+Empty
+Bouquet orders 1/4
+0
+Pink
+1
+Blue
+1
+White
+Q3
+1 pts
+Submit Planning
+Autoplay: Off
+Players
+misty_dream (You)
+Player · ฿5 · 0 cubes · 1 ribbons
+Flowers arranged: 0 / 0 / 0
+0 pts
+Job#0
+Autoplay · ฿5 · 0 cubes · 0 ribbons
+Flowers arranged: 0 / 0 / 0
+0 pts
+Achievements
+4 pink & 4 blue
+Unclaimed
+6 white
+Unclaimed
+Game log 2 events
+chat
+PASS

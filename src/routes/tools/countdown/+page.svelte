@@ -594,7 +594,7 @@ import LayersIcon from '@lucide/svelte/icons/layers';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Countdown</title>
+	<title>Chi Fun | Countdown</title>
 </svelte:head>
 
 <div id="countdown-fullscreen-container" class="w-full min-h-screen bg-base-100 text-base-content text-base-content/70 font-sans">

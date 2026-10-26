@@ -12,7 +12,7 @@ $: ({ puzzles } = data);
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Rebus</title>
+	<title>Chi Fun | Rebus</title>
 	<meta name="description" content="ทายคำจากภาพแทนคำ (Rebus Puzzles) โดย Codebreaker Thailand" />
 </svelte:head>
 

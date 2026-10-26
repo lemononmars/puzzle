@@ -40,7 +40,7 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 </script>
 
 <svelte:head>
-	<title>Answer Checker | Code Breaker</title>
+	<title>Answer Checker | Chi Fun</title>
 	<meta name="description" content="สร้างหน้าเว็บสำหรับให้ผู้เล่นมาตรวจคำตอบของโจทย์คุณ" />
 
 

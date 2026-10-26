@@ -1,0 +1,274 @@
+1:08:34 PM [vite] (ssr) connected.
+
+  VITE v8.3.4  ready in 9104 ms
+
+  ➜  Local:   http://127.0.0.1:5194/
+/*! 🌼 daisyUI 5.7.47 */
+1:09:34 PM [vite-plugin-svelte] src/lib/components/Navbar.svelte:104:236 Unused CSS selector ".brand > span"
+https://svelte.dev/e/css_unused_selector
+[36m200[39m GET /puzzles/demon-dice/battle
+1:09:43 PM [vite-plugin-svelte] src/lib/components/Navbar.svelte:104:236 Unused CSS selector ".brand > span"
+https://svelte.dev/e/css_unused_selector
+[36m200[39m POST /api/demon-dice/battle
+[36m200[39m GET /puzzles/demon-dice/battle?room=2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /puzzles/demon-dice/battle?room=2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+[36m200[39m POST /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+401 GET /api/demon-dice/battle/2D8E8698
+[36m200[39m GET /api/demon-dice/battle/2D8E8698
+1:12:44 PM [vite] (client) hmr update /src/app.css
+1:12:44 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/+page.svelte
+[36m200[39m GET /puzzles/demon-dice/tutorials
+1:13:41 PM [vite] (client) hmr update /src/app.css
+1:13:41 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/+page.svelte
+1:13:42 PM [vite] (client) hmr update /src/app.css
+1:13:42 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/+page.svelte
+1:13:47 PM [vite] (client) hmr update /src/routes/puzzles/demon-dice/battle/+page.svelte, /src/app.css
+1:13:47 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/battle/+page.svelte
+1:13:47 PM [vite] (ssr) program reload
+1:13:47 PM [vite] (client) hmr update /src/routes/puzzles/demon-dice/battle/+page.svelte, /src/app.css
+1:13:47 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/battle/+page.svelte
+1:13:49 PM [vite] (ssr) program reload
+[36m200[39m GET /puzzles/demon-dice/puzzles
+1:14:25 PM [vite] (client) hmr update /src/app.css
+1:14:25 PM [vite] (ssr) page reload src/lib/games/demonDiceBattle.test.ts
+1:14:40 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+[36m200[39m GET /puzzles/demon-dice/puzzles
+1:22:02 PM [vite] (client) hmr update /src/app.css
+1:22:02 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/+page.svelte
+1:22:02 PM [vite] (client) hmr update /src/app.css
+1:22:02 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/endless/+page.svelte
+1:22:02 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/battle/+page.svelte
+1:22:02 PM [vite] (ssr) program reload
+1:22:03 PM [vite] (client) hmr update /src/lib/components/Navbar.svelte, /src/lib/components/SocialMetadata.svelte, /src/app.css
+1:22:03 PM [vite] (ssr) page reload src/lib/data/catalog.json
+1:22:03 PM [vite] (client) hmr update /src/app.css
+1:22:03 PM [vite] (ssr) page reload src/routes/puzzles/devil-dice/+page.ts
+1:22:03 PM [vite] (ssr) An error happened during full reload
+Failed to load url /src/routes/puzzles/demon-dice/battle/+page.svelte (resolved id: C:/coding projects/puzzle/src/routes/puzzles/demon-dice/battle/+page.svelte). Does the file exist?
+Error: Failed to load url /src/routes/puzzles/demon-dice/battle/+page.svelte (resolved id: C:/coding projects/puzzle/src/routes/puzzles/demon-dice/battle/+page.svelte). Does the file exist?
+    at loadAndTransform (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:20173:31)
+    at async fetchModule (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:36165:15)
+    at async handleInvoke (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:25347:21)
+    at async EventEmitter.listenerForInvokeHandler (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:25402:13)
+1:22:03 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+1:22:03 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/59.js
+1:22:03 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/61.js
+1:22:03 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/62.js
+1:22:03 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+1:22:03 PM [vite] (client) hmr update /src/app.css
+1:22:03 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/tutorials/+page.svelte
+1:22:03 PM [vite] (client) hmr update /src/app.css
+1:22:03 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/puzzles/+page.svelte
+1:22:04 PM [vite] (client) hmr update /src/lib/components/DemonDiceGame.svelte, /src/app.css
+1:22:04 PM [vite] (ssr) page reload src/lib/components/DemonDiceGame.svelte
+1:22:25 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+[36m200[39m GET /puzzles/pips-plot
+[36m308[39m GET /puzzles/demon-dice?room=TEST
+[36m200[39m GET /puzzles/pips-plot/tutorials
+[36m308[39m GET /puzzles/demon-dice/tutorials?room=TEST
+[36m200[39m GET /puzzles/pips-plot/puzzles
+[36m308[39m GET /puzzles/demon-dice/puzzles?room=TEST
+[36m200[39m GET /puzzles/pips-plot/endless
+[36m308[39m GET /puzzles/demon-dice/endless?room=TEST
+[36m200[39m GET /puzzles/pips-plot/battle
+[36m308[39m GET /puzzles/demon-dice/battle?room=TEST
+1:22:55 PM [vite] (ssr) page reload src/routes/puzzles/demon-dice/[...path]/+page.ts
+1:22:55 PM [vite] (ssr) program reload

@@ -1,0 +1,453 @@
+6:47:54 PM [vite] (ssr) connected.
+6:47:56 PM [vite] (client) Forced re-optimization of dependencies
+6:47:58 PM [vite] (serviceWorker) [optimizer] scanning dependencies...
+6:48:04 PM [vite] (ssr) [optimizer] bundling dependencies...
+6:48:05 PM [vite] (client) [optimizer] bundling dependencies...
+6:48:14 PM [vite] (serviceWorker) [optimizer] bundling dependencies...
+
+  VITE v8.3.4  ready in 30586 ms
+
+  ➜  Local:   http://localhost:5193/
+  ➜  Network: use --host to expose
+[36m200[39m GET /boardgame
+/*! 🌼 daisyUI 5.7.47 */
+6:49:10 PM [vite] (client) [optimizer] bundling dependencies...
+6:49:11 PM [vite] (client) dependency optimized: @supabase/supabase-js
+6:49:11 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:11 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/wordwars
+6:49:15 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:15 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/settings
+6:49:16 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:16 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/pakklongdice
+6:49:17 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:17 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/pakklongboard
+6:49:18 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:18 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/spacespy
+6:49:19 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:19 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m304[39m GET /boardgame
+[36m304[39m GET /boardgame
+6:49:20 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:20 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+6:49:22 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:22 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/wordwars
+6:49:22 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:22 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/settings
+6:49:23 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:23 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/pakklongdice
+6:49:24 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:24 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/pakklongboard
+6:49:25 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:25 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m200[39m GET /boardgame/spacespy
+6:49:26 PM [vite] (client) [console.warn] [sveltekit] hmr_reload_after_error
+The next HMR update will cause the page to reload
+https://svelte.dev/e/kit/hmr_reload_after_error
+6:49:26 PM [vite] (client) [console.error] SvelteKit error: app_stores_removed
+`$app/stores` has been removed in favour of `$app/state`
+https://svelte.dev/e/kit/app_stores_removed
+    at Object.removed [as subscribe] (http://localhost:5193/node_modules/@sveltejs/kit/src/runtime/app/stores.js?v=a8ee52e0:6:4)
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:36
+    at untrack (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4486:10)
+    at subscribe_to_store (http://localhost:5193/node_modules/.vite/dev-5193/deps/shared-DaoqCfoj.js?v=a8ee52e0:17:16)
+    at Module.store_get (http://localhost:5193/node_modules/.vite/dev-5193/deps/index-client-BhHlTPtf.js?v=a8ee52e0:3616:24)
+    at $page (http://localhost:5193/src/routes/boardgame/+layout.svelte:25:5)
+    at http://localhost:5193/src/routes/boardgame/+layout.svelte:35:29
+    at http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:3755:3
+    at update_reaction (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4210:16)
+    at update_effect (http://localhost:5193/node_modules/.vite/dev-5193/deps/runtime-CyXOiYqm.js?v=a8ee52e0:4320:18)
+[36m304[39m GET /boardgame
+6:49:31 PM [vite] (client) hmr update /src/app.css
+6:49:31 PM [vite] (client) hmr update /src/app.css
+6:49:53 PM [vite] (client) hmr update /src/app.css
+6:49:53 PM [vite] (client) hmr update /src/app.css
+6:49:53 PM [vite] (client) hmr update /src/app.css
+6:49:53 PM [vite] (client) hmr update /src/app.css
+6:49:54 PM [vite] (client) hmr update /src/app.css
+6:49:54 PM [vite] (client) hmr update /src/app.css
+[36m200[39m GET /boardgame
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/routes/boardgame/+layout.svelte, /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+6:49:56 PM [vite] (client) hmr update /src/app.css
+[36m200[39m GET /boardgame/wordwars
+[36m200[39m GET /boardgame/settings
+[36m200[39m GET /boardgame/pakklongdice
+[36m200[39m GET /boardgame/pakklongboard
+[36m200[39m GET /boardgame/spacespy
+[36m200[39m GET /boardgame
+[36m304[39m GET /boardgame
+[36m200[39m GET /boardgame/wordwars
+[36m304[39m GET /boardgame/settings
+[36m304[39m GET /boardgame/pakklongdice
+[36m304[39m GET /boardgame/pakklongboard
+[36m304[39m GET /boardgame/spacespy
+[36m304[39m GET /boardgame
+6:50:45 PM [vite] (client) hmr update /src/app.css, /src/lib/boardgame/components/ChatWidget.svelte, /src/routes/boardgame/+layout.svelte, /src/lib/boardgame/components/Lobby.svelte, /src/routes/boardgame/settings/+page.svelte
+6:50:45 PM [vite] (client) hmr update /src/app.css
+6:50:46 PM [vite] (client) hmr update /src/app.css
+6:50:47 PM [vite] (client) hmr update /src/app.css
+6:50:47 PM [vite] (client) hmr update /src/app.css
+6:50:48 PM [vite] (client) hmr update /src/lib/boardgame/components/ChatWidget.svelte, /src/app.css
+6:50:48 PM [vite] (client) hmr update /src/lib/boardgame/components/Lobby.svelte, /src/app.css
+[36m200[39m GET /boardgame/pakklongdice
+[36m200[39m GET /boardgame
+6:51:15 PM [vite] (client) [console.warn] Realtime send() is automatically falling back to REST API. This behavior will be deprecated in the future. Please use httpSend() explicitly for REST delivery.
+[36m304[39m GET /boardgame
+6:51:22 PM [vite] (client) hmr update /src/lib/boardgame/components/ChatWidget.svelte, /src/app.css
+6:51:23 PM [vite] (client) hmr update /src/app.css
+6:51:23 PM [vite] (client) hmr update /src/app.css
+6:51:25 PM [vite] (client) hmr update /src/app.css
+6:51:25 PM [vite] (client) hmr update /src/app.css
+6:51:25 PM [vite] (client) hmr update /src/app.css
+6:51:25 PM [vite] (client) hmr update /src/lib/boardgame/components/GameShell.svelte, /src/app.css
+6:51:25 PM [vite] (client) hmr update /src/app.css
+6:51:25 PM [vite] (client) hmr update /src/app.css
+6:51:25 PM [vite] (client) hmr update /src/app.css
+6:51:25 PM [vite] (client) hmr update /src/routes/boardgame/settings/+page.svelte, /src/app.css
+6:51:25 PM [vite] (client) hmr update /src/app.css
+6:51:26 PM [vite] (client) hmr update /src/lib/boardgame/components/Lobby.svelte, /src/app.css
+6:51:26 PM [vite] (client) hmr update /src/lib/boardgame/components/Lobby.svelte, /src/app.css
+6:51:26 PM [vite] (client) hmr update /src/routes/boardgame/pakklongdice/Settings.svelte, /src/app.css
+6:51:26 PM [vite] (client) hmr update /src/routes/boardgame/pakklongdice/InfoArea.svelte, /src/app.css
+6:51:26 PM [vite] (client) hmr update /src/app.css
+6:51:26 PM [vite] (client) hmr update /src/app.css
+6:51:26 PM [vite] (client) hmr update /src/app.css
+6:51:26 PM [vite] (client) hmr update /src/routes/boardgame/pakklongdice/[roomID]/+page.svelte, /src/app.css
+[36m200[39m GET /boardgame/pakklongdice
+[36m200[39m GET /boardgame
+6:51:58 PM [vite] (client) [console.warn] Realtime send() is automatically falling back to REST API. This behavior will be deprecated in the future. Please use httpSend() explicitly for REST delivery.
+[36m304[39m GET /boardgame
+6:52:18 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:52:18 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+6:52:19 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:52:19 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+6:52:45 PM [vite] (client) hmr update /src/app.css
+6:53:06 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:53:36 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/0.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/1.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/3.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/11.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/14.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/17.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/18.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/20.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/21.js
+6:53:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/22.js
+6:53:38 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+6:53:38 PM [vite] (ssr) page reload .svelte-kit/generated/dev/shared/error-template.js
+6:53:38 PM [vite] (ssr) program reload
+6:53:38 PM [vite] (ssr) page reload .svelte-kit/generated/dev/server.js
+6:53:38 PM [vite] (client) page reload .svelte-kit/generated/dev/client/matchers.js
+6:53:38 PM [vite] (ssr) program reload
+6:53:38 PM [vite] (ssr) page reload .svelte-kit/generated/dev/env/config.js
+6:53:38 PM [vite] (client) page reload .svelte-kit/generated/dev/env/service-worker.js
+6:54:19 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:54:19 PM [vite] (client) hmr update /src/lib/components/Navbar.svelte, /src/lib/components/SocialMetadata.svelte, /src/app.css
+6:54:49 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:54:49 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:54:49 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/0.js
+6:54:50 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/1.js
+6:54:50 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/3.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/11.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/14.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/17.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/18.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/20.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/21.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/22.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+6:54:51 PM [vite] (ssr) page reload .svelte-kit/generated/dev/shared/error-template.js
+6:54:51 PM [vite] (ssr) program reload
+6:54:51 PM [vite] (ssr) page reload .svelte-kit/generated/dev/server.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+6:54:51 PM [vite] (client) page reload .svelte-kit/generated/dev/client/matchers.js
+6:54:51 PM [vite] (ssr) page reload .svelte-kit/generated/dev/shared/error-template.js
+6:54:51 PM [vite] (ssr) page reload .svelte-kit/generated/dev/server.js
+6:54:51 PM [vite] (ssr) program reload
+6:54:51 PM [vite] (ssr) program reload
+6:54:51 PM [vite] (ssr) program reload
+6:54:52 PM [vite] (ssr) page reload .svelte-kit/generated/dev/env/config.js
+6:54:52 PM [vite] (client) page reload .svelte-kit/generated/dev/env/service-worker.js
+6:55:10 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:55:21 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:55:23 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:55:23 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/0.js
+6:55:23 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/0.js
+6:55:23 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/1.js
+6:55:23 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/3.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/11.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/14.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/17.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/18.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/20.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/21.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/22.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/0.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/1.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/3.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+6:55:24 PM [vite] (ssr) page reload .svelte-kit/generated/dev/shared/error-template.js
+6:55:24 PM [vite] (ssr) program reload
+6:55:24 PM [vite] (ssr) page reload .svelte-kit/generated/dev/server.js
+6:55:24 PM [vite] (client) page reload .svelte-kit/generated/dev/client/matchers.js
+6:55:24 PM [vite] (ssr) program reload
+6:55:25 PM [vite] (ssr) page reload .svelte-kit/generated/dev/env/config.js
+6:55:25 PM [vite] (client) page reload .svelte-kit/generated/dev/env/service-worker.js
+6:56:32 PM [vite] (client) hmr update /src/app.css
+6:57:17 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:57:20 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:57:20 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/0.js
+6:57:20 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/1.js
+6:57:20 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/3.js
+6:57:21 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/3.js
+6:57:21 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/11.js
+6:57:22 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/14.js
+6:57:22 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/17.js
+6:57:22 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/18.js
+6:57:22 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/20.js
+6:57:22 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/21.js
+6:57:22 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/22.js
+6:57:23 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+6:57:23 PM [vite] (ssr) page reload .svelte-kit/generated/dev/shared/error-template.js
+6:57:23 PM [vite] (ssr) program reload
+6:57:23 PM [vite] (ssr) page reload .svelte-kit/generated/dev/server.js
+6:57:23 PM [vite] (client) page reload .svelte-kit/generated/dev/client/matchers.js
+6:57:23 PM [vite] (ssr) page reload .svelte-kit/generated/dev/shared/error-template.js
+6:57:23 PM [vite] (ssr) page reload .svelte-kit/generated/dev/server.js
+6:57:24 PM [vite] (ssr) program reload
+6:57:24 PM [vite] (ssr) program reload
+6:57:25 PM [vite] (ssr) page reload .svelte-kit/generated/dev/env/config.js
+6:57:25 PM [vite] (client) page reload .svelte-kit/generated/dev/env/service-worker.js
+6:57:25 PM [vite] (ssr) program reload
+6:58:33 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:58:34 PM [vite] (client) page reload .svelte-kit/generated/dev/app-manifest.js
+6:58:35 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/0.js
+6:58:35 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/1.js
+6:58:35 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/3.js
+6:58:36 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/11.js
+6:58:36 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/14.js
+6:58:36 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/17.js
+6:58:36 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/18.js
+6:58:36 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/20.js
+6:58:36 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/21.js
+6:58:36 PM [vite] (client) page reload .svelte-kit/generated/dev/client/nodes/22.js
+6:58:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+6:58:37 PM [vite] (ssr) page reload .svelte-kit/generated/dev/shared/error-template.js
+6:58:37 PM [vite] (ssr) program reload
+6:58:37 PM [vite] (ssr) page reload .svelte-kit/generated/dev/server.js
+6:58:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/app.js
+6:58:37 PM [vite] (client) page reload .svelte-kit/generated/dev/client/matchers.js
+6:58:37 PM [vite] (ssr) program reload
+6:58:39 PM [vite] (ssr) page reload .svelte-kit/generated/dev/env/config.js
+6:58:39 PM [vite] (client) page reload .svelte-kit/generated/dev/env/service-worker.js
+6:58:56 PM [vite] vite.config.ts changed, restarting server...
+6:58:57 PM [vite] (ssr) connected.
+6:59:01 PM [vite] server restarted.
+7:01:21 PM [vite] vite.config.ts changed, restarting server...
+7:01:22 PM [vite] (ssr) connected.
+7:01:24 PM [vite] server restarted.
+7:02:06 PM [vite] vite.config.ts changed, restarting server...
+7:02:07 PM [vite] (ssr) connected.
+7:02:08 PM [vite] (client) Forced re-optimization of dependencies
+7:02:16 PM [vite] server restarted.
+7:02:18 PM [vite] (client) [optimizer] bundling dependencies...
+7:03:44 PM [vite] vite.config.ts changed, restarting server...
+7:03:44 PM [vite] (ssr) connected.
+7:03:45 PM [vite] (client) Forced re-optimization of dependencies
+7:03:49 PM [vite] server restarted.
+7:03:51 PM [vite] (client) [optimizer] bundling dependencies...
+8:51:44 PM [vite] (client) page reload build/client/banner_canvas_export.html
+8:51:44 PM [vite] (client) page reload build/client/banner_preview.html
+8:51:47 PM [vite] (client) page reload build/client/theme-preview.html
+8:51:57 PM [vite] (client) page reload build/client/banner_canvas_export.html
+8:51:57 PM [vite] (client) page reload build/client/banner_preview.html
+8:52:01 PM [vite] (client) page reload build/client/boardgame/p/index.html
+8:52:04 PM [vite] (client) page reload build/client/theme-preview.html

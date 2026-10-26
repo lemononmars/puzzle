@@ -171,7 +171,7 @@ import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Puzzle Knowledge & Reference Data 📚</title>
+	<title>Chi Fun | Puzzle Knowledge & Reference Data 📚</title>
 	<meta
 		name="description"
 		content="คลังข้อมูลอ้างอิงและสัญลักษณ์พื้นฐานภาษาไทย-อังกฤษ สำหรับแก้พัซเซิลและรหัสลับ"

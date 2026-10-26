@@ -171,7 +171,7 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Braille Code (อักษรเบรลล์) ⠃⠗⠁⠔⠇⠇⠑</title>
+	<title>Chi Fun | Braille Code (อักษรเบรลล์) ⠃⠗⠁⠔⠇⠇⠑</title>
 	<meta name="description" content="เครื่องมือแปลงอักษรเบรลล์ฟอนต์ยูนิโค้ด 6 จุด (English & Thai Braille) รวมวรรณยุกต์ไทย" />
 </svelte:head>
 

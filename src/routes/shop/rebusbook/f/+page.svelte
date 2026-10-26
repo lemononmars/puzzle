@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-   <title>Code Breaker | Rebus puzzle</title>
+   <title>Chi Fun | Rebus puzzle</title>
 </svelte:head>
 
 

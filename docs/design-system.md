@@ -1,5 +1,7 @@
 # Botanical Playroom
 
+Site identity: **Chi Fun / ไขสนุก**. The canonical Chi Key artwork is `static/images/chi/chi-key.svg`; use it for the brand mark. Identity text is in `src/lib/brand.ts`, and `scripts/generate-brand-assets.cjs` derives the favicon, installed-app icons, and sharing image from that artwork.
+
 The default DaisyUI theme is `botanical`, defined in `src/app.css`. Use semantic colors rather than fixed palette utilities. Pair every semantic surface with its content color; preserve colors that encode puzzle rules or state.
 
 Use `PageHeading` for page introductions, `Surface` for grouped content, `LinkCard` for navigable content, and `ActionLink` for calls to action. These Svelte 5 components live in `src/lib/components/ui`. Existing game, tool, and product cards use the same theme tokens. Use DaisyUI buttons, inputs, selects, tabs, alerts, and modals for interactive controls.

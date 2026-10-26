@@ -1,0 +1,1 @@
+PASS: real client navigation, landing/setup/game on desktop and mobile, end returns to settings, no runtime errors.

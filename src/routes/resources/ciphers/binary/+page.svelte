@@ -98,7 +98,7 @@ import CheckIcon from '@lucide/svelte/icons/check';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Binary Code Cipher</title>
+	<title>Chi Fun | Binary Code Cipher</title>
 	<meta name="description" content="คู่มือและแบบฝึกหัด Binary Code รหัสเลขฐานสอง (8-Bit ASCII และ 5-Bit Index)" />
 </svelte:head>
 

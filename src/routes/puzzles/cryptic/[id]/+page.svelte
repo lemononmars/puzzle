@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PageHeading from '#lib/components/ui/PageHeading.svelte';
 	import Surface from '#lib/components/ui/Surface.svelte';
+	import CrypticDifficulty from '#lib/components/CrypticDifficulty.svelte';
 	import KeyboardLayout from '#lib/components/KeyboardLayout.svelte';
 	import Keyboard from '@lucide/svelte/icons/keyboard';
 	import type { PageData } from './$types';
@@ -83,6 +84,7 @@
 	<PageHeading title={data.puzzle.title} description="หาคำตอบภาษาไทยที่ตรงทั้งความหมายและกลไกของคำใบ้" />
 	{#key data.puzzle.id}
 		<Surface class="text-center">
+			<div class="mb-3"><CrypticDifficulty level={data.puzzle.difficulty} /></div>
 			<p lang="th" class="clue mb-6 font-semibold">
 				{#each clueSegments as segment}{#if segment.highlighted && selectedHint}<mark class="{hintColors[selectedHint.key]} rounded px-1">{segment.text}</mark>{:else}{segment.text}{/if}{/each}
 				<span class="whitespace-nowrap text-base font-normal">({data.puzzle.boxCount})</span>

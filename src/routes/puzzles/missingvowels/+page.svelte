@@ -10,7 +10,7 @@ $: ({ puzzles } = data);
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Missing Vowels</title>
+	<title>Chi Fun | Missing Vowels</title>
 </svelte:head>
 
 <div class="container mx-auto px-4 py-6 flex flex-col gap-6 max-w-5xl">

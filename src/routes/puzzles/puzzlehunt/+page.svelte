@@ -67,7 +67,7 @@ $: ({ puzzleHunts } = data);
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Puzzle Hunts</title>
+	<title>Chi Fun | Puzzle Hunts</title>
 </svelte:head>
 
 <div class="container mx-auto px-4 py-6 flex flex-col gap-8 max-w-5xl">

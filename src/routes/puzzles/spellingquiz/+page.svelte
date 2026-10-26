@@ -522,7 +522,7 @@ import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
 <svelte:window on:keydown={handleKeyDown} />
 
 <svelte:head>
-	<title>Code Breaker | สะกดศัพท์ ✏️</title>
+	<title>Chi Fun | สะกดศัพท์ ✏️</title>
 	<meta name="description" content="เกมประลองคำสะกดภาษาไทย ค้นหาคำที่เขียนถูกต้องตามพจนานุกรม" />
 </svelte:head>
 

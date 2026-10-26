@@ -11,7 +11,7 @@ export async function publicRecords() {
   records.set(url, { url, title, description, section });
  };
  for (const [area, groups] of Object.entries(catalog)) {
-  add('/'+area, {puzzles:'เล่นปริศนา / Play',tools:'เครื่องมือ / Create',resources:'ข้อมูล / Resources'}[area], 'Puzzle '+area, area);
+  add('/'+area, {puzzles:'เล่นปริศนา / Play',tools:'เครื่องมือ / Create',resources:'ข้อมูล / Resources'}[area], 'Chi Fun '+area, area);
   for (const group of groups) {
    add('/'+area+'/'+group.id, group.title, group.description, area);
    for (const entry of group.entries) add(entry.href, entry.title, entry.description ?? group.description, area);
@@ -22,7 +22,8 @@ export async function publicRecords() {
  new Function('exports', ts.transpileModule(source, {compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText)(exports);
  for (const chapter of exports.PUZZLE_MECHANIC_CHAPTERS) for (const item of chapter.mechanics) add('/resources/mechanics/'+item.id, item.englishTitle+' / '+item.thaiTitle, item.description+' '+item.japaneseTitle, 'resources');
  for (const [url,title,description] of [
-  ['/','Puzzle','Small puzzles. Fresh discoveries. A botanical playroom for curious minds.'],
+  ['/','Chi Fun / ไขสนุก','ไขสนุกไปกับปริศนา เครื่องมือ และความรู้สำหรับคนช่างสงสัย'],
+  ['/about','เกี่ยวกับ Chi Fun / ไขสนุก','ที่มาของชื่อ Chi Fun สัญลักษณ์ Chi Key และสิ่งที่เว็บไซต์มีให้เล่น สร้าง และเรียนรู้'],
   ['/portfolio','Sakulbuth Ekvittayaniphon / lemononmars','Board game design, puzzle crafting, escape rooms, and web development.'],
   ['/portfolio/board-games','Board game designer','Board game design projects and ปั้นกระดาน.'],
   ['/portfolio/puzzle-crafter','Puzzle crafter','Original puzzles, puzzle hunts, and logic puzzle events.'],

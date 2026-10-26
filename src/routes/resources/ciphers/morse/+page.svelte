@@ -103,7 +103,7 @@ import GlobeIcon from '@lucide/svelte/icons/globe';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Morse Code (รหัสมอร์ส)</title>
+	<title>Chi Fun | Morse Code (รหัสมอร์ส)</title>
 	<meta name="description" content="คู่มือรหัสมอร์สภาษาอังกฤษ ภาษาไทย และตัวเลข พร้อมตารางอ้างอิงสดและแบบฝึกหัด" />
 </svelte:head>
 

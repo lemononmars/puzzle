@@ -56,8 +56,8 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 </script>
 
 <section class="mt-5 border-t border-base-300 pt-4" aria-labelledby="install-heading">
-	<h4 id="install-heading" class="font-bold text-sm">แอป Puzzle</h4>
-	<p class="mt-1 text-xs text-base-content/70">เพิ่ม Puzzle บนหน้าจอหลัก เพื่อเปิดเล่นได้สะดวก</p>
+	<h4 id="install-heading" class="font-bold text-sm">แอป Chi Fun / ไขสนุก</h4>
+	<p class="mt-1 text-xs text-base-content/70">เพิ่ม Chi Fun บนหน้าจอหลัก เพื่อเปิดเล่นได้สะดวก</p>
 	{#if installed}
 		<p class="mt-3 flex items-center gap-2 text-sm"><CheckCircleIcon size={16} />ติดตั้งแอปแล้ว</p>
 	{:else if prompt || installing}

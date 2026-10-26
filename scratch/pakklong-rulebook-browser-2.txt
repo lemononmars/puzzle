@@ -1,0 +1,36 @@
+
+Running 1 test using 1 worker
+
+  x  1 tests\browser\pakklongboard.spec.ts:121:1 › rulebook is readable on desktop and mobile with the regular site navigation (1.0m)
+
+
+  1) tests\browser\pakklongboard.spec.ts:121:1 › rulebook is readable on desktop and mobile with the regular site navigation 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Lobby', exact: true })
+
+
+      142 | 	await page.waitForURL(/pakklongdice\/[^/]+$/);
+      143 | 	await expect(page.getByTestId('site-navbar')).toHaveCount(0);
+    > 144 | 	await page.getByRole('button', { name: 'Lobby', exact: true }).click();
+          | 	                                                               ^
+      145 | 	await expect(page.getByTestId('site-navbar')).toBeVisible();
+      146 | });
+      147 |
+        at C:\coding projects\puzzle\tests\browser\pakklongboard.spec.ts:144:65
+
+    Error Context: test-results\pakklongboard-rulebook-is--59e48-the-regular-site-navigation\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\pakklongboard-rulebook-is--59e48-the-regular-site-navigation\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\pakklongboard-rulebook-is--59e48-the-regular-site-navigation\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\browser\pakklongboard.spec.ts:121:1 › rulebook is readable on desktop and mobile with the regular site navigation 

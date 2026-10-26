@@ -1,0 +1,1 @@
+PASS: rolling into a rising die swaps it into the previous square while the player rolls normally.

@@ -113,7 +113,7 @@ import MicIcon from '@lucide/svelte/icons/mic';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | คลังรหัสลับ (Cipher Library) 🔐</title>
+	<title>Chi Fun | คลังรหัสลับ (Cipher Library) 🔐</title>
 	<meta
 		name="description"
 		content="รวบรวมรหัสลับรูปแบบต่าง ๆ (Pigpen, Morse, Caesar, Atbash, Vigenère, Semaphore, Braille, NATO ฯลฯ)"

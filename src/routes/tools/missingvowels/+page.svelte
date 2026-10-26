@@ -116,7 +116,7 @@ import PlusIcon from '@lucide/svelte/icons/plus';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Missing Vowels Builder</title>
+	<title>Chi Fun | Missing Vowels Builder</title>
 	<meta
 		name="description"
 		content="Create and play custom Missing Vowels puzzles. Strip vowels and challenge others to guess the original words."

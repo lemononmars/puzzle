@@ -6,7 +6,7 @@ import AwardIcon from '@lucide/svelte/icons/award';
 </script>
 
 <svelte:head>
-	<title>Puzzle | Deduction Games 🧩</title>
+	<title>Chi Fun | Deduction Games 🧩</title>
 	<meta
 		name="description"
 		content="เกมนิรนัยทายกฎลับ"

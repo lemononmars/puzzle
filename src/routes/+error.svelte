@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
- <title>{status} · Puzzle</title>
+ <title>{status} · Chi Fun</title>
  <meta name="robots" content="noindex" />
 </svelte:head>
 

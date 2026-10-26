@@ -1,0 +1,6 @@
+6:59:16 PM [vite] (ssr) connected.
+
+  VITE v8.3.4  ready in 20652 ms
+
+  ➜  Local:   http://localhost:5195/
+{"startupMs":21029,"pass":false}

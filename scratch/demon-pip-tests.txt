@@ -1,0 +1,12 @@
+
+ RUN  v5.0.3 C:/coding projects/puzzle
+
+
+ Test Files  6 passed (6)
+      Tests  79 passed (79)
+   Start at  10:50:39
+   Duration  1.55s (transform 50%, tests 17%, setup 13%, import 13%, worker 6%)
+
+    Isolate  6 workers spawned · ~296ms startup each (spawn + environment, per file)
+             at least ~592ms faster with isolate: false — reuses workers across files instead of one per file
+

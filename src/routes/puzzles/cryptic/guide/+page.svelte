@@ -33,7 +33,7 @@
 	];
 </script>
 
-<svelte:head><title>Cryptic Guide / คู่มือศัพท์ซับซ้อน · Puzzle</title><meta name="description" content="คู่มือศัพท์ซับซ้อน: นิยาม วัตถุดิบ และประเภทการเล่นคำ พร้อมแหล่งอ้างอิงภาษาอังกฤษ" /></svelte:head>
+<svelte:head><title>Cryptic Guide / คู่มือศัพท์ซับซ้อน · Chi Fun</title><meta name="description" content="คู่มือศัพท์ซับซ้อน: นิยาม วัตถุดิบ และประเภทการเล่นคำ พร้อมแหล่งอ้างอิงภาษาอังกฤษ" /></svelte:head>
 
 <div class="mx-auto max-w-4xl px-4 py-6">
 	<a class="link mb-3 inline-block text-sm" href="/puzzles/cryptic">← Cryptic / ศัพท์ซับซ้อน</a>

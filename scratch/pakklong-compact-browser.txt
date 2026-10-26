@@ -1,0 +1,46 @@
+
+Running 3 tests using 1 worker
+
+  x  1 tests\browser\pakklongboard.spec.ts:3:1 › Pakklong uses a full-width table and supports planning through the next turn (38.1s)
+  ok 2 tests\browser\pakklongboard.spec.ts:155:1 › rulebook is readable on desktop and mobile with the regular site navigation (11.1s)
+  ok 3 tests\browser\pakklongboard.spec.ts:184:1 › Autoplay advances all phases and can be stopped without stale actions (11.7s)
+
+
+  1) tests\browser\pakklongboard.spec.ts:3:1 › Pakklong uses a full-width table and supports planning through the next turn 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('button', { name: 'Change time token at Bookstore' })
+    Expected substring: "Token 1"
+    Received string:    "1"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" getByRole('button', { name: 'Change time token at Bookstore' }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Change time token at Bookstore' })
+        13 × locator resolved to <button aria-expanded="false" aria-haspopup="dialog" aria-controls="planning-picker-4" class="btn planning-token btn-secondary" aria-label="Change time token at Bookstore">1</button>
+           - unexpected value "1"
+
+
+      85 | 			.click();
+      86 | 	}
+    > 87 | 	await expect(page.getByRole('button', { name: 'Change time token at Bookstore' })).toContainText(
+         | 	                                                                                   ^
+      88 | 		'Token 1'
+      89 | 	);
+      90 | 	await page.getByRole('button', { name: 'Change time token at Bookstore' }).click();
+        at C:\coding projects\puzzle\tests\browser\pakklongboard.spec.ts:87:85
+
+    Error Context: test-results\pakklongboard-Pakklong-use-443b4-nning-through-the-next-turn\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\pakklongboard-Pakklong-use-443b4-nning-through-the-next-turn\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\pakklongboard-Pakklong-use-443b4-nning-through-the-next-turn\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\browser\pakklongboard.spec.ts:3:1 › Pakklong uses a full-width table and supports planning through the next turn 
+  2 passed (1.2m)

@@ -12,7 +12,7 @@ $: ({ puzzles } = data);
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Hidden Link</title>
+	<title>Chi Fun | Hidden Link</title>
 </svelte:head>
 
 <div class="container mx-auto px-4 py-6 flex flex-col gap-6 max-w-5xl">

@@ -34,7 +34,7 @@
   } finally { if(current===sequence) busy=false; }
  }
 </script>
-<svelte:head><title>Search / ค้นหา · Puzzle</title><meta name="description" content="Find puzzles, tools, mechanics, and portfolio projects." /></svelte:head>
+<svelte:head><title>Search / ค้นหา · Chi Fun</title><meta name="description" content="Find puzzles, tools, mechanics, and portfolio projects." /></svelte:head>
 <PageHeading title="ค้นหาทั้งเว็บไซต์" eyebrow="FOLLOW YOUR CURIOSITY" description="ค้นชื่อปริศนา เครื่องมือ กลไก และผลงาน โดยไม่เปิดเผยเฉลย" />
 <form onsubmit={(event)=>{event.preventDefault();search();}} class="flex gap-2 mb-6" role="search">
  <label class="input bg-base-100 text-base-content flex flex-1 items-center gap-2 min-w-0"><Search size={20} aria-hidden="true" /><input type="search" bind:value={query} aria-label="Search the website" placeholder="ค้นหา / Search…" class="min-w-0 w-full" /></label>

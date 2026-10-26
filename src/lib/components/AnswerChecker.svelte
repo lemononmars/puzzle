@@ -1,5 +1,4 @@
 <script lang="ts">
- import {updateEntry} from "#lib/progress/local.js";
  let draftReady=false;
 	import { createEventDispatcher, onMount } from 'svelte';
 
@@ -23,7 +22,6 @@
 		if (!result || result===lastFeedback) return;
 		lastFeedback=result;
 		reaction++;
- if(typeof window!=='undefined')updateEntry(window.location.pathname,document.querySelector('main h1')?.textContent||document.title,{status:result.correct?'solved':'in-progress'});
 		history=[...history,{answer:result.answer,correct:result.correct}].slice(-50);
 		if(historyKey && typeof localStorage!=='undefined') try { localStorage.setItem('puzzle-answer-history:'+historyKey,JSON.stringify(history)); } catch {}
 	}

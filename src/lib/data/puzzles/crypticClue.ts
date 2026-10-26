@@ -41,9 +41,13 @@ const hintParts = [
 	['เพื่อ', 'ปลดปล่อย'], ['ติด', 'หนุ่มหาเด็ก'], ['หลัง', 'วานหลังหอ']
 ];
 
+// Initial editorial ratings: 1 = introductory, 2 = intermediate, 3 = tricky.
+const difficulties = [2, 2, 2, 1, 2, 3, 1, 1, 2, 1, 3, 2, 2, 1, 2, 1, 2, 2, 2, 2] as const;
+
 export const crypticClues = entries.map(([clue, definition, wordplay, answer, explanation], index) => ({
 	id: String(index + 1), title: `ศัพท์ซับซ้อน ${String(index + 1).padStart(2, '0')}`,
 	clue, definition, wordplay, answer, explanation,
+	difficulty: difficulties[index],
 	boxCount: letterBoxes(answer).length,
 	hints: [
 		{ key: 'definition', label: 'นิยาม', text: definition, part: index === 17 ? 'ลงสี' : index === 19 ? 'รสเด็ด' : definition },

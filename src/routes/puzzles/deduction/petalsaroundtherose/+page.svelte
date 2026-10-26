@@ -116,7 +116,7 @@ import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 </script>
 
 <svelte:head>
-	<title>Puzzle | Petals Around the Rose 🌹</title>
+	<title>Chi Fun | Petals Around the Rose 🌹</title>
 	<meta
 		name="description"
 		content="เกมกลีบรอบกุหลาบ"

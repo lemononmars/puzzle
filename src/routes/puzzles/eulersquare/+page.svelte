@@ -342,7 +342,7 @@ $: if(progressReady&&puzzle&&playerGrid.length) saveGame('/puzzles/eulersquare',
 </script>
 
 <svelte:head>
-	<title>Euler Square | Code Breaker</title>
+	<title>Euler Square | Chi Fun</title>
 	<meta
 		name="description"
 		content="Euler Square (Graeco-Latin Square) logic puzzle with board sizes 3 to 5, letters, and geometry color symbols."

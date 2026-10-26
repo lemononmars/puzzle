@@ -53,7 +53,7 @@ import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | ตารางคะแนน — แผนที่ไทย</title>
+	<title>Chi Fun | ตารางคะแนน — แผนที่ไทย</title>
 	<meta name="description" content="ตารางคะแนนสูงสุด เกมแผนที่ไทย แข่งกับผู้เล่นทั่วโลก" />
 </svelte:head>
 

@@ -661,7 +661,7 @@ import MicIcon from '@lucide/svelte/icons/mic';
 <svelte:window on:keydown={handleGlobalKeyDown} />
 
 <svelte:head>
-	<title>Code Breaker | Quiz 🇹🇭</title>
+	<title>Chi Fun | Quiz 🇹🇭</title>
 	<meta
 		name="description"
 		content="เกมประลองความรู้รอบตัวไทย สไตล์ Japanese Quiz Show อ่านออกเสียงด้วย Text-to-Speech พร้อมระบบกดกริ่งชิงตอบ"

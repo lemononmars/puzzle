@@ -91,7 +91,7 @@ import GlobeIcon from '@lucide/svelte/icons/globe';
 </script>
 
 <svelte:head>
-	<title>Puzzle | Around the World 🌍</title>
+	<title>Chi Fun | Around the World 🌍</title>
 	<meta
 		name="description"
 		content="เกมเดินทางรอบโลก"

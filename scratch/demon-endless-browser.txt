@@ -1,0 +1,9 @@
+Puzzle route loaded
+P1 cleared
+P2 cleared
+P3 cleared
+P4 cleared
+P5 cleared
+Endless setup loaded
+Settings, HUD, pause, end, summary, retry passed
+PASS: five challenge solutions, Endless setup, score/level HUD, warnings, pause/end, retained settings, full rising grace period, losing animation, summary and retry/back; no runtime errors.

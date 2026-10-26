@@ -137,7 +137,7 @@ import SearchIcon from '@lucide/svelte/icons/search';
 	}
 </script>
 
-<svelte:head><title>Question Review | Code Breaker Admin</title></svelte:head>
+<svelte:head><title>Question Review | Chi Fun Admin</title></svelte:head>
 
 <div class="min-h-screen bg-base-100 text-base-content text-base-content/70 p-4 sm:p-6">
 	<div class="max-w-7xl mx-auto flex flex-col gap-4">

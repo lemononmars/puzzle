@@ -1,0 +1,122 @@
+FAIL expect(locator).not.toContainText(expected) failed
+
+Locator: locator('.phase-bar')
+Expected substring: not "Turn 1 · Planning"
+Received string: "Turn 1 · PlanningPlan your shop visits with time tokens. Lower numbers buy first."
+Timeout: 6000ms
+
+Call log:
+  - Expect "not toContainText" locator('.phase-bar') with timeout 6000ms
+  - waiting for locator('.phase-bar')
+    15 × locator resolved to <div class="phase-bar" aria-label="Game status">…</div>
+       - unexpected value "Turn 1 · PlanningPlan your shop visits with time tokens. Lower numbers buy first."
+
+Marketplace Bazaar
+Turn 1
+Turn 1 · Planning
+
+Plan your shop visits with time tokens. Lower numbers buy first.
+
+1
+Restaurant
+
+Collect money
+
+No money left
+Choose a token first
+2
+Rose
+
+1 money per flower
+
+3
+3
+Choose a token first
+3
+Orchid
+
+1 money per flower
+
+No flowers left
+Choose a token first
+4
+Mums
+
+1 money per flower
+
+No flowers left
+Choose a token first
+5
+Bookstore
+
+Draw an order
+
+1
+White
+9
+4
+Choose a token first
+6
+Tool
+
+Upgrade your shop
+
+Level 1
+Clock
++1
+฿2
+Level 2
+Vase
++2
+฿4
+Level 2
+Ribbons
++2
+฿1
+Level 1
+Flower voucher
+Choose a flower
+฿1
+Level 2
+Tie priority
+First in ties
+฿0
+Choose a token first
+Your flower shop
+0
+
+frosty_dew
+
+5
+0
+0
+0
+0
+0
+0
+0/6
+1
+2
+3
+4
+x
+x
+0/3
+1/4
+1
+Blue
+1
+White
+3
+1
+Room MWOC
+Players
+frosty_dew (You)
+Autoplay · ฿5 · 0 cubes · 0 ribbons
+Flowers arranged: 0 / 0 / 0
+0 pts
+Achievements
+5 finished cards
+Unclaimed
+Game log 2 events
+chat

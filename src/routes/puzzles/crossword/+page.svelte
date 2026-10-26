@@ -12,7 +12,7 @@ $: ({ crosswords } = data);
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Crossword Puzzles</title>
+	<title>Chi Fun | Crossword Puzzles</title>
 </svelte:head>
 
 <div class="container mx-auto px-4 py-6 flex flex-col gap-6 max-w-5xl">

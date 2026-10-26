@@ -57,7 +57,7 @@ import CheckIcon from '@lucide/svelte/icons/check';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Atbash Cipher (รหัสแอตแบช) 🔐</title>
+	<title>Chi Fun | Atbash Cipher (รหัสแอตแบช) 🔐</title>
 	<meta name="description" content="คู่มือและแบบฝึกหัดรหัสลับสะท้อนกระจก Atbash Cipher" />
 </svelte:head>
 

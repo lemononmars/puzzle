@@ -67,7 +67,7 @@ import ListIcon from '@lucide/svelte/icons/list';
 </script>
 
 <svelte:head>
-	<title>Puzzle | พจนานุกรมคำสะกด 📚</title>
+	<title>Chi Fun | พจนานุกรมคำสะกด 📚</title>
 	<meta name="description" content="รวมคำที่มักสะกดผิดบ่อยในภาษาไทย พร้อมระบบค้นหาและตัวกรอง" />
 </svelte:head>
 

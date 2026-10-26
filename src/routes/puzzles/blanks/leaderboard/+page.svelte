@@ -137,7 +137,7 @@ import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | ตารางคะแนน — ซ่อนอักษร</title>
+	<title>Chi Fun | ตารางคะแนน — ซ่อนอักษร</title>
 	<meta name="description" content="ตารางคะแนนสูงสุด เกมซ่อนอักษร แยกตามโหมดและระดับความยาก" />
 </svelte:head>
 

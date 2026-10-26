@@ -678,7 +678,7 @@ import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
 <svelte:window on:keydown={handleKeyDown} />
 
 <svelte:head>
-	<title>Code Breaker | ซ่อนอักษร ✏️</title>
+	<title>Chi Fun | ซ่อนอักษร ✏️</title>
 	<meta name="description" content="เกมเติมตัวอักษรปริศนาในช่องว่าง" />
 </svelte:head>
 

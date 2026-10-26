@@ -142,7 +142,7 @@ import ChevronUpIcon from '@lucide/svelte/icons/chevron-up';
 </script>
 
 <svelte:head>
-	<title>Puzzle | Back to the Future ⏳</title>
+	<title>Chi Fun | Back to the Future ⏳</title>
 	<meta name="description" content="เกม Back to the Future" />
 </svelte:head>
 

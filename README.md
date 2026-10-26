@@ -1,4 +1,4 @@
-# Puzzle
+# Chi Fun / ไขสนุก
 
 Puzzle games, creation tools, and reference resources, migrated from a Code Breaker clone.
 

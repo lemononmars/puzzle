@@ -1,0 +1,80 @@
+{"market":{"x":338,"y":-191.125,"width":380.4375,"height":571},"canvas":{"y":242,"bottom":354,"height":112},"pageWidth":1600,"documentWidth":1600}
+BODY Board games
+Player settings
+storefront
+Marketplace Bazaar
+1
+Restaurant
+฿1
+DROP TOKEN
+2
+Rose
+Empty
+DROP TOKEN
+3
+Orchid
+Empty
+DROP TOKEN
+4
+Mums
+Q2
+Q2
+DROP TOKEN
+5
+Bookstore
+offline_pin
+Q8
+emoji_events
+4p
+DROP TOKEN
+6
+Tool
+LV1
+two clocks
+฿2
+DROP TOKEN
+star
+Achievements goals
+4 pink & 4 white
+UNCLAIMED
+GAME LOG CONSOLE
+[07:05:41 PM]
+***** Turn 1******
+[07:05:41 PM]
+----- planning phase -----
+A
+aged_wildflower
+(You)
+PLANNING TRACK:
+LV0
+play_arrow
+Autoplay
+done_all
+Submit Planning
+local_florist
+FRESH FLOWER VASES
+filter_vintage
+filter_vintage
+filter_vintage
+portrait
+BOUQUET ORDERS (HAND)
+offline_pin
+Q3
+emoji_events
+1p
+hourglass_empty
+TOKENS POOL
+1
+2
+3
+4
+x
+x
+Room #UGBN
+arrow_back
+LOBBY
+emoji_events
+Leaderboard
+RANK	PLAYER	SCORE
+chat
+FAIL board overflows its canvas or is constrained on desktop

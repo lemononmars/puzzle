@@ -46,7 +46,7 @@ $: ({ content, id } = data);
 </script>
 
 <svelte:head>
-	<title>Code Breaker | {content ? content.title : 'Hidden Link'}</title>
+	<title>Chi Fun | {content ? content.title : 'Hidden Link'}</title>
 </svelte:head>
 
 <div class="flex flex-col gap-4 pb-10 max-w-4xl mx-auto px-4 select-none">

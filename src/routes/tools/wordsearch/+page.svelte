@@ -265,7 +265,7 @@ import EyeIcon from '@lucide/svelte/icons/eye';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Word Search Builder</title>
+	<title>Chi Fun | Word Search Builder</title>
 	<meta
 		name="description"
 		content="Create and play custom Word Search puzzles with support for Thai letters. Features difficulty levels and automatic grid generation."

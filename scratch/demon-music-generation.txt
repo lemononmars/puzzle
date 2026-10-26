@@ -1,0 +1,12 @@
+tutorial-garden {
+  bpm: 72,
+  seconds: 53.333333333333336,
+  rms: 0.09671687129073543,
+  peak: 0.7
+}
+endless-twilight {
+  bpm: 84,
+  seconds: 45.714285714285715,
+  rms: 0.11695294160116441,
+  peak: 0.7
+}

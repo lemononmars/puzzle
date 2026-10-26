@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Code Breaker | Logic Puzzle Contest 1 Book - Errata</title>
+	<title>Chi Fun | Logic Puzzle Contest 1 Book - Errata</title>
 </svelte:head>
 
 <h1>Errata</h1>

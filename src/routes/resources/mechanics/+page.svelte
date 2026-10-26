@@ -19,7 +19,7 @@
   return '/resources/mechanics';
  }
 </script>
-<svelte:head><title>Puzzle Mechanics / กลไกปริศนา · Puzzle</title><meta name="description" content="สารานุกรมกลไกปริศนา พร้อมคำอธิบาย วิธีสังเกต และศัพท์ไทย อังกฤษ ญี่ปุ่น" /></svelte:head>
+<svelte:head><title>Puzzle Mechanics / กลไกปริศนา · Chi Fun</title><meta name="description" content="สารานุกรมกลไกปริศนา พร้อมคำอธิบาย วิธีสังเกต และศัพท์ไทย อังกฤษ ญี่ปุ่น" /></svelte:head>
 <div class="space-y-6 text-left">
  <a href="/resources" class="btn btn-sm btn-ghost"><ArrowLeft size={16} />ข้อมูลทั้งหมด</a>
  <PageHeading title="Puzzle Mechanics / กลไกปริศนา" eyebrow={`REFERENCE / ${PUZZLE_MECHANIC_COUNT} TOPICS`} description="สำรวจกลไกปริศนา พร้อมคำอธิบาย วิธีสังเกต และศัพท์ไทย อังกฤษ ญี่ปุ่น" />

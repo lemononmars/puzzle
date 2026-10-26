@@ -8,7 +8,7 @@ import TvIcon from '@lucide/svelte/icons/tv';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Jeopardy Quiz</title>
+	<title>Chi Fun | Jeopardy Quiz</title>
 	<meta name="description" content="ระบบแข่งตอบคำถาม Jeopardy พร้อมระบบให้คะแนน และ Host / Player / Audience Sync" />
 </svelte:head>
 

@@ -1,0 +1,5 @@
+PASS / title and legacy redirect
+PASS /tutorials title and legacy redirect
+PASS /puzzles title and legacy redirect
+PASS /endless title and legacy redirect
+PASS /battle title and legacy redirect

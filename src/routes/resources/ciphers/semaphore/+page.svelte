@@ -69,7 +69,7 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Semaphore Cipher (รหัสธงสัญญาณ) 🚩</title>
+	<title>Chi Fun | Semaphore Cipher (รหัสธงสัญญาณ) 🚩</title>
 	<meta name="description" content="ระบบเรียนรู้และถอดรหัสธงสัญญาณ (Flag Semaphore Cipher) สำหรับนักไขปริศนา" />
 </svelte:head>
 

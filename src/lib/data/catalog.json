@@ -33,6 +33,18 @@
       "mark": "ก",
       "entries": [
         {
+          "title": "คำต่อชิ้น",
+          "description": "ต่อชิ้นคำให้ตรงกับคำใบ้ 5 ข้อ ใช้ทุกชิ้นเพียงครั้งเดียว",
+          "href": "/puzzles/wordpieces",
+          "mark": "ก"
+        },
+        {
+          "title": "Nazo",
+          "description": "ปริศนาภาพและภาษา 29 ข้อ",
+          "href": "/puzzles/nazo",
+          "mark": "?"
+        },
+        {
           "title": "Cryptic Clue / ศัพท์ซับซ้อน",
           "description": "ไขคำใบ้ซ่อนกล พร้อมรายการปริศนาและคู่มือเริ่มต้น",
           "href": "/puzzles/cryptic",
@@ -165,6 +177,18 @@
       "mark": "◈",
       "entries": [
         {
+          "title": "Pip's Plot",
+          "description": "เรียนรู้ลูกเต๋า 3 มิติใน 25 ด่าน A–E พร้อมลูกเต๋าไม้ น้ำแข็ง หิน โลหะ และโหมด Trial",
+          "href": "/puzzles/pips-plot",
+          "mark": "⚄"
+        },
+        {
+          "title": "Puzzle Workshop",
+          "description": "คลิกสะสมชิ้นจิ๊กซอว์ ซื้ออัปเกรด และสร้างโรงงานปริศนา",
+          "href": "/puzzles/puzzle-clicker",
+          "mark": "✦"
+        },
+        {
           "title": "Mathsticks",
           "description": "ปริศนาย้ายไม้ขีดไฟเพื่อแก้สมการคณิตศาสตร์",
           "href": "/puzzles/mathsticks",
@@ -190,8 +214,8 @@
         },
         {
           "title": "ปริศนาภาษาไทย",
-          "description": "แก้ปริศนาภาษาไทยผ่าน Line",
-          "href": "https://line.me/R/ti/p/@231qozuo",
+          "description": "เข้าสอบวิชาภาษาไทยผ่านแชทกับผู้คุมสอบ",
+          "href": "/puzzles/thai-language",
           "mark": "▦"
         },
         {
@@ -199,18 +223,6 @@
           "description": "แก้ชุดปริศนา",
           "href": "/puzzles/puzzlehunt",
           "mark": "▦"
-        },
-        {
-          "title": "EnigMarch 2023",
-          "description": "31 ปริศนารายวัน พร้อมคำใบ้และตัวตรวจคำตอบ",
-          "href": "/puzzles/enigmarch/2023",
-          "mark": "31"
-        },
-        {
-          "title": "EnigMarch 2024",
-          "description": "31 ปริศนา Nazo พร้อมคำอธิบายเป็นคำใบ้และตัวตรวจคำตอบ",
-          "href": "/puzzles/enigmarch/2024",
-          "mark": "?"
         }
       ]
     }

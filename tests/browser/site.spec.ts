@@ -9,7 +9,7 @@ test('mechanics navigation updates the article and is accessible',async({page})=
  expect(audit.violations).toEqual([]);
  await page.getByRole('link',{name:'Next: Read in Number Order',exact:true}).click();
  await expect(page.getByRole('heading',{level:1})).toHaveText('Read in Number Order');
- await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content','Read in Number Order · Puzzle Mechanics · Puzzle');
+ await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content','Read in Number Order · Puzzle Mechanics · Chi Fun');
 });
 
 test('mobile search and navigation stay inside the viewport',async({page})=>{
@@ -38,7 +38,7 @@ test('sharing metadata is rendered on the server without duplicate tags',async({
  const response=await request.get('/portfolio/web-development');
  const html=await response.text();
  expect(html.match(/property="og:title"/g)).toHaveLength(1);
- expect(html).toContain('Web development · Puzzle');
+ expect(html).toContain('Web development · Chi Fun');
  expect(html).toContain('/images/portfolio/thai-board-game-database.png');
  expect(html).toMatch(/property="og:image" content="http[^\"]+"/);
 });

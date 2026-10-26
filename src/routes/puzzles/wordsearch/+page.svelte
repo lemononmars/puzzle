@@ -11,7 +11,7 @@ $: ({ wordsearches } = data);
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Word Search Puzzles</title>
+	<title>Chi Fun | Word Search Puzzles</title>
 </svelte:head>
 
 <div class="container mx-auto px-4 py-6 flex flex-col gap-6 max-w-5xl">

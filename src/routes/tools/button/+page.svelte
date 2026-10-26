@@ -5,7 +5,7 @@ import MonitorIcon from '@lucide/svelte/icons/monitor';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Quiz Button</title>
+	<title>Chi Fun | Quiz Button</title>
 	<meta name="description" content="ระบบปุ่มกดแย่งกันตอบสำหรับแข่งตอบคำถาม" />
 </svelte:head>
 

@@ -24,7 +24,7 @@
 		{/each}
 	<div class="details bg-base-100 text-base-content" aria-live="polite">
 		<h3 class="text-xl">{places[active].label} <span class="text-sm botanical-muted">· {places[active].rooms.length} visits</span></h3>
-		<ul class="visit-list">{#each places[active].rooms as room}<li><strong>{room.title}</strong><span class="botanical-muted">{room.venue}{room.date ? ` · ${room.date}` : ''}</span>{#if room.note}<p class="text-sm">{room.note}</p>{/if}</li>{/each}</ul>
+		<ul class="visit-list">{#each places[active].rooms as room}<li><a class="link link-hover font-bold" href={room.href} target="_blank" rel="noopener noreferrer" aria-label={`${room.title} — ${room.linkLabel} (opens in a new tab)`}>{room.title} ↗</a><span class="botanical-muted">{room.venue}{room.date ? ` · ${room.date}` : ''}</span>{#if room.note}<p class="text-sm">{room.note}</p>{/if}</li>{/each}</ul>
 		<div class="flex flex-wrap gap-2 mt-4">{#each places[active].cities as city}<button class="btn btn-sm btn-outline btn-primary" onclick={() => onselect(city)}>Show {city === 'Totonro, CA' ? 'Toronto' : city} visits ↓</button>{/each}</div>
 	</div>
 	</div>

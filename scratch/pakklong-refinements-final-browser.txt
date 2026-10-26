@@ -1,0 +1,8 @@
+
+Running 3 tests using 1 worker
+
+  ok 1 tests\browser\pakklongboard.spec.ts:3:1 › Pakklong uses a full-width table and supports planning through the next turn (32.6s)
+  ok 2 tests\browser\pakklongboard.spec.ts:155:1 › rulebook is readable on desktop and mobile with the regular site navigation (7.9s)
+  ok 3 tests\browser\pakklongboard.spec.ts:184:1 › Autoplay advances all phases and can be stopped without stale actions (11.8s)
+
+  3 passed (55.5s)

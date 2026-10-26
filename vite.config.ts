@@ -1,8 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
-import vercel from '@sveltejs/adapter-vercel';
-import node from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 // Separate optimizer output for concurrent preview ports and production/check runs.
@@ -12,14 +10,17 @@ const requestedPort = process.argv.find(arg => arg.startsWith('--port='))?.slice
 	?? process.env.npm_config_port
 	?? '5173';
 const cachePort = /^\d{1,5}$/.test(requestedPort) ? requestedPort : '5173';
-export default defineConfig(({ command }) => ({
+export default defineConfig(async ({ command }) => ({
 	cacheDir: command === 'serve' ? `node_modules/.vite/dev-${cachePort}` : 'node_modules/.vite/build',
 	server: { port: 5173, strictPort: true },
 	optimizeDeps: { exclude: ['@lucide/svelte'] },
 	plugins: [
 		tailwindcss(),
 		sveltekit({
-			adapter: process.env.VERCEL ? vercel() : node(),
+			// Deployment adapters are only needed by the production build.
+			adapter: command === 'build'
+				? (await import(process.env.VERCEL ? '@sveltejs/adapter-vercel' : '@sveltejs/adapter-node')).default()
+				: undefined,
 			extensions: ['.svelte', '.svx', '.md'],
 			preprocess: [mdsvex({ extensions: ['.svx', '.md'] }), vitePreprocess()],
 			compilerOptions: { compatibility: { componentApi: 4 } }

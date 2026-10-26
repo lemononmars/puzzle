@@ -1,0 +1,16 @@
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:5193/boardgame
+Call log:
+  - navigating to "http://localhost:5193/boardgame", waiting until "load"
+
+    at C:\coding projects\puzzle\scratch\verify-boardgame.mjs:8:29 {
+  log: [
+    '  - navigating to "http://localhost:5193/boardgame", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v22.13.1

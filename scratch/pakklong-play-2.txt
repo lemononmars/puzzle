@@ -1,0 +1,18 @@
+DESKTOP {"marketY":360.265625,"marketBottom":1192.0625,"tableY":144,"tableWidth":1552,"viewport":1600,"overflow":false}
+PLANNING PASS
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Finish arranging', exact: true }) to be visible
+
+    at C:\coding projects\puzzle\scratch\verify-pakklong-play.mjs:17:70 {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Finish arranging', exact: true }) to be visible"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.13.1

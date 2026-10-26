@@ -1,0 +1,130 @@
+
+> puzzle@0.0.1 check
+> svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
+
+failed to load config from C:\coding projects\puzzle\vite.config.ts
+> Build failed with 8 errors:
+
+[plugin externalize-deps]
+Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:753:9)
+    at Object.execFile (node:child_process:346:17)
+    at exec (node:child_process:233:25)
+    at optimizeSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2481:2)
+    at windowsSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2467:3)
+    at getRealPath (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29592:36)
+    at tryResolveRealFileOrType (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29586:9)
+    at tryCleanFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29335:21)
+    at tryFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29328:14)
+[UNLOADABLE_DEPENDENCY] Could not load node_modules/@tailwindcss/oxide-win32-x64-msvc/tailwindcss-oxide.win32-x64-msvc.node
+     ╭─[ node_modules/@tailwindcss/oxide/index.js:131:33 ]
+     │
+ 131 │         const binding = require('@tailwindcss/oxide-win32-x64-msvc')
+     │                                 ─────────────────┬─────────────────  
+     │                                                  ╰─────────────────── stream did not contain valid UTF-8
+─────╯
+
+[plugin externalize-deps]
+Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:753:9)
+    at Object.execFile (node:child_process:346:17)
+    at exec (node:child_process:233:25)
+    at optimizeSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2481:2)
+    at windowsSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2467:3)
+    at getRealPath (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29592:36)
+    at tryResolveRealFileOrType (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29586:9)
+    at tryCleanFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29335:21)
+    at tryFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29328:14)
+[plugin externalize-deps]
+Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:753:9)
+    at Object.execFile (node:child_process:346:17)
+    at exec (node:child_process:233:25)
+    at optimizeSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2481:2)
+    at windowsSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2467:3)
+    at getRealPath (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29592:36)
+    at tryResolveRealFileOrType (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29586:9)
+    at tryCleanFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29335:21)
+    at tryFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29328:14)
+[plugin externalize-deps]
+Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:753:9)
+    at Object.execFile (node:child_process:346:17)
+    at exec (node:child_process:233:25)
+    at optimizeSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2481:2)
+    at windowsSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2467:3)
+    at getRealPath (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29592:36)
+    at tryResolveRealFileOrType (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29586:9)
+    at tryCleanFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29335:21)
+    at tryFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29328:14)
+...
+
+[plugin externalize-deps]
+Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:753:9)
+    at Object.execFile (node:child_process:346:17)
+    at exec (node:child_process:233:25)
+    at optimizeSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2481:2)
+    at windowsSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2467:3)
+    at getRealPath (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29592:36)
+    at tryResolveRealFileOrType (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29586:9)
+    at tryCleanFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29335:21)
+    at tryFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29328:14)
+[UNLOADABLE_DEPENDENCY] Could not load node_modules/@tailwindcss/oxide-win32-x64-msvc/tailwindcss-oxide.win32-x64-msvc.node
+     ╭─[ node_modules/@tailwindcss/oxide/index.js:131:33 ]
+     │
+ 131 │         const binding = require('@tailwindcss/oxide-win32-x64-msvc')
+     │                                 ─────────────────┬─────────────────  
+     │                                                  ╰─────────────────── stream did not contain valid UTF-8
+─────╯
+
+[plugin externalize-deps]
+Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:753:9)
+    at Object.execFile (node:child_process:346:17)
+    at exec (node:child_process:233:25)
+    at optimizeSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2481:2)
+    at windowsSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2467:3)
+    at getRealPath (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29592:36)
+    at tryResolveRealFileOrType (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29586:9)
+    at tryCleanFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29335:21)
+    at tryFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29328:14)
+[plugin externalize-deps]
+Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:753:9)
+    at Object.execFile (node:child_process:346:17)
+    at exec (node:child_process:233:25)
+    at optimizeSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2481:2)
+    at windowsSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2467:3)
+    at getRealPath (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29592:36)
+    at tryResolveRealFileOrType (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29586:9)
+    at tryCleanFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29335:21)
+    at tryFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29328:14)
+[plugin externalize-deps]
+Error: spawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at spawn (node:child_process:753:9)
+    at Object.execFile (node:child_process:346:17)
+    at exec (node:child_process:233:25)
+    at optimizeSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2481:2)
+    at windowsSafeRealPathSync (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:2467:3)
+    at getRealPath (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29592:36)
+    at tryResolveRealFileOrType (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29586:9)
+    at tryCleanFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29335:21)
+    at tryFsResolve (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:29328:14)
+...
+    at aggregateBindingErrorsIntoJsError (file:///C:/coding%20projects/puzzle/node_modules/rolldown/dist/shared/error-Dsqzw0Oa.mjs:49:18)
+    at unwrapBindingResult (file:///C:/coding%20projects/puzzle/node_modules/rolldown/dist/shared/error-Dsqzw0Oa.mjs:19:128)
+    at #build (file:///C:/coding%20projects/puzzle/node_modules/rolldown/dist/shared/rolldown-D_vNlorD.mjs:133:34)
+    at async bundleConfigFile (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:38081:12)
+    at async bundleAndLoadConfigFile (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:37977:18)
+    at async loadConfigFromFile (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:37938:42)
+    at async Module.resolveConfig (file:///C:/coding%20projects/puzzle/node_modules/vite/dist/node/chunks/node.js:37540:22)
+    at async file:///C:/coding%20projects/puzzle/node_modules/@sveltejs/kit/src/cli.js:102:23

@@ -138,7 +138,7 @@ import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Logic Puzzle Tutorials 🎥</title>
+	<title>Chi Fun | Logic Puzzle Tutorials 🎥</title>
 	<meta name="description" content="คู่มือและคลิปสอนวิธีเล่น 21 ประเภท Logic Puzzles โดย Codebreaker Thailand" />
 </svelte:head>
 

@@ -109,7 +109,7 @@ import CheckIcon from '@lucide/svelte/icons/check';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Caesar Cipher (รหัสซีซาร์)</title>
+	<title>Chi Fun | Caesar Cipher (รหัสซีซาร์)</title>
 	<meta name="description" content="คู่มือ Caesar Cipher & ROT13 ภาษาอังกฤษและภาษาไทย พร้อมตาราง Shift และแบบฝึกหัด" />
 </svelte:head>
 

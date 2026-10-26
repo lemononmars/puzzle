@@ -99,7 +99,7 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | NATO Phonetic Alphabet 🎙️</title>
+	<title>Chi Fun | NATO Phonetic Alphabet 🎙️</title>
 	<meta name="description" content="ตารางคำสื่อสารวิทยุมาตรฐานสากล NATO Phonetic Alphabet (Alpha, Bravo, Charlie...)" />
 </svelte:head>
 

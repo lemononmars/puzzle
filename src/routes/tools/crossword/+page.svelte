@@ -1063,7 +1063,7 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 </script>
 
 <svelte:head>
-	<title>Thai Crossword Builder | Code Breaker</title>
+	<title>Thai Crossword Builder | Chi Fun</title>
 	<meta
 		name="description"
 		content="Build and share Thai crossword puzzles with this advanced tool. Features smart word suggestions and automated solving."

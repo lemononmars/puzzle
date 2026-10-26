@@ -1,0 +1,6 @@
+
+Running 1 test using 1 worker
+
+  ok 1 tests\browser\pakklongboard.spec.ts:121:1 › rulebook is readable on desktop and mobile with the regular site navigation (18.5s)
+
+  1 passed (24.4s)

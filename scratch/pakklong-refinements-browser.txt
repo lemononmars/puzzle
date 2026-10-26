@@ -1,0 +1,52 @@
+
+Running 3 tests using 1 worker
+
+  ok 1 tests\browser\pakklongboard.spec.ts:3:1 › Pakklong uses a full-width table and supports planning through the next turn (36.2s)
+  ok 2 tests\browser\pakklongboard.spec.ts:153:1 › rulebook is readable on desktop and mobile with the regular site navigation (14.4s)
+  x  3 tests\browser\pakklongboard.spec.ts:182:1 › Autoplay advances all phases and can be stopped without stale actions (20.9s)
+
+
+  1) tests\browser\pakklongboard.spec.ts:182:1 › Autoplay advances all phases and can be stopped without stale actions 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.phase-bar')
+    Timeout: 5000ms
+    - Expected  - 4
+    + Received  + 1
+
+    - Turn 2 · Market buying
+    - Active: falling_frost
+    - 1
+    - falling_frost (You)
+    + Turn 2 · Market buyingActive: falling_frost 1falling_frost (You)
+
+    Call log:
+      - Expect "toHaveText" locator('.phase-bar') with timeout 5000ms
+      - waiting for locator('.phase-bar')
+        14 × locator resolved to <header aria-label="Game status" class="game-status-bar phase-bar">…</header>
+           - unexpected value "Turn 2 · Market buyingActive: falling_frost 1falling_frost (You)"
+
+
+      199 | 	const stopped = await page.locator('.phase-bar').innerText();
+      200 | 	await page.waitForTimeout(1200);
+    > 201 | 	await expect(page.locator('.phase-bar')).toHaveText(stopped);
+          | 	                                         ^
+      202 | 	expect(socketLogs).toEqual([]);
+      203 | 	expect(errors).toEqual([]);
+      204 | 	await expect(page.locator('button').filter({ hasText: /^chat$/ })).toHaveCount(0);
+        at C:\coding projects\puzzle\tests\browser\pakklongboard.spec.ts:201:43
+
+    Error Context: test-results\pakklongboard-Autoplay-adv-e42b0-opped-without-stale-actions\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\pakklongboard-Autoplay-adv-e42b0-opped-without-stale-actions\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\pakklongboard-Autoplay-adv-e42b0-opped-without-stale-actions\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\browser\pakklongboard.spec.ts:182:1 › Autoplay advances all phases and can be stopped without stale actions 
+  2 passed (1.5m)

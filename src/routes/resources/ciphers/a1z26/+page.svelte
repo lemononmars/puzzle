@@ -104,7 +104,7 @@ import CheckIcon from '@lucide/svelte/icons/check';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | A1Z26 Cipher (รหัสตัวเลขแทนอักษร)</title>
+	<title>Chi Fun | A1Z26 Cipher (รหัสตัวเลขแทนอักษร)</title>
 	<meta name="description" content="คู่มือ A1Z26 Cipher รหัสตัวเลขแทนตัวอักษร A=1 Z=26 และ ก=1 ฮ=44 พร้อมเครื่องมือแปลงสด" />
 </svelte:head>
 

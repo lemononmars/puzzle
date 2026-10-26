@@ -4,7 +4,7 @@ import UiArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import PuzzlePreviewCard from '#lib/components/ui/PuzzlePreviewCard.svelte';
 	let { data } = $props();
 </script>
-<svelte:head><title>EnigMarch {data.year} · Puzzle</title><meta name="description" content={`Daily puzzles by lemononmars from EnigMarch ${data.year}, with hints and answer checking.`} /></svelte:head>
+<svelte:head><title>EnigMarch {data.year} · Chi Fun</title><meta name="description" content={`Daily puzzles by lemononmars from EnigMarch ${data.year}, with hints and answer checking.`} /></svelte:head>
 <div class="text-left space-y-6">
 	<a href="/puzzles/crafted" class="link link-primary text-sm"><UiArrowLeft size={16} class="inline-block align-middle" aria-hidden="true" /> Crafted puzzles</a>
 	<PageHeading title={`EnigMarch ${data.year}`} description={data.year === 2024 ? 'A collection of Japanese-style nazo puzzles.' : 'Daily puzzles inspired by EnigMarch prompts, with the original hints and solutions.'} />

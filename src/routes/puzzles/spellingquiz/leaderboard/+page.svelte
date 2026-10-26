@@ -123,7 +123,7 @@ import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | ตารางคะแนน — สะกดศัพท์</title>
+	<title>Chi Fun | ตารางคะแนน — สะกดศัพท์</title>
 	<meta name="description" content="ตารางคะแนนสูงสุด เกมสะกดศัพท์ แยกตามวิธีเล่นและโหมด" />
 </svelte:head>
 

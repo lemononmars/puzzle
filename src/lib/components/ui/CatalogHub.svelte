@@ -5,7 +5,7 @@
  type Group = { id:string; title:string; description:string; mark:string; entries:{ title:string; description?:string; href:string; mark:string }[] };
  let { area, groups }: { area:'puzzles'|'tools'|'resources'; groups:Group[] } = $props();
 </script>
-<svelte:head><title>{area === 'puzzles' ? 'Play / เล่นปริศนา' : area === 'tools' ? 'Create / เครื่องมือ' : 'Resources / ข้อมูล'} · Puzzle</title><meta name="description" content={area === 'puzzles' ? 'เลือกสำรวจปริศนาในห้าหมวด ควิซ ปริศนาทำมือ ปริศนาสร้างใหม่ ตรรกะ และเกมอื่น ๆ' : area === 'tools' ? 'เครื่องมือสร้างปริศนา ช่วยหาคำตอบ จัดเกม และตรวจคำตอบ' : 'ข้อมูลสำหรับนักไขปริศนา รหัสลับ คำสะกด คลังความรู้ กลไกปริศนา และคู่มือตรรกะ'} /></svelte:head>
+<svelte:head><title>{area === 'puzzles' ? 'Play / เล่นปริศนา' : area === 'tools' ? 'Create / เครื่องมือ' : 'Resources / ข้อมูล'} · Chi Fun</title><meta name="description" content={area === 'puzzles' ? 'เลือกสำรวจปริศนาในห้าหมวด ควิซ ปริศนาทำมือ ปริศนาสร้างใหม่ ตรรกะ และเกมอื่น ๆ' : area === 'tools' ? 'เครื่องมือสร้างปริศนา ช่วยหาคำตอบ จัดเกม และตรวจคำตอบ' : 'ข้อมูลสำหรับนักไขปริศนา รหัสลับ คำสะกด คลังความรู้ กลไกปริศนา และคู่มือตรรกะ'} /></svelte:head>
 <PageHeading title={area === 'puzzles' ? 'เลือกห้องเล่นของคุณ' : area === 'tools' ? 'เปิดกล่องเครื่องมือ' : 'เปิดชั้นข้อมูลของคุณ'} eyebrow={area === 'puzzles' ? 'FIVE ROOMS / MANY LITTLE DISCOVERIES' : area === 'tools' ? 'FIVE WORKBENCHES / ONE CURIOUS IDEA' : 'FIVE SHELVES / A WORLD OF IDEAS'} description={area === 'puzzles' ? 'ชอบค้นคำ ทายคำถาม หรือไล่เหตุผล? เลือกประตูที่อยากลองเปิด' : area === 'tools' ? 'จากไอเดียแรก ไปจนถึงเกมที่พร้อมเล่น เลือกเครื่องมือที่ช่วยคุณได้' : 'อ่าน ค้นหา และเชื่อมเบาะแส เลือกข้อมูลที่ช่วยให้คุณไปต่อ'} />
 <div class="category-grid">
  {#each groups as group, i}

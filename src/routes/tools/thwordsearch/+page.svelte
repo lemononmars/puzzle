@@ -235,7 +235,7 @@ import XIcon from '@lucide/svelte/icons/x';
 
 
 <svelte:head>
-	<title>{title} | Code Breaker</title>
+	<title>{title} | Chi Fun</title>
 	<meta name="description" content={description} />
 
 

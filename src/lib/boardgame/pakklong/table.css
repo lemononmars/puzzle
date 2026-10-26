@@ -1,0 +1,1275 @@
+.pakklong-table {
+	width: 100%;
+	min-width: 0;
+	text-align: left;
+}
+.pakklong-table .table-heading,
+.pakklong-table .panel-heading,
+.pakklong-table .shop-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+.pakklong-table .table-heading {
+	align-items: flex-start;
+}
+.pakklong-table .table-heading .page-heading {
+	margin-bottom: 16px;
+}
+.pakklong-table .table-panel {
+	min-width: 0;
+	padding: 20px;
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+	border: 1px solid var(--color-base-300);
+	border-radius: 20px;
+}
+.pakklong-table h2 {
+	font-size: 1.1rem;
+	margin: 0 0 12px;
+}
+.pakklong-table h3 {
+	font-size: 0.95rem;
+	margin: 0 0 8px;
+}
+.pakklong-table small {
+	font-size: 0.75rem;
+	font-weight: 400;
+}
+.pakklong-table .help-copy,
+.pakklong-table .empty-copy {
+	font-size: 0.8rem;
+	line-height: 1.6;
+	opacity: 0.8;
+}
+.pakklong-table .phase-bar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+.pakklong-table .phase-bar p {
+	margin-top: 4px;
+	font-size: 0.85rem;
+}
+.pakklong-table .phase-steps {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0.75rem;
+}
+.pakklong-table .phase-steps li {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 6px 8px;
+	border-radius: 10px;
+}
+.pakklong-table .phase-steps li span {
+	display: grid;
+	place-items: center;
+	width: 22px;
+	height: 22px;
+	border: 1px solid var(--color-base-300);
+	border-radius: 50%;
+}
+.pakklong-table .phase-steps .active-phase {
+	background: var(--color-primary);
+	color: var(--color-primary-content);
+}
+.pakklong-table .table-notice {
+	margin-bottom: 16px;
+}
+.pakklong-table .table-workspace {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	align-items: start;
+	gap: 16px;
+}
+.pakklong-table .shop-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 12px;
+}
+.pakklong-table .shop {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	gap: 8px;
+	padding: 14px;
+	background: var(--color-base-200);
+	color: var(--color-base-content);
+	border: 1px solid var(--color-base-300);
+	border-radius: 16px;
+}
+.pakklong-table .active-shop {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 1px;
+}
+.pakklong-table .shop-heading h3 {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0;
+}
+.pakklong-table .shop-number {
+	display: grid;
+	place-items: center;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+	font-size: 0.75rem;
+}
+.pakklong-table .shop-cost {
+	font-size: 0.75rem;
+	opacity: 0.75;
+}
+.pakklong-table .shop-goods {
+	display: flex;
+	align-content: start;
+	align-items: start;
+	flex-wrap: wrap;
+	gap: 8px;
+	min-height: 90px;
+	flex: 1;
+}
+.pakklong-table .planning-slot,
+.pakklong-table .shop-queue {
+	padding-top: 10px;
+	border-top: 1px solid var(--color-base-300);
+}
+.pakklong-table .planning-slot .btn {
+	font-size: 0.75rem;
+	padding-inline: 6px;
+	white-space: normal;
+}
+.pakklong-table .shop-queue {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+.pakklong-table .queue-token {
+	font-size: 0.7rem;
+	border: 2px solid;
+	border-radius: 8px;
+	padding: 2px 5px;
+	overflow-wrap: anywhere;
+}
+.pakklong-table .order-card,
+.pakklong-table .tool-card {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 10px;
+	width: 120px;
+	min-height: 82px;
+	padding: 10px;
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+	border: 1px solid var(--color-base-300);
+	border-radius: 12px;
+	text-align: left;
+	font-size: 0.8rem;
+}
+.pakklong-table button:not(:disabled) {
+	cursor: pointer;
+}
+.pakklong-table button:disabled {
+	cursor: default;
+}
+.pakklong-table .flower-token:disabled,
+.pakklong-table .order-card:disabled,
+.pakklong-table .tool-card:disabled {
+	opacity: 0.75;
+}
+.pakklong-table .selected {
+	outline: 3px solid var(--color-primary);
+	outline-offset: 2px;
+}
+.pakklong-table .flower-requirements,
+.pakklong-table .order-values {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 6px;
+}
+.pakklong-table .flower-count {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 0.75rem;
+}
+.pakklong-table .flower-dot {
+	display: inline-block;
+	flex: none;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #364b3e80;
+	border-radius: 50%;
+}
+.pakklong-table .flower-0 {
+	background: #df7793;
+}
+.pakklong-table .flower-1 {
+	background: #5f9ac4;
+}
+.pakklong-table .flower-2 {
+	background: #fffdf4;
+}
+.pakklong-table .flower-border-0 {
+	border-color: #b44d6a;
+}
+.pakklong-table .flower-border-1 {
+	border-color: #3979a5;
+}
+.pakklong-table .flower-border-2 {
+	border-color: #96958b;
+}
+.pakklong-table .flower-token,
+.pakklong-table .empty-vase {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 3px;
+	min-width: 52px;
+	min-height: 68px;
+	padding: 8px 6px;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 12px;
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+	font-size: 0.8rem;
+}
+.pakklong-table .empty-vase {
+	border: 1px dashed var(--color-base-300);
+}
+.pakklong-table .player-panel {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.pakklong-table .panel-heading h2 {
+	margin: 0;
+}
+.pakklong-table .player-name {
+	border-left: 4px solid;
+	padding-left: 10px;
+	overflow-wrap: anywhere;
+}
+.pakklong-table .resource-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 8px;
+}
+.pakklong-table .resource-grid div {
+	background: var(--color-base-200);
+	color: var(--color-base-content);
+	border-radius: 10px;
+	padding: 8px 4px;
+	text-align: center;
+}
+.pakklong-table .resource-grid dt {
+	font-size: 0.65rem;
+}
+.pakklong-table .resource-grid dd {
+	font-size: 1.05rem;
+	font-weight: 700;
+}
+.pakklong-table .token-pool {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-block: 10px;
+}
+.pakklong-table .token-pool .btn {
+	min-width: 44px;
+}
+.pakklong-table .vase-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
+	gap: 8px;
+}
+.pakklong-table .order-hand {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.pakklong-table .player-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.pakklong-table .table-details {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+	min-width: 0;
+}
+.pakklong-table .player-list,
+.pakklong-table .achievement-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.pakklong-table .player-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	border-left: 4px solid;
+	padding: 8px;
+	background: var(--color-base-200);
+	color: var(--color-base-content);
+	border-radius: 8px;
+	font-size: 0.8rem;
+}
+.pakklong-table .player-row small {
+	display: block;
+}
+.pakklong-table .current-player {
+	outline: 2px solid var(--color-primary);
+}
+.pakklong-table .achievement {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 4px;
+	padding: 10px;
+	border: 1px solid var(--color-base-300);
+	border-radius: 10px;
+	text-align: left;
+	font-size: 0.8rem;
+}
+.pakklong-table .achievement:not(:disabled) {
+	background: var(--color-warning);
+	color: var(--color-warning-content);
+}
+.pakklong-table .game-log {
+	grid-column: 1 / -1;
+}
+.pakklong-table .game-log summary {
+	cursor: pointer;
+	font-weight: 600;
+}
+.pakklong-table .game-log ol {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	max-height: 240px;
+	overflow-y: auto;
+	margin: 12px 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: 0.75rem;
+}
+.pakklong-table .game-log li {
+	display: flex;
+	gap: 12px;
+	padding-block: 4px;
+	border-bottom: 1px solid var(--color-base-300);
+}
+.pakklong-table .game-log time {
+	flex: none;
+	opacity: 0.7;
+}
+.pakklong-table .pregame {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 16px;
+	max-width: 540px;
+}
+@media (min-width: 1200px) {
+	.pakklong-table .table-workspace {
+		grid-template-columns: minmax(0, 1fr) 360px;
+	}
+	.pakklong-table .market-panel {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.pakklong-table .player-panel {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+		position: sticky;
+		top: 88px;
+		max-height: calc(100dvh - 110px);
+		overflow-y: auto;
+	}
+	.pakklong-table .table-details {
+		grid-column: 1;
+		grid-row: 2;
+	}
+}
+@media (max-width: 1199px) {
+	.pakklong-table .player-panel {
+		grid-row: 1;
+	}
+}
+@media (max-width: 699px) {
+	.pakklong-table .table-heading {
+		flex-wrap: wrap;
+		margin-bottom: 16px;
+	}
+	.pakklong-table .table-panel {
+		padding: 14px;
+	}
+	.pakklong-table .shop-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 8px;
+	}
+	.pakklong-table .shop {
+		padding: 10px;
+	}
+	.pakklong-table .shop-heading {
+		align-items: start;
+		flex-wrap: wrap;
+	}
+	.pakklong-table .shop-heading h3 {
+		font-size: 0.8rem;
+	}
+	.pakklong-table .table-details {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.pakklong-table .phase-steps {
+		gap: 4px;
+	}
+	.pakklong-table .phase-steps li {
+		font-size: 0.65rem;
+		padding: 4px;
+	}
+	.pakklong-table .phase-bar {
+		gap: 8px;
+	}
+	.pakklong-table .order-card,
+	.pakklong-table .tool-card {
+		width: 100%;
+	}
+	.pakklong-table .order-hand .order-card {
+		width: calc(50% - 4px);
+	}
+}
+
+.pakklong-table .table-sections,
+.pakklong-table .mobile-market-controls {
+	display: none;
+}
+.pakklong-table .shop:last-child .shop-goods {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 6px;
+}
+.pakklong-table .shop:last-child .tool-card {
+	width: 100%;
+	min-height: 72px;
+	padding: 8px;
+	gap: 4px;
+	line-height: 1.4;
+}
+@media (max-width: 1199px) {
+	.pakklong-table .table-sections {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin-bottom: 12px;
+	}
+	.pakklong-table .mobile-market-controls {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		align-items: center;
+		margin-block: 16px;
+	}
+	.pakklong-table .mobile-market-controls .help-copy {
+		flex-basis: 100%;
+	}
+	.pakklong-table .mobile-market-controls .token-pool {
+		margin: 0;
+	}
+	.pakklong-table .table-workspace[data-panel='market'] > :is(.player-panel, .table-details),
+	.pakklong-table .table-workspace[data-panel='shop'] > :is(.market-panel, .table-details),
+	.pakklong-table .table-workspace[data-panel='details'] > :is(.market-panel, .player-panel) {
+		display: none;
+	}
+}
+@media (max-width: 699px) {
+	.pakklong-table .shop:last-child .shop-goods {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* Dedicated botanical table: art stays behind the interactive pieces. */
+.pakklong-table .table-workspace {
+	gap: 12px;
+}
+.pakklong-table .market-panel {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.pakklong-table .shop {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	min-height: 240px;
+}
+.pakklong-table .shop-art {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+	z-index: -2;
+	pointer-events: none;
+}
+.pakklong-table .shop::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: linear-gradient(
+		180deg,
+		color-mix(in srgb, var(--color-base-100) 70%, transparent),
+		color-mix(in srgb, var(--color-base-100) 32%, transparent) 30%,
+		color-mix(in srgb, var(--color-base-100) 85%, transparent)
+	);
+	pointer-events: none;
+}
+.pakklong-table .shop-heading,
+.pakklong-table .shop-cost {
+	background: color-mix(in srgb, var(--color-base-100) 88%, transparent);
+	border-radius: 8px;
+	padding: 4px 6px;
+	opacity: 1;
+}
+.pakklong-table .shop-heading {
+	align-items: start;
+	flex-wrap: wrap;
+}
+.pakklong-table .shop-heading h3 {
+	font-size: 0.85rem;
+}
+.pakklong-table .shop-goods {
+	align-content: start;
+}
+.pakklong-table .shop-goods .empty-copy {
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+	border-radius: 8px;
+	padding: 4px 8px;
+}
+.pakklong-table .planning-slot .btn {
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+}
+.pakklong-table .planning-slot .btn-secondary {
+	background: var(--color-secondary);
+	color: var(--color-secondary-content);
+}
+.pakklong-table .queue-token {
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+}
+.pakklong-table .market-turn {
+	font-size: 0.8rem;
+}
+.pakklong-table .market-panel .phase-bar {
+	display: block;
+	padding: 8px 0 12px;
+	margin-bottom: 0;
+	font-size: 0.8rem;
+}
+.pakklong-table .market-panel .phase-bar p {
+	font-size: 0.75rem;
+}
+.pakklong-table .flower-token {
+	min-width: 54px;
+	min-height: 64px;
+	gap: 4px;
+}
+.pakklong-table .flower-surface-0 {
+	background: #f4d2dc;
+	color: #713247;
+	border-color: #bd7289;
+}
+.pakklong-table .flower-surface-1 {
+	background: #d5e7f1;
+	color: #315a72;
+	border-color: #6f9db5;
+}
+.pakklong-table .flower-surface-2 {
+	background: #fffbed;
+	color: #686044;
+	border-color: #b2aa8e;
+}
+.pakklong-table .quality-mark {
+	display: inline-flex;
+	align-items: center;
+	gap: 3px;
+}
+.pakklong-table .flower-token:disabled,
+.pakklong-table .order-card:disabled {
+	opacity: 1;
+}
+.pakklong-table .flower-token:not(:disabled):hover,
+.pakklong-table .order-card:not(:disabled):hover {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 1px;
+}
+.pakklong-table .flower-requirements {
+	justify-content: start;
+	gap: 12px;
+}
+.pakklong-table .flower-count {
+	position: relative;
+	font-size: 0.8rem;
+}
+.pakklong-table .flower-ink-0 svg {
+	fill: #efb7c8;
+	stroke: #97455e;
+}
+.pakklong-table .flower-ink-1 svg {
+	fill: #c4e0ef;
+	stroke: #3e7495;
+}
+.pakklong-table .flower-ink-2 svg {
+	fill: #fffdf4;
+	stroke: #756e54;
+}
+.pakklong-table .resource-grid dt {
+	display: flex;
+	justify-content: center;
+}
+.pakklong-table .resource-grid dd {
+	margin-top: 4px;
+}
+.pakklong-table .player-panel h3 {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.pakklong-table .player-panel .icon-hint {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: help;
+}
+.pakklong-table .score-counter {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	font-size: 1rem;
+	font-weight: 700;
+}
+.pakklong-table .icon-actions {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+.pakklong-table .icon-actions .btn {
+	min-width: 48px;
+	min-height: 44px;
+}
+.pakklong-table .ribbon-picker {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+.pakklong-table .room-controls {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 12px;
+	align-items: center;
+	border-top: 1px solid var(--color-base-300);
+	padding-top: 16px;
+	width: 100%;
+}
+.pakklong-table .room-code {
+	font-size: 0.75rem;
+}
+.pakklong-table .room-buttons {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}
+.pakklong-table .bonus-grid {
+	display: flex;
+	gap: 8px;
+	justify-content: space-between;
+}
+.pakklong-table .bonus-grid > button {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+}
+.pakklong-table .table-notice {
+	margin: 12px;
+}
+@media (min-width: 900px) {
+	.pakklong-table .shop-grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+	.pakklong-table .shop:nth-child(5),
+	.pakklong-table .shop:nth-child(6) {
+		grid-column: span 2;
+	}
+	.pakklong-table .shop:last-child .shop-goods {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+@media (min-width: 1200px) {
+	.pakklong-table .player-panel {
+		top: 0;
+		max-height: 100dvh;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+@media (max-width: 1199px) {
+	.pakklong-table .table-sections {
+		position: sticky;
+		top: 0;
+		z-index: 15;
+		background: var(--color-base-200);
+		color: var(--color-base-content);
+		padding: 8px;
+		margin: 0;
+	}
+}
+@media (max-width: 699px) {
+	.pakklong-table .shop {
+		min-height: 220px;
+	}
+}
+
+/* Status stays in view without hiding the board or its active player. */
+.pakklong-table .game-status-bar {
+	position: sticky;
+	top: 0;
+	z-index: 25;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px 24px;
+	padding: 10px 18px;
+	margin: 0;
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+	border-bottom: 1px solid var(--color-base-300);
+	box-shadow: 0 3px 12px #364b3e14;
+}
+.pakklong-table .phase-summary {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+.pakklong-table .active-player-chip {
+	font-size: 0.8rem;
+	border-left: 4px solid;
+	padding-left: 8px;
+}
+.pakklong-table .turn-order {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0.75rem;
+}
+.pakklong-table .turn-order li {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border: 1px solid;
+	border-radius: 12px;
+	padding: 4px 8px;
+}
+.pakklong-table .turn-order li.playing {
+	background: var(--color-primary);
+	color: var(--color-primary-content);
+	outline: 2px solid var(--color-primary);
+	outline-offset: 1px;
+}
+.pakklong-table .turn-order li > span {
+	font-size: 0.7rem;
+	opacity: 0.8;
+}
+.pakklong-table .market-help {
+	font-size: 0.8rem;
+	margin: 8px 0 16px;
+}
+.pakklong-table .shop {
+	scroll-margin-top: calc(var(--status-height, 70px) + 12px);
+}
+.pakklong-table .active-shop {
+	outline: 4px solid var(--color-primary);
+	outline-offset: 1px;
+	box-shadow:
+		0 0 0 7px var(--color-base-300),
+		0 8px 20px #364b3e25;
+}
+.pakklong-table .active-shop .shop-heading {
+	background: var(--color-primary);
+	color: var(--color-primary-content);
+	padding: 8px;
+}
+.pakklong-table .active-shop .shop-heading h3 {
+	color: var(--color-primary-content);
+}
+.pakklong-table .active-shop .shop-number {
+	color: var(--color-primary);
+}
+.pakklong-table .active-shop .shop-heading .badge {
+	background: var(--color-primary-content);
+	color: var(--color-primary);
+	white-space: normal;
+	height: auto;
+	font-size: 0.65rem;
+}
+.pakklong-table .waiting-shop .shop-art {
+	filter: saturate(0.4);
+	opacity: 0.4;
+}
+.pakklong-table .shop-feedback,
+.pakklong-table .player-feedback {
+	padding: 10px;
+	font-size: 0.8rem;
+	line-height: 1.5;
+}
+.pakklong-table .planning-slot {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}
+.pakklong-table .remove-token {
+	flex: none;
+	width: 28px;
+	min-height: 40px;
+	border: 1px solid var(--color-base-300);
+	border-radius: 8px;
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+}
+.planning-picker {
+	position: fixed;
+	inset: auto;
+	margin: 0;
+	width: min(330px, calc(100vw - 24px));
+	max-height: calc(100dvh - 130px);
+	overflow: auto;
+	padding: 16px;
+	border: 1px solid var(--color-base-300);
+	border-radius: 16px;
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+	box-shadow: 0 8px 35px #364b3e35;
+	font-size: 0.85rem;
+}
+.planning-picker p {
+	font-size: 0.75rem;
+	margin-top: 6px;
+}
+.planning-picker .picker-tokens {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 8px;
+	margin-block: 12px;
+}
+.planning-picker .picker-tokens .btn {
+	height: auto;
+	min-height: 64px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 8px 4px;
+}
+.planning-picker small {
+	font-size: 0.65rem;
+	white-space: normal;
+}
+.pakklong-table .finish-phase {
+	display: flex;
+	justify-content: end;
+	padding-top: 20px;
+	margin-top: 12px;
+	border-top: 1px dashed var(--color-base-300);
+}
+.pakklong-table .finish-phase .btn {
+	min-height: 44px;
+}
+.pakklong-table .score-counter.tooltip::before {
+	max-width: 140px;
+	white-space: normal;
+}
+@media (min-width: 1200px) {
+	.pakklong-table .player-panel {
+		top: var(--status-height, 70px);
+		max-height: calc(100dvh - var(--status-height, 70px));
+	}
+}
+@media (max-width: 1199px) {
+	.pakklong-table .table-sections {
+		top: var(--status-height, 70px);
+	}
+}
+
+.pakklong-table .planning-slot {
+	display: flex;
+	justify-content: center;
+}
+.pakklong-table .planning-slot .planning-token,
+.pakklong-table .token-pool .btn,
+.pakklong-table .queue-token,
+.planning-picker .picker-tokens .btn {
+	width: 40px;
+	height: 40px;
+	min-height: 40px;
+	min-width: 40px;
+	padding: 0;
+	border-radius: 50%;
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.pakklong-table .planning-slot .planning-token {
+	font-size: 1.1rem;
+}
+.pakklong-table .planning-token.needs-token {
+	animation: planning-pulse 2s ease-in-out infinite;
+}
+@keyframes planning-pulse {
+	50% {
+		box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-primary) 20%, transparent);
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.pakklong-table .planning-token.needs-token {
+		animation: none;
+	}
+}
+.planning-picker {
+	width: max-content;
+	max-width: calc(100vw - 24px);
+	padding: 8px;
+	border-radius: 28px;
+}
+.planning-picker .picker-tokens {
+	display: grid;
+	grid-template-columns: repeat(6, 40px);
+	gap: 6px;
+	margin: 0;
+}
+@media (max-width: 340px) {
+	.planning-picker .picker-tokens {
+		grid-template-columns: repeat(3, 40px);
+	}
+}
+.pakklong-table .shop-heading {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	align-items: center;
+	gap: 4px 8px;
+}
+.pakklong-table .shop-description {
+	font-size: 0.65rem;
+	text-align: right;
+}
+.pakklong-table .active-shop-badge {
+	grid-column: 1 / -1;
+	max-width: 100%;
+	width: max-content;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height: auto;
+	font-size: 0.62rem;
+}
+.pakklong-table .shop-goods .empty-copy {
+	color: var(--color-error);
+	text-align: center;
+	width: 100%;
+	align-self: center;
+}
+.pakklong-table .shop-goods:has(> .empty-copy:only-child) {
+	place-content: center;
+}
+.pakklong-table .shop:last-child .tool-card {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+	padding: 8px;
+	min-height: 42px;
+	width: auto;
+}
+.pakklong-table .tool-card small {
+	margin-left: auto;
+}
+.pakklong-table .player-panel {
+	overflow-x: hidden;
+	position: relative;
+}
+.pakklong-table .player-panel > * {
+	min-width: 0;
+	max-width: 100%;
+}
+.pakklong-table .player-panel .panel-heading {
+	padding-right: 110px;
+	min-height: 48px;
+}
+.pakklong-table .autoplay-controls {
+	position: absolute;
+	top: 16px;
+	right: 12px;
+	display: flex;
+	align-items: center;
+	gap: 2px;
+}
+.pakklong-table .autoplay-controls .btn {
+	width: 36px;
+	min-height: 36px;
+	height: 36px;
+	padding: 0;
+}
+.pakklong-table .autoplay-controls .select {
+	width: 65px;
+	padding-left: 6px;
+}
+.pakklong-table .player-actions {
+	min-height: 44px;
+}
+.pakklong-table .game-log li {
+	border-left: 4px solid;
+	padding-left: 8px;
+}
+.pakklong-table .flower-requirements,
+.pakklong-table .flower-count {
+	flex-wrap: wrap;
+}
+
+@media (min-width: 1200px) {
+	.pakklong-table .player-panel {
+		position: sticky;
+	}
+}
+
+/* Compact table toolbar and shop footers. */
+.pakklong-table .game-status-bar {
+	display: block;
+}
+.pakklong-table .status-navigation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	width: 100%;
+}
+.pakklong-table .status-navigation .table-sections {
+	display: flex;
+	position: static;
+	margin: 0;
+	gap: 4px;
+	flex-wrap: nowrap;
+}
+.pakklong-table .status-navigation .phase-summary {
+	margin-left: auto;
+	font-size: 0.75rem;
+	white-space: nowrap;
+}
+.pakklong-table .status-players {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	margin-top: 5px;
+}
+.pakklong-table .planning-slot {
+	position: relative;
+	width: 40px;
+	align-self: center;
+}
+.pakklong-table .remove-token {
+	position: absolute;
+	right: -7px;
+	top: 2px;
+	width: 20px;
+	height: 20px;
+	min-height: 20px;
+	border-radius: 50%;
+	padding: 0;
+	line-height: 18px;
+	z-index: 1;
+}
+.pakklong-table .shop-queue {
+	align-items: center;
+	min-height: 46px;
+}
+.pakklong-table .shop-pass {
+	margin-left: auto;
+	height: 36px;
+	min-height: 36px;
+	padding: 4px 8px;
+	font-size: 0.7rem;
+}
+.pakklong-table .pass-hidden {
+	visibility: hidden;
+	pointer-events: none;
+}
+.pakklong-table .flower-token {
+	min-width: 40px;
+	width: 40px;
+	min-height: 52px;
+	padding: 4px;
+	gap: 2px;
+}
+.pakklong-table .flower-token svg {
+	width: 22px;
+	height: 22px;
+}
+.pakklong-table .flower-token .quality-mark svg {
+	width: 11px;
+	height: 11px;
+}
+.pakklong-table .order-card {
+	width: 92px;
+	min-height: 58px;
+	padding: 5px;
+	gap: 4px;
+	font-size: 0.7rem;
+}
+.pakklong-table .order-card .flower-requirements {
+	gap: 3px;
+}
+.pakklong-table .order-card .flower-count {
+	gap: 1px;
+}
+.pakklong-table .order-card .flower-count svg {
+	width: 18px;
+	height: 18px;
+}
+@media (max-width: 699px) {
+	.pakklong-table .game-status-bar {
+		padding: 6px;
+	}
+	.pakklong-table .status-navigation .table-sections .btn {
+		font-size: 0.62rem;
+		min-height: 30px;
+		height: 30px;
+		padding: 4px 6px;
+	}
+	.pakklong-table .status-navigation .phase-summary {
+		font-size: 0.62rem;
+		white-space: normal;
+		text-align: right;
+	}
+	.pakklong-table .status-players {
+		font-size: 0.6rem;
+	}
+	.pakklong-table .turn-order li {
+		padding: 2px 4px;
+		font-size: 0.6rem;
+	}
+	.pakklong-table .market-panel {
+		padding: 6px;
+	}
+	.pakklong-table .market-help {
+		display: none;
+	}
+	.pakklong-table .mobile-market-controls {
+		margin: 0 0 5px;
+		gap: 5px;
+	}
+	.pakklong-table .mobile-market-controls .token-pool {
+		display: none;
+	}
+	.pakklong-table .mobile-market-controls .btn {
+		min-height: 30px;
+		height: 30px;
+		padding: 3px 8px;
+		font-size: 0.65rem;
+	}
+	.pakklong-table .shop-grid {
+		gap: 6px;
+	}
+	.pakklong-table .shop {
+		padding: 6px;
+		gap: 5px;
+		min-height: 0;
+	}
+	.pakklong-table .shop-heading {
+		gap: 3px;
+	}
+	.pakklong-table .shop-heading h3 {
+		font-size: 0.7rem;
+		gap: 3px;
+	}
+	.pakklong-table .shop-number {
+		width: 18px;
+		height: 18px;
+		font-size: 0.6rem;
+	}
+	.pakklong-table .shop-description {
+		font-size: 0.55rem;
+	}
+	.pakklong-table .shop-goods {
+		gap: 3px;
+		min-height: 58px;
+	}
+	.pakklong-table .shop:last-child .shop-goods {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.pakklong-table .shop:last-child .tool-card {
+		gap: 3px;
+		padding: 4px;
+		min-height: 30px;
+		font-size: 0.65rem;
+	}
+	.pakklong-table .tool-card svg {
+		width: 14px;
+		height: 14px;
+	}
+	.pakklong-table .tool-card small {
+		font-size: 0.6rem;
+	}
+	.pakklong-table .shop .order-card {
+		width: calc(50% - 2px);
+		min-height: 52px;
+		padding: 4px;
+	}
+	.pakklong-table .shop .order-card .flower-count svg {
+		width: 15px;
+		height: 15px;
+	}
+	.pakklong-table .planning-slot,
+	.pakklong-table .shop-queue {
+		padding-top: 5px;
+	}
+	.pakklong-table .queue-token {
+		width: 28px;
+		height: 28px;
+		min-width: 28px;
+		min-height: 28px;
+	}
+	.pakklong-table .shop-pass {
+		padding: 3px;
+		gap: 2px;
+	}
+}

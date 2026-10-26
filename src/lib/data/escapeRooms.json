@@ -7,7 +7,10 @@
       "venue": "Brainstorm Escape",
       "city": "Champaign, IL",
       "date": "2016-02-06",
-      "note": ""
+      "note": "",
+      "href": "https://brainstormescapes.com/",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-2",
@@ -15,7 +18,10 @@
       "venue": "CU Adventure",
       "city": "Urbana, IL",
       "date": "2016-02-13",
-      "note": ""
+      "note": "",
+      "href": "https://cuadventures.com/rooms",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-3",
@@ -23,7 +29,10 @@
       "venue": "CU Adventure",
       "city": "Urbana, IL",
       "date": "2016-02-20",
-      "note": ""
+      "note": "",
+      "href": "https://cuadventures.com/rooms",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-4",
@@ -31,7 +40,10 @@
       "venue": "Brainstorm Escape",
       "city": "Champaign, IL",
       "date": "2016-02-28",
-      "note": ""
+      "note": "",
+      "href": "https://brainstormescapes.com/",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-5",
@@ -39,7 +51,10 @@
       "venue": "Brainstorm Escape",
       "city": "Champaign, IL",
       "date": "2016-03-13",
-      "note": ""
+      "note": "",
+      "href": "https://brainstormescapes.com/",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-6",
@@ -47,7 +62,10 @@
       "venue": "PANIQ Room",
       "city": "Chicago, IL",
       "date": "2016-03-23",
-      "note": ""
+      "note": "",
+      "href": "https://paniqescaperoom.com/chicago/en/faq",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-7",
@@ -55,7 +73,10 @@
       "venue": "PANIQ Room",
       "city": "Chicago, IL",
       "date": "2016-03-23",
-      "note": ""
+      "note": "",
+      "href": "https://paniqescaperoom.com/chicago/en/escape-rooms/the-prison",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-8",
@@ -63,7 +84,10 @@
       "venue": "PANIQ Room",
       "city": "Chicago, IL",
       "date": "2016-03-23",
-      "note": ""
+      "note": "",
+      "href": "https://paniqescaperoom.com/chicago/en/faq",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-9",
@@ -71,7 +95,10 @@
       "venue": "Mystery Room",
       "city": "Totonro, CA",
       "date": "2016-05-30",
-      "note": ""
+      "note": "",
+      "href": "https://ca.worldofescapes.com/toronto/quests/Mystery-Room-Tomb-Explorer",
+      "linkLabel": "Historical listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-10",
@@ -79,7 +106,10 @@
       "venue": "Mystery Room",
       "city": "Totonro, CA",
       "date": "2016-05-30",
-      "note": "ROOM WITH STORY? WUT?"
+      "note": "ROOM WITH STORY? WUT?",
+      "href": "https://escapereviews.wixsite.com/index/toronto",
+      "linkLabel": "Historical listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-11",
@@ -87,7 +117,10 @@
       "venue": "The Great Escape Canada",
       "city": "Totonro, CA",
       "date": "2016-05-31",
-      "note": "WORST ROOM"
+      "note": "WORST ROOM",
+      "href": "https://torontoescapegames.wordpress.com/2015/07/15/the-great-escape-canada-the-da-vinci-code/",
+      "linkLabel": "Historical review",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-12",
@@ -95,7 +128,10 @@
       "venue": "Escape Factor",
       "city": "Chicago, IL",
       "date": "2016-06-01",
-      "note": "Solo ! 30 min over..."
+      "note": "Solo ! 30 min over...",
+      "href": "https://escapefactorchicago.com/best-escape-room-timekeepers-trapped-oak-brook-chicago/",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-13",
@@ -103,7 +139,10 @@
       "venue": "Escape Artistry",
       "city": "Chicago, IL",
       "date": "2016-06-02",
-      "note": ""
+      "note": "",
+      "href": "https://escape-artistry.com/escape-the-room/",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-14",
@@ -111,7 +150,10 @@
       "venue": "Escape Bloomington",
       "city": "Bloomington, IL",
       "date": "2016-06-10",
-      "note": "2nd WORST"
+      "note": "2nd WORST",
+      "href": "https://www.escapegame.com/escapebloomington",
+      "linkLabel": "Venue listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-15",
@@ -119,7 +161,10 @@
       "venue": "Escape Bloomington",
       "city": "Bloomington, IL",
       "date": "2016-06-10",
-      "note": ""
+      "note": "",
+      "href": "https://www.escapegame.com/escapebloomington",
+      "linkLabel": "Venue listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-16",
@@ -127,7 +172,10 @@
       "venue": "Escape Bloomington",
       "city": "Bloomington, IL",
       "date": "2016-06-10",
-      "note": ""
+      "note": "",
+      "href": "https://www.escapegame.com/escapebloomington",
+      "linkLabel": "Venue listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-17",
@@ -135,7 +183,10 @@
       "venue": "Escape Bloomington",
       "city": "Bloomington, IL",
       "date": "2016-06-10",
-      "note": ""
+      "note": "",
+      "href": "https://www.escapegame.com/escapebloomington",
+      "linkLabel": "Venue listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-18",
@@ -143,7 +194,10 @@
       "venue": "CU Adventure",
       "city": "Urbana, IL",
       "date": "2016-09-04",
-      "note": "Failed challenge mode. Too many red herrings!!!!"
+      "note": "Failed challenge mode. Too many red herrings!!!!",
+      "href": "https://cuadventures.com/rooms",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-19",
@@ -151,7 +205,10 @@
       "venue": "CU Adventure",
       "city": "Urbana, IL",
       "date": "2016-11-23",
-      "note": ""
+      "note": "",
+      "href": "https://cuadventures.com/rooms",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-20",
@@ -159,7 +216,10 @@
       "venue": "Brainstorm Escape",
       "city": "Champaign, IL",
       "date": "2017-03-04",
-      "note": ""
+      "note": "",
+      "href": "https://brainstormescapes.com/",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-21",
@@ -167,7 +227,10 @@
       "venue": "CU Adventure",
       "city": "Urbana, IL",
       "date": "2017-09-28",
-      "note": "Duo !"
+      "note": "Duo !",
+      "href": "https://cuadventures.com/rooms",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-22",
@@ -175,7 +238,10 @@
       "venue": "CU Adventure",
       "city": "Urbana, IL",
       "date": "2017-12-29",
-      "note": ""
+      "note": "",
+      "href": "https://cuadventures.com/rooms",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-23",
@@ -183,7 +249,10 @@
       "venue": "The Great Escape Room Chicago",
       "city": "Chicago, IL",
       "date": "2018-01-07",
-      "note": ""
+      "note": "",
+      "href": "https://www.escapespy.com/r/the-presidents-bunker/16483",
+      "linkLabel": "Historical listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-24",
@@ -191,7 +260,10 @@
       "venue": "Fox in a Box",
       "city": "Chicago, IL",
       "date": "2018-01-07",
-      "note": ""
+      "note": "",
+      "href": "https://www.foxinaboxchicago.com/reservation/index/game/bunker",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-25",
@@ -199,7 +271,10 @@
       "venue": "Fox in a Box",
       "city": "Chicago, IL",
       "date": "2018-01-07",
-      "note": ""
+      "note": "",
+      "href": "https://www.foxinaboxchicago.com/",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-26",
@@ -207,7 +282,10 @@
       "venue": "Fox in a Box",
       "city": "Chicago, IL",
       "date": "2018-01-08",
-      "note": ""
+      "note": "",
+      "href": "https://www.foxinaboxchicago.com/reservation/index/game/bank",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-27",
@@ -215,7 +293,10 @@
       "venue": "Fox in a Box",
       "city": "Chicago, IL",
       "date": "2018-01-08",
-      "note": ""
+      "note": "",
+      "href": "https://www.foxinaboxchicago.com/reservation/index/game/prison",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-28",
@@ -223,7 +304,10 @@
       "venue": "Brainstorm Escape",
       "city": "Champaign, IL",
       "date": "2018-03-23",
-      "note": "third worst? only 1.5 puzzles. borrrrring."
+      "note": "third worst? only 1.5 puzzles. borrrrring.",
+      "href": "https://brainstormescapes.com/",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-29",
@@ -231,7 +315,10 @@
       "venue": "CU Adventure",
       "city": "Urbana, IL",
       "date": "2018-05-13",
-      "note": "Great as always!"
+      "note": "Great as always!",
+      "href": "https://cuadventures.com/rooms",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-30",
@@ -239,7 +326,10 @@
       "venue": "Lab Escape",
       "city": "Urbana, IL",
       "date": "2018-05-14",
-      "note": "beta tested. Hi-tech!"
+      "note": "beta tested. Hi-tech!",
+      "href": "https://labescape.org/",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-31",
@@ -247,7 +337,10 @@
       "venue": "Escape Room Bangkok",
       "city": "Bangkok",
       "date": null,
-      "note": ":( (summer, 2017)"
+      "note": ":( (summer, 2017)",
+      "href": "https://chillpainai.com/scoop/8857",
+      "linkLabel": "Historical review",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-32",
@@ -255,7 +348,10 @@
       "venue": "Project Panic",
       "city": "Austin, TX",
       "date": "2018-06-27",
-      "note": "Subway theme. Cool tech !"
+      "note": "Subway theme. Cool tech !",
+      "href": "https://morty.app/company/project-panic-escape-rooms",
+      "linkLabel": "Historical listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-33",
@@ -263,7 +359,10 @@
       "venue": "Project Panic",
       "city": "Austin, TX",
       "date": "2018-06-27",
-      "note": "Awesome theme! Fun puzzles!"
+      "note": "Awesome theme! Fun puzzles!",
+      "href": "https://morty.app/company/project-panic-escape-rooms",
+      "linkLabel": "Historical listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-34",
@@ -271,7 +370,10 @@
       "venue": "Maze Rooms",
       "city": "Austin, TX",
       "date": "2018-06-28",
-      "note": "Interesting props, but boring puzzles"
+      "note": "Interesting props, but boring puzzles",
+      "href": "https://unilocal.net/united-states/austin/maze-rooms-austin-56458",
+      "linkLabel": "Venue listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-35",
@@ -279,7 +381,10 @@
       "venue": "Maze Rooms",
       "city": "Austin, TX",
       "date": "2018-06-28",
-      "note": "One of the best!"
+      "note": "One of the best!",
+      "href": "https://unilocal.net/united-states/austin/maze-rooms-austin-56458",
+      "linkLabel": "Venue listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-36",
@@ -287,7 +392,10 @@
       "venue": "11th Hour Escape",
       "city": "Austin, TX",
       "date": "2018-07-01",
-      "note": "Difficult (clueless) puzzles. Interesting theme & adjustable difficulty"
+      "note": "Difficult (clueless) puzzles. Interesting theme & adjustable difficulty",
+      "href": "https://www.escapegame.com/11thhourescape",
+      "linkLabel": "Venue listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-37",
@@ -295,7 +403,10 @@
       "venue": "Tokyo Mystery Circus",
       "city": "Tokyo, Japan",
       "date": "2018-08-01",
-      "note": "Just in time. Great experience"
+      "note": "Just in time. Great experience",
+      "href": "https://mysterycircus.jp/en/events/395",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-38",
@@ -303,7 +414,10 @@
       "venue": "Tokyo Mystery Circus",
       "city": "Tokyo, Japan",
       "date": "2018-08-02",
-      "note": "Action game + puzzle = FUN"
+      "note": "Action game + puzzle = FUN",
+      "href": "https://mysterycircus.jp/s/realstealthgame2/what/",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-39",
@@ -311,7 +425,10 @@
       "venue": "Real Escape Room Asakusa",
       "city": "Tokyo, Japan",
       "date": "2018-08-03",
-      "note": "AWESOME"
+      "note": "AWESOME",
+      "href": "https://realdgame.jp/ajito/asakusa/",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-40",
@@ -319,7 +436,10 @@
       "venue": "Real Escape Room Asakusa",
       "city": "Tokyo, Japan",
       "date": "2018-08-04",
-      "note": "Innovative! I played a Japanese version!"
+      "note": "Innovative! I played a Japanese version!",
+      "href": "https://www.worldescaperooms.com/en/experience/escape-from-hunter-x",
+      "linkLabel": "Room listing",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-41",
@@ -327,7 +447,10 @@
       "venue": "Kid Mai Death Awareness Cafe",
       "city": "Bangkok",
       "date": "2020-12-01",
-      "note": "Enjoyable puzzles"
+      "note": "Enjoyable puzzles",
+      "href": "https://www.deathawarenesscafe.com/contact",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-42",
@@ -335,7 +458,10 @@
       "venue": "Kid Mai Death Awareness Cafe",
       "city": "Bangkok",
       "date": "2021-12-01",
-      "note": "(online version) so many logic leap"
+      "note": "(online version) so many logic leap",
+      "href": "https://www.deathawarenesscafe.com/contact",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-43",
@@ -343,7 +469,10 @@
       "venue": "Kid Mai Death Awareness Cafe",
       "city": "Bangkok",
       "date": "2022-06-01",
-      "note": "Ughh, math, symbols reading left to right, ending"
+      "note": "Ughh, math, symbols reading left to right, ending",
+      "href": "https://www.deathawarenesscafe.com/contact",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-44",
@@ -351,7 +480,10 @@
       "venue": "Puzzle Room Bangkok",
       "city": "Bangkok",
       "date": "2022-04-01",
-      "note": "Good props, above average puzzles, loose theme"
+      "note": "Good props, above average puzzles, loose theme",
+      "href": "https://page.line.me/011fatko",
+      "linkLabel": "Venue website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-45",
@@ -359,7 +491,10 @@
       "venue": "ARoom",
       "city": "Budapest",
       "date": "2025-09-26",
-      "note": "Real train???"
+      "note": "Real train???",
+      "href": "https://aroom.hu/en/metro.html",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-46",
@@ -367,7 +502,10 @@
       "venue": "ARoom",
       "city": "Budapest",
       "date": "2025-09-27",
-      "note": "nice science theme, random calculus, fun ending"
+      "note": "nice science theme, random calculus, fun ending",
+      "href": "https://aroom.hu/en/bunker.html",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-47",
@@ -375,7 +513,10 @@
       "venue": "ARoom",
       "city": "Budapest",
       "date": "2025-09-28",
-      "note": "fun overall, but had two bad puzzles :(, fun ending"
+      "note": "fun overall, but had two bad puzzles :(, fun ending",
+      "href": "https://aroom.hu/en/uncharted-expedition.html",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-48",
@@ -383,7 +524,10 @@
       "venue": "E-Exit",
       "city": "Budapest",
       "date": "2025-09-29",
-      "note": "mind-blowing! minimal text, mostly instructionless, moving car! lift!"
+      "note": "mind-blowing! minimal text, mostly instructionless, moving car! lift!",
+      "href": "https://escaperoom.hu/rooms/secret-subway/",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     },
     {
       "id": "room-49",
@@ -391,7 +535,10 @@
       "venue": "Escape Portal",
       "city": "Bangkok",
       "date": "2025-10-22",
-      "note": "Awesome atmosphere, clean puzzles, nice manual systems"
+      "note": "Awesome atmosphere, clean puzzles, nice manual systems",
+      "href": "https://escapeportal.co/",
+      "linkLabel": "Room website",
+      "linkChecked": "2026-10-22"
     }
   ],
   "miniGames": [

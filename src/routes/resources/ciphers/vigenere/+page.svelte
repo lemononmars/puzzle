@@ -85,7 +85,7 @@ import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 </script>
 
 <svelte:head>
-	<title>Code Breaker | Vigenère Cipher (รหัสวีเชอแนร์) 🔐</title>
+	<title>Chi Fun | Vigenère Cipher (รหัสวีเชอแนร์) 🔐</title>
 	<meta name="description" content="คู่มือ Vigenère Cipher รหัสลับใช้ Keyword พร้อมเครื่องมือแปลงสด ตารางโต้ตอบ Tabula Recta และแบบฝึกหัด" />
 </svelte:head>
 

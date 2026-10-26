@@ -1,7 +1,7 @@
 {
-  "name": "Puzzle",
-  "short_name": "Puzzle",
-  "description": "ศูนย์รวมปริศนา ถอดรหัส และพัซเซิลตรรกะภาษาไทย",
+  "name": "Chi Fun · ไขสนุก",
+  "short_name": "Chi Fun",
+  "description": "ไขสนุกไปกับปริศนา เครื่องมือสร้างปริศนา และเรื่องน่ารู้",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -36,10 +36,8 @@
   ],
   "shortcuts": [
     {
-      "name": "Weekly Puzzle",
-      "short_name": "Weekly",
-      "description": "ปริศนาประจำสัปดาห์",
-      "url": "/puzzles/weekly",
+      "name": "เล่นปริศนา",
+      "url": "/puzzles",
       "icons": [
         {
           "src": "/icons/icon-192x192.png",
@@ -48,34 +46,18 @@
       ]
     },
     {
-      "name": "Puzzle Battle",
-      "short_name": "Battle",
-      "description": "ประลองปริศนาสดแบบเรียลไทม์",
-      "url": "/puzzles/battle",
-      "icons": [
-        {
-          "src": "/icons/icon-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Logic Puzzles",
-      "short_name": "Logic",
-      "description": "พัซเซิลตรรกะ",
-      "url": "/puzzles/logicpuzzle",
-      "icons": [
-        {
-          "src": "/icons/icon-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Tools",
-      "short_name": "เครื่องมือ",
-      "description": "เครื่องมือช่วยสร้างและไขปริศนา",
+      "name": "เครื่องมือ",
       "url": "/tools",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "ข้อมูล",
+      "url": "/resources",
       "icons": [
         {
           "src": "/icons/icon-192x192.png",

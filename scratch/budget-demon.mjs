@@ -1,0 +1,2 @@
+import {start,move,settle,heldMove,puzzles,isClear} from './devilDice.mjs';
+for(let i=0;i<puzzles.length;i++){let s=start(i),now=0;for(const a of puzzles[i].solution){if(typeof a==='object'&&'wait'in a){now+=a.wait;s=settle(s,now);continue;}s=settle(s,now);if(typeof a==='object')now+=180;const n=typeof a==='string'?move(s,a,false,now):heldMove(s,a.direction,180,now);if(!n)throw Error(puzzles[i].id+' blocked '+JSON.stringify(a));s=n;now+=300;}console.log(puzzles[i].id,s.moves,isClear(s));}

@@ -231,7 +231,7 @@ import Minimize2Icon from '@lucide/svelte/icons/minimize-2';
 </script>
 
 <svelte:head>
-	<title>Puzzle | Crossroad 🔀</title>
+	<title>Chi Fun | Crossroad 🔀</title>
 	<meta name="description" content="เติมคำเพื่อสร้างคำทั้งสี่ทิศทาง" />
 </svelte:head>
 

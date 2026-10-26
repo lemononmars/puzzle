@@ -2,7 +2,7 @@
  import LocalDataSettings from "#lib/components/LocalDataSettings.svelte";
  import PageIcon from "#lib/components/ui/PageIcon.svelte";
  import ChevronDown from "@lucide/svelte/icons/chevron-down";
- import Sparkles from "@lucide/svelte/icons/sparkles";
+ import {brand} from "#lib/brand.js";
 	import { preventDefault } from 'svelte/legacy';
 	import PWAInstallSettings from '#lib/components/PWAInstallSettings.svelte';
 
@@ -32,10 +32,10 @@ import XIcon from '@lucide/svelte/icons/x';
  let desktopMenu = $state<number | null>(null);
  let section = $state(3);
  const compact = [
- { title:'เล่น', links:[['/puzzles','ห้องเล่นทั้งหมด'],...catalog.puzzles.map(group => ['/puzzles/'+group.id,group.title])] },
+ { title:'เล่น', links:[['/puzzles','ห้องเล่นทั้งหมด'],['/boardgame','บอร์ดเกม'],...catalog.puzzles.map(group => ['/puzzles/'+group.id,group.title])] },
  { title:'สร้าง', links:[['/tools','กล่องเครื่องมือทั้งหมด'],...catalog.tools.map(group => ['/tools/'+group.id,group.title])] },
  { title:'ค้น', links:[['/search','ค้นหาทั้งเว็บไซต์'],['/resources','ข้อมูลทั้งหมด'],...catalog.resources.map(group => ['/resources/'+group.id,group.title])] },
- { title:'เพิ่มเติม', links:[['/library','ปริศนาของฉัน'],['/portfolio','ผลงาน / เกี่ยวกับฉัน'],['/contact','ติดต่อร่วมงาน'],['/shop','ร้านหนังสือปริศนา']] }
+ { title:'เพิ่มเติม', links:[['/about','เกี่ยวกับ Chi Fun / ไขสนุก'],['/portfolio','ผลงาน / เกี่ยวกับฉัน'],['/contact','ติดต่อร่วมงาน'],['/shop','ร้านหนังสือปริศนา']] }
  ];
  function openSection(index: number) { if (window.matchMedia("(min-width:1024px)").matches) { desktopMenu = index; } else { section = index; openMore = true; } }
 	afterNavigate(() => { openMore = false; desktopMenu = null; });
@@ -73,12 +73,12 @@ import XIcon from '@lucide/svelte/icons/x';
 
 <svelte:window onkeydown={(event) => { if (event.key === 'Escape') desktopMenu = null; }} />
 <div class="compact-navbar bg-base-100 text-base-content">
- <a href="/" class="brand" aria-label="Puzzle หน้าแรก"><span class="bg-primary text-primary-content" aria-hidden="true"><Sparkles size={21} /></span><strong>Puzzle</strong></a>
+ <a href="/" class="brand" aria-label="Chi Fun / ไขสนุก หน้าแรก"><img src={brand.symbol} alt="" width="40" height="35" /><strong>{brand.name}<small>{brand.thaiName}</small></strong></a>
  <nav aria-label="เมนูหลัก" class="compact-links">
   <a href="/" aria-current={currentPath === '/' ? 'page' : undefined} class:active={currentPath === '/'}><HomeIcon size={19} /><span>หน้าแรก</span></a>
   {#each compact as group, i}
    {@const Icon = [PlayCircleIcon, ToolIcon, BookOpenIcon, MoreHorizontalIcon][i]}
-   {@const active = i === 3 ? ['shop','portfolio','contact','library'].some(isActive) : isActive(links[i + 1])}
+   {@const active = i === 3 ? ['shop','portfolio','contact','library','about'].some(isActive) : isActive(links[i + 1])}
    <div class="nav-group" role="group" aria-label={group.title} onpointerenter={() => { if (window.matchMedia('(min-width:1024px)').matches) desktopMenu = i; }} onpointerleave={() => desktopMenu = null} onfocusout={(event) => { if (!(event.relatedTarget instanceof Node) || !event.currentTarget.contains(event.relatedTarget)) desktopMenu = null; }}>
     <button type="button" aria-expanded={desktopMenu === i || (openMore && section === i)} aria-controls={desktopMenu === i ? 'desktop-submenu-' + i : undefined} class:active={active || desktopMenu === i || (openMore && section === i)} onclick={() => openSection(i)}><Icon size={19} /><span>{group.title}</span><span class="chevron" aria-hidden="true"><ChevronDown size={13} /></span></button>
     {#if desktopMenu === i}<div class="dropdown-bridge" id={'desktop-submenu-' + i}><nav class="dropdown-panel bg-base-100 text-base-content" aria-label={group.title + ' — เมนูย่อย'}>
@@ -101,7 +101,7 @@ import XIcon from '@lucide/svelte/icons/x';
  .nav-group { position:relative; } .dropdown-bridge { position:absolute; top:100%; right:0; width:290px; padding-top:8px; } .dropdown-panel { border:1px solid var(--color-base-300); border-radius:20px; padding:8px; box-shadow:0 12px 30px #364b3e18; } .dropdown-panel > :is(a,button) { display:flex; align-items:center; justify-content:flex-start; gap:10px; text-align:left; width:100%; min-height:36px; padding:7px 10px; border-radius:12px; font-size:13px; } .dropdown-panel > :is(a,button):hover { background:var(--color-base-200); }
  @media(max-width:1023px) { .nav-group { flex:1; min-width:0; } .nav-group > button { width:100%; } .dropdown-bridge { display:none; } }
  .compact-navbar { display:flex; align-items:center; justify-content:space-between; gap:24px; max-width:1180px; margin:auto; padding:10px 24px; border:1px solid var(--color-base-300); border-radius:0 0 24px 24px; }
- .brand { display:flex; align-items:center; gap:10px; } .brand > span { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; font-size:22px; }
+ .brand img { object-fit:contain; flex-shrink:0; }.brand strong { display:flex; flex-direction:column; gap:3px; line-height:1.15; }.brand small { font-size:11px; font-weight:500; } .brand { display:flex; align-items:center; gap:10px; } .brand > span { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; font-size:22px; }
  .compact-links { display:flex; gap:6px; } .compact-links > a, .nav-group > button { display:flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:8px 15px; border-radius:16px; font-size:13px; cursor:pointer; }
  .compact-links > a:hover, .nav-group > button:hover { background:var(--color-base-200); } .compact-links > a.active, .nav-group > button.active { background:var(--color-primary); color:var(--color-primary-content); } .compact-links > a.active:hover, .nav-group > button.active:hover { background:var(--color-primary); }
  @media(max-width:1023px) { .compact-navbar { padding:4px 4px max(4px,env(safe-area-inset-bottom)); border-radius:0; border-width:1px 0 0; } .brand,.chevron { display:none; } .compact-links { width:100%; gap:4px; } .compact-links > a, .nav-group > button { flex:1; flex-direction:column; gap:3px; padding:6px 2px; font-size:11px; min-height:52px; } }
