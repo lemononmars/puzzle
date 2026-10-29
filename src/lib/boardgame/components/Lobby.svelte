@@ -29,7 +29,7 @@
    function joinRoom(id){
       socket.emit('try joining room', id, (data)=>{
          if(data.available)
-            goto(`/boardgame/${slug}/${id}`)
+            goto(`/web-game/${slug === 'pakklongdice' ? 'sky-scan' : slug}/${id}`)
          else
             alert(`unable to join because ${data.errorMessage}`)
       })
@@ -41,7 +41,7 @@
          gameTitle: slug,
          maxPlayers: 10
       }, (func) =>{
-         goto(`/boardgame/${slug}/${func}`)
+         goto(`/web-game/${slug === 'pakklongdice' ? 'sky-scan' : slug}/${func}`)
       })
    }
 

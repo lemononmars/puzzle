@@ -1,4 +1,5 @@
 <script lang="ts">
+ import BrandLogo from "#lib/components/ui/BrandLogo.svelte";
 import UiArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
  import ActionLink from '#lib/components/ui/ActionLink.svelte';
  import Surface from '#lib/components/ui/Surface.svelte';
@@ -17,7 +18,7 @@ import UiArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 </script>
 <svelte:head><title>Chi Fun · ไขสนุก</title><meta name="description" content="เล่นปริศนาคำและตรรกะ สร้างปริศนาของคุณ และค้นพบไอเดียใหม่" /></svelte:head>
 <section class="hero-layout">
- <div><p class="botanical-eyebrow">Chi Fun / ไขสนุก</p><h1>พักสักนิด<br />แล้ว<span class="text-primary">คิดให้สนุก.</span></h1><p class="botanical-muted">พื้นที่เล็ก ๆ สำหรับความอยากรู้<br />เล่นกับคำ ไขปริศนา และค้นพบไอเดียใหม่<br />เริ่มจากเกมสั้น ๆ ที่ใช่สำหรับคุณ</p><div class="flex flex-wrap gap-5 mt-7"><ActionLink href="/puzzles">เริ่มเล่นปริศนา ↗</ActionLink><ActionLink href="/tools" secondary>ลองสร้างเอง</ActionLink></div><p class="botanical-muted text-xs mt-5">เล่นได้ฟรี · ภาษาไทย · เปิดรับทุกความสงสัย</p></div>
+ <div><BrandLogo class="w-[210px] mb-4" /><h1>พักสักนิด<br />แล้ว<span class="text-primary">คิดให้สนุก.</span></h1><p class="botanical-muted">พื้นที่เล็ก ๆ สำหรับความอยากรู้<br />เล่นกับคำ ไขปริศนา และค้นพบไอเดียใหม่<br />เริ่มจากเกมสั้น ๆ ที่ใช่สำหรับคุณ</p><div class="flex flex-wrap gap-5 mt-7"><ActionLink href="/puzzles">เริ่มเล่นปริศนา ↗</ActionLink><ActionLink href="/tools" secondary>ลองสร้างเอง</ActionLink></div><p class="botanical-muted text-xs mt-5">เล่นได้ฟรี · ภาษาไทย · เปิดรับทุกความสงสัย</p></div>
  <PuzzleArtwork />
 </section>
 <section class="text-left"><div class="flex justify-between items-center gap-4 mb-6"><h2>วันนี้ อยากเล่นอะไร?</h2><a href="/puzzles" class="text-sm text-primary">ดูทั้งหมด <UiArrowUpRight size={16} class="inline-block align-middle" aria-hidden="true" /></a></div><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">{#each games as game}<LinkCard {...game} />{/each}</div></section>

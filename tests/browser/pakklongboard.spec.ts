@@ -6,7 +6,7 @@ test('Pakklong uses a full-width table and supports planning through the next tu
 	const errors: string[] = [];
 	page.on('pageerror', (error) => errors.push(error.message));
 	await page.setViewportSize({ width: 1600, height: 1000 });
-	await page.goto('/boardgame/pakklongboard');
+	await page.goto('/web-game/pakklongboard');
 	const create = page.getByRole('button', { name: 'Create a new room' });
 	await create.click();
 	await page.waitForURL(/pakklongboard\/[^/]+$/);
@@ -155,7 +155,7 @@ test('Pakklong uses a full-width table and supports planning through the next tu
 test('rulebook is readable on desktop and mobile with the regular site navigation', async ({
 	page
 }, testInfo) => {
-	await page.goto('/boardgame/pakklongboard/rules');
+	await page.goto('/web-game/pakklongboard/rules');
 	await expect(page.getByRole('heading', { name: 'Rulebook', exact: true })).toBeVisible({
 		timeout: 20000
 	});
@@ -173,7 +173,7 @@ test('rulebook is readable on desktop and mobile with the regular site navigatio
 	}
 	await page.getByRole('link', { name: 'Arranging bouquets', exact: true }).click();
 	await expect(page).toHaveURL(/#bouquets$/);
-	await page.goto('/boardgame/pakklongdice');
+	await page.goto('/web-game/pakklongdice');
 	await page.getByRole('button', { name: 'Create a new room' }).click();
 	await page.waitForURL(/pakklongdice\/[^/]+$/);
 	await expect(page.getByTestId('site-navbar')).toHaveCount(0);
@@ -189,7 +189,7 @@ test('Autoplay advances all phases and can be stopped without stale actions', as
 	});
 	page.on('pageerror', (error) => errors.push(error.message));
 	await page.setViewportSize({ width: 1600, height: 1000 });
-	await page.goto('/boardgame/pakklongboard');
+	await page.goto('/web-game/pakklongboard');
 	await page.getByRole('button', { name: 'Create a new room' }).click();
 	await page.waitForURL(/pakklongboard\/[^/]+$/);
 	await page.getByLabel('Add computer players').selectOption('0');

@@ -1,9 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 240">
- <defs><mask id="key-bow"><rect width="280" height="240" fill="white"/><circle cx="71" cy="64" r="16" fill="black"/></mask></defs>
- <g mask="url(#key-bow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M48 41C20 50 22 85 48 86C58 85 65 81 76 70L164 174L186 200L209 181L195 165L211 151L192 131L176 145L166 134" stroke="#364b3e" stroke-width="22"/>
-  <path d="M191 35C161 86 120 120 48 195" stroke="#526b4b" stroke-width="22"/>
-  <path d="M48 41C65 27 90 33 95 57C99 74 88 91 76 70" stroke="#364b3e" stroke-width="22"/>
+ <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path id="key-bow" d="M44.717 76.256A29 29 0 1 1 83.256 90.283L186.256 193.283L206.256 173.283L192.256 159.283L206.256 145.283L188.256 127.283L174.256 141.283L164.256 131.283" stroke="#364b3e" stroke-width="22"/>
+  <path d="M158 87L88 157" stroke="#526b4b" stroke-width="22"/>
  </g>
- <rect x="114" y="114" width="12" height="12" rx="2" transform="rotate(45 120 120)" fill="#e4c1a8"/>
+ <rect x="117" y="116" width="12" height="12" rx="2" transform="rotate(45 123 122)" fill="#e4c1a8"/>
 </svg>

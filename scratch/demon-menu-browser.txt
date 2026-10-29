@@ -1,6 +1,0 @@
-
-Running 1 test using 1 worker
-
-  ok 1 tests\browser\demon-dice-endless.spec.ts:3:1 › Endless allows repeated rolls beyond the tutorial move limit (9.6s)
-
-  1 passed (16.4s)

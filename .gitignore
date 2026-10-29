@@ -3,6 +3,19 @@ node_modules
 /build
 /.svelte-kit
 /package
+# Local research media, extracted frames, previews, and command logs
+/scratch/
+/artifacts/
+
+# Python generator caches
+__pycache__/
+*.py[cod]
+
+# Local tooling caches and compiler state
+.cache/
+*.tsbuildinfo
+*.log
+/templates
 .env
 .env.*
 !.env.example

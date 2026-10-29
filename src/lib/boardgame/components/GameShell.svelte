@@ -48,7 +48,7 @@
     selfInfo.useLocalStorage();
     socket.emit("join room", { roomID, username: $selfInfo.username }, (res) => {
       if (!res?.successful) {
-        goto(`/boardgame/${gameTitle}?error=noroomID`);
+        goto(`/web-game/${gameTitle === 'pakklongdice' ? 'sky-scan' : gameTitle}?error=noroomID`);
       } else {
         $selfInfo.roomID = roomID;
       }
@@ -148,7 +148,7 @@
 
   function returnToLobby() {
     socket.emit("leave room", roomID);
-    goto(`/boardgame/${gameTitle}`);
+    goto(`/web-game/${gameTitle === 'pakklongdice' ? 'sky-scan' : gameTitle}`);
   }
 
   function clearInterface() {
@@ -375,3 +375,4 @@
     </div>
   </div>
 </div>
+

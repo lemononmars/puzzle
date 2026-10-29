@@ -126,7 +126,7 @@
 								{#each [0, 2, 4, 6, 8, 10] as h}
 									{@const y = getChartY(h)}
 									<line x1="60" y1={y} x2="760" y2={y} stroke="var(--color-base-300)" stroke-width="1" stroke-dasharray={h === 0 ? '0' : '4 4'} />
-									<text x="50" y={y + 4} text-anchor="end" fill="var(--color-base-content)" font-size={11} font-family="DM Sans, Noto Serif Thai">{h} ชม.</text>
+									<text x="50" y={y + 4} text-anchor="end" fill="var(--color-base-content)" font-size={11} font-family="DM Sans, Sarabun">{h} ชม.</text>
 								{/each}
 
 								<!-- Axis lines -->

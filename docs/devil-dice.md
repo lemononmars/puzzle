@@ -1,6 +1,6 @@
 # Pip's Plot browser puzzles
 
-Enter at `/puzzles/pips-plot`, a garden-themed game title screen with an illustrated dice bed and mode menu. The previous `/puzzles/devil-dice` route redirects permanently to the new landing page. Tutorials, Puzzles, Endless, and online Battle have separate subroutes. See [online hosting and rules](demon-dice-online.md). The title screen credits Devil Dice as the inspiration. The pure game engine remains in `src/lib/games/devilDice.ts`.
+Enter at `/web-game/pips-plot`, a garden-themed game title screen with an illustrated dice bed and mode menu. The previous `/puzzles/devil-dice` route redirects permanently to the new landing page. Tutorials, Puzzles, Endless, and online Battle have separate subroutes. See [online hosting and rules](demon-dice-online.md). The title screen credits Devil Dice as the inspiration. The pure game engine remains in `src/lib/games/devilDice.ts`.
 
 Gameplay reference: [Giant Bomb's Devil Dice guide](https://giantbomb.com/wiki/Games/Devil_Dice).
 
@@ -34,7 +34,7 @@ The centered tutorial selector groups A–E with native option groups. Completed
 
 ## Endless
 
-`/puzzles/pips-plot/endless` starts on a settings screen. Choose regular, wood, ice, stone, or mixed dice; metal remains puzzle-only. Settings are retained across retry/back within the page. Ending a run returns directly to settings with an option to view its summary. Losing plays a short dizzy-demon animation, then opens a score/level/time/cleared/best-chain summary with Retry and Back to settings actions.
+`/web-game/pips-plot/endless` starts on a settings screen. Choose regular, wood, ice, stone, or mixed dice; metal remains puzzle-only. Settings are retained across retry/back within the page. Ending a run returns directly to settings with an option to view its summary. Losing plays a short dizzy-demon animation, then opens a score/level/time/cleared/best-chain summary with Retry and Back to settings actions.
 
 Dice choices use illustrated radio cards with material previews. Every run randomly chooses the player's supporting die from the eight starting dice. Endless has no dice-move allowance; tutorial and puzzle budgets must never apply to this mode. Time and summary duration use `mm:ss`. The browser regression test `tests/browser/demon-dice-endless.spec.ts` covers rolling repeatedly and after more than a minute.
 
@@ -67,4 +67,11 @@ Run mechanics checks with `npx vitest run src/lib/games/devilDice.test.ts`.
 A1 introduces matching and winning, A5 explains Happy One, and B1 illustrates rolling with before/after dice. These lessons retain a short goal inside the field. The replacement 20-puzzle campaign and legal solution traces are documented in [campaign design](demon-dice-puzzle-campaign.md).
 
 
+
+
+
+Space advances a cleared tutorial after the short Clear pause. In Battle, Space starts another bot round; for online rooms, the host returns everyone to the lobby. Tutorial stars are centered under the move total and Clear heading.
+
+
+Field controls sit inside the frame, with the directional controller at bottom left and actions at bottom right. The renderer reserves a footer viewport so controls cannot cover dice. Blocked moves produce a 260ms directional nudge with a slight compression and a short descending two-note sound, throttled to one event per 300ms. Dice positions and move counts stay unchanged. Reduced motion retains facing and sound while skipping displacement. Valid moves cancel the nudge. This adapts the short impact-and-settle ideas in the Takayu Heavy Stop and After Shake examples. Per-move state text and the external hold progress bar are removed.
 

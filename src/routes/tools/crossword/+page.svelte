@@ -839,7 +839,7 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 		let currY = gridStartY;
 
 		// Pre-calculate height based on actual line wrapping
-		ctx.font = 'bold 18px DM Sans, Noto Serif Thai';
+		ctx.font = 'bold 18px DM Sans, Sarabun';
 		const sectionTitleHeight = 25;
 		const clueLineHeight = 20;
 		const clueSpacing = 5;
@@ -854,7 +854,7 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 				const words = text.split(' ');
 				let line = '';
 				let lineCount = 1;
-				ctx.font = '14px DM Sans, Noto Serif Thai';
+				ctx.font = '14px DM Sans, Sarabun';
 				for (let i = 0; i < words.length; i++) {
 					const testLine = line + words[i] + ' ';
 					if (ctx.measureText(testLine).width > cluePanelWidth && i > 0) {
@@ -882,9 +882,9 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 
 		// Header
 		ctx.fillStyle = '#000000';
-		ctx.font = 'bold 32px DM Sans, Noto Serif Thai';
+		ctx.font = 'bold 32px DM Sans, Sarabun';
 		ctx.fillText(title || 'อักษรไขว้', padding, padding);
-		ctx.font = '16px DM Sans, Noto Serif Thai';
+		ctx.font = '16px DM Sans, Sarabun';
 		ctx.fillStyle = '#666666';
 		ctx.fillText(`By ${author || 'นิรนาม'}`, padding, padding + 30);
 
@@ -906,14 +906,14 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 					const posKey = `${r},${c}`;
 					if (cellNumbers.has(posKey)) {
 						ctx.fillStyle = '#000000';
-						ctx.font = '10px DM Sans, Noto Serif Thai';
+						ctx.font = '10px DM Sans, Sarabun';
 						ctx.fillText((cellNumbers.get(posKey)!).toString(), x + 4, y + 12);
 					}
 
 					// Letter (Answer)
 					if (showAnswers && cell.letter) {
 						ctx.fillStyle = '#000000';
-						ctx.font = 'bold 24px DM Sans, Noto Serif Thai';
+						ctx.font = 'bold 24px DM Sans, Sarabun';
 						ctx.textAlign = 'center';
 						ctx.textBaseline = 'middle';
 						ctx.fillText(cell.letter, x + drawCellSize / 2, y + drawCellSize / 2 + 5);
@@ -930,10 +930,10 @@ import CheckCircleIcon from '@lucide/svelte/icons/circle-check';
 
 		const drawClueSection = (label: string, dir: string) => {
 			ctx.fillStyle = '#000000';
-			ctx.font = 'bold 18px DM Sans, Noto Serif Thai';
+			ctx.font = 'bold 18px DM Sans, Sarabun';
 			ctx.fillText(label, clueX, currY);
 			currY += 25;
-			ctx.font = '14px DM Sans, Noto Serif Thai';
+			ctx.font = '14px DM Sans, Sarabun';
 
 			detectedClues
 				.filter((c) => c.direction === dir)

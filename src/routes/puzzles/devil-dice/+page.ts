@@ -1,2 +1,2 @@
 import { redirect } from '@sveltejs/kit';
-export const load = () => redirect(308, '/puzzles/pips-plot');
+export const load = () => redirect(308, '/web-game/pips-plot');

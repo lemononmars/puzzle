@@ -1,0 +1,4 @@
+import fs from 'node:fs';import ts from 'typescript';
+const source=ts.createSourceFile('dict.ts',fs.readFileSync('src/lib/utils/dict.ts','utf8'),ts.ScriptTarget.Latest,true);const statement=source.statements.find(s=>ts.isVariableStatement(s));const entries=statement.declarationList.declarations[0].initializer.elements.map(e=>e.text);const consonants={},vowels={};for(const word of entries){for(const c of word.trim().normalize('NFC').split('')){const counts=/[ก-ฮ]/.test(c)?consonants:/[ะาิีึืุูเแโใไำฤ]/.test(c)?vowels:null;if(counts)counts[c]=(counts[c]??0)+1;}}
+const weights=counts=>Object.entries(counts).map(([letter,count])=>[letter,Math.max(1,Math.floor(Math.sqrt(count)))]);
+fs.writeFileSync('src/lib/games/countdownLetterFrequency.json',JSON.stringify({consonants:weights(consonants),vowels:weights(vowels)},null,2)+'\n');console.log('Generated Countdown letter weights');

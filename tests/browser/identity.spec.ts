@@ -9,7 +9,7 @@ test('Chi Fun identity is consistent on the About page, navbar and app assets', 
 	await expect(
 		page.getByRole('link', { name: 'Chi Fun / ไขสนุก หน้าแรก', exact: true })
 	).toBeVisible();
-	await expect(page.locator('.brand img')).toHaveAttribute('src', '/images/chi/chi-key.svg');
+	await expect(page.locator('.brand img')).toHaveAttribute('src', '/images/brand/chi-fun-horizontal.svg?brand=lockups-v4');
 	await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute('content', 'Chi Fun');
 	await expect(page.getByRole('heading', { name: 'มีอะไรให้ลองบ้าง?', exact: true })).toBeVisible();
 	const favicon = await request.get('/favicon.svg');

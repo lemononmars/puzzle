@@ -1,6 +1,0 @@
-
-Running 1 test using 1 worker
-
-  ok 1 tests\browser\pakklongboard.spec.ts:184:1 › Autoplay advances all phases and can be stopped without stale actions (33.9s)
-
-  1 passed (47.0s)

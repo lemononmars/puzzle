@@ -1,0 +1,8110 @@
+{
+  "source": "https://www.youtube.com/watch?v=Um5NdG5McKI",
+  "status": "All100 boards clear-replay validated; evidence and inferred unseen faces documented perstage.",
+  "stages": [
+    {
+      "stage": 1,
+      "width": 4,
+      "height": 4,
+      "maxMoves": 2,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 3
+        }
+      ],
+      "validation": {
+        "moves": 2,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": [],
+      "evidence": [
+        {
+          "seconds": 15,
+          "observed": "Initial board and player faces."
+        },
+        {
+          "seconds": 18,
+          "observed": "Initially occluded East side exposed without this die rolling."
+        }
+      ]
+    },
+    {
+      "stage": 2,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 25.5,
+          "file": "scratch/retro-frames/stage-002/frame-00010.jpg",
+          "observed": "Initial player and both top faces; both visible South faces are1. Right die East2 is also shown by Info cube."
+        },
+        {
+          "seconds": 26.5,
+          "file": "scratch/retro-frames/stage-002/frame-00012.jpg",
+          "observed": "Left die stays unchanged; East4 becomes visible after neighbor rolls away."
+        }
+      ],
+      "deductions": "North6 on both dice is opposite the observed South1.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 2,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 3,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 3,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 35.5,
+          "file": "scratch/retro-frames/stage-003/frame-00010.jpg",
+          "observed": "Both separated dice show Top2, South1, East4 before any counted move; player on right die."
+        }
+      ],
+      "deductions": "North6 on both dice is opposite the observed South1.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 3,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 4,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "target": {
+        "top": 3,
+        "quantity": 3
+      },
+      "player": {
+        "x": 3,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 46,
+          "file": "scratch/retro-frames/stage-004/frame-00011.jpg",
+          "observed": "Initial layout/player; right die Top3,South6,East5 (Info cube); front-left die Top6,South2,East4; rear-left die Top3,East2."
+        },
+        {
+          "seconds": 50,
+          "file": "scratch/retro-frames/stage-004/frame-00019.jpg",
+          "observed": "Rear-left Top3 die stays unchanged throughout and exposes South1 after the neighboring Top6 die rolls away."
+        }
+      ],
+      "deductions": "North values are opposite the observed South values.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 4,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 5,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 58,
+          "file": "scratch/retro-frames/stage-005/frame-00011.jpg",
+          "observed": "Initial left die Top5,South4,East1 (also shown by Info cube); right die Top2,South1,East4; player riding left die."
+        }
+      ],
+      "deductions": "North values are opposite the observed South values.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 2,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 6,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 67,
+          "file": "scratch/retro-frames/stage-006/frame-00009.jpg",
+          "observed": "Initial board/player; left Top2 South1 East4 (Info cube), right Top3 South1 East2."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 5,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 7,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 4
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 79.5,
+          "file": "scratch/retro-frames/stage-007/frame-00010.jpg",
+          "observed": "Initial board/player. Rear-left Top1 South5, cyan East4 partially visible. Rear-right Top6 South3 East2. Middle Top2 South3, East hidden by character. Front-left Top4 South1 East5. Front-right Top3 South2 East6 also shown by Info cube."
+        },
+        {
+          "seconds": 81.5,
+          "file": "scratch/retro-frames/stage-007/frame-00014.jpg",
+          "observed": "Rear-left die remains unchanged; its cyan East face is more exposed after the neighboring die rolls."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": [
+        "Middle die at(2,2) East face is occluded in checked frames. East remains null; do not import as a complete state."
+      ],
+      "validation": {
+        "moves": 4,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 8,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 92.5,
+          "file": "scratch/retro-frames/stage-008/frame-00010.jpg",
+          "observed": "Initial board/player: left Top1 South3 East5 (Info cube); rear-right Top2 East1, South occluded by front-right; front-right Top4 South2 East1."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": [
+        "Rear-right die at(2,1) South face is blocked by die at(2,2). North remains null; later checked frame at98s shows it already sinking/occluded."
+      ],
+      "validation": {
+        "moves": 2,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 9,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 2
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 105.5,
+          "file": "scratch/retro-frames/stage-008/frame-00036.jpg",
+          "observed": "Stage009 initial board appears in folder008 due to imperfect chapter boundaries. Both Top2 dice show South1 East4; player die Top4 South2 East1 (Info cube)."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 2,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 10,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 4
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 119.5,
+          "file": "scratch/retro-frames/stage-010/frame-00010.jpg",
+          "observed": "Initial board/player. Rear-left Top2 South1 East4; middle Top1 South2 East3; rear-right Top1 South5 East4; player die Top4 South2 East1 (Info cube); front-right Top1 South3 East5."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 2,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 11,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 2,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 132.5,
+          "file": "scratch/retro-frames/stage-011/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 4,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 12,
+      "width": 5,
+      "height": 2,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "ice",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "ice",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 145.5,
+          "file": "scratch/retro-frames/stage-012/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 12,
+        "reason": "face",
+        "die": 0,
+        "original": {
+          "x": 1,
+          "y": 0,
+          "kind": "ice",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "observedSide": "s",
+          "observedValue": 3,
+          "id": 1
+        },
+        "faces": {
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        "moves": 6
+      },
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 13,
+      "width": 5,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 160,
+          "file": "scratch/retro-frames/stage-013/frame-00013.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 14,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "maxMoves": 8,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "ice",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "ice",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 173.5,
+          "file": "scratch/retro-frames/stage-014/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 14,
+        "reason": "player",
+        "original": {
+          "x": 2,
+          "y": 0,
+          "riding": true
+        },
+        "player": {
+          "x": 2,
+          "y": 1,
+          "riding": true
+        },
+        "moves": 8
+      },
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 15,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 190.5,
+          "file": "scratch/retro-frames/stage-015/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 16,
+      "width": 6,
+      "height": 6,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 204.5,
+          "file": "scratch/retro-frames/stage-016/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 17,
+      "width": 5,
+      "height": 6,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 221,
+          "file": "scratch/retro-frames/stage-017/frame-00011.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 18,
+      "width": 5,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 243.5,
+          "file": "scratch/retro-frames/stage-018/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 19,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 9,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 262.5,
+          "file": "scratch/retro-frames/stage-019/frame-00008.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 20,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "player": {
+        "x": 2,
+        "y": 5,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 4
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 5
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "kind": "normal",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 279.5,
+          "file": "scratch/retro-frames/stage-020/frame-00012.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 5,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 21,
+      "width": 5,
+      "height": 6,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "player": {
+        "x": 1,
+        "y": 5,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 4,
+          "east": 6,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 294.5,
+          "file": "scratch/retro-frames/stage-021/frame-00008.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 5,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 22,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 3,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 314.5,
+          "file": "scratch/retro-frames/stage-022/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 3,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 23,
+      "width": 7,
+      "height": 2,
+      "removedTiles": [],
+      "maxMoves": 10,
+      "player": {
+        "x": 0,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 3
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 328.5,
+          "file": "scratch/retro-frames/stage-023/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 10,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 24,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        }
+      ],
+      "maxMoves": 8,
+      "player": {
+        "x": 5,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "kind": "ice",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "kind": "metal",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 4
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "kind": "metal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 344.5,
+          "file": "scratch/retro-frames/stage-024/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 25,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "maxMoves": 8,
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 364.5,
+          "file": "scratch/retro-frames/stage-025/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 25,
+        "reason": "player",
+        "original": {
+          "x": 1,
+          "y": 1,
+          "riding": true
+        },
+        "player": {
+          "x": 0,
+          "y": 1,
+          "riding": true
+        },
+        "moves": 8
+      },
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 26,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "maxMoves": 8,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 379.5,
+          "file": "scratch/retro-frames/stage-026/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 27,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "wood",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 392.5,
+          "file": "scratch/retro-frames/stage-027/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 28,
+      "width": 3,
+      "height": 2,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 405.5,
+          "file": "scratch/retro-frames/stage-028/frame-00008.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 28,
+        "reason": "player",
+        "original": {
+          "x": 1,
+          "y": 1,
+          "riding": true
+        },
+        "player": {
+          "x": 0,
+          "y": 1,
+          "riding": true
+        },
+        "moves": 7
+      },
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 29,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 0,
+        "y": 4,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 421.5,
+          "file": "scratch/retro-frames/stage-029/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 30,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 8,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "wood",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 431.5,
+          "file": "scratch/retro-frames/stage-030/frame-00008.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 30,
+        "reason": "face",
+        "die": 0,
+        "original": {
+          "x": 1,
+          "y": 0,
+          "kind": "wood",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "observedSide": "e",
+          "observedValue": 2,
+          "id": 1
+        },
+        "faces": {
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        "moves": 8
+      },
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 31,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "stone",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 449,
+          "file": "scratch/retro-frames/stage-031/frame-00007.jpg"
+        },
+        {
+          "seconds": 449.5,
+          "file": "scratch/retro-frames/stage-031/frame-00008.jpg"
+        },
+        {
+          "seconds": 450.5,
+          "file": "scratch/retro-frames/stage-031/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 32,
+      "width": 2,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 461,
+          "file": "scratch/retro-frames/stage-032/frame-00007.jpg"
+        },
+        {
+          "seconds": 461.5,
+          "file": "scratch/retro-frames/stage-032/frame-00008.jpg"
+        },
+        {
+          "seconds": 462.5,
+          "file": "scratch/retro-frames/stage-032/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 33,
+      "width": 5,
+      "height": 6,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        }
+      ],
+      "maxMoves": 9,
+      "player": {
+        "x": 4,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "metal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "wood",
+          "top": 5,
+          "north": 4,
+          "east": 6,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 489,
+          "file": "scratch/retro-frames/stage-033/frame-00007.jpg"
+        },
+        {
+          "seconds": 489.5,
+          "file": "scratch/retro-frames/stage-033/frame-00008.jpg"
+        },
+        {
+          "seconds": 490.5,
+          "file": "scratch/retro-frames/stage-033/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 34,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 4,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 1,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 519,
+          "file": "scratch/retro-frames/stage-034/frame-00007.jpg"
+        },
+        {
+          "seconds": 519.5,
+          "file": "scratch/retro-frames/stage-034/frame-00008.jpg"
+        },
+        {
+          "seconds": 520.5,
+          "file": "scratch/retro-frames/stage-034/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 34,
+        "reason": "face",
+        "die": 0,
+        "original": {
+          "x": 4,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 1
+        },
+        "faces": {
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        "moves": 7
+      },
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 35,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "wood",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 556,
+          "file": "scratch/retro-frames/stage-035/frame-00007.jpg"
+        },
+        {
+          "seconds": 556.5,
+          "file": "scratch/retro-frames/stage-035/frame-00008.jpg"
+        },
+        {
+          "seconds": 557.5,
+          "file": "scratch/retro-frames/stage-035/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 36,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "stone",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 570,
+          "file": "scratch/retro-frames/stage-036/frame-00007.jpg"
+        },
+        {
+          "seconds": 570.5,
+          "file": "scratch/retro-frames/stage-036/frame-00008.jpg"
+        },
+        {
+          "seconds": 571.5,
+          "file": "scratch/retro-frames/stage-036/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 37,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 584,
+          "file": "scratch/retro-frames/stage-037/frame-00007.jpg"
+        },
+        {
+          "seconds": 584.5,
+          "file": "scratch/retro-frames/stage-037/frame-00008.jpg"
+        },
+        {
+          "seconds": 585.5,
+          "file": "scratch/retro-frames/stage-037/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 38,
+      "width": 7,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 607,
+          "file": "scratch/retro-frames/stage-038/frame-00007.jpg"
+        },
+        {
+          "seconds": 607.5,
+          "file": "scratch/retro-frames/stage-038/frame-00008.jpg"
+        },
+        {
+          "seconds": 608.5,
+          "file": "scratch/retro-frames/stage-038/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 39,
+      "width": 7,
+      "height": 2,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 626,
+          "file": "scratch/retro-frames/stage-039/frame-00007.jpg"
+        },
+        {
+          "seconds": 626.5,
+          "file": "scratch/retro-frames/stage-039/frame-00008.jpg"
+        },
+        {
+          "seconds": 627.5,
+          "file": "scratch/retro-frames/stage-039/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 40,
+      "width": 2,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 0,
+        "y": 6,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 6,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "kind": "normal",
+          "top": 2,
+          "north": 1,
+          "east": 3,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 645,
+          "file": "scratch/retro-frames/stage-040/frame-00007.jpg"
+        },
+        {
+          "seconds": 645.5,
+          "file": "scratch/retro-frames/stage-040/frame-00008.jpg"
+        },
+        {
+          "seconds": 646.5,
+          "file": "scratch/retro-frames/stage-040/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 41,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 659,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 42,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 8,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 4
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 5
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 5,
+          "north": 4,
+          "east": 6,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 672,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": [
+        "Rear-left top6 at(1,1) has both visible sides occluded by neighbors; remains unrolled in sampled solution. Exact yaw unknown."
+      ],
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 4
+      },
+      "inferredOrientations": [
+        {
+          "x": 1,
+          "y": 1,
+          "method": "Physical die layout and clear-solution constraints; stationary fully hidden faces normalized when multiple orientations remain equivalent."
+        }
+      ]
+    },
+    {
+      "stage": 43,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": 3,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 691,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 44,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 0,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": 4,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 703,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 45,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 723,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 4,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 46,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "maxMoves": 9,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 5,
+          "north": 4,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "stone",
+          "top": 5,
+          "north": 4,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 5,
+          "north": 1,
+          "east": 4,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 5,
+          "north": 1,
+          "east": 4,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 742,
+          "observed": "Initial board/player and exposed side pips; opposite and third face inferred from canonical die chirality. Stage046 rear South3 clarified745s; frontleft East4 exposed743s."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 46,
+        "reason": "player",
+        "original": {
+          "x": 2,
+          "y": 2,
+          "riding": true
+        },
+        "player": {
+          "x": 1,
+          "y": 2,
+          "riding": true
+        },
+        "moves": 9
+      },
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 47,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "maxMoves": 9,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 763,
+          "observed": "Initial board/player, HUD and exposed adjacent faces; canonical die chirality determines the hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 48,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "maxMoves": 12,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 785,
+          "observed": "Initial board/player, HUD and exposed adjacent faces; canonical die chirality determines the hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 49,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 9,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "stone",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 808,
+          "observed": "Initial board/player, HUD and exposed adjacent faces; canonical die chirality determines the hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 50,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "maxMoves": 10,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 5
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 832,
+          "observed": "Initial board/player, HUD and exposed adjacent faces; canonical die chirality determines the hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 50,
+        "reason": "player",
+        "original": {
+          "x": 2,
+          "y": 2,
+          "riding": true
+        },
+        "player": {
+          "x": 1,
+          "y": 2,
+          "riding": true
+        },
+        "moves": 10
+      },
+      "validation": {
+        "moves": 10,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 51,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 4
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 854,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 51,
+        "reason": "face",
+        "die": 2,
+        "original": {
+          "x": 0,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 3
+        },
+        "faces": {
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        "moves": 4
+      },
+      "validation": {
+        "moves": 4,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 52,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 9,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 4
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 873,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [
+        "Rear-left top1 at(1,1) is enclosed by neighbors on both visible faces; needs later HUD/roll evidence."
+      ],
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 4
+      },
+      "inferredOrientations": [
+        {
+          "x": 1,
+          "y": 1,
+          "method": "Physical die layout and clear-solution constraints; stationary fully hidden faces normalized when multiple orientations remain equivalent."
+        }
+      ]
+    },
+    {
+      "stage": 53,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 1,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 4
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 5
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 897,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 53,
+        "reason": "face",
+        "die": 0,
+        "original": {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 1
+        },
+        "faces": {
+          "top": 6,
+          "north": 2,
+          "east": 3
+        },
+        "moves": 6
+      },
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 54,
+      "width": 5,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 2,
+        "y": 6,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 5
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 918,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 54,
+        "reason": "player",
+        "original": {
+          "x": 3,
+          "y": 6,
+          "riding": false
+        },
+        "player": {
+          "x": 2,
+          "y": 6,
+          "riding": false
+        },
+        "moves": 4
+      },
+      "validation": {
+        "moves": 4,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 55,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 3,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 4
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 5
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 936,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 56,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 4
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 5
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 972,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [
+        "Wood1 at(5,1): only partial side pip visible initially; exact yaw needs later evidence."
+      ],
+      "validation": {
+        "moves": 5,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 4
+      },
+      "inferredOrientations": [
+        {
+          "x": 5,
+          "y": 1,
+          "method": "Physical die layout and clear-solution constraints; stationary fully hidden faces normalized when multiple orientations remain equivalent."
+        }
+      ]
+    },
+    {
+      "stage": 57,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 4
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 5,
+          "north": 4,
+          "east": 6,
+          "id": 5
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1004,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 58,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 11,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 4
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 5
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1020,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 11,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 59,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 14,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 5
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1047,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [
+        "Rear6s at(0,0),(1,0) are enclosed on both visible sides. They appear static until the sixes group is completed; exact yaw unobservable in initial view."
+      ],
+      "validation": {
+        "moves": 14,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 16
+      },
+      "inferredOrientations": [
+        {
+          "x": 0,
+          "y": 0,
+          "method": "Physical die layout and clear-solution constraints; stationary fully hidden faces normalized when multiple orientations remain equivalent."
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "method": "Physical die layout and clear-solution constraints; stationary fully hidden faces normalized when multiple orientations remain equivalent."
+        }
+      ]
+    },
+    {
+      "stage": 60,
+      "width": 3,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 1,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 5
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1079,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        },
+        {
+          "seconds": 1085,
+          "observed": "Central2 South1 becomes visible after the front1 is pushed right; top2 remains unchanged, East4 also visible."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 4,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 61,
+      "width": 6,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 14,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": 3,
+          "id": 5
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1095,
+          "file": "scratch/retro-frames/stage-061/frame-00007.jpg"
+        },
+        {
+          "seconds": 1095.5,
+          "file": "scratch/retro-frames/stage-061/frame-00008.jpg"
+        },
+        {
+          "seconds": 1096.5,
+          "file": "scratch/retro-frames/stage-061/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 14,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 62,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 3,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1118,
+          "file": "scratch/retro-frames/stage-062/frame-00007.jpg"
+        },
+        {
+          "seconds": 1118.5,
+          "file": "scratch/retro-frames/stage-062/frame-00008.jpg"
+        },
+        {
+          "seconds": 1119.5,
+          "file": "scratch/retro-frames/stage-062/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 3,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 63,
+      "width": 7,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 3,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "ice",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "metal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 4
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4,
+          "id": 5
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1133,
+          "file": "scratch/retro-frames/stage-063/frame-00007.jpg"
+        },
+        {
+          "seconds": 1133.5,
+          "file": "scratch/retro-frames/stage-063/frame-00008.jpg"
+        },
+        {
+          "seconds": 1134.5,
+          "file": "scratch/retro-frames/stage-063/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 63,
+        "reason": "player",
+        "original": {
+          "x": 0,
+          "y": 2,
+          "riding": true
+        },
+        "player": {
+          "x": 3,
+          "y": 2,
+          "riding": true
+        },
+        "moves": 12
+      },
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 64,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 14,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 4
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1158,
+          "file": "scratch/retro-frames/stage-064/frame-00007.jpg"
+        },
+        {
+          "seconds": 1158.5,
+          "file": "scratch/retro-frames/stage-064/frame-00008.jpg"
+        },
+        {
+          "seconds": 1159.5,
+          "file": "scratch/retro-frames/stage-064/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 14,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 65,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1188,
+          "file": "scratch/retro-frames/stage-065/frame-00007.jpg"
+        },
+        {
+          "seconds": 1188.5,
+          "file": "scratch/retro-frames/stage-065/frame-00008.jpg"
+        },
+        {
+          "seconds": 1189.5,
+          "file": "scratch/retro-frames/stage-065/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 5,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 66,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "metal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 5
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1204,
+          "file": "scratch/retro-frames/stage-066/frame-00007.jpg"
+        },
+        {
+          "seconds": 1204.5,
+          "file": "scratch/retro-frames/stage-066/frame-00008.jpg"
+        },
+        {
+          "seconds": 1205.5,
+          "file": "scratch/retro-frames/stage-066/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 67,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        }
+      ],
+      "maxMoves": 5,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 4
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1219,
+          "file": "scratch/retro-frames/stage-067/frame-00007.jpg"
+        },
+        {
+          "seconds": 1219.5,
+          "file": "scratch/retro-frames/stage-067/frame-00008.jpg"
+        },
+        {
+          "seconds": 1220.5,
+          "file": "scratch/retro-frames/stage-067/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 5,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 68,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 4
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1241,
+          "file": "scratch/retro-frames/stage-068/frame-00007.jpg"
+        },
+        {
+          "seconds": 1241.5,
+          "file": "scratch/retro-frames/stage-068/frame-00008.jpg"
+        },
+        {
+          "seconds": 1242.5,
+          "file": "scratch/retro-frames/stage-068/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 69,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 4
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1256,
+          "file": "scratch/retro-frames/stage-069/frame-00007.jpg"
+        },
+        {
+          "seconds": 1256.5,
+          "file": "scratch/retro-frames/stage-069/frame-00008.jpg"
+        },
+        {
+          "seconds": 1257.5,
+          "file": "scratch/retro-frames/stage-069/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 70,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        }
+      ],
+      "maxMoves": 3,
+      "player": {
+        "x": 0,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "metal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1277,
+          "file": "scratch/retro-frames/stage-070/frame-00007.jpg"
+        },
+        {
+          "seconds": 1277.5,
+          "file": "scratch/retro-frames/stage-070/frame-00008.jpg"
+        },
+        {
+          "seconds": 1278.5,
+          "file": "scratch/retro-frames/stage-070/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 3,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 71,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 9,
+      "player": {
+        "x": 1,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1296.5,
+          "file": "scratch/retro-frames/stage-071/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1298.5,
+          "file": "scratch/retro-frames/stage-071/frame-00012.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 72,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1314.5,
+          "file": "scratch/retro-frames/stage-072/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1318,
+          "file": "scratch/retro-frames/stage-072/frame-00015.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 72,
+        "reason": "player",
+        "original": {
+          "x": 2,
+          "y": 0,
+          "riding": true
+        },
+        "player": {
+          "x": 2,
+          "y": 1,
+          "riding": true
+        },
+        "moves": 6
+      },
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 73,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 8,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 5,
+          "north": 1,
+          "east": 4,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 4
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1328.5,
+          "file": "scratch/retro-frames/stage-073/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 74,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1346.5,
+          "file": "scratch/retro-frames/stage-074/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 74,
+        "reason": "player",
+        "original": {
+          "x": 2,
+          "y": 3,
+          "riding": true
+        },
+        "player": {
+          "x": 2,
+          "y": 2,
+          "riding": true
+        },
+        "moves": 7
+      },
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 75,
+      "width": 3,
+      "height": 2,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1360,
+          "file": "scratch/retro-frames/stage-075/frame-00011.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1360.5,
+          "file": "scratch/retro-frames/stage-075/frame-00012.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 76,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 9,
+      "player": {
+        "x": 2,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "metal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1378.5,
+          "file": "scratch/retro-frames/stage-076/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 76,
+        "reason": "player",
+        "original": {
+          "x": 1,
+          "y": 0,
+          "riding": true
+        },
+        "player": {
+          "x": 2,
+          "y": 0,
+          "riding": true
+        },
+        "moves": 9
+      },
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 77,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 10,
+      "player": {
+        "x": 2,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "metal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "metal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 4
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": 3,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1394.5,
+          "file": "scratch/retro-frames/stage-077/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 77,
+        "reason": "player",
+        "original": {
+          "x": 2,
+          "y": 1,
+          "riding": true
+        },
+        "player": {
+          "x": 2,
+          "y": 0,
+          "riding": true
+        },
+        "moves": 10
+      },
+      "validation": {
+        "moves": 10,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 78,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 8,
+      "player": {
+        "x": 3,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1418.5,
+          "file": "scratch/retro-frames/stage-078/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 79,
+      "width": 6,
+      "height": 2,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "maxMoves": 9,
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 5,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1440.5,
+          "file": "scratch/retro-frames/stage-079/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 80,
+      "width": 6,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "maxMoves": 8,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 2,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1456.5,
+          "file": "scratch/retro-frames/stage-080/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 80,
+        "reason": "player",
+        "original": {
+          "x": 3,
+          "y": 2,
+          "riding": false
+        },
+        "player": {
+          "x": 2,
+          "y": 2,
+          "riding": false
+        },
+        "moves": 8
+      },
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 81,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4,
+          "id": 4
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "normal",
+          "top": 2,
+          "north": 1,
+          "east": 3,
+          "id": 5
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1501,
+          "file": "scratch/retro-frames/stage-081/frame-00009.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1501.5,
+          "file": "scratch/retro-frames/stage-081/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1503.5,
+          "file": "scratch/retro-frames/stage-081/frame-00014.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 82,
+      "width": 5,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 3,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1520.5,
+          "file": "scratch/retro-frames/stage-082/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1521.5,
+          "file": "scratch/retro-frames/stage-082/frame-00012.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 82,
+        "reason": "player",
+        "original": {
+          "x": 2,
+          "y": 2,
+          "riding": true
+        },
+        "player": {
+          "x": 3,
+          "y": 2,
+          "riding": true
+        },
+        "moves": 6
+      },
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 83,
+      "width": 7,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 5,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 1,
+          "east": 3,
+          "id": 4
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1534.5,
+          "file": "scratch/retro-frames/stage-083/frame-00006.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1535.5,
+          "file": "scratch/retro-frames/stage-083/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1536.5,
+          "file": "scratch/retro-frames/stage-083/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 84,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": 3,
+          "id": 5
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "metal",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1560.5,
+          "file": "scratch/retro-frames/stage-084/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1562,
+          "file": "scratch/retro-frames/stage-084/frame-00011.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1568.5,
+          "file": "scratch/retro-frames/stage-084/frame-00024.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1569.5,
+          "file": "scratch/retro-frames/stage-084/frame-00026.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 85,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 3,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1579.5,
+          "file": "scratch/retro-frames/stage-085/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 86,
+      "width": 5,
+      "height": 2,
+      "removedTiles": [],
+      "maxMoves": 9,
+      "player": {
+        "x": 0,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 2,
+          "north": 1,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 4
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 5
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1598.5,
+          "file": "scratch/retro-frames/stage-086/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 9,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 87,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 11,
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4,
+          "id": 4
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1624.5,
+          "file": "scratch/retro-frames/stage-087/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 11,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 88,
+      "width": 6,
+      "height": 2,
+      "removedTiles": [],
+      "maxMoves": 10,
+      "player": {
+        "x": 3,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "metal",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1642.5,
+          "file": "scratch/retro-frames/stage-088/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1643.5,
+          "file": "scratch/retro-frames/stage-088/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 10,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 89,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        }
+      ],
+      "maxMoves": 11,
+      "player": {
+        "x": 2,
+        "y": 5,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "kind": "wood",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1658.5,
+          "file": "scratch/retro-frames/stage-089/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1659.5,
+          "file": "scratch/retro-frames/stage-089/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 11,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 90,
+      "width": 2,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 8,
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "id": 2
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1680.5,
+          "file": "scratch/retro-frames/stage-090/frame-00008.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        },
+        {
+          "seconds": 1681.5,
+          "file": "scratch/retro-frames/stage-090/frame-00010.jpg",
+          "observed": "Initial board/player and visible side faces; later stationary face exposure where noted."
+        }
+      ],
+      "ambiguities": [],
+      "validation": {
+        "moves": 8,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 91,
+      "width": 5,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 4
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 5
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1720,
+          "file": "scratch/retro-frames/stage-091/frame-00007.jpg"
+        },
+        {
+          "seconds": 1720.5,
+          "file": "scratch/retro-frames/stage-091/frame-00008.jpg"
+        },
+        {
+          "seconds": 1721.5,
+          "file": "scratch/retro-frames/stage-091/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 4
+      },
+      "inferredOrientations": [
+        {
+          "x": 1,
+          "y": 1,
+          "method": "Physical die layout and clear-solution constraints; stationary fully hidden faces normalized when multiple orientations remain equivalent."
+        }
+      ]
+    },
+    {
+      "stage": 92,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 10,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1739,
+          "file": "scratch/retro-frames/stage-092/frame-00007.jpg"
+        },
+        {
+          "seconds": 1739.5,
+          "file": "scratch/retro-frames/stage-092/frame-00008.jpg"
+        },
+        {
+          "seconds": 1740.5,
+          "file": "scratch/retro-frames/stage-092/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 10,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 93,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1756,
+          "file": "scratch/retro-frames/stage-093/frame-00007.jpg"
+        },
+        {
+          "seconds": 1756.5,
+          "file": "scratch/retro-frames/stage-093/frame-00008.jpg"
+        },
+        {
+          "seconds": 1757.5,
+          "file": "scratch/retro-frames/stage-093/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 94,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "id": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "id": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1784,
+          "file": "scratch/retro-frames/stage-094/frame-00007.jpg"
+        },
+        {
+          "seconds": 1784.5,
+          "file": "scratch/retro-frames/stage-094/frame-00008.jpg"
+        },
+        {
+          "seconds": 1785.5,
+          "file": "scratch/retro-frames/stage-094/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 5,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 4
+      },
+      "inferredOrientations": [
+        {
+          "x": 1,
+          "y": 1,
+          "method": "Physical die layout and clear-solution constraints; stationary fully hidden faces normalized when multiple orientations remain equivalent."
+        }
+      ]
+    },
+    {
+      "stage": 95,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "metal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 5,
+          "north": 4,
+          "east": 6,
+          "id": 3
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 4
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "id": 5
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1799,
+          "file": "scratch/retro-frames/stage-095/frame-00007.jpg"
+        },
+        {
+          "seconds": 1799.5,
+          "file": "scratch/retro-frames/stage-095/frame-00008.jpg"
+        },
+        {
+          "seconds": 1800.5,
+          "file": "scratch/retro-frames/stage-095/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "replayCorrection": {
+        "stage": 95,
+        "reason": "player",
+        "original": {
+          "x": 1,
+          "y": 0,
+          "riding": true
+        },
+        "player": {
+          "x": 1,
+          "y": 1,
+          "riding": true
+        },
+        "moves": 7
+      },
+      "validation": {
+        "moves": 7,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 96,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "ice",
+          "top": 1,
+          "north": 5,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 4
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 5
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1826,
+          "file": "scratch/retro-frames/stage-096/frame-00007.jpg"
+        },
+        {
+          "seconds": 1826.5,
+          "file": "scratch/retro-frames/stage-096/frame-00008.jpg"
+        },
+        {
+          "seconds": 1827.5,
+          "file": "scratch/retro-frames/stage-096/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1,
+        "note": "Historical guide has U for the final move. The recorded game shows a LEFT push at1852s; the corrected input clears in12 moves."
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 97,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "kind": "wood",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 5
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1857,
+          "file": "scratch/retro-frames/stage-097/frame-00007.jpg"
+        },
+        {
+          "seconds": 1857.5,
+          "file": "scratch/retro-frames/stage-097/frame-00008.jpg"
+        },
+        {
+          "seconds": 1858.5,
+          "file": "scratch/retro-frames/stage-097/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 6,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 98,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "id": 1
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "kind": "metal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "id": 5
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1884,
+          "file": "scratch/retro-frames/stage-098/frame-00007.jpg"
+        },
+        {
+          "seconds": 1884.5,
+          "file": "scratch/retro-frames/stage-098/frame-00008.jpg"
+        },
+        {
+          "seconds": 1885.5,
+          "file": "scratch/retro-frames/stage-098/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 99,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 2
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 3
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 4
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "id": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1940,
+          "file": "scratch/retro-frames/stage-099/frame-00007.jpg"
+        },
+        {
+          "seconds": 1940.5,
+          "file": "scratch/retro-frames/stage-099/frame-00008.jpg"
+        },
+        {
+          "seconds": 1941.5,
+          "file": "scratch/retro-frames/stage-099/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 12,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 1
+      },
+      "inferredOrientations": []
+    },
+    {
+      "stage": 100,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 10,
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 1
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 2
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "ice",
+          "top": 6,
+          "north": 5,
+          "east": 4,
+          "id": 3
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 4
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 5
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "id": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1977,
+          "file": "scratch/retro-frames/stage-100/frame-00007.jpg"
+        },
+        {
+          "seconds": 1977.5,
+          "file": "scratch/retro-frames/stage-100/frame-00008.jpg"
+        },
+        {
+          "seconds": 1978.5,
+          "file": "scratch/retro-frames/stage-100/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": [],
+      "validation": {
+        "moves": 10,
+        "pace": 140,
+        "source": "historical reference replay",
+        "candidateCount": 4
+      },
+      "inferredOrientations": [
+        {
+          "x": 0,
+          "y": 0,
+          "method": "Physical die layout and clear-solution constraints; stationary fully hidden faces normalized when multiple orientations remain equivalent."
+        }
+      ]
+    }
+  ]
+}

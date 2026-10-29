@@ -1,25 +1,25 @@
 // Run with the bundled sharp installation, or any local sharp package.
 const fs = require('node:fs');
 const sharp = require(process.env.BRAND_SHARP || 'sharp');
-// The sketchbook SVG is the canonical Chi Key artwork for every brand asset.
+// The canonical SVG is the canonical Chi Key artwork for every brand asset.
 const key = fs.readFileSync('static/images/chi/chi-key.svg','utf8').replace(/<svg[^>]*>/,'').replace('</svg>','');
 const mark = '<rect width="512" height="512" rx="112" fill="#f9faf4"/><g transform="translate(32 40) scale(1.85)">'+key+'</g>';
 const icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'+mark+'</svg>';
-const tiles = 'PLAYIDEACLUEWORD'.split('').map((letter,i) => {
- const x=835+(i%4)*59, y=204+Math.floor(i/4)*59;
- return `<circle cx="${x}" cy="${y}" r="25" fill="${i%5===0?'#506c48':'#eef1e9'}"/><text x="${x}" y="${y+8}" text-anchor="middle" font-family="DM Sans" font-size="23" fill="${i%5===0?'#f8f9f3':'#364b3e'}">${letter}</text>`;
-}).join('');
-const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<rect width="1200" height="630" fill="#eef1e9"/><rect x="24" y="24" width="1152" height="582" rx="32" fill="none" stroke="#c9d1c1"/>
-<g transform="translate(70 65) scale(.12)">${mark}</g><text x="151" y="108" font-family="DM Sans" font-size="36" fill="#364b3e">Chi Fun</text>
-<text x="72" y="216" font-family="DM Sans" font-size="14" letter-spacing="4" fill="#506c48">A PLAYROOM FOR CURIOUS MINDS</text>
-<text x="68" y="308" font-family="DM Sans" font-size="76" fill="#364b3e">Chi Fun</text><text x="68" y="399" font-size="76" fill="#364b3e" font-family="Noto Sans Thai, Tahoma">ไขสนุก</text>
-<text x="72" y="479" font-family="DM Sans" font-size="22" fill="#506c48">Play · Create · Discover</text>
-<rect x="754" y="97" width="374" height="450" rx="180" fill="#dce3d2"/>
-<g transform="rotate(4 940 320)"><rect x="785" y="149" width="307" height="313" rx="24" fill="#f8f9f3"/>${tiles}<text x="818" y="443" font-family="DM Sans" font-size="12" fill="#506c48">FOLLOW YOUR CURIOSITY ↗</text></g>
-<circle cx="1050" cy="481" r="62" fill="#e8bda3"/><text x="1050" y="485" text-anchor="middle" font-family="DM Sans" font-size="36" fill="#364b3e">aha!</text></svg>`;
+const logoBody = fs.readFileSync('static/images/brand/chi-fun-horizontal.svg','utf8').replace(/<svg[^>]*>/,'').replace('</svg>','');
+const badgeBody = fs.readFileSync('static/images/brand/chi-fun-occasion.svg','utf8').replace(/<svg[^>]*>/,'').replace('</svg>','').replaceAll('key-bow','badge-key');
+function socialCard(title = 'Play · Create · Discover', subtitle = 'A PLAYROOM FOR CURIOUS MINDS') {
+ return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#eef1e9"/><rect x="24" y="24" width="1152" height="582" rx="32" fill="#f9faf4" stroke="#dce5d5"/><g transform="translate(58 112) scale(1.02)">${logoBody}</g><g transform="translate(826 143) scale(.69)">${badgeBody}</g><text x="88" y="438" font-family="DM Sans, sans-serif" font-size="35" font-weight="600" fill="#364b3e">${title}</text><text x="88" y="491" font-family="DM Sans, sans-serif" font-size="16" letter-spacing="2" fill="#526b4b">${subtitle}</text><path d="M88 535H1112" stroke="#e4c1a8" stroke-width="4" stroke-linecap="round"/></svg>`;
+}
+const og = socialCard();
 async function generate() {
  fs.writeFileSync('static/favicon.svg',icon);
+ for (const [name,title,subtitle] of [
+ ['wordsearch-builder','Word Search Builder','MAKE A GRID. HIDE A LITTLE CURIOSITY.'],
+ ['thai-wordsearch','Thai Word Search','FIND THE WORDS YOU ARE LOOKING FOR.'],
+ ['jigsaw-quiz','Jigsaw Quiz','PIECE TOGETHER YOUR NEXT AHA!'],
+ ['crossword-builder','Crossword Builder','CONNECT WORDS. CREATE SOMETHING CURIOUS.'],
+ ['pentomino-solver','Pentomino Solver','FIND WHERE THE PIECES FIT.']
+ ]) await sharp(Buffer.from(socialCard(title,subtitle))).png().toFile('static/og-'+name+'.png');
  await sharp(Buffer.from(icon)).resize(32,32).jpeg({quality:95}).toFile('static/favicon.jpg');
  fs.writeFileSync('static/og-main.svg',og);
  await sharp(Buffer.from(og)).png().toFile('static/og-main.png');

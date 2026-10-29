@@ -6,7 +6,7 @@ test('Endless allows repeated rolls beyond the tutorial move limit', async ({ pa
 	});
 	await page.clock.install({ time: new Date('2026-10-26T00:00:00Z') });
 	await page.clock.pauseAt(new Date('2026-10-26T00:00:01Z'));
-	await page.goto('/puzzles/pips-plot/endless');
+	await page.goto('/web-game/pips-plot/endless');
 	await page.getByRole('button', { name: 'Start Endless', exact: true }).click();
 	const scene = page.locator('.scene');
 	await expect(scene).toHaveAttribute('data-ready', 'true', { timeout: 120000 });
@@ -32,7 +32,7 @@ test('holding Space grows a sparse Endless garden faster', async ({ page }) => {
 	});
 	await page.clock.install({ time: new Date('2026-10-26T00:00:00Z') });
 	await page.clock.pauseAt(new Date('2026-10-26T00:00:01Z'));
-	await page.goto('/puzzles/pips-plot/endless');
+	await page.goto('/web-game/pips-plot/endless');
 	await page.getByRole('button', { name: 'Start Endless', exact: true }).click();
 	const scene = page.locator('.scene');
 	await expect(scene).toHaveAttribute('data-ready', 'true', { timeout: 120000 });

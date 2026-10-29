@@ -1,8 +1,10 @@
-export type MusicMode = 'tutorials' | 'puzzles' | 'endless';
+export type MusicMode = 'tutorials' | 'puzzles' | 'endless' | 'retro' | 'random';
 
 export const musicTracks = {
 	tutorials: '/audio/demon-dice/tutorial-garden.mp3',
 	puzzles: '/audio/demon-dice/tutorial-garden.mp3',
+	random: '/audio/demon-dice/tutorial-garden.mp3',
+	retro: '/audio/demon-dice/tutorial-garden.mp3',
 	endless: '/audio/demon-dice/endless-twilight.mp3'
 } as const;
 

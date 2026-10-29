@@ -16,7 +16,14 @@ import Trash2Icon from '@lucide/svelte/icons/trash-2';
 import XIcon from '@lucide/svelte/icons/x';
 	let frequencyData = $state<{quartiles:number[];values:Record<string,number>}>({quartiles:[0,0,0],values:{}});
  const getWordFrequency = (word:string) => frequencyData.values[word] ?? 0;
- function getWordFrequencyTier(value:number) {const [q1,q2,q3]=frequencyData.quartiles;if(!value)return null;return value>=q3?{label:'ใช้บ่อยมาก',color:'bg-error',icon:'🔥🔥🔥'}:value>=q2?{label:'ใช้บ่อย',color:'bg-warning',icon:'🔥🔥'}:value>=q1?{label:'ปานกลาง',color:'bg-info',icon:'🔥'}:{label:'พบน้อย',color:'bg-base-content/20',icon:''};}
+ function getWordFrequencyTier(value: number) {
+  const [q1, q2, q3] = frequencyData.quartiles;
+  if (!value) return null;
+  return value >= q3 ? {label: 'ใช้บ่อยมาก', color: 'bg-primary text-primary-content'}
+    : value >= q2 ? {label: 'ใช้บ่อย', color: 'bg-success text-success-content'}
+    : value >= q1 ? {label: 'ปานกลาง', color: 'bg-info text-info-content'}
+    : {label: 'พบน้อย', color: 'bg-base-200 text-base-content'};
+ }
 
 	let input: string = $state(page.url.searchParams.get('q') || '');
 	let query: string = $state(input);
@@ -246,7 +253,7 @@ import XIcon from '@lucide/svelte/icons/x';
 
 </svelte:head>
 
-<div class="flex flex-col justify-items-center text-center gap-2">
+<div class="font-headed flex flex-col justify-items-center text-center gap-2">
 	<div class="flex items-center justify-center gap-2 mb-2">
 		<h1 class="text-2xl lg:text-3xl font-extrabold">Thai Word Search</h1>
 		<a
@@ -285,29 +292,29 @@ import XIcon from '@lucide/svelte/icons/x';
 			</div>
 
 			<div class="tooltip tooltip-bottom" data-tip="วิธีใช้">
-				<span
+				<button type="button" aria-label="วิธีใช้"
 					onclick={() => {
 						query = '';
 						input = '';
 					}}
-					class="cursor-pointer text-info-content hover:bg-info/15 p-2 rounded-lg transition-all"
+					class="cursor-pointer text-primary hover:bg-primary/15 p-2 rounded-lg transition-all"
 					role="button"
 					tabindex="0"
 				>
 					<AlertOctagonIcon size={30} />
-				</span>
+				</button>
 			</div>
 
 			<div class="relative inline-block">
 				<div class="tooltip tooltip-bottom" data-tip="แชร์คำค้นหา">
-					<span
+					<button type="button" aria-label="แชร์คำค้นหา"
 						onclick={shareUrl}
-						class="cursor-pointer text-accent-content hover:bg-accent/15 p-2 rounded-lg transition-all"
+						class="cursor-pointer text-primary hover:bg-primary/15 p-2 rounded-lg transition-all"
 						role="button"
 						tabindex="0"
 					>
 						<Share2Icon size={30} />
-					</span>
+					</button>
 				</div>
 				{#if shareCopied}
 					<div
@@ -478,8 +485,8 @@ import XIcon from '@lucide/svelte/icons/x';
 				</div>
 			{/if}
 			{#if filteredResults.length > 0}
-				<div class="join justify-center my-4">
-					{#each Array(Math.floor(filteredResults.length / 100)) as _, idx}
+				<div class="join flex w-fit max-w-full flex-wrap justify-center mx-auto my-4">
+					{#each Array(Math.ceil(filteredResults.length / 100)) as _, idx}
 						<button
 							class="join-item btn btn-sm {idx == start / 100 ? 'btn-accent' : ''}"
 							name="pageButtons"
@@ -492,7 +499,7 @@ import XIcon from '@lucide/svelte/icons/x';
 						</button>
 					{/each}
 				</div>
-				<div class="join justify-center my-4">
+				<div class="join flex w-fit max-w-full flex-wrap justify-center mx-auto my-4">
 					{#each allFirstLetters as a}
 						<button
 							class="join-item btn btn-sm {a == letter ? 'btn-accent' : ''} text-lg font-thin"
@@ -514,9 +521,11 @@ import XIcon from '@lucide/svelte/icons/x';
 					)}) จาก {queryResults.count} คำ</span
 				><br />
 				{#each currentQueryResults as qr}
+                    {@const tier = sortByFreq ? getWordFrequencyTier(getWordFrequency(qr)) : null}
 					<div class="relative inline-block m-0.5">
 						<button
-							class="btn btn-outline btn-sm lg:btn-md lg:text-xl font-thin w-full gap-1"
+							class="btn btn-sm lg:btn-md lg:text-xl font-thin w-full gap-1 {tier ? tier.color : 'btn-outline'}"
+                            title={tier?.label}
 							onclick={() => copyWord(qr)}
 						>
 							<span>{qr}</span>
@@ -554,8 +563,8 @@ import XIcon from '@lucide/svelte/icons/x';
 						{/if}
 					</div>
 				{/each}
-				<div class="join justify-center my-4">
-					{#each Array(Math.floor(filteredResults.length / 100) + 1) as _, idx}
+				<div class="join flex w-fit max-w-full flex-wrap justify-center mx-auto my-4">
+					{#each Array(Math.ceil(filteredResults.length / 100)) as _, idx}
 						<button
 							class="join-item btn btn-sm {idx == start / 100 ? 'btn-accent' : ''}"
 							name="pageButtons"

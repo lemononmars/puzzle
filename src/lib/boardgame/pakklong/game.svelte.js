@@ -871,7 +871,7 @@ export function createPakklongGame(roomID) {
 		selfInfo.useLocalStorage();
 		socket.emit('join room', { roomID, username: get(selfInfo).username }, (result) => {
 			if (!result?.successful) {
-				goto('/boardgame/pakklongboard?error=noroomID');
+				goto('/web-game/pakklongboard?error=noroomID');
 				return;
 			}
 			joined = true;

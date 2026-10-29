@@ -1,4 +1,5 @@
 <script lang="ts">
+ import BrandLogo from "#lib/components/ui/BrandLogo.svelte";
  import PageIcon from "#lib/components/ui/PageIcon.svelte";
 import { enhance } from '$app/forms';
  import type { ActionData } from './$types';
@@ -15,7 +16,7 @@ import { enhance } from '$app/forms';
  {#each services as item}<Surface><p class="text-primary text-3xl" aria-hidden="true"><PageIcon href={item.title === "Custom puzzles" ? "/puzzles/crafted" : item.title.startsWith("Puzzle hunts") ? "/puzzles/puzzlehunt" : item.title.startsWith("Learning") ? "/resources/logictutorial" : "/tools"} size={32} /></p><h2>{item.title}</h2><p class="botanical-muted text-sm">{item.description}</p><p class="botanical-eyebrow mt-5">{item.examples}</p></Surface>{/each}
 </section>
 <section class="mt-12 text-left" aria-labelledby="brief-title">
- <Surface><h2 id="brief-title">Tell me about your project</h2><p class="botanical-muted text-sm mb-6">ฝากชื่อ ช่องทางติดต่อ และรายละเอียดงาน แล้วกด Send เพื่อส่งข้อความถึงฉัน</p>
+ <Surface><div class="float-right ml-4 mb-4 w-[100px] sm:w-[140px]"><BrandLogo variant="occasion" /></div><h2 id="brief-title">Tell me about your project</h2><p class="botanical-muted text-sm mb-6">ฝากชื่อ ช่องทางติดต่อ และรายละเอียดงาน แล้วกด Send เพื่อส่งข้อความถึงฉัน</p>
  <form method="POST" use:enhance={() => { sending = true; return async ({ update }) => { try { await update(); } finally { sending = false; } }; }}>
  <div class="grid md:grid-cols-2 gap-5">
  <label class="flex flex-col gap-2 text-sm">ชื่อ / Name<input name="name" class="input w-full bg-base-100 text-base-content" required maxlength="150" autocomplete="name" value={form && 'values' in form ? form.values?.name ?? '' : ''} /></label>

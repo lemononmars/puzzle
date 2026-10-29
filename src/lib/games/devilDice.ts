@@ -22,6 +22,8 @@ export type State = {
 	dice: Die[];
 	player: { x: number; y: number; riding: boolean; facing?: Direction };
 	sinkDuration?: number;
+	/** Original puzzle-mode ice stops at the first square that completes a group. */
+	iceMatchStops?: boolean;
 	moves: number;
 	cleared: number;
 	score: number;
@@ -192,6 +194,32 @@ export function settle(state: State, now: number): State {
 	if (!at(s, s.player.x, s.player.y)) s.player.riding = false;
 	return s;
 }
+/** Predict the first stopping square without starting a match before the die arrives. */
+function completesMatchAt(s: State, moving: Die, x: number, y: number, now: number): boolean {
+	const neighbors = (cx: number, cy: number) =>
+		Object.values(vectors)
+			.map(([dx, dy]) =>
+				s.dice.find((d) => d.id !== moving.id && d.x === cx + dx && d.y === cy + dy)
+			)
+			.filter(
+				(d): d is Die =>
+					!!d &&
+					!d.slide &&
+					!(d.rising !== undefined && d.rising > now) &&
+					!(d.sinking !== undefined && d.sinking <= now)
+			);
+	if (moving.top === 1) return neighbors(x, y).some((d) => d.sinking !== undefined);
+	const group = [{ ...moving, x, y }];
+	const visited = new Set([moving.id]);
+	for (let i = 0; i < group.length; i++) {
+		for (const die of neighbors(group[i].x, group[i].y)) {
+			if (die.top !== moving.top || visited.has(die.id)) continue;
+			visited.add(die.id);
+			group.push(die);
+		}
+	}
+	return group.length >= moving.top;
+}
 export function move(
 	state: State,
 	direction: Direction,
@@ -258,6 +286,7 @@ export function move(
 				// Transfer momentum at each ice collision; earlier dice stop at contact.
 				let sliding = target;
 				let moved = false;
+				let matchingStop = false;
 				let startsAt = now;
 				tx = x;
 				ty = y;
@@ -265,6 +294,10 @@ export function move(
 					while (inside(s, tx + dx, ty + dy) && !at(s, tx + dx, ty + dy)) {
 						tx += dx;
 						ty += dy;
+						if (s.iceMatchStops && completesMatchAt(s, sliding, tx, ty, startsAt)) {
+							matchingStop = true;
+							break;
+						}
 					}
 					const steps = Math.abs(sliding.x - tx) + Math.abs(sliding.y - ty);
 					moved ||= steps > 0;
@@ -280,6 +313,7 @@ export function move(
 					}
 					sliding.x = tx;
 					sliding.y = ty;
+					if (matchingStop) break;
 					const hit = at(s, tx + dx, ty + dy);
 					if (
 						!hit ||
@@ -295,7 +329,19 @@ export function move(
 				}
 				if (!moved) return null;
 			} else {
-				if (!inside(s, tx, ty) || at(s, tx, ty)) return null;
+				if (!inside(s, tx, ty)) return null;
+				const destination = at(s, tx, ty);
+				if (destination) {
+					if (
+						target.kind !== 'wood' ||
+						destination.sinking === undefined ||
+						!isLow(destination, now, s.sinkDuration)
+					)
+						return null;
+					s.dice = s.dice.filter((die) => die.id !== destination.id);
+					s.cleared++;
+					if (destination.top === 1) s.score++;
+				}
 				target.x = tx;
 				target.y = ty;
 			}

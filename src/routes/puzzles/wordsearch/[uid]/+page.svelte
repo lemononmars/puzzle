@@ -74,11 +74,11 @@ export let data: any;
 		ctx.fillRect(0, 0, width, height);
 
 		ctx.fillStyle = '#000000';
-		ctx.font = 'bold 32px DM Sans, Noto Serif Thai';
+		ctx.font = 'bold 32px DM Sans, Sarabun';
 		ctx.textAlign = 'left';
 		ctx.fillText(content?.title || 'Word Search', padding, padding);
 
-		ctx.font = 'bold 20px DM Sans, Noto Serif Thai';
+		ctx.font = 'bold 20px DM Sans, Sarabun';
 		ctx.textAlign = 'center';
 		ctx.textBaseline = 'middle';
 
@@ -95,12 +95,12 @@ export let data: any;
 		}
 
 		ctx.textAlign = 'left';
-		ctx.font = 'bold 24px DM Sans, Noto Serif Thai';
+		ctx.font = 'bold 24px DM Sans, Sarabun';
 		const listX = gridX + boardSize + padding;
 		ctx.fillStyle = '#000000';
 		ctx.fillText('คำศัพท์ที่ต้องหา', listX, gridY + 20);
 
-		ctx.font = '20px DM Sans, Noto Serif Thai';
+		ctx.font = '20px DM Sans, Sarabun';
 		let currY = gridY + 60;
 		wordsData.forEach(w => {
 			ctx.fillStyle = '#000000';

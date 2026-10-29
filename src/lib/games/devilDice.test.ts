@@ -25,7 +25,8 @@ import {
 	dieElevation,
 	dieColors,
 	dieOpacity,
-	movementDuration
+	movementDuration,
+	completionReady
 } from './devilDiceVisuals.js';
 const fixture = (id: string) => {
 	const s = start(puzzles.findIndex((p) => p.id === id));
@@ -34,6 +35,54 @@ const fixture = (id: string) => {
 };
 
 describe('Devil Dice mechanics', () => {
+	it('waits for the last rendered movement before celebrating a matched board', () => {
+		const s = fixture('A1');
+		s.dice.forEach((die) => (die.sinking = 1800));
+		expect(isClear(s)).toBe(true);
+		expect(completionReady(s, 419, 460)).toBe(false);
+		expect(completionReady(s, 460, 460)).toBe(true);
+		// The renderer may start late or miss frames: a wall-clock deadline alone
+		// must never celebrate while the final roll is still being rendered.
+		expect(completionReady(s, 1000, 460, true)).toBe(false);
+		s.dice[0].slide = { started: 0, duration: 900, fromX: 0, fromY: 0, steps: 3 };
+		expect(completionReady(s, 1000, 460)).toBe(false);
+	});
+	it('rolls pushed wood over a low sinking die and can trigger Happy One', () => {
+		const s = fixture('A1');
+		s.width = 5;
+		s.player = { x: 3, y: 2, riding: false };
+		s.dice = [
+			{ ...s.dice[0], id: 1, x: 2, y: 2, kind: 'wood', top: 4, north: 5, east: 1 },
+			{ ...s.dice[0], id: 2, x: 1, y: 2, top: 3, sinking: 1800 },
+			{ ...s.dice[0], id: 3, x: 1, y: 1, top: 3, sinking: 1800 },
+			{ ...s.dice[0], id: 4, x: 4, y: 2, kind: 'metal', top: 1 }
+		];
+		expect(move(s, 'left', false, 100)).toBeNull();
+		const result = move(s, 'left', false, 500)!;
+		expect(result.moves).toBe(1);
+		expect(result.dice.find((die) => die.id === 2)).toBeUndefined();
+		expect(result.dice.find((die) => die.id === 1)).toMatchObject({ x: 1, top: 1 });
+		expect(isClear(result)).toBe(true);
+	});
+	it('stops sliding ice at the first matching square, and waits for arrival to clear', () => {
+		const s = fixture('D1');
+		s.iceMatchStops = true;
+		s.width = 7;
+		s.height = 4;
+		s.player = { x: 0, y: 2, riding: false };
+		s.dice = [
+			{ ...s.dice[0], id: 1, x: 1, y: 2, top: 3 },
+			{ ...s.dice[0], id: 2, x: 3, y: 0, top: 3, kind: 'normal' },
+			{ ...s.dice[0], id: 3, x: 3, y: 1, top: 3, kind: 'normal' }
+		];
+		const result = move(s, 'right', false, 0)!;
+		expect(result.dice[0].x).toBe(3);
+		expect(result.moves).toBe(2);
+		expect(isClear(result)).toBe(false);
+		const arrival = result.dice[0].slide!.duration;
+		expect(isClear(settle(result, arrival - 1))).toBe(false);
+		expect(isClear(settle(result, arrival))).toBe(true);
+	});
 	it('allows dropping as soon as a die starts sinking, while climbing still needs a low edge', () => {
 		const s = fixture('A1');
 		s.player = { x: s.dice[0].x, y: s.dice[0].y, riding: true };

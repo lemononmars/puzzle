@@ -1,1 +1,0 @@
-PASS: real touch input, short hold canceled, full hold climbed, release stopped movement.

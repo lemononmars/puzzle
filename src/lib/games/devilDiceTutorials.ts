@@ -9,7 +9,10 @@ export type Tutorial = {
 	hint: string;
 	maxMoves?: number;
 	solution: TutorialStep[];
-	state: Pick<State, 'width' | 'height' | 'player' | 'dice' | 'sinkDuration' | 'removedTiles'>;
+	state: Pick<
+		State,
+		'width' | 'height' | 'player' | 'dice' | 'sinkDuration' | 'removedTiles' | 'iceMatchStops'
+	>;
 };
 export const tutorialSets = [
 	{

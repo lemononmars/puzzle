@@ -697,7 +697,7 @@ import XIcon from '@lucide/svelte/icons/x';
 								y={pc.y + 1}
 								fill="#000000"
 								font-size="6.5px"
-								font-family="DM Sans, Noto Serif Thai"
+								font-family="DM Sans, Sarabun"
 								font-weight="bold"
 								text-anchor="middle"
 								opacity="0.8"
@@ -709,7 +709,7 @@ import XIcon from '@lucide/svelte/icons/x';
 								y={pc.y}
 								fill="#38BDF8"
 								font-size="6.5px"
-								font-family="DM Sans, Noto Serif Thai"
+								font-family="DM Sans, Sarabun"
 								font-weight="bold"
 								text-anchor="middle"
 							>

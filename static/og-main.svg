@@ -1,18 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<rect width="1200" height="630" fill="#eef1e9"/><rect x="24" y="24" width="1152" height="582" rx="32" fill="none" stroke="#c9d1c1"/>
-<g transform="translate(70 65) scale(.12)"><rect width="512" height="512" rx="112" fill="#f9faf4"/><g transform="translate(32 40) scale(1.85)">
- <defs><mask id="key-bow"><rect width="280" height="240" fill="white"/><circle cx="71" cy="64" r="16" fill="black"/></mask></defs>
- <g mask="url(#key-bow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M48 41C20 50 22 85 48 86C58 85 65 81 76 70L164 174L186 200L209 181L195 165L211 151L192 131L176 145L166 134" stroke="#364b3e" stroke-width="22"/>
-  <path d="M191 35C161 86 120 120 48 195" stroke="#526b4b" stroke-width="22"/>
-  <path d="M48 41C65 27 90 33 95 57C99 74 88 91 76 70" stroke="#364b3e" stroke-width="22"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#eef1e9"/><rect x="24" y="24" width="1152" height="582" rx="32" fill="#f9faf4" stroke="#dce5d5"/><g transform="translate(58 112) scale(1.02)"><title id="title">Chi Fun / ไขสนุก — Horizontal logo</title><g transform="translate(4 9) scale(.95)">
+ <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path id="key-bow" d="M44.717 76.256A29 29 0 1 1 83.256 90.283L186.256 193.283L206.256 173.283L192.256 159.283L206.256 145.283L188.256 127.283L174.256 141.283L164.256 131.283" stroke="#364b3e" stroke-width="22"/>
+  <path d="M158 87L88 157" stroke="#526b4b" stroke-width="22"/>
  </g>
- <rect x="114" y="114" width="12" height="12" rx="2" transform="rotate(45 120 120)" fill="#e4c1a8"/>
+ <rect x="117" y="116" width="12" height="12" rx="2" transform="rotate(45 123 122)" fill="#e4c1a8"/>
 
-</g></g><text x="151" y="108" font-family="DM Sans" font-size="36" fill="#364b3e">Chi Fun</text>
-<text x="72" y="216" font-family="DM Sans" font-size="14" letter-spacing="4" fill="#506c48">A PLAYROOM FOR CURIOUS MINDS</text>
-<text x="68" y="308" font-family="DM Sans" font-size="76" fill="#364b3e">Chi Fun</text><text x="68" y="399" font-size="76" fill="#364b3e" font-family="Noto Sans Thai, Tahoma">ไขสนุก</text>
-<text x="72" y="479" font-family="DM Sans" font-size="22" fill="#506c48">Play · Create · Discover</text>
-<rect x="754" y="97" width="374" height="450" rx="180" fill="#dce3d2"/>
-<g transform="rotate(4 940 320)"><rect x="785" y="149" width="307" height="313" rx="24" fill="#f8f9f3"/><circle cx="835" cy="204" r="25" fill="#506c48"/><text x="835" y="212" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#f8f9f3">P</text><circle cx="894" cy="204" r="25" fill="#eef1e9"/><text x="894" y="212" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">L</text><circle cx="953" cy="204" r="25" fill="#eef1e9"/><text x="953" y="212" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">A</text><circle cx="1012" cy="204" r="25" fill="#eef1e9"/><text x="1012" y="212" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">Y</text><circle cx="835" cy="263" r="25" fill="#eef1e9"/><text x="835" y="271" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">I</text><circle cx="894" cy="263" r="25" fill="#506c48"/><text x="894" y="271" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#f8f9f3">D</text><circle cx="953" cy="263" r="25" fill="#eef1e9"/><text x="953" y="271" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">E</text><circle cx="1012" cy="263" r="25" fill="#eef1e9"/><text x="1012" y="271" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">A</text><circle cx="835" cy="322" r="25" fill="#eef1e9"/><text x="835" y="330" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">C</text><circle cx="894" cy="322" r="25" fill="#eef1e9"/><text x="894" y="330" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">L</text><circle cx="953" cy="322" r="25" fill="#506c48"/><text x="953" y="330" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#f8f9f3">U</text><circle cx="1012" cy="322" r="25" fill="#eef1e9"/><text x="1012" y="330" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">E</text><circle cx="835" cy="381" r="25" fill="#eef1e9"/><text x="835" y="389" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">W</text><circle cx="894" cy="381" r="25" fill="#eef1e9"/><text x="894" y="389" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">O</text><circle cx="953" cy="381" r="25" fill="#eef1e9"/><text x="953" y="389" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#364b3e">R</text><circle cx="1012" cy="381" r="25" fill="#506c48"/><text x="1012" y="389" text-anchor="middle" font-family="DM Sans" font-size="23" fill="#f8f9f3">D</text><text x="818" y="443" font-family="DM Sans" font-size="12" fill="#506c48">FOLLOW YOUR CURIOSITY ↗</text></g>
-<circle cx="1050" cy="481" r="62" fill="#e8bda3"/><text x="1050" y="485" text-anchor="middle" font-family="DM Sans" font-size="36" fill="#364b3e">aha!</text></svg>
+</g><path d="M356 165H552" fill="none" stroke="#e4c1a8" stroke-width="9" stroke-linecap="round"/><g><g transform="translate(287 56.89) scale(0.41500000000000004) translate(-100 -20) rotate(225 140 120)">
+ <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path id="vowel-bow" d="M44.717 76.256A29 29 0 1 1 83.256 90.283L186.256 193.283L206.256 173.283L192.256 159.283L206.256 145.283L188.256 127.283L174.256 141.283L164.256 131.283" stroke="#364b3e" stroke-width="22"/>
+  
+ </g>
+ 
+
+</g><text x="333.48" y="154" font-family="Noto Sans Thai, sans-serif" font-size="83" font-weight="700" fill="#364b3e">ข<tspan fill="#526b4b">สนุก</tspan></text><text x="287" y="188.86" text-anchor="start" font-family="DM Sans, sans-serif" font-size="17.43" font-weight="700" letter-spacing="6.640000000000001" fill="#364b3e">CHI FUN</text></g></g><g transform="translate(826 143) scale(.69)"><title id="title">Chi Fun / ไขสนุก — Special occasion badge</title><path d="M76 348L58 441L134 408L178 454L195 348M245 348L266 454L310 408L384 441L365 348" fill="#e4c1a8"/><circle cx="220" cy="215" r="196" fill="#eef1e9" stroke="#526b4b" stroke-width="3"/><circle cx="220" cy="215" r="180" fill="none" stroke="#526b4b" stroke-dasharray="3 10" stroke-linecap="round"/><g transform="translate(122 52) scale(.8)">
+ <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path id="badge-key" d="M44.717 76.256A29 29 0 1 1 83.256 90.283L186.256 193.283L206.256 173.283L192.256 159.283L206.256 145.283L188.256 127.283L174.256 141.283L164.256 131.283" stroke="#364b3e" stroke-width="22"/>
+  <path d="M158 87L88 157" stroke="#526b4b" stroke-width="22"/>
+ </g>
+ <rect x="117" y="116" width="12" height="12" rx="2" transform="rotate(45 123 122)" fill="#e4c1a8"/>
+
+</g><g fill="#78543f"><path d="M94 145l5 12 12 5-12 5-5 12-5-12-12-5 12-5zM345 91l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/><circle cx="331" cy="222" r="5"/><circle cx="112" cy="83" r="4"/></g><g><g transform="translate(131.5 231.97) scale(0.295) translate(-100 -20) rotate(225 140 120)">
+ <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path id="vowel-bow" d="M44.717 76.256A29 29 0 1 1 83.256 90.283L186.256 193.283L206.256 173.283L192.256 159.283L206.256 145.283L188.256 127.283L174.256 141.283L164.256 131.283" stroke="#364b3e" stroke-width="22"/>
+  
+ </g>
+ 
+
+</g><text x="164.54000000000002" y="301" font-family="Noto Sans Thai, sans-serif" font-size="59" font-weight="700" fill="#364b3e">ข<tspan fill="#526b4b">สนุก</tspan></text><text x="220" y="325.78" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.389999999999999" font-weight="700" letter-spacing="4.72" fill="#364b3e">CHI FUN</text></g><text x="220" y="363" text-anchor="middle" font-family="Noto Sans Thai, sans-serif" font-size="17" font-weight="600" fill="#526b4b">ชวนกันไข • สนุกด้วยกัน</text></g><text x="88" y="438" font-family="DM Sans, sans-serif" font-size="35" font-weight="600" fill="#364b3e">Play · Create · Discover</text><text x="88" y="491" font-family="DM Sans, sans-serif" font-size="16" letter-spacing="2" fill="#526b4b">A PLAYROOM FOR CURIOUS MINDS</text><path d="M88 535H1112" stroke="#e4c1a8" stroke-width="4" stroke-linecap="round"/></svg>

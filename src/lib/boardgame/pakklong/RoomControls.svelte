@@ -12,7 +12,7 @@
 		<a
 			class="btn btn-sm btn-ghost tooltip"
 			data-tip="Rulebook"
-			href="/boardgame/pakklongboard/rules"
+			href="/web-game/pakklongboard/rules"
 			target="_blank"
 			rel="noopener"
 			aria-label="Open rulebook"><GameIcon name="book" /></a
@@ -26,7 +26,7 @@
 		<a
 			class="btn btn-sm btn-outline tooltip"
 			data-tip="Leave room"
-			href="/boardgame/pakklongboard"
+			href="/web-game/pakklongboard"
 			aria-label="Leave room"><GameIcon name="leave" /></a
 		>
 	</div>

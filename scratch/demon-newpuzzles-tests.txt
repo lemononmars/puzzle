@@ -1,9 +1,0 @@
-
- RUN  v5.0.3 C:/coding projects/puzzle
-
-
- Test Files  1 passed (1)
-      Tests  27 passed (27)
-   Start at  11:13:29
-   Duration  851ms (transform 60%, tests 19%, import 11%, setup 8%, worker 2%)
-

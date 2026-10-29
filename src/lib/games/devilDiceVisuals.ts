@@ -1,5 +1,13 @@
 import type { Die, Direction, Kind, State } from './devilDice.js';
-import { SPAWN_RISE_MS, iceSlideDuration } from './devilDice.js';
+import { SPAWN_RISE_MS, iceSlideDuration, isClear } from './devilDice.js';
+
+export const completionReady = (
+	state: State,
+	now: number,
+	motionUntil: number,
+	renderingMotion = false
+) =>
+	isClear(state) && !renderingMotion && now >= motionUntil && !state.dice.some((die) => die.slide);
 
 // Identity colors from the original game's colored dice: 1 white/red, 2 yellow,
 // 3 blue, 4 cyan, 5 green, 6 pink. Pips remain readable without color perception.

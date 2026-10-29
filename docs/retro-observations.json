@@ -1,0 +1,485 @@
+{
+  "source": "https://www.youtube.com/watch?v=Um5NdG5McKI",
+  "status": "Visual transcription only; not replay-validated",
+  "coordinates": "Zero-based; x increases screen-down-right, y increases screen-down-left; origin at back corner. North is opposite the visible screen-down-left South face.",
+  "stages": [
+    {
+      "stage": 2,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 25.5,
+          "file": "scratch/retro-frames/stage-002/frame-00010.jpg",
+          "observed": "Initial player and both top faces; both visible South faces are1. Right die East2 is also shown by Info cube."
+        },
+        {
+          "seconds": 26.5,
+          "file": "scratch/retro-frames/stage-002/frame-00012.jpg",
+          "observed": "Left die stays unchanged; East4 becomes visible after neighbor rolls away."
+        }
+      ],
+      "deductions": "North6 on both dice is opposite the observed South1.",
+      "ambiguities": []
+    },
+    {
+      "stage": 3,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 3,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 35.5,
+          "file": "scratch/retro-frames/stage-003/frame-00010.jpg",
+          "observed": "Both separated dice show Top2, South1, East4 before any counted move; player on right die."
+        }
+      ],
+      "deductions": "North6 on both dice is opposite the observed South1.",
+      "ambiguities": []
+    },
+    {
+      "stage": 4,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "target": {
+        "top": 3,
+        "quantity": 3
+      },
+      "player": {
+        "x": 3,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 46.0,
+          "file": "scratch/retro-frames/stage-004/frame-00011.jpg",
+          "observed": "Initial layout/player; right die Top3,South6,East5 (Info cube); front-left die Top6,South2,East4; rear-left die Top3,East2."
+        },
+        {
+          "seconds": 50.0,
+          "file": "scratch/retro-frames/stage-004/frame-00019.jpg",
+          "observed": "Rear-left Top3 die stays unchanged throughout and exposes South1 after the neighboring Top6 die rolls away."
+        }
+      ],
+      "deductions": "North values are opposite the observed South values.",
+      "ambiguities": []
+    },
+    {
+      "stage": 5,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 58.0,
+          "file": "scratch/retro-frames/stage-005/frame-00011.jpg",
+          "observed": "Initial left die Top5,South4,East1 (also shown by Info cube); right die Top2,South1,East4; player riding left die."
+        }
+      ],
+      "deductions": "North values are opposite the observed South values.",
+      "ambiguities": []
+    },
+    {
+      "stage": 6,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 67,
+          "file": "scratch/retro-frames/stage-006/frame-00009.jpg",
+          "observed": "Initial board/player; left Top2 South1 East4 (Info cube), right Top3 South1 East2."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": []
+    },
+    {
+      "stage": 7,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 79.5,
+          "file": "scratch/retro-frames/stage-007/frame-00010.jpg",
+          "observed": "Initial board/player. Rear-left Top1 South5, cyan East4 partially visible. Rear-right Top6 South3 East2. Middle Top2 South3, East hidden by character. Front-left Top4 South1 East5. Front-right Top3 South2 East6 also shown by Info cube."
+        },
+        {
+          "seconds": 81.5,
+          "file": "scratch/retro-frames/stage-007/frame-00014.jpg",
+          "observed": "Rear-left die remains unchanged; its cyan East face is more exposed after the neighboring die rolls."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": [
+        "Middle die at(2,2) East face is occluded in checked frames. East remains null; do not import as a complete state."
+      ]
+    },
+    {
+      "stage": 8,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": null,
+          "east": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 92.5,
+          "file": "scratch/retro-frames/stage-008/frame-00010.jpg",
+          "observed": "Initial board/player: left Top1 South3 East5 (Info cube); rear-right Top2 East1, South occluded by front-right; front-right Top4 South2 East1."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": [
+        "Rear-right die at(2,1) South face is blocked by die at(2,2). North remains null; later checked frame at98s shows it already sinking/occluded."
+      ]
+    },
+    {
+      "stage": 9,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 105.5,
+          "file": "scratch/retro-frames/stage-008/frame-00036.jpg",
+          "observed": "Stage009 initial board appears in folder008 due to imperfect chapter boundaries. Both Top2 dice show South1 East4; player die Top4 South2 East1 (Info cube)."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": []
+    },
+    {
+      "stage": 10,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 2,
+      "target": {
+        "top": 2,
+        "quantity": 2
+      },
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 119.5,
+          "file": "scratch/retro-frames/stage-010/frame-00010.jpg",
+          "observed": "Initial board/player. Rear-left Top2 South1 East4; middle Top1 South2 East3; rear-right Top1 South5 East4; player die Top4 South2 East1 (Info cube); front-right Top1 South3 East5."
+        }
+      ],
+      "deductions": "Known North values are opposite the observed South values. Null faces are unresolved, not default orientations.",
+      "ambiguities": []
+    }
+  ]
+}

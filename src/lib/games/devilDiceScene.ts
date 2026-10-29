@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { defaultAvatar, seedColors, leafColors, type Avatar } from './demonDiceAvatar.js';
 import {
 	at,
+	vectors,
 	inside,
 	slideProgress,
 	SINK_DURATION,
@@ -19,7 +20,16 @@ import {
 } from './devilDiceVisuals.js';
 
 // Keep the renderer independent of rules; snapshots describe every logical face and position.
-export function createDiceScene(host: HTMLDivElement) {
+export function createDiceScene(
+	host: HTMLDivElement,
+	onMotionChange: (moving: boolean) => void = () => {}
+) {
+	let reportedMotion: boolean | undefined;
+	function reportMotion(moving: boolean) {
+		if (moving === reportedMotion) return;
+		reportedMotion = moving;
+		onMotionChange(moving);
+	}
 	const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 	renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 	renderer.outputEncoding = THREE.sRGBEncoding;
@@ -127,7 +137,7 @@ export function createDiceScene(host: HTMLDivElement) {
 		ctx.fillStyle = palette.pip;
 		for (const [x, y] of dots[n]) {
 			ctx.beginPath();
-			ctx.arc(96 + x * 42, 91 + y * 40, 11, 0, Math.PI * 2);
+			ctx.arc(96 + x * 42, 91 + y * 40, 16, 0, Math.PI * 2);
 			ctx.fill();
 		}
 		if (kind === 'metal')
@@ -186,12 +196,12 @@ export function createDiceScene(host: HTMLDivElement) {
 	turfMap.encoding = THREE.sRGBEncoding;
 	const tileMaterials = [
 		new THREE.MeshStandardMaterial({
-			color: new THREE.Color(primary).lerp(new THREE.Color(cream), 0.65),
+			color: new THREE.Color(primary).multiplyScalar(0.75),
 			map: turfMap,
 			roughness: 1
 		}),
 		new THREE.MeshStandardMaterial({
-			color: new THREE.Color(primary).lerp(new THREE.Color(cream), 0.8),
+			color: new THREE.Color(primary).lerp(new THREE.Color(cream), 0.62),
 			map: turfMap,
 			roughness: 1
 		})
@@ -231,6 +241,16 @@ export function createDiceScene(host: HTMLDivElement) {
 		floor.add(cluster);
 	}
 	let baseGeometry: THREE.BoxGeometry | undefined;
+	let grassGeometry: THREE.ShapeGeometry | undefined;
+	const grassMap = turfMap.clone();
+	grassMap.wrapS = grassMap.wrapT = THREE.RepeatWrapping;
+	grassMap.repeat.set(5, 5);
+	grassMap.needsUpdate = true;
+	const grassMaterial = new THREE.MeshStandardMaterial({
+		color: primary,
+		map: grassMap,
+		roughness: 1
+	});
 	type Visual = {
 		mesh: THREE.Mesh;
 		outline: THREE.LineSegments;
@@ -335,6 +355,7 @@ export function createDiceScene(host: HTMLDivElement) {
 	mascotFlower.visible = mascotBow.visible = false;
 	character.add(mascotFlower, mascotBow);
 	character.rotation.y = 0;
+	character.scale.setScalar(1.35);
 	scene.add(character);
 	let rival:
 		| {
@@ -346,13 +367,15 @@ export function createDiceScene(host: HTMLDivElement) {
 		| undefined;
 	let playerFrom = new THREE.Vector3(),
 		playerStart = 0;
+	let controlsInset = 0;
+	let blockedMotion: { direction: import('./devilDice.js').Direction; started: number } | undefined;
 	const position = (x: number, y: number) =>
 		new THREE.Vector3(x - (width - 1) / 2, 0.435, y - (height - 1) / 2);
 	function resize() {
 		const w = host.clientWidth,
 			h = host.clientHeight;
 		renderer.setSize(w, h);
-		const aspect = w / Math.max(1, h);
+		const aspect = w / Math.max(1, h - controlsInset);
 		// Fit the projected board bounds, rather than leaving a large square camera margin.
 		const span =
 			Math.max(
@@ -366,11 +389,39 @@ export function createDiceScene(host: HTMLDivElement) {
 		camera.updateProjectionMatrix();
 	}
 	function sync(next: State, animate = true) {
+		if (
+			state &&
+			(state.player.x !== next.player.x ||
+				state.player.y !== next.player.y ||
+				state.player.riding !== next.player.riding)
+		) {
+			blockedMotion = undefined;
+			host.dataset.blocking = 'false';
+		}
 		const now = performance.now();
 		if (width !== next.width || height !== next.height) {
 			width = next.width;
 			height = next.height;
 			floor.clear();
+			grassGeometry?.dispose();
+			const grassShape = new THREE.Shape();
+			grassShape.moveTo(-width / 2 - 4, -height / 2 - 4);
+			grassShape.lineTo(width / 2 + 4, -height / 2 - 4);
+			grassShape.lineTo(width / 2 + 4, height / 2 + 4);
+			grassShape.lineTo(-width / 2 - 4, height / 2 + 4);
+			grassShape.closePath();
+			const opening = new THREE.Path();
+			opening.moveTo(-width / 2 - 0.15, -height / 2 - 0.15);
+			opening.lineTo(-width / 2 - 0.15, height / 2 + 0.15);
+			opening.lineTo(width / 2 + 0.15, height / 2 + 0.15);
+			opening.lineTo(width / 2 + 0.15, -height / 2 - 0.15);
+			opening.closePath();
+			grassShape.holes.push(opening);
+			grassGeometry = new THREE.ShapeGeometry(grassShape);
+			const grass = new THREE.Mesh(grassGeometry, grassMaterial);
+			grass.rotation.x = -Math.PI / 2;
+			grass.position.y = -0.4;
+			floor.add(grass);
 			baseGeometry?.dispose();
 			baseGeometry = new THREE.BoxGeometry(width + 0.22, 0.28, height + 0.22);
 			if (!next.removedTiles?.length) {
@@ -501,6 +552,7 @@ export function createDiceScene(host: HTMLDivElement) {
 		character.rotation.y = facingAngle[next.player.facing ?? 'down'];
 		host.dataset.facing = next.player.facing ?? 'down';
 		state = next;
+		reportMotion([...dice.values()].some((visual) => visual.duration > 0));
 	}
 	const observer = new ResizeObserver(resize);
 	observer.observe(host);
@@ -609,6 +661,17 @@ export function createDiceScene(host: HTMLDivElement) {
 				character.position.copy(dest);
 				roots.forEach((root) => (root.rotation.x = 0));
 			}
+			if (blockedMotion) {
+				const t = Math.min(1, (now - blockedMotion.started) / 260);
+				const [dx, dz] = vectors[blockedMotion.direction];
+				const amount = reduced ? 0 : Math.sin(t * Math.PI) * 0.12;
+				character.position.x += dx * amount;
+				character.position.z += dz * amount;
+				character.rotation.y = facingAngle[blockedMotion.direction];
+				body.scale.y -= amount * 0.4;
+				host.dataset.blocking = String(t < 1);
+				if (t === 1) blockedMotion = undefined;
+			}
 			if (winStart !== undefined) {
 				const t = reduced ? 1 : Math.min(1, (now - winStart) / 1600);
 				character.position.y += Math.abs(Math.sin(t * Math.PI * 3)) * 0.28 * (1 - t * 0.5);
@@ -638,7 +701,12 @@ export function createDiceScene(host: HTMLDivElement) {
 		host.dataset.animating = String(active);
 		host.dataset.warnings = String(warnings.size);
 		renderer.autoClear = false;
-		renderer.setViewport(0, 0, host.clientWidth, host.clientHeight);
+		renderer.setViewport(
+			0,
+			controlsInset,
+			host.clientWidth,
+			Math.max(1, host.clientHeight - controlsInset)
+		);
 		renderer.clear();
 		renderer.render(scene, camera);
 		if (preview?.visible) {
@@ -650,11 +718,24 @@ export function createDiceScene(host: HTMLDivElement) {
 			renderer.render(previewScene, previewCamera);
 			renderer.setScissorTest(false);
 		}
+		// Acknowledge completion only after the final landing frame was drawn.
+		reportMotion(active > 0);
 		frame = requestAnimationFrame(render);
 	}
 	render();
 	return {
 		sync,
+		setControlsInset(value: number) {
+			if (controlsInset !== value) {
+				controlsInset = value;
+				resize();
+			}
+		},
+		bump(direction: import('./devilDice.js').Direction) {
+			blockedMotion = { direction, started: performance.now() };
+			host.dataset.blockedDirection = direction;
+			host.dataset.blockedCount = String(Number(host.dataset.blockedCount ?? 0) + 1);
+		},
 		setAvatar(avatar: Avatar = defaultAvatar) {
 			bodyMaterial.color.set(seedColors[avatar.seed]);
 			crownMaterial.color.set(leafColors[avatar.leaves]);
@@ -733,6 +814,9 @@ export function createDiceScene(host: HTMLDivElement) {
 			petalMaterial.dispose();
 			flowerCenterMaterial.dispose();
 			baseGeometry?.dispose();
+			grassGeometry?.dispose();
+			grassMaterial.dispose();
+			grassMap.dispose();
 			bodyGeo.dispose();
 			crownMaterial.dispose();
 			if (rival) {

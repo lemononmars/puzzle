@@ -1,1 +1,0 @@
-PASS two isolated clients: create/join, custom avatars, readiness, synchronized moves, reconnect, mobile view and forfeit

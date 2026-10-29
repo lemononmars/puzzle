@@ -1,7 +1,0 @@
-FOUND 0 4 cost 6 nodes 7328 actions 29
-FAMILY 0 complete 4
-FAMILY 1 complete 4
-FAMILY 2 complete 4
-FAMILY 3 complete 4
-FAMILY 4 complete 4
-TOTAL 20

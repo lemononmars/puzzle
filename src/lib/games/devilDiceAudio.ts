@@ -1,5 +1,5 @@
 import type { Kind } from './devilDice.js';
-export type MovementSound = 'walk' | 'roll' | 'push' | 'pip';
+export type MovementSound = 'walk' | 'roll' | 'push' | 'slide' | 'clear' | 'pip' | 'blocked';
 const materials: Record<
 	Kind,
 	{ pitches: number[]; wave: OscillatorType; decay: number; bend: number }
@@ -35,19 +35,49 @@ export function createMovementAudio() {
 				if (muted || !context || context.state !== 'running') return;
 				const start = context.currentTime;
 				const profile =
-					kind === 'pip'
-						? { pitches: [523, 659, 1046], wave: 'sine' as OscillatorType, decay: 0.18, bend: 1.12 }
-						: materials[material];
+					kind === 'clear'
+						? {
+								pitches: [523, 659, 784, 1046],
+								wave: 'sine' as OscillatorType,
+								decay: 0.3,
+								bend: 1
+							}
+						: kind === 'slide'
+							? {
+									pitches: [materials[material].pitches[0] * 1.3, materials[material].pitches[0]],
+									wave: 'triangle' as OscillatorType,
+									decay: 0.22,
+									bend: 0.55
+								}
+							: kind === 'blocked'
+								? { pitches: [155, 105], wave: 'sine' as OscillatorType, decay: 0.12, bend: 0.65 }
+								: kind === 'pip'
+									? {
+											pitches: [523, 659, 1046],
+											wave: 'sine' as OscillatorType,
+											decay: 0.18,
+											bend: 1.12
+										}
+									: materials[material];
 				const pitches =
 					kind === 'walk'
-						? [material === 'normal' ? 310 : profile.pitches[0]]
+						? [310, 260]
 						: kind === 'push' && material === 'normal'
 							? [105, 70]
 							: profile.pitches;
 				pitches.forEach((frequency, i) => {
 					const oscillator = context!.createOscillator(),
 						gain = context!.createGain(),
-						time = start + i * (kind === 'pip' ? 0.065 : 0.035);
+						time =
+							start +
+							i *
+								(kind === 'clear'
+									? 0.085
+									: kind === 'walk'
+										? 0.06
+										: kind === 'pip'
+											? 0.065
+											: 0.035);
 					oscillator.type = kind === 'walk' ? 'sine' : profile.wave;
 					oscillator.frequency.setValueAtTime(frequency, time);
 					oscillator.frequency.exponentialRampToValueAtTime(
@@ -55,7 +85,7 @@ export function createMovementAudio() {
 						time + profile.decay * 0.75
 					);
 					gain.gain.setValueAtTime(0.001, time);
-					gain.gain.exponentialRampToValueAtTime(kind === 'walk' ? 0.025 : 0.045, time + 0.008);
+					gain.gain.exponentialRampToValueAtTime(kind === 'walk' ? 0.04 : 0.055, time + 0.008);
 					gain.gain.exponentialRampToValueAtTime(0.001, time + profile.decay);
 					oscillator.connect(gain);
 					gain.connect(context!.destination);

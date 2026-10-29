@@ -1,7 +1,0 @@
-TOTAL ERRORS: 0
-TOTAL WARNINGS: 0
-
-=== ERRORS ===
-
-
-=== WARNINGS ===

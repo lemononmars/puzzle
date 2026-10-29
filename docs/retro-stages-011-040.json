@@ -1,0 +1,1461 @@
+{
+  "source": "https://www.youtube.com/watch?v=Um5NdG5McKI",
+  "status": "Observed initial states; not yet replay-validated",
+  "stages": [
+    {
+      "stage": 11,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 2,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2,
+          "observedSide": "s",
+          "observedValue": 6
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "observedSide": "s",
+          "observedValue": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 132.5,
+          "file": "scratch/retro-frames/stage-011/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 12,
+      "width": 5,
+      "height": 2,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "ice",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "ice",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "observedSide": "s",
+          "observedValue": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 145.5,
+          "file": "scratch/retro-frames/stage-012/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 13,
+      "width": 5,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 4
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 160.0,
+          "file": "scratch/retro-frames/stage-013/frame-00013.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 14,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "maxMoves": 8,
+      "player": {
+        "x": 2,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "ice",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "ice",
+          "top": 2,
+          "north": 6,
+          "east": 4,
+          "observedSide": "e",
+          "observedValue": 4
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 5
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 173.5,
+          "file": "scratch/retro-frames/stage-014/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 15,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 1
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "observedSide": "e",
+          "observedValue": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 5
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 190.5,
+          "file": "scratch/retro-frames/stage-015/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 16,
+      "width": 6,
+      "height": 6,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 5
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 5
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 204.5,
+          "file": "scratch/retro-frames/stage-016/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 17,
+      "width": 5,
+      "height": 6,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 4
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 221.0,
+          "file": "scratch/retro-frames/stage-017/frame-00011.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 18,
+      "width": 5,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 5
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "observedSide": "e",
+          "observedValue": 1
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 243.5,
+          "file": "scratch/retro-frames/stage-018/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 19,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 9,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "observedSide": "e",
+          "observedValue": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 6
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 262.5,
+          "file": "scratch/retro-frames/stage-019/frame-00008.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 20,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "player": {
+        "x": 2,
+        "y": 5,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4,
+          "observedSide": "s",
+          "observedValue": 5
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "observedSide": "e",
+          "observedValue": 2
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 5
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "observedSide": "e",
+          "observedValue": 2
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "kind": "normal",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 279.5,
+          "file": "scratch/retro-frames/stage-020/frame-00012.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 21,
+      "width": 5,
+      "height": 6,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "player": {
+        "x": 1,
+        "y": 5,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "observedSide": "e",
+          "observedValue": 1
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 4,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "observedSide": "e",
+          "observedValue": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 294.5,
+          "file": "scratch/retro-frames/stage-021/frame-00008.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 22,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 3,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "e",
+          "observedValue": 5
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 1
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 1
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 314.5,
+          "file": "scratch/retro-frames/stage-022/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 23,
+      "width": 7,
+      "height": 2,
+      "removedTiles": [],
+      "maxMoves": 10,
+      "player": {
+        "x": 0,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 1
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 1
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 1
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 1
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 328.5,
+          "file": "scratch/retro-frames/stage-023/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 24,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        }
+      ],
+      "maxMoves": 8,
+      "player": {
+        "x": 5,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "observedSide": "e",
+          "observedValue": 6
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "observedSide": "s",
+          "observedValue": 1
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "kind": "ice",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 6
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "kind": "metal",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 2
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "kind": "metal",
+          "top": 3,
+          "north": 6,
+          "east": 2,
+          "observedSide": "s",
+          "observedValue": 1
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 344.5,
+          "file": "scratch/retro-frames/stage-024/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 25,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "maxMoves": 8,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 3,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 4
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "observedSide": "s",
+          "observedValue": 1
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 364.5,
+          "file": "scratch/retro-frames/stage-025/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 26,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "maxMoves": 8,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "observedSide": "e",
+          "observedValue": 5
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 5,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 2
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 379.5,
+          "file": "scratch/retro-frames/stage-026/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 27,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 5
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "wood",
+          "top": 4,
+          "north": 5,
+          "east": 1,
+          "observedSide": "e",
+          "observedValue": 1
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 4
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 1
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 392.5,
+          "file": "scratch/retro-frames/stage-027/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 28,
+      "width": 3,
+      "height": 2,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 405.5,
+          "file": "scratch/retro-frames/stage-028/frame-00008.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 29,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 0,
+        "y": 4,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1,
+          "observedSide": "s",
+          "observedValue": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 421.5,
+          "file": "scratch/retro-frames/stage-029/frame-00010.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    },
+    {
+      "stage": 30,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 8,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "wood",
+          "top": 1,
+          "north": 3,
+          "east": 2,
+          "observedSide": "e",
+          "observedValue": 2
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2,
+          "observedSide": "s",
+          "observedValue": 3
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": 3,
+          "observedSide": "s",
+          "observedValue": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": 5,
+          "observedSide": "s",
+          "observedValue": 6
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6,
+          "observedSide": "s",
+          "observedValue": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 431.5,
+          "file": "scratch/retro-frames/stage-030/frame-00008.jpg",
+          "observed": "Initial board HUD, player and visible die faces. Each die records the directly read side."
+        }
+      ],
+      "deductions": "Missing sides inferred uniquely from observed top + one side using canonical24 rotations of T1,N5,E3; opposite faces sum7.",
+      "ambiguities": []
+    }
+  ]
+}

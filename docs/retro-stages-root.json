@@ -1,0 +1,2223 @@
+{
+  "stages": [
+    {
+      "stage": 31,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 3,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "stone",
+          "top": 3,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 449.0,
+          "file": "scratch/retro-frames/stage-031/frame-00007.jpg"
+        },
+        {
+          "seconds": 449.5,
+          "file": "scratch/retro-frames/stage-031/frame-00008.jpg"
+        },
+        {
+          "seconds": 450.5,
+          "file": "scratch/retro-frames/stage-031/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 32,
+      "width": 2,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 461.0,
+          "file": "scratch/retro-frames/stage-032/frame-00007.jpg"
+        },
+        {
+          "seconds": 461.5,
+          "file": "scratch/retro-frames/stage-032/frame-00008.jpg"
+        },
+        {
+          "seconds": 462.5,
+          "file": "scratch/retro-frames/stage-032/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 33,
+      "width": 5,
+      "height": 6,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        }
+      ],
+      "maxMoves": 9,
+      "player": {
+        "x": 4,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "metal",
+          "top": 4,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "kind": "wood",
+          "top": 5,
+          "north": 4,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 489.0,
+          "file": "scratch/retro-frames/stage-033/frame-00007.jpg"
+        },
+        {
+          "seconds": 489.5,
+          "file": "scratch/retro-frames/stage-033/frame-00008.jpg"
+        },
+        {
+          "seconds": 490.5,
+          "file": "scratch/retro-frames/stage-033/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 34,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 4,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 519.0,
+          "file": "scratch/retro-frames/stage-034/frame-00007.jpg"
+        },
+        {
+          "seconds": 519.5,
+          "file": "scratch/retro-frames/stage-034/frame-00008.jpg"
+        },
+        {
+          "seconds": 520.5,
+          "file": "scratch/retro-frames/stage-034/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 35,
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "wood",
+          "top": 6,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 556.0,
+          "file": "scratch/retro-frames/stage-035/frame-00007.jpg"
+        },
+        {
+          "seconds": 556.5,
+          "file": "scratch/retro-frames/stage-035/frame-00008.jpg"
+        },
+        {
+          "seconds": 557.5,
+          "file": "scratch/retro-frames/stage-035/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 36,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "stone",
+          "top": 4,
+          "north": 1,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 570.0,
+          "file": "scratch/retro-frames/stage-036/frame-00007.jpg"
+        },
+        {
+          "seconds": 570.5,
+          "file": "scratch/retro-frames/stage-036/frame-00008.jpg"
+        },
+        {
+          "seconds": 571.5,
+          "file": "scratch/retro-frames/stage-036/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 37,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 584.0,
+          "file": "scratch/retro-frames/stage-037/frame-00007.jpg"
+        },
+        {
+          "seconds": 584.5,
+          "file": "scratch/retro-frames/stage-037/frame-00008.jpg"
+        },
+        {
+          "seconds": 585.5,
+          "file": "scratch/retro-frames/stage-037/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 38,
+      "width": 7,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 607.0,
+          "file": "scratch/retro-frames/stage-038/frame-00007.jpg"
+        },
+        {
+          "seconds": 607.5,
+          "file": "scratch/retro-frames/stage-038/frame-00008.jpg"
+        },
+        {
+          "seconds": 608.5,
+          "file": "scratch/retro-frames/stage-038/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 39,
+      "width": 7,
+      "height": 2,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 626.0,
+          "file": "scratch/retro-frames/stage-039/frame-00007.jpg"
+        },
+        {
+          "seconds": 626.5,
+          "file": "scratch/retro-frames/stage-039/frame-00008.jpg"
+        },
+        {
+          "seconds": 627.5,
+          "file": "scratch/retro-frames/stage-039/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 40,
+      "width": 2,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 0,
+        "y": 6,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 6,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "kind": "normal",
+          "top": 2,
+          "north": 1,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 645.0,
+          "file": "scratch/retro-frames/stage-040/frame-00007.jpg"
+        },
+        {
+          "seconds": 645.5,
+          "file": "scratch/retro-frames/stage-040/frame-00008.jpg"
+        },
+        {
+          "seconds": 646.5,
+          "file": "scratch/retro-frames/stage-040/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 61,
+      "width": 6,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 14,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 6,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1095.0,
+          "file": "scratch/retro-frames/stage-061/frame-00007.jpg"
+        },
+        {
+          "seconds": 1095.5,
+          "file": "scratch/retro-frames/stage-061/frame-00008.jpg"
+        },
+        {
+          "seconds": 1096.5,
+          "file": "scratch/retro-frames/stage-061/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 62,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 3,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 2,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1118.0,
+          "file": "scratch/retro-frames/stage-062/frame-00007.jpg"
+        },
+        {
+          "seconds": 1118.5,
+          "file": "scratch/retro-frames/stage-062/frame-00008.jpg"
+        },
+        {
+          "seconds": 1119.5,
+          "file": "scratch/retro-frames/stage-062/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 63,
+      "width": 7,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 0,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "ice",
+          "top": 1,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "metal",
+          "top": 4,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1133.0,
+          "file": "scratch/retro-frames/stage-063/frame-00007.jpg"
+        },
+        {
+          "seconds": 1133.5,
+          "file": "scratch/retro-frames/stage-063/frame-00008.jpg"
+        },
+        {
+          "seconds": 1134.5,
+          "file": "scratch/retro-frames/stage-063/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 64,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 14,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1158.0,
+          "file": "scratch/retro-frames/stage-064/frame-00007.jpg"
+        },
+        {
+          "seconds": 1158.5,
+          "file": "scratch/retro-frames/stage-064/frame-00008.jpg"
+        },
+        {
+          "seconds": 1159.5,
+          "file": "scratch/retro-frames/stage-064/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 65,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1188.0,
+          "file": "scratch/retro-frames/stage-065/frame-00007.jpg"
+        },
+        {
+          "seconds": 1188.5,
+          "file": "scratch/retro-frames/stage-065/frame-00008.jpg"
+        },
+        {
+          "seconds": 1189.5,
+          "file": "scratch/retro-frames/stage-065/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 66,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "metal",
+          "top": 1,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1204.0,
+          "file": "scratch/retro-frames/stage-066/frame-00007.jpg"
+        },
+        {
+          "seconds": 1204.5,
+          "file": "scratch/retro-frames/stage-066/frame-00008.jpg"
+        },
+        {
+          "seconds": 1205.5,
+          "file": "scratch/retro-frames/stage-066/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 67,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        }
+      ],
+      "maxMoves": 5,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1219.0,
+          "file": "scratch/retro-frames/stage-067/frame-00007.jpg"
+        },
+        {
+          "seconds": 1219.5,
+          "file": "scratch/retro-frames/stage-067/frame-00008.jpg"
+        },
+        {
+          "seconds": 1220.5,
+          "file": "scratch/retro-frames/stage-067/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 68,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 3,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": 3,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1241.0,
+          "file": "scratch/retro-frames/stage-068/frame-00007.jpg"
+        },
+        {
+          "seconds": 1241.5,
+          "file": "scratch/retro-frames/stage-068/frame-00008.jpg"
+        },
+        {
+          "seconds": 1242.5,
+          "file": "scratch/retro-frames/stage-068/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 69,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1256.0,
+          "file": "scratch/retro-frames/stage-069/frame-00007.jpg"
+        },
+        {
+          "seconds": 1256.5,
+          "file": "scratch/retro-frames/stage-069/frame-00008.jpg"
+        },
+        {
+          "seconds": 1257.5,
+          "file": "scratch/retro-frames/stage-069/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 70,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        }
+      ],
+      "maxMoves": 3,
+      "player": {
+        "x": 0,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "metal",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1277.0,
+          "file": "scratch/retro-frames/stage-070/frame-00007.jpg"
+        },
+        {
+          "seconds": 1277.5,
+          "file": "scratch/retro-frames/stage-070/frame-00008.jpg"
+        },
+        {
+          "seconds": 1278.5,
+          "file": "scratch/retro-frames/stage-070/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 91,
+      "width": 5,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1720.0,
+          "file": "scratch/retro-frames/stage-091/frame-00007.jpg"
+        },
+        {
+          "seconds": 1720.5,
+          "file": "scratch/retro-frames/stage-091/frame-00008.jpg"
+        },
+        {
+          "seconds": 1721.5,
+          "file": "scratch/retro-frames/stage-091/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 92,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 10,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1739.0,
+          "file": "scratch/retro-frames/stage-092/frame-00007.jpg"
+        },
+        {
+          "seconds": 1739.5,
+          "file": "scratch/retro-frames/stage-092/frame-00008.jpg"
+        },
+        {
+          "seconds": 1740.5,
+          "file": "scratch/retro-frames/stage-092/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 93,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1756.0,
+          "file": "scratch/retro-frames/stage-093/frame-00007.jpg"
+        },
+        {
+          "seconds": 1756.5,
+          "file": "scratch/retro-frames/stage-093/frame-00008.jpg"
+        },
+        {
+          "seconds": 1757.5,
+          "file": "scratch/retro-frames/stage-093/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 94,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1784.0,
+          "file": "scratch/retro-frames/stage-094/frame-00007.jpg"
+        },
+        {
+          "seconds": 1784.5,
+          "file": "scratch/retro-frames/stage-094/frame-00008.jpg"
+        },
+        {
+          "seconds": 1785.5,
+          "file": "scratch/retro-frames/stage-094/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 95,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "metal",
+          "top": 6,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 5,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 3,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1799.0,
+          "file": "scratch/retro-frames/stage-095/frame-00007.jpg"
+        },
+        {
+          "seconds": 1799.5,
+          "file": "scratch/retro-frames/stage-095/frame-00008.jpg"
+        },
+        {
+          "seconds": 1800.5,
+          "file": "scratch/retro-frames/stage-095/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 96,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "ice",
+          "top": 1,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1826.0,
+          "file": "scratch/retro-frames/stage-096/frame-00007.jpg"
+        },
+        {
+          "seconds": 1826.5,
+          "file": "scratch/retro-frames/stage-096/frame-00008.jpg"
+        },
+        {
+          "seconds": 1827.5,
+          "file": "scratch/retro-frames/stage-096/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 97,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "kind": "wood",
+          "top": 6,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1857.0,
+          "file": "scratch/retro-frames/stage-097/frame-00007.jpg"
+        },
+        {
+          "seconds": 1857.5,
+          "file": "scratch/retro-frames/stage-097/frame-00008.jpg"
+        },
+        {
+          "seconds": 1858.5,
+          "file": "scratch/retro-frames/stage-097/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 98,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "kind": "metal",
+          "top": 6,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1884.0,
+          "file": "scratch/retro-frames/stage-098/frame-00007.jpg"
+        },
+        {
+          "seconds": 1884.5,
+          "file": "scratch/retro-frames/stage-098/frame-00008.jpg"
+        },
+        {
+          "seconds": 1885.5,
+          "file": "scratch/retro-frames/stage-098/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 99,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1940.0,
+          "file": "scratch/retro-frames/stage-099/frame-00007.jpg"
+        },
+        {
+          "seconds": 1940.5,
+          "file": "scratch/retro-frames/stage-099/frame-00008.jpg"
+        },
+        {
+          "seconds": 1941.5,
+          "file": "scratch/retro-frames/stage-099/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    },
+    {
+      "stage": 100,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 10,
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 6,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "ice",
+          "top": 6,
+          "north": 5,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 6,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": null
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1977.0,
+          "file": "scratch/retro-frames/stage-100/frame-00007.jpg"
+        },
+        {
+          "seconds": 1977.5,
+          "file": "scratch/retro-frames/stage-100/frame-00008.jpg"
+        },
+        {
+          "seconds": 1978.5,
+          "file": "scratch/retro-frames/stage-100/frame-00010.jpg"
+        }
+      ],
+      "deductions": "North from directly visible South, or from visible East and the verified 24-orientation physical face layout; East completed by the same layout.",
+      "ambiguities": []
+    }
+  ]
+}

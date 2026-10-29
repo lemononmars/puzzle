@@ -3,9 +3,26 @@ import {
 	loadCompleted,
 	saveCompleted,
 	loadTutorialBest,
-	saveTutorialBest
+	saveTutorialBest,
+	loadRetroBest,
+	saveRetroBest
 } from './demonDiceProgress.js';
 describe('Demon Dice completed levels', () => {
+	it('saves Retro completion and best scores separately and rejects invalid stage records', () => {
+		const memory = new Map<string, string>();
+		const storage = {
+			getItem: (key: string) => memory.get(key) ?? null,
+			setItem: (key: string, value: string) => {
+				memory.set(key, value);
+			}
+		};
+		saveCompleted(storage, 'retro', ['R001', 'R100']);
+		saveCompleted(storage, 'puzzles', ['P1']);
+		expect(loadCompleted(storage, 'retro', ['R001', 'R100'])).toEqual(['R001', 'R100']);
+		expect(loadCompleted(storage, 'puzzles', ['P1'])).toEqual(['P1']);
+		saveRetroBest(storage, { R001: 2, R100: 9, R000: 1, R101: 1, R050: -1 });
+		expect(loadRetroBest(storage)).toEqual({ R001: 2, R100: 9 });
+	});
 	it('keeps a validated best tutorial result for the target star', () => {
 		let data = '';
 		const storage = {

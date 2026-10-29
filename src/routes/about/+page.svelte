@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BrandLogo from '#lib/components/ui/BrandLogo.svelte';
 	import PageHeading from '#lib/components/ui/PageHeading.svelte';
 	import Surface from '#lib/components/ui/Surface.svelte';
 	import LinkCard from '#lib/components/ui/LinkCard.svelte';
@@ -47,12 +48,7 @@
 	<Surface
 		><section class="identity" aria-labelledby="name-meaning">
 			<div class="symbol bg-base-200 text-base-content">
-				<img
-					src={brand.symbol}
-					alt="Chi Key: อักษร chi ที่มีรูปทรงของกุญแจ"
-					width="280"
-					height="240"
-				/>
+				<BrandLogo variant="stacked" />
 			</div>
 			<div class="space-y-4">
 				<h2 id="name-meaning" class="text-xl font-bold">ชื่อที่ชวนให้ “ไข” อย่างสนุก</h2>
@@ -108,10 +104,6 @@
 	.symbol {
 		border-radius: 24px;
 		padding: 16px;
-	}
-	.symbol img {
-		width: 100%;
-		height: auto;
 	}
 	@media (max-width: 640px) {
 		.identity {

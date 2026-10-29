@@ -1,0 +1,1984 @@
+{
+  "source": "https://www.youtube.com/watch?v=Um5NdG5McKI",
+  "status": "Visual transcription; needs replay validation",
+  "stages": [
+    {
+      "stage": 41,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 659,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 42,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 8,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 672,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": [
+        "Rear-left top6 at(1,1) has both visible sides occluded by neighbors; remains unrolled in sampled solution. Exact yaw unknown."
+      ]
+    },
+    {
+      "stage": 43,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 691,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 44,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "maxMoves": 7,
+      "player": {
+        "x": 0,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 703,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 45,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 723,
+          "observed": "Initial board/player and visible adjacent faces. Hidden opposite/third faces deduced using the canonical physical die layout top1,north5,east3 (24 rotations)."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 46,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "maxMoves": 9,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "stone",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 742,
+          "observed": "Initial board/player and exposed side pips; opposite and third face inferred from canonical die chirality. Stage046 rear South3 clarified745s; frontleft East4 exposed743s."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 47,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "maxMoves": 9,
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 763,
+          "observed": "Initial board/player, HUD and exposed adjacent faces; canonical die chirality determines the hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 48,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "maxMoves": 12,
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 785,
+          "observed": "Initial board/player, HUD and exposed adjacent faces; canonical die chirality determines the hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 49,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 9,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 3,
+          "y": 0,
+          "kind": "stone",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 808,
+          "observed": "Initial board/player, HUD and exposed adjacent faces; canonical die chirality determines the hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 50,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "maxMoves": 10,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 832,
+          "observed": "Initial board/player, HUD and exposed adjacent faces; canonical die chirality determines the hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 51,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 854,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 52,
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 9,
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 873,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [
+        "Rear-left top1 at(1,1) is enclosed by neighbors on both visible faces; needs later HUD/roll evidence."
+      ]
+    },
+    {
+      "stage": 53,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 1,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 897,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 54,
+      "width": 5,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 3,
+        "y": 6,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 918,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 55,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": {
+        "x": 3,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 936,
+          "observed": "Initial board, player and visible adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 56,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "maxMoves": 6,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 972,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [
+        "Wood1 at(5,1): only partial side pip visible initially; exact yaw needs later evidence."
+      ]
+    },
+    {
+      "stage": 57,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1004,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 58,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 11,
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1020,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 59,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 14,
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1047,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        }
+      ],
+      "ambiguities": [
+        "Rear6s at(0,0),(1,0) are enclosed on both visible sides. They appear static until the sixes group is completed; exact yaw unobservable in initial view."
+      ]
+    },
+    {
+      "stage": 60,
+      "width": 3,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 4,
+      "player": {
+        "x": 1,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        }
+      ],
+      "evidence": [
+        {
+          "seconds": 1079,
+          "observed": "Initial board/player and exposed adjacent face(s); canonical die chirality determines hidden third face."
+        },
+        {
+          "seconds": 1085,
+          "observed": "Central2 South1 becomes visible after the front1 is pushed right; top2 remains unchanged, East4 also visible."
+        }
+      ],
+      "ambiguities": []
+    },
+    {
+      "stage": 61,
+      "width": 6,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 14,
+      "player": null,
+      "dice": [
+        {
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "ice",
+          "top": 5,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 6,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    },
+    {
+      "stage": 62,
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 3,
+      "player": null,
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    },
+    {
+      "stage": 63,
+      "width": 7,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": null,
+      "dice": [
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "ice",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "kind": "metal",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 6,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    },
+    {
+      "stage": 64,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 14,
+      "player": null,
+      "dice": [
+        {
+          "x": 2,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "kind": "stone",
+          "top": 2,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    },
+    {
+      "stage": 65,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "maxMoves": 5,
+      "player": null,
+      "dice": [
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "kind": "metal",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "kind": "metal",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "ice",
+          "top": 4,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    },
+    {
+      "stage": 66,
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "maxMoves": 7,
+      "player": null,
+      "dice": [
+        {
+          "x": 1,
+          "y": 0,
+          "kind": "metal",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "stone",
+          "top": 1,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    },
+    {
+      "stage": 67,
+      "width": 7,
+      "height": 7,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        }
+      ],
+      "maxMoves": 5,
+      "player": null,
+      "dice": [
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "kind": "metal",
+          "top": 4,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    },
+    {
+      "stage": 68,
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "maxMoves": 6,
+      "player": null,
+      "dice": [
+        {
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 3,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    },
+    {
+      "stage": 69,
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "maxMoves": 12,
+      "player": null,
+      "dice": [
+        {
+          "x": 4,
+          "y": 0,
+          "kind": "metal",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "stone",
+          "top": 2,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "kind": "metal",
+          "top": 2,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    },
+    {
+      "stage": 70,
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        }
+      ],
+      "maxMoves": 3,
+      "player": null,
+      "dice": [
+        {
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "kind": "metal",
+          "top": 3,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": null,
+          "east": null
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": null,
+          "east": null
+        }
+      ],
+      "evidence": [],
+      "ambiguities": []
+    }
+  ]
+}

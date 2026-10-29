@@ -2,7 +2,7 @@ import {brand} from "#lib/brand.js";
 import catalog from '#lib/data/catalog.json';
 import { portfolioSections } from '#lib/data/portfolioSections.js';
 type Social = {title:string;description:string;image:string;imageAlt:string;canonical:string;noindex:boolean};
-const defaults={title:brand.title,description:brand.description,image:'/og-main.png?brand=chi-fun',imageAlt:'Chi Fun / ไขสนุก with the Chi Key symbol.'};
+const defaults={title:brand.title,description:brand.description,image:'/og-main.png?brand=lockups-v4',imageAlt:'Chi Fun / ไขสนุก — Chi Key and Thai wordmark.'};
 const fixed: Record<string, Partial<Social>> = {
  '/puzzles/cryptic/guide':{title:'Cryptic Guide / คู่มือศัพท์ซับซ้อน · Chi Fun',description:'ประเภทการเล่นคำ นิยาม และวัตถุดิบ พร้อมแหล่งอ้างอิงภาษาอังกฤษ'},
  '/':defaults,
@@ -15,12 +15,12 @@ const fixed: Record<string, Partial<Social>> = {
  '/contact':{title:'Contact for work · Chi Fun',description:'Work with Sakulbuth on puzzles, board games, events, and web development.'},
  '/shop':{title:'Puzzle bookshop · Chi Fun',description:'Browse puzzle books for curious minds.'},
  '/puzzles/tbs2021':{title:'TBS2021 · Puzzle archive',description:'Thailand Board Game Show 2021 puzzles and the original event writeup.'},
- '/tools/wordsearch':{image:'/og-wordsearch-builder.png'},
- '/tools/thwordsearch':{image:'/og-thai-wordsearch.png'},
- '/tools/jigsaw':{image:'/og-jigsaw-quiz.png'},
- '/tools/crossword':{image:'/og-crossword-builder.png'},
+ '/tools/wordsearch':{image:'/og-wordsearch-builder.png?brand=lockups-v4'},
+ '/tools/thwordsearch':{image:'/og-thai-wordsearch.png?brand=lockups-v4'},
+ '/tools/jigsaw':{image:'/og-jigsaw-quiz.png?brand=lockups-v4'},
+ '/tools/crossword':{image:'/og-crossword-builder.png?brand=lockups-v4'},
  '/tools/check':{title:'Answer checker builder · Chi Fun',description:'Create an answer-checking link for your own puzzle.'},
- '/portfolio/web-development':{image:'/images/portfolio/thai-board-game-database.png',imageAlt:'Thai Board Game Database website preview.'}
+ '/portfolio/web-development':{image:'/og-main.png?brand=lockups-v4'}
 };
 const entries=Object.entries(catalog).flatMap(([area,groups])=>groups.flatMap(group=>[{url:`/${area}/${group.id}`,title:group.title,description:group.description},...group.entries.map(entry=>({url:entry.href,title:entry.title,description:('description' in entry ? entry.description : undefined)??group.description}))]));
 export function socialMetadata(pathname:string, data:Record<string,any>, origin:string):Social {

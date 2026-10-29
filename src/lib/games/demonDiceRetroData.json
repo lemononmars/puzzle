@@ -1,0 +1,7235 @@
+[
+  {
+    "id": "R001",
+    "set": "1",
+    "title": "Stage 001",
+    "lesson": "",
+    "hint": "Clear every die within 2 moves. Finish below the limit for a star.",
+    "maxMoves": 2,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 1,
+    "sourceTimes": [
+      15,
+      18
+    ]
+  },
+  {
+    "id": "R002",
+    "set": "1",
+    "title": "Stage 002",
+    "lesson": "",
+    "hint": "Clear every die within 2 moves. Finish below the limit for a star.",
+    "maxMoves": 2,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 2,
+    "sourceTimes": [
+      25.5,
+      26.5
+    ]
+  },
+  {
+    "id": "R003",
+    "set": "1",
+    "title": "Stage 003",
+    "lesson": "",
+    "hint": "Clear every die within 3 moves. Finish below the limit for a star.",
+    "maxMoves": 3,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 3,
+    "sourceTimes": [
+      35.5
+    ]
+  },
+  {
+    "id": "R004",
+    "set": "1",
+    "title": "Stage 004",
+    "lesson": "",
+    "hint": "Clear every die within 4 moves. Finish below the limit for a star.",
+    "maxMoves": 4,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 4,
+    "sourceTimes": [
+      46,
+      50
+    ]
+  },
+  {
+    "id": "R005",
+    "set": "1",
+    "title": "Stage 005",
+    "lesson": "",
+    "hint": "Clear every die within 2 moves. Finish below the limit for a star.",
+    "maxMoves": 2,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 5,
+    "sourceTimes": [
+      58
+    ]
+  },
+  {
+    "id": "R006",
+    "set": "1",
+    "title": "Stage 006",
+    "lesson": "",
+    "hint": "Clear every die within 5 moves. Finish below the limit for a star.",
+    "maxMoves": 5,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 6,
+    "sourceTimes": [
+      67
+    ]
+  },
+  {
+    "id": "R007",
+    "set": "1",
+    "title": "Stage 007",
+    "lesson": "",
+    "hint": "Clear every die within 4 moves. Finish below the limit for a star.",
+    "maxMoves": 4,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 7,
+    "sourceTimes": [
+      79.5,
+      81.5
+    ]
+  },
+  {
+    "id": "R008",
+    "set": "1",
+    "title": "Stage 008",
+    "lesson": "",
+    "hint": "Clear every die within 2 moves. Finish below the limit for a star.",
+    "maxMoves": 2,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 8,
+    "sourceTimes": [
+      92.5
+    ]
+  },
+  {
+    "id": "R009",
+    "set": "1",
+    "title": "Stage 009",
+    "lesson": "",
+    "hint": "Clear every die within 2 moves. Finish below the limit for a star.",
+    "maxMoves": 2,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 9,
+    "sourceTimes": [
+      105.5
+    ]
+  },
+  {
+    "id": "R010",
+    "set": "1",
+    "title": "Stage 010",
+    "lesson": "",
+    "hint": "Clear every die within 2 moves. Finish below the limit for a star.",
+    "maxMoves": 2,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 10,
+    "sourceTimes": [
+      119.5
+    ]
+  },
+  {
+    "id": "R011",
+    "set": "2",
+    "title": "Stage 011",
+    "lesson": "",
+    "hint": "Clear every die within 4 moves. Finish below the limit for a star.",
+    "maxMoves": 4,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 0,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 11,
+    "sourceTimes": [
+      132.5
+    ]
+  },
+  {
+    "id": "R012",
+    "set": "2",
+    "title": "Stage 012",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 2,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "ice",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 0,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "ice",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 12,
+    "sourceTimes": [
+      145.5
+    ]
+  },
+  {
+    "id": "R013",
+    "set": "2",
+    "title": "Stage 013",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 13,
+    "sourceTimes": [
+      160
+    ]
+  },
+  {
+    "id": "R014",
+    "set": "2",
+    "title": "Stage 014",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 0,
+          "kind": "ice",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 0,
+          "kind": "ice",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 14,
+    "sourceTimes": [
+      173.5
+    ]
+  },
+  {
+    "id": "R015",
+    "set": "2",
+    "title": "Stage 015",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 15,
+    "sourceTimes": [
+      190.5
+    ]
+  },
+  {
+    "id": "R016",
+    "set": "2",
+    "title": "Stage 016",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 6,
+      "height": 6,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        }
+      ],
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 4,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 16,
+    "sourceTimes": [
+      204.5
+    ]
+  },
+  {
+    "id": "R017",
+    "set": "2",
+    "title": "Stage 017",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 6,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 17,
+    "sourceTimes": [
+      221
+    ]
+  },
+  {
+    "id": "R018",
+    "set": "2",
+    "title": "Stage 018",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 0,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 18,
+    "sourceTimes": [
+      243.5
+    ]
+  },
+  {
+    "id": "R019",
+    "set": "2",
+    "title": "Stage 019",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 0,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 19,
+    "sourceTimes": [
+      262.5
+    ]
+  },
+  {
+    "id": "R020",
+    "set": "2",
+    "title": "Stage 020",
+    "lesson": "",
+    "hint": "Clear every die within 5 moves. Finish below the limit for a star.",
+    "maxMoves": 5,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 5,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 4,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 6,
+          "x": 2,
+          "y": 5,
+          "kind": "normal",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 20,
+    "sourceTimes": [
+      279.5
+    ]
+  },
+  {
+    "id": "R021",
+    "set": "3",
+    "title": "Stage 021",
+    "lesson": "",
+    "hint": "Clear every die within 5 moves. Finish below the limit for a star.",
+    "maxMoves": 5,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 6,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 5,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 4,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 21,
+    "sourceTimes": [
+      294.5
+    ]
+  },
+  {
+    "id": "R022",
+    "set": "3",
+    "title": "Stage 022",
+    "lesson": "",
+    "hint": "Clear every die within 3 moves. Finish below the limit for a star.",
+    "maxMoves": 3,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 22,
+    "sourceTimes": [
+      314.5
+    ]
+  },
+  {
+    "id": "R023",
+    "set": "3",
+    "title": "Stage 023",
+    "lesson": "",
+    "hint": "Clear every die within 10 moves. Finish below the limit for a star.",
+    "maxMoves": 10,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 2,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 4,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 4,
+          "x": 6,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 23,
+    "sourceTimes": [
+      328.5
+    ]
+  },
+  {
+    "id": "R024",
+    "set": "3",
+    "title": "Stage 024",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 7,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        }
+      ],
+      "player": {
+        "x": 5,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 5,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 5,
+          "y": 4,
+          "kind": "ice",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 6,
+          "kind": "metal",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 5,
+          "x": 4,
+          "y": 6,
+          "kind": "metal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 24,
+    "sourceTimes": [
+      344.5
+    ]
+  },
+  {
+    "id": "R025",
+    "set": "3",
+    "title": "Stage 025",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 25,
+    "sourceTimes": [
+      364.5
+    ]
+  },
+  {
+    "id": "R026",
+    "set": "3",
+    "title": "Stage 026",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 26,
+    "sourceTimes": [
+      379.5
+    ]
+  },
+  {
+    "id": "R027",
+    "set": "3",
+    "title": "Stage 027",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 0,
+          "kind": "wood",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 27,
+    "sourceTimes": [
+      392.5
+    ]
+  },
+  {
+    "id": "R028",
+    "set": "3",
+    "title": "Stage 028",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 2,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 28,
+    "sourceTimes": [
+      405.5
+    ]
+  },
+  {
+    "id": "R029",
+    "set": "3",
+    "title": "Stage 029",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 4,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 4,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 4,
+          "kind": "normal",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 29,
+    "sourceTimes": [
+      421.5
+    ]
+  },
+  {
+    "id": "R030",
+    "set": "3",
+    "title": "Stage 030",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "wood",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 30,
+    "sourceTimes": [
+      431.5
+    ]
+  },
+  {
+    "id": "R031",
+    "set": "4",
+    "title": "Stage 031",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 3,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 0,
+          "kind": "stone",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 31,
+    "sourceTimes": [
+      449,
+      449.5,
+      450.5
+    ]
+  },
+  {
+    "id": "R032",
+    "set": "4",
+    "title": "Stage 032",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 2,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 32,
+    "sourceTimes": [
+      461,
+      461.5,
+      462.5
+    ]
+  },
+  {
+    "id": "R033",
+    "set": "4",
+    "title": "Stage 033",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 6,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        }
+      ],
+      "player": {
+        "x": 4,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "metal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 4,
+          "kind": "wood",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 33,
+    "sourceTimes": [
+      489,
+      489.5,
+      490.5
+    ]
+  },
+  {
+    "id": "R034",
+    "set": "4",
+    "title": "Stage 034",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "player": {
+        "x": 4,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 4,
+          "y": 1,
+          "kind": "wood",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 4,
+          "y": 2,
+          "kind": "wood",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 34,
+    "sourceTimes": [
+      519,
+      519.5,
+      520.5
+    ]
+  },
+  {
+    "id": "R035",
+    "set": "4",
+    "title": "Stage 035",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "wood",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 35,
+    "sourceTimes": [
+      556,
+      556.5,
+      557.5
+    ]
+  },
+  {
+    "id": "R036",
+    "set": "4",
+    "title": "Stage 036",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 2,
+          "kind": "stone",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 36,
+    "sourceTimes": [
+      570,
+      570.5,
+      571.5
+    ]
+  },
+  {
+    "id": "R037",
+    "set": "4",
+    "title": "Stage 037",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 0,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 37,
+    "sourceTimes": [
+      584,
+      584.5,
+      585.5
+    ]
+  },
+  {
+    "id": "R038",
+    "set": "4",
+    "title": "Stage 038",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 38,
+    "sourceTimes": [
+      607,
+      607.5,
+      608.5
+    ]
+  },
+  {
+    "id": "R039",
+    "set": "4",
+    "title": "Stage 039",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 2,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 4,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 39,
+    "sourceTimes": [
+      626,
+      626.5,
+      627.5
+    ]
+  },
+  {
+    "id": "R040",
+    "set": "4",
+    "title": "Stage 040",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 2,
+      "height": 7,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 6,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 6,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 6,
+          "kind": "normal",
+          "top": 2,
+          "north": 1,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 40,
+    "sourceTimes": [
+      645,
+      645.5,
+      646.5
+    ]
+  },
+  {
+    "id": "R041",
+    "set": "5",
+    "title": "Stage 041",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 41,
+    "sourceTimes": [
+      659
+    ]
+  },
+  {
+    "id": "R042",
+    "set": "5",
+    "title": "Stage 042",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 5,
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "id": 6,
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 42,
+    "sourceTimes": [
+      672
+    ]
+  },
+  {
+    "id": "R043",
+    "set": "5",
+    "title": "Stage 043",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 3,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 43,
+    "sourceTimes": [
+      691
+    ]
+  },
+  {
+    "id": "R044",
+    "set": "5",
+    "title": "Stage 044",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 44,
+    "sourceTimes": [
+      703
+    ]
+  },
+  {
+    "id": "R045",
+    "set": "5",
+    "title": "Stage 045",
+    "lesson": "",
+    "hint": "Clear every die within 4 moves. Finish below the limit for a star.",
+    "maxMoves": 4,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 45,
+    "sourceTimes": [
+      723
+    ]
+  },
+  {
+    "id": "R046",
+    "set": "5",
+    "title": "Stage 046",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 0,
+          "kind": "stone",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 46,
+    "sourceTimes": [
+      742
+    ]
+  },
+  {
+    "id": "R047",
+    "set": "5",
+    "title": "Stage 047",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 3,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 47,
+    "sourceTimes": [
+      763
+    ]
+  },
+  {
+    "id": "R048",
+    "set": "5",
+    "title": "Stage 048",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 0,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 3,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 48,
+    "sourceTimes": [
+      785
+    ]
+  },
+  {
+    "id": "R049",
+    "set": "5",
+    "title": "Stage 049",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 0,
+          "kind": "stone",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 49,
+    "sourceTimes": [
+      808
+    ]
+  },
+  {
+    "id": "R050",
+    "set": "5",
+    "title": "Stage 050",
+    "lesson": "",
+    "hint": "Clear every die within 10 moves. Finish below the limit for a star.",
+    "maxMoves": 10,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "id": 6,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 50,
+    "sourceTimes": [
+      832
+    ]
+  },
+  {
+    "id": "R051",
+    "set": "6",
+    "title": "Stage 051",
+    "lesson": "",
+    "hint": "Clear every die within 4 moves. Finish below the limit for a star.",
+    "maxMoves": 4,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 51,
+    "sourceTimes": [
+      854
+    ]
+  },
+  {
+    "id": "R052",
+    "set": "6",
+    "title": "Stage 052",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 52,
+    "sourceTimes": [
+      873
+    ]
+  },
+  {
+    "id": "R053",
+    "set": "6",
+    "title": "Stage 053",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 6,
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 53,
+    "sourceTimes": [
+      897
+    ]
+  },
+  {
+    "id": "R054",
+    "set": "6",
+    "title": "Stage 054",
+    "lesson": "",
+    "hint": "Clear every die within 4 moves. Finish below the limit for a star.",
+    "maxMoves": 4,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 7,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 6,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 4,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 5,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 6,
+          "x": 3,
+          "y": 5,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 54,
+    "sourceTimes": [
+      918
+    ]
+  },
+  {
+    "id": "R055",
+    "set": "6",
+    "title": "Stage 055",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 5,
+          "x": 4,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 6,
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 55,
+    "sourceTimes": [
+      936
+    ]
+  },
+  {
+    "id": "R056",
+    "set": "6",
+    "title": "Stage 056",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 5,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 2,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 4,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 5,
+          "x": 6,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 6,
+          "x": 2,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 56,
+    "sourceTimes": [
+      972
+    ]
+  },
+  {
+    "id": "R057",
+    "set": "6",
+    "title": "Stage 057",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 5,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "id": 6,
+          "x": 5,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 57,
+    "sourceTimes": [
+      1004
+    ]
+  },
+  {
+    "id": "R058",
+    "set": "6",
+    "title": "Stage 058",
+    "lesson": "",
+    "hint": "Clear every die within 11 moves. Finish below the limit for a star.",
+    "maxMoves": 11,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 4,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 6,
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 58,
+    "sourceTimes": [
+      1020
+    ]
+  },
+  {
+    "id": "R059",
+    "set": "6",
+    "title": "Stage 059",
+    "lesson": "",
+    "hint": "Clear every die within 14 moves. Finish below the limit for a star.",
+    "maxMoves": 14,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 6,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 59,
+    "sourceTimes": [
+      1047
+    ]
+  },
+  {
+    "id": "R060",
+    "set": "6",
+    "title": "Stage 060",
+    "lesson": "",
+    "hint": "Clear every die within 4 moves. Finish below the limit for a star.",
+    "maxMoves": 4,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 6,
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 60,
+    "sourceTimes": [
+      1079,
+      1085
+    ]
+  },
+  {
+    "id": "R061",
+    "set": "7",
+    "title": "Stage 061",
+    "lesson": "",
+    "hint": "Clear every die within 14 moves. Finish below the limit for a star.",
+    "maxMoves": 14,
+    "solution": [],
+    "state": {
+      "width": 6,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 4,
+          "y": 0,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": 3
+        },
+        {
+          "id": 6,
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 61,
+    "sourceTimes": [
+      1095,
+      1095.5,
+      1096.5
+    ]
+  },
+  {
+    "id": "R062",
+    "set": "7",
+    "title": "Stage 062",
+    "lesson": "",
+    "hint": "Clear every die within 3 moves. Finish below the limit for a star.",
+    "maxMoves": 3,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 2,
+          "kind": "ice",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 62,
+    "sourceTimes": [
+      1118,
+      1118.5,
+      1119.5
+    ]
+  },
+  {
+    "id": "R063",
+    "set": "7",
+    "title": "Stage 063",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 2,
+          "kind": "ice",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 2,
+          "kind": "metal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 5,
+          "x": 4,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "id": 6,
+          "x": 5,
+          "y": 2,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 63,
+    "sourceTimes": [
+      1133,
+      1133.5,
+      1134.5
+    ]
+  },
+  {
+    "id": "R064",
+    "set": "7",
+    "title": "Stage 064",
+    "lesson": "",
+    "hint": "Clear every die within 14 moves. Finish below the limit for a star.",
+    "maxMoves": 14,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 4,
+          "y": 2,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 4,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 64,
+    "sourceTimes": [
+      1158,
+      1158.5,
+      1159.5
+    ]
+  },
+  {
+    "id": "R065",
+    "set": "7",
+    "title": "Stage 065",
+    "lesson": "",
+    "hint": "Clear every die within 5 moves. Finish below the limit for a star.",
+    "maxMoves": 5,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 3,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 4,
+          "y": 3,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 5,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 65,
+    "sourceTimes": [
+      1188,
+      1188.5,
+      1189.5
+    ]
+  },
+  {
+    "id": "R066",
+    "set": "7",
+    "title": "Stage 066",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "metal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 6,
+          "x": 1,
+          "y": 3,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 66,
+    "sourceTimes": [
+      1204,
+      1204.5,
+      1205.5
+    ]
+  },
+  {
+    "id": "R067",
+    "set": "7",
+    "title": "Stage 067",
+    "lesson": "",
+    "hint": "Clear every die within 5 moves. Finish below the limit for a star.",
+    "maxMoves": 5,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 7,
+      "removedTiles": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 5,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 67,
+    "sourceTimes": [
+      1219,
+      1219.5,
+      1220.5
+    ]
+  },
+  {
+    "id": "R068",
+    "set": "7",
+    "title": "Stage 068",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 5,
+          "x": 4,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 68,
+    "sourceTimes": [
+      1241,
+      1241.5,
+      1242.5
+    ]
+  },
+  {
+    "id": "R069",
+    "set": "7",
+    "title": "Stage 069",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 4,
+          "y": 0,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 3,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 5,
+          "x": 0,
+          "y": 4,
+          "kind": "metal",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 69,
+    "sourceTimes": [
+      1256,
+      1256.5,
+      1257.5
+    ]
+  },
+  {
+    "id": "R070",
+    "set": "7",
+    "title": "Stage 070",
+    "lesson": "",
+    "hint": "Clear every die within 3 moves. Finish below the limit for a star.",
+    "maxMoves": 3,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 5,
+      "removedTiles": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 2,
+          "kind": "metal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 5,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 70,
+    "sourceTimes": [
+      1277,
+      1277.5,
+      1278.5
+    ]
+  },
+  {
+    "id": "R071",
+    "set": "8",
+    "title": "Stage 071",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 71,
+    "sourceTimes": [
+      1296.5,
+      1298.5
+    ]
+  },
+  {
+    "id": "R072",
+    "set": "8",
+    "title": "Stage 072",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 72,
+    "sourceTimes": [
+      1314.5,
+      1318
+    ]
+  },
+  {
+    "id": "R073",
+    "set": "8",
+    "title": "Stage 073",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 5,
+          "x": 4,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 73,
+    "sourceTimes": [
+      1328.5
+    ]
+  },
+  {
+    "id": "R074",
+    "set": "8",
+    "title": "Stage 074",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 74,
+    "sourceTimes": [
+      1346.5
+    ]
+  },
+  {
+    "id": "R075",
+    "set": "8",
+    "title": "Stage 075",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 2,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 75,
+    "sourceTimes": [
+      1360,
+      1360.5
+    ]
+  },
+  {
+    "id": "R076",
+    "set": "8",
+    "title": "Stage 076",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 0,
+          "kind": "metal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 76,
+    "sourceTimes": [
+      1378.5
+    ]
+  },
+  {
+    "id": "R077",
+    "set": "8",
+    "title": "Stage 077",
+    "lesson": "",
+    "hint": "Clear every die within 10 moves. Finish below the limit for a star.",
+    "maxMoves": 10,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "metal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 0,
+          "kind": "metal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 1,
+          "kind": "stone",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 77,
+    "sourceTimes": [
+      1394.5
+    ]
+  },
+  {
+    "id": "R078",
+    "set": "8",
+    "title": "Stage 078",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 2,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 78,
+    "sourceTimes": [
+      1418.5
+    ]
+  },
+  {
+    "id": "R079",
+    "set": "8",
+    "title": "Stage 079",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 6,
+      "height": 2,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 5,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 79,
+    "sourceTimes": [
+      1440.5
+    ]
+  },
+  {
+    "id": "R080",
+    "set": "8",
+    "title": "Stage 080",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 6,
+      "height": 4,
+      "removedTiles": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 2,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 4,
+          "y": 1,
+          "kind": "wood",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "wood",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 4,
+          "y": 2,
+          "kind": "wood",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 80,
+    "sourceTimes": [
+      1456.5
+    ]
+  },
+  {
+    "id": "R081",
+    "set": "9",
+    "title": "Stage 081",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 5,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 3,
+          "kind": "normal",
+          "top": 2,
+          "north": 1,
+          "east": 3
+        },
+        {
+          "id": 6,
+          "x": 3,
+          "y": 3,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 81,
+    "sourceTimes": [
+      1501,
+      1501.5,
+      1503.5
+    ]
+  },
+  {
+    "id": "R082",
+    "set": "9",
+    "title": "Stage 082",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 2,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 2,
+          "kind": "normal",
+          "top": 2,
+          "north": 3,
+          "east": 6
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 82,
+    "sourceTimes": [
+      1520.5,
+      1521.5
+    ]
+  },
+  {
+    "id": "R083",
+    "set": "9",
+    "title": "Stage 083",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 5,
+        "y": 1,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 0,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 5,
+          "y": 0,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 4,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 1,
+          "east": 3
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 83,
+    "sourceTimes": [
+      1534.5,
+      1535.5,
+      1536.5
+    ]
+  },
+  {
+    "id": "R084",
+    "set": "9",
+    "title": "Stage 084",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "stone",
+          "top": 2,
+          "north": 6,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "stone",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "metal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 2,
+          "kind": "stone",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 2,
+          "kind": "stone",
+          "top": 2,
+          "north": 1,
+          "east": 3
+        },
+        {
+          "id": 6,
+          "x": 2,
+          "y": 2,
+          "kind": "metal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 84,
+    "sourceTimes": [
+      1560.5,
+      1562,
+      1568.5,
+      1569.5
+    ]
+  },
+  {
+    "id": "R085",
+    "set": "9",
+    "title": "Stage 085",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 5,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 85,
+    "sourceTimes": [
+      1579.5
+    ]
+  },
+  {
+    "id": "R086",
+    "set": "9",
+    "title": "Stage 086",
+    "lesson": "",
+    "hint": "Clear every die within 9 moves. Finish below the limit for a star.",
+    "maxMoves": 9,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 2,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 2,
+          "north": 1,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 5,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 6,
+          "x": 4,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 86,
+    "sourceTimes": [
+      1598.5
+    ]
+  },
+  {
+    "id": "R087",
+    "set": "9",
+    "title": "Stage 087",
+    "lesson": "",
+    "hint": "Clear every die within 11 moves. Finish below the limit for a star.",
+    "maxMoves": 11,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 0,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 87,
+    "sourceTimes": [
+      1624.5
+    ]
+  },
+  {
+    "id": "R088",
+    "set": "9",
+    "title": "Stage 088",
+    "lesson": "",
+    "hint": "Clear every die within 10 moves. Finish below the limit for a star.",
+    "maxMoves": 10,
+    "solution": [],
+    "state": {
+      "width": 6,
+      "height": 2,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 3,
+          "y": 0,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "metal",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 5,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 88,
+    "sourceTimes": [
+      1642.5,
+      1643.5
+    ]
+  },
+  {
+    "id": "R089",
+    "set": "9",
+    "title": "Stage 089",
+    "lesson": "",
+    "hint": "Clear every die within 11 moves. Finish below the limit for a star.",
+    "maxMoves": 11,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 7,
+      "removedTiles": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        }
+      ],
+      "player": {
+        "x": 2,
+        "y": 5,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 3,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 5,
+          "y": 3,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 5,
+          "kind": "wood",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 89,
+    "sourceTimes": [
+      1658.5,
+      1659.5
+    ]
+  },
+  {
+    "id": "R090",
+    "set": "9",
+    "title": "Stage 090",
+    "lesson": "",
+    "hint": "Clear every die within 8 moves. Finish below the limit for a star.",
+    "maxMoves": 8,
+    "solution": [],
+    "state": {
+      "width": 2,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 4,
+          "north": 6,
+          "east": 5
+        },
+        {
+          "id": 3,
+          "x": 0,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 90,
+    "sourceTimes": [
+      1680.5,
+      1681.5
+    ]
+  },
+  {
+    "id": "R091",
+    "set": "10",
+    "title": "Stage 091",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 1,
+          "kind": "normal",
+          "top": 6,
+          "north": 3,
+          "east": 5
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 6,
+          "x": 3,
+          "y": 2,
+          "kind": "normal",
+          "top": 3,
+          "north": 1,
+          "east": 5
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 91,
+    "sourceTimes": [
+      1720,
+      1720.5,
+      1721.5
+    ]
+  },
+  {
+    "id": "R092",
+    "set": "10",
+    "title": "Stage 092",
+    "lesson": "",
+    "hint": "Clear every die within 10 moves. Finish below the limit for a star.",
+    "maxMoves": 10,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 3,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 92,
+    "sourceTimes": [
+      1739,
+      1739.5,
+      1740.5
+    ]
+  },
+  {
+    "id": "R093",
+    "set": "10",
+    "title": "Stage 093",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 5,
+      "height": 5,
+      "removedTiles": [],
+      "player": {
+        "x": 2,
+        "y": 3,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "metal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "stone",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 3,
+          "kind": "normal",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 3,
+          "kind": "wood",
+          "top": 4,
+          "north": 2,
+          "east": 6
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 93,
+    "sourceTimes": [
+      1756,
+      1756.5,
+      1757.5
+    ]
+  },
+  {
+    "id": "R094",
+    "set": "10",
+    "title": "Stage 094",
+    "lesson": "",
+    "hint": "Clear every die within 5 moves. Finish below the limit for a star.",
+    "maxMoves": 5,
+    "solution": [],
+    "state": {
+      "width": 4,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 2,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 1,
+          "kind": "normal",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 2,
+          "east": 4
+        },
+        {
+          "id": 4,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 1,
+          "north": 3,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 94,
+    "sourceTimes": [
+      1784,
+      1784.5,
+      1785.5
+    ]
+  },
+  {
+    "id": "R095",
+    "set": "10",
+    "title": "Stage 095",
+    "lesson": "",
+    "hint": "Clear every die within 7 moves. Finish below the limit for a star.",
+    "maxMoves": 7,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 4,
+      "removedTiles": [],
+      "player": {
+        "x": 1,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 0,
+          "kind": "metal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 0,
+          "kind": "normal",
+          "top": 5,
+          "north": 4,
+          "east": 6
+        },
+        {
+          "id": 4,
+          "x": 1,
+          "y": 1,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 5,
+          "x": 0,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 3,
+          "east": 1
+        },
+        {
+          "id": 6,
+          "x": 2,
+          "y": 2,
+          "kind": "normal",
+          "top": 5,
+          "north": 1,
+          "east": 4
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 95,
+    "sourceTimes": [
+      1799,
+      1799.5,
+      1800.5
+    ]
+  },
+  {
+    "id": "R096",
+    "set": "10",
+    "title": "Stage 096",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 2,
+          "x": 3,
+          "y": 1,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 5,
+          "y": 1,
+          "kind": "ice",
+          "top": 1,
+          "north": 5,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        },
+        {
+          "id": 5,
+          "x": 5,
+          "y": 3,
+          "kind": "ice",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 6,
+          "x": 5,
+          "y": 5,
+          "kind": "ice",
+          "top": 3,
+          "north": 6,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 96,
+    "sourceTimes": [
+      1826,
+      1826.5,
+      1827.5
+    ]
+  },
+  {
+    "id": "R097",
+    "set": "10",
+    "title": "Stage 097",
+    "lesson": "",
+    "hint": "Clear every die within 6 moves. Finish below the limit for a star.",
+    "maxMoves": 6,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 5,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 4,
+          "y": 3,
+          "kind": "wood",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 5,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 6,
+          "x": 5,
+          "y": 5,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 97,
+    "sourceTimes": [
+      1857,
+      1857.5,
+      1858.5
+    ]
+  },
+  {
+    "id": "R098",
+    "set": "10",
+    "title": "Stage 098",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 1,
+          "y": 1,
+          "kind": "wood",
+          "top": 1,
+          "north": 4,
+          "east": 5
+        },
+        {
+          "id": 2,
+          "x": 5,
+          "y": 1,
+          "kind": "wood",
+          "top": 2,
+          "north": 4,
+          "east": 1
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 3,
+          "kind": "wood",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 4,
+          "y": 3,
+          "kind": "metal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 5,
+          "kind": "wood",
+          "top": 4,
+          "north": 1,
+          "east": 2
+        },
+        {
+          "id": 6,
+          "x": 5,
+          "y": 5,
+          "kind": "wood",
+          "top": 3,
+          "north": 2,
+          "east": 1
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 98,
+    "sourceTimes": [
+      1884,
+      1884.5,
+      1885.5
+    ]
+  },
+  {
+    "id": "R099",
+    "set": "10",
+    "title": "Stage 099",
+    "lesson": "",
+    "hint": "Clear every die within 12 moves. Finish below the limit for a star.",
+    "maxMoves": 12,
+    "solution": [],
+    "state": {
+      "width": 7,
+      "height": 7,
+      "removedTiles": [],
+      "player": {
+        "x": 3,
+        "y": 4,
+        "riding": false
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 5,
+          "y": 1,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 2,
+          "x": 2,
+          "y": 2,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 3,
+          "x": 3,
+          "y": 3,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 4,
+          "x": 4,
+          "y": 4,
+          "kind": "normal",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        },
+        {
+          "id": 5,
+          "x": 1,
+          "y": 5,
+          "kind": "ice",
+          "top": 5,
+          "north": 6,
+          "east": 3
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 99,
+    "sourceTimes": [
+      1940,
+      1940.5,
+      1941.5
+    ]
+  },
+  {
+    "id": "R100",
+    "set": "10",
+    "title": "Stage 100",
+    "lesson": "",
+    "hint": "Clear every die within 10 moves. Finish below the limit for a star.",
+    "maxMoves": 10,
+    "solution": [],
+    "state": {
+      "width": 3,
+      "height": 3,
+      "removedTiles": [],
+      "player": {
+        "x": 0,
+        "y": 1,
+        "riding": true
+      },
+      "dice": [
+        {
+          "id": 1,
+          "x": 0,
+          "y": 0,
+          "kind": "normal",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 2,
+          "x": 1,
+          "y": 0,
+          "kind": "stone",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 3,
+          "x": 2,
+          "y": 0,
+          "kind": "ice",
+          "top": 6,
+          "north": 5,
+          "east": 4
+        },
+        {
+          "id": 4,
+          "x": 0,
+          "y": 1,
+          "kind": "metal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 5,
+          "x": 2,
+          "y": 1,
+          "kind": "wood",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        },
+        {
+          "id": 6,
+          "x": 1,
+          "y": 2,
+          "kind": "normal",
+          "top": 6,
+          "north": 4,
+          "east": 2
+        }
+      ],
+      "sinkDuration": 4800,
+      "iceMatchStops": true
+    },
+    "sourceStage": 100,
+    "sourceTimes": [
+      1977,
+      1977.5,
+      1978.5
+    ]
+  }
+]

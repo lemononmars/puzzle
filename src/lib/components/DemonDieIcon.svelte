@@ -71,7 +71,7 @@
 			points={face.points}
 			fill={palette.surface}
 		/><g transform={face.transform} fill={palette.pip}
-			>{#each dots[face.n] as [x, y]}<circle cx={x * 13} cy={y * 13} r="3.3" />{/each}</g
+			>{#each dots[face.n] as [x, y]}<circle cx={x * 13} cy={y * 13} r="4.6" />{/each}</g
 		>{/each}
 	<path d="M6 28 50 53 94 28M50 53v51" fill="none" stroke="currentColor" opacity=".2" />
 	{#if kind === 'wood' || kind === 'mixed'}<path

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { at, type State } from '#lib/games/devilDice.js';
+	import { at, type State, type Direction } from '#lib/games/devilDice.js';
 	import type { createDiceScene } from '#lib/games/devilDiceScene.js';
 	import type { Avatar } from '#lib/games/demonDiceAvatar.js';
 	let {
@@ -10,7 +10,10 @@
 		lost = false,
 		won = false,
 		avatar,
-		opponent
+		opponent,
+		blocked,
+		controlsInset = 0,
+		onMotionChange = (_moving: boolean) => {}
 	}: {
 		game: State;
 		reducedMotion?: boolean;
@@ -19,6 +22,9 @@
 		won?: boolean;
 		avatar?: Avatar;
 		opponent?: { position: State['player']; avatar: Avatar; name: string };
+		blocked?: { direction: Direction; serial: number };
+		controlsInset?: number;
+		onMotionChange?: (moving: boolean) => void;
 	} = $props();
 	let host: HTMLDivElement;
 	let failed = $state(false);
@@ -26,6 +32,9 @@
 	let view: ReturnType<typeof createDiceScene> | undefined;
 	const labels = { normal: 'Regular', wood: 'Wood', ice: 'Ice', stone: 'Stone', metal: 'Metal' };
 	let ridden = $derived(game.player.riding ? at(game, game.player.x, game.player.y) : undefined);
+	$effect(() => {
+		if (blocked && view) view.bump(blocked.direction);
+	});
 	$effect(() => {
 		const snapshot = game;
 		const reduce = reducedMotion;
@@ -35,6 +44,7 @@
 		const appearance = avatar;
 		const rival = opponent;
 		if (view) {
+			view.setControlsInset(controlsInset);
 			view.setReduced(reduce);
 			view.setPaused(pause);
 			view.setLost(losing);
@@ -50,7 +60,8 @@
 			.then(({ createDiceScene }) => {
 				if (cancelled) return;
 				try {
-					view = createDiceScene(host);
+					view = createDiceScene(host, (moving) => onMotionChange(moving));
+					view.setControlsInset(controlsInset);
 					view.setReduced(reducedMotion);
 					view.setPaused(paused);
 					view.setLost(lost);
@@ -62,10 +73,12 @@
 				} catch (error) {
 					console.error('Dice renderer:', error);
 					failed = true;
+					onMotionChange(false);
 				}
 			})
 			.catch(() => {
 				failed = true;
+				onMotionChange(false);
 			});
 		return () => {
 			cancelled = true;
@@ -76,12 +89,16 @@
 
 <div
 	class="scene"
+	style:--controls-inset={controlsInset + 'px'}
 	bind:this={host}
 	role="img"
 	aria-label={`Puzzle board. Character at column ${game.player.x + 1}, row ${game.player.y + 1}, ${game.player.riding ? 'on a die' : 'on the ground'}. ${game.dice.map((d) => `${labels[d.kind]}: top ${d.top}, north ${d.north}, east ${d.east}, column ${d.x + 1}, row ${d.y + 1}`).join('. ')}. ${(game.trial?.warnings ?? []).map((w) => `Incoming die at column ${w.x + 1}, row ${w.y + 1}`).join('. ')}`}
 	data-ready={loaded}
 >
-	{#if ridden}<div class="preview-frame" aria-hidden="true"><span>Now</span></div>
+	<div class="preview-frame" aria-hidden="true">
+		<span>Now</span>
+	</div>
+	{#if ridden}
 		<span
 			class="sr-only"
 			role="img"
@@ -132,7 +149,7 @@
 				var(--color-base-100),
 				color-mix(in srgb, var(--color-primary) 13%, var(--color-base-100))
 			);
-		height: 440px;
+		height: calc(440px + var(--controls-inset, 0px));
 		width: 100%;
 		position: relative;
 		overflow: hidden;
@@ -155,7 +172,7 @@
 	}
 	@media (max-width: 540px) {
 		.scene {
-			height: 330px;
+			height: calc(330px + var(--controls-inset, 0px));
 		}
 	}
 </style>

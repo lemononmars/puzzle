@@ -1,2 +1,0 @@
-src/routes/puzzles/demon-dice/+page.svelte 3565ms
-src/routes/puzzles/demon-dice/battle/+page.svelte 2633ms

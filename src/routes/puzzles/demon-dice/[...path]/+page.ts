@@ -3,5 +3,5 @@ import type { PageLoad } from './$types';
 
 export const load: PageLoad = ({ params, url }) => {
 	const suffix = params.path ? `/${params.path}` : '';
-	redirect(308, `/puzzles/pips-plot${suffix}${url.search}`);
+	redirect(308, `/web-game/pips-plot${suffix}${url.search}`);
 };

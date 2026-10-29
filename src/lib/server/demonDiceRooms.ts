@@ -10,6 +10,7 @@ import {
 	type Seat
 } from '#lib/games/demonDiceBattle.js';
 import { cleanAvatar, type Avatar } from '#lib/games/demonDiceAvatar.js';
+import { botPosition, botStepMs, chooseBotMove } from '#lib/games/demonDiceBot.js';
 type Member = {
 	token: string;
 	name: string;
@@ -18,6 +19,7 @@ type Member = {
 	lastSeen: number;
 	seq: number;
 	left: boolean;
+	bot?: boolean;
 };
 type Room = {
 	code: string;
@@ -26,6 +28,8 @@ type Room = {
 	match: DiceBattle | null;
 	created: number;
 	updated: number;
+	nextBotMove?: number;
+	botRecent?: string[];
 };
 const globalRooms = globalThis as typeof globalThis & { __demonDiceRooms?: Map<string, Room> };
 const rooms = (globalRooms.__demonDiceRooms ??= new Map<string, Room>());
@@ -73,6 +77,19 @@ export function createDiceRoom(body: any, now = Date.now()) {
 		updated: now
 	};
 	rooms.set(code, room);
+	if (body.opponent === 'bot') {
+		room.members[1] = {
+			...member(
+				{ name: 'Fern · bot', avatar: { seed: 'slate', leaves: 'mint', accessory: 'flower' } },
+				now
+			),
+			bot: true,
+			ready: true
+		};
+		host.ready = true;
+		room.match = newBattle(room.members as [Member, Member], room.options, now);
+		room.nextBotMove = now + botStepMs;
+	}
 	return { token: host.token, ...publicRoom(room, 0, now) };
 }
 function findRoom(code: string, now: number) {
@@ -94,6 +111,7 @@ function publicRoom(room: Room, seat: Seat, now: number) {
 		nextSeq: room.members[seat]!.seq + 1,
 		serverTime: now,
 		options: room.options,
+		opponent: room.members[1]?.bot ? ('bot' as const) : ('human' as const),
 		players: room.members.map((p, index) =>
 			p
 				? {
@@ -101,7 +119,7 @@ function publicRoom(room: Room, seat: Seat, now: number) {
 						name: p.name,
 						avatar: p.avatar,
 						ready: p.ready,
-						connected: !p.left && now - p.lastSeen < 12000
+						connected: !p.left && (p.bot || now - p.lastSeen < 12000)
 					}
 				: null
 		),
@@ -111,9 +129,15 @@ function publicRoom(room: Room, seat: Seat, now: number) {
 function advanceRoom(room: Room, now: number) {
 	if (room.match?.phase === 'playing') {
 		room.match = advanceBattle(room.match, now);
+		if (room.members[1]?.bot && room.match.phase === 'playing' && now >= (room.nextBotMove ?? 0)) {
+			const direction = chooseBotMove(room.match, now, room.botRecent);
+			room.match = battleMove(room.match, 1, direction, true, now);
+			room.botRecent = [...(room.botRecent ?? []), botPosition(room.match)].slice(-10);
+			room.nextBotMove = now + botStepMs;
+		}
 		for (const seat of [0, 1] as const) {
 			const p = room.members[seat];
-			if (p && (p.left || now - p.lastSeen > 30000) && room.match.phase === 'playing') {
+			if (p && !p.bot && (p.left || now - p.lastSeen > 30000) && room.match.phase === 'playing') {
 				room.match.phase = 'finished';
 				room.match.winner = seat === 0 ? 1 : 0;
 				room.match.reason = 'opponent disconnected';
@@ -132,6 +156,7 @@ export function getDiceRoom(code: string, token: string | null, now = Date.now()
 export function actDiceRoom(code: string, token: string | null, body: any, now = Date.now()) {
 	const room = findRoom(code, now);
 	if (body.action === 'join') {
+		if (room.members[1]?.bot) throw new RoomError('This room is a solo bot battle.', 409);
 		if (room.members[0].left) throw new RoomError('The host has left. Create a new room.', 410);
 		if (room.match?.phase === 'playing')
 			throw new RoomError('This match has already started.', 409);
@@ -165,10 +190,12 @@ export function actDiceRoom(code: string, token: string | null, body: any, now =
 			if (room.match?.phase === 'playing') throw new RoomError('A match is already running.', 409);
 			if (
 				!room.members[1] ||
-				!room.members.every((p) => p?.ready && !p.left && now - p.lastSeen < 12000)
+				!room.members.every((p) => p?.ready && !p.left && (p.bot || now - p.lastSeen < 12000))
 			)
 				throw new RoomError('Both players must be connected and ready.', 409);
 			room.match = newBattle(room.members as [Member, Member], room.options, now);
+			room.nextBotMove = now + botStepMs;
+			room.botRecent = [];
 			break;
 		case 'move':
 			if (!room.match || room.match.phase !== 'playing') break;
@@ -186,7 +213,7 @@ export function actDiceRoom(code: string, token: string | null, body: any, now =
 			if (room.match?.phase === 'playing') throw new RoomError('Finish the match first.', 409);
 			room.match = null;
 			room.members.forEach((p) => {
-				if (p) p.ready = false;
+				if (p) p.ready = !!p.bot;
 			});
 			break;
 		case 'leave':

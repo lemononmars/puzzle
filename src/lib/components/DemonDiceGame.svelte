@@ -5,15 +5,21 @@
 	import DemonDieIcon from '#lib/components/DemonDieIcon.svelte';
 	import DemonSoundIcon from '#lib/components/DemonSoundIcon.svelte';
 	import PipMascot from '#lib/components/PipMascot.svelte';
-	import { tutorialSets } from '#lib/games/devilDiceTutorials.js';
+	import PipLevelPicker from '#lib/components/PipLevelPicker.svelte';
+	import type { Tutorial } from '#lib/games/devilDiceTutorials.js';
 	import {
 		loadCompleted,
 		saveCompleted,
 		loadTutorialBest,
-		saveTutorialBest
+		saveTutorialBest,
+		loadRetroBest,
+		saveRetroBest
 	} from '#lib/games/demonDiceProgress.js';
 	import { challengePuzzles, startChallenge } from '#lib/games/demonDiceChallenges.js';
-	import { inputCooldown } from '#lib/games/devilDiceVisuals.js';
+	import { randomPuzzles, startRandom } from '#lib/games/pipsPlotRandom.js';
+	import { loadRandomBest, saveRandomBest } from '#lib/games/demonDiceProgress.js';
+	import { retroPuzzles, startRetro } from '#lib/games/demonDiceRetro.js';
+	import { completionReady, movementDuration, inputCooldown } from '#lib/games/devilDiceVisuals.js';
 	import { createMovementAudio, type MovementSound } from '#lib/games/devilDiceAudio.js';
 	import { createBackgroundMusic } from '#lib/games/demonDiceMusic.js';
 	import {
@@ -24,13 +30,12 @@
 		move,
 		heldMove,
 		canTransferAt,
-		EDGE_HOLD_MS,
 		puzzles,
 		settle,
 		start,
 		startTrial,
 		tickTrial,
-		accelerateSpawns,
+		spawnDie,
 		finishTrial,
 		shiftTime,
 		roll,
@@ -39,8 +44,21 @@
 		type Kind,
 		type State
 	} from '#lib/games/devilDice.js';
-	let { mode }: { mode: 'tutorials' | 'puzzles' | 'endless' } = $props();
-	const initial = () => (mode === 'puzzles' ? startChallenge(0) : start(0));
+	let {
+		mode,
+		customPuzzle
+	}: { mode: 'tutorials' | 'puzzles' | 'endless' | 'retro' | 'random'; customPuzzle?: Tutorial } =
+		$props();
+	const initial = () =>
+		customPuzzle
+			? clone({ ...customPuzzle.state, moves: 0, score: 0, cleared: 0, chainSerial: 0 })
+			: mode === 'random'
+				? startRandom(0)
+				: mode === 'retro'
+					? startRetro(0)
+					: mode === 'puzzles'
+						? startChallenge(0)
+						: start(0);
 	let game = $state(initial()),
 		level = $state(0),
 		session = $state(0);
@@ -71,7 +89,9 @@
 		B1: 'Goal: ride and roll your die to make two touching 2s.'
 	};
 	let tutorialBest = $state<Record<string, number>>({});
-	let fastSpawn = $state(false);
+	let retroBest = $state<Record<string, number>>({});
+	let randomBest = $state<Record<string, number>>({});
+	let randomClearStars = $state(0);
 	const typeHelp: Record<Kind, { title: string; text: string }> = {
 		normal: {
 			title: 'Regular dice',
@@ -96,11 +116,20 @@
 	};
 	let clock = $state(Date.now()),
 		busyUntil = $state(0),
-		notice = $state(''),
 		maxChain = $state(1);
 	let heldDirection = $state<Direction | null>(null),
 		edgeSince = $state<number | null>(null);
 	let heldSource: 'keyboard' | 'pointer' | null = null;
+	let blocked = $state<{ direction: Direction; serial: number }>();
+	let lastBlocked = 0;
+	function blockedMove(direction: Direction) {
+		const now = Date.now();
+		if (now - lastBlocked < 300) return;
+		lastBlocked = now;
+		game = { ...game, player: { ...game.player, facing: direction } };
+		blocked = { direction, serial: now };
+		audio?.play('blocked');
+	}
 	let audio: ReturnType<typeof createMovementAudio> | undefined;
 	let music = $state<ReturnType<typeof createBackgroundMusic>>();
 	let pageVisible = $state(true);
@@ -118,22 +147,67 @@
 		arrowright: 'right',
 		d: 'right'
 	};
-	let entries = $derived(mode === 'puzzles' ? challengePuzzles : puzzles);
-	let budget = $derived(
-		mode === 'endless'
-			? Infinity
-			: mode === 'puzzles'
-				? challengePuzzles[level].maxMoves
-				: (puzzles[level].maxMoves ?? Infinity)
+	let entries = $derived(
+		customPuzzle
+			? [customPuzzle]
+			: mode === 'random'
+				? randomPuzzles
+				: mode === 'retro'
+					? retroPuzzles
+					: mode === 'puzzles'
+						? challengePuzzles
+						: puzzles
 	);
-	let won = $derived(mode !== 'endless' && isClear(game));
+	let budget = $derived(mode === 'endless' ? Infinity : (entries[level].maxMoves ?? Infinity));
+	let motionUntil = $state(0);
+	let renderingMotion = $state(false);
+	let won = $derived(
+		mode !== 'endless' && !helpOpen && completionReady(game, clock, motionUntil, renderingMotion)
+	);
+	let clearSoundSession = -1;
+	$effect(() => {
+		if (!isClear(game)) clearSoundSession = -1;
+		if (won && ready && clearSoundSession !== session) {
+			clearSoundSession = session;
+			audio?.play('clear');
+		}
+	});
 	let clearAt = $state<number | null>(null);
 	let completed = $state<string[]>([]);
 	let nextReady = $derived(won && clearAt !== null && clock - clearAt >= 800);
 	$effect(() => {
+		if (!won) randomClearStars = 0;
+		else if (mode === 'random' && game.dice.length === 6)
+			randomClearStars = game.dice.every((d) => d.top === 6) ? (game.moves <= 15 ? 2 : 1) : 0;
+		if (
+			ready &&
+			won &&
+			mode === 'retro' &&
+			(retroBest[entries[level].id] === undefined || game.moves < retroBest[entries[level].id])
+		) {
+			retroBest = { ...retroBest, [entries[level].id]: game.moves };
+			saveRetroBest(localStorage, retroBest);
+		}
+		if (
+			ready &&
+			won &&
+			mode === 'random' &&
+			game.dice.length === 6 &&
+			game.dice.every((d) => d.top === 6) &&
+			(randomBest[entries[level].id] === undefined || game.moves < randomBest[entries[level].id])
+		) {
+			randomBest = { ...randomBest, [entries[level].id]: game.moves };
+			saveRandomBest(localStorage, randomBest);
+		}
 		if (won && clearAt === null) clearAt = Date.now();
 		else if (!won && clearAt !== null) clearAt = null;
-		if (ready && won && mode !== 'endless' && !completed.includes(entries[level].id)) {
+		if (
+			ready &&
+			won &&
+			!customPuzzle &&
+			mode !== 'endless' &&
+			!completed.includes(entries[level].id)
+		) {
 			completed = [...completed, entries[level].id];
 			try {
 				saveCompleted(localStorage, mode, completed);
@@ -156,7 +230,9 @@
 			}
 		}
 	});
-	let disabled = $derived(!ready || won || phase !== 'playing' || paused || helpOpen);
+	let disabled = $derived(
+		!ready || (mode !== 'endless' && isClear(game)) || phase !== 'playing' || paused || helpOpen
+	);
 	let earnedStars = $derived(
 		mode === 'tutorials' && completed.includes(entries[level].id)
 			? tutorialBest[entries[level].id] !== undefined && tutorialBest[entries[level].id] <= budget
@@ -194,22 +270,33 @@
 	}
 	function reset() {
 		endHold();
-		fastSpawn = false;
 		history = [];
-		notice = '';
 
 		hintDialog?.close();
 		busyUntil = 0;
 		clearAt = null;
+		motionUntil = 0;
+		renderingMotion = false;
 		clock = Date.now();
 		session++;
 	}
 	function load(index: number) {
 		level = index;
-		game = mode === 'puzzles' ? startChallenge(index) : start(index);
+		game = customPuzzle
+			? initial()
+			: mode === 'random'
+				? startRandom(index)
+				: mode === 'retro'
+					? startRetro(index)
+					: mode === 'puzzles'
+						? startChallenge(index)
+						: start(index);
 		phase = 'playing';
 		reset();
-		void tick().then(() => showTypeInfo(true));
+		void tick().then(() => {
+			showTypeInfo(true);
+			if (!helpOpen) arena?.focus({ preventScroll: true });
+		});
 	}
 	function showTypeInfo(onlyNew = false) {
 		if (mode !== 'tutorials') return;
@@ -234,6 +321,7 @@
 		const delta = Date.now() - helpAt;
 		game = shiftTime(game, delta);
 		busyUntil += delta;
+		if (motionUntil) motionUntil += delta;
 		clock = Date.now();
 		helpOpen = false;
 		seenKinds = [
@@ -254,10 +342,12 @@
 		maxChain = 1;
 		audio?.unlock();
 		reset();
-		void tick().then(() => arena?.scrollIntoView({ block: 'start' }));
+		void tick().then(() => {
+			arena?.focus({ preventScroll: true });
+			arena?.scrollIntoView({ block: 'start' });
+		});
 	}
 	function endRun() {
-		fastSpawn = false;
 		game = finishTrial(game, Date.now(), 'ended');
 		phase = 'setup';
 		paused = false;
@@ -271,7 +361,6 @@
 	function pause() {
 		if (mode !== 'endless' || phase !== 'playing') return;
 		endHold();
-		fastSpawn = false;
 		if (!paused) {
 			pausedAt = Date.now();
 			paused = true;
@@ -286,17 +375,14 @@
 		let next = move(game, direction, false, now);
 		if (!next && holding && canTransferAt(game, direction, now)) {
 			edgeSince ??= now;
-			notice = 'Keep holding to ' + (game.player.riding ? 'drop.' : 'climb.');
 			next = heldMove(game, direction, now - edgeSince, now);
-		} else if (!next) {
-			edgeSince = null;
-			notice = canTransferAt(game, direction, now)
-				? 'Hold this arrow briefly to climb or drop.'
-				: 'Blocked. Try another direction.';
+		} else if (!next) edgeSince = null;
+		if (!next) {
+			if (!canTransferAt(game, direction, now)) blockedMove(direction);
+			return;
 		}
-		if (!next) return;
-		if (mode === 'puzzles' && next.moves > budget) {
-			notice = 'Move limit reached. Undo or restart to try another approach.';
+		if ((mode === 'puzzles' || mode === 'retro' || mode === 'random') && next.moves > budget) {
+			blockedMove(direction);
 			return;
 		}
 		if (mode !== 'endless') history = [...history, { state: clone(game), time: now }];
@@ -306,15 +392,21 @@
 		const sound: MovementSound = moved.length
 			? game.player.riding || moved.some((d) => d.kind === 'wood')
 				? 'roll'
-				: 'push'
+				: 'slide'
 			: 'walk';
 		const soundedDie =
 			moved[0] ?? (next.player.riding ? at(next, next.player.x, next.player.y) : undefined);
 		audio?.play(sound, soundedDie?.kind ?? 'normal');
+		motionUntil = Math.max(
+			now + movementDuration(game, next, reducedMotion) + (reducedMotion ? 0 : 40),
+			...next.dice
+				.filter((d) => d.slide)
+				.map((d) => d.slide!.started + d.slide!.duration + (reducedMotion ? 0 : 40))
+		);
 		busyUntil = now + inputCooldown(game, next, reducedMotion);
+		renderingMotion ||= !reducedMotion && moved.length > 0;
 		game = next;
 		edgeSince = null;
-		notice = '';
 	}
 	function beginHold(direction: Direction, source: 'keyboard' | 'pointer') {
 		if (disabled) return;
@@ -348,8 +440,9 @@
 		if (!prior || mode === 'endless') return;
 		game = shiftTime(prior.state, Date.now() - prior.time);
 		history = history.slice(0, -1);
-		notice = '';
 		busyUntil = 0;
+		motionUntil = 0;
+		renderingMotion = false;
 	}
 	function gameAction(action: 'undo' | 'restart' | 'hint') {
 		if (action === 'undo') undo();
@@ -357,14 +450,39 @@
 		else hintDialog?.showModal();
 	}
 	function keydown(event: KeyboardEvent) {
+		event.stopPropagation();
 		const target = event.target;
 		const key = event.key.toLowerCase();
 		if (helpOpen || hintDialog?.open || event.ctrlKey || event.metaKey || event.altKey) return;
 		if (
 			target instanceof HTMLElement &&
-			(target.isContentEditable || target.closest('input,select,textarea'))
+			(target.isContentEditable || target.closest('input,select,textarea,summary,[data-game-ui]'))
 		)
 			return;
+		if (
+			event.code === 'Space' &&
+			target instanceof HTMLElement &&
+			target.closest('button') &&
+			!target.closest('.dpad') &&
+			!nextReady
+		) {
+			event.stopPropagation();
+			return;
+		}
+		if (event.code === 'Space' || keys[key] || ['r', 'z', 'p'].includes(key)) {
+			music?.unlock();
+			event.preventDefault();
+			event.stopPropagation();
+		}
+		if (
+			(mode === 'tutorials' || mode === 'retro' || mode === 'random') &&
+			event.code === 'Space' &&
+			nextReady
+		) {
+			event.preventDefault();
+			if (!event.repeat && level < entries.length - 1) load(level + 1);
+			return;
+		}
 		if (mode !== 'endless' && (key === 'r' || key === 'z')) {
 			event.preventDefault();
 			if (!event.repeat) {
@@ -375,7 +493,10 @@
 		}
 		if (mode === 'endless' && event.code === 'Space' && phase === 'playing' && !paused) {
 			event.preventDefault();
-			fastSpawn = true;
+			if (!event.repeat) {
+				audio?.unlock();
+				game = spawnDie(game, Date.now());
+			}
 			return;
 		}
 		if (
@@ -395,10 +516,23 @@
 		else if (key === 'p') pause();
 	}
 	function keyup(event: KeyboardEvent) {
-		if (event.code === 'Space') fastSpawn = false;
+		event.stopPropagation();
+		if (
+			event.target instanceof HTMLElement &&
+			event.target.closest('button,input,select,textarea,[data-game-ui]')
+		) {
+			event.stopPropagation();
+			return;
+		}
+		if (event.code === 'Space' || keys[event.key.toLowerCase()]) {
+			event.preventDefault();
+			event.stopPropagation();
+		}
 		if (heldSource === 'keyboard' && keys[event.key.toLowerCase()] === heldDirection) endHold();
 	}
 	onMount(() => {
+		if (mode === 'retro') retroBest = loadRetroBest(localStorage);
+		if (mode === 'random') randomBest = loadRandomBest(localStorage);
 		if (mode === 'tutorials') {
 			try {
 				tutorialBest = loadTutorialBest(localStorage);
@@ -407,7 +541,10 @@
 			} catch {
 				seenKinds = [];
 			}
-			void tick().then(() => showTypeInfo(true));
+			void tick().then(() => {
+				showTypeInfo(true);
+				if (!helpOpen) arena?.focus({ preventScroll: true });
+			});
 		}
 		if (mode !== 'endless') {
 			try {
@@ -421,6 +558,9 @@
 			}
 		}
 		ready = true;
+		void tick().then(() => {
+			if (!helpOpen) arena?.focus({ preventScroll: true });
+		});
 		audio = createMovementAudio();
 		music = createBackgroundMusic(mode);
 		pageVisible = !document.hidden;
@@ -438,7 +578,6 @@
 		update();
 		preference.addEventListener('change', update);
 		const timer = setInterval(() => {
-			const delta = Math.max(0, Math.min(100, Date.now() - clock));
 			clock = Date.now();
 			if (helpOpen) return;
 			if (mode === 'endless') {
@@ -447,7 +586,7 @@
 					return;
 				}
 				if (phase !== 'playing' || paused) return;
-				game = tickTrial(fastSpawn ? accelerateSpawns(game, delta * 3) : game, clock);
+				game = tickTrial(game, clock);
 				maxChain = Math.max(maxChain, ...game.dice.map((d) => (d.chainStep ?? 0) + 1));
 				if (game.trial?.over) {
 					phase = 'losing';
@@ -468,7 +607,6 @@
 		const visibility = () => {
 			pageVisible = !document.hidden;
 			if (document.hidden) {
-				fastSpawn = false;
 				endHold();
 				if (mode === 'endless' && phase === 'playing' && !paused) pause();
 			}
@@ -489,23 +627,30 @@
 
 <svelte:head
 	><title
-		>Pip's Plot · {mode === 'endless'
+		>{customPuzzle ? `${customPuzzle.title} · Pip's Plot` : "Pip's Plot"} · {mode === 'endless'
 			? 'Endless'
-			: mode === 'puzzles'
-				? 'Puzzles'
-				: 'Tutorials'}</title
+			: mode === 'random'
+				? 'Random'
+				: mode === 'retro'
+					? 'Retro'
+					: mode === 'puzzles'
+						? 'Puzzles'
+						: 'Tutorials'}</title
 	></svelte:head
 >
 <svelte:window
-	onkeydown={keydown}
-	onkeyup={keyup}
 	onblur={() => {
 		endHold();
-		fastSpawn = false;
 	}}
 />
 <div class="game-root" data-mode={mode} data-phase={phase}>
-	<a href="/puzzles/pips-plot" class="back botanical-muted">← All modes</a>
+	{#if !customPuzzle}<a
+			href={mode === 'retro' || mode === 'random' || mode === 'puzzles'
+				? '/web-game/pips-plot/puzzles'
+				: '/web-game/pips-plot'}
+			class="back botanical-muted"
+			>← {mode === 'retro' || mode === 'random' || mode === 'puzzles' ? 'Puzzles' : 'All modes'}</a
+		>{/if}
 	{#if mode === 'endless' && phase === 'setup'}
 		<PageHeading
 			eyebrow="PIP'S PLOT / ENDLESS"
@@ -586,15 +731,34 @@
 			</div>
 		</section>
 	{:else}
-		{#if mode === 'puzzles'}<PageHeading
+		{#if mode === 'puzzles' && !customPuzzle}<PageHeading
 				eyebrow="PIP'S PLOT / PUZZLES"
 				title="Make every roll count"
 				description="Twenty garden challenges. Meet each move limit using different dice mechanics."
 			/>{:else}<h1 class="sr-only">
-				Pip's Plot {mode === 'endless' ? 'Endless' : 'Tutorials'}
+				{customPuzzle
+					? customPuzzle.title
+					: `Pip's Plot ${mode === 'endless' ? 'Endless' : mode === 'retro' ? 'Retro' : mode === 'random' ? 'Random' : 'Tutorials'}`}
 			</h1>{/if}
 		<div class="game-layout" class:endless={mode === 'endless'}>
-			<section bind:this={arena} class="botanical-surface arena" aria-label="Dice game">
+			<!-- The game intentionally owns arrow/Space input and is reachable by Tab. -->
+			<!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_no_noninteractive_element_interactions -->
+			<section
+				bind:this={arena}
+				class="botanical-surface arena"
+				aria-label="Dice game"
+				role="application"
+				tabindex="0"
+				onkeydown={keydown}
+				onkeyup={keyup}
+				onfocusout={(event) => {
+					if (!arena?.contains(event.relatedTarget as Node | null)) endHold();
+				}}
+				onpointerdown={(event) => {
+					if (!(event.target as HTMLElement).closest('[data-game-ui]'))
+						arena?.focus({ preventScroll: true });
+				}}
+			>
 				{#if mode === 'endless'}<div class="hud">
 						<div>
 							<span>Score</span><strong data-testid="endless-score"
@@ -619,25 +783,16 @@
 							>{nextLevelScore - game.score} points to level {(game.trial?.level ?? 1) + 1}</small
 						>
 					</div>
-				{:else}<div class="arena-top">
-						<select
-							class="select level-picker"
-							class:completed={completed.includes(entries[level].id)}
-							aria-label={mode === 'tutorials' ? 'Choose tutorial' : 'Choose puzzle'}
-							value={level}
-							onchange={(event) => load(Number(event.currentTarget.value))}
-							>{#if mode === 'tutorials'}{#each tutorialSets as set}<optgroup label={set.id}
-										>{#each entries as entry, i}{#if entry.set === set.id}<option
-													value={i}
-													class:completed={completed.includes(entry.id)}
-													>{entry.id} · {entry.title}</option
-												>{/if}{/each}</optgroup
-									>{/each}{:else}{#each entries as entry, i}<option
-										value={i}
-										class:completed={completed.includes(entry.id)}
-										>{entry.id} · {entry.title}</option
-									>{/each}{/if}</select
-						>
+				{:else if !customPuzzle}<div class="arena-top">
+						<PipLevelPicker
+							{entries}
+							{level}
+							{completed}
+							best={mode === 'random' ? randomBest : mode === 'retro' ? retroBest : tutorialBest}
+							random={mode === 'random'}
+							tutorial={mode === 'tutorials'}
+							onselect={load}
+						/>
 					</div>
 				{/if}
 				<div class="board-wrap">
@@ -645,7 +800,7 @@
 							{lessonGoals[entries[level].id]}
 						</p>{/if}
 					{#if mode === 'endless' && game.dice.length < 8}<p class="spawn-tip">
-							Hold <kbd>Space</kbd> to speed up spawning
+							Press <kbd>Space</kbd> to spawn a die
 						</p>{/if}
 					{#if mode !== 'endless'}<span
 							class="move-countdown bg-base-100 text-base-content"
@@ -660,7 +815,12 @@
 								>{:else}{Math.max(0, budget - displayedMoves(game, clock))}{/if}</span
 						>{/if}
 					{#key session}<DevilDiceBoard
+							onMotionChange={(moving) => {
+								renderingMotion = moving;
+							}}
 							{game}
+							{blocked}
+							controlsInset={156}
 							{reducedMotion}
 							paused={paused || helpOpen || phase === 'losing'}
 							lost={phase === 'losing'}
@@ -679,74 +839,107 @@
 											class="clear-stars"
 											aria-label={`${game.moves <= budget ? 2 : 1} of 2 stars`}
 											>{game.moves <= budget ? '★★' : '★☆'}</span
+										>{:else if mode === 'random' && randomClearStars > 0}<span
+											class="clear-stars"
+											aria-label="Sixes finish stars">{randomClearStars === 2 ? '★★' : '★'}</span
+										>{:else if mode === 'retro' && game.moves < budget}<span
+											class="clear-stars"
+											aria-label="Completed below the move limit">★</span
 										>{/if}</strong
 								>{#if nextReady}{#if level < entries.length - 1}<button
 											class="btn btn-primary"
 											onclick={() => load(level + 1)}>Next level</button
-										>{:else}<a class="btn btn-primary" href="/puzzles/pips-plot">All modes</a
+										>{:else}<a
+											class="btn btn-primary"
+											href={customPuzzle ? '/web-game/pips-plot/workshop' : '/web-game/pips-plot'}
+											>{customPuzzle ? 'Return to workshop' : 'All modes'}</a
 										>{/if}{/if}
 							</div>
 						</div>{/if}
-				</div>
-				{#if mode !== 'endless' && notice && !won}<p class="game-status" role="status">
-						{notice}
-					</p>{/if}
-				<div class="controls" aria-busy={clock < busyUntil} data-ready-at={busyUntil}>
-					<div class="dpad" aria-label="Movement controls">
-						{#each ['up', 'left', 'down', 'right'] as direction}<button
-								class="btn {direction}"
-								class:btn-primary={heldDirection === direction}
-								aria-label={`Move ${direction}`}
-								aria-pressed={heldDirection === direction}
-								{disabled}
-								onpointerdown={(event) => pointerDown(event, direction as Direction)}
-								onpointerup={endHold}
-								onpointercancel={endHold}
-								onlostpointercapture={endHold}
-								onclick={(event) => clickArrow(event, direction as Direction)}
-								><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"
-									><path d="M12 4 3.5 12.5H9V20h6v-7.5h5.5Z" fill="currentColor" /></svg
-								></button
-							>{/each}
-						<span class="dpad-center" aria-hidden="true"></span>
-					</div>
-					<div class="actions">
-						<button
-							class="btn btn-ghost"
-							aria-pressed={!muted}
-							aria-label={muted ? 'Sound off' : 'Sound on'}
-							title={muted ? 'Turn sound on' : 'Turn sound off'}
-							onclick={toggleSound}><DemonSoundIcon {muted} /></button
-						>{#if mode === 'endless'}<button
+					<div class="controls" aria-busy={clock < busyUntil} data-ready-at={busyUntil}>
+						<div class="dpad" aria-label="Movement controls">
+							{#each ['up', 'left', 'down', 'right'] as direction}<button
+									class="btn {direction}"
+									class:btn-primary={heldDirection === direction}
+									aria-label={`Move ${direction}`}
+									aria-pressed={heldDirection === direction}
+									{disabled}
+									onpointerdown={(event) => pointerDown(event, direction as Direction)}
+									onpointerup={endHold}
+									onpointercancel={endHold}
+									onlostpointercapture={endHold}
+									onclick={(event) => clickArrow(event, direction as Direction)}
+									><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"
+										><path d="M12 4 3.5 12.5H9V20h6v-7.5h5.5Z" fill="currentColor" /></svg
+									></button
+								>{/each}
+							<span class="dpad-center" aria-hidden="true"></span>
+						</div>
+						<div class="actions">
+							<button
 								class="btn btn-ghost"
-								disabled={phase === 'losing'}
-								onclick={pause}>{paused ? 'Resume' : 'Pause'}</button
-							><button class="btn btn-ghost" disabled={phase === 'losing'} onclick={endRun}
-								>End run</button
-							>{:else}<button
-								class="btn btn-ghost"
-								disabled={!history.length}
-								onclick={undo}
-								aria-keyshortcuts="z">Undo <kbd>Z</kbd></button
-							><button class="btn btn-ghost" onclick={() => load(level)} aria-keyshortcuts="r"
-								>Restart <kbd>R</kbd></button
-							><button class="btn btn-ghost" onclick={() => gameAction('hint')}>Hint</button
-							>{#if mode === 'tutorials'}<button
+								aria-pressed={!muted}
+								aria-label={muted ? 'Sound off' : 'Sound on'}
+								title={muted ? 'Turn sound on' : 'Turn sound off'}
+								onclick={toggleSound}><DemonSoundIcon {muted} /></button
+							>{#if mode === 'endless'}<button
 									class="btn btn-ghost"
-									aria-label="Dice information"
-									onclick={() => showTypeInfo()}>ⓘ</button
-								>{/if}{/if}
+									disabled={phase === 'losing'}
+									onclick={pause}>{paused ? 'Resume' : 'Pause'}</button
+								><button class="btn btn-ghost" disabled={phase === 'losing'} onclick={endRun}
+									>End run</button
+								>{:else}<button
+									class="btn btn-ghost"
+									disabled={!history.length}
+									onclick={undo}
+									aria-keyshortcuts="z">Undo <kbd>Z</kbd></button
+								><button class="btn btn-ghost" onclick={() => load(level)} aria-keyshortcuts="r"
+									>Restart <kbd>R</kbd></button
+								><button class="btn btn-ghost" onclick={() => gameAction('hint')}>Hint</button
+								>{#if mode === 'tutorials'}<button
+										class="btn btn-ghost"
+										aria-label="Dice information"
+										onclick={() => showTypeInfo()}>ⓘ</button
+									>{/if}{/if}
+						</div>
 					</div>
 				</div>
-				{#if edgeSince !== null}<progress
-						class="progress progress-primary hold-progress"
-						max={EDGE_HOLD_MS}
-						value={Math.min(EDGE_HOLD_MS, clock - edgeSince)}
-						aria-label="Climb or drop hold progress"
-					></progress>{/if}
 			</section>
 		</div>
 	{/if}
+	{#if mode === 'random'}<details class="retro-credits botanical-muted">
+			<summary>Random garden · AAA–JJJ</summary>
+			<p>
+				1,000 original puzzles inspired by Devil Dice’s Random mode. Six normal dice, a 4×4 field,
+				20 moves. Every board has a verified solution connecting six sixes in 15 moves or fewer.
+				Finish with sixes for ★; use 15 moves or fewer for ★★.
+			</p>
+		</details>{/if}
+	{#if mode === 'retro'}<details class="retro-credits botanical-muted">
+			<summary>Devil Dice / XI · Shift, 1998</summary>
+			<p>
+				The original 100 puzzle boards, recreated for Pip’s Plot. Original game developed by Shift;
+				published by Sony Computer Entertainment and THQ. Independent adaptation, with Pip’s Plot’s
+				controls and timing.
+			</p>
+			<p>
+				Board and orientation research: <a
+					class="link"
+					href="https://www.youtube.com/watch?v=Um5NdG5McKI"
+					target="_blank"
+					rel="noreferrer">BigSilentRob Retro Gaming’s playthrough</a
+				>
+				and
+				<a
+					class="link"
+					href="https://scrapbox.io/alea-area/XI(sái)_基本パズル一覧"
+					target="_blank"
+					rel="noreferrer">aLea-aRea’s board catalogue</a
+				>. Occluded faces were reconstructed from physical dice and solution constraints; fully
+				hidden stationary faces use a consistent physical orientation. Original artwork and audio
+				are not used.
+			</p>
+		</details>{/if}
 </div>
 
 {#if mode === 'tutorials'}<dialog
@@ -821,6 +1014,18 @@
 	</dialog>{/if}
 
 <style>
+	.retro-credits {
+		max-width: 700px;
+		margin: 12px auto 0;
+		font-size: 12px;
+	}
+	.retro-credits summary {
+		cursor: pointer;
+		text-align: center;
+	}
+	.retro-credits p {
+		margin-top: 8px;
+	}
 	.lesson-goal {
 		position: absolute;
 		left: 12px;
@@ -856,18 +1061,12 @@
 	}
 	.saved-stars {
 		display: block;
+		text-align: center;
+		padding-left: 2px;
 		font-size: 14px;
 		line-height: 1.4;
 		letter-spacing: 2px;
 		color: var(--color-secondary);
-	}
-	.level-picker.completed,
-	option.completed {
-		background: var(--color-base-200);
-		color: var(--color-base-content);
-	}
-	.level-picker.completed {
-		border-color: var(--color-primary);
 	}
 	.move-countdown small {
 		font-size: 18px;
@@ -875,6 +1074,7 @@
 	}
 	.clear-stars {
 		display: block;
+		text-align: center;
 		font-size: 22px;
 		color: var(--color-secondary);
 	}
@@ -999,15 +1199,6 @@
 		padding: 12px;
 		font-variant-numeric: tabular-nums;
 	}
-	.level-picker {
-		text-align: center;
-		text-align-last: center;
-		flex: 1;
-		min-width: 0;
-		max-width: 600px;
-		font-size: 16px;
-		font-weight: 500;
-	}
 	.clear-overlay {
 		position: absolute;
 		inset: 0;
@@ -1068,13 +1259,6 @@
 		transform: rotate(-90deg);
 	}
 
-	@media (max-width: 540px) {
-		.level-picker {
-			text-align: center;
-			text-align-last: center;
-			font-size: 13px;
-		}
-	}
 	.back {
 		display: inline-block;
 		font-size: 12px;
@@ -1095,6 +1279,10 @@
 	.setup,
 	.summary {
 		box-shadow: none;
+	}
+	.arena:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 3px;
 	}
 	.arena {
 		padding: 22px;
@@ -1137,12 +1325,6 @@
 	.level-progress .progress {
 		height: 5px;
 	}
-	.game-status {
-		min-height: 32px;
-		font-size: 13px;
-		text-align: center;
-		margin: 8px 0;
-	}
 	.controls {
 		display: flex;
 		align-items: center;
@@ -1184,11 +1366,6 @@
 		flex-wrap: wrap;
 		gap: 4px;
 		max-width: 280px;
-	}
-	.hold-progress {
-		display: block;
-		max-width: 250px;
-		margin: 12px auto;
 	}
 	.setup {
 		display: grid;
@@ -1348,6 +1525,52 @@
 	@media (prefers-reduced-motion: reduce) {
 		.loss-toast {
 			animation: none;
+		}
+	}
+
+	.controls {
+		position: absolute;
+		left: 8px;
+		right: 8px;
+		bottom: 8px;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 8px;
+		z-index: 4;
+	}
+	.actions {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		max-width: 210px;
+		gap: 3px;
+	}
+	.actions .btn {
+		min-height: 32px;
+		height: 32px;
+		font-size: 12px;
+		padding: 0 7px;
+	}
+	.clear-card {
+		padding-bottom: 160px;
+	}
+	@media (max-width: 540px) {
+		.game-root::before {
+			inset: -20px 0 -30px;
+		}
+		.dpad {
+			grid-template-columns: repeat(3, 38px);
+			gap: 3px;
+		}
+		.dpad .btn {
+			width: 38px;
+			height: 38px;
+		}
+		.actions {
+			max-width: 148px;
+		}
+		.actions .btn {
+			font-size: 11px;
+			padding: 0 5px;
 		}
 	}
 </style>
