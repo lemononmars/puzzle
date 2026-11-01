@@ -19,7 +19,9 @@ export default defineConfig(async ({ command }) => ({
 		sveltekit({
 			// Deployment adapters are only needed by the production build.
 			adapter: command === 'build'
-				? (await import(process.env.VERCEL ? '@sveltejs/adapter-vercel' : '@sveltejs/adapter-node')).default()
+				? process.env.VERCEL
+					? (await import('@sveltejs/adapter-vercel')).default({ runtime: 'nodejs24.x' })
+					: (await import('@sveltejs/adapter-node')).default()
 				: undefined,
 			extensions: ['.svelte', '.svx', '.md'],
 			preprocess: [mdsvex({ extensions: ['.svx', '.md'] }), vitePreprocess()],
