@@ -17,6 +17,8 @@ export async function publicRecords() {
    for (const entry of group.entries) add(entry.href, entry.title, entry.description ?? group.description, area);
   }
  }
+ const webGames = JSON.parse(await fs.readFile('src/lib/data/web-games.json', 'utf8'));
+ for (const game of webGames) add('/web-game/' + game.slug, game.title, 'Web Game / เกมบนเว็บไซต์ · ' + game.title, 'puzzles');
  const source = await fs.readFile('src/lib/data/resources/puzzleMechanics.ts', 'utf8');
  const exports = {};
  new Function('exports', ts.transpileModule(source, {compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText)(exports);

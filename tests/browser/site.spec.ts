@@ -16,8 +16,13 @@ test('mobile search and navigation stay inside the viewport',async({page})=>{
  await page.setViewportSize({width:390,height:844});
  await page.goto('/search');
  await page.getByRole('searchbox',{name:'Search the website'}).fill('pentomino');
- await page.getByRole('button',{name:'ค้นหา',exact:true}).click();
  await expect(page.locator('main a[href="/tools/pentomino"]')).toBeVisible();
+ await page.getByRole('searchbox',{name:'Search the website'}).fill('pentomnio');
+ await expect(page.locator('main a[href="/tools/pentomino"]')).toBeVisible();
+ await page.getByRole('searchbox',{name:'Search the website'}).fill('sky sc');
+ await expect(page.locator('main a[href="/web-game/sky-scan"]')).toBeVisible();
+ await page.getByRole('searchbox',{name:'Search the website'}).fill('');
+ await expect(page.locator('main ul li')).toHaveCount(0);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth)).toBe(true);
  await page.getByRole('button',{name:'ค้น',exact:true}).click();
  await expect(page.getByRole('dialog')).toBeVisible();

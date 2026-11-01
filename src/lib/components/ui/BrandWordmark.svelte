@@ -3,7 +3,7 @@
   let { size = 'compact' }: { size?: 'compact' | 'display' } = $props();
 </script>
 
-<img src="/images/brand/chi-fun-wordmark.svg?brand=lockups-v4" alt={brand.title} width="330" height="160" class:display={size === 'display'} />
+<img src="/images/brand/chi-fun-wordmark.svg?brand=sigma-v1" alt={brand.title} width="350" height="170" class:display={size === 'display'} />
 
 <style>
  img { display:inline-block; width:115px; max-width:100%; height:auto; vertical-align:middle; }

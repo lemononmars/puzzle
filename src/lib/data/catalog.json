@@ -103,6 +103,12 @@
           "description": "31 ปริศนา Nazo พร้อมคำอธิบายเป็นคำใบ้และตัวตรวจคำตอบ",
           "href": "/puzzles/enigmarch/2024",
           "mark": "?"
+        },
+        {
+          "title": "TBS2021",
+          "description": "Thailand Board Game Show 2021 puzzles and event writeup.",
+          "href": "/puzzles/tbs2021",
+          "mark": "?"
         }
       ]
     },
@@ -202,7 +208,7 @@
         },
         {
           "title": "Web Game",
-          "description": "แก้ปริศนาบนหน้าเว็บไซต์",
+          "description": "เกมบนเว็บไซต์ บอร์ดเกม และสวนลูกเต๋าของ Pip",
           "href": "/web-game",
           "mark": "▦"
         },
@@ -217,6 +223,18 @@
           "description": "แก้ชุดปริศนา",
           "href": "/puzzles/puzzlehunt",
           "mark": "▦"
+        },
+        {
+          "title": "Battle",
+          "description": "แข่งไขปริศนากับเพื่อนในห้องเล่นหลายคน",
+          "href": "/puzzles/battle",
+          "mark": "?"
+        },
+        {
+          "title": "Adventure",
+          "description": "ไขปริศนาทีละด่าน พร้อมบันทึกความคืบหน้า",
+          "href": "/puzzles/adventure",
+          "mark": "?"
         }
       ]
     }
@@ -447,4 +465,3 @@
     }
   ]
 }
-

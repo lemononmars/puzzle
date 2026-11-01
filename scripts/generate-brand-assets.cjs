@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const sharp = require(process.env.BRAND_SHARP || 'sharp');
 // The canonical SVG is the canonical Chi Key artwork for every brand asset.
 const key = fs.readFileSync('static/images/chi/chi-key.svg','utf8').replace(/<svg[^>]*>/,'').replace('</svg>','');
-const mark = '<rect width="512" height="512" rx="112" fill="#f9faf4"/><g transform="translate(32 40) scale(1.85)">'+key+'</g>';
+const mark = '<rect width="512" height="512" rx="112" fill="#f9faf4"/><g transform="translate(10.35 -32.15) scale(1.7)">'+key+'</g>';
 const icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">'+mark+'</svg>';
 const logoBody = fs.readFileSync('static/images/brand/chi-fun-horizontal.svg','utf8').replace(/<svg[^>]*>/,'').replace('</svg>','');
 const badgeBody = fs.readFileSync('static/images/brand/chi-fun-occasion.svg','utf8').replace(/<svg[^>]*>/,'').replace('</svg>','').replaceAll('key-bow','badge-key');

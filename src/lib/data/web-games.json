@@ -1,0 +1,37 @@
+[
+	{
+		"slug": "pips-plot",
+		"title": "Pip’s Plot",
+		"image": "/web-game/pips-plot-preview.png"
+	},
+	{
+		"slug": "pakklongboard",
+		"title": "Pakklong Talat · Board Game",
+		"image": "/boardgame/shops/rose.webp"
+	},
+	{
+		"slug": "sky-scan",
+		"title": "Sky Scan",
+		"image": "/web-game/sky-scan-preview.svg"
+	},
+	{
+		"slug": "pakklongcard",
+		"title": "Pakklong Talat · Card Game",
+		"image": ""
+	},
+	{
+		"slug": "spacespy",
+		"title": "Space Spy",
+		"image": ""
+	},
+	{
+		"slug": "wordwars",
+		"title": "Word Wars",
+		"image": ""
+	},
+	{
+		"slug": "four-lines",
+		"title": "Four Lines",
+		"image": "/puzzles/four-lines/preview.png"
+	}
+]

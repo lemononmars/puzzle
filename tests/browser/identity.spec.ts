@@ -9,12 +9,12 @@ test('Chi Fun identity is consistent on the About page, navbar and app assets', 
 	await expect(
 		page.getByRole('link', { name: 'Chi Fun / ไขสนุก หน้าแรก', exact: true })
 	).toBeVisible();
-	await expect(page.locator('.brand img')).toHaveAttribute('src', '/images/brand/chi-fun-horizontal.svg?brand=lockups-v4');
+	await expect(page.locator('.brand img')).toHaveAttribute('src', '/images/brand/chi-fun-horizontal.svg?brand=sigma-v1');
 	await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute('content', 'Chi Fun');
 	await expect(page.getByRole('heading', { name: 'มีอะไรให้ลองบ้าง?', exact: true })).toBeVisible();
 	const favicon = await request.get('/favicon.svg');
 	expect(favicon.ok()).toBe(true);
-	expect(await favicon.text()).toContain('key-bow');
+	expect(await favicon.text()).toContain('rotate(-45)');
 	const manifest = await (await request.get('/manifest.webmanifest')).json();
 	expect(manifest.name).toBe('Chi Fun · ไขสนุก');
 	expect(manifest.shortcuts.every((item: any) => !item.url.includes('weekly'))).toBe(true);

@@ -8,7 +8,7 @@
 </script>
 
 <img
-  src={`/images/brand/chi-fun-${variant}.svg?brand=lockups-v4`}
+  src={`/images/brand/chi-fun-${variant}.svg?brand=sigma-v1`}
   alt={brand.title}
   width={dimensions[variant][0]}
   height={dimensions[variant][1]}

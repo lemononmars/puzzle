@@ -16,19 +16,19 @@
   ],
   "icons": [
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/icons/icon-192x192.png?brand=sigma-v1",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/icons/icon-512x512.png?brand=sigma-v1",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-512x512-maskable.png",
+      "src": "/icons/icon-512x512-maskable.png?brand=sigma-v1",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

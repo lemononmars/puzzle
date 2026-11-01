@@ -1,45 +1,108 @@
 <script lang="ts">
- import LocalDataSettings from "#lib/components/LocalDataSettings.svelte";
- import PageIcon from "#lib/components/ui/PageIcon.svelte";
- import ChevronDown from "@lucide/svelte/icons/chevron-down";
- import BrandLogo from "#lib/components/ui/BrandLogo.svelte";
+	import LocalDataSettings from '#lib/components/LocalDataSettings.svelte';
+	import PageIcon from '#lib/components/ui/PageIcon.svelte';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import BrandLogo from '#lib/components/ui/BrandLogo.svelte';
 
 	import { preventDefault } from 'svelte/legacy';
 	import PWAInstallSettings from '#lib/components/PWAInstallSettings.svelte';
 
-
 	import MoreHorizontalIcon from '@lucide/svelte/icons/ellipsis';
-import HomeIcon from '@lucide/svelte/icons/home';
-import PlayCircleIcon from '@lucide/svelte/icons/circle-play';
-import ShoppingCartIcon from '@lucide/svelte/icons/shopping-cart';
-import BriefcaseIcon from '@lucide/svelte/icons/briefcase';
-import MailIcon from '@lucide/svelte/icons/mail';
-import ToolIcon from '@lucide/svelte/icons/wrench';
-import BookOpenIcon from '@lucide/svelte/icons/book-open';
-import UserIcon from '@lucide/svelte/icons/user';
-import Edit3Icon from '@lucide/svelte/icons/pencil-line';
-import XIcon from '@lucide/svelte/icons/x';
+	import HomeIcon from '@lucide/svelte/icons/home';
+	import PlayCircleIcon from '@lucide/svelte/icons/circle-play';
+	import ShoppingCartIcon from '@lucide/svelte/icons/shopping-cart';
+	import BriefcaseIcon from '@lucide/svelte/icons/briefcase';
+	import MailIcon from '@lucide/svelte/icons/mail';
+	import ToolIcon from '@lucide/svelte/icons/wrench';
+	import BookOpenIcon from '@lucide/svelte/icons/book-open';
+	import UserIcon from '@lucide/svelte/icons/user';
+	import Edit3Icon from '@lucide/svelte/icons/pencil-line';
+	import XIcon from '@lucide/svelte/icons/x';
 	import { username } from '#lib/store/index.js';
 	import { page } from '$app/state';
- import catalog from '#lib/data/catalog.json';
+	import catalog from '#lib/data/catalog.json';
 	import BottomSheet from '#lib/components/ui/BottomSheet.svelte';
 	import { afterNavigate } from '$app/navigation';
+	import { onMount } from 'svelte';
 
-	const icons = [HomeIcon, PlayCircleIcon, ToolIcon, BookOpenIcon, ShoppingCartIcon, BriefcaseIcon, MailIcon];
+	const icons = [
+		HomeIcon,
+		PlayCircleIcon,
+		ToolIcon,
+		BookOpenIcon,
+		ShoppingCartIcon,
+		BriefcaseIcon,
+		MailIcon
+	];
 	const menus = ['หน้าแรก', 'ปริศนา', 'เครื่องมือ', 'ค้น', 'ร้านค้า', 'ผลงาน', 'ร่วมงาน'];
 	const links = ['', 'puzzles', 'tools', 'resources', 'shop', 'portfolio', 'contact'];
 
 	let openMore = $state(false);
- let desktopMenu = $state<number | null>(null);
- let section = $state(3);
- const compact = [
- { title:'เล่น', links:[['/puzzles','ห้องเล่นทั้งหมด'],['/web-game','เว็บเกม / Web Game'],...catalog.puzzles.map(group => ['/puzzles/'+group.id,group.title])] },
- { title:'สร้าง', links:[['/tools','กล่องเครื่องมือทั้งหมด'],...catalog.tools.map(group => ['/tools/'+group.id,group.title])] },
- { title:'ค้น', links:[['/search','ค้นหาทั้งเว็บไซต์'],['/resources','ข้อมูลทั้งหมด'],...catalog.resources.map(group => ['/resources/'+group.id,group.title])] },
- { title:'เพิ่มเติม', links:[['/about','เกี่ยวกับ Chi Fun / ไขสนุก'],['/portfolio','ผลงาน / เกี่ยวกับฉัน'],['/contact','ติดต่อร่วมงาน'],['/shop','ร้านหนังสือปริศนา']] }
- ];
- function openSection(index: number) { if (window.matchMedia("(min-width:1024px)").matches) { desktopMenu = index; } else { section = index; openMore = true; } }
-	afterNavigate(() => { openMore = false; desktopMenu = null; });
+	let desktopMenu = $state<number | null>(null);
+	let menuElements = $state<HTMLDetailsElement[]>([]);
+	let hydrated = $state(false);
+	onMount(() => {
+		const nativeOpen = menuElements.findIndex((element) => element.open);
+		const hovered = window.matchMedia('(min-width:1024px)').matches
+			? menuElements.findIndex((element) => element.matches(':hover'))
+			: -1;
+		const initial = nativeOpen >= 0 ? nativeOpen : hovered;
+		if (initial >= 0) openSection(initial);
+		hydrated = true;
+	});
+	$effect(() => {
+		if (hydrated)
+			for (const [index, element] of menuElements.entries()) element.open = desktopMenu === index;
+	});
+	let section = $state(3);
+	const compact = [
+		{
+			title: 'เล่น',
+			links: [
+				['/puzzles', 'ห้องเล่นทั้งหมด'],
+				['/web-game', 'เว็บเกม / Web Game'],
+				...catalog.puzzles.map((group) => ['/puzzles/' + group.id, group.title])
+			]
+		},
+		{
+			title: 'สร้าง',
+			links: [
+				['/tools', 'กล่องเครื่องมือทั้งหมด'],
+				...catalog.tools.map((group) => ['/tools/' + group.id, group.title])
+			]
+		},
+		{
+			title: 'ค้น',
+			links: [
+				['/search', 'ค้นหาทั้งเว็บไซต์'],
+				['/resources', 'ข้อมูลทั้งหมด'],
+				...catalog.resources.map((group) => ['/resources/' + group.id, group.title])
+			]
+		},
+		{
+			title: 'เพิ่มเติม',
+			links: [
+				['/about', 'เกี่ยวกับ Chi Fun / ไขสนุก'],
+				['/portfolio', 'ผลงาน / เกี่ยวกับฉัน'],
+				['/contact', 'ติดต่อร่วมงาน'],
+				['/shop', 'ร้านหนังสือปริศนา']
+			]
+		}
+	];
+	function openSection(index: number) {
+		if (window.matchMedia('(min-width:1024px)').matches) {
+			desktopMenu = index;
+		} else {
+			section = index;
+			openMore = true;
+		}
+	}
+	afterNavigate(({ type }) => {
+		if (type !== 'enter') {
+			openMore = false;
+			desktopMenu = null;
+		}
+	});
 	let openNameModal = $state(false);
 	let settingsDialog: HTMLDialogElement;
 	$effect(() => {
@@ -52,12 +115,13 @@ import XIcon from '@lucide/svelte/icons/x';
 	let currentPath = $derived(page.url.pathname);
 	let isActive = $derived((path: string) => {
 		if (path === '' && currentPath === '/') return true;
-		if (path !== '' && (currentPath === '/' + path || currentPath.startsWith('/' + path + '/'))) return true;
+		if (path !== '' && (currentPath === '/' + path || currentPath.startsWith('/' + path + '/')))
+			return true;
 		return false;
 	});
 
 	function handleOpenModal() {
- desktopMenu = null;
+		desktopMenu = null;
 		openMore = false;
 		tempName = $username || 'Guest';
 		openNameModal = true;
@@ -72,89 +136,295 @@ import XIcon from '@lucide/svelte/icons/x';
 	}
 </script>
 
-<svelte:window onkeydown={(event) => { if (event.key === 'Escape') desktopMenu = null; }} />
+<svelte:window
+	onkeydown={(event) => {
+		if (event.key === 'Escape') desktopMenu = null;
+	}}
+/>
 <div class="compact-navbar bg-base-100 text-base-content">
- <a href="/" class="brand" aria-label="Chi Fun / ไขสนุก หน้าแรก"><BrandLogo class="w-[150px]" /></a>
- <nav aria-label="เมนูหลัก" class="compact-links">
-  <a href="/" aria-current={currentPath === '/' ? 'page' : undefined} class:active={currentPath === '/'}><HomeIcon size={19} /><span>หน้าแรก</span></a>
-  {#each compact as group, i}
-   {@const Icon = [PlayCircleIcon, ToolIcon, BookOpenIcon, MoreHorizontalIcon][i]}
-   {@const active = i === 3 ? ['shop','portfolio','contact','library','about'].some(isActive) : isActive(links[i + 1])}
-   <div class="nav-group" role="group" aria-label={group.title} onpointerenter={() => { if (window.matchMedia('(min-width:1024px)').matches) desktopMenu = i; }} onpointerleave={() => desktopMenu = null} onfocusout={(event) => { if (!(event.relatedTarget instanceof Node) || !event.currentTarget.contains(event.relatedTarget)) desktopMenu = null; }}>
-    <button type="button" aria-expanded={desktopMenu === i || (openMore && section === i)} aria-controls={desktopMenu === i ? 'desktop-submenu-' + i : undefined} class:active={active || desktopMenu === i || (openMore && section === i)} onclick={() => openSection(i)}><Icon size={19} /><span>{group.title}</span><span class="chevron" aria-hidden="true"><ChevronDown size={13} /></span></button>
-    {#if desktopMenu === i}<div class="dropdown-bridge" id={'desktop-submenu-' + i}><nav class="dropdown-panel bg-base-100 text-base-content" aria-label={group.title + ' — เมนูย่อย'}>
-     {#each group.links as [href, label]}<a {href} onclick={() => desktopMenu = null} aria-current={currentPath === href ? 'page' : undefined}><span class="page-mark" aria-hidden="true"><PageIcon {href} size={18} /></span>{label}</a>{/each}
-     {#if i === 3}<button type="button" onclick={handleOpenModal}><UserIcon size={16} />ตั้งค่าผู้เล่น: {$username || 'Guest'}</button>{/if}
-    </nav></div>{/if}
-   </div>
-  {/each}
- </nav>
+	<a href="/" class="brand" aria-label="Chi Fun / ไขสนุก หน้าแรก"><BrandLogo class="w-[150px]" /></a
+	>
+	<nav aria-label="เมนูหลัก" class="compact-links">
+		<a
+			href="/"
+			aria-current={currentPath === '/' ? 'page' : undefined}
+			class:active={currentPath === '/'}><HomeIcon size={19} /><span>หน้าแรก</span></a
+		>
+		{#each compact as group, i}
+			{@const Icon = [PlayCircleIcon, ToolIcon, BookOpenIcon, MoreHorizontalIcon][i]}
+			{@const active =
+				i === 3
+					? ['shop', 'portfolio', 'contact', 'library', 'about'].some(isActive)
+					: isActive(links[i + 1])}
+			<details
+				class="nav-group"
+				bind:this={menuElements[i]}
+				aria-label={group.title}
+				onpointerenter={() => {
+					if (window.matchMedia('(min-width:1024px)').matches) desktopMenu = i;
+				}}
+				onpointerleave={() => (desktopMenu = null)}
+				onfocusout={(event) => {
+					if (
+						!(event.relatedTarget instanceof Node) ||
+						!event.currentTarget.contains(event.relatedTarget)
+					)
+						desktopMenu = null;
+				}}
+			>
+				<!-- svelte-ignore a11y_no_redundant_roles (Keep flex-styled disclosures discoverable as buttons across browsers.) -->
+				<summary
+					role="button"
+					aria-controls={'desktop-submenu-' + i}
+					class:active={active || desktopMenu === i || (openMore && section === i)}
+					onclick={(event) => {
+						event.preventDefault();
+						openSection(i);
+					}}
+					><Icon size={19} /><span>{group.title}</span><span class="chevron" aria-hidden="true"
+						><ChevronDown size={13} /></span
+					></summary
+				>
+				<div class="dropdown-bridge" id={'desktop-submenu-' + i}>
+					<nav
+						class="dropdown-panel bg-base-100 text-base-content"
+						aria-label={group.title + ' — เมนูย่อย'}
+					>
+						{#each group.links as [href, label]}<a
+								{href}
+								class:overview-link={label.includes('ทั้งหมด')}
+								onclick={() => (desktopMenu = null)}
+								aria-current={currentPath === href ? 'page' : undefined}
+								><span class="page-mark" aria-hidden="true"><PageIcon {href} size={18} /></span
+								>{label}</a
+							>{/each}
+						{#if i === 3}<button type="button" onclick={handleOpenModal}
+								><UserIcon size={16} />ตั้งค่าผู้เล่น: {$username || 'Guest'}</button
+							>{/if}
+					</nav>
+				</div>
+			</details>
+		{/each}
+	</nav>
 </div>
 <BottomSheet bind:open={openMore} title={compact[section].title}>
- <nav aria-label={compact[section].title} class="grid gap-2">
-  {#each compact[section].links as [href, label]}
-   <a {href} onclick={() => openMore = false} aria-current={currentPath === href ? 'page' : undefined} class="flex items-center justify-between min-h-12 px-4 rounded-xl hover:bg-base-200 text-base-content"><span aria-hidden="true"><PageIcon {href} size={18} /></span><span>{label}</span></a>
-  {/each}
-  {#if section === 3}<button type="button" onclick={handleOpenModal} class="btn btn-ghost justify-start"><UserIcon size={18} />ตั้งค่าผู้เล่น: {$username || 'Guest'}</button>{/if}
- </nav>
+	<nav aria-label={compact[section].title} class="grid gap-2">
+		{#each compact[section].links as [href, label]}
+			<a
+				{href}
+				onclick={() => (openMore = false)}
+				aria-current={currentPath === href ? 'page' : undefined}
+				class:overview-link={label.includes('ทั้งหมด')}
+				class="flex items-center justify-between min-h-12 px-4 rounded-xl hover:bg-base-200 text-base-content"
+				><span aria-hidden="true"><PageIcon {href} size={18} /></span><span>{label}</span></a
+			>
+		{/each}
+		{#if section === 3}<button
+				type="button"
+				onclick={handleOpenModal}
+				class="btn btn-ghost justify-start"
+				><UserIcon size={18} />ตั้งค่าผู้เล่น: {$username || 'Guest'}</button
+			>{/if}
+	</nav>
 </BottomSheet>
-<style>
- .nav-group { position:relative; } .dropdown-bridge { position:absolute; top:100%; right:0; width:290px; padding-top:8px; } .dropdown-panel { border:1px solid var(--color-base-300); border-radius:20px; padding:8px; box-shadow:0 12px 30px #364b3e18; } .dropdown-panel > :is(a,button) { display:flex; align-items:center; justify-content:flex-start; gap:10px; text-align:left; width:100%; min-height:36px; padding:7px 10px; border-radius:12px; font-size:13px; } .dropdown-panel > :is(a,button):hover { background:var(--color-base-200); }
- @media(max-width:1023px) { .nav-group { flex:1; min-width:0; } .nav-group > button { width:100%; } .dropdown-bridge { display:none; } }
- .compact-navbar { display:flex; align-items:center; justify-content:space-between; gap:24px; max-width:1180px; margin:auto; padding:10px 24px; border:1px solid var(--color-base-300); border-radius:0 0 24px 24px; }
- .brand { display:flex; align-items:center; gap:10px; }
- .compact-links { display:flex; gap:6px; } .compact-links > a, .nav-group > button { display:flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:8px 15px; border-radius:16px; font-size:13px; cursor:pointer; }
- .compact-links > a:hover, .nav-group > button:hover { background:var(--color-base-200); } .compact-links > a.active, .nav-group > button.active { background:var(--color-primary); color:var(--color-primary-content); } .compact-links > a.active:hover, .nav-group > button.active:hover { background:var(--color-primary); }
- @media(max-width:1023px) { .compact-navbar { padding:4px 4px max(4px,env(safe-area-inset-bottom)); border-radius:0; border-width:1px 0 0; } .brand,.chevron { display:none; } .compact-links { width:100%; gap:4px; } .compact-links > a, .nav-group > button { flex:1; flex-direction:column; gap:3px; padding:6px 2px; font-size:11px; min-height:52px; } }
-</style>
 
 <!-- Player settings stay mounted to capture installation availability without a popup. -->
-<dialog bind:this={settingsDialog} class="modal z-50" aria-labelledby="player-settings-heading" onclose={() => openNameModal = false} oncancel={() => openNameModal = false}>
-		<div class="botanical-card modal-box bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 relative max-w-md text-left">
-			<button
-				onclick={() => openNameModal = false}
-				aria-label="ปิดการตั้งค่า"
-				class="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 text-base-content hover:bg-base-200"
+<dialog
+	bind:this={settingsDialog}
+	class="modal z-50"
+	aria-labelledby="player-settings-heading"
+	onclose={() => (openNameModal = false)}
+	oncancel={() => (openNameModal = false)}
+>
+	<div
+		class="botanical-card modal-box bg-base-100 text-base-content border border-base-300 rounded-3xl p-6 relative max-w-md text-left"
+	>
+		<button
+			onclick={() => (openNameModal = false)}
+			aria-label="ปิดการตั้งค่า"
+			class="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 text-base-content hover:bg-base-200"
+		>
+			<XIcon size={18} />
+		</button>
+
+		<div class="flex items-center gap-3 mb-4">
+			<div
+				class="w-10 h-10 rounded-2xl bg-primary/20 text-primary flex items-center justify-center shrink-0"
 			>
-				<XIcon size={18} />
-			</button>
-
-			<div class="flex items-center gap-3 mb-4">
-				<div class="w-10 h-10 rounded-2xl bg-primary/20 text-primary flex items-center justify-center shrink-0">
-					<Edit3Icon size={20} />
-				</div>
-				<div>
-					<h3 id="player-settings-heading" class="font-extrabold text-lg text-base-content">ตั้งค่าผู้เล่น</h3>
-					<p class="text-xs text-base-content/70">บันทึกชื่อไว้ในเครื่องนี้ สำหรับแสดงคะแนน</p>
-				</div>
+				<Edit3Icon size={20} />
 			</div>
-
-			<form onsubmit={preventDefault(handleSaveName)} class="flex flex-col gap-4 mt-2">
-				<div class="flex flex-col gap-2 w-full">
-					<label for="guest-name-input" class="label text-xs font-bold text-base-content px-0">
-						<span>ชื่อที่ต้องการแสดง:</span>
-					</label>
-					<input
-						id="guest-name-input"
-						type="text"
-						bind:value={tempName}
-						placeholder="ใส่ชื่อผู้เล่น..."
-						class="input  w-full bg-base-300 text-base-content border-base-300 font-bold focus:border-primary"
-					/>
-				</div>
-
-				<div class="flex items-center justify-between gap-3 pt-2">
-
-
-					<button type="submit" class="btn btn-primary text-primary-content font-bold btn-sm rounded-xl px-4">
-						บันทึก
-					</button>
-				</div>
-			</form>
-			<LocalDataSettings />
- <PWAInstallSettings />
+			<div>
+				<h3 id="player-settings-heading" class="font-extrabold text-lg text-base-content">
+					ตั้งค่าผู้เล่น
+				</h3>
+				<p class="text-xs text-base-content/70">บันทึกชื่อไว้ในเครื่องนี้ สำหรับแสดงคะแนน</p>
+			</div>
 		</div>
 
-		<form method="dialog" class="modal-backdrop"><button aria-label="ปิดการตั้งค่า">ปิด</button></form>
+		<form onsubmit={preventDefault(handleSaveName)} class="flex flex-col gap-4 mt-2">
+			<div class="flex flex-col gap-2 w-full">
+				<label for="guest-name-input" class="label text-xs font-bold text-base-content px-0">
+					<span>ชื่อที่ต้องการแสดง:</span>
+				</label>
+				<input
+					id="guest-name-input"
+					type="text"
+					bind:value={tempName}
+					placeholder="ใส่ชื่อผู้เล่น..."
+					class="input w-full bg-base-300 text-base-content border-base-300 font-bold focus:border-primary"
+				/>
+			</div>
+
+			<div class="flex items-center justify-between gap-3 pt-2">
+				<button
+					type="submit"
+					class="btn btn-primary text-primary-content font-bold btn-sm rounded-xl px-4"
+				>
+					บันทึก
+				</button>
+			</div>
+		</form>
+		<LocalDataSettings />
+		<PWAInstallSettings />
+	</div>
+
+	<form method="dialog" class="modal-backdrop">
+		<button aria-label="ปิดการตั้งค่า">ปิด</button>
+	</form>
 </dialog>
 
+<style>
+	.nav-group {
+		position: relative;
+	}
+	.nav-group > summary {
+		list-style: none;
+	}
+	.nav-group > summary::-webkit-details-marker {
+		display: none;
+	}
+	.overview-link {
+		background: var(--color-base-200);
+		color: var(--color-base-content);
+		font-weight: 700;
+		border-bottom: 2px solid var(--color-primary);
+		margin-bottom: 6px;
+	}
+	.dropdown-bridge {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		width: 290px;
+		padding-top: 8px;
+	}
+	.dropdown-panel {
+		border: 1px solid var(--color-base-300);
+		border-radius: 20px;
+		padding: 8px;
+		box-shadow: 0 12px 30px #364b3e18;
+	}
+	.dropdown-panel > :is(a, button) {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
+		text-align: left;
+		width: 100%;
+		min-height: 36px;
+		padding: 7px 10px;
+		border-radius: 12px;
+		font-size: 13px;
+	}
+	.dropdown-panel > :is(a, button):hover {
+		background: var(--color-base-200);
+	}
+	@media (max-width: 1023px) {
+		.nav-group {
+			flex: 1;
+			min-width: 0;
+		}
+		.nav-group > summary {
+			width: 100%;
+		}
+		.dropdown-bridge {
+			top: auto;
+			bottom: 100%;
+			width: min(290px, 90vw);
+			padding-top: 0;
+			padding-bottom: 8px;
+		}
+		.dropdown-panel {
+			max-height: 70dvh;
+			overflow: auto;
+		}
+	}
+	.compact-navbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		max-width: 1180px;
+		margin: auto;
+		padding: 10px 24px;
+		border: 1px solid var(--color-base-300);
+		border-radius: 0 0 24px 24px;
+	}
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.compact-links {
+		display: flex;
+		gap: 6px;
+	}
+	.compact-links > a,
+	.nav-group > summary {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		min-height: 44px;
+		padding: 8px 15px;
+		border-radius: 16px;
+		font-size: 13px;
+		cursor: pointer;
+	}
+	.compact-links > a:hover,
+	.nav-group > summary:hover {
+		background: var(--color-base-200);
+	}
+	.compact-links > a.active,
+	.nav-group > summary.active {
+		background: var(--color-primary);
+		color: var(--color-primary-content);
+	}
+	.compact-links > a.active:hover,
+	.nav-group > summary.active:hover {
+		background: var(--color-primary);
+	}
+	@media (max-width: 1023px) {
+		.compact-navbar {
+			padding: 4px 4px max(4px, env(safe-area-inset-bottom));
+			border-radius: 0;
+			border-width: 1px 0 0;
+		}
+		.brand,
+		.chevron {
+			display: none;
+		}
+		.compact-links {
+			width: 100%;
+			gap: 4px;
+		}
+		.compact-links > a,
+		.nav-group > summary {
+			flex: 1;
+			flex-direction: column;
+			gap: 3px;
+			padding: 6px 2px;
+			font-size: 11px;
+			min-height: 52px;
+		}
+	}
+</style>

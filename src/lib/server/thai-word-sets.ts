@@ -14,7 +14,7 @@ export function findThaiWordSets(source: string[]) {
 	const words = [...new Set(source.filter((word) => /^[ก-๎]+$/u.test(word)))].sort();
 	const tiles = new Map(words.map((word) => [word, splitWord(word)]));
 	const groups = new Map<string, string[]>();
-	const result: WordSet[][] = [[], [], [], [], [], [], []];
+	const result: WordSet[][] = [[], [], [], [], [], [], [], []];
 	let id = 0;
 	const node = (): Trie => ({ next: new Map(), id: id++ });
 	const root = node();
@@ -33,7 +33,14 @@ export function findThaiWordSets(source: string[]) {
 	}
 	for (const group of groups.values()) {
 		for (let a = 0; a < group.length; a++) {
-			for (let b = a + 1; b < group.length; b++) result[0].push({ words: [group[a], group[b]] });
+			for (let b = a + 1; b < group.length; b++) {
+				const letters = tiles.get(group[a])!;
+				const isRotation = letters.some(
+					(_, index) =>
+						index > 0 && [...letters.slice(index), ...letters.slice(0, index)].join('') === group[b]
+				);
+				result[isRotation ? 7 : 0].push({ words: [group[a], group[b]] });
+			}
 		}
 	}
 	for (const word of words) {
@@ -66,19 +73,20 @@ export function findThaiWordSets(source: string[]) {
 			}
 		}
 		const walkSplits = (start: number, parts: string[]) => {
+			if (parts.length >= 3) return;
 			let cursor = root;
 			for (let end = start; end < letters.length; end++) {
 				const next = cursor.next.get(letters[end]);
 				if (!next) break;
 				cursor = next;
-				if (!cursor.word) continue;
+				if (!cursor.word || tiles.get(cursor.word)!.length < 2) continue;
 				const nextParts = [...parts, cursor.word];
 				if (end === letters.length - 1) {
 					if (nextParts.length >= 2) result[1].push({ words: [word, ...nextParts] });
 				} else walkSplits(end + 1, nextParts);
 			}
 		};
-		walkSplits(0, []);
+		if (!['การ', 'ความ', 'เครื่อง'].some((excluded) => word.includes(excluded))) walkSplits(0, []);
 		// Walk two dictionary tries together, assigning each tile to exactly one word.
 		const visited = new Set<string>();
 		const weave = (index: number, a: Trie, b: Trie) => {
@@ -86,7 +94,15 @@ export function findThaiWordSets(source: string[]) {
 			if (visited.has(key)) return;
 			visited.add(key);
 			if (index === letters.length) {
-				if (a.word && b.word && a.word <= b.word) result[2].push({ words: [word, a.word, b.word] });
+				if (
+					a.word &&
+					b.word &&
+					a.word <= b.word &&
+					word !== a.word + b.word &&
+					word !== b.word + a.word
+				) {
+					result[2].push({ words: [word, a.word, b.word] });
+				}
 				return;
 			}
 			const left = a.next.get(letters[index]);
@@ -108,6 +124,14 @@ export function findThaiWordSets(source: string[]) {
 					seen.add(reversed);
 				}
 			}
+		}
+	}
+	// Keep one-tile dictionary entries only for reverse + one letter (rule 4).
+	for (let index = 0; index < result.length; index++) {
+		if (index !== 3) {
+			result[index] = result[index].filter((set) =>
+				set.words.every((word) => tiles.get(word)!.length > 1)
+			);
 		}
 	}
 	for (const sets of result)
