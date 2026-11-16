@@ -3,6 +3,10 @@ import { findThaiWordSets, getThaiWordSets } from './thai-word-sets';
 import { splitWord } from '#lib/utils/thai-text.js';
 
 describe('Thai dictionary word sets', () => {
+	it('finds plain reversals once, preserving marks and excluding palindromes and missing words', () => {
+		const { sets } = findThaiWordSets(['ก่ขุค', 'คขุก่', 'ก่ขุค', 'กขก', 'กราม', 'ก', 'การมา']);
+		expect(sets[8]).toEqual([{ words: ['ก่ขุค', 'คขุก่'] }]);
+	});
 	it('lists rotations separately, deduplicating repeated cuts and preserving Thai marks', () => {
 		const { sets } = findThaiWordSets([
 			'กราม',
@@ -16,38 +20,40 @@ describe('Thai dictionary word sets', () => {
 		]);
 		expect(sets[7]).toContainEqual({ words: ['กราม', 'มกรา'] });
 		expect(sets[0]).not.toContainEqual({ words: ['กราม', 'มกรา'] });
-		expect(sets[0]).toContainEqual({ words: ['กราม', 'รกาม'] });
+		expect(sets[0]).not.toContainEqual({ words: ['กราม', 'รกาม'] });
 		expect(sets[7]).not.toContainEqual({ words: ['กราม', 'รกาม'] });
 		expect(sets[7]).toContainEqual({ words: ['ก่ขค', 'ขคก่'] });
 		expect(sets[7].filter((set) => set.words.join('|') === 'กขกข|ขกขก')).toHaveLength(1);
 		expect(sets[7].some((set) => set.words[0] === set.words[1])).toBe(false);
 	});
-	it('caps splits at three parts and excludes the specified Thai word fragments', () => {
-		const { sets } = findThaiWordSets([
-			'กา',
-			'กากา',
-			'กากากา',
-			'กากากากา',
-			'การ',
-			'การกากา',
-			'ความ',
-			'ความกากา',
-			'เครื่อง',
-			'เครื่องกากา'
-		]);
-		expect(sets[1]).toContainEqual({ words: ['กากากา', 'กา', 'กา', 'กา'] });
-		expect(sets[1].every((set) => set.words.length <= 4)).toBe(true);
+	it('adds one tile strictly inside a word, preserving marks and deduplicating repeated cuts', () => {
+		const { sets } = findThaiWordSets(['กม', 'กรม', 'ก่ม', 'ก่รุม', 'กกก', 'กกกก', 'กมร', 'มกม']);
+		expect(sets[1]).toContainEqual({ words: ['กม', 'กรม'], added: 'ร' });
+		expect(sets[1]).toContainEqual({ words: ['ก่ม', 'ก่รุม'], added: 'รุ' });
+		expect(sets[1].filter((set) => set.words.join('|') === 'กกก|กกกก')).toHaveLength(1);
 		expect(
-			sets[1].some((set) =>
-				['การ', 'ความ', 'เครื่อง'].some((fragment) => set.words[0].includes(fragment))
-			)
+			sets[1].some((set) => set.words[0] === 'กม' && ['กมร', 'มกม'].includes(set.words[1]))
 		).toBe(false);
+	});
+	it('removes the การ prefix from the dictionary used by every rule', () => {
+		const source = ['การ', 'การมา', 'การกม', 'กม', 'กรม', 'มา', 'รกาม'];
+		const result = findThaiWordSets(source);
+		expect(result.dictionarySize).toBe(4);
+		expect(
+			result.sets.flat().every((set) => set.words.every((word) => !word.startsWith('การ')))
+		).toBe(true);
+		expect(result.sets[1]).toContainEqual({ words: ['กม', 'กรม'], added: 'ร' });
+	});
+	it('excludes rearrangements of three variable-length blocks while retaining deeper anagrams', () => {
+		const { sets } = findThaiWordSets(['กขคงจฉ', 'คงกขจฉ', 'ฉจงคขก', 'ก่ขคง', 'งคขก่']);
+		expect(sets[0]).not.toContainEqual({ words: ['กขคงจฉ', 'คงกขจฉ'] });
+		expect(sets[0]).toContainEqual({ words: ['กขคงจฉ', 'ฉจงคขก'] });
+		expect(sets[0]).toContainEqual({ words: ['ก่ขคง', 'งคขก่'] });
 	});
 	it('excludes plain rotations from anagrams and direct splits from interleaving', () => {
 		const { sets } = findThaiWordSets(['กราม', 'มกรา', 'รกาม', 'กม', 'รา', 'กามา', 'กา', 'มา']);
 		expect(sets[0]).not.toContainEqual({ words: ['กราม', 'มกรา'] });
-		expect(sets[0]).toContainEqual({ words: ['กราม', 'รกาม'] });
-		expect(sets[1]).toContainEqual({ words: ['กามา', 'กา', 'มา'] });
+		expect(sets[0]).not.toContainEqual({ words: ['กราม', 'รกาม'] });
 		expect(
 			sets[2].some(
 				(set) =>
@@ -77,7 +83,7 @@ describe('Thai dictionary word sets', () => {
 		}
 		expect(sets[3]).toContainEqual({ words: ['ก่', 'ก่กุ'], added: 'กุ' });
 	});
-	it('preserves multiplicity, finds multi-part splits and ordered complements', () => {
+	it('preserves multiplicity and finds ordered complements', () => {
 		const { sets } = findThaiWordSets([
 			'กราม',
 			'กม',
@@ -93,10 +99,9 @@ describe('Thai dictionary word sets', () => {
 			'กรามกรามกราม',
 			'abc'
 		]);
-		expect(sets[0]).toContainEqual({ words: ['กราม', 'รกาม'] });
+		expect(sets[0]).not.toContainEqual({ words: ['กราม', 'รกาม'] });
 		expect(sets[0]).not.toContainEqual({ words: ['กราม', 'มกรา'] });
 		expect(sets[0]).not.toContainEqual({ words: ['กก', 'กกก'] });
-		expect(sets[1]).toContainEqual({ words: ['กรามกรามกราม', 'กราม', 'กราม', 'กราม'] });
 		expect(sets[2]).toContainEqual({ words: ['กราม', 'กม', 'รา'] });
 		expect(sets[2].filter((set) => set.words.join('|') === 'กก|ก|ก')).toHaveLength(0);
 	});
@@ -151,6 +156,9 @@ describe('Thai dictionary word sets', () => {
 		const result = getThaiWordSets();
 		expect(result.sets[2]).toContainEqual({ words: ['กราม', 'กม', 'รา'] });
 		expect(result.sets.every((sets) => sets.length > 0)).toBe(true);
+		expect(
+			result.sets.flat().every((set) => set.words.every((word) => !word.startsWith('การ')))
+		).toBe(true);
 		for (const [index, sets] of result.sets.entries()) {
 			if (index !== 3)
 				expect(sets.every((set) => set.words.every((word) => splitWord(word).length > 1))).toBe(

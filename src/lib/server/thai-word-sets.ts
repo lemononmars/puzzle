@@ -9,12 +9,26 @@ export type WordSet = {
 };
 type Trie = { next: Map<string, Trie>; word?: string; id: number };
 
+function isThreeBlockRearrangement(letters: string[], target: string) {
+	for (let first = 1; first < letters.length - 1; first++) {
+		for (let second = first + 1; second < letters.length; second++) {
+			const a = letters.slice(0, first).join('');
+			const b = letters.slice(first, second).join('');
+			const c = letters.slice(second).join('');
+			if ([a + c + b, b + a + c, b + c + a, c + a + b, c + b + a].includes(target)) return true;
+		}
+	}
+	return false;
+}
+
 /** Thai puzzle tiles: combining vowels and tone marks travel with their base. */
 export function findThaiWordSets(source: string[]) {
-	const words = [...new Set(source.filter((word) => /^[ก-๎]+$/u.test(word)))].sort();
+	const words = [
+		...new Set(source.filter((word) => /^[ก-๎]+$/u.test(word) && !word.startsWith('การ')))
+	].sort();
 	const tiles = new Map(words.map((word) => [word, splitWord(word)]));
 	const groups = new Map<string, string[]>();
-	const result: WordSet[][] = [[], [], [], [], [], [], [], []];
+	const result: WordSet[][] = [[], [], [], [], [], [], [], [], []];
 	let id = 0;
 	const node = (): Trie => ({ next: new Map(), id: id++ });
 	const root = node();
@@ -39,12 +53,17 @@ export function findThaiWordSets(source: string[]) {
 					(_, index) =>
 						index > 0 && [...letters.slice(index), ...letters.slice(0, index)].join('') === group[b]
 				);
-				result[isRotation ? 7 : 0].push({ words: [group[a], group[b]] });
+				if (isRotation) result[7].push({ words: [group[a], group[b]] });
+				else if (!isThreeBlockRearrangement(letters, group[b]))
+					result[0].push({ words: [group[a], group[b]] });
 			}
 		}
 	}
 	for (const word of words) {
 		const letters = tiles.get(word)!;
+		// Emit each distinct reversal pair once; marks travel with their base tile.
+		const reversed = [...letters].reverse().join('');
+		if (word < reversed && tiles.has(reversed)) result[8].push({ words: [word, reversed] });
 		// An inserted word must be contiguous and strictly inside the outer word.
 		const insertions = new Set<string>();
 		for (let start = 1; start < letters.length - 1; start++) {
@@ -72,21 +91,15 @@ export function findThaiWordSets(source: string[]) {
 				result[6].push({ words: [word, ...alternating] });
 			}
 		}
-		const walkSplits = (start: number, parts: string[]) => {
-			if (parts.length >= 3) return;
-			let cursor = root;
-			for (let end = start; end < letters.length; end++) {
-				const next = cursor.next.get(letters[end]);
-				if (!next) break;
-				cursor = next;
-				if (!cursor.word || tiles.get(cursor.word)!.length < 2) continue;
-				const nextParts = [...parts, cursor.word];
-				if (end === letters.length - 1) {
-					if (nextParts.length >= 2) result[1].push({ words: [word, ...nextParts] });
-				} else walkSplits(end + 1, nextParts);
+		// Rule 2 replaces splitting: remove one strictly internal tile from the target.
+		const addedLetters = new Set<string>();
+		for (let index = 1; index < letters.length - 1; index++) {
+			const original = [...letters.slice(0, index), ...letters.slice(index + 1)].join('');
+			if (tiles.has(original) && !addedLetters.has(original)) {
+				result[1].push({ words: [original, word], added: letters[index] });
+				addedLetters.add(original);
 			}
-		};
-		if (!['การ', 'ความ', 'เครื่อง'].some((excluded) => word.includes(excluded))) walkSplits(0, []);
+		}
 		// Walk two dictionary tries together, assigning each tile to exactly one word.
 		const visited = new Set<string>();
 		const weave = (index: number, a: Trie, b: Trie) => {

@@ -101,12 +101,12 @@
 		{
 			title: 'Anagram pairs',
 			description:
-				'Two distinct dictionary words with exactly the same tiles, including repeated tiles. Simple AB → BA rotations are excluded.'
+				'Two distinct dictionary words with exactly the same tiles, including repeated tiles. Rearrangements of two or three contiguous blocks are excluded.'
 		},
 		{
-			title: 'Split into words',
+			title: 'Word + letter',
 			description:
-				'Split a dictionary word into two or three contiguous dictionary words. Words containing การ, ความ, or เครื่อง are excluded.'
+				'Insert exactly one tile strictly inside a dictionary word to form another dictionary word, leaving at least one original tile on each side.'
 		},
 		{
 			title: 'Interleaved words',
@@ -137,6 +137,11 @@
 			title: 'Rotation',
 			description:
 				'Split a dictionary word into two nonempty sections, then swap them to form a different dictionary word. Tile order inside each section stays unchanged. The sections need not be dictionary words; each pair appears once.'
+		},
+		{
+			title: 'Reversal',
+			description:
+				'Reverse all tiles to form a different dictionary word. Combining vowels and tone marks stay with their base letter. Each pair appears once.'
 		}
 	];
 	function link(rule: number, page = 1) {
@@ -181,6 +186,7 @@
 			base letter; leading vowels remain separate. No marks are removed or substituted. All matching
 			sets are included; equivalent assignments are deduplicated.
 		</p>
+		<p>Words starting with การ are excluded from every list.</p>
 		<p>
 			One-tile words, including letters with attached vowels or tone marks, are excluded from every
 			list except Reverse + one letter. Length filters count tiles in the main/result word.
@@ -305,7 +311,7 @@
 								>{index === 1
 									? data.rule === 1 || data.rule === 8
 										? '↔'
-										: data.rule === 4 || data.rule === 6
+										: data.rule === 2 || data.rule === 4 || data.rule === 6
 											? '→'
 											: '='
 									: '+'}</span
